@@ -18,8 +18,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/stories/index.js",
+  "types": "dist/stories/index.d.ts",
   "source": "src/stories/index.ts",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
