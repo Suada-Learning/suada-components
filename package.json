@@ -24,8 +24,7 @@
     "src/stories/*.css",
     "src/index.ts"
   ],
-  "types": "dist/stories/index.d.ts",
-  "source": "src/stories/index.ts",
+  "source": "src/index.ts",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
     "@eslint/js": "^9.17.0",
