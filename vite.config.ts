@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: "index.ts",
+      entry: "src/index.ts",
       name: "SuadaComponents",
       fileName: (format) => `suada-components.${format}.js`,
     },
