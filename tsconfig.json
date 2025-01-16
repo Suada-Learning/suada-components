@@ -5,12 +5,14 @@
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "target": "ES2020",
-    "module": "ESNext",
+    "module": "NodeNext", // Change this to 'NodeNext'
     "jsx": "react",
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext", // Ensures that modules are resolved using the NodeNext algorithm
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strict": true
   },
   "include": ["src/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,4 +1,4 @@
-import { Button } from "..";
+import { Button } from "../index.js";
 import "./header.css";
 import React from "react";
 
