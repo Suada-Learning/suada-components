@@ -8,7 +8,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && copyfiles -u 1 'src/**/*.css' dist",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -23,8 +23,7 @@
   },
   "files": [
     "dist",
-    "src/stories/*.css",
-    "src/index.ts"
+    "src/**/*.css"
   ],
   "source": "src/index.ts",
   "devDependencies": {
@@ -40,6 +39,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
