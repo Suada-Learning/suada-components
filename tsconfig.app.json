@@ -6,19 +6,17 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "outDir": "dist",
+    "outDir": "dist", // Output directory for build files
     "jsx": "react",
-    "declaration": true,
+    "declaration": true, // Generate declaration files
+    "declarationDir": "dist", // Where to put declaration files
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "moduleResolution": "Node", // Common for libraries
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
 
     /* Linting */
     "strict": true,
@@ -27,6 +25,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-
-  "include": ["src", "src/index.ts"]
+  "include": ["src", "src/index.ts", "src/stories/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
