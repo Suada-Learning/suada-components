@@ -1,30 +1,17 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
     "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
-    "outDir": "dist", // Output directory for build files
     "jsx": "react",
-    "declaration": true, // Generate declaration files
-    "declarationDir": "dist", // Where to put declaration files
-    "sourceMap": true,
+    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node", // Common for libraries
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "allowSyntheticDefaultImports": true,
-
-    /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "allowImportingTsExtensions": true
   },
-  "include": ["src", "src/index.ts", "src/stories/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

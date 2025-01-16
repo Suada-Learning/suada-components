@@ -7,13 +7,14 @@
   "module": "dist/index.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs.js"
-    }
+    },
+    "./stories/*": "./dist/stories/*"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && copyfiles -u 1 'src/**/*.css' dist",
+    "build": "tsc --project tsconfig.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -28,8 +29,7 @@
   },
   "files": [
     "dist",
-    "src/**/*.css",
-    "src/stories"
+    "src/**/*.css"
   ],
   "source": "src/index.ts",
   "devDependencies": {
@@ -45,6 +45,7 @@
     "@storybook/react": "^8.4.7",
     "@storybook/react-vite": "^8.4.7",
     "@storybook/test": "^8.4.7",
+    "@types/node": "^22.10.7",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
