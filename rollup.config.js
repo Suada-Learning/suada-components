@@ -23,7 +23,7 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs({
-      include: /node_modules/, // Convert CommonJS modules to ES6
+      include: /node_modules/,
     }),
     postcss({
       modules: true,
