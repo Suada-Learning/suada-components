@@ -1,41 +1,36 @@
-import "./Button.css";
+import { ReactElement } from "react";
+
+import { ButtonState, HtmlButtonTypeEnum } from "./Button.interface";
+import { StyledButton } from "./Button.styles";
 import React from "react";
 
-export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: "small" | "medium" | "large";
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
-}
-
-/** Primary UI component for user interaction */
 const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
+  type,
+  size,
   label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  iconLeft,
+  iconRight,
+  disabled,
+  customStyles,
+  onClick,
+  htmlType = HtmlButtonTypeEnum.BUTTON,
+  className,
+}: ButtonState): ReactElement => {
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
-      {...props}
+    <StyledButton
+      $type={type}
+      $size={size}
+      disabled={!!disabled}
+      style={customStyles}
+      onClick={onClick}
+      type={htmlType}
+      className={className}
     >
+      {iconLeft}
       {label}
-    </button>
+      {iconRight}
+    </StyledButton>
   );
 };
+
 export default Button;
