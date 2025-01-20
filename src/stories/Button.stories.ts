@@ -1,52 +1,115 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import Button from "./Button.js";
+import Button from "./Button";
+import {
+  ButtonTypeEnum,
+  ButtonSizeEnum,
+  HtmlButtonTypeEnum,
+} from "./Button.interface";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// Storybook metadata
 const meta = {
-  title: "Example/Button",
+  title: "Components/Button",
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    type: {
+      control: {
+        type: "select",
+        options: Object.values(ButtonTypeEnum),
+      },
+    },
+    size: {
+      control: {
+        type: "select",
+        options: Object.values(ButtonSizeEnum),
+      },
+    },
+    htmlType: {
+      control: {
+        type: "select",
+        options: Object.values(HtmlButtonTypeEnum),
+      },
+    },
+    disabled: {
+      control: { type: "boolean" },
+    },
+    label: {
+      control: { type: "text" },
+    },
+    iconLeft: {
+      control: { type: "object" },
+    },
+    iconRight: {
+      control: { type: "object" },
+    },
+    customStyles: {
+      control: { type: "object" },
+    },
+    className: {
+      control: { type: "text" },
+    },
+    onClick: {
+      action: "clicked",
+    },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: {
+    onClick: () => console.log("Button clicked!"),
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// Primary Button
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: "Button",
+    type: ButtonTypeEnum.PRIMARY,
+    size: ButtonSizeEnum.SM,
+    label: "Primary Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
   },
 };
 
+// Secondary Button
 export const Secondary: Story = {
   args: {
-    label: "Button",
+    type: ButtonTypeEnum.SECONDARY,
+    size: ButtonSizeEnum.SM,
+    label: "Secondary Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
   },
 };
 
+// Large Button
 export const Large: Story = {
   args: {
-    size: "large",
-    label: "Button",
+    type: ButtonTypeEnum.PRIMARY,
+    size: ButtonSizeEnum.LG,
+    label: "Large Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
   },
 };
 
+// Small Button
 export const Small: Story = {
   args: {
-    size: "small",
-    label: "Button",
+    type: ButtonTypeEnum.SECONDARY,
+    size: ButtonSizeEnum.SM,
+    label: "Small Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
+  },
+};
+
+// Disabled Button
+export const Disabled: Story = {
+  args: {
+    type: ButtonTypeEnum.PRIMARY,
+    size: ButtonSizeEnum.SM,
+    label: "Disabled Button",
+    disabled: true,
+    htmlType: HtmlButtonTypeEnum.BUTTON,
   },
 };
