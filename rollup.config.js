@@ -3,7 +3,6 @@ import typescript from "@rollup/plugin-typescript";
 import babel from "@rollup/plugin-babel";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
-import commonjs from "@rollup/plugin-commonjs";
 
 export default {
   input: "src/index.ts",
@@ -22,9 +21,6 @@ export default {
   plugins: [
     peerDepsExternal(),
     resolve(),
-    commonjs({
-      include: /node_modules/, // Convert CommonJS modules to ES6
-    }),
     postcss({
       modules: true,
       extract: true,
