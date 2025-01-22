@@ -21,21 +21,26 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
+
     resolve(),
+
     commonjs({
       include: /node_modules/,
     }),
+
     postcss({
       modules: true,
       extract: true,
       minimize: true,
     }),
+
     typescript({
       tsconfig: "./tsconfig.json",
       declaration: true,
       declarationDir: "dist/types",
       exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
     }),
+
     babel({
       exclude: "node_modules/**",
       babelHelpers: "bundled",
