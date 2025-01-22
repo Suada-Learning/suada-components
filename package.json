@@ -8,8 +8,8 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/suada-components.es.js",
-      "require": "./dist/suada-components.umd.js"
+      "import": "./dist/suada-components.esm.js",
+      "require": "./dist/suada-components.cjs.js"
     }
   },
   "scripts": {
