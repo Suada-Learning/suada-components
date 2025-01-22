@@ -8,11 +8,9 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs.js"
-    },
-    "./stories/*": "./dist/stories/*",
-    "./src": "./src/index.js"
+    }
   },
   "scripts": {
     "dev": "vite",
