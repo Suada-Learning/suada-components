@@ -73,5 +73,9 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "styled-components": "^6.1.14",
+    "vite": "^6.0.11"
   }
 }
