@@ -1,19 +1,19 @@
 import { StorybookConfig } from "storybook/internal/types";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/components/**/*.stories.@(js|jsx|ts|tsx)"], // Updated to match story files
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-onboarding",
+    "@chromatic-com/storybook",
   ],
   framework: {
-    name: "@storybook/react",
+    name: "@storybook/react-vite",
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+
+  docs: {},
 };
 
 export default config;

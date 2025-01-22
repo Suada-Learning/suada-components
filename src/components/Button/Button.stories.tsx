@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import { Button } from ".";
 import {
   ButtonTypeEnum,
   ButtonSizeEnum,
   HtmlButtonTypeEnum,
 } from "./Button.interface";
-
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle, theme } from "../../global.styles";
 // Storybook metadata
 const meta = {
   title: "Components/Button",
@@ -13,12 +14,20 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
   tags: ["autodocs"],
   argTypes: {
     type: {
       control: {
         type: "select",
-        options: Object.values(ButtonTypeEnum),
+        options: ["Secondary", "Primary"],
       },
     },
     size: {
@@ -83,26 +92,6 @@ export const Secondary: Story = {
   },
 };
 
-// Large Button
-export const Large: Story = {
-  args: {
-    type: ButtonTypeEnum.PRIMARY,
-    size: ButtonSizeEnum.LG,
-    label: "Large Button",
-    htmlType: HtmlButtonTypeEnum.BUTTON,
-  },
-};
-
-// Small Button
-export const Small: Story = {
-  args: {
-    type: ButtonTypeEnum.SECONDARY,
-    size: ButtonSizeEnum.SM,
-    label: "Small Button",
-    htmlType: HtmlButtonTypeEnum.BUTTON,
-  },
-};
-
 // Disabled Button
 export const Disabled: Story = {
   args: {
@@ -110,6 +99,51 @@ export const Disabled: Story = {
     size: ButtonSizeEnum.SM,
     label: "Disabled Button",
     disabled: true,
+    htmlType: HtmlButtonTypeEnum.BUTTON,
+  },
+};
+
+export const Positive: Story = {
+  args: {
+    type: ButtonTypeEnum.POSITIVE,
+    size: ButtonSizeEnum.SM,
+    label: "Success Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
+  },
+};
+
+export const Negative: Story = {
+  args: {
+    type: ButtonTypeEnum.NEGATIVE,
+    size: ButtonSizeEnum.SM,
+    label: "Negative Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    type: ButtonTypeEnum.GHOST,
+    size: ButtonSizeEnum.SM,
+    label: "Ghost Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    type: ButtonTypeEnum.DARK,
+    size: ButtonSizeEnum.SM,
+    label: "Dark Button",
+    htmlType: HtmlButtonTypeEnum.BUTTON,
+  },
+};
+
+export const Text: Story = {
+  args: {
+    type: ButtonTypeEnum.TEXT,
+    size: ButtonSizeEnum.SM,
+    label: "Text Button",
     htmlType: HtmlButtonTypeEnum.BUTTON,
   },
 };
