@@ -1,20 +1,20 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
+import { peerDependencies } from "./package.json";
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
-  },
+  plugins: [react(), dts({ exclude: ["**/*.stories.ts", "**/*.test.ts"] })],
+
   build: {
     lib: {
-      entry: "src/index.ts",
-      name: "SuadaComponents",
+      entry: "./src/index.ts",
+      name: "suada-components",
       fileName: (format) => `suada-components.${format}.js`,
       formats: ["es", "cjs", "umd"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: Object.keys(peerDependencies),
       output: {
         globals: {
           react: "React",
