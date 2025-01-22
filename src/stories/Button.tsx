@@ -4,7 +4,7 @@ import { ButtonState, HtmlButtonTypeEnum } from "./Button.interface";
 import { StyledButton } from "./Button.styles";
 import React from "react";
 
-const Button = ({
+export const Button = ({
   type,
   size,
   label,
@@ -32,5 +32,3 @@ const Button = ({
     </StyledButton>
   );
 };
-
-export default Button;
