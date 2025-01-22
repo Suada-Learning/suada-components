@@ -6,7 +6,7 @@ import postcss from "rollup-plugin-postcss";
 import commonjs from "@rollup/plugin-commonjs";
 
 export default {
-  input: "src/index.ts",
+  input: "index.ts",
   output: [
     {
       file: "dist/index.js",
