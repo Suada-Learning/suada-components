@@ -15,6 +15,6 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client", "@storybook/react"]
   },
-  "include": ["src/**/*", "src/index.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist", "storybook-static"]
 }
