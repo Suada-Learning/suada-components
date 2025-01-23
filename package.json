@@ -3,9 +3,15 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/suada-components.cjs.js",
+  "module": "dist/suada-components.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/suada-components.es.js",
+      "require": "./dist/suada-components.cjs.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "rollup -c && tsc",
