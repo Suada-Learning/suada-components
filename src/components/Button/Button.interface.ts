@@ -21,9 +21,11 @@ export enum ButtonSizeEnum {
   LG = "large",
 }
 
+export type ButtonSize = "small" | "large";
+
 export interface ButtonState {
   type: ButtonTypeEnum;
-  size: ButtonSizeEnum;
+  size: ButtonSize;
   label?: ReactNode;
   iconLeft?: ReactElement | null;
   iconRight?: ReactElement | null;
@@ -37,5 +39,5 @@ export interface ButtonState {
 
 export interface StyledButtonProps {
   $type: ButtonTypeEnum;
-  $size: ButtonSizeEnum;
+  $size: ButtonSize;
 }
