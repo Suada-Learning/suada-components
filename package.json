@@ -6,14 +6,6 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs.js"
-    },
-    "./stories/*": "./dist/stories/*",
-    "./src": "./src/index.js"
-  },
   "scripts": {
     "dev": "vite",
     "build": "rollup -c && tsc",
