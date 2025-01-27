@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import {
   ButtonSizeEnum,
   ButtonTypeEnum,
@@ -16,7 +15,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
   text-transform: capitalize;
   transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
   cursor: pointer;
-  ${{ fontStyle: "labelM" }}
   white-space: nowrap;
 
   & > svg > path {
@@ -55,110 +53,110 @@ export const StyledButton = styled.button<StyledButtonProps>`
     switch ($type) {
       case ButtonTypeEnum.PRIMARY:
         return `
-          color: var(--neutral-colors-light);
-          background-color: var(--brand-colors-accent);
+          color: #FFFFFF;
+          background-color: #08C694;
 
           & > svg > path {
-            fill: var(--neutral-colors-light);
+            fill: #FFFFFF;
           }
 
           &:not(:disabled):hover {
-            background-color: var(--level-accent-700);    
+            background-color: #12A37A;    
           }
 
           &:disabled {
-            background: var(--level-dark-300); 
+            background: #B3B3B8; 
           }
         `;
       case ButtonTypeEnum.SECONDARY:
         return `
-          border: 1px solid var(--brand-colors-accent); 
-          color: var(--brand-colors-accent);
+          border: 1px solid #08C694; 
+          color: #08C694;
 
           & > svg > path {
-            fill: var(--brand-colors-accent);
+            fill: #08C694;
           }
 
           &:not(:disabled):hover {
-            border: 1px solid var(--level-accent-700);
-            color: var(--level-accent-700);
+            border: 1px solid #12A37A;
+            color: #12A37A;
 
             & > svg > path {
-              fill: var(--level-accent-700);
+              fill: #12A37A;
             }
           }
 
           &:disabled {
-            border: 1px solid var(--level-dark-300); 
-            color: var(--level-dark-300); 
+            border: 1px solid #B3B3B8; 
+            color: #B3B3B8; 
 
             & > svg > path {
-              fill: var(--level-dark-300);
+              fill: #B3B3B8;
             }
           }
         `;
       case ButtonTypeEnum.GHOST:
         return `
           background-color: transparent;
-          color: var(--neutral-colors-dark);
+          color: #020210;
 
           & > svg > path {
-            fill: var(--neutral-colors-dark);
+            fill: #020210;
           }
 
           &:not(:disabled):hover {
-            background-color: var(--level-grey-100);
+            background-color: #E7E9ED;
           }
 
           &:disabled {
-            color: var(--level-dark-300); 
+            color: #B3B3B8; 
             
             & > svg > path {
-              fill: var(--level-dark-300);
+              fill: #B3B3B8;
             }
           }
         `;
       case ButtonTypeEnum.NEGATIVE:
         return `
-          background-color: var(--system-colors-negative);
-          color: var(--neutral-colors-light);
+          background-color: #EA382A;
+          color: #FFFFFF;
 
           & > svg > path {
-            fill: var(--neutral-colors-light);
+            fill: #FFFFFF;
           }
 
           &:not(:disabled):hover {
-            background-color: var(--level-negative-700);
+            background-color: #C7493D;
           }
 
           &:disabled {
-            background: var(--level-negative-500); 
+            background: #E5908A; 
           }
         `;
       case ButtonTypeEnum.POSITIVE:
         return `
-          background-color: var(--system-colors-positive);
-          color: var(--neutral-colors-light);
+          background-color: #00905E;
+          color: #FFFFFF;
 
           & > svg > path {
-            fill: var(--neutral-colors-light);
+            fill: #FFFFFF;
           }
 
           &:not(:disabled):hover {
-            background-color: var(--level-accent-700);
+            background-color: #12A37A;
           }
 
           &:disabled {
-            background: var(--level-accent-500); 
+            background: #72C4AC; 
           }
         `;
       case ButtonTypeEnum.DARK:
         return `
-          border: 1px solid var(--neutral-colors-dark); 
-          color: var(--neutral-colors-dark));
+          border: 1px solid #020210; 
+          color: #020210;
 
           & > svg > path {
-            fill: var(--neutral-colors-dark));
+            fill: #020210;
           }
 
           &:not(:disabled):hover {
@@ -166,35 +164,35 @@ export const StyledButton = styled.button<StyledButtonProps>`
           }
 
           &:disabled {
-            border: 1px solid var(--level-dark-300); 
-            color: var(--level-dark-300); 
+            border: 1px solid #B3B3B8; 
+            color: #B3B3B8; 
           }
         `;
       case ButtonTypeEnum.TEXT:
         return `
           border: none; 
-          color: var(--neutral-colors-dark));
+          color: #020210;
           padding-top: 0;
           padding-bottom: 0;
           width: fit-content;
 
           & > svg > path {
-            fill: var(--neutral-colors-dark));
+            fill: #020210;
           }
 
           &:not(:disabled):hover {
-           color: var(--level-dark-700, #4F4E5B);
+           color: #4F4E5B;
            
             & > svg > path {
-              fill: var(--level-dark-700, #4F4E5B);
+              fill: #4F4E5B;
             }
           }
 
           &:disabled {
-            color: var(--level-dark-300); 
+            color: #B3B3B8; 
 
             & > svg > path {
-              fill: var(--level-dark-300);
+              fill: #B3B3B8;
             }
           }
         `;
