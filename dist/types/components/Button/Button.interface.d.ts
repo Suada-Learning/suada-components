@@ -17,9 +17,11 @@ export declare enum ButtonSizeEnum {
     SM = "small",
     LG = "large"
 }
+export type HtmlButtonType = "submit" | "reset" | "button";
 export type ButtonSize = "small" | "large";
+export type ButtonType = "primary" | "secondary" | "ghost" | "negative" | "positive" | "dark" | "text";
 export interface ButtonState {
-    type: ButtonTypeEnum;
+    type: ButtonType;
     size: ButtonSize;
     label?: ReactNode;
     iconLeft?: ReactElement | null;
@@ -27,11 +29,11 @@ export interface ButtonState {
     disabled?: boolean;
     customStyles?: CSSProperties;
     onClick?: () => void;
-    htmlType?: HtmlButtonTypeEnum;
+    htmlType?: HtmlButtonType;
     id?: string | number;
     className?: string;
 }
 export interface StyledButtonProps {
-    $type: ButtonTypeEnum;
+    $type: ButtonType;
     $size: ButtonSize;
 }
