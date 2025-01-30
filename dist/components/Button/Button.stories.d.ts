@@ -1,13 +1,13 @@
 import type { StoryObj } from "@storybook/react";
-import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from "./Button.interface";
+import { ButtonSizeEnum, HtmlButtonTypeEnum } from "./Button.interface";
 declare const meta: {
     title: string;
     component: ({ type, size, label, iconLeft, iconRight, disabled, customStyles, onClick, htmlType, className, }: import("./Button.interface").ButtonState) => import("react").ReactElement;
     parameters: {
         layout: string;
     };
-    decorators: ((Story: import("@storybook/csf").PartialStoryFn<import("@storybook/react").ReactRenderer, {
-        type: ButtonTypeEnum;
+    decorators: ((Story: import("@storybook/core/types").PartialStoryFn<import("@storybook/react").ReactRenderer, {
+        type: import("./Button.interface").ButtonType;
         size: import("./Button.interface").ButtonSize;
         label?: import("react").ReactNode;
         iconLeft?: (import("react").ReactElement | null) | undefined;
@@ -15,7 +15,7 @@ declare const meta: {
         disabled?: boolean | undefined;
         customStyles?: import("react").CSSProperties | undefined;
         onClick?: (() => void) | undefined;
-        htmlType?: HtmlButtonTypeEnum | undefined;
+        htmlType?: import("./Button.interface").HtmlButtonType | undefined;
         id?: string | number | undefined;
         className?: string | undefined;
     }>) => import("react/jsx-runtime").JSX.Element)[];
