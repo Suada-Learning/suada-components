@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { styled as MUIStyled } from "@mui/material/styles";
+import styled from 'styled-components'
+import { styled as MUIStyled } from '@mui/material/styles'
 
 // CourseLayout
 
-export const ModalRef = styled.span``;
+export const ModalRef = styled.span``
 
 export const GridItemContentHeader = styled.header`
   display: flex;
@@ -13,13 +13,13 @@ export const GridItemContentHeader = styled.header`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
+`
 export const GridItemTitle = styled.h3`
   font-size: 18px;
   font-weight: 500;
 
   transition: color 0.3s ease;
-`;
+`
 
 export const ToolbarItemWrapper = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ export const ToolbarItemWrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
   }
-`;
+`
 
 export const ContentWrapper = styled.div<{ $isGrid: boolean }>`
   margin-top: 30px;
@@ -57,7 +57,7 @@ export const ContentWrapper = styled.div<{ $isGrid: boolean }>`
         }
       }
     `}
-`;
+`
 
 export const CardActionBar = styled.div<{ $switched: boolean }>`
   width: 100%;
@@ -88,15 +88,14 @@ export const CardActionBar = styled.div<{ $switched: boolean }>`
     align-items: center;
     cursor: pointer;
   }
-`;
+`
 
 export const StylesCardWrapper = styled.div<{ $canOpen: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: ${({ $canOpen }: { $canOpen: boolean }): string =>
-    $canOpen ? "pointer" : "default"};
+  cursor: ${({ $canOpen }: { $canOpen: boolean }): string => ($canOpen ? 'pointer' : 'default')};
   height: 100%;
   border-radius: 12px !important;
   &:hover {
@@ -104,7 +103,7 @@ export const StylesCardWrapper = styled.div<{ $canOpen: boolean }>`
       background: rgba(255, 255, 255, 0.59) !important;
     }
   }
-`;
+`
 
 export const StyledChecked = styled.div`
   position: absolute;
@@ -114,7 +113,7 @@ export const StyledChecked = styled.div`
   bottom: 0;
   z-index: 2;
   background-color: rgb(0 0 0 / 23%);
-`;
+`
 
 export const VideoProcessingContainer = styled.div`
   position: relative;
@@ -125,7 +124,7 @@ export const VideoProcessingContainer = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
-`;
+`
 
 export const CourseStatusContainer = styled.div<{ $status: boolean }>`
   color: #fff;
@@ -133,11 +132,11 @@ export const CourseStatusContainer = styled.div<{ $status: boolean }>`
   padding: 4px 12px;
   text-transform: capitalize;
   border-radius: 4px;
-  background: ${({ $status }): string => (!$status ? "#EA382A" : "#00905E")};
+  background: ${({ $status }): string => (!$status ? '#EA382A' : '#00905E')};
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export const ItemWrapper = styled.div`
   display: flex;
@@ -146,7 +145,7 @@ export const ItemWrapper = styled.div`
   div {
     font-size: 13px;
   }
-`;
+`
 
 export const TooltipContent = styled.div`
   display: flex;
@@ -168,7 +167,7 @@ export const TooltipContent = styled.div`
       text-align: center;
     }
   }
-`;
+`
 export const StyledCardBottomContainer = styled.div`
   display: flex;
   width: 100%;
@@ -176,25 +175,23 @@ export const StyledCardBottomContainer = styled.div`
   align-self: flex-end;
   gap: 10px;
   padding-bottom: 10px;
-`;
+`
 
 export const StyledActionsContainer = styled.div`
   display: flex;
   flex-direction: row !important;
   width: 100%;
-`;
+`
 
 export const StyledActionItem = styled.span<{
-  disabled?: boolean;
-  color?: string;
+  disabled?: boolean
+  color?: string
 }>`
   display: flex;
   align-items: center;
   height: 14px;
-  cursor: ${({ disabled }: { disabled?: boolean }): string =>
-    disabled ? "default" : "pointer"};
-  color: ${({ disabled }: { disabled?: boolean }): string =>
-    disabled ? "#ccc" : "#68707a"};
+  cursor: ${({ disabled }: { disabled?: boolean }): string => (disabled ? 'default' : 'pointer')};
+  color: ${({ disabled }: { disabled?: boolean }): string => (disabled ? '#ccc' : '#68707a')};
   font-size: 14px;
   padding-bottom: 10px;
   width: 100%;
@@ -202,8 +199,7 @@ export const StyledActionItem = styled.span<{
   gap: 8px;
   padding: 12px 4px;
   svg path {
-    fill: ${({ disabled }: { disabled?: boolean }): string =>
-      disabled ? "#ccc" : "#68707a"};
+    fill: ${({ disabled }: { disabled?: boolean }): string => (disabled ? '#ccc' : '#68707a')};
     width: 16px;
     height: 16px;
   }
@@ -212,14 +208,12 @@ export const StyledActionItem = styled.span<{
     height: 16px;
   }
   &:hover {
-    color: ${({ disabled, color = "#68707a" }): string =>
-      disabled ? "#ccc" : color};
+    color: ${({ disabled, color = '#68707a' }): string => (disabled ? '#ccc' : color)};
     svg path {
-      fill: ${({ disabled, color = "#68707a" }): string =>
-        disabled ? "#ccc" : color};
+      fill: ${({ disabled, color = '#68707a' }): string => (disabled ? '#ccc' : color)};
     }
   }
-`;
+`
 
 export const StyledCourseContent = styled.span`
   color: #20a8c6;
@@ -232,17 +226,17 @@ export const StyledCourseContent = styled.span`
   justify-content: center;
   align-items: center;
   background-color: #edf8fa;
-`;
+`
 
 export const ItemBlock = styled.div`
   text-transform: capitalize;
-`;
+`
 export const StyledItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 4px;
-`;
+`
 
 // gridConfig
 
@@ -257,7 +251,7 @@ export const StyledCourseCardContent = styled.span`
   justify-content: center;
   align-items: center;
   background-color: #edf8fa;
-`;
+`
 
 export const GridItemLessons = styled.div<{ checked?: boolean }>`
   margin-top: 10px;
@@ -269,8 +263,8 @@ export const GridItemLessons = styled.div<{ checked?: boolean }>`
 
   // when card is checked
   span {
-    background: ${(props): string => (props.checked ? "none" : "#edf8fa")};
-    color: ${(props): string => (props.checked ? "#333333" : "#20a8c6")};
+    background: ${(props): string => (props.checked ? 'none' : '#edf8fa')};
+    color: ${(props): string => (props.checked ? '#333333' : '#20a8c6')};
   }
   > div {
     font-size: 12px;
@@ -278,7 +272,7 @@ export const GridItemLessons = styled.div<{ checked?: boolean }>`
     padding-left: 12px;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: 5px;
@@ -292,10 +286,10 @@ export const GridItemLessons = styled.div<{ checked?: boolean }>`
       margin-right: 10px;
     }
   }
-`;
+`
 export const StyledToolTipContainer = styled.div`
   width: 100%;
-`;
+`
 
 export const Action = styled.div<{ disabled?: boolean }>`
   display: flex;
@@ -304,8 +298,7 @@ export const Action = styled.div<{ disabled?: boolean }>`
   padding: 6px 10px;
   transition: 0.3s ease;
   border-radius: 5px;
-  opacity: ${({ disabled }: { disabled?: boolean }): string =>
-    disabled ? "0.5" : "1"};
+  opacity: ${({ disabled }: { disabled?: boolean }): string => (disabled ? '0.5' : '1')};
   &:hover {
     background: rgba(0, 0, 0, 0.1);
   }
@@ -323,12 +316,12 @@ export const Action = styled.div<{ disabled?: boolean }>`
   /* .MuiTypography-body1 {
     font-size: 0.875rem;
   } */
-`;
+`
 export const Wrapper = styled.div`
   box-sizing: border-box;
   padding: 0 20px 0 0;
   text-transform: capitalize;
-`;
+`
 
 export const GridItemContent = styled.section`
   position: relative;
@@ -336,13 +329,13 @@ export const GridItemContent = styled.section`
   font-size: 16px;
   color: #333;
   padding: 16px;
-`;
+`
 
 export const GridItemWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-`;
+`
 
 export const GridTableWrapper = styled.div`
   width: 100%;
@@ -356,7 +349,7 @@ export const GridTableWrapper = styled.div`
   th:last-child {
     width: 10px;
   }
-`;
+`
 
 export const StyledPagination = styled.div`
   justify-content: flex-end;
@@ -365,7 +358,7 @@ export const StyledPagination = styled.div`
   margin-left: 16px;
   margin-bottom: 16px;
   margin-top: 20px;
-`;
+`
 
 export const GridItemImage = styled.figure`
   width: 100%;
@@ -379,7 +372,7 @@ export const GridItemImage = styled.figure`
     vertical-align: middle;
     transition: transform 0.3s ease;
   }
-`;
+`
 
 export const GridItem = styled.div<{ $isFromUser?: boolean }>`
   display: flex;
@@ -429,14 +422,14 @@ export const GridItem = styled.div<{ $isFromUser?: boolean }>`
     }
   }
   `) ||
-    ""}
-`;
+    ''}
+`
 
-export const Root = MUIStyled("div")(({ theme }) => ({
+export const Root = MUIStyled('div')(({ theme }) => ({
   [`& .CourseLayout-paper`]: {
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
-}));
+}))
