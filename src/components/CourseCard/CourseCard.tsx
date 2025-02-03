@@ -96,7 +96,7 @@ export const CourseCard = ({
               />
             )}
             <CourseStatusContainer $status={item.state === 'published'}>
-              {item.finished === 3 ? getCourseState(item.state) : t('courses_layout.draft')}
+              {item.finished === 3 ? getCourseState(item.state || '') : t('courses_layout.draft')}
             </CourseStatusContainer>
           </div>
           {actions && actions.length > 0 && (
@@ -246,7 +246,7 @@ export const CourseCard = ({
                       item.groups.map(
                         (group: Group, index: number) => `
                         ${group.name}
-                        ${index === item.groups.length - 1 ? '' : ','}
+                    ${index === (item.groups?.length ?? 0) - 1 ? '' : ','}
                       `,
                       )}
                     {$canOpen && item.originalId && (
