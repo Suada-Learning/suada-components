@@ -3,11 +3,17 @@ import { CourseCard } from './CourseCard'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, theme } from '../../global.styles'
 import { StylesCardWrapper } from './CourseCard.styles'
-import { ICourseItem } from './CourseCard.interface'
+import { ICourse } from './CourseCard.interface'
+import { actionConfig } from './CourseCardActionsConfig'
 
-const mockItem: ICourseItem = {
+const mockItem: ICourse = {
   id: '1',
   name: 'Sample Course',
+  actions: actionConfig(
+    () => {},
+    {},
+    () => '',
+  ),
   state: 'published',
   finished: 3,
   level: 'beginner',
@@ -18,17 +24,21 @@ const mockItem: ICourseItem = {
   duration: 120,
   avatar: {
     link: 'https://149357281.v2.pressablecdn.com/wp-content/uploads/2023/07/GettyImages-1306184112-scaled.jpg',
+    name: 'Course Avatar',
   },
-  coaches: [{ firstName: 'John', lastName: 'Doe' }],
+  coaches: ['John Doe'],
   groups: [{ name: 'Group 1' }],
-  video: true,
+  video: {
+    link: 'https://example.com/video.mp4',
+    type: 'video/mp4',
+  },
   isBought: false,
 }
 
 const mockFunctions = {
   getCourseLevel: (level: string) => level,
   formatDuration: (duration: number) => `${duration} mins`,
-  actionHandler: (action: string, item: ICourseItem | string) => {
+  actionHandler: (action: string, item: ICourse | string) => {
     console.log(action, item)
   },
   navigate: (url: string) => console.log(`Navigating to ${url}`),

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { styled as MUIStyled } from '@mui/material/styles'
+import { Typography } from '@mui/material'
 
 // CourseLayout
 
@@ -19,6 +20,44 @@ export const GridItemTitle = styled.h3`
   font-weight: 500;
 
   transition: color 0.3s ease;
+`
+
+export const DeleteSpan = styled.span`
+  color: #ea382a;
+`
+
+export const DisabledTypography = styled(Typography)`
+  color: #7a7a7a;
+  opacity: 0.7;
+`
+export const ActionConfig = styled.div<{
+  disabled?: boolean
+  $hoverColor?: string
+  hoverBackground?: string
+}>`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px;
+  transition: 0.3s ease;
+  gap: 6px;
+  border-radius: 5px;
+  &:hover {
+    /* background: ${({ hoverBackground }): string => hoverBackground || 'rgba(0, 0, 0, 0.1)'}; */
+    ${({ $hoverColor }): string | undefined =>
+      $hoverColor &&
+      `svg path {
+          fill: ${$hoverColor};
+           }`}
+  }
+  svg {
+    font-size: 1rem;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 `
 
 export const ToolbarItemWrapper = styled.div`
