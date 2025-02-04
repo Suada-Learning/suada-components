@@ -107,7 +107,7 @@ export const Default: Story = {
     $canOpen: true,
     fromCertificateBuilder: false,
     fromWizard: false,
-    actions: [],
+    actions: actionConfig(mockFunctions.actionHandler, { deleteCourse: true }, key => key),
     groupId: '',
     user: undefined,
     selectedItem: [],
