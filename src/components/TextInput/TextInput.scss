@@ -1,0 +1,59 @@
+.auth {
+  .MuiFormControl-root {
+    width: 100%;
+
+    label {
+      color: rgba(255, 255, 255, 0.23);
+    }
+
+    input {
+      color: #fff;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: rgba(255, 255, 255, 0.23);
+    }
+
+    &:hover {
+      label {
+        color: rgba(255, 255, 255, 0.87);
+      }
+
+      .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(255, 255, 255, 0.87) !important;
+      }
+    }
+  }
+
+  .MuiFormLabel-root.Mui-focused {
+    color: green !important;
+  }
+
+  .MuiOutlinedInput-root.Mui-focused {
+    .MuiOutlinedInput-notchedOutline {
+      border-color: green !important;
+    }
+  }
+
+  .MuiFormLabel-root.Mui-error {
+    color: #f44336 !important;
+  }
+
+  .MuiOutlinedInput-root.Mui-error {
+    &:hover {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: #f44336 !important;
+      }
+    }
+  }
+
+  .MuiOutlinedInput-root.Mui-error.MuiOutlinedInput-root.Mui-focused {
+    .MuiOutlinedInput-notchedOutline {
+      border-color: #f44336 !important;
+    }
+  }
+}
+
+.MuiInputLabel-outlined {
+  z-index: 0 !important;
+}

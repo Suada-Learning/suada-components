@@ -6911,6 +6911,56 @@ function useTheme$1(defaultTheme = systemDefaultTheme$1) {
   return useTheme$2(defaultTheme);
 }
 
+const splitProps = props => {
+  const result = {
+    systemProps: {},
+    otherProps: {}
+  };
+  const config = props?.theme?.unstable_sxConfig ?? defaultSxConfig;
+  Object.keys(props).forEach(prop => {
+    if (config[prop]) {
+      result.systemProps[prop] = props[prop];
+    } else {
+      result.otherProps[prop] = props[prop];
+    }
+  });
+  return result;
+};
+function extendSxProp$1(props) {
+  const {
+    sx: inSx,
+    ...other
+  } = props;
+  const {
+    systemProps,
+    otherProps
+  } = splitProps(other);
+  let finalSx;
+  if (Array.isArray(inSx)) {
+    finalSx = [systemProps, ...inSx];
+  } else if (typeof inSx === 'function') {
+    finalSx = (...args) => {
+      const result = inSx(...args);
+      if (!isPlainObject(result)) {
+        return systemProps;
+      }
+      return {
+        ...systemProps,
+        ...result
+      };
+    };
+  } else {
+    finalSx = {
+      ...systemProps,
+      ...inSx
+    };
+  }
+  return {
+    ...otherProps,
+    sx: finalSx
+  };
+}
+
 const defaultGenerator = componentName => componentName;
 const createClassNameGenerator = () => {
   let generate = defaultGenerator;
@@ -10053,6 +10103,11 @@ const styled = createStyled({
   rootShouldForwardProp
 });
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
+function internal_createExtendSxProp() {
+  return extendSxProp$1;
+}
+
 const memoTheme = unstable_memoTheme;
 
 process.env.NODE_ENV !== "production" ? {
@@ -10078,7 +10133,7 @@ function getSvgIconUtilityClass(slot) {
 }
 generateUtilityClasses('MuiSvgIcon', ['root', 'colorPrimary', 'colorSecondary', 'colorAction', 'colorError', 'colorDisabled', 'fontSizeInherit', 'fontSizeSmall', 'fontSizeMedium', 'fontSizeLarge']);
 
-const useUtilityClasses$b = ownerState => {
+const useUtilityClasses$c = ownerState => {
   const {
     color,
     fontSize,
@@ -10208,7 +10263,7 @@ const SvgIcon = /*#__PURE__*/React.forwardRef(function SvgIcon(inProps, ref) {
   if (!inheritViewBox) {
     more.viewBox = viewBox;
   }
-  const classes = useUtilityClasses$b(ownerState);
+  const classes = useUtilityClasses$c(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(SvgIconRoot, {
     as: component,
     className: clsx(classes.root, className),
@@ -11326,7 +11381,7 @@ function getPaperUtilityClass(slot) {
 }
 generateUtilityClasses('MuiPaper', ['root', 'rounded', 'outlined', 'elevation', 'elevation0', 'elevation1', 'elevation2', 'elevation3', 'elevation4', 'elevation5', 'elevation6', 'elevation7', 'elevation8', 'elevation9', 'elevation10', 'elevation11', 'elevation12', 'elevation13', 'elevation14', 'elevation15', 'elevation16', 'elevation17', 'elevation18', 'elevation19', 'elevation20', 'elevation21', 'elevation22', 'elevation23', 'elevation24']);
 
-const useUtilityClasses$a = ownerState => {
+const useUtilityClasses$b = ownerState => {
   const {
     square,
     elevation,
@@ -11398,7 +11453,7 @@ const Paper = /*#__PURE__*/React.forwardRef(function Paper(inProps, ref) {
     square,
     variant
   };
-  const classes = useUtilityClasses$a(ownerState);
+  const classes = useUtilityClasses$b(ownerState);
   if (process.env.NODE_ENV !== 'production') {
     if (theme.shadows[elevation] === undefined) {
       console.error([`MUI: The elevation provided <Paper elevation={${elevation}}> is not available in the theme.`, `Please make sure that \`theme.shadows[${elevation}]\` is defined.`].join('\n'));
@@ -12035,7 +12090,7 @@ function getButtonBaseUtilityClass(slot) {
 }
 const buttonBaseClasses = generateUtilityClasses('MuiButtonBase', ['root', 'disabled', 'focusVisible']);
 
-const useUtilityClasses$9 = ownerState => {
+const useUtilityClasses$a = ownerState => {
   const {
     disabled,
     focusVisible,
@@ -12265,7 +12320,7 @@ const ButtonBase = /*#__PURE__*/React.forwardRef(function ButtonBase(inProps, re
     tabIndex,
     focusVisible
   };
-  const classes = useUtilityClasses$9(ownerState);
+  const classes = useUtilityClasses$a(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(ButtonBaseRoot, {
     as: ComponentProp,
     className: clsx(classes.root, className),
@@ -12548,7 +12603,7 @@ const rotateAnimation = typeof circularRotateKeyframe !== 'string' ? css`
 const dashAnimation = typeof circularDashKeyframe !== 'string' ? css`
         animation: ${circularDashKeyframe} 1.4s ease-in-out infinite;
       ` : null;
-const useUtilityClasses$8 = ownerState => {
+const useUtilityClasses$9 = ownerState => {
   const {
     classes,
     variant,
@@ -12677,7 +12732,7 @@ const CircularProgress = /*#__PURE__*/React.forwardRef(function CircularProgress
     value,
     variant
   };
-  const classes = useUtilityClasses$8(ownerState);
+  const classes = useUtilityClasses$9(ownerState);
   const circleStyle = {};
   const rootStyle = {};
   const rootProps = {};
@@ -12788,7 +12843,7 @@ function getIconButtonUtilityClass(slot) {
 }
 const iconButtonClasses = generateUtilityClasses('MuiIconButton', ['root', 'disabled', 'colorInherit', 'colorPrimary', 'colorSecondary', 'colorError', 'colorInfo', 'colorSuccess', 'colorWarning', 'edgeStart', 'edgeEnd', 'sizeSmall', 'sizeMedium', 'sizeLarge', 'loading', 'loadingIndicator', 'loadingWrapper']);
 
-const useUtilityClasses$7 = ownerState => {
+const useUtilityClasses$8 = ownerState => {
   const {
     classes,
     disabled,
@@ -12981,7 +13036,7 @@ const IconButton = /*#__PURE__*/React.forwardRef(function IconButton(inProps, re
     loadingIndicator,
     size
   };
-  const classes = useUtilityClasses$7(ownerState);
+  const classes = useUtilityClasses$8(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(IconButtonRoot, {
     id: id,
     className: clsx(classes.root, className),
@@ -13090,6 +13145,266 @@ process.env.NODE_ENV !== "production" ? IconButton.propTypes /* remove-proptypes
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : undefined;
+
+function getTypographyUtilityClass(slot) {
+  return generateUtilityClass('MuiTypography', slot);
+}
+generateUtilityClasses('MuiTypography', ['root', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'inherit', 'button', 'caption', 'overline', 'alignLeft', 'alignRight', 'alignCenter', 'alignJustify', 'noWrap', 'gutterBottom', 'paragraph']);
+
+const v6Colors = {
+  primary: true,
+  secondary: true,
+  error: true,
+  info: true,
+  success: true,
+  warning: true,
+  textPrimary: true,
+  textSecondary: true,
+  textDisabled: true
+};
+const extendSxProp = internal_createExtendSxProp();
+const useUtilityClasses$7 = ownerState => {
+  const {
+    align,
+    gutterBottom,
+    noWrap,
+    paragraph,
+    variant,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ['root', variant, ownerState.align !== 'inherit' && `align${capitalize(align)}`, gutterBottom && 'gutterBottom', noWrap && 'noWrap', paragraph && 'paragraph']
+  };
+  return composeClasses(slots, getTypographyUtilityClass, classes);
+};
+const TypographyRoot = styled('span', {
+  name: 'MuiTypography',
+  slot: 'Root',
+  overridesResolver: (props, styles) => {
+    const {
+      ownerState
+    } = props;
+    return [styles.root, ownerState.variant && styles[ownerState.variant], ownerState.align !== 'inherit' && styles[`align${capitalize(ownerState.align)}`], ownerState.noWrap && styles.noWrap, ownerState.gutterBottom && styles.gutterBottom, ownerState.paragraph && styles.paragraph];
+  }
+})(memoTheme(({
+  theme
+}) => ({
+  margin: 0,
+  variants: [{
+    props: {
+      variant: 'inherit'
+    },
+    style: {
+      // Some elements, like <button> on Chrome have default font that doesn't inherit, reset this.
+      font: 'inherit',
+      lineHeight: 'inherit',
+      letterSpacing: 'inherit'
+    }
+  }, ...Object.entries(theme.typography).filter(([variant, value]) => variant !== 'inherit' && value && typeof value === 'object').map(([variant, value]) => ({
+    props: {
+      variant
+    },
+    style: value
+  })), ...Object.entries(theme.palette).filter(createSimplePaletteValueFilter()).map(([color]) => ({
+    props: {
+      color
+    },
+    style: {
+      color: (theme.vars || theme).palette[color].main
+    }
+  })), ...Object.entries(theme.palette?.text || {}).filter(([, value]) => typeof value === 'string').map(([color]) => ({
+    props: {
+      color: `text${capitalize(color)}`
+    },
+    style: {
+      color: (theme.vars || theme).palette.text[color]
+    }
+  })), {
+    props: ({
+      ownerState
+    }) => ownerState.align !== 'inherit',
+    style: {
+      textAlign: 'var(--Typography-textAlign)'
+    }
+  }, {
+    props: ({
+      ownerState
+    }) => ownerState.noWrap,
+    style: {
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, {
+    props: ({
+      ownerState
+    }) => ownerState.gutterBottom,
+    style: {
+      marginBottom: '0.35em'
+    }
+  }, {
+    props: ({
+      ownerState
+    }) => ownerState.paragraph,
+    style: {
+      marginBottom: 16
+    }
+  }]
+})));
+const defaultVariantMapping = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
+  subtitle1: 'h6',
+  subtitle2: 'h6',
+  body1: 'p',
+  body2: 'p',
+  inherit: 'p'
+};
+const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, ref) {
+  const {
+    color,
+    ...themeProps
+  } = useDefaultProps({
+    props: inProps,
+    name: 'MuiTypography'
+  });
+  const isSxColor = !v6Colors[color];
+  // TODO: Remove `extendSxProp` in v7
+  const props = extendSxProp({
+    ...themeProps,
+    ...(isSxColor && {
+      color
+    })
+  });
+  const {
+    align = 'inherit',
+    className,
+    component,
+    gutterBottom = false,
+    noWrap = false,
+    paragraph = false,
+    variant = 'body1',
+    variantMapping = defaultVariantMapping,
+    ...other
+  } = props;
+  const ownerState = {
+    ...props,
+    align,
+    color,
+    className,
+    component,
+    gutterBottom,
+    noWrap,
+    paragraph,
+    variant,
+    variantMapping
+  };
+  const Component = component || (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) || 'span';
+  const classes = useUtilityClasses$7(ownerState);
+  return /*#__PURE__*/jsxRuntimeExports.jsx(TypographyRoot, {
+    as: Component,
+    ref: ref,
+    className: clsx(classes.root, className),
+    ...other,
+    ownerState: ownerState,
+    style: {
+      ...(align !== 'inherit' && {
+        '--Typography-textAlign': align
+      }),
+      ...other.style
+    }
+  });
+});
+process.env.NODE_ENV !== "production" ? Typography.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Set the text-align on the component.
+   * @default 'inherit'
+   */
+  align: PropTypes.oneOf(['center', 'inherit', 'justify', 'left', 'right']),
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   */
+  color: PropTypes /* @typescript-to-proptypes-ignore */.oneOfType([PropTypes.oneOf(['primary', 'secondary', 'success', 'error', 'info', 'warning', 'textPrimary', 'textSecondary', 'textDisabled']), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the text will have a bottom margin.
+   * @default false
+   */
+  gutterBottom: PropTypes.bool,
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   * @default false
+   */
+  noWrap: PropTypes.bool,
+  /**
+   * If `true`, the element will be a paragraph element.
+   * @default false
+   * @deprecated Use the `component` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+   */
+  paragraph: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Applies the theme typography styles.
+   * @default 'body1'
+   */
+  variant: PropTypes /* @typescript-to-proptypes-ignore */.oneOfType([PropTypes.oneOf(['body1', 'body2', 'button', 'caption', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'inherit', 'overline', 'subtitle1', 'subtitle2']), PropTypes.string]),
+  /**
+   * The component maps the variant prop to a range of different HTML element types.
+   * For instance, subtitle1 to `<h6>`.
+   * If you wish to change that mapping, you can provide your own.
+   * Alternatively, you can use the `component` prop.
+   * @default {
+   *   h1: 'h1',
+   *   h2: 'h2',
+   *   h3: 'h3',
+   *   h4: 'h4',
+   *   h5: 'h5',
+   *   h6: 'h6',
+   *   subtitle1: 'h6',
+   *   subtitle2: 'h6',
+   *   body1: 'p',
+   *   body2: 'p',
+   *   inherit: 'p',
+   * }
+   */
+  variantMapping: PropTypes /* @typescript-to-proptypes-ignore */.object
 } : undefined;
 
 var top = 'top';
@@ -19274,85 +19589,96 @@ var RecordVoiceOverOutlined = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("
 dt.span(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject([""], [""])));
 var GridItemContentHeader = dt.header(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
 var GridItemTitle = dt.h3(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
-dt.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"], ["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"])));
-dt.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-top: 30px;\n\n  ", "\n"], ["\n  margin-top: 30px;\n\n  ", "\n"])), function (_a) {
+dt.span(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
+dt(Typography)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  color: #7a7a7a;\n  opacity: 0.7;\n"], ["\n  color: #7a7a7a;\n  opacity: 0.7;\n"])));
+dt.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
+  var hoverBackground = _a.hoverBackground;
+  return hoverBackground || 'rgba(0, 0, 0, 0.1)';
+}, function (_a) {
+  var $hoverColor = _a.$hoverColor;
+  return $hoverColor && "svg path {\n          fill: ".concat($hoverColor, ";\n           }");
+});
+dt.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"], ["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"])));
+dt.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  margin-top: 30px;\n\n  ", "\n"], ["\n  margin-top: 30px;\n\n  ", "\n"])), function (_a) {
   var $isGrid = _a.$isGrid;
   return !$isGrid ? "\n      .card {\n          grid-template-columns:none\n      }\n    " : "\n      .card {\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n\n\n        @media (max-width: 1450px) {\n          grid-template-columns: repeat(3, 1fr);\n        }\n      }\n    ";
 });
-var CardActionBar = dt.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])), function (_a) {
+var CardActionBar = dt.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])), function (_a) {
   var $switched = _a.$switched;
   return $switched ? "\n    top: 0px;\n    left: 0px;\n    grid-template-columns: 1fr 35px;\n  " : "\n    bottom: 0px;\n    right: 0px;\n    justify-content: end;\n    grid-template-columns: 35px 35px;\n  ";
 });
-var StylesCardWrapper = dt.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"])), function (_a) {
+var StylesCardWrapper = dt.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"])), function (_a) {
   var $canOpen = _a.$canOpen;
-  return $canOpen ? "pointer" : "default";
+  return $canOpen ? 'pointer' : 'default';
 });
-var StyledChecked = dt.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"])));
-dt.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"])));
-var CourseStatusContainer = dt.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
+var StyledChecked = dt.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"])));
+dt.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"])));
+var CourseStatusContainer = dt.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
   var $status = _a.$status;
-  return !$status ? "#EA382A" : "#00905E";
+  return !$status ? '#EA382A' : '#00905E';
 });
-dt.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"])));
-var TooltipContent = dt.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"])));
-var StyledCardBottomContainer = dt.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"], ["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"])));
-var StyledActionsContainer = dt.div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"])));
-var StyledActionItem = dt.span(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
+dt.div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"])));
+var TooltipContent = dt.div(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"])));
+var StyledCardBottomContainer = dt.div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"], ["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"])));
+var StyledActionsContainer = dt.div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"])));
+var StyledActionItem = dt.span(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
   var disabled = _a.disabled;
-  return disabled ? "default" : "pointer";
+  return disabled ? 'default' : 'pointer';
 }, function (_a) {
   var disabled = _a.disabled;
-  return disabled ? "#ccc" : "#68707a";
+  return disabled ? '#ccc' : '#68707a';
 }, function (_a) {
   var disabled = _a.disabled;
-  return disabled ? "#ccc" : "#68707a";
+  return disabled ? '#ccc' : '#68707a';
 }, function (_a) {
   var disabled = _a.disabled,
     _b = _a.color,
-    color = _b === undefined ? "#68707a" : _b;
-  return disabled ? "#ccc" : color;
+    color = _b === undefined ? '#68707a' : _b;
+  return disabled ? '#ccc' : color;
 }, function (_a) {
   var disabled = _a.disabled,
     _b = _a.color,
-    color = _b === undefined ? "#68707a" : _b;
-  return disabled ? "#ccc" : color;
+    color = _b === undefined ? '#68707a' : _b;
+  return disabled ? '#ccc' : color;
 });
-dt.span(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
-var ItemBlock = dt.div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
-var StyledItemWrapper = dt.div(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"])));
+dt.span(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
+var ItemBlock = dt.div(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
+var StyledItemWrapper = dt.div(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"
 // gridConfig
-var StyledCourseCardContent = dt.span(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
-var GridItemLessons = dt.div(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: \"\";\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"], ["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: \"\";\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"])), function (props) {
-  return props.checked ? "none" : "#edf8fa";
+])));
+// gridConfig
+var StyledCourseCardContent = dt.span(templateObject_22 || (templateObject_22 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
+var GridItemLessons = dt.div(templateObject_23 || (templateObject_23 = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"], ["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"])), function (props) {
+  return props.checked ? 'none' : '#edf8fa';
 }, function (props) {
-  return props.checked ? "#333333" : "#20a8c6";
+  return props.checked ? '#333333' : '#20a8c6';
 });
-var StyledToolTipContainer = dt.div(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
-dt.div(templateObject_22 || (templateObject_22 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"])), function (_a) {
+var StyledToolTipContainer = dt.div(templateObject_24 || (templateObject_24 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+dt.div(templateObject_25 || (templateObject_25 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"])), function (_a) {
   var disabled = _a.disabled;
-  return disabled ? "0.5" : "1";
+  return disabled ? '0.5' : '1';
 });
-dt.div(templateObject_23 || (templateObject_23 = __makeTemplateObject(["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"], ["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"])));
-var GridItemContent = dt.section(templateObject_24 || (templateObject_24 = __makeTemplateObject(["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"], ["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"])));
-var GridItemWrapper = dt.div(templateObject_25 || (templateObject_25 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"])));
-dt.div(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"], ["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"])));
-dt.div(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"], ["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"])));
-var GridItemImage = dt.figure(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"], ["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"])));
-var GridItem = dt.div(templateObject_29 || (templateObject_29 = __makeTemplateObject(["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"], ["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"])), function (_a) {
+dt.div(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"], ["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"])));
+var GridItemContent = dt.section(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"], ["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"])));
+var GridItemWrapper = dt.div(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"])));
+dt.div(templateObject_29 || (templateObject_29 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"], ["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"])));
+dt.div(templateObject_30 || (templateObject_30 = __makeTemplateObject(["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"], ["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"])));
+var GridItemImage = dt.figure(templateObject_31 || (templateObject_31 = __makeTemplateObject(["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"], ["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"])));
+var GridItem = dt.div(templateObject_32 || (templateObject_32 = __makeTemplateObject(["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"], ["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"])), function (_a) {
   var $isFromUser = _a.$isFromUser;
-  return $isFromUser && "\n  figure {\n    position: relative;\n    &:after {\n      content: 'View Analytics';\n      position: absolute;\n      top: 0;\n      opacity: 0;\n      color: #06c68f;\n      left: 0;\n      font-size: 24px;\n      font-weight: 700;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: rgba(255, 255, 255, 0.9);\n      width: 100%;\n      height: 100%;\n      transition: opacity 0.3s ease;\n      z-index: 10;\n    }\n  }\n\n  &:hover {\n    figure {\n      &:after {\n        opacity: 1;\n      }\n    }\n  }\n  " || "";
+  return $isFromUser && "\n  figure {\n    position: relative;\n    &:after {\n      content: 'View Analytics';\n      position: absolute;\n      top: 0;\n      opacity: 0;\n      color: #06c68f;\n      left: 0;\n      font-size: 24px;\n      font-weight: 700;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: rgba(255, 255, 255, 0.9);\n      width: 100%;\n      height: 100%;\n      transition: opacity 0.3s ease;\n      z-index: 10;\n    }\n  }\n\n  &:hover {\n    figure {\n      &:after {\n        opacity: 1;\n      }\n    }\n  }\n  " || '';
 });
-styled("div")(function (_a) {
+styled('div')(function (_a) {
   var _b;
   var theme = _a.theme;
   return _b = {}, _b["& .CourseLayout-paper"] = {
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3)
   }, _b;
 });
-var templateObject_1$1, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28, templateObject_29;
+var templateObject_1$1, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28, templateObject_29, templateObject_30, templateObject_31, templateObject_32;
 
 var TooltipHeight = function TooltipHeight(_a) {
   var text = _a.text,
@@ -19396,20 +19722,20 @@ var EditSVG = function EditSVG(_a) {
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
-    width: "24",
-    height: "24",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg",
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
     className: className,
     onClick: onClick
   }, props, {
     children: [jsxRuntimeExports.jsx("path", {
-      d: "M22.5 19.5H1.5V21H22.5V19.5Z",
-      fill: "#020210"
+      d: 'M22.5 19.5H1.5V21H22.5V19.5Z',
+      fill: '#020210'
     }), jsxRuntimeExports.jsx("path", {
-      d: "M19.05 6.75C19.65 6.15 19.65 5.25 19.05 4.65L16.35 1.95C15.75 1.35 14.85 1.35 14.25 1.95L3 13.2V18H7.8L19.05 6.75ZM15.3 3L18 5.7L15.75 7.95L13.05 5.25L15.3 3ZM4.5 16.5V13.8L12 6.3L14.7 9L7.2 16.5H4.5Z",
-      fill: "#020210"
+      d: 'M19.05 6.75C19.65 6.15 19.65 5.25 19.05 4.65L16.35 1.95C15.75 1.35 14.85 1.35 14.25 1.95L3 13.2V18H7.8L19.05 6.75ZM15.3 3L18 5.7L15.75 7.95L13.05 5.25L15.3 3ZM4.5 16.5V13.8L12 6.3L14.7 9L7.2 16.5H4.5Z',
+      fill: '#020210'
     })]
   }));
 };
@@ -19418,24 +19744,38 @@ var PlayButtonSVG = function PlayButtonSVG(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
-  return jsxRuntimeExports.jsx("svg", __assign({
-    width: "28",
-    height: "28",
-    viewBox: "0 0 28 28",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg",
-    className: className,
-    onClick: onClick
-  }, props, {
-    children: jsxRuntimeExports.jsx("g", {
-      id: "Play--filled--alt",
-      children: jsxRuntimeExports.jsx("path", {
-        id: "Vector",
-        d: "M5.99972 24.2863C5.77239 24.2863 5.55438 24.196 5.39363 24.0353C5.23288 23.8745 5.14258 23.6565 5.14258 23.4292V4.57205C5.14257 4.42309 5.18137 4.27671 5.25517 4.14732C5.32897 4.01793 5.43522 3.91001 5.56343 3.83419C5.69165 3.75837 5.83741 3.71727 5.98635 3.71495C6.13529 3.71262 6.28226 3.74915 6.41278 3.82094L23.5556 13.2495C23.6901 13.3235 23.8023 13.4322 23.8804 13.5643C23.9585 13.6964 23.9998 13.8471 23.9998 14.0006C23.9998 14.1541 23.9585 14.3047 23.8804 14.4369C23.8023 14.569 23.6901 14.6777 23.5556 14.7516L6.41278 24.1802C6.28622 24.2498 6.14415 24.2863 5.99972 24.2863Z",
-        fill: "white"
+  return jsxRuntimeExports.jsx("svg", {
+    version: '1.1',
+    xmlns: 'http://www.w3.org/2000/svg',
+    width: '24',
+    height: '24',
+    viewBox: '0,0,256,256',
+    children: jsxRuntimeExports.jsx("g", __assign({
+      "fill-opacity": '0.52941',
+      fill: '#020210',
+      "fill-rule": 'nonzero',
+      stroke: 'none',
+      "stroke-width": '1',
+      "stroke-linecap": 'butt',
+      "stroke-linejoin": 'miter',
+      "stroke-miterlimit": '10',
+      "stroke-dasharray": '',
+      "stroke-dashoffset": '0',
+      "font-family": 'none',
+      "font-weight": 'none',
+      "font-size": 'none',
+      "text-anchor": 'none',
+      className: className,
+      onClick: onClick
+    }, props, {
+      children: jsxRuntimeExports.jsx("g", {
+        transform: 'translate(-8,-0.00053) scale(10.66667,10.66667)',
+        children: jsxRuntimeExports.jsx("path", {
+          d: 'M5.25,21.0001c-0.19891,0 -0.38968,-0.0791 -0.53033,-0.2197c-0.14065,-0.1407 -0.21967,-0.3314 -0.21967,-0.5303v-16.50004c-0.00001,-0.13034 0.03395,-0.25843 0.09852,-0.37164c0.06458,-0.11322 0.15754,-0.20765 0.26973,-0.27399c0.11219,-0.06635 0.23973,-0.10231 0.37005,-0.10434c0.13032,-0.00203 0.25892,0.02993 0.37313,0.09274l14.99997,8.24997c0.1177,0.0647 0.2159,0.1599 0.2842,0.2755c0.0684,0.1156 0.1044,0.2474 0.1044,0.3817c0,0.1343 -0.036,0.2662 -0.1044,0.3818c-0.0683,0.1156 -0.1665,0.2107 -0.2842,0.2754l-14.99997,8.25c-0.11074,0.0609 -0.23506,0.0928 -0.36143,0.0929zM6,5.01823v13.96347l12.6936,-6.9816z'
+        })
       })
-    })
-  }));
+    }))
+  });
 };
 
 var UnlockSVG = function UnlockSVG(_a) {
@@ -19720,22 +20060,22 @@ var MoreVertRoundedIcon = function MoreVertRoundedIcon(_a) {
 };
 
 var GridActionMenu = function GridActionMenu(props) {
-  var _a, _b;
-  var _c = useState(null),
-    anchorEl = _c[0],
-    setAnchorEl = _c[1];
+  var _a, _b, _c;
+  var _d = useState(null),
+    anchorEl = _d[0],
+    setAnchorEl = _d[1];
   var handleClick = function handleClick(event) {
     setAnchorEl(event.currentTarget);
   };
   return jsxRuntimeExports.jsx("div", {
-    children: props.actionConfig.length > 0 && jsxRuntimeExports.jsxs(Container, {
+    children: props.actionConfig && props.actionConfig.length > 0 && jsxRuntimeExports.jsxs(Container, {
       onClick: function onClick(e) {
         return e.stopPropagation();
       },
       children: [jsxRuntimeExports.jsx("div", {
         onClick: handleClick,
         children: (_a = props.button) !== null && _a !== undefined ? _a : jsxRuntimeExports.jsx(StyledIconButton, {
-          className: "more",
+          className: 'more',
           children: (_b = props.icon) !== null && _b !== undefined ? _b : jsxRuntimeExports.jsx(MoreVertRoundedIcon, {})
         })
       }), jsxRuntimeExports.jsx(Popover, {
@@ -19745,15 +20085,15 @@ var GridActionMenu = function GridActionMenu(props) {
           setAnchorEl(null);
         },
         anchorOrigin: {
-          vertical: "bottom",
-          horizontal: "center"
+          vertical: 'bottom',
+          horizontal: 'center'
         },
         transformOrigin: {
-          vertical: "top",
-          horizontal: "center"
+          vertical: 'top',
+          horizontal: 'center'
         },
         children: jsxRuntimeExports.jsx(ActionsContent, {
-          children: props.actionConfig.map(function (i, index) {
+          children: (_c = props === null || props === undefined ? undefined : props.actionConfig) === null || _c === undefined ? undefined : _c.map(function (i, index) {
             return jsxRuntimeExports.jsx("div", {
               onClick: function onClick() {
                 return setAnchorEl(null);
@@ -19792,7 +20132,7 @@ var CourseCard = function CourseCard(_a) {
     state = _a.state;
   var t = useTranslation().t;
   return jsxRuntimeExports.jsxs(StylesCardWrapper, {
-    className: "wrapper course-card",
+    className: 'wrapper course-card',
     "$canOpen": $canOpen,
     onClick: function onClick() {
       if ($canOpen) {
@@ -19804,20 +20144,20 @@ var CourseCard = function CourseCard(_a) {
       }
     },
     children: [fromWizard && selectedItem && selectedItem.includes(item.id) && jsxRuntimeExports.jsx(StyledChecked, {}), jsxRuntimeExports.jsx(CardActionBar, {
-      "$switched": !!(gridStyle === "card"),
+      "$switched": !!(gridStyle === 'card'),
       children: jsxRuntimeExports.jsxs("div", {
         style: {
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center"
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
         },
         children: [jsxRuntimeExports.jsxs("div", {
           style: {
             zIndex: 3,
-            alignItems: fromWizard ? "center" : "",
-            transform: fromWizard ? "none" : "scale(1)",
-            display: fromCertificateBuilder ? "none" : fromWizard ? "flex" : "block"
+            alignItems: fromWizard ? 'center' : '',
+            transform: fromWizard ? 'none' : 'scale(1)',
+            display: fromCertificateBuilder ? 'none' : fromWizard ? 'flex' : 'block'
           },
           children: [fromWizard && jsxRuntimeExports.jsx(Checkbox, {
             onChange: function onChange() {
@@ -19825,11 +20165,11 @@ var CourseCard = function CourseCard(_a) {
             },
             checked: selectedItem && selectedItem.includes(item.id)
           }), jsxRuntimeExports.jsx(CourseStatusContainer, {
-            "$status": item.state === "published",
-            children: item.finished === 3 ? getCourseState(item.state) : t("courses_layout.draft")
+            "$status": item.state === 'published',
+            children: item.finished === 3 ? getCourseState(item.state || '') : t('courses_layout.draft')
           })]
         }), actions && actions.length > 0 && jsxRuntimeExports.jsx("div", {
-          className: "action_block",
+          className: 'action_block',
           children: jsxRuntimeExports.jsx(GridActionMenu, {
             actionConfig: actions,
             row: item
@@ -19840,27 +20180,27 @@ var CourseCard = function CourseCard(_a) {
       "$isFromUser": Boolean(groupId || user),
       children: [jsxRuntimeExports.jsx(GridItemImage, {
         children: jsxRuntimeExports.jsx("img", {
-          src: item.avatar && item.avatar.link || "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHw6OeiQMdYX_iXu8otmzMnlbD07xEWr87EMnJ5r4X9vYC-kNr&usqp=CAU"
+          src: item.avatar && item.avatar.link || 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHw6OeiQMdYX_iXu8otmzMnlbD07xEWr87EMnJ5r4X9vYC-kNr&usqp=CAU'
         })
       }), jsxRuntimeExports.jsxs(GridItemContent, {
         children: [jsxRuntimeExports.jsxs(GridItemWrapper, {
           style: {
-            justifyContent: "space-between"
+            justifyContent: 'space-between'
           },
           children: [jsxRuntimeExports.jsx(ItemBlock, {
             children: item.level && jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-              children: [t("course_details.level"), ":", " ", getCourseLevel(item.level)]
+              children: [t('course_details.level'), ": ", getCourseLevel(item.level)]
             })
           }), jsxRuntimeExports.jsxs(ItemBlock, {
             style: {
-              color: "green"
+              color: 'green'
             },
-            children: [item.currency, item.price ? item.price.includes(".") ? item.price : "".concat(item.price, ".00") : t("courses_layout.free")]
+            children: [item.currency, item.price ? item.price.includes('.') ? item.price : "".concat(item.price, ".00") : t('courses_layout.free')]
           })]
         }), jsxRuntimeExports.jsx(GridItemContentHeader, {
           children: jsxRuntimeExports.jsx(GridItemTitle, {
             style: {
-              marginTop: "8px"
+              marginTop: '8px'
             },
             children: jsxRuntimeExports.jsx(TooltipHeight, {
               text: item.name,
@@ -19871,108 +20211,109 @@ var CourseCard = function CourseCard(_a) {
       })]
     }), jsxRuntimeExports.jsx(StyledCardBottomContainer, {
       style: {
-        textTransform: "capitalize"
+        textTransform: 'capitalize'
       },
       children: jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
         children: [jsxRuntimeExports.jsxs(GridItemLessons, {
           checked: fromWizard && selectedItem && selectedItem.includes(item.id) ? true : false,
           children: [jsxRuntimeExports.jsxs(StyledCourseCardContent, {
-            children: [item.numberOfModules, " ", t("general.modules")]
+            children: [item.numberOfModules, " ", t('general.modules')]
           }), jsxRuntimeExports.jsxs(StyledCourseCardContent, {
-            children: [item.numberOfLessons, " ", t("general.lessons")]
+            children: [item.numberOfLessons, " ", t('general.lessons')]
           }), jsxRuntimeExports.jsx(StyledCourseCardContent, {
             children: formatDuration(item.duration || 0)
           })]
         }), actionHandler && !item.isBought && jsxRuntimeExports.jsxs(StyledActionsContainer, {
           children: [jsxRuntimeExports.jsxs(StyledActionItem, {
-            color: "#20a8c6",
+            color: '#20a8c6',
             onClick: function onClick(e) {
-              if (typeof actionHandler === "function") {
-                actionHandler("editCourse", item);
+              if (typeof actionHandler === 'function') {
+                actionHandler('editCourse', item);
               }
               e.stopPropagation();
             },
             style: {
-              borderRight: "1px solid #D6DAE0"
+              borderRight: '1px solid #D6DAE0'
             },
-            children: [jsxRuntimeExports.jsx(EditSVG, {}), " ", t("actions.edit")]
+            children: [jsxRuntimeExports.jsx(EditSVG, {}), " ", t('actions.edit')]
           }), jsxRuntimeExports.jsxs(StyledActionItem, {
-            color: "#d0524b",
+            color: '#d0524b',
             disabled: !item.video,
             onClick: function onClick(e) {
-              if (item.video && typeof actionHandler === "function") {
-                actionHandler("playIntro", item);
+              if (item.video && typeof actionHandler === 'function') {
+                actionHandler('playIntro', item);
                 e.stopPropagation();
               }
               e.stopPropagation();
             },
-            children: [jsxRuntimeExports.jsx(PlayButtonSVG, {}), " ", t("actions.play_intro")]
+            children: [jsxRuntimeExports.jsx(PlayButtonSVG, {}), " ", t('actions.play_intro')]
           }), companyMode && activeTab != 0 && jsxRuntimeExports.jsxs(StyledActionItem, {
             disabled: ((_b = state.userPermission) === null || _b === undefined ? undefined : _b.publishCourse) === false,
-            color: item.state === "published" ? " #EA382A" : "#00905E",
+            color: item.state === 'published' ? ' #EA382A' : '#00905E',
             style: {
-              borderLeft: "1px solid #D6DAE0"
+              borderLeft: '1px solid #D6DAE0'
             },
             onClick: function onClick(e) {
               if (actionHandler) {
-                actionHandler("publishedUnPublished", item.id, item.state === "unpublished" ? "published" : "unpublished");
+                actionHandler('publishedUnPublished', item.id, item.state === 'unpublished' ? 'published' : 'unpublished');
               }
               e.stopPropagation();
             },
-            children: [jsxRuntimeExports.jsx(UnlockSVG, {}), item.state === "published" ? t("actions.unpublish") : t("actions.publish")]
+            children: [jsxRuntimeExports.jsx(UnlockSVG, {}), item.state === 'published' ? t('actions.unpublish') : t('actions.publish')]
           })]
         })]
       })
     }), withTooltips && jsxRuntimeExports.jsxs(StyledToolTipContainer, {
       children: [jsxRuntimeExports.jsx("hr", {
         style: {
-          opacity: ".1",
+          opacity: '.1',
           margin: 0
         }
       }), jsxRuntimeExports.jsxs(GridItemWrapper, {
         style: {
-          justifyContent: "space-around",
-          flexDirection: "row"
+          justifyContent: 'space-around',
+          flexDirection: 'row'
         },
         children: [jsxRuntimeExports.jsx(Tooltip, {
           arrow: true,
           title: jsxRuntimeExports.jsxs(TooltipContent, {
             children: [jsxRuntimeExports.jsx("span", {
-              children: ((_c = item.coaches) === null || _c === undefined ? undefined : _c.length) && t("general.coaches") || t("general.no_coaches")
+              children: ((_c = item.coaches) === null || _c === undefined ? undefined : _c.length) && t('general.coaches') || t('general.no_coaches')
             }), jsxRuntimeExports.jsx("div", {
               children: item.coaches && item.coaches.map(function (i, index) {
-                return "".concat(i.firstName, " ").concat(i.lastName, " ").concat(index !== 0 && "," || "", " ");
+                return "".concat(i.firstName, " ").concat(i.lastName, " ").concat(index !== 0 && "," || '', " ");
               }) || 0
             })]
           }),
           children: jsxRuntimeExports.jsx(IconButton, {
             style: {
-              padding: "9px"
+              padding: '9px'
             },
             children: jsxRuntimeExports.jsx(RecordVoiceOverOutlined, {
-              fontSize: "small"
+              fontSize: 'small'
             })
           })
         }), jsxRuntimeExports.jsx(Tooltip, {
           arrow: true,
           title: jsxRuntimeExports.jsxs(TooltipContent, {
             children: [jsxRuntimeExports.jsxs("span", {
-              children: [((_d = item.groups) === null || _d === undefined ? undefined : _d.length) || 0, " ", t("general.groups")]
+              children: [((_d = item.groups) === null || _d === undefined ? undefined : _d.length) || 0, " ", t('general.groups')]
             }), jsxRuntimeExports.jsxs("div", {
               children: [item.groups && item.groups.map(function (group, index) {
-                return "\n                        ".concat(group.name, "\n                        ").concat(index === item.groups.length - 1 ? "" : ",", "\n                      ");
+                var _a, _b;
+                return "\n                        ".concat(group.name, "\n                    ").concat(index === ((_b = (_a = item.groups) === null || _a === undefined ? undefined : _a.length) !== null && _b !== undefined ? _b : 0) - 1 ? '' : ',', "\n                      ");
               }), $canOpen && item.originalId && jsxRuntimeExports.jsx("span", {
-                className: "tooltip-text",
-                children: t("general.purchased_course_groups_tooltip")
+                className: 'tooltip-text',
+                children: t('general.purchased_course_groups_tooltip')
               })]
             })]
           }),
           children: jsxRuntimeExports.jsx(IconButton, {
             style: {
-              padding: "9px"
+              padding: '9px'
             },
             children: jsxRuntimeExports.jsx(GroupsOutlined, {
-              fontSize: "small"
+              fontSize: 'small'
             })
           })
         }), jsxRuntimeExports.jsx(Tooltip, {
@@ -19980,19 +20321,19 @@ var CourseCard = function CourseCard(_a) {
           title: jsxRuntimeExports.jsx(TooltipContent, {
             children: jsxRuntimeExports.jsxs("div", {
               children: [jsxRuntimeExports.jsxs("span", {
-                children: [item.numberOfStudents || 0, " ", t("general.students")]
+                children: [item.numberOfStudents || 0, " ", t('general.students')]
               }), $canOpen && item.originalId && jsxRuntimeExports.jsx("span", {
-                className: "tooltip-text",
-                children: t("general.purchased_course_students_tooltip")
+                className: 'tooltip-text',
+                children: t('general.purchased_course_students_tooltip')
               })]
             })
           }),
           children: jsxRuntimeExports.jsx(IconButton, {
             style: {
-              padding: "9px"
+              padding: '9px'
             },
             children: jsxRuntimeExports.jsx(GroupOutlined, {
-              fontSize: "small"
+              fontSize: 'small'
             })
           })
         })]
@@ -20001,5 +20342,5 @@ var CourseCard = function CourseCard(_a) {
   }, item.id);
 };
 
-export { Button, CourseCard };
+export { Button, CourseCard, GridActionMenu };
 //# sourceMappingURL=index.esm.js.map
