@@ -16,7 +16,7 @@ export interface IKebabAction {
     component: React.JSX.Element;
 }
 export interface IGridActionMenuProps {
-    actionConfig: IAction[];
+    actionConfig?: IAction[];
     row?: any;
     icon?: JSX.Element;
     button?: JSX.Element;
