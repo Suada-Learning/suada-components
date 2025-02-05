@@ -1,18 +1,17 @@
 import React from 'react'
 import { Preview } from '@storybook/react'
 import { GlobalStyle } from '../src/global.styles'
-import { CustomThemeProvider } from '../src/theme/ThemeProvider'
 import { themes } from '../src/theme/Theme'
+import { ThemeProvider } from 'styled-components'
 
 const preview: Preview = {
   decorators: [
     (Story, context) => {
-      const selectedTheme = themes[context.globals.theme] || themes.light
       return (
-        <CustomThemeProvider themeName={selectedTheme}>
+        <ThemeProvider theme={themes.dark}>
           <GlobalStyle />
           <Story />
-        </CustomThemeProvider>
+        </ThemeProvider>
       )
     },
   ],

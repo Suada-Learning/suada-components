@@ -2,7 +2,7 @@ import type { StoryObj } from '@storybook/react';
 import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from './Button.interface';
 declare const meta: {
     title: string;
-    component: ({ type, size, label, iconLeft, iconRight, disabled, customStyles, onClick, htmlType, className, themes, }: import("./Button.interface").ButtonState) => import("react").ReactElement;
+    component: ({ type, size, label, iconLeft, iconRight, disabled, customStyles, onClick, htmlType, className, }: import("./Button.interface").ButtonState) => import("react").ReactElement;
     parameters: {
         layout: string;
     };

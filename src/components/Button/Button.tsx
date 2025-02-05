@@ -13,7 +13,6 @@ export const Button = ({
   onClick,
   htmlType = HtmlButtonTypeEnum.BUTTON,
   className,
-  themes,
 }: ButtonState): ReactElement => {
   return (
     <StyledButton
@@ -24,7 +23,6 @@ export const Button = ({
       onClick={onClick}
       type={htmlType}
       className={className}
-      theme={themes}
     >
       {iconLeft}
       {label}

@@ -1733,8 +1733,7 @@ var Button = function Button(_a) {
     onClick = _a.onClick,
     _b = _a.htmlType,
     htmlType = _b === undefined ? HtmlButtonTypeEnum.BUTTON : _b,
-    className = _a.className,
-    themes = _a.themes;
+    className = _a.className;
   return jsxRuntimeExports.jsxs(StyledButton, {
     "$type": type,
     "$size": size,
@@ -1743,7 +1742,6 @@ var Button = function Button(_a) {
     onClick: onClick,
     type: htmlType,
     className: className,
-    theme: themes,
     children: [iconLeft, label, iconRight]
   });
 };
