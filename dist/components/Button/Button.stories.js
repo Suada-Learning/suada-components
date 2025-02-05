@@ -1,8 +1,6 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Button } from '.';
 import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from './Button.interface';
-import { GlobalStyle } from '../../global.styles';
-import { CustomThemeProvider } from '../../theme/ThemeProvider';
+import { themes } from '../../theme/Theme';
 // Storybook metadata
 var meta = {
     title: 'Components/Button',
@@ -10,15 +8,12 @@ var meta = {
     parameters: {
         layout: 'centered',
     },
-    decorators: [
-        function (Story) { return (_jsxs(CustomThemeProvider, { children: [_jsx(GlobalStyle, {}), _jsx(Story, {})] })); },
-    ],
     tags: ['autodocs'],
     argTypes: {
         type: {
             control: {
                 type: 'select',
-                options: ['Secondary', 'Primary'],
+                options: Object.values(ButtonTypeEnum),
             },
         },
         size: {
@@ -53,6 +48,12 @@ var meta = {
         },
         onClick: {
             action: 'clicked',
+        },
+        themes: {
+            control: { type: 'select' },
+            options: Object.keys(themes),
+            mapping: themes,
+            defaultValue: 'light',
         },
     },
     args: {

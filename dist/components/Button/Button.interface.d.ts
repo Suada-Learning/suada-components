@@ -1,4 +1,4 @@
-import { ReactElement, CSSProperties, ReactNode } from "react";
+import { ReactElement, CSSProperties, ReactNode } from 'react';
 export declare enum HtmlButtonTypeEnum {
     SUBMIT = "submit",
     RESET = "reset",
@@ -17,9 +17,9 @@ export declare enum ButtonSizeEnum {
     SM = "small",
     LG = "large"
 }
-export type HtmlButtonType = "submit" | "reset" | "button";
-export type ButtonSize = "small" | "large";
-export type ButtonType = "primary" | "secondary" | "ghost" | "negative" | "positive" | "dark" | "text";
+export type HtmlButtonType = 'submit' | 'reset' | 'button';
+export type ButtonSize = 'small' | 'large';
+export type ButtonType = 'primary' | 'secondary' | 'ghost' | 'negative' | 'positive' | 'dark' | 'text';
 export interface ButtonState {
     type: ButtonType;
     size: ButtonSize;
@@ -32,6 +32,7 @@ export interface ButtonState {
     htmlType?: HtmlButtonType;
     id?: string | number;
     className?: string;
+    themes?: any;
 }
 export interface StyledButtonProps {
     $type: ButtonType;

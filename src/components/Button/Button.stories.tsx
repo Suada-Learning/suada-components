@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '.'
 import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from './Button.interface'
-import { GlobalStyle } from '../../global.styles'
-import { CustomThemeProvider } from '../../theme/ThemeProvider'
+import { themes } from '../../theme/Theme'
+
 // Storybook metadata
 const meta = {
   title: 'Components/Button',
@@ -10,20 +10,12 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [
-    Story => (
-      <CustomThemeProvider>
-        <GlobalStyle />
-        <Story />
-      </CustomThemeProvider>
-    ),
-  ],
   tags: ['autodocs'],
   argTypes: {
     type: {
       control: {
         type: 'select',
-        options: ['Secondary', 'Primary'],
+        options: Object.values(ButtonTypeEnum),
       },
     },
     size: {
@@ -58,6 +50,12 @@ const meta = {
     },
     onClick: {
       action: 'clicked',
+    },
+    themes: {
+      control: { type: 'select' },
+      options: Object.keys(themes),
+      mapping: themes,
+      defaultValue: 'light',
     },
   },
   args: {
