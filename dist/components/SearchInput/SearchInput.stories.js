@@ -11,8 +11,8 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { SearchInput } from './SearchInput';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle, theme } from '../../global.styles';
+import { GlobalStyle } from '../../global.styles';
+import { CustomThemeProvider } from '../../theme/ThemeProvider';
 var mockFunctions = {
     onSearchSubmit: function (event) {
         event.preventDefault();
@@ -28,7 +28,7 @@ var meta = {
     component: SearchInput,
     tags: ['autodocs'],
     decorators: [
-        function (Story) { return (_jsxs(ThemeProvider, { theme: theme, children: [_jsx(GlobalStyle, {}), _jsx(Story, {})] })); },
+        function (Story) { return (_jsxs(CustomThemeProvider, { children: [_jsx(GlobalStyle, {}), _jsx(Story, {})] })); },
     ],
     parameters: {
         layout: 'centered',

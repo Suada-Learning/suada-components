@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CourseCard } from './CourseCard'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme } from '../../global.styles'
+import { GlobalStyle } from '../../global.styles'
 import { StylesCardWrapper } from './CourseCard.styles'
 import { ICourse } from './CourseCard.interface'
 import { actionConfig } from './CourseCardActionsConfig'
+import { CustomThemeProvider } from '../../theme/ThemeProvider'
 
 const mockItem: ICourse = {
   id: '1',
@@ -53,12 +53,12 @@ const meta: Meta<typeof CourseCard> = {
   tags: ['autodocs'],
   decorators: [
     Story => (
-      <ThemeProvider theme={theme}>
+      <CustomThemeProvider>
         <GlobalStyle />
         <StylesCardWrapper $canOpen={true}>
           <Story />
         </StylesCardWrapper>
-      </ThemeProvider>
+      </CustomThemeProvider>
     ),
   ],
   parameters: {

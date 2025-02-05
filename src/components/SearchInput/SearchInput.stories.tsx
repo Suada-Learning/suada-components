@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { SearchInput } from './SearchInput'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme } from '../../global.styles'
+import { GlobalStyle } from '../../global.styles'
+import { CustomThemeProvider } from '../../theme/ThemeProvider'
 
 const mockFunctions = {
   onSearchSubmit: (event: React.FormEvent) => {
@@ -20,10 +20,10 @@ const meta: Meta<typeof SearchInput> = {
   tags: ['autodocs'],
   decorators: [
     Story => (
-      <ThemeProvider theme={theme}>
+      <CustomThemeProvider>
         <GlobalStyle />
         <Story />
-      </ThemeProvider>
+      </CustomThemeProvider>
     ),
   ],
   parameters: {
