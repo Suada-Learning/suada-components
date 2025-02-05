@@ -11,10 +11,10 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { CourseCard } from './CourseCard';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle, theme } from '../../global.styles';
+import { GlobalStyle } from '../../global.styles';
 import { StylesCardWrapper } from './CourseCard.styles';
 import { actionConfig } from './CourseCardActionsConfig';
+import { CustomThemeProvider } from '../../theme/ThemeProvider';
 var mockItem = {
     id: '1',
     name: 'Sample Course',
@@ -55,7 +55,7 @@ var meta = {
     component: CourseCard,
     tags: ['autodocs'],
     decorators: [
-        function (Story) { return (_jsxs(ThemeProvider, { theme: theme, children: [_jsx(GlobalStyle, {}), _jsx(StylesCardWrapper, { "$canOpen": true, children: _jsx(Story, {}) })] })); },
+        function (Story) { return (_jsxs(CustomThemeProvider, { children: [_jsx(GlobalStyle, {}), _jsx(StylesCardWrapper, { "$canOpen": true, children: _jsx(Story, {}) })] })); },
     ],
     parameters: {
         layout: 'centered',

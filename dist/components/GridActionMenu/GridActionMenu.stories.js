@@ -1,9 +1,9 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { GridActionMenu } from './GridActionMenu';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle, theme } from '../../global.styles';
+import { GlobalStyle } from '../../global.styles';
 import { Container } from './GridActionMenu.styles';
 import { actionConfig } from '../CourseCard/CourseCardActionsConfig';
+import { CustomThemeProvider } from '../../theme/ThemeProvider';
 var mockRow = {
     id: 1,
     isBought: false,
@@ -17,7 +17,7 @@ var meta = {
     component: GridActionMenu,
     tags: ['autodocs'],
     decorators: [
-        function (Story) { return (_jsxs(ThemeProvider, { theme: theme, children: [_jsx(GlobalStyle, {}), _jsx(Container, { children: _jsx(Story, {}) })] })); },
+        function (Story) { return (_jsxs(CustomThemeProvider, { children: [_jsx(GlobalStyle, {}), _jsx(Container, { children: _jsx(Story, {}) })] })); },
     ],
     parameters: {
         layout: 'centered',

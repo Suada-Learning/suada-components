@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { GridActionMenu } from './GridActionMenu'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme } from '../../global.styles'
+import { GlobalStyle } from '../../global.styles'
 import { Container } from './GridActionMenu.styles'
 import { actionConfig } from '../CourseCard/CourseCardActionsConfig'
+import { CustomThemeProvider } from '../../theme/ThemeProvider'
 
 const mockRow = {
   id: 1,
@@ -21,12 +21,12 @@ const meta: Meta<typeof GridActionMenu> = {
   tags: ['autodocs'],
   decorators: [
     Story => (
-      <ThemeProvider theme={theme}>
+      <CustomThemeProvider>
         <GlobalStyle />
         <Container>
           <Story />
         </Container>
-      </ThemeProvider>
+      </CustomThemeProvider>
     ),
   ],
   parameters: {

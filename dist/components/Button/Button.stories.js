@@ -1,62 +1,62 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Button } from ".";
-import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum, } from "./Button.interface";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle, theme } from "../../global.styles";
+import { Button } from '.';
+import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from './Button.interface';
+import { GlobalStyle } from '../../global.styles';
+import { CustomThemeProvider } from '../../theme/ThemeProvider';
 // Storybook metadata
 var meta = {
-    title: "Components/Button",
+    title: 'Components/Button',
     component: Button,
     parameters: {
-        layout: "centered",
+        layout: 'centered',
     },
     decorators: [
-        function (Story) { return (_jsxs(ThemeProvider, { theme: theme, children: [_jsx(GlobalStyle, {}), _jsx(Story, {})] })); },
+        function (Story) { return (_jsxs(CustomThemeProvider, { children: [_jsx(GlobalStyle, {}), _jsx(Story, {})] })); },
     ],
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {
         type: {
             control: {
-                type: "select",
-                options: ["Secondary", "Primary"],
+                type: 'select',
+                options: ['Secondary', 'Primary'],
             },
         },
         size: {
             control: {
-                type: "select",
+                type: 'select',
                 options: Object.values(ButtonSizeEnum),
             },
         },
         htmlType: {
             control: {
-                type: "select",
+                type: 'select',
                 options: Object.values(HtmlButtonTypeEnum),
             },
         },
         disabled: {
-            control: { type: "boolean" },
+            control: { type: 'boolean' },
         },
         label: {
-            control: { type: "text" },
+            control: { type: 'text' },
         },
         iconLeft: {
-            control: { type: "object" },
+            control: { type: 'object' },
         },
         iconRight: {
-            control: { type: "object" },
+            control: { type: 'object' },
         },
         customStyles: {
-            control: { type: "object" },
+            control: { type: 'object' },
         },
         className: {
-            control: { type: "text" },
+            control: { type: 'text' },
         },
         onClick: {
-            action: "clicked",
+            action: 'clicked',
         },
     },
     args: {
-        onClick: function () { return console.log("Button clicked!"); },
+        onClick: function () { return console.log('Button clicked!'); },
     },
 };
 export default meta;
@@ -65,7 +65,7 @@ export var Primary = {
     args: {
         type: ButtonTypeEnum.PRIMARY,
         size: ButtonSizeEnum.SM,
-        label: "Primary Button",
+        label: 'Primary Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };
@@ -74,7 +74,7 @@ export var Secondary = {
     args: {
         type: ButtonTypeEnum.SECONDARY,
         size: ButtonSizeEnum.SM,
-        label: "Secondary Button",
+        label: 'Secondary Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };
@@ -83,7 +83,7 @@ export var Disabled = {
     args: {
         type: ButtonTypeEnum.PRIMARY,
         size: ButtonSizeEnum.SM,
-        label: "Disabled Button",
+        label: 'Disabled Button',
         disabled: true,
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
@@ -92,7 +92,7 @@ export var Positive = {
     args: {
         type: ButtonTypeEnum.POSITIVE,
         size: ButtonSizeEnum.SM,
-        label: "Success Button",
+        label: 'Success Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };
@@ -100,7 +100,7 @@ export var Negative = {
     args: {
         type: ButtonTypeEnum.NEGATIVE,
         size: ButtonSizeEnum.SM,
-        label: "Negative Button",
+        label: 'Negative Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };
@@ -108,7 +108,7 @@ export var Ghost = {
     args: {
         type: ButtonTypeEnum.GHOST,
         size: ButtonSizeEnum.SM,
-        label: "Ghost Button",
+        label: 'Ghost Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };
@@ -116,7 +116,7 @@ export var Dark = {
     args: {
         type: ButtonTypeEnum.DARK,
         size: ButtonSizeEnum.SM,
-        label: "Dark Button",
+        label: 'Dark Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };
@@ -124,7 +124,7 @@ export var Text = {
     args: {
         type: ButtonTypeEnum.TEXT,
         size: ButtonSizeEnum.SM,
-        label: "Text Button",
+        label: 'Text Button',
         htmlType: HtmlButtonTypeEnum.BUTTON,
     },
 };

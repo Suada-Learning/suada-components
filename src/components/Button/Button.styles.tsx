@@ -1,9 +1,5 @@
-import styled from "styled-components";
-import {
-  ButtonSizeEnum,
-  ButtonTypeEnum,
-  StyledButtonProps,
-} from "./Button.interface";
+import styled from 'styled-components'
+import { ButtonSizeEnum, ButtonTypeEnum, StyledButtonProps } from './Button.interface'
 
 export const StyledButton = styled.button<StyledButtonProps>`
   display: inline-flex;
@@ -37,126 +33,126 @@ export const StyledButton = styled.button<StyledButtonProps>`
           width: 159px;
           height: 40px;
           padding: 8px; 
-        `;
+        `
       case ButtonSizeEnum.LG:
         return `
           width: 167px;
           height: 48px;
           padding: 12px;
-        `;
+        `
       default:
-        return "";
+        return ''
     }
   }}
 
-  ${({ $type }): string => {
+  ${({ theme, $type }): string => {
     switch ($type) {
       case ButtonTypeEnum.PRIMARY:
         return `
-          color: #FFFFFF;
-          background-color: #08C694;
+          color: ${theme.colors.neutral[100]};
+          background-color: ${theme.colors.primary.main};
 
           & > svg > path {
-            fill: #FFFFFF;
+            fill: ${theme.colors.neutral[100]};
           }
 
           &:not(:disabled):hover {
-            background-color: #12A37A;    
+            background-color: ${theme.colors.primary[700]};    
           }
 
           &:disabled {
-            background: #B3B3B8; 
+            background: ${theme.colors.neutral[400]}; 
           }
-        `;
+        `
       case ButtonTypeEnum.SECONDARY:
         return `
-          border: 1px solid #08C694; 
-          color: #08C694;
+          border: 1px solid ${theme.colors.primary.main}; 
+          color: ${theme.colors.primary.main};
 
           & > svg > path {
-            fill: #08C694;
+            fill: ${theme.colors.primary.main};
           }
 
           &:not(:disabled):hover {
-            border: 1px solid #12A37A;
-            color: #12A37A;
+            border: 1px solid ${theme.colors.primary[700]};
+            color: ${theme.colors.primary[700]};
 
             & > svg > path {
-              fill: #12A37A;
+              fill: ${theme.colors.primary[700]};
             }
           }
 
           &:disabled {
-            border: 1px solid #B3B3B8; 
-            color: #B3B3B8; 
+            border: 1px solid ${theme.colors.neutral[400]}; 
+            color: ${theme.colors.neutral[400]}; 
 
             & > svg > path {
-              fill: #B3B3B8;
+              fill: ${theme.colors.neutral[400]};
             }
           }
-        `;
+        `
       case ButtonTypeEnum.GHOST:
         return `
           background-color: transparent;
-          color: #020210;
+          color: ${theme.colors.neutral[900]};
 
           & > svg > path {
-            fill: #020210;
+            fill: ${theme.colors.neutral[900]};
           }
 
           &:not(:disabled):hover {
-            background-color: #E7E9ED;
+            background-color: ${theme.colors.neutral[300]};
           }
 
           &:disabled {
-            color: #B3B3B8; 
+            color: ${theme.colors.neutral[400]}; 
             
             & > svg > path {
-              fill: #B3B3B8;
+              fill: ${theme.colors.neutral[400]};
             }
           }
-        `;
+        `
       case ButtonTypeEnum.NEGATIVE:
         return `
-          background-color: #EA382A;
-          color: #FFFFFF;
+          background-color: ${theme.colors.system.error.main};
+          color: ${theme.colors.neutral[100]};
 
           & > svg > path {
-            fill: #FFFFFF;
+            fill: ${theme.colors.neutral[100]};
           }
 
           &:not(:disabled):hover {
-            background-color: #C7493D;
+            background-color: ${theme.colors.system.error[700]};
           }
 
           &:disabled {
-            background: #E5908A; 
+            background: ${theme.colors.system.error[300]}; 
           }
-        `;
+        `
       case ButtonTypeEnum.POSITIVE:
         return `
-          background-color: #00905E;
-          color: #FFFFFF;
+          background-color: ${theme.colors.system.success.main};
+          color: ${theme.colors.neutral[100]};
 
           & > svg > path {
-            fill: #FFFFFF;
+            fill: ${theme.colors.neutral[100]};
           }
 
           &:not(:disabled):hover {
-            background-color: #12A37A;
+            background-color: ${theme.colors.system.success[700]};
           }
 
           &:disabled {
-            background: #72C4AC; 
+            background: ${theme.colors.system.success[300]}; 
           }
-        `;
+        `
       case ButtonTypeEnum.DARK:
         return `
-          border: 1px solid #020210; 
-          color: #020210;
+          border: 1px solid ${theme.colors.neutral[900]}; 
+          color: ${theme.colors.neutral[900]};
 
           & > svg > path {
-            fill: #020210;
+            fill: ${theme.colors.neutral[900]};
           }
 
           &:not(:disabled):hover {
@@ -164,40 +160,40 @@ export const StyledButton = styled.button<StyledButtonProps>`
           }
 
           &:disabled {
-            border: 1px solid #B3B3B8; 
-            color: #B3B3B8; 
+            border: 1px solid ${theme.colors.neutral[400]}; 
+            color: ${theme.colors.neutral[400]}; 
           }
-        `;
+        `
       case ButtonTypeEnum.TEXT:
         return `
           border: none; 
-          color: #020210;
+          color: ${theme.colors.neutral[900]};
           padding-top: 0;
           padding-bottom: 0;
           width: fit-content;
 
           & > svg > path {
-            fill: #020210;
+            fill: ${theme.colors.neutral[900]};
           }
 
           &:not(:disabled):hover {
-           color: #4F4E5B;
+           color: ${theme.colors.neutral[600]};
            
             & > svg > path {
-              fill: #4F4E5B;
+              fill: ${theme.colors.neutral[600]};
             }
           }
 
           &:disabled {
-            color: #B3B3B8; 
+            color: ${theme.colors.neutral[400]}; 
 
             & > svg > path {
-              fill: #B3B3B8;
+              fill: ${theme.colors.neutral[400]};
             }
           }
-        `;
+        `
       default:
-        return "";
+        return ''
     }
   }}
-`;
+`

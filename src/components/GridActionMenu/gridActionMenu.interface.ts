@@ -1,12 +1,8 @@
+import { ICourse } from '../CourseCard/CourseCard.interface'
+
 export interface IAction {
-  id?: string
-  label?: string | JSX.Element
-  width?: string
+  render: (item: ICourse) => JSX.Element
   hide?: boolean
-  disablePadding?: boolean
-  numeric?: boolean
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  render: (item: any, index?: number) => JSX.Element
 }
 
 export interface IKebabAction {
