@@ -26608,8 +26608,8 @@ var TextInput = function TextInput(_a) {
 var SearchInput = function SearchInput(_a) {
   var onSearchSubmit = _a.onSearchSubmit,
     searchText = _a.searchText,
-    handleSearchChange = _a.handleSearchChange,
-    t = _a.t;
+    handleSearchChange = _a.handleSearchChange;
+  var t = useTranslation().t;
   return jsxRuntimeExports.jsx("form", {
     onSubmit: onSearchSubmit,
     children: jsxRuntimeExports.jsx(TextInput, {
