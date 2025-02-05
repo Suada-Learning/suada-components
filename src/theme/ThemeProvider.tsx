@@ -18,7 +18,7 @@ export const CustomThemeProvider: React.FC<CustomThemeProviderProps> = ({
   const styledTheme = {
     ...themeTokens,
     colors: customTheme?.colors || themeTokens.colors,
-    mode: themeName, // Store current theme mode
+    mode: themeName,
   }
 
   return (

@@ -1,8 +1,6 @@
-import { ReactElement } from "react";
-
-import { ButtonState, HtmlButtonTypeEnum } from "./Button.interface";
-import { StyledButton } from "./Button.styles";
-import React from "react";
+import React, { ReactElement } from 'react'
+import { ButtonState, HtmlButtonTypeEnum } from './Button.interface'
+import { StyledButton } from './Button.styles'
 
 export const Button = ({
   type,
@@ -15,6 +13,7 @@ export const Button = ({
   onClick,
   htmlType = HtmlButtonTypeEnum.BUTTON,
   className,
+  themes,
 }: ButtonState): ReactElement => {
   return (
     <StyledButton
@@ -25,10 +24,11 @@ export const Button = ({
       onClick={onClick}
       type={htmlType}
       className={className}
+      theme={themes}
     >
       {iconLeft}
       {label}
       {iconRight}
     </StyledButton>
-  );
-};
+  )
+}
