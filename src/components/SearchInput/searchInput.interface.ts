@@ -4,5 +4,4 @@ export interface ISearchInputProps {
   ) => void
   searchText: string
   handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  t: (key: string) => string
 }
