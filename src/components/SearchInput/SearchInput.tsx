@@ -2,7 +2,7 @@ import SearchRoundedSVG from '../../svg/SearchRoundedIcon'
 import { Input } from '../TextInput'
 import IconButton from '@mui/material/IconButton'
 import { ISearchInputProps } from './searchInput.interface'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
 
 export const SearchInput = ({
   onSearchSubmit,

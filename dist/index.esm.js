@@ -26662,7 +26662,7 @@ const usePrevious = (value, ignore) => {
 };
 const alwaysNewT = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
 const useMemoizedT = (i18n, language, namespace, keyPrefix) => useCallback(alwaysNewT(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
-const useTranslation = (ns, props = {}) => {
+const useTranslation$1 = (ns, props = {}) => {
   const {
     i18n: i18nFromProps
   } = props;
@@ -26867,7 +26867,7 @@ var CourseCard = function CourseCard(_a) {
     activeTab = _a.activeTab,
     withTooltips = _a.withTooltips,
     state = _a.state;
-  var t = useTranslation().t;
+  var t = useTranslation$1().t;
   return jsxRuntimeExports.jsxs(StylesCardWrapper, {
     className: 'wrapper course-card',
     "$canOpen": $canOpen,
@@ -27224,6 +27224,28 @@ var TextInput = function TextInput(_a) {
   });
 };
 
+var TranslationContext = /*#__PURE__*/createContext(undefined);
+var TranslationProvider = function TranslationProvider(_a) {
+  var children = _a.children,
+    translations = _a.translations;
+  var t = function t(key) {
+    return translations[key] || key;
+  };
+  return jsxRuntimeExports.jsx(TranslationContext.Provider, {
+    value: {
+      t: t
+    },
+    children: children
+  });
+};
+var useTranslation = function useTranslation() {
+  var context = useContext(TranslationContext);
+  if (!context) {
+    throw new Error('useTranslation must be used within a TranslationProvider');
+  }
+  return context;
+};
+
 var SearchInput = function SearchInput(_a) {
   var onSearchSubmit = _a.onSearchSubmit,
     searchText = _a.searchText,
@@ -27245,5 +27267,5 @@ var SearchInput = function SearchInput(_a) {
   });
 };
 
-export { Button, CourseCard, GridActionMenu, SearchInput };
+export { Button, CourseCard, GridActionMenu, SearchInput, TranslationProvider };
 //# sourceMappingURL=index.esm.js.map
