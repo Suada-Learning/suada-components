@@ -2,7 +2,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import SearchRoundedSVG from '../../svg/SearchRoundedIcon';
 import { Input } from '../TextInput';
 import IconButton from '@mui/material/IconButton';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';
 export var SearchInput = function (_a) {
     var onSearchSubmit = _a.onSearchSubmit, searchText = _a.searchText, handleSearchChange = _a.handleSearchChange;
     var t = useTranslation().t;
