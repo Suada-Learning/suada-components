@@ -1,20 +1,10 @@
-import React from 'react'
 import { Preview } from '@storybook/react'
-import { GlobalStyle } from '../src/global.styles'
 import { themes } from '../src/theme/Theme'
-import { ThemeProvider } from 'styled-components'
+import { withProviders } from './withProviders'
+
+export const decorators = [withProviders]
 
 const preview: Preview = {
-  decorators: [
-    (Story, context) => {
-      return (
-        <ThemeProvider theme={themes.dark}>
-          <GlobalStyle />
-          <Story />
-        </ThemeProvider>
-      )
-    },
-  ],
   globalTypes: {
     theme: {
       name: 'Theme',
