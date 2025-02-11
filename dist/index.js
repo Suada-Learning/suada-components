@@ -5,4 +5,5 @@ export { SearchInput } from './components/SearchInput';
 export { TranslationProvider } from './components/Providers/TranslationProvider';
 export { ThemeProvider } from './components/Providers/ThemeProvider';
 export { ActivityIcon } from './svg/Activity';
+export { AddAlt } from './svg/AddAlt';
 //# sourceMappingURL=index.js.map
