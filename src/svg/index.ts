@@ -1,1 +1,3 @@
-export { default as Activity } from './Activity'
+import ActivityIcon from './Activity'
+
+export { ActivityIcon }
