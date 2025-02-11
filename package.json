@@ -30,7 +30,8 @@
     "styled-components": "^6.1.14"
   },
   "files": [
-    "dist"
+    "dist",
+    "svg"
   ],
   "source": "index.ts",
   "devDependencies": {

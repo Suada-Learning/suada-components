@@ -4,6 +4,6 @@ export { GridActionMenu } from './components/GridActionMenu';
 export { SearchInput } from './components/SearchInput';
 export { TranslationProvider } from './components/Providers/TranslationProvider';
 export { ThemeProvider } from './components/Providers/ThemeProvider';
-export { ActivityIcon } from './svg/Activity';
-export { AddAlt } from './svg/AddAlt';
+export { ActivityIcon } from './svg';
+export { AddAlt } from './svg';
 //# sourceMappingURL=index.js.map
