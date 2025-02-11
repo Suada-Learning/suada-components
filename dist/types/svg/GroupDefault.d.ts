@@ -1,4 +1,3 @@
 import React from 'react';
 import { SvgProps } from './svgTypes.interface';
-declare const GroupDefault: React.FC<SvgProps>;
-export default GroupDefault;
+export declare const GroupDefault: React.FC<SvgProps>;

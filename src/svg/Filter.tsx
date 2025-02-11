@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const FilterIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const FilterIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='20'
@@ -20,5 +20,3 @@ const FilterIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default FilterIcon

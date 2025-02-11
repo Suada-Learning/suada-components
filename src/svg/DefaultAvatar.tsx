@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const DefaultAvatar: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const DefaultAvatar: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       id='Profile_Picture'
@@ -84,5 +84,3 @@ const DefaultAvatar: React.FC<SvgProps> = ({ className, onClick, ...props }) => 
     </svg>
   )
 }
-
-export default DefaultAvatar

@@ -4,9 +4,9 @@ import { Tooltip } from '@mui/material';
 import { GroupOutlined, GroupsOutlined, RecordVoiceOverOutlined } from '@mui/icons-material';
 import { CardActionBar, CourseStatusContainer, GridItemLessons, ItemBlock, StyledActionItem, StyledActionsContainer, StyledCardBottomContainer, StyledChecked, StyledCourseCardContent, StyledItemWrapper, StyledToolTipContainer, StylesCardWrapper, TooltipContent, GridItem, GridItemImage, GridItemContent, GridItemWrapper, GridItemContentHeader, GridItemTitle, } from './CourseCard.styles';
 import TooltipHeight from '../../helperFunctions/TooltipHeight';
-import EditSVG from '../../svg/Edit';
-import PlayButtonSVG from '../../svg/PlayButton';
-import UnlockSVG from '../../svg/Unlock';
+import { EditSVG } from '../../svg/Edit';
+import { PlayButtonSVG } from '../../svg/PlayButton';
+import { UnlockSVG } from '../../svg/Unlock';
 import { useTranslation } from 'react-i18next';
 import { GridActionMenu } from '../GridActionMenu';
 export var CourseCard = function (_a) {

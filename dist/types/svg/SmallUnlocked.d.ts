@@ -1,4 +1,3 @@
 import React from 'react';
 import { SvgProps } from './svgTypes.interface';
-declare const SmallUnlocked: React.FC<SvgProps>;
-export default SmallUnlocked;
+export declare const SmallUnlocked: React.FC<SvgProps>;

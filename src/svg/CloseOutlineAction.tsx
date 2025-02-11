@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const CloseOutlineAction: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const CloseOutlineAction: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       version='1.1'
@@ -36,5 +36,3 @@ const CloseOutlineAction: React.FC<SvgProps> = ({ className, onClick, ...props }
     </svg>
   )
 }
-
-export default CloseOutlineAction

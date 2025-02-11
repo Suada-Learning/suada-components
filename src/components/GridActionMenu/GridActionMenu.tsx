@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from 'react'
 import Popover from '@mui/material/Popover'
 import { Container, ActionsContent, StyledIconButton } from './GridActionMenu.styles'
 import { IGridActionMenuProps } from './gridActionMenu.interface'
-import MoreVertRoundedIcon from '../../svg/MoreVertRoundedIcon'
+import { MoreVertRoundedIcon } from '../../svg/MoreVertRoundedIcon'
 
 export const GridActionMenu = (props: IGridActionMenuProps): ReactElement => {
   const [anchorEl, setAnchorEl] = useState(null)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const RemoveAltDisable: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const RemoveAltDisable: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='24'
@@ -21,5 +21,3 @@ const RemoveAltDisable: React.FC<SvgProps> = ({ className, onClick, ...props }) 
     </svg>
   )
 }
-
-export default RemoveAltDisable

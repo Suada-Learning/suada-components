@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const BookWithBookmark: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const BookWithBookmark: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='16'
@@ -20,5 +20,3 @@ const BookWithBookmark: React.FC<SvgProps> = ({ className, onClick, ...props }) 
     </svg>
   )
 }
-
-export default BookWithBookmark

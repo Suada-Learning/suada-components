@@ -1,4 +1,3 @@
-import React from "react";
-import { SvgProps } from "./svgTypes.interface";
-declare const MoreVertRoundedIcon: React.FC<SvgProps>;
-export default MoreVertRoundedIcon;
+import React from 'react';
+import { SvgProps } from './svgTypes.interface';
+export declare const MoreVertRoundedIcon: React.FC<SvgProps>;

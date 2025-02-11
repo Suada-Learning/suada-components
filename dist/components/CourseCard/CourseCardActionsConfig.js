@@ -1,13 +1,13 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import EditSVG from '../../svg/Edit';
+import { EditSVG } from '../../svg/Edit';
 import Typography from '@mui/material/Typography';
 import { ActionConfig, DeleteSpan, DisabledTypography } from './CourseCard.styles';
 import React from 'react';
-import PlayButtonSVG from '../../svg/PlayButton';
-import PlayGrayButtonSVG from '../../svg/GrayPlayButton';
-import DeleteSVG from '../../svg/DeleteIcon';
-import GrayDownloadSVG from '../../svg/GrayDownloadIcon';
-import DownloadSVG from '../../svg/DownloadIcon';
+import { PlayButtonSVG } from '../../svg/PlayButton';
+import { PlayGrayButtonSVG } from '../../svg/GrayPlayButton';
+import { DeleteSVG } from '../../svg/DeleteIcon';
+import { GrayDownloadSVG } from '../../svg/GrayDownloadIcon';
+import { DownloadSVG } from '../../svg/DownloadIcon';
 var getTypographyAndIcon = function (isEnabled, Icon, GrayIcon) {
     return {
         TypographyComponent: isEnabled ? Typography : DisabledTypography,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const PlayGrayButtonSVG: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const PlayGrayButtonSVG: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       version='1.1'
@@ -36,5 +36,3 @@ const PlayGrayButtonSVG: React.FC<SvgProps> = ({ className, onClick, ...props })
     </svg>
   )
 }
-
-export default PlayGrayButtonSVG

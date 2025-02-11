@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const AssignTutor: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const AssignTutor: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='20'
@@ -29,5 +29,3 @@ const AssignTutor: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default AssignTutor

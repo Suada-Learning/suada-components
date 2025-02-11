@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const Profile: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const Profile: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       id='Profile_Picture'
@@ -100,5 +100,3 @@ const Profile: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default Profile
