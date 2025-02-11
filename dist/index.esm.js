@@ -28213,5 +28213,5 @@ var ActivityIcon = function ActivityIcon(_a) {
   }));
 };
 
-export { ActivityIcon as Activity, Button, CourseCard, GridActionMenu, SearchInput, ThemeProvider, TranslationProvider };
+export { ActivityIcon, Button, CourseCard, GridActionMenu, SearchInput, ThemeProvider, TranslationProvider };
 //# sourceMappingURL=index.esm.js.map
