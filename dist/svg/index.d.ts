@@ -1,2 +1,1 @@
-import ActivityIcon from './Activity';
-export { ActivityIcon };
+export { ActivityIcon } from './Activity';
