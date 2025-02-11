@@ -1,8 +1,8 @@
 import { SearchRoundedSVG } from '../../svg/SearchRoundedIcon'
 import { Input } from '../TextInput'
 import IconButton from '@mui/material/IconButton'
-import { ISearchInputProps } from './searchInput.interface'
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
+import { ISearchInputProps } from './searchInput.interface'
 
 export const SearchInput = ({
   onSearchSubmit,
