@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const DarkAddAlt: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const DarkAddAlt: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='24'
@@ -24,5 +24,3 @@ const DarkAddAlt: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default DarkAddAlt

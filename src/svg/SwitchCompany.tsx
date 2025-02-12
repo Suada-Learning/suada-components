@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const SwitchCompany: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const SwitchCompany: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='24'
@@ -24,5 +24,3 @@ const SwitchCompany: React.FC<SvgProps> = ({ className, onClick, ...props }) => 
     </svg>
   )
 }
-
-export default SwitchCompany

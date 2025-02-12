@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const Information: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const Information: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='20'
@@ -32,5 +32,3 @@ const Information: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default Information

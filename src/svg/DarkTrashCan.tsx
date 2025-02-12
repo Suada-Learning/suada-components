@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const DarkTrashCan: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const DarkTrashCan: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='16'
@@ -27,5 +27,3 @@ const DarkTrashCan: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default DarkTrashCan

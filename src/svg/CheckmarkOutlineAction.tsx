@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const CheckmarkOutlineAction: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const CheckmarkOutlineAction: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='40'
@@ -24,5 +24,3 @@ const CheckmarkOutlineAction: React.FC<SvgProps> = ({ className, onClick, ...pro
     </svg>
   )
 }
-
-export default CheckmarkOutlineAction

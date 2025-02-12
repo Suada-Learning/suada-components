@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const DocumentAttachment: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const DocumentAttachment: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='16'
@@ -31,5 +31,3 @@ const DocumentAttachment: React.FC<SvgProps> = ({ className, onClick, ...props }
     </svg>
   )
 }
-
-export default DocumentAttachment

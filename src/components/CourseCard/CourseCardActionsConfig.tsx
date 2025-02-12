@@ -1,4 +1,4 @@
-import EditSVG from '../../svg/Edit'
+import { EditSVG } from '../../svg/Edit'
 import Typography from '@mui/material/Typography'
 import { ActionConfig, DeleteSpan, DisabledTypography } from './CourseCard.styles'
 import {
@@ -9,11 +9,11 @@ import {
   TranslationFunction,
 } from './CourseCard.interface'
 import React from 'react'
-import PlayButtonSVG from '../../svg/PlayButton'
-import PlayGrayButtonSVG from '../../svg/GrayPlayButton'
-import DeleteSVG from '../../svg/DeleteIcon'
-import GrayDownloadSVG from '../../svg/GrayDownloadIcon'
-import DownloadSVG from '../../svg/DownloadIcon'
+import { PlayButtonSVG } from '../../svg/PlayButton'
+import { PlayGrayButtonSVG } from '../../svg/GrayPlayButton'
+import { DeleteSVG } from '../../svg/DeleteIcon'
+import { GrayDownloadSVG } from '../../svg/GrayDownloadIcon'
+import { DownloadSVG } from '../../svg/DownloadIcon'
 
 const getTypographyAndIcon = (
   isEnabled: boolean,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const RemoveFilter: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const RemoveFilter: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='20'
@@ -24,5 +24,3 @@ const RemoveFilter: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default RemoveFilter

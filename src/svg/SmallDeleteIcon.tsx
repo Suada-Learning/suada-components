@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const SmallDeleteIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const SmallDeleteIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='18'
@@ -23,5 +23,3 @@ const SmallDeleteIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) =
     </svg>
   )
 }
-
-export default SmallDeleteIcon

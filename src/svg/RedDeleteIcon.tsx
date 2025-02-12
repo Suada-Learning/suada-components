@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const RedDeleteIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const RedDeleteIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       version='1.1'
@@ -38,5 +38,3 @@ const RedDeleteIcon: React.FC<SvgProps> = ({ className, onClick, ...props }) => 
     </svg>
   )
 }
-
-export default RedDeleteIcon

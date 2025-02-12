@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-const TrashCanRed: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const TrashCanRed: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='24'
@@ -23,5 +23,3 @@ const TrashCanRed: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
     </svg>
   )
 }
-
-export default TrashCanRed
