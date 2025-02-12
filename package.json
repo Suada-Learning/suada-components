@@ -22,11 +22,13 @@
     "@mui/system": "^6.4.1",
     "@semantic-release/changelog": "^5.0.0",
     "@storybook/addon-links": "^8.5.2",
+    "@types/react-select": "^5.0.1",
     "formik": "^2.4.6",
     "i18next": "^24.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^15.4.0",
+    "react-select": "^5.10.0",
     "styled-components": "^6.1.14"
   },
   "files": [

@@ -1,0 +1,36 @@
+import React, { ReactElement } from 'react'
+import ReactSelect from 'react-select'
+import { StyledLabel } from '../TextInput/styled-components'
+import { CaretDown } from '../../svg'
+import { ISelectFieldProps } from './DropDown.interface'
+import { ContainerSelect, customStyles, ErrorMessage } from './DropDown.styles'
+
+export const DropDown = (props: ISelectFieldProps): ReactElement => {
+  const DropdownIndicator = (): ReactElement => <CaretDown />
+
+  return (
+    <ContainerSelect error={!!(props.error && props.touched)}>
+      {props.label && <StyledLabel>{props.label}</StyledLabel>}
+      <ReactSelect
+        className={props.className}
+        isMulti={props.isMulti}
+        onChange={props.onChange}
+        options={props.options || undefined}
+        value={props.value}
+        placeholder={props.placeholder}
+        styles={props.styles || customStyles}
+        isClearable={props.isClearable}
+        onFocus={props.onFocus}
+        isDisabled={props.isDisabled}
+        isLoading={props.isLoading}
+        components={{ DropdownIndicator }}
+      />
+
+      {props.touched && props.error && props.errorMessage && (
+        <ErrorMessage>
+          <>{props.errorMessage}</>
+        </ErrorMessage>
+      )}
+    </ContainerSelect>
+  )
+}
