@@ -31,7 +31,6 @@
   },
   "files": [
     "dist",
-    "src",
     "svg"
   ],
   "source": "index.ts",
@@ -84,8 +83,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "exports": {
-    "./icons": "./src/icons.ts"
   }
 }
