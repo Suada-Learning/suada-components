@@ -2307,7 +2307,7 @@ var unitlessKeys$1 = {
 
 var f="undefined"!=typeof process&&undefined!==process.env&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",m="active",y="data-styled-version",v="6.1.14",g="/*!sc*/\n",S="undefined"!=typeof window&&"HTMLElement"in window,w=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&undefined!==process.env&&undefined!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&undefined!==process.env&&undefined!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!==process.env.NODE_ENV),E=/invalid hook call/i,N=new Set,P=function(t,n){if("production"!==process.env.NODE_ENV){var r=n?' with the id of "'.concat(n,'"'):"",s="The component ".concat(t).concat(r," has been created dynamically.\n")+"You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.",i=console.error;try{var a=!0;console.error=function(t){for(var n=[],r=1;r<arguments.length;r++)n[r-1]=arguments[r];E.test(t)?(a=!1,N.delete(s)):i.apply(void 0,__spreadArray([t],n,!1));},useRef(),a&&!N.has(s)&&(console.warn(s),N.add(s));}catch(e){E.test(e.message)&&N.delete(s);}finally{console.error=i;}}},_=Object.freeze([]),C=Object.freeze({});function I(e,t,n){return undefined===n&&(n=C),e.theme!==n.theme&&e.theme||t||n.theme}var A=new Set(["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","track","u","ul","use","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"]),O=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,D=/(^-|-$)/g;function R(e){return e.replace(O,"-").replace(D,"")}var T=/(a)(d)/gi,k=52,j=function(e){return String.fromCharCode(e+(e>25?39:97))};function x(e){var t,n="";for(t=Math.abs(e);t>k;t=t/k|0)n=j(t%k)+n;return (j(t%k)+n).replace(T,"$1-$2")}var V,F=5381,M=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},z=function(e){return M(F,e)};function $(e){return x(z(e)>>>0)}function B(e){return "production"!==process.env.NODE_ENV&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function L(e){return "string"==typeof e&&("production"===process.env.NODE_ENV||e.charAt(0)===e.charAt(0).toLowerCase())}var G="function"==typeof Symbol&&Symbol.for,Y=G?Symbol.for("react.memo"):60115,q=G?Symbol.for("react.forward_ref"):60112,W={childContextTypes:true,contextType:true,contextTypes:true,defaultProps:true,displayName:true,getDefaultProps:true,getDerivedStateFromError:true,getDerivedStateFromProps:true,mixins:true,propTypes:true,type:true},H={name:true,length:true,prototype:true,caller:true,callee:true,arguments:true,arity:true},U={$$typeof:true,compare:true,defaultProps:true,displayName:true,propTypes:true,type:true},J=((V={})[q]={$$typeof:true,render:true,defaultProps:true,displayName:true,propTypes:true},V[Y]=U,V);function X(e){return ("type"in(t=e)&&t.type.$$typeof)===Y?U:"$$typeof"in e?J[e.$$typeof]:W;var t;}var Z=Object.defineProperty,K=Object.getOwnPropertyNames,Q=Object.getOwnPropertySymbols,ee=Object.getOwnPropertyDescriptor,te=Object.getPrototypeOf,ne=Object.prototype;function re(e,t,n){if("string"!=typeof t){if(ne){var r=te(t);r&&r!==ne&&re(e,r,n);}var o=K(t);Q&&(o=o.concat(Q(t)));for(var s=X(e),i=X(t),a=0;a<o.length;++a){var c=o[a];if(!(c in H||n&&n[c]||i&&c in i||s&&c in s)){var l=ee(t,c);try{Z(e,c,l);}catch(e){}}}}return e}function oe(e){return "function"==typeof e}function se(e){return "object"==typeof e&&"styledComponentId"in e}function ie(e,t){return e&&t?"".concat(e," ").concat(t):e||t||""}function ae(e,t){if(0===e.length)return "";for(var n=e[0],r=1;r<e.length;r++)n+=e[r];return n}function ce(e){return null!==e&&"object"==typeof e&&e.constructor.name===Object.name&&!("props"in e&&e.$$typeof)}function le(e,t,n){if(undefined===n&&(n=false),!n&&!ce(e)&&!Array.isArray(e))return t;if(Array.isArray(t))for(var r=0;r<t.length;r++)e[r]=le(e[r],t[r]);else if(ce(t))for(var r in t)e[r]=le(e[r],t[r]);return e}function ue(e,t){Object.defineProperty(e,"toString",{value:t});}var pe="production"!==process.env.NODE_ENV?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",18:"ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"}:{};function de(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];for(var n=e[0],r=[],o=1,s=e.length;o<s;o+=1)r.push(e[o]);return r.forEach(function(e){n=n.replace(/%[a-z]/,e);}),n}function he(t){for(var n=[],r=1;r<arguments.length;r++)n[r-1]=arguments[r];return "production"===process.env.NODE_ENV?new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/main/packages/styled-components/src/utils/errors.md#".concat(t," for more information.").concat(n.length>0?" Args: ".concat(n.join(", ")):"")):new Error(de.apply(undefined,__spreadArray([pe[t]],n,false)).trim())}var fe=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}return e.prototype.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},e.prototype.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,r=n.length,o=r;e>=o;)if((o<<=1)<0)throw he(16,"".concat(e));this.groupSizes=new Uint32Array(o),this.groupSizes.set(n),this.length=o;for(var s=r;s<o;s++)this.groupSizes[s]=0;}for(var i=this.indexOfGroup(e+1),a=(s=0,t.length);s<a;s++)this.tag.insertRule(i,t[s])&&(this.groupSizes[e]++,i++);},e.prototype.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),r=n+t;this.groupSizes[e]=0;for(var o=n;o<r;o++)this.tag.deleteRule(n);}},e.prototype.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],r=this.indexOfGroup(e),o=r+n,s=r;s<o;s++)t+="".concat(this.tag.getRule(s)).concat(g);return t},e}(),me=1<<30,ye=new Map,ve=new Map,ge=1,Se=function(e){if(ye.has(e))return ye.get(e);for(;ve.has(ge);)ge++;var t=ge++;if("production"!==process.env.NODE_ENV&&((0|t)<0||t>me))throw he(16,"".concat(t));return ye.set(e,t),ve.set(t,e),t},we=function(e,t){ge=t+1,ye.set(e,t),ve.set(t,e);},be="style[".concat(f,"][").concat(y,'="').concat(v,'"]'),Ee=new RegExp("^".concat(f,'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')),Ne=function(e,t,n){for(var r,o=n.split(","),s=0,i=o.length;s<i;s++)(r=o[s])&&e.registerName(t,r);},Pe=function(e,t){for(var n,r=(null!==(n=t.textContent)&&undefined!==n?n:"").split(g),o=[],s=0,i=r.length;s<i;s++){var a=r[s].trim();if(a){var c=a.match(Ee);if(c){var l=0|parseInt(c[1],10),u=c[2];0!==l&&(we(u,l),Ne(e,u,c[3]),e.getTag().insertRules(l,o)),o.length=0;}else o.push(a);}}},_e=function(e){for(var t=document.querySelectorAll(be),n=0,r=t.length;n<r;n++){var o=t[n];o&&o.getAttribute(f)!==m&&(Pe(e,o),o.parentNode&&o.parentNode.removeChild(o));}};function Ce(){return "undefined"!=typeof __webpack_nonce__?__webpack_nonce__:null}var Ie=function(e){var t=document.head,n=e||t,r=document.createElement("style"),o=function(e){var t=Array.from(e.querySelectorAll("style[".concat(f,"]")));return t[t.length-1]}(n),s=undefined!==o?o.nextSibling:null;r.setAttribute(f,m),r.setAttribute(y,v);var i=Ce();return i&&r.setAttribute("nonce",i),n.insertBefore(r,s),r},Ae=function(){function e(e){this.element=Ie(e),this.element.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,r=t.length;n<r;n++){var o=t[n];if(o.ownerNode===e)return o}throw he(17)}(this.element),this.length=0;}return e.prototype.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return  false}},e.prototype.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},e.prototype.getRule=function(e){var t=this.sheet.cssRules[e];return t&&t.cssText?t.cssText:""},e}(),Oe=function(){function e(e){this.element=Ie(e),this.nodes=this.element.childNodes,this.length=0;}return e.prototype.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t);return this.element.insertBefore(n,this.nodes[e]||null),this.length++,true}return  false},e.prototype.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),De=function(){function e(e){this.rules=[],this.length=0;}return e.prototype.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,true)},e.prototype.deleteRule=function(e){this.rules.splice(e,1),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),Re=S,Te={isServer:!S,useCSSOMInjection:!w},ke=function(){function e(e,n,r){ undefined===e&&(e=C),undefined===n&&(n={});var o=this;this.options=__assign(__assign({},Te),e),this.gs=n,this.names=new Map(r),this.server=!!e.isServer,!this.server&&S&&Re&&(Re=false,_e(this)),ue(this,function(){return function(e){for(var t=e.getTag(),n=t.length,r="",o=function(n){var o=function(e){return ve.get(e)}(n);if(undefined===o)return "continue";var s=e.names.get(o),i=t.getGroup(n);if(undefined===s||!s.size||0===i.length)return "continue";var a="".concat(f,".g").concat(n,'[id="').concat(o,'"]'),c="";undefined!==s&&s.forEach(function(e){e.length>0&&(c+="".concat(e,","));}),r+="".concat(i).concat(a,'{content:"').concat(c,'"}').concat(g);},s=0;s<n;s++)o(s);return r}(o)});}return e.registerId=function(e){return Se(e)},e.prototype.rehydrate=function(){!this.server&&S&&_e(this);},e.prototype.reconstructWithOptions=function(n,r){return undefined===r&&(r=true),new e(__assign(__assign({},this.options),n),this.gs,r&&this.names||undefined)},e.prototype.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},e.prototype.getTag=function(){return this.tag||(this.tag=(e=function(e){var t=e.useCSSOMInjection,n=e.target;return e.isServer?new De(n):t?new Ae(n):new Oe(n)}(this.options),new fe(e)));var e;},e.prototype.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},e.prototype.registerName=function(e,t){if(Se(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},e.prototype.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(Se(e),n);},e.prototype.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},e.prototype.clearRules=function(e){this.getTag().clearGroup(Se(e)),this.clearNames(e);},e.prototype.clearTag=function(){this.tag=undefined;},e}(),je=/&/g,xe=/^\s*\/\/.*$/gm;function Ve(e,t){return e.map(function(e){return "rule"===e.type&&(e.value="".concat(t," ").concat(e.value),e.value=e.value.replaceAll(",",",".concat(t," ")),e.props=e.props.map(function(e){return "".concat(t," ").concat(e)})),Array.isArray(e.children)&&"@keyframes"!==e.type&&(e.children=Ve(e.children,t)),e})}function Fe(e){var t,n,r,o=C,s=o.options,i=undefined===s?C:s,a=o.plugins,c=undefined===a?_:a,l=function(e,r,o){return o.startsWith(n)&&o.endsWith(n)&&o.replaceAll(n,"").length>0?".".concat(t):e},u=c.slice();u.push(function(e){e.type===RULESET$1&&e.value.includes("&")&&(e.props[0]=e.props[0].replace(je,n).replace(r,l));}),i.prefix&&u.push(prefixer$1),u.push(stringify$1);var p=function(e,o,s,a){ undefined===o&&(o=""),undefined===s&&(s=""),undefined===a&&(a="&"),t=a,n=o,r=new RegExp("\\".concat(n,"\\b"),"g");var c=e.replace(xe,""),l=compile$1(s||o?"".concat(s," ").concat(o," { ").concat(c," }"):c);i.namespace&&(l=Ve(l,i.namespace));var p=[];return serialize$1(l,middleware$1(u.concat(rulesheet$1(function(e){return p.push(e)})))),p};return p.hash=c.length?c.reduce(function(e,t){return t.name||he(15),M(e,t.name)},F).toString():"",p}var Me=new ke,ze=Fe(),$e=React__default.createContext({shouldForwardProp:undefined,styleSheet:Me,stylis:ze});$e.Consumer;React__default.createContext(undefined);function Ge(){return useContext($e)}var qe=function(){function e(e,t){var n=this;this.inject=function(e,t){ undefined===t&&(t=ze);var r=n.name+t.hash;e.hasNameForId(n.id,r)||e.insertRules(n.id,r,t(n.rules,r,"@keyframes"));},this.name=e,this.id="sc-keyframes-".concat(e),this.rules=t,ue(this,function(){throw he(12,String(n.name))});}return e.prototype.getName=function(e){return undefined===e&&(e=ze),this.name+e.hash},e}(),We=function(e){return e>="A"&&e<="Z"};function He(e){for(var t="",n=0;n<e.length;n++){var r=e[n];if(1===n&&"-"===r&&"-"===e[0])return e;We(r)?t+="-"+r.toLowerCase():t+=r;}return t.startsWith("ms-")?"-"+t:t}var Ue=function(e){return null==e||false===e||""===e},Je=function(t){var n,r,o=[];for(var s in t){var i=t[s];t.hasOwnProperty(s)&&!Ue(i)&&(Array.isArray(i)&&i.isCss||oe(i)?o.push("".concat(He(s),":"),i,";"):ce(i)?o.push.apply(o,__spreadArray(__spreadArray(["".concat(s," {")],Je(i),false),["}"],false)):o.push("".concat(He(s),": ").concat((n=s,null==(r=i)||"boolean"==typeof r||""===r?"":"number"!=typeof r||0===r||n in unitlessKeys$1||n.startsWith("--")?String(r).trim():"".concat(r,"px")),";")));}return o};function Xe(e,t,n,r){if(Ue(e))return [];if(se(e))return [".".concat(e.styledComponentId)];if(oe(e)){if(!oe(s=e)||s.prototype&&s.prototype.isReactComponent||!t)return [e];var o=e(t);return "production"===process.env.NODE_ENV||"object"!=typeof o||Array.isArray(o)||o instanceof qe||ce(o)||null===o||console.error("".concat(B(e)," is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")),Xe(o,t,n,r)}var s;return e instanceof qe?n?(e.inject(n,r),[e.getName(r)]):[e]:ce(e)?Je(e):Array.isArray(e)?Array.prototype.concat.apply(_,e.map(function(e){return Xe(e,t,n,r)})):[e.toString()]}function Ze(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(oe(n)&&!se(n))return  false}return  true}var Ke=z(v),Qe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"===process.env.NODE_ENV&&(undefined===n||n.isStatic)&&Ze(e),this.componentId=t,this.baseHash=M(Ke,t),this.baseStyle=n,ke.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var r=this.baseStyle?this.baseStyle.generateAndInjectStyles(e,t,n):"";if(this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(this.componentId,this.staticRulesId))r=ie(r,this.staticRulesId);else {var o=ae(Xe(this.rules,e,t,n)),s=x(M(this.baseHash,o)>>>0);if(!t.hasNameForId(this.componentId,s)){var i=n(o,".".concat(s),undefined,this.componentId);t.insertRules(this.componentId,s,i);}r=ie(r,s),this.staticRulesId=s;}else {for(var a=M(this.baseHash,n.hash),c="",l=0;l<this.rules.length;l++){var u=this.rules[l];if("string"==typeof u)c+=u,"production"!==process.env.NODE_ENV&&(a=M(a,u));else if(u){var p=ae(Xe(u,e,t,n));a=M(a,p+l),c+=p;}}if(c){var d=x(a>>>0);t.hasNameForId(this.componentId,d)||t.insertRules(this.componentId,d,n(c,".".concat(d),undefined,this.componentId)),r=ie(r,d);}}return r},e}(),et=React__default.createContext(undefined);et.Consumer;var ot={},st=new Set;function it(e,o,s){var i=se(e),a=e,c=!L(e),p=o.attrs,d=undefined===p?_:p,h=o.componentId,f=undefined===h?function(e,t){var n="string"!=typeof e?"sc":R(e);ot[n]=(ot[n]||0)+1;var r="".concat(n,"-").concat($(v+n+ot[n]));return t?"".concat(t,"-").concat(r):r}(o.displayName,o.parentComponentId):h,m=o.displayName,y=undefined===m?function(e){return L(e)?"styled.".concat(e):"Styled(".concat(B(e),")")}(e):m,g=o.displayName&&o.componentId?"".concat(R(o.displayName),"-").concat(o.componentId):o.componentId||f,S=i&&a.attrs?a.attrs.concat(d).filter(Boolean):d,w=o.shouldForwardProp;if(i&&a.shouldForwardProp){var b=a.shouldForwardProp;if(o.shouldForwardProp){var E=o.shouldForwardProp;w=function(e,t){return b(e,t)&&E(e,t)};}else w=b;}var N=new Qe(s,g,i?a.componentStyle:undefined);function O(e,o){return function(e,o,s){var i=e.attrs,a=e.componentStyle,c=e.defaultProps,p=e.foldedComponentIds,d=e.styledComponentId,h=e.target,f=React__default.useContext(et),m=Ge(),y=e.shouldForwardProp||m.shouldForwardProp;"production"!==process.env.NODE_ENV&&useDebugValue(d);var v=I(o,f,c)||C,g=function(e,n,r){for(var o,s=__assign(__assign({},n),{className:undefined,theme:r}),i=0;i<e.length;i+=1){var a=oe(o=e[i])?o(s):o;for(var c in a)s[c]="className"===c?ie(s[c],a[c]):"style"===c?__assign(__assign({},s[c]),a[c]):a[c];}return n.className&&(s.className=ie(s.className,n.className)),s}(i,o,v),S=g.as||h,w={};for(var b in g) undefined===g[b]||"$"===b[0]||"as"===b||"theme"===b&&g.theme===v||("forwardedAs"===b?w.as=g.forwardedAs:y&&!y(b,S)||(w[b]=g[b],y||"development"!==process.env.NODE_ENV||isPropValid$1(b)||st.has(b)||!A.has(S)||(st.add(b),console.warn('styled-components: it looks like an unknown prop "'.concat(b,'" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));var E=function(e,t){var n=Ge(),r=e.generateAndInjectStyles(t,n.styleSheet,n.stylis);return "production"!==process.env.NODE_ENV&&useDebugValue(r),r}(a,g);"production"!==process.env.NODE_ENV&&e.warnTooManyClasses&&e.warnTooManyClasses(E);var N=ie(p,d);return E&&(N+=" "+E),g.className&&(N+=" "+g.className),w[L(S)&&!A.has(S)?"class":"className"]=N,s&&(w.ref=s),createElement(S,w)}(D,e,o)}O.displayName=y;var D=React__default.forwardRef(O);return D.attrs=S,D.componentStyle=N,D.displayName=y,D.shouldForwardProp=w,D.foldedComponentIds=i?ie(a.foldedComponentIds,a.styledComponentId):"",D.styledComponentId=g,D.target=i?a.target:e,Object.defineProperty(D,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(e){this._foldedDefaultProps=i?function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var r=0,o=t;r<o.length;r++)le(e,o[r],true);return e}({},a.defaultProps,e):e;}}),"production"!==process.env.NODE_ENV&&(P(y,g),D.warnTooManyClasses=function(e,t){var n={},r=false;return function(o){if(!r&&(n[o]=true,Object.keys(n).length>=200)){var s=t?' with the id of "'.concat(t,'"'):"";console.warn("Over ".concat(200," classes were generated for component ").concat(e).concat(s,".\n")+"Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),r=true,n={};}}}(y,g)),ue(D,function(){return ".".concat(D.styledComponentId)}),c&&re(D,e,{attrs:true,componentStyle:true,displayName:true,foldedComponentIds:true,shouldForwardProp:true,styledComponentId:true,target:true}),D}function at(e,t){for(var n=[e[0]],r=0,o=t.length;r<o;r+=1)n.push(t[r],e[r+1]);return n}var ct=function(e){return Object.assign(e,{isCss:true})};function lt(t){for(var n=[],r=1;r<arguments.length;r++)n[r-1]=arguments[r];if(oe(t)||ce(t))return ct(Xe(at(_,__spreadArray([t],n,true))));var o=t;return 0===n.length&&1===o.length&&"string"==typeof o[0]?Xe(o):ct(Xe(at(o,n)))}function ut(n,r,o){if(undefined===o&&(o=C),!r)throw he(1,r);var s=function(t){for(var s=[],i=1;i<arguments.length;i++)s[i-1]=arguments[i];return n(r,o,lt.apply(undefined,__spreadArray([t],s,false)))};return s.attrs=function(e){return ut(n,r,__assign(__assign({},o),{attrs:Array.prototype.concat(o.attrs,e).filter(Boolean)}))},s.withConfig=function(e){return ut(n,r,__assign(__assign({},o),e))},s}var pt=function(e){return ut(it,e)},dt=pt;A.forEach(function(e){dt[e]=pt(e);});"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");var wt="__sc-".concat(f,"__");"production"!==process.env.NODE_ENV&&"test"!==process.env.NODE_ENV&&"undefined"!=typeof window&&(window[wt]||(window[wt]=0),1===window[wt]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window[wt]+=1);
 
-var StyledButton = dt.button(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledButton = dt.button(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"])), function (_a) {
   var $size = _a.$size;
   switch ($size) {
     case ButtonSizeEnum.SM:
@@ -2339,7 +2339,7 @@ var StyledButton = dt.button(templateObject_1$3 || (templateObject_1$3 = __makeT
       return '';
   }
 });
-var templateObject_1$3;
+var templateObject_1$4;
 
 var Button = function Button(_a) {
   var type = _a.type,
@@ -11850,7 +11850,7 @@ function getSvgIconUtilityClass(slot) {
 }
 generateUtilityClasses('MuiSvgIcon', ['root', 'colorPrimary', 'colorSecondary', 'colorAction', 'colorError', 'colorDisabled', 'fontSizeInherit', 'fontSizeSmall', 'fontSizeMedium', 'fontSizeLarge']);
 
-const useUtilityClasses$q = ownerState => {
+const useUtilityClasses$s = ownerState => {
   const {
     color,
     fontSize,
@@ -11980,7 +11980,7 @@ const SvgIcon = /*#__PURE__*/React.forwardRef(function SvgIcon(inProps, ref) {
   if (!inheritViewBox) {
     more.viewBox = viewBox;
   }
-  const classes = useUtilityClasses$q(ownerState);
+  const classes = useUtilityClasses$s(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(SvgIconRoot, {
     as: component,
     className: clsx(classes.root, className),
@@ -13395,7 +13395,7 @@ function getPaperUtilityClass(slot) {
 }
 generateUtilityClasses('MuiPaper', ['root', 'rounded', 'outlined', 'elevation', 'elevation0', 'elevation1', 'elevation2', 'elevation3', 'elevation4', 'elevation5', 'elevation6', 'elevation7', 'elevation8', 'elevation9', 'elevation10', 'elevation11', 'elevation12', 'elevation13', 'elevation14', 'elevation15', 'elevation16', 'elevation17', 'elevation18', 'elevation19', 'elevation20', 'elevation21', 'elevation22', 'elevation23', 'elevation24']);
 
-const useUtilityClasses$p = ownerState => {
+const useUtilityClasses$r = ownerState => {
   const {
     square,
     elevation,
@@ -13467,7 +13467,7 @@ const Paper = /*#__PURE__*/React.forwardRef(function Paper(inProps, ref) {
     square,
     variant
   };
-  const classes = useUtilityClasses$p(ownerState);
+  const classes = useUtilityClasses$r(ownerState);
   if (process.env.NODE_ENV !== 'production') {
     if (theme.shadows[elevation] === undefined) {
       console.error([`MUI: The elevation provided <Paper elevation={${elevation}}> is not available in the theme.`, `Please make sure that \`theme.shadows[${elevation}]\` is defined.`].join('\n'));
@@ -14104,7 +14104,7 @@ function getButtonBaseUtilityClass(slot) {
 }
 const buttonBaseClasses = generateUtilityClasses('MuiButtonBase', ['root', 'disabled', 'focusVisible']);
 
-const useUtilityClasses$o = ownerState => {
+const useUtilityClasses$q = ownerState => {
   const {
     disabled,
     focusVisible,
@@ -14334,7 +14334,7 @@ const ButtonBase = /*#__PURE__*/React.forwardRef(function ButtonBase(inProps, re
     tabIndex,
     focusVisible
   };
-  const classes = useUtilityClasses$o(ownerState);
+  const classes = useUtilityClasses$q(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(ButtonBaseRoot, {
     as: ComponentProp,
     className: clsx(classes.root, className),
@@ -14617,7 +14617,7 @@ const rotateAnimation = typeof circularRotateKeyframe !== 'string' ? css`
 const dashAnimation = typeof circularDashKeyframe !== 'string' ? css`
         animation: ${circularDashKeyframe} 1.4s ease-in-out infinite;
       ` : null;
-const useUtilityClasses$n = ownerState => {
+const useUtilityClasses$p = ownerState => {
   const {
     classes,
     variant,
@@ -14746,7 +14746,7 @@ const CircularProgress = /*#__PURE__*/React.forwardRef(function CircularProgress
     value,
     variant
   };
-  const classes = useUtilityClasses$n(ownerState);
+  const classes = useUtilityClasses$p(ownerState);
   const circleStyle = {};
   const rootStyle = {};
   const rootProps = {};
@@ -14857,7 +14857,7 @@ function getIconButtonUtilityClass(slot) {
 }
 const iconButtonClasses = generateUtilityClasses('MuiIconButton', ['root', 'disabled', 'colorInherit', 'colorPrimary', 'colorSecondary', 'colorError', 'colorInfo', 'colorSuccess', 'colorWarning', 'edgeStart', 'edgeEnd', 'sizeSmall', 'sizeMedium', 'sizeLarge', 'loading', 'loadingIndicator', 'loadingWrapper']);
 
-const useUtilityClasses$m = ownerState => {
+const useUtilityClasses$o = ownerState => {
   const {
     classes,
     disabled,
@@ -15050,7 +15050,7 @@ const IconButton = /*#__PURE__*/React.forwardRef(function IconButton(inProps, re
     loadingIndicator,
     size
   };
-  const classes = useUtilityClasses$m(ownerState);
+  const classes = useUtilityClasses$o(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(IconButtonRoot, {
     id: id,
     className: clsx(classes.root, className),
@@ -15178,7 +15178,7 @@ const v6Colors = {
   textDisabled: true
 };
 const extendSxProp = internal_createExtendSxProp();
-const useUtilityClasses$l = ownerState => {
+const useUtilityClasses$n = ownerState => {
   const {
     align,
     gutterBottom,
@@ -15319,7 +15319,7 @@ const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, re
     variantMapping
   };
   const Component = component || (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) || 'span';
-  const classes = useUtilityClasses$l(ownerState);
+  const classes = useUtilityClasses$n(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsx(TypographyRoot, {
     as: Component,
     ref: ref,
@@ -17323,7 +17323,7 @@ function isHTMLElement(element) {
 function isVirtualElement(element) {
   return !isHTMLElement(element);
 }
-const useUtilityClasses$k = ownerState => {
+const useUtilityClasses$m = ownerState => {
   const {
     classes
   } = ownerState;
@@ -17436,7 +17436,7 @@ const PopperTooltip = /*#__PURE__*/React.forwardRef(function PopperTooltip(props
   if (TransitionProps !== null) {
     childProps.TransitionProps = TransitionProps;
   }
-  const classes = useUtilityClasses$k(props);
+  const classes = useUtilityClasses$m(props);
   const Root = slots.root ?? 'div';
   const rootProps = useSlotProps({
     elementType: Root,
@@ -18155,7 +18155,7 @@ const inputOverridesResolver = (props, styles) => {
   } = props;
   return [styles.input, ownerState.size === 'small' && styles.inputSizeSmall, ownerState.multiline && styles.inputMultiline, ownerState.type === 'search' && styles.inputTypeSearch, ownerState.startAdornment && styles.inputAdornedStart, ownerState.endAdornment && styles.inputAdornedEnd, ownerState.hiddenLabel && styles.inputHiddenLabel];
 };
-const useUtilityClasses$j = ownerState => {
+const useUtilityClasses$l = ownerState => {
   const {
     classes,
     color,
@@ -18575,7 +18575,7 @@ const InputBase = /*#__PURE__*/React.forwardRef(function InputBase(inProps, ref)
     startAdornment,
     type
   };
-  const classes = useUtilityClasses$j(ownerState);
+  const classes = useUtilityClasses$l(ownerState);
   const Root = slots.root || components.Root || InputBaseRoot;
   const rootProps = slotProps.root || componentsProps.root || {};
   const Input = slots.input || components.Input || InputBaseInput;
@@ -19099,7 +19099,7 @@ function getBackdropUtilityClass(slot) {
 }
 generateUtilityClasses('MuiBackdrop', ['root', 'invisible']);
 
-const useUtilityClasses$i = ownerState => {
+const useUtilityClasses$k = ownerState => {
   const {
     classes,
     invisible
@@ -19162,7 +19162,7 @@ const Backdrop = /*#__PURE__*/React.forwardRef(function Backdrop(inProps, ref) {
     component,
     invisible
   };
-  const classes = useUtilityClasses$i(ownerState);
+  const classes = useUtilityClasses$k(ownerState);
   const backwardCompatibleSlots = {
     transition: TransitionComponentProp,
     root: components.Root,
@@ -19297,7 +19297,7 @@ function getSwitchBaseUtilityClass(slot) {
 }
 generateUtilityClasses('PrivateSwitchBase', ['root', 'checked', 'disabled', 'input', 'edgeStart', 'edgeEnd']);
 
-const useUtilityClasses$h = ownerState => {
+const useUtilityClasses$j = ownerState => {
   const {
     classes,
     checked,
@@ -19439,7 +19439,7 @@ const SwitchBase = /*#__PURE__*/React.forwardRef(function SwitchBase(props, ref)
     disableFocusRipple,
     edge
   };
-  const classes = useUtilityClasses$h(ownerState);
+  const classes = useUtilityClasses$j(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(SwitchBaseRoot, {
     component: "span",
     className: clsx(classes.root, className),
@@ -19599,7 +19599,7 @@ function getCheckboxUtilityClass(slot) {
 }
 const checkboxClasses = generateUtilityClasses('MuiCheckbox', ['root', 'checked', 'disabled', 'indeterminate', 'colorPrimary', 'colorSecondary', 'sizeSmall', 'sizeMedium']);
 
-const useUtilityClasses$g = ownerState => {
+const useUtilityClasses$i = ownerState => {
   const {
     classes,
     indeterminate,
@@ -19706,7 +19706,7 @@ const Checkbox = /*#__PURE__*/React.forwardRef(function Checkbox(inProps, ref) {
     indeterminate,
     size
   };
-  const classes = useUtilityClasses$g(ownerState);
+  const classes = useUtilityClasses$i(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsx(CheckboxRoot, {
     type: "checkbox",
     inputProps: {
@@ -20561,7 +20561,7 @@ function getModalUtilityClass(slot) {
 }
 generateUtilityClasses('MuiModal', ['root', 'hidden', 'backdrop']);
 
-const useUtilityClasses$f = ownerState => {
+const useUtilityClasses$h = ownerState => {
   const {
     open,
     exited,
@@ -20686,7 +20686,7 @@ const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
     ...propsWithDefaults,
     exited
   };
-  const classes = useUtilityClasses$f(ownerState);
+  const classes = useUtilityClasses$h(ownerState);
   const childProps = {};
   if (children.props.tabIndex === undefined) {
     childProps.tabIndex = '-1';
@@ -20948,7 +20948,7 @@ process.env.NODE_ENV !== "production" ? Modal.propTypes /* remove-proptypes */ =
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : undefined;
 
-const useUtilityClasses$e = ownerState => {
+const useUtilityClasses$g = ownerState => {
   const {
     classes,
     disableUnderline,
@@ -21226,7 +21226,7 @@ const FilledInput = /*#__PURE__*/React.forwardRef(function FilledInput(inProps, 
     multiline,
     type
   };
-  const classes = useUtilityClasses$e(props);
+  const classes = useUtilityClasses$g(props);
   const filledInputComponentsProps = {
     root: {
       ownerState
@@ -21452,7 +21452,7 @@ function getFormControlUtilityClasses(slot) {
 }
 generateUtilityClasses('MuiFormControl', ['root', 'marginNone', 'marginNormal', 'marginDense', 'fullWidth', 'disabled']);
 
-const useUtilityClasses$d = ownerState => {
+const useUtilityClasses$f = ownerState => {
   const {
     classes,
     margin,
@@ -21567,7 +21567,7 @@ const FormControl = /*#__PURE__*/React.forwardRef(function FormControl(inProps, 
     size,
     variant
   };
-  const classes = useUtilityClasses$d(ownerState);
+  const classes = useUtilityClasses$f(ownerState);
   const [adornedStart, setAdornedStart] = React.useState(() => {
     // We need to iterate through the children and find the Input in order
     // to fully support server-side rendering.
@@ -21743,13 +21743,284 @@ process.env.NODE_ENV !== "production" ? FormControl.propTypes /* remove-proptype
   variant: PropTypes.oneOf(['filled', 'outlined', 'standard'])
 } : undefined;
 
+function getFormControlLabelUtilityClasses(slot) {
+  return generateUtilityClass('MuiFormControlLabel', slot);
+}
+const formControlLabelClasses = generateUtilityClasses('MuiFormControlLabel', ['root', 'labelPlacementStart', 'labelPlacementTop', 'labelPlacementBottom', 'disabled', 'label', 'error', 'required', 'asterisk']);
+
+const useUtilityClasses$e = ownerState => {
+  const {
+    classes,
+    disabled,
+    labelPlacement,
+    error,
+    required
+  } = ownerState;
+  const slots = {
+    root: ['root', disabled && 'disabled', `labelPlacement${capitalize(labelPlacement)}`, error && 'error', required && 'required'],
+    label: ['label', disabled && 'disabled'],
+    asterisk: ['asterisk', error && 'error']
+  };
+  return composeClasses(slots, getFormControlLabelUtilityClasses, classes);
+};
+const FormControlLabelRoot = styled('label', {
+  name: 'MuiFormControlLabel',
+  slot: 'Root',
+  overridesResolver: (props, styles) => {
+    const {
+      ownerState
+    } = props;
+    return [{
+      [`& .${formControlLabelClasses.label}`]: styles.label
+    }, styles.root, styles[`labelPlacement${capitalize(ownerState.labelPlacement)}`]];
+  }
+})(memoTheme(({
+  theme
+}) => ({
+  display: 'inline-flex',
+  alignItems: 'center',
+  cursor: 'pointer',
+  // For correct alignment with the text.
+  verticalAlign: 'middle',
+  WebkitTapHighlightColor: 'transparent',
+  marginLeft: -11,
+  marginRight: 16,
+  // used for row presentation of radio/checkbox
+  [`&.${formControlLabelClasses.disabled}`]: {
+    cursor: 'default'
+  },
+  [`& .${formControlLabelClasses.label}`]: {
+    [`&.${formControlLabelClasses.disabled}`]: {
+      color: (theme.vars || theme).palette.text.disabled
+    }
+  },
+  variants: [{
+    props: {
+      labelPlacement: 'start'
+    },
+    style: {
+      flexDirection: 'row-reverse',
+      marginRight: -11
+    }
+  }, {
+    props: {
+      labelPlacement: 'top'
+    },
+    style: {
+      flexDirection: 'column-reverse'
+    }
+  }, {
+    props: {
+      labelPlacement: 'bottom'
+    },
+    style: {
+      flexDirection: 'column'
+    }
+  }, {
+    props: ({
+      labelPlacement
+    }) => labelPlacement === 'start' || labelPlacement === 'top' || labelPlacement === 'bottom',
+    style: {
+      marginLeft: 16 // used for row presentation of radio/checkbox
+    }
+  }]
+})));
+const AsteriskComponent$1 = styled('span', {
+  name: 'MuiFormControlLabel',
+  slot: 'Asterisk',
+  overridesResolver: (props, styles) => styles.asterisk
+})(memoTheme(({
+  theme
+}) => ({
+  [`&.${formControlLabelClasses.error}`]: {
+    color: (theme.vars || theme).palette.error.main
+  }
+})));
+
+/**
+ * Drop-in replacement of the `Radio`, `Switch` and `Checkbox` component.
+ * Use this component if you want to display an extra label.
+ */
+const FormControlLabel = /*#__PURE__*/React.forwardRef(function FormControlLabel(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: 'MuiFormControlLabel'
+  });
+  const {
+    checked,
+    className,
+    componentsProps = {},
+    control,
+    disabled: disabledProp,
+    disableTypography,
+    inputRef,
+    label: labelProp,
+    labelPlacement = 'end',
+    name,
+    onChange,
+    required: requiredProp,
+    slots = {},
+    slotProps = {},
+    value,
+    ...other
+  } = props;
+  const muiFormControl = useFormControl();
+  const disabled = disabledProp ?? control.props.disabled ?? muiFormControl?.disabled;
+  const required = requiredProp ?? control.props.required;
+  const controlProps = {
+    disabled,
+    required
+  };
+  ['checked', 'name', 'onChange', 'value', 'inputRef'].forEach(key => {
+    if (typeof control.props[key] === 'undefined' && typeof props[key] !== 'undefined') {
+      controlProps[key] = props[key];
+    }
+  });
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ['error']
+  });
+  const ownerState = {
+    ...props,
+    disabled,
+    labelPlacement,
+    required,
+    error: fcs.error
+  };
+  const classes = useUtilityClasses$e(ownerState);
+  const externalForwardedProps = {
+    slots,
+    slotProps: {
+      ...componentsProps,
+      ...slotProps
+    }
+  };
+  const [TypographySlot, typographySlotProps] = useSlot('typography', {
+    elementType: Typography,
+    externalForwardedProps,
+    ownerState
+  });
+  let label = labelProp;
+  if (label != null && label.type !== Typography && !disableTypography) {
+    label = /*#__PURE__*/jsxRuntimeExports.jsx(TypographySlot, {
+      component: "span",
+      ...typographySlotProps,
+      className: clsx(classes.label, typographySlotProps?.className),
+      children: label
+    });
+  }
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(FormControlLabelRoot, {
+    className: clsx(classes.root, className),
+    ownerState: ownerState,
+    ref: ref,
+    ...other,
+    children: [/*#__PURE__*/React.cloneElement(control, controlProps), required ? /*#__PURE__*/jsxRuntimeExports.jsxs("div", {
+      children: [label, /*#__PURE__*/jsxRuntimeExports.jsxs(AsteriskComponent$1, {
+        ownerState: ownerState,
+        "aria-hidden": true,
+        className: classes.asterisk,
+        children: ["\u2009", '*']
+      })]
+    }) : label]
+  });
+});
+process.env.NODE_ENV !== "production" ? FormControlLabel.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the component appears selected.
+   */
+  checked: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+   */
+  componentsProps: PropTypes.shape({
+    typography: PropTypes.object
+  }),
+  /**
+   * A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.
+   */
+  control: PropTypes.element.isRequired,
+  /**
+   * If `true`, the control is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label is rendered as it is passed without an additional typography node.
+   */
+  disableTypography: PropTypes.bool,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * A text or an element to be used in an enclosing label element.
+   */
+  label: PropTypes.node,
+  /**
+   * The position of the label.
+   * @default 'end'
+   */
+  labelPlacement: PropTypes.oneOf(['bottom', 'end', 'start', 'top']),
+  /**
+   * @ignore
+   */
+  name: PropTypes.string,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   * You can pull out the new checked state by accessing `event.target.checked` (boolean).
+   */
+  onChange: PropTypes.func,
+  /**
+   * If `true`, the label will indicate that the `input` is required.
+   */
+  required: PropTypes.bool,
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    typography: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    typography: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The value of the component.
+   */
+  value: PropTypes.any
+} : undefined;
+
 function getFormHelperTextUtilityClasses(slot) {
   return generateUtilityClass('MuiFormHelperText', slot);
 }
 const formHelperTextClasses = generateUtilityClasses('MuiFormHelperText', ['root', 'error', 'disabled', 'sizeSmall', 'sizeMedium', 'contained', 'focused', 'filled', 'required']);
 
 var _span$2;
-const useUtilityClasses$c = ownerState => {
+const useUtilityClasses$d = ownerState => {
   const {
     classes,
     contained,
@@ -21846,7 +22117,7 @@ const FormHelperText = /*#__PURE__*/React.forwardRef(function FormHelperText(inP
 
   // This issue explains why this is required: https://github.com/mui/material-ui/issues/42184
   delete ownerState.ownerState;
-  const classes = useUtilityClasses$c(ownerState);
+  const classes = useUtilityClasses$d(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsx(FormHelperTextRoot, {
     as: component,
     className: clsx(classes.root, className),
@@ -21925,7 +22196,7 @@ function getFormLabelUtilityClasses(slot) {
 }
 const formLabelClasses = generateUtilityClasses('MuiFormLabel', ['root', 'colorSecondary', 'focused', 'disabled', 'error', 'filled', 'required', 'asterisk']);
 
-const useUtilityClasses$b = ownerState => {
+const useUtilityClasses$c = ownerState => {
   const {
     classes,
     color,
@@ -22023,7 +22294,7 @@ const FormLabel = /*#__PURE__*/React.forwardRef(function FormLabel(inProps, ref)
     focused: fcs.focused,
     required: fcs.required
   };
-  const classes = useUtilityClasses$b(ownerState);
+  const classes = useUtilityClasses$c(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(FormLabelRoot, {
     as: component,
     ownerState: ownerState,
@@ -22342,7 +22613,7 @@ if (Grow) {
   Grow.muiSupportAuto = true;
 }
 
-const useUtilityClasses$a = ownerState => {
+const useUtilityClasses$b = ownerState => {
   const {
     classes,
     disableUnderline
@@ -22473,7 +22744,7 @@ const Input = /*#__PURE__*/React.forwardRef(function Input(inProps, ref) {
     type = 'text',
     ...other
   } = props;
-  const classes = useUtilityClasses$a(props);
+  const classes = useUtilityClasses$b(props);
   const ownerState = {
     disableUnderline
   };
@@ -22692,7 +22963,7 @@ function getInputLabelUtilityClasses(slot) {
 }
 generateUtilityClasses('MuiInputLabel', ['root', 'focused', 'disabled', 'error', 'required', 'asterisk', 'formControl', 'sizeSmall', 'shrink', 'animated', 'standard', 'filled', 'outlined']);
 
-const useUtilityClasses$9 = ownerState => {
+const useUtilityClasses$a = ownerState => {
   const {
     classes,
     formControl,
@@ -22881,7 +23152,7 @@ const InputLabel = /*#__PURE__*/React.forwardRef(function InputLabel(inProps, re
     required: fcs.required,
     focused: fcs.focused
   };
-  const classes = useUtilityClasses$9(ownerState);
+  const classes = useUtilityClasses$a(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsx(InputLabelRoot, {
     "data-shrink": shrink,
     ref: ref,
@@ -22972,7 +23243,7 @@ function getListUtilityClass(slot) {
 }
 generateUtilityClasses('MuiList', ['root', 'padding', 'dense', 'subheader']);
 
-const useUtilityClasses$8 = ownerState => {
+const useUtilityClasses$9 = ownerState => {
   const {
     classes,
     disablePadding,
@@ -23038,7 +23309,7 @@ const List = /*#__PURE__*/React.forwardRef(function List(inProps, ref) {
     dense,
     disablePadding
   };
-  const classes = useUtilityClasses$8(ownerState);
+  const classes = useUtilityClasses$9(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsx(ListContext.Provider, {
     value: context,
     children: /*#__PURE__*/jsxRuntimeExports.jsxs(ListRoot, {
@@ -23406,7 +23677,7 @@ function getTransformOriginValue(transformOrigin) {
 function resolveAnchorEl(anchorEl) {
   return typeof anchorEl === 'function' ? anchorEl() : anchorEl;
 }
-const useUtilityClasses$7 = ownerState => {
+const useUtilityClasses$8 = ownerState => {
   const {
     classes
   } = ownerState;
@@ -23488,7 +23759,7 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
     transitionDuration: transitionDurationProp,
     TransitionProps
   };
-  const classes = useUtilityClasses$7(ownerState);
+  const classes = useUtilityClasses$8(ownerState);
 
   // Returns the top/left offset of the position
   // to attach to on the anchor element (or body if none is provided)
@@ -23923,7 +24194,7 @@ const LTR_ORIGIN = {
   vertical: 'top',
   horizontal: 'left'
 };
-const useUtilityClasses$6 = ownerState => {
+const useUtilityClasses$7 = ownerState => {
   const {
     classes
   } = ownerState;
@@ -23997,7 +24268,7 @@ const Menu = /*#__PURE__*/React.forwardRef(function Menu(inProps, ref) {
     TransitionProps,
     variant
   };
-  const classes = useUtilityClasses$6(ownerState);
+  const classes = useUtilityClasses$7(ownerState);
   const autoFocusItem = autoFocus && !disableAutoFocusItem && open;
   const menuListActionsRef = React.useRef(null);
   const handleEntering = (element, isAppearing) => {
@@ -24205,7 +24476,7 @@ function getNativeSelectUtilityClasses(slot) {
 }
 const nativeSelectClasses = generateUtilityClasses('MuiNativeSelect', ['root', 'select', 'multiple', 'filled', 'outlined', 'standard', 'disabled', 'icon', 'iconOpen', 'iconFilled', 'iconOutlined', 'iconStandard', 'nativeInput', 'error']);
 
-const useUtilityClasses$5 = ownerState => {
+const useUtilityClasses$6 = ownerState => {
   const {
     classes,
     variant,
@@ -24362,7 +24633,7 @@ const NativeSelectInput = /*#__PURE__*/React.forwardRef(function NativeSelectInp
     variant,
     error
   };
-  const classes = useUtilityClasses$5(ownerState);
+  const classes = useUtilityClasses$6(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [/*#__PURE__*/jsxRuntimeExports.jsx(NativeSelectSelect, {
       ownerState: ownerState,
@@ -24580,7 +24851,7 @@ process.env.NODE_ENV !== "production" ? NotchedOutline.propTypes /* remove-propt
   style: PropTypes.object
 } : undefined;
 
-const useUtilityClasses$4 = ownerState => {
+const useUtilityClasses$5 = ownerState => {
   const {
     classes
   } = ownerState;
@@ -24759,7 +25030,7 @@ const OutlinedInput = /*#__PURE__*/React.forwardRef(function OutlinedInput(inPro
     type = 'text',
     ...other
   } = props;
-  const classes = useUtilityClasses$4(props);
+  const classes = useUtilityClasses$5(props);
   const muiFormControl = useFormControl();
   const fcs = formControlState({
     props,
@@ -25045,7 +25316,7 @@ function areEqualValues(a, b) {
 function isEmpty(display) {
   return display == null || typeof display === 'string' && !display.trim();
 }
-const useUtilityClasses$3 = ownerState => {
+const useUtilityClasses$4 = ownerState => {
   const {
     classes,
     variant,
@@ -25390,7 +25661,7 @@ const SelectInput = /*#__PURE__*/React.forwardRef(function SelectInput(props, re
     open,
     error
   };
-  const classes = useUtilityClasses$3(ownerState);
+  const classes = useUtilityClasses$4(ownerState);
   const paperProps = {
     ...MenuProps.PaperProps,
     ...MenuProps.slotProps?.paper
@@ -25630,7 +25901,7 @@ process.env.NODE_ENV !== "production" ? SelectInput.propTypes = {
   variant: PropTypes.oneOf(['standard', 'outlined', 'filled'])
 } : undefined;
 
-const useUtilityClasses$2 = ownerState => {
+const useUtilityClasses$3 = ownerState => {
   const {
     classes
   } = ownerState;
@@ -25694,7 +25965,7 @@ const Select = /*#__PURE__*/React.forwardRef(function Select(inProps, ref) {
     variant,
     classes: classesProp
   };
-  const classes = useUtilityClasses$2(ownerState);
+  const classes = useUtilityClasses$3(ownerState);
   const {
     root,
     ...restOfClasses
@@ -25916,7 +26187,7 @@ const tooltipClasses = generateUtilityClasses('MuiTooltip', ['popper', 'popperIn
 function round(value) {
   return Math.round(value * 1e5) / 1e5;
 }
-const useUtilityClasses$1 = ownerState => {
+const useUtilityClasses$2 = ownerState => {
   const {
     classes,
     disableInteractive,
@@ -26509,7 +26780,7 @@ const Tooltip = /*#__PURE__*/React.forwardRef(function Tooltip(inProps, ref) {
       modifiers: tooltipModifiers
     };
   }, [arrowRef, PopperProps.popperOptions, resolvedPopperProps?.popperOptions]);
-  const classes = useUtilityClasses$1(ownerState);
+  const classes = useUtilityClasses$2(ownerState);
   const resolvedTransitionProps = typeof slotProps.transition === 'function' ? slotProps.transition(ownerState) : slotProps.transition;
   const externalForwardedProps = {
     slots: {
@@ -26780,6 +27051,337 @@ process.env.NODE_ENV !== "production" ? Tooltip.propTypes /* remove-proptypes */
    * @default {}
    */
   TransitionProps: PropTypes.object
+} : undefined;
+
+function getSwitchUtilityClass(slot) {
+  return generateUtilityClass('MuiSwitch', slot);
+}
+const switchClasses = generateUtilityClasses('MuiSwitch', ['root', 'edgeStart', 'edgeEnd', 'switchBase', 'colorPrimary', 'colorSecondary', 'sizeSmall', 'sizeMedium', 'checked', 'disabled', 'input', 'thumb', 'track']);
+
+const useUtilityClasses$1 = ownerState => {
+  const {
+    classes,
+    edge,
+    size,
+    color,
+    checked,
+    disabled
+  } = ownerState;
+  const slots = {
+    root: ['root', edge && `edge${capitalize(edge)}`, `size${capitalize(size)}`],
+    switchBase: ['switchBase', `color${capitalize(color)}`, checked && 'checked', disabled && 'disabled'],
+    thumb: ['thumb'],
+    track: ['track'],
+    input: ['input']
+  };
+  const composedClasses = composeClasses(slots, getSwitchUtilityClass, classes);
+  return {
+    ...classes,
+    // forward the disabled and checked classes to the SwitchBase
+    ...composedClasses
+  };
+};
+const SwitchRoot = styled('span', {
+  name: 'MuiSwitch',
+  slot: 'Root',
+  overridesResolver: (props, styles) => {
+    const {
+      ownerState
+    } = props;
+    return [styles.root, ownerState.edge && styles[`edge${capitalize(ownerState.edge)}`], styles[`size${capitalize(ownerState.size)}`]];
+  }
+})({
+  display: 'inline-flex',
+  width: 34 + 12 * 2,
+  height: 14 + 12 * 2,
+  overflow: 'hidden',
+  padding: 12,
+  boxSizing: 'border-box',
+  position: 'relative',
+  flexShrink: 0,
+  zIndex: 0,
+  // Reset the stacking context.
+  verticalAlign: 'middle',
+  // For correct alignment with the text.
+  '@media print': {
+    colorAdjust: 'exact'
+  },
+  variants: [{
+    props: {
+      edge: 'start'
+    },
+    style: {
+      marginLeft: -8
+    }
+  }, {
+    props: {
+      edge: 'end'
+    },
+    style: {
+      marginRight: -8
+    }
+  }, {
+    props: {
+      size: 'small'
+    },
+    style: {
+      width: 40,
+      height: 24,
+      padding: 7,
+      [`& .${switchClasses.thumb}`]: {
+        width: 16,
+        height: 16
+      },
+      [`& .${switchClasses.switchBase}`]: {
+        padding: 4,
+        [`&.${switchClasses.checked}`]: {
+          transform: 'translateX(16px)'
+        }
+      }
+    }
+  }]
+});
+const SwitchSwitchBase = styled(SwitchBase, {
+  name: 'MuiSwitch',
+  slot: 'SwitchBase',
+  overridesResolver: (props, styles) => {
+    const {
+      ownerState
+    } = props;
+    return [styles.switchBase, {
+      [`& .${switchClasses.input}`]: styles.input
+    }, ownerState.color !== 'default' && styles[`color${capitalize(ownerState.color)}`]];
+  }
+})(memoTheme(({
+  theme
+}) => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  zIndex: 1,
+  // Render above the focus ripple.
+  color: theme.vars ? theme.vars.palette.Switch.defaultColor : `${theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.grey[300]}`,
+  transition: theme.transitions.create(['left', 'transform'], {
+    duration: theme.transitions.duration.shortest
+  }),
+  [`&.${switchClasses.checked}`]: {
+    transform: 'translateX(20px)'
+  },
+  [`&.${switchClasses.disabled}`]: {
+    color: theme.vars ? theme.vars.palette.Switch.defaultDisabledColor : `${theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[600]}`
+  },
+  [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
+    opacity: 0.5
+  },
+  [`&.${switchClasses.disabled} + .${switchClasses.track}`]: {
+    opacity: theme.vars ? theme.vars.opacity.switchTrackDisabled : `${theme.palette.mode === 'light' ? 0.12 : 0.2}`
+  },
+  [`& .${switchClasses.input}`]: {
+    left: '-100%',
+    width: '300%'
+  }
+})), memoTheme(({
+  theme
+}) => ({
+  '&:hover': {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette.action.active, theme.palette.action.hoverOpacity),
+    // Reset on touch devices, it doesn't add specificity
+    '@media (hover: none)': {
+      backgroundColor: 'transparent'
+    }
+  },
+  variants: [...Object.entries(theme.palette).filter(createSimplePaletteValueFilter(['light'])) // check all the used fields in the style below
+  .map(([color]) => ({
+    props: {
+      color
+    },
+    style: {
+      [`&.${switchClasses.checked}`]: {
+        color: (theme.vars || theme).palette[color].main,
+        '&:hover': {
+          backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[color].main, theme.palette.action.hoverOpacity),
+          '@media (hover: none)': {
+            backgroundColor: 'transparent'
+          }
+        },
+        [`&.${switchClasses.disabled}`]: {
+          color: theme.vars ? theme.vars.palette.Switch[`${color}DisabledColor`] : `${theme.palette.mode === 'light' ? lighten(theme.palette[color].main, 0.62) : darken(theme.palette[color].main, 0.55)}`
+        }
+      },
+      [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
+        backgroundColor: (theme.vars || theme).palette[color].main
+      }
+    }
+  }))]
+})));
+const SwitchTrack = styled('span', {
+  name: 'MuiSwitch',
+  slot: 'Track',
+  overridesResolver: (props, styles) => styles.track
+})(memoTheme(({
+  theme
+}) => ({
+  height: '100%',
+  width: '100%',
+  borderRadius: 14 / 2,
+  zIndex: -1,
+  transition: theme.transitions.create(['opacity', 'background-color'], {
+    duration: theme.transitions.duration.shortest
+  }),
+  backgroundColor: theme.vars ? theme.vars.palette.common.onBackground : `${theme.palette.mode === 'light' ? theme.palette.common.black : theme.palette.common.white}`,
+  opacity: theme.vars ? theme.vars.opacity.switchTrack : `${theme.palette.mode === 'light' ? 0.38 : 0.3}`
+})));
+const SwitchThumb = styled('span', {
+  name: 'MuiSwitch',
+  slot: 'Thumb',
+  overridesResolver: (props, styles) => styles.thumb
+})(memoTheme(({
+  theme
+}) => ({
+  boxShadow: (theme.vars || theme).shadows[1],
+  backgroundColor: 'currentColor',
+  width: 20,
+  height: 20,
+  borderRadius: '50%'
+})));
+const Switch = /*#__PURE__*/React.forwardRef(function Switch(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: 'MuiSwitch'
+  });
+  const {
+    className,
+    color = 'primary',
+    edge = false,
+    size = 'medium',
+    sx,
+    ...other
+  } = props;
+  const ownerState = {
+    ...props,
+    color,
+    edge,
+    size
+  };
+  const classes = useUtilityClasses$1(ownerState);
+  const icon = /*#__PURE__*/jsxRuntimeExports.jsx(SwitchThumb, {
+    className: classes.thumb,
+    ownerState: ownerState
+  });
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(SwitchRoot, {
+    className: clsx(classes.root, className),
+    sx: sx,
+    ownerState: ownerState,
+    children: [/*#__PURE__*/jsxRuntimeExports.jsx(SwitchSwitchBase, {
+      type: "checkbox",
+      icon: icon,
+      checkedIcon: icon,
+      ref: ref,
+      ownerState: ownerState,
+      ...other,
+      classes: {
+        ...classes,
+        root: classes.switchBase
+      }
+    }), /*#__PURE__*/jsxRuntimeExports.jsx(SwitchTrack, {
+      className: classes.track,
+      ownerState: ownerState
+    })]
+  });
+});
+process.env.NODE_ENV !== "production" ? Switch.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the component is checked.
+   */
+  checked: PropTypes.bool,
+  /**
+   * The icon to display when the component is checked.
+   */
+  checkedIcon: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes /* @typescript-to-proptypes-ignore */.oneOfType([PropTypes.oneOf(['default', 'primary', 'secondary', 'error', 'info', 'success', 'warning']), PropTypes.string]),
+  /**
+   * The default checked state. Use when the component is not controlled.
+   */
+  defaultChecked: PropTypes.bool,
+  /**
+   * If `true`, the component is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * If given, uses a negative margin to counteract the padding on one
+   * side (this is often helpful for aligning the left or right
+   * side of the icon with content above or below, without ruining the border
+   * size and shape).
+   * @default false
+   */
+  edge: PropTypes.oneOf(['end', 'start', false]),
+  /**
+   * The icon to display when the component is unchecked.
+   */
+  icon: PropTypes.node,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   * You can pull out the new checked state by accessing `event.target.checked` (boolean).
+   */
+  onChange: PropTypes.func,
+  /**
+   * If `true`, the `input` element is required.
+   * @default false
+   */
+  required: PropTypes.bool,
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense switch styling.
+   * @default 'medium'
+   */
+  size: PropTypes /* @typescript-to-proptypes-ignore */.oneOfType([PropTypes.oneOf(['medium', 'small']), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The value of the component. The DOM API casts this to a string.
+   * The browser uses "on" as the default value.
+   */
+  value: PropTypes.any
 } : undefined;
 
 function getTextFieldUtilityClass(slot) {
@@ -27234,10 +27836,10 @@ var RecordVoiceOverOutlined = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("
 }), 'RecordVoiceOverOutlined');
 
 // CourseLayout
-dt.span(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject([""], [""])));
-var GridItemContentHeader = dt.header(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
-var GridItemTitle = dt.h3(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
-dt.span(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
+dt.span(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject([""], [""])));
+var GridItemContentHeader = dt.header(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
+var GridItemTitle = dt.h3(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
+dt.span(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
 dt(Typography)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  color: #7a7a7a;\n  opacity: 0.7;\n"], ["\n  color: #7a7a7a;\n  opacity: 0.7;\n"])));
 dt.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
   var hoverBackground = _a.hoverBackground;
@@ -27326,7 +27928,7 @@ styled('div')(function (_a) {
     padding: theme.spacing(2, 4, 3)
   }, _b;
 });
-var templateObject_1$2, templateObject_2$2, templateObject_3$2, templateObject_4$2, templateObject_5$1, templateObject_6$1, templateObject_7$1, templateObject_8$1, templateObject_9$1, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28, templateObject_29, templateObject_30, templateObject_31, templateObject_32;
+var templateObject_1$3, templateObject_2$3, templateObject_3$3, templateObject_4$3, templateObject_5$1, templateObject_6$1, templateObject_7$1, templateObject_8$1, templateObject_9$1, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28, templateObject_29, templateObject_30, templateObject_31, templateObject_32;
 
 var TooltipHeight = function TooltipHeight(_a) {
   var text = _a.text,
@@ -27669,17 +28271,17 @@ const useTranslation$1 = (ns, props = {}) => {
   });
 };
 
-var Container = dt.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject([""], [""])));
-var ActionsContent = dt.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  padding: 5px;\n"], ["\n  padding: 5px;\n"])));
-var StyledIconButton = dt.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"], ["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"])));
-dt.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
+var Container = dt.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject([""], [""])));
+var ActionsContent = dt.div(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  padding: 5px;\n"], ["\n  padding: 5px;\n"])));
+var StyledIconButton = dt.div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"], ["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"])));
+dt.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
   var hoverBackground = _a.hoverBackground;
   return hoverBackground || "rgba(0, 0, 0, 0.1)";
 }, function (_a) {
   var $hoverColor = _a.$hoverColor;
   return $hoverColor && "svg path {\n          fill: ".concat($hoverColor, ";\n           }");
 });
-var templateObject_1$1, templateObject_2$1, templateObject_3$1, templateObject_4$1;
+var templateObject_1$2, templateObject_2$2, templateObject_3$2, templateObject_4$2;
 
 var MoreVertRoundedIcon = function MoreVertRoundedIcon(_a) {
   var className = _a.className,
@@ -28010,16 +28612,16 @@ var SearchRoundedSVG = function SearchRoundedSVG(_a) {
   }));
 };
 
-var Field = dt.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"], ["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"])), function (_a) {
+var Field = dt.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"], ["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"])), function (_a) {
   var $iconInStart = _a.$iconInStart;
   return $iconInStart ? 'padding-left: 40px;' : 'padding-right: 40px;';
 }, function (_a) {
   var $iconInStart = _a.$iconInStart;
   return $iconInStart ? 'left: 5px;' : 'right: 5px;';
 });
-var ValidationIcon = dt.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"], ["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"])));
-var StyledComponentContainer = dt.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"], ["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"])));
-var CharactersContainer = dt.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"], ["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"])));
+var ValidationIcon = dt.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"], ["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"])));
+var StyledComponentContainer = dt.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"], ["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"])));
+var CharactersContainer = dt.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"], ["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"])));
 dt.input(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
 dt.textarea(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
 dt.p(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n"])));
@@ -28028,7 +28630,7 @@ var Title = dt.h2(templateObject_9 || (templateObject_9 = __makeTemplateObject([
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
+var templateObject_1$1, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
 
 var TextInput = function TextInput(_a) {
   var title = _a.title,
@@ -28192,6 +28794,22 @@ var ThemeProvider = function ThemeProvider(_a) {
     })
   });
 };
+
+var StyledLabel = dt.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n"])));
+var ToolTipContainer = dt.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"])));
+var TooltipTitle = dt.span(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  font-size: 14px;\n"], ["\n  font-size: 14px;\n"])));
+var HelpIconStyles = {
+  color: '#06C68F'
+};
+var FormControlLabelStyles = {
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginLeft: 0
+};
+var FormControlWrapper = dt(ToolTipContainer)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"], ["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"])));
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
 
 var ActivityIcon = function ActivityIcon(_a) {
   var className = _a.className,
@@ -30064,5 +30682,57 @@ var WhiteAiAssistant = function WhiteAiAssistant(_a) {
   }));
 };
 
-export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseOutline, CloseOutlineAction, Coach, CourseCard, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, DeleteSVG, DocumentAttachment, Download, DownloadSVG, EditRounded, EditSVG, EditUsers, Education, EducationDefault, FilterIcon, GrayDownloadSVG, GrayPlayIcon, GridActionMenu, GridView, Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButtonSVG, PlayGrayButtonSVG, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRoundedSVG, SendAlt, SmallDeleteIcon, SmallUnlocked, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, UnlockSVG, UserActivity, UserSpeaker, WhiteAiAssistant };
+var CustomSwitcher = function CustomSwitcher(_a) {
+  var value = _a.value,
+    onChange = _a.onChange,
+    name = _a.name,
+    label = _a.label,
+    on = _a.on,
+    off = _a.off,
+    tooltip = _a.tooltip,
+    _b = _a.labelPosition,
+    labelPosition = _b === undefined ? 'start' : _b,
+    labelStyle = _a.labelStyle;
+  var Label = function Label() {
+    if (tooltip) {
+      return jsxRuntimeExports.jsxs(ToolTipContainer, {
+        children: [jsxRuntimeExports.jsx(StyledLabel, {
+          style: labelStyle,
+          children: label
+        }), jsxRuntimeExports.jsx(Tooltip, {
+          title: jsxRuntimeExports.jsx(TooltipTitle, {
+            children: tooltip
+          }),
+          arrow: true,
+          children: jsxRuntimeExports.jsx(Help, {
+            color: 'primary',
+            style: HelpIconStyles
+          })
+        })]
+      });
+    }
+    return jsxRuntimeExports.jsx(StyledLabel, {
+      style: labelStyle,
+      children: label
+    });
+  };
+  return jsxRuntimeExports.jsx(FormControlLabel, {
+    style: FormControlLabelStyles,
+    label: jsxRuntimeExports.jsx(Label, {}),
+    labelPlacement: labelPosition,
+    control: jsxRuntimeExports.jsxs(FormControlWrapper, {
+      children: [off, jsxRuntimeExports.jsx(Switch, {
+        checked: value,
+        onChange: onChange,
+        name: name,
+        value: value,
+        classes: {
+          switchBase: 'CustomSwitcher-switchBase'
+        }
+      }), on]
+    })
+  });
+};
+
+export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, DeleteSVG, DocumentAttachment, Download, DownloadSVG, EditRounded, EditSVG, EditUsers, Education, EducationDefault, FilterIcon, GrayDownloadSVG, GrayPlayIcon, GridActionMenu, GridView, Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButtonSVG, PlayGrayButtonSVG, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRoundedSVG, SendAlt, SmallDeleteIcon, SmallUnlocked, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, UnlockSVG, UserActivity, UserSpeaker, WhiteAiAssistant };
 //# sourceMappingURL=index.esm.js.map
