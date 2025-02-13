@@ -22,5 +22,5 @@
     "src/theme/Theme.ts",
     "src/theme/ThemeProvider.tsx"
   ],
-  "exclude": ["node_modules", "dist", "storybook-static"]
+  "exclude": ["node_modules", "dist", "docs"]
 }
