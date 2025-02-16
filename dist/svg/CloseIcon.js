@@ -21,8 +21,8 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var AddIcon = function (_a) {
+export var CloseIcon = function (_a) {
     var className = _a.className, onClick = _a.onClick, props = __rest(_a, ["className", "onClick"]);
-    return (_jsx("svg", __assign({ width: '25', height: '24', viewBox: '0 0 25 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M13.25 11.25V6H11.75V11.25H6.5V12.75H11.75V18H13.25V12.75H18.5V11.25H13.25Z', fill: 'white' }) })));
+    return (_jsx("svg", __assign({ width: '48', height: '48', viewBox: '0 0 48 48', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M30 19.05L28.95 18L24 22.95L19.05 18L18 19.05L22.95 24L18 28.95L19.05 30L24 25.05L28.95 30L30 28.95L25.05 24L30 19.05Z', fill: '#020210' }) })));
 };
-//# sourceMappingURL=AddIcon.js.map
+//# sourceMappingURL=CloseIcon.js.map
