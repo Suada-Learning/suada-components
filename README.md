@@ -37,11 +37,8 @@ Here are some of the scripts available in this project:
 
 | Script                 | Description                                     |
 | ---------------------- | ----------------------------------------------- |
-| `yarn dev`             | Runs the component library in development mode. |
-| `yarn build`           | Builds the library for production.              |
-| `yarn lint`            | Lints the project files.                        |
-| `yarn preview`         | Serves the production build locally.            |
-| `yarn storybook`       | Runs the Storybook for developing components.   |
+| `npm run storybook`    | Runs the component library in development mode. |
+| `npm run build`        | Builds the library for production.              |
 | `yarn build-storybook` | Builds the Storybook for production.            |
 
 ## Committing Guidelines
