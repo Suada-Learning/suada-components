@@ -2235,6 +2235,7 @@ function parse$1(value, root, parent, rule, rules, rulesets, pseudo, points, dec
           case 64:
             // -
             if (peek$1() === 45) characters += delimit$1(next$1())
+<<<<<<< HEAD
 
             ;(atrule = peek$1()),
               (offset = length = strlen$1((type = characters += identifier$1(caret$1())))),
@@ -2246,6 +2247,18 @@ function parse$1(value, root, parent, rule, rules, rulesets, pseudo, points, dec
         }
     }
 
+=======
+            ;(atrule = peek$1()),
+              (offset = length = strlen$1((type = characters += identifier$1(caret$1())))),
+              character++
+            break
+          // -
+          case 45:
+            if (previous === 45 && strlen$1(characters) == 2) variable = 0
+        }
+    }
+
+>>>>>>> 99b94fc (feat: dropDown component init)
   return rulesets
 }
 
@@ -4980,6 +4993,7 @@ function parse(value, root, parent, rule, rules, rulesets, pseudo, points, decla
           case 64:
             // -
             if (peek() === 45) characters += delimit(next())
+<<<<<<< HEAD
 
             ;(atrule = peek()),
               (offset = length = strlen((type = characters += identifier(caret())))),
@@ -4991,6 +5005,18 @@ function parse(value, root, parent, rule, rules, rulesets, pseudo, points, decla
         }
     }
 
+=======
+            ;(atrule = peek()),
+              (offset = length = strlen((type = characters += identifier(caret())))),
+              character++
+            break
+          // -
+          case 45:
+            if (previous === 45 && strlen(characters) == 2) variable = 0
+        }
+    }
+
+>>>>>>> 99b94fc (feat: dropDown component init)
   return rulesets
 }
 
@@ -6810,7 +6836,10 @@ var jsx = function jsx(type, props) {
 
 ;(function (_jsx) {
   var JSX
+<<<<<<< HEAD
 
+=======
+>>>>>>> 99b94fc (feat: dropDown component init)
   ;(function (_JSX) {})(JSX || (JSX = _jsx.JSX || (_jsx.JSX = {})))
 })(jsx)
 
@@ -34690,14 +34719,23 @@ var AddIcon = function AddIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 99b94fc (feat: dropDown component init)
     props = __rest(_a, ['className', 'onClick'])
   return jsxRuntimeExports.jsx(
     'svg',
     __assign(
       {
+<<<<<<< HEAD
         width: '25',
         height: '24',
         viewBox: '0 0 25 24',
+=======
+        width: '20',
+        height: '20',
+        viewBox: '0 0 20 20',
+>>>>>>> 99b94fc (feat: dropDown component init)
         fill: 'none',
         xmlns: 'http://www.w3.org/2000/svg',
         className: className,
@@ -34713,6 +34751,7 @@ var AddIcon = function AddIcon(_a) {
     ),
   )
 }
+<<<<<<< HEAD
 =======
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
@@ -34731,6 +34770,8 @@ var AddIcon = function AddIcon(_a) {
   }));
 };
 >>>>>>> dd51f6a (feat: export closeIcon)
+=======
+>>>>>>> 99b94fc (feat: dropDown component init)
 
 var AnalyticsIcon = function AnalyticsIcon(_a) {
   var className = _a.className,
@@ -35077,22 +35118,29 @@ var Close = function Close(_a) {
 var CloseIcon = function CloseIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
-    props = __rest(_a, ["className", "onClick"]);
-  return jsxRuntimeExports.jsx("svg", __assign({
-    width: '48',
-    height: '48',
-    viewBox: '0 0 48 48',
-    fill: 'none',
-    xmlns: 'http://www.w3.org/2000/svg',
-    className: className,
-    onClick: onClick
-  }, props, {
-    children: jsxRuntimeExports.jsx("path", {
-      d: 'M30 19.05L28.95 18L24 22.95L19.05 18L18 19.05L22.95 24L18 28.95L19.05 30L24 25.05L28.95 30L30 28.95L25.05 24L30 19.05Z',
-      fill: '#020210'
-    })
-  }));
-};
+    props = __rest(_a, ['className', 'onClick'])
+  return jsxRuntimeExports.jsx(
+    'svg',
+    __assign(
+      {
+        width: '48',
+        height: '48',
+        viewBox: '0 0 48 48',
+        fill: 'none',
+        xmlns: 'http://www.w3.org/2000/svg',
+        className: className,
+        onClick: onClick,
+      },
+      props,
+      {
+        children: jsxRuntimeExports.jsx('path', {
+          d: 'M30 19.05L28.95 18L24 22.95L19.05 18L18 19.05L22.95 24L18 28.95L19.05 30L24 25.05L28.95 30L30 28.95L25.05 24L30 19.05Z',
+          fill: '#020210',
+        }),
+      },
+    ),
+  )
+}
 
 var CloseOutline = function CloseOutline(_a) {
   var className = _a.className,
@@ -37213,6 +37261,9 @@ var CustomSwitcher = function CustomSwitcher(_a) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 99b94fc (feat: dropDown component init)
 function _typeof(o) {
   '@babel/helpers - typeof'
 
@@ -43361,6 +43412,7 @@ export {
   DarkCloseOutline,
   DarkTrashCan,
   DefaultAvatar,
+<<<<<<< HEAD
   Delete,
   DeleteIcon,
   DocumentAttachment,
@@ -43368,15 +43420,32 @@ export {
   DownloadIcon,
   Edit,
   EditRounded,
+=======
+  DeleteSVG,
+  DocumentAttachment,
+  Download,
+  DownloadSVG,
+  DropDown,
+  EditRounded,
+  EditSVG,
+>>>>>>> 99b94fc (feat: dropDown component init)
   EditUsers,
   Education,
   EducationDefault,
   FilterIcon,
+<<<<<<< HEAD
   GrayDownload,
   GrayPlayIcon,
   GridActionMenu,
   GridView,
   Group,
+=======
+  GrayDownloadSVG,
+  GrayPlayIcon,
+  GridActionMenu,
+  GridView,
+  Group$2 as Group,
+>>>>>>> 99b94fc (feat: dropDown component init)
   GroupDefault,
   Help,
   HorizontalView,
@@ -43387,8 +43456,13 @@ export {
   MyProfile,
   NewFilter,
   Notification,
+<<<<<<< HEAD
   PlayButton,
   PlayGrayButton,
+=======
+  PlayButtonSVG,
+  PlayGrayButtonSVG,
+>>>>>>> 99b94fc (feat: dropDown component init)
   PresentationScreen,
   Profile,
   RedDeleteIcon,
@@ -43398,8 +43472,15 @@ export {
   Reset,
   Search,
   SearchInput,
+<<<<<<< HEAD
   SearchRounded,
   SendAlt,
+=======
+  SearchRoundedSVG,
+  SendAlt,
+  SmallDeleteIcon,
+  SmallUnlocked,
+>>>>>>> 99b94fc (feat: dropDown component init)
   SwitchCompany,
   ThemeProvider,
   TranslationProvider,
@@ -43407,11 +43488,18 @@ export {
   TrashCanAction,
   TrashCanRed,
   UnfillPlay,
+<<<<<<< HEAD
   Unlock,
   Unlocked,
+=======
+  UnlockSVG,
+>>>>>>> 99b94fc (feat: dropDown component init)
   UserActivity,
   UserSpeaker,
   WhiteAiAssistant,
 }
+<<<<<<< HEAD
 export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, Edit, EditRounded, EditUsers, Education, EducationDefault, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButton, PlayGrayButton, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, WhiteAiAssistant };
+=======
+>>>>>>> 99b94fc (feat: dropDown component init)
 //# sourceMappingURL=index.esm.js.map
