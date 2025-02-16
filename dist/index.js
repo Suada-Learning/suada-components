@@ -5,9 +5,8 @@ export { SearchInput } from './components/SearchInput';
 export { TranslationProvider } from './components/Providers/TranslationProvider';
 export { ThemeProvider } from './components/Providers/ThemeProvider';
 export { CustomSwitcher } from './components/Switcher';
+export { ActivityIcon } from './svg';
 export { AddAlt } from './svg';
-// export { ActivityIcon } from './svg'
-export * from './svg';
 export { AddStudent } from './svg';
 export { AddIcon } from './svg';
 export { AnalyticsIcon } from './svg';
