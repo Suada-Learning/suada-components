@@ -1,22 +1,27 @@
-import resolve from "@rollup/plugin-node-resolve";
-import typescript from "@rollup/plugin-typescript";
-import babel from "@rollup/plugin-babel";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
-import commonjs from "@rollup/plugin-commonjs";
+import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+import babel from '@rollup/plugin-babel'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss'
+import commonjs from '@rollup/plugin-commonjs'
 
 export default {
-  input: "./src/index.ts",
+  input: {
+    index: './src/index.ts',
+    icons: './src/icons/index.ts',
+  },
   output: [
     {
-      file: "dist/index.js",
-      format: "cjs",
+      dir: 'dist',
+      format: 'cjs',
       sourcemap: true,
+      entryFileNames: '[name].js', // This ensures 'index.js' and 'icons.js' are generated
     },
     {
-      file: "dist/index.esm.js",
-      format: "esm",
+      dir: 'dist',
+      format: 'esm',
       sourcemap: true,
+      entryFileNames: '[name].esm.js', // This ensures 'index.esm.js' and 'icons.esm.js' are generated
     },
   ],
   plugins: [
@@ -35,17 +40,17 @@ export default {
     }),
 
     typescript({
-      tsconfig: "./tsconfig.json",
+      tsconfig: './tsconfig.json',
       declaration: true,
-      declarationDir: "dist/types",
-      exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
+      declarationDir: 'dist/types',
+      exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
     }),
 
     babel({
-      exclude: "node_modules/**",
-      babelHelpers: "bundled",
-      extensions: [".ts", ".tsx"],
+      exclude: 'node_modules/**',
+      babelHelpers: 'bundled',
+      extensions: ['.ts', '.tsx'],
     }),
   ],
-  external: ["react", "react-dom"],
-};
+  external: ['react', 'react-dom'],
+}
