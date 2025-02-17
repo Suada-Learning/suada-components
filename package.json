@@ -16,8 +16,7 @@
     }
   },
   "files": [
-    "dist",
-    "icons"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
