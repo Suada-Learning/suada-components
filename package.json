@@ -5,7 +5,22 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./icons": "./dist/icons/index.js"
+  },
   "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "icons": [
+        "dist/icons/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "icons"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "rollup -c && tsc",
@@ -29,10 +44,6 @@
     "react-i18next": "^15.4.0",
     "styled-components": "^6.1.14"
   },
-  "files": [
-    "dist",
-    "svg"
-  ],
   "source": "index.ts",
   "devDependencies": {
     "@babel/cli": "^7.26.4",

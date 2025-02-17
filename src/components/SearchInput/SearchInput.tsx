@@ -1,4 +1,4 @@
-import { SearchRoundedSVG } from '../../svg/SearchRoundedIcon'
+import { SearchRoundedSVG } from '../../icons/SearchRoundedIcon'
 import { Input } from '../TextInput'
 import IconButton from '@mui/material/IconButton'
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'

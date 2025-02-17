@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import * as Icons from '../../svg/index';
+import * as Icons from '../../icons/index';
 export default {
     title: 'Icons',
 };

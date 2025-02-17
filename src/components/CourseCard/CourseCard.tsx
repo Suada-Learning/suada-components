@@ -25,9 +25,9 @@ import {
   GridItemTitle,
 } from './CourseCard.styles'
 import TooltipHeight from '../../helperFunctions/TooltipHeight'
-import { EditSVG } from '../../svg/Edit'
-import { PlayButtonSVG } from '../../svg/PlayButton'
-import { UnlockSVG } from '../../svg/Unlock'
+import { EditSVG } from '../../icons/Edit'
+import { PlayButtonSVG } from '../../icons/PlayButton'
+import { UnlockSVG } from '../../icons/Unlock'
 import { Group, ICourseCardProps, IUser } from './CourseCard.interface'
 import { useTranslation } from 'react-i18next'
 import { GridActionMenu } from '../GridActionMenu'
