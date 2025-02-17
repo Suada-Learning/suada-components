@@ -14,7 +14,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "@storybook/react"]
+    "types": ["vite/client", "@storybook/react"],
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true
   },
   "include": [
     "src",
