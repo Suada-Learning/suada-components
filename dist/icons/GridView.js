@@ -1,28 +1,40 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+import { __rest, __assign } from '../node_modules/tslib/tslib.es6.js';
+import { j as jsxRuntimeExports } from '../_virtual/jsx-runtime.js';
+
+var GridView = function GridView(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 0 20 20',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("g", {
+      id: 'Grid',
+      children: jsxRuntimeExports.jsxs("g", {
+        id: 'Vector',
+        children: [jsxRuntimeExports.jsx("path", {
+          d: 'M7.5 2.5H3.75C3.41848 2.5 3.10054 2.6317 2.86612 2.86612C2.6317 3.10054 2.5 3.41848 2.5 3.75V7.5C2.5 7.83152 2.6317 8.14946 2.86612 8.38388C3.10054 8.6183 3.41848 8.75 3.75 8.75H7.5C7.83152 8.75 8.14946 8.6183 8.38388 8.38388C8.6183 8.14946 8.75 7.83152 8.75 7.5V3.75C8.75 3.41848 8.6183 3.10054 8.38388 2.86612C8.14946 2.6317 7.83152 2.5 7.5 2.5ZM7.5 7.5H3.75V3.75H7.5V7.5Z',
+          fill: '#68707A'
+        }), jsxRuntimeExports.jsx("path", {
+          d: 'M16.25 2.5H12.5C12.1685 2.5 11.8505 2.6317 11.6161 2.86612C11.3817 3.10054 11.25 3.41848 11.25 3.75V7.5C11.25 7.83152 11.3817 8.14946 11.6161 8.38388C11.8505 8.6183 12.1685 8.75 12.5 8.75H16.25C16.5815 8.75 16.8995 8.6183 17.1339 8.38388C17.3683 8.14946 17.5 7.83152 17.5 7.5V3.75C17.5 3.41848 17.3683 3.10054 17.1339 2.86612C16.8995 2.6317 16.5815 2.5 16.25 2.5ZM16.25 7.5H12.5V3.75H16.25V7.5Z',
+          fill: '#68707A'
+        }), jsxRuntimeExports.jsx("path", {
+          d: 'M7.5 11.25H3.75C3.41848 11.25 3.10054 11.3817 2.86612 11.6161C2.6317 11.8505 2.5 12.1685 2.5 12.5V16.25C2.5 16.5815 2.6317 16.8995 2.86612 17.1339C3.10054 17.3683 3.41848 17.5 3.75 17.5H7.5C7.83152 17.5 8.14946 17.3683 8.38388 17.1339C8.6183 16.8995 8.75 16.5815 8.75 16.25V12.5C8.75 12.1685 8.6183 11.8505 8.38388 11.6161C8.14946 11.3817 7.83152 11.25 7.5 11.25ZM7.5 16.25H3.75V12.5H7.5V16.25Z',
+          fill: '#68707A'
+        }), jsxRuntimeExports.jsx("path", {
+          d: 'M16.25 11.25H12.5C12.1685 11.25 11.8505 11.3817 11.6161 11.6161C11.3817 11.8505 11.25 12.1685 11.25 12.5V16.25C11.25 16.5815 11.3817 16.8995 11.6161 17.1339C11.8505 17.3683 12.1685 17.5 12.5 17.5H16.25C16.5815 17.5 16.8995 17.3683 17.1339 17.1339C17.3683 16.8995 17.5 16.5815 17.5 16.25V12.5C17.5 12.1685 17.3683 11.8505 17.1339 11.6161C16.8995 11.3817 16.5815 11.25 16.25 11.25ZM16.25 16.25H12.5V12.5H16.25V16.25Z',
+          fill: '#68707A'
+        })]
+      })
+    })
+  }));
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export var GridView = function (_a) {
-    var className = _a.className, onClick = _a.onClick, props = __rest(_a, ["className", "onClick"]);
-    return (_jsx("svg", __assign({ width: '20', height: '20', viewBox: '0 0 20 20', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("g", { id: 'Grid', children: _jsxs("g", { id: 'Vector', children: [_jsx("path", { d: 'M7.5 2.5H3.75C3.41848 2.5 3.10054 2.6317 2.86612 2.86612C2.6317 3.10054 2.5 3.41848 2.5 3.75V7.5C2.5 7.83152 2.6317 8.14946 2.86612 8.38388C3.10054 8.6183 3.41848 8.75 3.75 8.75H7.5C7.83152 8.75 8.14946 8.6183 8.38388 8.38388C8.6183 8.14946 8.75 7.83152 8.75 7.5V3.75C8.75 3.41848 8.6183 3.10054 8.38388 2.86612C8.14946 2.6317 7.83152 2.5 7.5 2.5ZM7.5 7.5H3.75V3.75H7.5V7.5Z', fill: '#68707A' }), _jsx("path", { d: 'M16.25 2.5H12.5C12.1685 2.5 11.8505 2.6317 11.6161 2.86612C11.3817 3.10054 11.25 3.41848 11.25 3.75V7.5C11.25 7.83152 11.3817 8.14946 11.6161 8.38388C11.8505 8.6183 12.1685 8.75 12.5 8.75H16.25C16.5815 8.75 16.8995 8.6183 17.1339 8.38388C17.3683 8.14946 17.5 7.83152 17.5 7.5V3.75C17.5 3.41848 17.3683 3.10054 17.1339 2.86612C16.8995 2.6317 16.5815 2.5 16.25 2.5ZM16.25 7.5H12.5V3.75H16.25V7.5Z', fill: '#68707A' }), _jsx("path", { d: 'M7.5 11.25H3.75C3.41848 11.25 3.10054 11.3817 2.86612 11.6161C2.6317 11.8505 2.5 12.1685 2.5 12.5V16.25C2.5 16.5815 2.6317 16.8995 2.86612 17.1339C3.10054 17.3683 3.41848 17.5 3.75 17.5H7.5C7.83152 17.5 8.14946 17.3683 8.38388 17.1339C8.6183 16.8995 8.75 16.5815 8.75 16.25V12.5C8.75 12.1685 8.6183 11.8505 8.38388 11.6161C8.14946 11.3817 7.83152 11.25 7.5 11.25ZM7.5 16.25H3.75V12.5H7.5V16.25Z', fill: '#68707A' }), _jsx("path", { d: 'M16.25 11.25H12.5C12.1685 11.25 11.8505 11.3817 11.6161 11.6161C11.3817 11.8505 11.25 12.1685 11.25 12.5V16.25C11.25 16.5815 11.3817 16.8995 11.6161 17.1339C11.8505 17.3683 12.1685 17.5 12.5 17.5H16.25C16.5815 17.5 16.8995 17.3683 17.1339 17.1339C17.3683 16.8995 17.5 16.5815 17.5 16.25V12.5C17.5 12.1685 17.3683 11.8505 17.1339 11.6161C16.8995 11.3817 16.5815 11.25 16.25 11.25ZM16.25 16.25H12.5V12.5H16.25V16.25Z', fill: '#68707A' })] }) }) })));
-};
+
+export { GridView };
 //# sourceMappingURL=GridView.js.map

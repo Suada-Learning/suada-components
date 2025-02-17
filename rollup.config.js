@@ -13,39 +13,28 @@ export default {
   output: [
     {
       dir: 'dist',
-      format: 'cjs',
-      sourcemap: true,
-      entryFileNames: '[name].js', // This ensures 'index.js' and 'icons.js' are generated
-    },
-    {
-      dir: 'dist',
       format: 'esm',
       sourcemap: true,
-      entryFileNames: '[name].esm.js', // This ensures 'index.esm.js' and 'icons.esm.js' are generated
+      entryFileNames: '[name].js',
+      preserveModules: true, // Keeps module structure
+      preserveModulesRoot: 'src',
     },
   ],
   plugins: [
     peerDepsExternal(),
-
-    resolve(),
-
-    commonjs({
-      include: /node_modules/,
-    }),
-
+    resolve({ extensions: ['.js', '.ts', '.tsx'] }),
+    commonjs(),
     postcss({
       modules: true,
       extract: true,
       minimize: true,
     }),
-
     typescript({
       tsconfig: './tsconfig.json',
       declaration: true,
       declarationDir: 'dist/types',
       exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
     }),
-
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'bundled',
