@@ -11,7 +11,7 @@ import {
   TooltipTitle,
 } from './CustomSwitcher.styles'
 import { ISwitchProps } from './CustomSwitcher.interface'
-import { Help } from '../../svg'
+import { Help } from '../../svg/Help'
 
 export const CustomSwitcher: React.FC<ISwitchProps> = ({
   value,
