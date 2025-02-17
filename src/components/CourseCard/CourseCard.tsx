@@ -25,9 +25,9 @@ import {
   GridItemTitle,
 } from './CourseCard.styles'
 import TooltipHeight from '../../helperFunctions/TooltipHeight'
-import { EditSVG } from '../../svg/Edit'
-import { PlayButtonSVG } from '../../svg/PlayButton'
-import { UnlockSVG } from '../../svg/Unlock'
+import { Edit } from '../../svg/Edit'
+import { PlayButton } from '../../svg/PlayButton'
+import { Unlock } from '../../svg/Unlock'
 import { Group, ICourseCardProps, IUser } from './CourseCard.interface'
 import { useTranslation } from 'react-i18next'
 import { GridActionMenu } from '../GridActionMenu'
@@ -167,7 +167,7 @@ export const CourseCard = ({
                 }}
                 style={{ borderRight: '1px solid #D6DAE0' }}
               >
-                <EditSVG /> {t('actions.edit')}
+                <Edit /> {t('actions.edit')}
               </StyledActionItem>
               <StyledActionItem
                 color='#d0524b'
@@ -180,7 +180,7 @@ export const CourseCard = ({
                   e.stopPropagation()
                 }}
               >
-                <PlayButtonSVG /> {t('actions.play_intro')}
+                <PlayButton /> {t('actions.play_intro')}
               </StyledActionItem>
 
               {companyMode && activeTab != 0 && (
@@ -199,7 +199,7 @@ export const CourseCard = ({
                     e.stopPropagation()
                   }}
                 >
-                  <UnlockSVG />
+                  <Unlock />
                   {item.state === 'published' ? t('actions.unpublish') : t('actions.publish')}
                 </StyledActionItem>
               )}

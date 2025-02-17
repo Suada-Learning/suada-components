@@ -27967,7 +27967,7 @@ var TooltipHeight = function TooltipHeight(_a) {
   });
 };
 
-var EditSVG = function EditSVG(_a) {
+var Edit = function Edit(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -27990,7 +27990,7 @@ var EditSVG = function EditSVG(_a) {
   }));
 };
 
-var PlayButtonSVG = function PlayButtonSVG(_a) {
+var PlayButton = function PlayButton(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -28028,7 +28028,7 @@ var PlayButtonSVG = function PlayButtonSVG(_a) {
   });
 };
 
-var UnlockSVG = function UnlockSVG(_a) {
+var Unlock = function Unlock(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -28485,7 +28485,7 @@ var CourseCard = function CourseCard(_a) {
             style: {
               borderRight: '1px solid #D6DAE0'
             },
-            children: [jsxRuntimeExports.jsx(EditSVG, {}), " ", t('actions.edit')]
+            children: [jsxRuntimeExports.jsx(Edit, {}), " ", t('actions.edit')]
           }), jsxRuntimeExports.jsxs(StyledActionItem, {
             color: '#d0524b',
             disabled: !item.video,
@@ -28496,7 +28496,7 @@ var CourseCard = function CourseCard(_a) {
               }
               e.stopPropagation();
             },
-            children: [jsxRuntimeExports.jsx(PlayButtonSVG, {}), " ", t('actions.play_intro')]
+            children: [jsxRuntimeExports.jsx(PlayButton, {}), " ", t('actions.play_intro')]
           }), companyMode && activeTab != 0 && jsxRuntimeExports.jsxs(StyledActionItem, {
             disabled: ((_b = state.userPermission) === null || _b === undefined ? undefined : _b.publishCourse) === false,
             color: item.state === 'published' ? ' #EA382A' : '#00905E',
@@ -28509,7 +28509,7 @@ var CourseCard = function CourseCard(_a) {
               }
               e.stopPropagation();
             },
-            children: [jsxRuntimeExports.jsx(UnlockSVG, {}), item.state === 'published' ? t('actions.unpublish') : t('actions.publish')]
+            children: [jsxRuntimeExports.jsx(Unlock, {}), item.state === 'published' ? t('actions.unpublish') : t('actions.publish')]
           })]
         })]
       })
@@ -28592,7 +28592,7 @@ var CourseCard = function CourseCard(_a) {
   }, item.id);
 };
 
-var SearchRoundedSVG = function SearchRoundedSVG(_a) {
+var SearchRounded = function SearchRounded(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -28774,7 +28774,7 @@ var SearchInput = function SearchInput(_a) {
       onChange: handleSearchChange,
       icon: jsxRuntimeExports.jsx(IconButton, {
         onClick: onSearchSubmit,
-        children: jsxRuntimeExports.jsx(SearchRoundedSVG, {})
+        children: jsxRuntimeExports.jsx(SearchRounded, {})
       })
     })
   });
@@ -29448,7 +29448,7 @@ var DefaultAvatar = function DefaultAvatar(_a) {
   }));
 };
 
-var DeleteSVG = function DeleteSVG(_a) {
+var Delete = function Delete(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -29515,7 +29515,7 @@ var DocumentAttachment = function DocumentAttachment(_a) {
   }));
 };
 
-var DownloadSVG = function DownloadSVG(_a) {
+var DownloadIcon = function DownloadIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -29685,7 +29685,7 @@ var FilterIcon = function FilterIcon(_a) {
   }));
 };
 
-var GrayDownloadSVG = function GrayDownloadSVG(_a) {
+var GrayDownload = function GrayDownload(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -29725,7 +29725,7 @@ var GrayDownloadSVG = function GrayDownloadSVG(_a) {
   }));
 };
 
-var PlayGrayButtonSVG = function PlayGrayButtonSVG(_a) {
+var PlayGrayButton = function PlayGrayButton(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -30406,7 +30406,7 @@ var SendAlt = function SendAlt(_a) {
   }));
 };
 
-var SmallDeleteIcon = function SmallDeleteIcon(_a) {
+var DeleteIcon = function DeleteIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -30435,7 +30435,7 @@ var SmallDeleteIcon = function SmallDeleteIcon(_a) {
   }));
 };
 
-var SmallUnlocked = function SmallUnlocked(_a) {
+var Unlocked = function Unlocked(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -30731,5 +30731,5 @@ var CustomSwitcher = function CustomSwitcher(_a) {
   });
 };
 
-export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, DeleteSVG, DocumentAttachment, Download, DownloadSVG, EditRounded, EditSVG, EditUsers, Education, EducationDefault, FilterIcon, GrayDownloadSVG, GrayPlayIcon, GridActionMenu, GridView, Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButtonSVG, PlayGrayButtonSVG, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRoundedSVG, SendAlt, SmallDeleteIcon, SmallUnlocked, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, UnlockSVG, UserActivity, UserSpeaker, WhiteAiAssistant };
+export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, Edit, EditRounded, EditUsers, Education, EducationDefault, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButton, PlayGrayButton, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, WhiteAiAssistant };
 //# sourceMappingURL=index.esm.js.map

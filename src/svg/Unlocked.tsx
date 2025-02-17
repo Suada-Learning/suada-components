@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-export const SmallUnlocked: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const Unlocked: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       width='20'
