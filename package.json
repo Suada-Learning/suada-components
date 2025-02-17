@@ -10,6 +10,9 @@
     ".": "./dist/index.js",
     "./icons": "./dist/icons.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "rollup -c && tsc",
@@ -33,10 +36,6 @@
     "react-i18next": "^15.4.0",
     "styled-components": "^6.1.14"
   },
-  "files": [
-    "dist",
-    "svg"
-  ],
   "source": "index.ts",
   "devDependencies": {
     "@babel/cli": "^7.26.4",
