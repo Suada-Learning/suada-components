@@ -1,4 +1,4 @@
-import { EditSVG } from '../../svg/Edit'
+import { Edit } from '../../svg/Edit'
 import Typography from '@mui/material/Typography'
 import { ActionConfig, DeleteSpan, DisabledTypography } from './CourseCard.styles'
 import {
@@ -9,11 +9,11 @@ import {
   TranslationFunction,
 } from './CourseCard.interface'
 import React from 'react'
-import { PlayButtonSVG } from '../../svg/PlayButton'
-import { PlayGrayButtonSVG } from '../../svg/GrayPlayButton'
-import { DeleteSVG } from '../../svg/DeleteIcon'
-import { GrayDownloadSVG } from '../../svg/GrayDownloadIcon'
-import { DownloadSVG } from '../../svg/DownloadIcon'
+import { PlayButton } from '../../svg/PlayButton'
+import { PlayGrayButton } from '../../svg/GrayPlayButton'
+import { Delete } from '../../svg/Delete'
+import { GrayDownload } from '../../svg/GrayDownloadIcon'
+import { DownloadIcon } from '../../svg/DownloadIcon'
 
 const getTypographyAndIcon = (
   isEnabled: boolean,
@@ -35,7 +35,7 @@ export const actionConfig = (
     render: (item: ICourse): JSX.Element => {
       return !item.isBought ? (
         <ActionConfig className='edit' onClick={(): void => handleClick('editCourse', item)}>
-          <EditSVG />
+          <Edit />
           <Typography>{t('actions.edit')}</Typography>
         </ActionConfig>
       ) : (
@@ -48,8 +48,8 @@ export const actionConfig = (
     render: (): JSX.Element => {
       const { TypographyComponent, IconComponent } = getTypographyAndIcon(
         false,
-        DownloadSVG,
-        GrayDownloadSVG,
+        DownloadIcon,
+        GrayDownload,
       )
       return (
         <ActionConfig>
@@ -64,8 +64,8 @@ export const actionConfig = (
     render: (item: ICourse): JSX.Element => {
       const { TypographyComponent, IconComponent } = getTypographyAndIcon(
         !!item.video,
-        PlayButtonSVG,
-        PlayGrayButtonSVG,
+        PlayButton,
+        PlayGrayButton,
       )
       return (
         <ActionConfig onClick={(): void => handleClick('playIntro', item)} disabled={!item.video}>
@@ -79,7 +79,7 @@ export const actionConfig = (
     hide: !permission.deleteCourse,
     render: (item: ICourse): JSX.Element => (
       <ActionConfig className='delete' onClick={(): void => handleClick('deleteCourse', item.id)}>
-        <DeleteSVG />
+        <Delete />
         <DeleteSpan>{t('actions.delete')}</DeleteSpan>
       </ActionConfig>
     ),

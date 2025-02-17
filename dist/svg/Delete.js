@@ -21,8 +21,8 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export var DownloadIcon = function (_a) {
+export var Delete = function (_a) {
     var className = _a.className, onClick = _a.onClick, props = __rest(_a, ["className", "onClick"]);
-    return (_jsxs("svg", __assign({ width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M19.5 18V21H4.5V18H3V21C3 21.3978 3.15804 21.7794 3.43934 22.0607C3.72064 22.342 4.10218 22.5 4.5 22.5H19.5C19.8978 22.5 20.2794 22.342 20.5607 22.0607C20.842 21.7794 21 21.3978 21 21V18H19.5Z', fill: '#020210' }), _jsx("path", { d: 'M19.5 10.5L18.4425 9.4425L12.75 15.1275V1.5H11.25V15.1275L5.5575 9.4425L4.5 10.5L12 18L19.5 10.5Z', fill: '#020210' })] })));
+    return (_jsxs("svg", __assign({ width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M10.5 9H9V18H10.5V9Z', fill: '#EA382A' }), _jsx("path", { d: 'M15 9H13.5V18H15V9Z', fill: '#EA382A' }), _jsx("path", { d: 'M3 4.5V6H4.5V21C4.5 21.3978 4.65804 21.7794 4.93934 22.0607C5.22064 22.342 5.60218 22.5 6 22.5H18C18.3978 22.5 18.7794 22.342 19.0607 22.0607C19.342 21.7794 19.5 21.3978 19.5 21V6H21V4.5H3ZM6 21V6H18V21H6Z', fill: '#EA382A' }), _jsx("path", { d: 'M15 1.5H9V3H15V1.5Z', fill: '#EA382A' })] })));
 };
-//# sourceMappingURL=DownloadIcon.js.map
+//# sourceMappingURL=Delete.js.map
