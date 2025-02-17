@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-export const GrayDownloadSVG: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const GrayDownload: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
   return (
     <svg
       version='1.1'

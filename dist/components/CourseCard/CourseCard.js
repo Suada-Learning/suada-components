@@ -4,9 +4,9 @@ import { Tooltip } from '@mui/material';
 import { GroupOutlined, GroupsOutlined, RecordVoiceOverOutlined } from '@mui/icons-material';
 import { CardActionBar, CourseStatusContainer, GridItemLessons, ItemBlock, StyledActionItem, StyledActionsContainer, StyledCardBottomContainer, StyledChecked, StyledCourseCardContent, StyledItemWrapper, StyledToolTipContainer, StylesCardWrapper, TooltipContent, GridItem, GridItemImage, GridItemContent, GridItemWrapper, GridItemContentHeader, GridItemTitle, } from './CourseCard.styles';
 import TooltipHeight from '../../helperFunctions/TooltipHeight';
-import { EditSVG } from '../../svg/Edit';
-import { PlayButtonSVG } from '../../svg/PlayButton';
-import { UnlockSVG } from '../../svg/Unlock';
+import { Edit } from '../../svg/Edit';
+import { PlayButton } from '../../svg/PlayButton';
+import { Unlock } from '../../svg/Unlock';
 import { useTranslation } from 'react-i18next';
 import { GridActionMenu } from '../GridActionMenu';
 export var CourseCard = function (_a) {
@@ -42,18 +42,18 @@ export var CourseCard = function (_a) {
                                             actionHandler('editCourse', item);
                                         }
                                         e.stopPropagation();
-                                    }, style: { borderRight: '1px solid #D6DAE0' }, children: [_jsx(EditSVG, {}), " ", t('actions.edit')] }), _jsxs(StyledActionItem, { color: '#d0524b', disabled: !item.video, onClick: function (e) {
+                                    }, style: { borderRight: '1px solid #D6DAE0' }, children: [_jsx(Edit, {}), " ", t('actions.edit')] }), _jsxs(StyledActionItem, { color: '#d0524b', disabled: !item.video, onClick: function (e) {
                                         if (item.video && typeof actionHandler === 'function') {
                                             actionHandler('playIntro', item);
                                             e.stopPropagation();
                                         }
                                         e.stopPropagation();
-                                    }, children: [_jsx(PlayButtonSVG, {}), " ", t('actions.play_intro')] }), companyMode && activeTab != 0 && (_jsxs(StyledActionItem, { disabled: ((_b = state.userPermission) === null || _b === void 0 ? void 0 : _b.publishCourse) === false, color: item.state === 'published' ? ' #EA382A' : '#00905E', style: { borderLeft: '1px solid #D6DAE0' }, onClick: function (e) {
+                                    }, children: [_jsx(PlayButton, {}), " ", t('actions.play_intro')] }), companyMode && activeTab != 0 && (_jsxs(StyledActionItem, { disabled: ((_b = state.userPermission) === null || _b === void 0 ? void 0 : _b.publishCourse) === false, color: item.state === 'published' ? ' #EA382A' : '#00905E', style: { borderLeft: '1px solid #D6DAE0' }, onClick: function (e) {
                                         if (actionHandler) {
                                             actionHandler('publishedUnPublished', item.id, item.state === 'unpublished' ? 'published' : 'unpublished');
                                         }
                                         e.stopPropagation();
-                                    }, children: [_jsx(UnlockSVG, {}), item.state === 'published' ? t('actions.unpublish') : t('actions.publish')] }))] }))] }) }), withTooltips && (_jsxs(StyledToolTipContainer, { children: [_jsx("hr", { style: { opacity: '.1', margin: 0 } }), _jsxs(GridItemWrapper, { style: { justifyContent: 'space-around', flexDirection: 'row' }, children: [_jsx(Tooltip, { arrow: true, title: _jsxs(TooltipContent, { children: [_jsx("span", { children: (((_c = item.coaches) === null || _c === void 0 ? void 0 : _c.length) && t('general.coaches')) || t('general.no_coaches') }), _jsx("div", { children: (item.coaches &&
+                                    }, children: [_jsx(Unlock, {}), item.state === 'published' ? t('actions.unpublish') : t('actions.publish')] }))] }))] }) }), withTooltips && (_jsxs(StyledToolTipContainer, { children: [_jsx("hr", { style: { opacity: '.1', margin: 0 } }), _jsxs(GridItemWrapper, { style: { justifyContent: 'space-around', flexDirection: 'row' }, children: [_jsx(Tooltip, { arrow: true, title: _jsxs(TooltipContent, { children: [_jsx("span", { children: (((_c = item.coaches) === null || _c === void 0 ? void 0 : _c.length) && t('general.coaches')) || t('general.no_coaches') }), _jsx("div", { children: (item.coaches &&
                                                 item.coaches.map(function (i, index) {
                                                     return "".concat(i.firstName, " ").concat(i.lastName, " ").concat((index !== 0 && ",") || '', " ");
                                                 })) ||
