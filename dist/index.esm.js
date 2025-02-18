@@ -34689,6 +34689,7 @@ var AddStudent = function AddStudent(_a) {
 var AddIcon = function AddIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
+<<<<<<< HEAD
     props = __rest(_a, ['className', 'onClick'])
   return jsxRuntimeExports.jsx(
     'svg',
@@ -34712,6 +34713,24 @@ var AddIcon = function AddIcon(_a) {
     ),
   )
 }
+=======
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 0 20 20',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M13.25 11.25V6H11.75V11.25H6.5V12.75H11.75V18H13.25V12.75H18.5V11.25H13.25Z',
+      fill: 'white'
+    })
+  }));
+};
+>>>>>>> dd51f6a (feat: export closeIcon)
 
 var AnalyticsIcon = function AnalyticsIcon(_a) {
   var className = _a.className,
@@ -35054,6 +35073,26 @@ var Close = function Close(_a) {
     ),
   )
 }
+
+var CloseIcon = function CloseIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '48',
+    height: '48',
+    viewBox: '0 0 48 48',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M30 19.05L28.95 18L24 22.95L19.05 18L18 19.05L22.95 24L18 28.95L19.05 30L24 25.05L28.95 30L30 28.95L25.05 24L30 19.05Z',
+      fill: '#020210'
+    })
+  }));
+};
 
 var CloseOutline = function CloseOutline(_a) {
   var className = _a.className,
@@ -37173,6 +37212,7 @@ var CustomSwitcher = function CustomSwitcher(_a) {
   })
 }
 
+<<<<<<< HEAD
 function _typeof(o) {
   '@babel/helpers - typeof'
 
@@ -43373,4 +43413,5 @@ export {
   UserSpeaker,
   WhiteAiAssistant,
 }
+export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, Edit, EditRounded, EditUsers, Education, EducationDefault, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButton, PlayGrayButton, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, WhiteAiAssistant };
 //# sourceMappingURL=index.esm.js.map
