@@ -35,11 +35,11 @@ This project uses `asdf` for managing Node versions, ensuring that all contribut
 
 Here are some of the scripts available in this project:
 
-| Script                 | Description                                     |
-| ---------------------- | ----------------------------------------------- |
-| `npm run storybook`    | Runs the component library in development mode. |
-| `npm run build`        | Builds the library for production.              |
-| `yarn build-storybook` | Builds the Storybook for production.            |
+| Script                | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| `npm run storybook`   | Runs the component library in development mode. |
+| `npm run build`       | Builds the library for production.              |
+| `npm build-storybook` | Builds the Storybook for production.            |
 
 ## Committing Guidelines
 
