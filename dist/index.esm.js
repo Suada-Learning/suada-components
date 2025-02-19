@@ -18825,7 +18825,7 @@ const filledInputClasses = {
   ...generateUtilityClasses('MuiFilledInput', ['root', 'underline', 'input', 'adornedStart', 'adornedEnd', 'sizeSmall', 'multiline', 'hiddenLabel'])
 };
 
-var ArrowDropDownIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var ArrowDropDownIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M7 10l5 5 5-5z"
 }), 'ArrowDropDown');
 
@@ -25868,7 +25868,7 @@ const Select$1 = /*#__PURE__*/React.forwardRef(function Select(inProps, ref) {
     className,
     defaultOpen = false,
     displayEmpty = false,
-    IconComponent = ArrowDropDownIcon,
+    IconComponent = ArrowDropDownIcon$1,
     id,
     input,
     inputProps,
@@ -28760,6 +28760,21 @@ var ActivityIcon = function ActivityIcon(_a) {
     children: jsxRuntimeExports.jsx("path", {
       d: 'M10 1.25C5.1675 1.25 1.25 5.1675 1.25 10C1.25 14.8325 5.1675 18.75 10 18.75C14.8325 18.75 18.75 14.8325 18.75 10C18.75 5.1675 14.8325 1.25 10 1.25ZM10 17.5C6.2725 17.5 3.125 14.3525 3.125 10.625C3.125 6.8975 6.2725 3.75 10 3.75C13.7275 3.75 16.875 6.8975 16.875 10.625C16.875 14.3525 13.7275 17.5 10 17.5ZM10 5.625C9.585 5.625 9.25 5.96 9.25 6.375V10.625C9.25 11.04 9.585 11.375 10 11.375C10.415 11.375 10.75 11.04 10.75 10.625V6.375C10.75 5.96 10.415 5.625 10 5.625ZM10 12.5C9.585 12.5 9.25 12.835 9.25 13.25C9.25 13.665 9.585 14 10 14C10.415 14 10.75 13.665 10.75 13.25C10.75 12.835 10.415 12.5 10 12.5Z',
       fill: '#68707A'
+    })
+  }));
+};
+
+var ArrowDropDownIcon = function ArrowDropDownIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    viewBox: '0 0 24 24',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M7 10l5 5 5-5z'
     })
   }));
 };
@@ -35570,5 +35585,5 @@ var DropDown = function DropDown(props) {
   });
 };
 
-export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButton, PlayGrayButton, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, WhiteAiAssistant };
+export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, ArrowDropDownIcon, AssignTutor, Book, BookWithBookmark, Button, CaretDown, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, Help, HorizontalView, Information, Locked, Logout, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, PlayButton, PlayGrayButton, PresentationScreen, Profile, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, WhiteAiAssistant };
 //# sourceMappingURL=index.esm.js.map
