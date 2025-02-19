@@ -1,6 +1,12 @@
 export { ActivityIcon } from './Activity';
+export { Analytics } from './Analytics';
 export { AddAlt } from './AddAlt';
+export { Company } from './Company';
 export { AddStudent } from './AddStudent';
+export { Learning } from './Learning';
+export { UsersIcon } from './UsersIcon';
+export { Circle } from './Circle';
+export { Library } from './Library';
 export { AddIcon } from './AddIcon';
 export { AnalyticsIcon } from './AnalyticsIcon';
 export { AssignTutor } from './AssignTutor';
