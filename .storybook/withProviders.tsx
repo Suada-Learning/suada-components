@@ -5,6 +5,7 @@ import { TranslationProvider } from '../src/components/Providers/TranslationProv
 import translations from '../public/locales/en/translation.json'
 import { themes } from '../src/theme/Theme'
 import { GlobalStyle } from '../src/global.styles'
+import { MemoryRouter } from 'react-router-dom'
 
 export const withProviders = (Story, context) => {
   const theme = themes[context.globals.theme] || themes.light
@@ -32,8 +33,10 @@ export const withProviders = (Story, context) => {
     <TranslationProvider translations={flattenedTranslations}>
       <MuiThemeProvider theme={createTheme(theme)}>
         <StyledThemeProvider theme={theme}>
-          <GlobalStyle />
-          <Story />
+          <MemoryRouter>
+            <GlobalStyle />
+            <Story />
+          </MemoryRouter>
         </StyledThemeProvider>
       </MuiThemeProvider>
     </TranslationProvider>
