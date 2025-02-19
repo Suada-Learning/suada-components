@@ -6,6 +6,7 @@ export { TranslationProvider } from './components/Providers/TranslationProvider'
 export { ThemeProvider } from './components/Providers/ThemeProvider';
 export { CustomSwitcher } from './components/Switcher';
 export { DropDown } from './components/DropDown';
+export { Uploader } from './components/FileUploaderV2/Uploader';
 export { ActivityIcon } from './svg';
 export { ArrowDropDownIcon } from './svg';
 export { AddAlt } from './svg';
