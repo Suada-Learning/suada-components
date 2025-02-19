@@ -199,6 +199,7 @@ export interface CompleteCriteriaOption {
 }
 
 export interface IPermissionsBool {
+  userPermission?: boolean
   createCompany?: boolean
   editCompany?: boolean
   deleteCompany?: boolean
