@@ -181,6 +181,7 @@ export interface CompleteCriteriaOption {
     value: CourseCompleteCriteriaEnums;
 }
 export interface IPermissionsBool {
+    userPermission?: boolean;
     createCompany?: boolean;
     editCompany?: boolean;
     deleteCompany?: boolean;
