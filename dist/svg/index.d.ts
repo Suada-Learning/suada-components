@@ -1,4 +1,5 @@
 export { ActivityIcon } from './Activity';
+export { ArrowDropDownIcon } from './ArrowDropDownIcon';
 export { Analytics } from './Analytics';
 export { AddAlt } from './AddAlt';
 export { Company } from './Company';
