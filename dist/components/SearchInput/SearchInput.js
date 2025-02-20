@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { SearchRounded } from '../../svg/SearchRounded';
-import { Input } from '../TextInput';
+import { Input } from '../Input';
 import IconButton from '@mui/material/IconButton';
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';
 export var SearchInput = function (_a) {

@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import ReactSelect from 'react-select';
-import { StyledLabel } from '../TextInput/styled-components';
+import { StyledLabel } from '../Input/styled-components';
 import { CaretDown } from '../../svg';
 import { ContainerSelect, customStyles, ErrorMessage } from './DropDown.styles';
 export var DropDown = function (props) {

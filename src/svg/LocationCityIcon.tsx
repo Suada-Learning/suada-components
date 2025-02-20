@@ -15,7 +15,7 @@ export const LocationCityIcon: React.FC<SvgProps> = ({ className, onClick, ...pr
     >
       <path
         d='M120-120v-560h240v-80l120-120 120 120v240h240v400H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm240 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm240 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z'
-        fill='#e8eaed'
+        fill='#06C68F'
       />
     </svg>
   )
