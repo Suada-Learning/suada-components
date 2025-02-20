@@ -7,7 +7,7 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import HeadsetIcon from '@mui/icons-material/Headset';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import { FileTypes } from './uploader.interface';
-import { Input } from '../TextInput';
+import { Input } from '../Input';
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';
 var Loading = function (_a) {
     var type = _a.type, loading = _a.loading;

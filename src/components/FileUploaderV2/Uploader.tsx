@@ -23,7 +23,7 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile'
 import HeadsetIcon from '@mui/icons-material/Headset'
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined'
 import { FileTypes, ILoadingProps, IUploadedFile, IUploaderProps } from './uploader.interface'
-import { Input } from '../TextInput'
+import { Input } from '../Input'
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
 
 const Loading = ({ type, loading }: ILoadingProps): ReactElement | undefined => {
