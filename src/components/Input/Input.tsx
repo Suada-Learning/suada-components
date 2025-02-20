@@ -9,8 +9,8 @@ import {
 import TextField from '@mui/material/TextField'
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded'
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded'
-import './TextInput.scss'
-import { ITextInputProps } from './textInput.interface'
+import './Input.scss'
+import { ITextInputProps } from './Input.interface'
 
 const TextInput = ({
   title,

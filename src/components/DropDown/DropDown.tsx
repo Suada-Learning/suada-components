@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import ReactSelect from 'react-select'
-import { StyledLabel } from '../TextInput/styled-components'
+import { StyledLabel } from '../Input/styled-components'
 import { CaretDown } from '../../svg'
 import { ContainerSelect, customStyles, ErrorMessage } from './DropDown.styles'
 import { ISelectFieldProps } from './DropDown.interface'
