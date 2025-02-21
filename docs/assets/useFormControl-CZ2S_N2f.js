@@ -1,0 +1,1 @@
+import{a as c,r as o}from"./index-CAe6R3bO.js";let n=0;function r(t){const[e,a]=o.useState(t),u=t||e;return o.useEffect(()=>{e==null&&(n+=1,a(`mui-${n}`))},[e]),u}const f={...c},s=f.useId;function I(t){if(s!==void 0){const e=s();return t??e}return r(t)}const l=o.createContext(void 0);function i(){return o.useContext(l)}export{l as F,i as a,I as u};
