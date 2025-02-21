@@ -1,10 +1,10 @@
 import React, { useState, useEffect, ReactElement } from 'react'
-import ReactCountryFlag from 'react-country-flag'
 import { Container, InputContainer, Input, Label, ErrorMessage, Flex } from './styled-components'
 import countryList from './countryCode'
 import ReactSelect, { components, OptionProps, ValueType } from 'react-select'
 import { IComponentProps, IPhoneCountryCodeProps } from './phoneCountryCode.interface'
 import { ISelectFilterOption } from '../CourseCard/CourseCard.interface'
+import ReactCountryFlag from 'react-country-flag'
 
 export const PhoneCountryCode = ({
   label,
