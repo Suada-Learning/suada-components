@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 export var ArrowDropDownIcon = function (_a) {
-    var className = _a.className, onClick = _a.onClick, props = __rest(_a, ["className", "onClick"]);
-    return (_jsx("svg", __assign({ viewBox: '0 0 24 24', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M7 10l5 5 5-5z' }) })));
+    var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#fff' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
+    return (_jsx("svg", __assign({ width: '20', height: '20', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M480-384 288-576h384L480-384Z', fill: fill }) })));
 };
 //# sourceMappingURL=ArrowDropDownIcon.js.map

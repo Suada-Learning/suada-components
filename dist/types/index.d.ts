@@ -56,6 +56,7 @@ export { GridView } from './svg';
 export { Group } from './svg';
 export { GroupDefault } from './svg';
 export { Help } from './svg';
+export { HelpIcon } from './svg';
 export { HorizontalView } from './svg';
 export { Information } from './svg';
 export { Locked } from './svg';
