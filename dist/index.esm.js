@@ -33330,6 +33330,72 @@ var MarkunreadMailboxIcon = function MarkunreadMailboxIcon(_a) {
   }));
 };
 
+var ArrowDropUpIcon = function ArrowDropUpIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#fff' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M288-384 480-576 672-384H288Z',
+      fill: fill
+    })
+  }));
+};
+
+var CircleNotificationsIcon = function CircleNotificationsIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M192-216v-72h48v-240q0-87 53.5-153T432-763v-53q0-20 14-34t34-14q20 0 34 14t14 34v53q85 16 138.5 82T720-528v240h48v72H192Zm288-276Zm-.21 396Q450-96 429-117.15T408-168h144q0 30-21.21 51t-51 21ZM312-288h336v-240q0-70-49-119t-119-49q-70 0-119 49t-49 119v240Z',
+      fill: fill
+    })
+  }));
+};
+
+var KeyboardBackspaceIcon = function KeyboardBackspaceIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? 'inherit' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M192-216v-72h48v-240q0-87 53.5-153T432-763v-53q0-20 14-34t34-14q20 0 34 14t14 34v53q85 16 138.5 82T720-528v240h48v72H192Zm288-276Zm-.21 396Q450-96 429-117.15T408-168h144q0 30-21.21 51t-51 21ZM312-288h336v-240q0-70-49-119t-119-49q-70 0-119 49t-49 119v240Z',
+      fill: fill
+    })
+  }));
+};
+
 var FilterIcon = function FilterIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
@@ -57290,5 +57356,5 @@ var Pagination = function Pagination(_a) {
   });
 };
 
-export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, AssignTutor, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CaretDown, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DatePicker, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, EventIcon, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, Help, HelpIcon, HorizontalView, Information, Loader, LocationCityIcon, LocationOnIcon, Locked, Logout, MarkunreadMailboxIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, Pagination, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayGrayButton, PresentationScreen, Profile, PublicIcon, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, WhiteAiAssistant };
+export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CaretDown, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DatePicker, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, EventIcon, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, Help, HelpIcon, HorizontalView, Information, KeyboardBackspaceIcon, Loader, LocationCityIcon, LocationOnIcon, Locked, Logout, MarkunreadMailboxIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, Pagination, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayGrayButton, PresentationScreen, Profile, PublicIcon, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, WhiteAiAssistant };
 //# sourceMappingURL=index.esm.js.map
