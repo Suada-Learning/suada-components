@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 export var CloseIcon = function (_a) {
-    var className = _a.className, onClick = _a.onClick, props = __rest(_a, ["className", "onClick"]);
-    return (_jsx("svg", __assign({ width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M30 19.05L28.95 18L24 22.95L19.05 18L18 19.05L22.95 24L18 28.95L19.05 30L24 25.05L28.95 30L30 28.95L25.05 24L30 19.05Z', fill: '#020210' }) })));
+    var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#B3B3B8' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
+    return (_jsx("svg", __assign({ width: '24', height: '24', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'm256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z', fill: fill }) })));
 };
 //# sourceMappingURL=CloseIcon.js.map
