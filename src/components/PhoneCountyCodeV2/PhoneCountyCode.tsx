@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ReactElement } from 'react'
 import { Container, InputContainer, Input, Label, ErrorMessage, Flex } from './styled-components'
 import countryList from './countryCode'
-import ReactSelect, { components, OptionProps, ValueType } from 'react-select'
+import ReactSelect, { components, OptionProps } from 'react-select'
 import { IComponentProps, IPhoneCountryCodeProps } from './phoneCountryCode.interface'
 import { ISelectFilterOption } from '../CourseCard/CourseCard.interface'
 import ReactCountryFlag from 'react-country-flag'
@@ -51,7 +51,7 @@ export const PhoneCountryCode = ({
     }
   }, [selectValue])
 
-  const handleSelectChange = (selectedOption: ValueType<ISelectFilterOption, false>): void => {
+  const handleSelectChange = (selectedOption: ISelectFilterOption | null): void => {
     if (!selectedOption) {
       setSelectedCountry(null)
       selectChange(null)

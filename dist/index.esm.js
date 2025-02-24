@@ -31302,11 +31302,11 @@ var CancelIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12z"
 }), 'Cancel');
 
-var CheckCircleOutlineRoundedIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var CheckCircleOutlineRoundedIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m3.88-11.71L10 14.17l-1.88-1.88a.996.996 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7c.39-.39.39-1.02 0-1.41s-1.03-.39-1.42 0"
 }), 'CheckCircleOutlineRounded');
 
-var ErrorOutlineRoundedIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var ErrorOutlineRoundedIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 7c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V8c0-.55.45-1 1-1m-.01-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m1-3h-2v-2h2z"
 }), 'ErrorOutlineRounded');
 
@@ -31314,15 +31314,15 @@ var FileUploadOutlinedIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("p
   d: "M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z"
 }), 'FileUploadOutlined');
 
-var GroupOutlined = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var GroupOutlined$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M9 13.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5M4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25zM9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12m0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7m7.04 6.81c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44M15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35"
 }), 'GroupOutlined');
 
-var GroupsOutlined = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var GroupsOutlined$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m1.13 1.1c-.37-.06-.74-.1-1.13-.1-.99 0-1.93.21-2.78.58C.48 14.9 0 15.62 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29M20 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m4 3.43c0-.81-.48-1.53-1.22-1.85-.85-.37-1.79-.58-2.78-.58-.39 0-.76.04-1.13.1.4.68.63 1.46.63 2.29V18H24zm-7.76-2.78c-1.17-.52-2.61-.9-4.24-.9s-3.07.39-4.24.9C6.68 14.13 6 15.21 6 16.39V18h12v-1.61c0-1.18-.68-2.26-1.76-2.74M8.07 16c.09-.23.13-.39.91-.69.97-.38 1.99-.56 3.02-.56s2.05.18 3.02.56c.77.3.81.46.91.69zM12 8c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1m0-2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"
 }), 'GroupsOutlined');
 
-var HeadsetIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var HeadsetIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9"
 }), 'Headset');
 
@@ -31334,7 +31334,7 @@ var OndemandVideoIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path",
   d: "M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2m0 14H3V5h18zm-5-6-7 4V7z"
 }), 'OndemandVideo');
 
-var RecordVoiceOverOutlined = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var RecordVoiceOverOutlined$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M9 13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 8c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4m-6 4c.22-.72 3.31-2 6-2 2.7 0 5.8 1.29 6 2zM15.08 7.05c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14"
 }), 'RecordVoiceOverOutlined');
 
@@ -32042,7 +32042,7 @@ var CourseCard = function CourseCard(_a) {
             style: {
               padding: '9px'
             },
-            children: jsxRuntimeExports.jsx(RecordVoiceOverOutlined, {
+            children: jsxRuntimeExports.jsx(RecordVoiceOverOutlined$1, {
               fontSize: 'small'
             })
           })
@@ -32065,7 +32065,7 @@ var CourseCard = function CourseCard(_a) {
             style: {
               padding: '9px'
             },
-            children: jsxRuntimeExports.jsx(GroupsOutlined, {
+            children: jsxRuntimeExports.jsx(GroupsOutlined$1, {
               fontSize: 'small'
             })
           })
@@ -32085,7 +32085,7 @@ var CourseCard = function CourseCard(_a) {
             style: {
               padding: '9px'
             },
-            children: jsxRuntimeExports.jsx(GroupOutlined, {
+            children: jsxRuntimeExports.jsx(GroupOutlined$1, {
               fontSize: 'small'
             })
           })
@@ -32233,7 +32233,7 @@ var TextInput = function TextInput(_a) {
       children: [(value === null || value === void 0 ? void 0 : value.length) ? maxCharacter - (value === null || value === void 0 ? void 0 : value.length) : maxCharacter, " - ", maxCharacter, " symbols remaining"]
     }), touched && validate && jsxRuntimeExports.jsx(ValidationIcon, {
       className: "".concat(error ? 'error' : 'valid'),
-      children: error ? jsxRuntimeExports.jsx(ErrorOutlineRoundedIcon, {}) : jsxRuntimeExports.jsx(CheckCircleOutlineRoundedIcon, {})
+      children: error ? jsxRuntimeExports.jsx(ErrorOutlineRoundedIcon$1, {}) : jsxRuntimeExports.jsx(CheckCircleOutlineRoundedIcon$1, {})
     }), icon && icon, component ? jsxRuntimeExports.jsx(StyledComponentContainer, {
       children: component
     }) : null]
@@ -32337,14 +32337,21 @@ var ActivityIcon = function ActivityIcon(_a) {
 var ArrowDropDownIcon$1 = function ArrowDropDownIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
-    props = __rest(_a, ["className", "onClick"]);
+    _b = _a.fill,
+    fill = _b === void 0 ? '#fff' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
-    viewBox: '0 0 24 24',
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
     className: className,
     onClick: onClick
   }, props, {
     children: jsxRuntimeExports.jsx("path", {
-      d: 'M7 10l5 5 5-5z'
+      d: 'M480-384 288-576h384L480-384Z',
+      fill: fill
     })
   }));
 };
@@ -32690,19 +32697,21 @@ var Close = function Close(_a) {
 var CloseIcon = function CloseIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
-    props = __rest(_a, ["className", "onClick"]);
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
     height: '24',
-    viewBox: '0 0 24 24',
+    viewBox: '0 -960 960 960',
     fill: 'none',
     xmlns: 'http://www.w3.org/2000/svg',
     className: className,
     onClick: onClick
   }, props, {
     children: jsxRuntimeExports.jsx("path", {
-      d: 'M30 19.05L28.95 18L24 22.95L19.05 18L18 19.05L22.95 24L18 28.95L19.05 30L24 25.05L28.95 30L30 28.95L25.05 24L30 19.05Z',
-      fill: '#020210'
+      d: 'm256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z',
+      fill: fill
     })
   }));
 };
@@ -33323,6 +33332,72 @@ var MarkunreadMailboxIcon = function MarkunreadMailboxIcon(_a) {
   }));
 };
 
+var ArrowDropUpIcon = function ArrowDropUpIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#fff' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M288-384 480-576 672-384H288Z',
+      fill: fill
+    })
+  }));
+};
+
+var CircleNotificationsIcon = function CircleNotificationsIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M192-216v-72h48v-240q0-87 53.5-153T432-763v-53q0-20 14-34t34-14q20 0 34 14t14 34v53q85 16 138.5 82T720-528v240h48v72H192Zm288-276Zm-.21 396Q450-96 429-117.15T408-168h144q0 30-21.21 51t-51 21ZM312-288h336v-240q0-70-49-119t-119-49q-70 0-119 49t-49 119v240Z',
+      fill: fill
+    })
+  }));
+};
+
+var KeyboardBackspaceIcon = function KeyboardBackspaceIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? 'inherit' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M192-216v-72h48v-240q0-87 53.5-153T432-763v-53q0-20 14-34t34-14q20 0 34 14t14 34v53q85 16 138.5 82T720-528v240h48v72H192Zm288-276Zm-.21 396Q450-96 429-117.15T408-168h144q0 30-21.21 51t-51 21ZM312-288h336v-240q0-70-49-119t-119-49q-70 0-119 49t-49 119v240Z',
+      fill: fill
+    })
+  }));
+};
+
 var FilterIcon = function FilterIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
@@ -33399,6 +33474,28 @@ var Person = function Person(_a) {
     children: jsxRuntimeExports.jsx("path", {
       d: 'M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z',
       fill: '#06C68F'
+    })
+  }));
+};
+
+var HelpIcon = function HelpIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#06C68F' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '20',
+    height: '20',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-240q20 0 34-14t14-34q0-20-14-34t-34-14q-20 0-34 14t-14 34q0 20 14 34t34 14Zm-36-153h73q0-37 6.5-52.5T555-485q35-34 48.5-58t13.5-53q0-55-37.5-89.5T484-720q-51 0-88.5 27T343-620l65 27q9-28 28.5-43.5T482-652q28 0 46 16t18 42q0 23-15.5 41T496-518q-35 32-43.5 52.5T444-393Zm36 297q-79 0-149-30t-122.5-82.5Q156-261 126-331T96-480q0-80 30-149.5t82.5-122Q261-804 331-834t149-30q80 0 149.5 30t122 82.5Q804-699 834-629.5T864-480q0 79-30 149t-82.5 122.5Q699-156 629.5-126T480-96Zm0-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z',
+      fill: fill
     })
   }));
 };
@@ -34394,6 +34491,798 @@ var WhiteAiAssistant = function WhiteAiAssistant(_a) {
       d: 'M11.25 3.75H12.5V2.5H11.25C10.8938 2.5012 10.542 2.57896 10.2185 2.72802C9.89502 2.87708 9.60735 3.09395 9.375 3.36394C9.14265 3.09395 8.85498 2.87708 8.53147 2.72802C8.20797 2.57896 7.85619 2.5012 7.5 2.5H6.875C5.38367 2.50165 3.95389 3.09482 2.89935 4.14935C1.84482 5.20389 1.25165 6.63366 1.25 8.125V11.875C1.25165 13.3663 1.84482 14.7961 2.89935 15.8506C3.95389 16.9052 5.38367 17.4983 6.875 17.5H7.5C7.85619 17.4988 8.20797 17.421 8.53147 17.272C8.85498 17.1229 9.14265 16.906 9.375 16.6361C9.60735 16.906 9.89502 17.1229 10.2185 17.272C10.542 17.421 10.8938 17.4988 11.25 17.5H12.5V16.25H11.25C10.9186 16.2496 10.6009 16.1178 10.3665 15.8835C10.1322 15.6491 10.0004 15.3314 10 15V5C10.0004 4.6686 10.1322 4.35087 10.3665 4.11654C10.6009 3.8822 10.9186 3.75038 11.25 3.75ZM7.5 16.25H6.875C5.82402 16.2482 4.80877 15.8683 4.0147 15.1798C3.22063 14.4913 2.70074 13.5401 2.55 12.5H3.75V11.25H2.5V8.75H4.375C4.87211 8.74945 5.34871 8.55173 5.70022 8.20022C6.05173 7.84871 6.24945 7.37211 6.25 6.875V5.625H5V6.875C4.99985 7.04071 4.93396 7.1996 4.81678 7.31678C4.6996 7.43395 4.54071 7.49985 4.375 7.5H2.55C2.70074 6.45988 3.22063 5.5087 4.0147 4.8202C4.80877 4.1317 5.82402 3.75184 6.875 3.75H7.5C7.8314 3.75038 8.14913 3.8822 8.38346 4.11654C8.6178 4.35087 8.74962 4.6686 8.75 5V7.5H7.5V8.75H8.75V11.25H7.5C7.00289 11.2505 6.52629 11.4483 6.17478 11.7998C5.82327 12.1513 5.62555 12.6279 5.625 13.125V14.375H6.875V13.125C6.87515 12.9593 6.94104 12.8004 7.05822 12.6832C7.1754 12.566 7.33429 12.5001 7.5 12.5H8.75V15C8.74962 15.3314 8.6178 15.6491 8.38346 15.8835C8.14913 16.1178 7.8314 16.2496 7.5 16.25Z',
       fill: 'white'
     })]
+  }));
+};
+
+var ArchiveIcon = function ArchiveIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-240l160-160-56-56-64 64v-168h-80v168l-64-64-56 56 160 160ZM200-640v440h560v-440H200Zm0 520q-33 0-56.5-23.5T120-200v-499q0-14 4.5-27t13.5-24l50-61q11-14 27.5-21.5T250-840h460q18 0 34.5 7.5T772-811l50 61q9 11 13.5 24t4.5 27v499q0 33-23.5 56.5T760-120H200Zm16-600h528l-34-40H250l-34 40Zm264 300Z',
+      fill: fill
+    })
+  }));
+};
+
+var BackspaceRoundedIcon = function BackspaceRoundedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M456-320l104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 160q-19 0-36-8.5T296-192L80-480l216-288q11-15 28-23.5t36-8.5h440q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H360ZM180-480l180 240h440v-480H360L180-480Zm400 0Z',
+      fill: fill
+    })
+  }));
+};
+
+var BackupIcon = function BackupIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z',
+      fill: fill
+    })
+  }));
+};
+
+var CheckCircleOutlineRoundedIcon = function CheckCircleOutlineRoundedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M424-296l282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z',
+      fill: fill
+    })
+  }));
+};
+
+var ClosedCaptionIcon = function ClosedCaptionIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M200-160q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h560q33 0 56.5 23.5T840-720v480q0 33-23.5 56.5T760-160H200Zm0-80h560v-480H200v480Zm80-120h120q17 0 28.5-11.5T440-400v-40h-60v20h-80v-120h80v20h60v-40q0-17-11.5-28.5T400-600H280q-17 0-28.5 11.5T240-560v160q0 17 11.5 28.5T280-360Zm280 0h120q17 0 28.5-11.5T720-400v-40h-60v20h-80v-120h80v20h60v-40q0-17-11.5-28.5T680-600H560q-17 0-28.5 11.5T520-560v160q0 17 11.5 28.5T560-360ZM200-240v-480 480Z',
+      fill: fill
+    })
+  }));
+};
+
+var CloudDownloadIcon = function CloudDownloadIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q17-72 85-137t145-65q33 0 56.5 23.5T520-716v242l64-62 56 56-160 160-160-160 56-56 64 62v-242q-76 14-118 73.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-48-22-89.5T600-680v-93q74 35 117 103.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm220-358Z',
+      fill: fill
+    })
+  }));
+};
+
+var ContactSupportOutlinedIcon = function ContactSupportOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z',
+      fill: fill
+    })
+  }));
+};
+
+var ErrorOutlineRoundedIcon = function ErrorOutlineRoundedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z',
+      fill: fill
+    })
+  }));
+};
+
+var FileCopyIcon = function FileCopyIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#06C68F' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M760-200H320q-33 0-56.5-23.5T240-280v-560q0-33 23.5-56.5T320-920h280l240 240v400q0 33-23.5 56.5T760-200ZM560-640v-200H320v560h440v-360H560ZM160-40q-33 0-56.5-23.5T80-120v-560h80v560h440v80H160Zm160-800v200-200 560-560Z',
+      fill: fill
+    })
+  }));
+};
+
+var HeadsetIcon = function HeadsetIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? 'secondary' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z',
+      fill: fill
+    })
+  }));
+};
+
+var LockIcon = function LockIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z',
+      fill: fill
+    })
+  }));
+};
+
+var NotificationsOutlined = function NotificationsOutlined(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z',
+      fill: fill
+    })
+  }));
+};
+
+var PlayCircleOutlineIcon = function PlayCircleOutlineIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z',
+      fill: fill
+    })
+  }));
+};
+
+var PlaylistPlayIcon = function PlaylistPlayIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Zm520 520v-320l240 160-240 160Z',
+      fill: fill
+    })
+  }));
+};
+
+var SchoolOutlinedIcon = function SchoolOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z',
+      fill: fill
+    })
+  }));
+};
+
+var SettingsOutlinedIcon = function SettingsOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z',
+      fill: fill
+    })
+  }));
+};
+
+var Timeline = function Timeline(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M120-240q-33 0-56.5-23.5T40-320q0-33 23.5-56.5T120-400h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-600q0-33 23.5-56.5T400-680q33 0 56.5 23.5T480-600q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-640q0-33 23.5-56.5T840-720q33 0 56.5 23.5T920-640q0 33-23.5 56.5T840-560h-10.5q-4.5 0-9.5-2L678-420q2 5 2 9.5v10.5q0 33-23.5 56.5T600-320q-33 0-56.5-23.5T520-400v-10.5q0-4.5 2-9.5L420-522q-5 2-9.5 2H400q-2 0-20-2L198-340q2 5 2 9.5v10.5q0 33-23.5 56.5T120-240Z',
+      fill: fill
+    })
+  }));
+};
+
+var TrendingUpOutlinedIcon = function TrendingUpOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M136-240l-56-56 296-298 160 160 208-206H640v-80h240v240h-80v-104L536-320 376-480 136-240Z',
+      fill: fill
+    })
+  }));
+};
+
+var Visibility = function Visibility(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z',
+      fill: fill
+    })
+  }));
+};
+
+var VisibilityOff = function VisibilityOff(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M644-428l-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z',
+      fill: fill
+    })
+  }));
+};
+
+var DeleteForeverRoundedIcon = function DeleteForeverRoundedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M376-300l104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z',
+      fill: fill
+    })
+  }));
+};
+
+var FeaturedPlayListIcon = function FeaturedPlayListIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M240-440h360v-80H240v80Zm0-120h360v-80H240v80Zm-80 400q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z',
+      fill: fill
+    })
+  }));
+};
+
+var FiberManualRecordIcon = function FiberManualRecordIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M480-480Zm0 280q-116 0-198-82t-82-198q0-116 82-198t198-82q116 0 198 82t82 198q0 116-82 198t-198 82Zm0-80q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Z',
+      fill: fill
+    })
+  }));
+};
+
+var GroupOutlined = function GroupOutlined(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z',
+      fill: fill
+    })
+  }));
+};
+
+var GroupsOutlined = function GroupsOutlined(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z',
+      fill: fill
+    })
+  }));
+};
+
+var HourglassEmptyIcon = function HourglassEmptyIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M320-160h320v-120q0-66-47-113t-113-47q-66 0-113 47t-47 113v120Zm160-360q66 0 113-47t47-113v-120H320v120q0 66 47 113t113 47ZM160-80v-80h80v-120q0-61 28.5-114.5T348-480q-51-32-79.5-85.5T240-680v-120h-80v-80h640v80h-80v120q0 61-28.5 114.5T612-480q51 32 79.5 85.5T720-280v120h80v80H160Z',
+      fill: fill
+    })
+  }));
+};
+
+var ImageIcon = function ImageIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z',
+      fill: fill
+    })
+  }));
+};
+
+var MoreHorizIcon = function MoreHorizIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z',
+      fill: fill
+    })
+  }));
+};
+
+var PermMediaIcon = function PermMediaIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M360-440h400L622-620l-92 120-62-80-108 140ZM120-120q-33 0-56.5-23.5T40-200v-520h80v520h680v80H120Zm160-160q-33 0-56.5-23.5T200-360v-440q0-33 23.5-56.5T280-880h200l80 80h280q33 0 56.5 23.5T920-720v360q0 33-23.5 56.5T840-280H280Zm0-80h560v-360H527l-80-80H280v440Zm0 0v-440 440Z',
+      fill: fill
+    })
+  }));
+};
+
+var PlaylistAddIcon = function PlaylistAddIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M680-40v-120H560v-80h120v-120h80v120h120v80H760v120h-80ZM200-200v-560 560Zm0 80q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v353q-18-11-38-18t-42-11v-324H200v560h280q0 21 3 41t10 39H200Zm120-160q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 160h240v-80H440v80Zm0-160h240v-80H440v80Zm0 320h54q8-23 20-43t28-37H440v80Z',
+      fill: fill
+    })
+  }));
+};
+
+var RecordVoiceOverOutlined = function RecordVoiceOverOutlined(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'm798-322-62-62q44-41 69-97t25-119q0-63-25-118t-69-96l62-64q56 53 89 125t33 153q0 81-33 153t-89 125ZM670-450l-64-64q18-17 29-38.5t11-47.5q0-26-11-47.5T606-686l64-64q32 29 50 67.5t18 82.5q0 44-18 82.5T670-450Zm-310 10q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-120v-112q0-33 17-62t47-44q51-26 115-44t141-18q77 0 141 18t115 44q30 15 47 44t17 62v112H40Zm80-80h480v-32q0-11-5.5-20T580-266q-36-18-92.5-36T360-320q-71 0-127.5 18T140-266q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-600q0-33-23.5-56.5T360-680q-33 0-56.5 23.5T280-600q0 33 23.5 56.5T360-520Zm0-80Zm0 400Z',
+      fill: fill
+    })
+  }));
+};
+
+var Send = function Send(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z',
+      fill: fill
+    })
+  }));
+};
+
+var ViewCompactIcon = function ViewCompactIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M80-170v-620h800v620H80Zm80-440h100v-100H160v100Zm180 0h100v-100H340v100Zm180 0h100v-100H520v100Zm180 0h100v-100H700v100Zm0 180h100v-100H700v100Zm-180 0h100v-100H520v100Zm-180 0h100v-100H340v100Zm-80-100H160v100h100v-100Zm440 280h100v-100H700v100Zm-180 0h100v-100H520v100Zm-180 0h100v-100H340v100Zm-180 0h100v-100H160v100Z',
+      fill: fill
+    })
+  }));
+};
+
+var ViewListIcon = function ViewListIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M360-240h440v-107H360v107ZM160-613h120v-107H160v107Zm0 187h120v-107H160v107Zm0 186h120v-107H160v107Zm200-186h440v-107H360v107Zm0-187h440v-107H360v107ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z',
+      fill: fill
+    })
+  }));
+};
+
+var WorkOutlineOutlinedIcon = function WorkOutlineOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z',
+      fill: fill
+    })
+  }));
+};
+
+var ZoomInIcon = function ZoomInIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#B3B3B8' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 -960 960 960',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Zm-40-60v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z',
+      fill: fill
+    })
   }));
 };
 
@@ -39435,7 +40324,7 @@ var Uploader = function Uploader(_a) {
           onClick: function onClick() {
             handleFileClick(file.link);
           },
-          children: jsxRuntimeExports.jsx(HeadsetIcon, {
+          children: jsxRuntimeExports.jsx(HeadsetIcon$1, {
             color: 'secondary'
           })
         });
@@ -57261,5 +58150,5 @@ var Pagination = function Pagination(_a) {
   });
 };
 
-export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, AssignTutor, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CaretDown, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, Close, CloseIcon, CloseOutline, CloseOutlineAction, Coach, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DatePicker, DefaultAvatar, Delete, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, EventIcon, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, Help, HorizontalView, Information, Loader, LocationCityIcon, LocationOnIcon, Locked, Logout, MarkunreadMailboxIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, Pagination, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayGrayButton, PresentationScreen, Profile, PublicIcon, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, Search, SearchInput, SearchRounded, SendAlt, SwitchCompany, ThemeProvider, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, WhiteAiAssistant };
+export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CaretDown, CheckCircleOutlineRoundedIcon, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, ContactSupportOutlinedIcon, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DatePicker, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineRoundedIcon, EventIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, KeyboardBackspaceIcon, Loader, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, Pagination, PermMediaIcon, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, SchoolOutlinedIcon, Search, SearchInput, SearchRounded, Send, SendAlt, SettingsOutlinedIcon, SwitchCompany, ThemeProvider, Timeline, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
 //# sourceMappingURL=index.esm.js.map
