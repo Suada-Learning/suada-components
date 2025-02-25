@@ -1,7 +1,7 @@
 import React from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-export const Send: React.FC<SvgProps> = ({ className, onClick, fill = '#B3B3B8', ...props }) => {
+export const Send: React.FC<SvgProps> = ({ className, onClick, fill = '#68707A', ...props }) => {
   return (
     <svg
       width='24'
