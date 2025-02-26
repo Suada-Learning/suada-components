@@ -21508,7 +21508,7 @@ process.env.NODE_ENV !== "production" ? SwitchBase.propTypes = {
   value: PropTypes.any
 } : void 0;
 
-var CheckBoxOutlineBlankIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var CheckBoxOutlineBlankIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
 }), 'CheckBoxOutlineBlank');
 
@@ -21604,7 +21604,7 @@ const CheckboxRoot = styled(SwitchBase, {
   }]
 })));
 const defaultCheckedIcon = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxIcon$1, {});
-const defaultIcon = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxOutlineBlankIcon, {});
+const defaultIcon = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxOutlineBlankIcon$1, {});
 const defaultIndeterminateIcon = /*#__PURE__*/jsxRuntimeExports.jsx(IndeterminateCheckBoxIcon, {});
 const Checkbox$1 = /*#__PURE__*/React.forwardRef(function Checkbox(inProps, ref) {
   const props = useDefaultProps({
@@ -34634,19 +34634,21 @@ var ContactSupportOutlinedIcon = function ContactSupportOutlinedIcon(_a) {
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
-  return jsxRuntimeExports.jsx("svg", __assign({
-    width: '24',
-    height: '24',
-    viewBox: '0 -960 960 960',
-    fill: 'none',
+  return jsxRuntimeExports.jsxs("svg", __assign({
     xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
     className: className,
     onClick: onClick
   }, props, {
-    children: jsxRuntimeExports.jsx("path", {
-      d: 'M480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z',
-      fill: fill
-    })
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M11 23.59v-3.6c-5.01-.26-9-4.42-9-9.49C2 5.26 6.26 1 11.5 1S21 5.26 21 10.5c0 4.95-3.44 9.93-8.57 12.4l-1.43.69zM11.5 3C7.36 3 4 6.36 4 10.5S7.36 18 11.5 18H13v2.3c3.64-2.3 6-6.08 6-9.8C19 6.36 15.64 3 11.5 3zm-1 11.5h2v2h-2zm2-1.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z'
+    })]
   }));
 };
 
@@ -34832,19 +34834,21 @@ var SettingsOutlinedIcon = function SettingsOutlinedIcon(_a) {
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
-  return jsxRuntimeExports.jsx("svg", __assign({
-    width: '24',
-    height: '24',
-    viewBox: '0 -960 960 960',
-    fill: 'none',
+  return jsxRuntimeExports.jsxs("svg", __assign({
     xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
     className: className,
     onClick: onClick
   }, props, {
-    children: jsxRuntimeExports.jsx("path", {
-      d: 'M370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z',
-      fill: fill
-    })
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'
+    })]
   }));
 };
 
@@ -34984,21 +34988,26 @@ var FiberManualRecordIcon = function FiberManualRecordIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#68707A' : _b,
+    fill = _b === void 0 ? '#06C68F' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
-  return jsxRuntimeExports.jsx("svg", __assign({
-    width: '24',
-    height: '24',
-    viewBox: '0 -960 960 960',
-    fill: 'none',
+  return jsxRuntimeExports.jsxs("svg", __assign({
     xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
     className: className,
     onClick: onClick
   }, props, {
-    children: jsxRuntimeExports.jsx("path", {
-      d: 'M480-480Zm0 280q-116 0-198-82t-82-198q0-116 82-198t198-82q116 0 198 82t82 198q0 116-82 198t-198 82Zm0-80q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Z',
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M24 24H0V0h24v24z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("circle", {
+      cx: '12',
+      cy: '12',
+      r: '8',
       fill: fill
-    })
+    })]
   }));
 };
 
@@ -35865,6 +35874,102 @@ var DashboardIcon = function DashboardIcon(_a) {
     }), jsxRuntimeExports.jsx("path", {
       d: 'M19 5v2h-4V5h4M9 5v6H5V5h4m10 8v6h-4v-6h4M9 17v2H5v-2h4M21 3h-8v6h8V3zM11 3H3v10h8V3zm10 8h-8v10h8V11zm-10 4H3v6h8v-6z',
       fill: fill
+    })]
+  }));
+};
+
+var CheckBoxOutlineBlankIcon = function CheckBoxOutlineBlankIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'
+    })]
+  }));
+};
+
+var ChevronRightIcon = function ChevronRightIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'
+    })]
+  }));
+};
+
+var DeleteIconRounded = function DeleteIconRounded(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z'
+    })]
+  }));
+};
+
+var SchoolIcon = function SchoolIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    xmlns: 'http://www.w3.org/2000/svg',
+    height: '24px',
+    viewBox: '0 0 24 24',
+    width: '24px',
+    fill: fill,
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z'
     })]
   }));
 };
@@ -58733,5 +58838,5 @@ var Pagination = function Pagination(_a) {
   });
 };
 
-export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, ContactSupportOutlinedIcon, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DatePicker, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, DropDown, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Loader, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, Pagination, PermMediaIcon, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, SchoolOutlinedIcon, Search, SearchInput, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, StarsRoundedIcon, SwitchCompany, ThemeProvider, Timeline, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, VideoCallIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
+export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckBoxOutlineBlankIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, ChevronRightIcon, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, ContactSupportOutlinedIcon, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DatePicker, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DeleteIconRounded, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, DropDown, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Loader, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, Pagination, PermMediaIcon, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, SchoolIcon, SchoolOutlinedIcon, Search, SearchInput, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, StarsRoundedIcon, SwitchCompany, ThemeProvider, Timeline, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, VideoCallIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
 //# sourceMappingURL=index.esm.js.map
