@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react'
 import { Checkbox } from './Checkbox'
 
 export default {
-  title: 'Components/CheckboxV2',
+  title: 'Components/Checkbox',
   component: Checkbox,
 
   tags: ['autodocs', 'checkbox'],

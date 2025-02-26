@@ -4,7 +4,7 @@ import { CustomThemeProvider } from '../../theme/ThemeProvider'
 import { GlobalStyle } from '../../global.styles'
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Components/PaginationV2',
+  title: 'Components/Pagination',
   component: Pagination,
   tags: ['autodocs', 'pagination'],
   decorators: [
