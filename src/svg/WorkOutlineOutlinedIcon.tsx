@@ -4,7 +4,7 @@ import { SvgProps } from './svgTypes.interface'
 export const WorkOutlineOutlinedIcon: React.FC<SvgProps> = ({
   className,
   onClick,
-  fill = '#B3B3B8',
+  fill = '#68707A',
   ...props
 }) => {
   return (

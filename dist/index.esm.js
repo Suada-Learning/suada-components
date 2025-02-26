@@ -18516,7 +18516,7 @@ process.env.NODE_ENV !== "production" ? Popper.propTypes /* remove-proptypes */ 
   transition: PropTypes.bool
 } : void 0;
 
-var CancelIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var CancelIcon$2 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
 }), 'Cancel');
 
@@ -18939,7 +18939,7 @@ const Chip = /*#__PURE__*/React.forwardRef(function Chip(inProps, ref) {
     deleteIcon = deleteIconProp && /*#__PURE__*/React.isValidElement(deleteIconProp) ? (/*#__PURE__*/React.cloneElement(deleteIconProp, {
       className: clsx$1(deleteIconProp.props.className, classes.deleteIcon),
       onClick: handleDeleteIconClick
-    })) : /*#__PURE__*/jsxRuntimeExports.jsx(CancelIcon$1, {
+    })) : /*#__PURE__*/jsxRuntimeExports.jsx(CancelIcon$2, {
       className: clsx$1(classes.deleteIcon),
       onClick: handleDeleteIconClick
     });
@@ -21512,7 +21512,7 @@ var CheckBoxOutlineBlankIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx(
   d: "M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
 }), 'CheckBoxOutlineBlank');
 
-var CheckBoxIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var CheckBoxIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
 }), 'CheckBox');
 
@@ -21603,7 +21603,7 @@ const CheckboxRoot = styled(SwitchBase, {
     }
   }]
 })));
-const defaultCheckedIcon = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxIcon, {});
+const defaultCheckedIcon = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxIcon$1, {});
 const defaultIcon = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxOutlineBlankIcon, {});
 const defaultIndeterminateIcon = /*#__PURE__*/jsxRuntimeExports.jsx(IndeterminateCheckBoxIcon, {});
 const Checkbox$1 = /*#__PURE__*/React.forwardRef(function Checkbox(inProps, ref) {
@@ -31298,7 +31298,7 @@ process.env.NODE_ENV !== "production" ? TextField.propTypes /* remove-proptypes 
   variant: PropTypes.oneOf(['filled', 'outlined', 'standard'])
 } : void 0;
 
-var CancelIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var CancelIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12z"
 }), 'Cancel');
 
@@ -31310,7 +31310,7 @@ var ErrorOutlineRoundedIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx
   d: "M12 7c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V8c0-.55.45-1 1-1m-.01-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m1-3h-2v-2h2z"
 }), 'ErrorOutlineRounded');
 
-var FileUploadOutlinedIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var FileUploadOutlinedIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5z"
 }), 'FileUploadOutlined');
 
@@ -31326,11 +31326,11 @@ var HeadsetIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9"
 }), 'Headset');
 
-var InsertDriveFileIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var InsertDriveFileIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm7 7V3.5L18.5 9z"
 }), 'InsertDriveFile');
 
-var OndemandVideoIcon = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
+var OndemandVideoIcon$1 = createSvgIcon(/*#__PURE__*/jsxRuntimeExports.jsx("path", {
   d: "M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2m0 14H3V5h18zm-5-6-7 4V7z"
 }), 'OndemandVideo');
 
@@ -32405,7 +32405,9 @@ var AddStudent = function AddStudent(_a) {
 var AddIcon = function AddIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
-    props = __rest(_a, ["className", "onClick"]);
+    _b = _a.fill,
+    fill = _b === void 0 ? 'white' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '25',
     height: '24',
@@ -32417,7 +32419,7 @@ var AddIcon = function AddIcon(_a) {
   }, props, {
     children: jsxRuntimeExports.jsx("path", {
       d: 'M13.25 11.25V6H11.75V11.25H6.5V12.75H11.75V18H13.25V12.75H18.5V11.25H13.25Z',
-      fill: 'white'
+      fill: fill
     })
   }));
 };
@@ -32698,7 +32700,7 @@ var CloseIcon = function CloseIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -33358,7 +33360,7 @@ var CircleNotificationsIcon = function CircleNotificationsIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '20',
@@ -34498,7 +34500,7 @@ var ArchiveIcon = function ArchiveIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34520,7 +34522,7 @@ var BackspaceRoundedIcon = function BackspaceRoundedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34542,7 +34544,7 @@ var BackupIcon = function BackupIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34564,7 +34566,7 @@ var CheckCircleOutlineRoundedIcon = function CheckCircleOutlineRoundedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34586,7 +34588,7 @@ var ClosedCaptionIcon = function ClosedCaptionIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34608,7 +34610,7 @@ var CloudDownloadIcon = function CloudDownloadIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34630,7 +34632,7 @@ var ContactSupportOutlinedIcon = function ContactSupportOutlinedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34652,7 +34654,7 @@ var ErrorOutlineRoundedIcon = function ErrorOutlineRoundedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34718,7 +34720,7 @@ var LockIcon = function LockIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34740,7 +34742,7 @@ var NotificationsOutlined = function NotificationsOutlined(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34762,7 +34764,7 @@ var PlayCircleOutlineIcon = function PlayCircleOutlineIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34784,7 +34786,7 @@ var PlaylistPlayIcon = function PlaylistPlayIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34806,7 +34808,7 @@ var SchoolOutlinedIcon = function SchoolOutlinedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34828,7 +34830,7 @@ var SettingsOutlinedIcon = function SettingsOutlinedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34850,7 +34852,7 @@ var Timeline = function Timeline(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34872,7 +34874,7 @@ var TrendingUpOutlinedIcon = function TrendingUpOutlinedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34894,7 +34896,7 @@ var Visibility = function Visibility(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34916,7 +34918,7 @@ var VisibilityOff = function VisibilityOff(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34938,7 +34940,7 @@ var DeleteForeverRoundedIcon = function DeleteForeverRoundedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34960,7 +34962,7 @@ var FeaturedPlayListIcon = function FeaturedPlayListIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -34982,7 +34984,7 @@ var FiberManualRecordIcon = function FiberManualRecordIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35004,7 +35006,7 @@ var GroupOutlined = function GroupOutlined(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35026,7 +35028,7 @@ var GroupsOutlined = function GroupsOutlined(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35048,7 +35050,7 @@ var HourglassEmptyIcon = function HourglassEmptyIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35070,7 +35072,7 @@ var ImageIcon = function ImageIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35092,7 +35094,7 @@ var MoreHorizIcon = function MoreHorizIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35114,7 +35116,7 @@ var PermMediaIcon = function PermMediaIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35136,7 +35138,7 @@ var PlaylistAddIcon = function PlaylistAddIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35158,7 +35160,7 @@ var RecordVoiceOverOutlined = function RecordVoiceOverOutlined(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35180,7 +35182,7 @@ var Send = function Send(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35202,7 +35204,7 @@ var ViewCompactIcon = function ViewCompactIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35224,7 +35226,7 @@ var ViewListIcon = function ViewListIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35246,7 +35248,7 @@ var WorkOutlineOutlinedIcon = function WorkOutlineOutlinedIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35268,7 +35270,7 @@ var ZoomInIcon = function ZoomInIcon(_a) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
-    fill = _b === void 0 ? '#B3B3B8' : _b,
+    fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
     width: '24',
@@ -35283,6 +35285,587 @@ var ZoomInIcon = function ZoomInIcon(_a) {
       d: 'M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Zm-40-60v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z',
       fill: fill
     })
+  }));
+};
+
+var AddCircleIcon = function AddCircleIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z',
+      fill: fill
+    })]
+  }));
+};
+
+var CancelIcon = function CancelIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z',
+      fill: fill
+    })]
+  }));
+};
+
+var Check = function Check(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z',
+      fill: fill
+    })]
+  }));
+};
+
+var CheckBoxIcon = function CheckBoxIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM17.99 9l-1.41-1.42-6.59 6.59-2.58-2.57-1.42 1.41 4 3.99z',
+      fill: fill
+    })]
+  }));
+};
+
+var CheckCircleIcon = function CheckCircleIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z',
+      fill: fill
+    })]
+  }));
+};
+
+var CheckCircleOutlineOutlinedIcon = function CheckCircleOutlineOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z',
+      fill: fill
+    })]
+  }));
+};
+
+var DragIndicatorIcon = function DragIndicatorIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+      fill: fill
+    })]
+  }));
+};
+
+var EditIcon = function EditIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z',
+      fill: fill
+    })]
+  }));
+};
+
+var ErrorOutlineIcon = function ErrorOutlineIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
+      fill: fill
+    })]
+  }));
+};
+
+var ExpandMoreIcon = function ExpandMoreIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M24 24H0V0h24v24z',
+      fill: 'none',
+      opacity: '.87'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z',
+      fill: fill
+    })]
+  }));
+};
+
+var GetAppIcon = function GetAppIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M13 5v6h1.17L12 13.17 9.83 11H11V5h2m2-2H9v6H5l7 7 7-7h-4V3zm4 15H5v2h14v-2z',
+      fill: fill
+    })]
+  }));
+};
+
+var HighlightOffRoundedIcon = function HighlightOffRoundedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#e8eaed' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M13.89 8.7L12 10.59 10.11 8.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 8.7 13.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l1.89 1.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l1.89-1.89c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.38-1.41 0zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+      fill: fill
+    })]
+  }));
+};
+
+var InsertDriveFileIcon = function InsertDriveFileIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z',
+      fill: fill
+    })]
+  }));
+};
+
+var OndemandVideoIcon = function OndemandVideoIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M9 7v8l7-4zm12-4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z',
+      fill: fill
+    })]
+  }));
+};
+
+var PublishIcon = function PublishIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z',
+      fill: fill
+    })]
+  }));
+};
+
+var RemoveCircleIcon = function RemoveCircleIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z',
+      fill: fill
+    })]
+  }));
+};
+
+var ReportProblemIcon = function ReportProblemIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z',
+      fill: fill
+    })]
+  }));
+};
+
+var SettingsApplicationsIcon = function SettingsApplicationsIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M6.21 13.97l1.2 2.07c.08.13.23.18.37.13l1.49-.6c.31.24.64.44 1.01.59l.22 1.59c.03.14.15.25.3.25h2.4c.15 0 .27-.11.3-.26l.22-1.59c.36-.15.7-.35 1.01-.59l1.49.6c.14.05.29 0 .37-.13l1.2-2.07c.08-.13.04-.29-.07-.39l-1.27-.99c.03-.19.04-.39.04-.58 0-.2-.02-.39-.04-.59l1.27-.99c.11-.09.15-.26.07-.39l-1.2-2.07c-.08-.13-.23-.18-.37-.13l-1.49.6c-.31-.24-.64-.44-1.01-.59l-.22-1.59c-.03-.14-.15-.25-.3-.25h-2.4c-.15 0-.27.11-.3.26l-.22 1.59c-.36.15-.71.34-1.01.58l-1.49-.6c-.14-.05-.29 0-.37.13l-1.2 2.07c-.08.13-.04.29.07.39l1.27.99c-.03.2-.05.39-.05.59 0 .2.02.39.04.59l-1.27.99c-.11.1-.14.26-.06.39zM12 10.29c.94 0 1.71.77 1.71 1.71s-.77 1.71-1.71 1.71-1.71-.77-1.71-1.71.77-1.71 1.71-1.71zM19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm0 16H5V5h14v14z',
+      fill: fill
+    })]
+  }));
+};
+
+var StarsRoundedIcon = function StarsRoundedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.23 15.39L12 15.45l-3.22 1.94c-.38.23-.85-.11-.75-.54l.85-3.66-2.83-2.45c-.33-.29-.15-.84.29-.88l3.74-.32 1.46-3.45c.17-.41.75-.41.92 0l1.46 3.44 3.74.32c.44.04.62.59.28.88l-2.83 2.45.85 3.67c.1.43-.36.77-.74.54z',
+      fill: fill
+    })]
+  }));
+};
+
+var VideoCallIcon = function VideoCallIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#e8eaed' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM15 16H5V8h10v8zm-6-1h2v-2h2v-2h-2V9H9v2H7v2h2z',
+      fill: fill
+    })]
+  }));
+};
+
+var VolumeUpIcon = function VolumeUpIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M3 9v6h4l5 5V4L7 9H3zm7-.17v6.34L7.83 13H5v-2h2.83L10 8.83zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z',
+      fill: fill
+    })]
+  }));
+};
+
+var FileUploadOutlinedIcon = function FileUploadOutlinedIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("g", {
+      children: jsxRuntimeExports.jsx("rect", {
+        fill: 'none',
+        height: '24',
+        width: '24'
+      })
+    }), jsxRuntimeExports.jsx("g", {
+      children: jsxRuntimeExports.jsx("path", {
+        d: 'M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z',
+        fill: fill
+      })
+    })]
+  }));
+};
+
+var DashboardIcon = function DashboardIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    _b = _a.fill,
+    fill = _b === void 0 ? '#68707A' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M0 0h24v24H0V0z',
+      fill: 'none'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M19 5v2h-4V5h4M9 5v6H5V5h4m10 8v6h-4v-6h4M9 17v2H5v-2h4M21 3h-8v6h8V3zM11 3H3v10h8V3zm10 8h-8v10h8V11zm-10 4H3v6h8v-6z',
+      fill: fill
+    })]
   }));
 };
 
@@ -40315,7 +40898,7 @@ var Uploader = function Uploader(_a) {
             var _a, _b;
             handleFileClick((_b = (_a = file.links) === null || _a === void 0 ? void 0 : _a[4]) === null || _b === void 0 ? void 0 : _b.url);
           },
-          children: jsxRuntimeExports.jsx(OndemandVideoIcon, {
+          children: jsxRuntimeExports.jsx(OndemandVideoIcon$1, {
             color: 'secondary'
           })
         });
@@ -40333,7 +40916,7 @@ var Uploader = function Uploader(_a) {
           onClick: function onClick() {
             handleFileClick(file.link);
           },
-          children: jsxRuntimeExports.jsx(InsertDriveFileIcon, {
+          children: jsxRuntimeExports.jsx(InsertDriveFileIcon$1, {
             color: 'secondary'
           })
         });
@@ -40376,7 +40959,7 @@ var Uploader = function Uploader(_a) {
               accept: accept
             }), jsxRuntimeExports.jsxs(InputLabel, {
               htmlFor: id,
-              children: [jsxRuntimeExports.jsx(FileUploadOutlinedIcon, {}), t('general.upload') || 'Upload', ' ']
+              children: [jsxRuntimeExports.jsx(FileUploadOutlinedIcon$1, {}), t('general.upload') || 'Upload', ' ']
             })]
           })
         }), uploadedFile && type === FileTypes.IMAGE && jsxRuntimeExports.jsx(ImagePlaceholder, {
@@ -40389,7 +40972,7 @@ var Uploader = function Uploader(_a) {
           onClick: deleteFile,
           right: '160px',
           top: '37px',
-          children: jsxRuntimeExports.jsx(CancelIcon, {
+          children: jsxRuntimeExports.jsx(CancelIcon$1, {
             style: {
               color: 'rgba(179, 179, 184, 1)'
             }
@@ -40409,7 +40992,7 @@ var Uploader = function Uploader(_a) {
               accept: accept
             }), jsxRuntimeExports.jsxs(InputLabel, {
               htmlFor: id,
-              children: [jsxRuntimeExports.jsx(FileUploadOutlinedIcon, {}), t('general.upload')]
+              children: [jsxRuntimeExports.jsx(FileUploadOutlinedIcon$1, {}), t('general.upload')]
             })]
           }), loading && jsxRuntimeExports.jsx(Loading, {
             type: type,
@@ -40417,7 +41000,7 @@ var Uploader = function Uploader(_a) {
           }), uploadedFile && InlineFilePreview()]
         }), uploadedFile && jsxRuntimeExports.jsx(CancelButton, {
           onClick: deleteFile,
-          children: jsxRuntimeExports.jsx(CancelIcon, {
+          children: jsxRuntimeExports.jsx(CancelIcon$1, {
             style: {
               color: '#06C68F'
             }
@@ -58150,5 +58733,5 @@ var Pagination = function Pagination(_a) {
   });
 };
 
-export { ActivityIcon, AddAlt, AddIcon, AddStudent, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CaretDown, CheckCircleOutlineRoundedIcon, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, ContactSupportOutlinedIcon, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DatePicker, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DropDown, Edit, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineRoundedIcon, EventIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FilterIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, KeyboardBackspaceIcon, Loader, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, Pagination, PermMediaIcon, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveFilter, Reset, SchoolOutlinedIcon, Search, SearchInput, SearchRounded, Send, SendAlt, SettingsOutlinedIcon, SwitchCompany, ThemeProvider, Timeline, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
+export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon$1 as ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, Button$1 as Button, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, Checkbox, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, ContactSupportOutlinedIcon, CourseCard, CustomSwitcher, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DatePicker, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, DropDown, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridActionMenu, GridView, Group$2 as Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Loader, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, Pagination, PermMediaIcon, Person, PhoneCountryCode, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, SchoolOutlinedIcon, Search, SearchInput, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, StarsRoundedIcon, SwitchCompany, ThemeProvider, Timeline, TranslationProvider, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, Uploader, UserActivity, UserSpeaker, VideoCallIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
 //# sourceMappingURL=index.esm.js.map

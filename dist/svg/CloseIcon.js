@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 export var CloseIcon = function (_a) {
-    var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#B3B3B8' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
+    var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#68707A' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
     return (_jsx("svg", __assign({ width: '24', height: '24', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'm256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z', fill: fill }) })));
 };
 //# sourceMappingURL=CloseIcon.js.map
