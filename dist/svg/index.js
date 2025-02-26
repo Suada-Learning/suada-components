@@ -147,4 +147,8 @@ export { VideoCallIcon } from './VideoCallIcon';
 export { VolumeUpIcon } from './VolumeUpIcon';
 export { FileUploadOutlinedIcon } from './FileUploadOutlinedIcon';
 export { DashboardIcon } from './DashboardIcon';
+export { CheckBoxOutlineBlankIcon } from './CheckBoxOutlineBlankIcon';
+export { ChevronRightIcon } from './ChevronRightIcon';
+export { DeleteIconRounded } from './DeleteIconRounded';
+export { SchoolIcon } from './SchoolIcon';
 //# sourceMappingURL=index.js.map

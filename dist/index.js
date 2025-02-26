@@ -155,4 +155,8 @@ export { VideoCallIcon } from './svg';
 export { VolumeUpIcon } from './svg';
 export { FileUploadOutlinedIcon } from './svg';
 export { DashboardIcon } from './svg';
+export { CheckBoxOutlineBlankIcon } from './svg';
+export { ChevronRightIcon } from './svg';
+export { DeleteIconRounded } from './svg';
+export { SchoolIcon } from './svg';
 //# sourceMappingURL=index.js.map

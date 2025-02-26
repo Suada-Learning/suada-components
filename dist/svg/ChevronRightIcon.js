@@ -21,8 +21,8 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export var FiberManualRecordIcon = function (_a) {
-    var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#06C68F' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsxs("svg", __assign({ xmlns: 'http://www.w3.org/2000/svg', height: '24px', viewBox: '0 0 24 24', width: '24px', fill: fill, className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M24 24H0V0h24v24z', fill: 'none' }), _jsx("circle", { cx: '12', cy: '12', r: '8', fill: fill })] })));
+export var ChevronRightIcon = function (_a) {
+    var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#68707A' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
+    return (_jsxs("svg", __assign({ xmlns: 'http://www.w3.org/2000/svg', height: '24px', viewBox: '0 0 24 24', width: '24px', fill: fill, className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M0 0h24v24H0V0z', fill: 'none' }), _jsx("path", { d: 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z' })] })));
 };
-//# sourceMappingURL=FiberManualRecordIcon.js.map
+//# sourceMappingURL=ChevronRightIcon.js.map
