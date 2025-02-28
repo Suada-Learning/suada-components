@@ -1,6 +1,7 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 import { SplashScreen } from './SplashScreen'
+import { Button } from '../Button'
 
 export default {
   title: 'Components/SplashScreen',
@@ -21,9 +22,9 @@ const Template: StoryFn<typeof SplashScreen> = args => <SplashScreen {...args} /
 
 export const DefaultSplashScreen = Template.bind({})
 DefaultSplashScreen.args = {
-  title: 'Welcome to the App',
-  subTitle: 'This is a subtitle',
-  createButton: () => <button>Create</button>,
+  title: 'You don’t have any groups yet.',
+  subTitle: 'As soon as you add a group, it will appear here',
+  createButton: () => <Button type='primary' size='small' label='Create Group' />,
   marginTop: 20,
   minHeight: '80vh',
   height: 'auto',
