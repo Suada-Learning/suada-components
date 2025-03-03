@@ -7,21 +7,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./icons": {
-      "import": "./dist/icons/index.js",
-      "require": "./dist/icons/index.js",
-      "types": "./dist/types/icons/index.d.ts"
-    },
-    "./icons/*": {
-      "import": "./dist/icons/*.js",
-      "require": "./dist/icons/*.js",
-      "types": "./dist/types/icons/*.d.ts"
-    }
+    ".": "./dist/index.js",
+    "./icons": "./dist/icons/index.js"
   },
   "scripts": {
     "dev": "vite",
@@ -60,6 +47,7 @@
     "react-router-dom": "^7.1.5",
     "react-select": "^5.10.0",
     "react-transition-group": "4.4.5",
+    "rollup-plugin-multi-input": "^1.5.0",
     "styled-components": "^6.1.14"
   },
   "files": [
