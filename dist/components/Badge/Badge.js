@@ -1,7 +1,6 @@
 import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { EditButton, Wrapper } from './styled-components';
-import { Edit } from '../../svg';
-
+import { Edit } from '../../icons';
 export var Badge = function (_a) {
     var src = _a.src, onEditClick = _a.onEditClick;
     if (!src)

@@ -2,7 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import { Container, ItemWrapper, PathItem } from './styled-components';
 import { useNavigate } from 'react-router';
-import { ChevronRightIcon } from '../../svg';
+import { ChevronRightIcon } from '../../icons';
 export var Breadcrumb = function (_a) {
     var data = _a.data;
     var navigate = useNavigate();
