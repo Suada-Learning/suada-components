@@ -5,7 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { IUser } from '../CourseCard/CourseCard.interface'
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
 import ProfilePicture from '../ProfilePicture/ProfilePicture'
-import { Logout, MyProfile } from '../../svg'
+import { Logout, MyProfile } from '../../icons'
 
 export const ProfileDropdown = ({
   user,

@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, ItemWrapper, PathItem } from './styled-components'
 import { useNavigate } from 'react-router'
 import { IBreadcrumbItemV2, IBreadcrumbPropsV2 } from './types'
-import { ChevronRightIcon } from '../../svg'
+import { ChevronRightIcon } from '../../icons'
 
 export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
   const navigate = useNavigate()
