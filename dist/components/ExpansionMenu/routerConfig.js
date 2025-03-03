@@ -2,7 +2,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ContactSupportOutlinedIcon from '@mui/icons-material/ContactSupportOutlined';
-import { Analytics, Circle, Company, GroupDefault, Learning, Library, UsersIcon } from '../../svg';
+import { Analytics, Circle, Company, GroupDefault, Learning, Library, UsersIcon } from '../../icons';
 export var getAllNavigation = function (permission, currentUser, selectedCompany) { return [
     {
         title: 'analytics',

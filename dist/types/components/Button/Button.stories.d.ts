@@ -1,30 +1,17 @@
-import type { StoryObj } from "@storybook/react";
-import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from "./Button.interface";
+import type { StoryObj } from '@storybook/react';
+import { ButtonTypeEnum, ButtonSizeEnum, HtmlButtonTypeEnum } from './Button.interface';
 declare const meta: {
     title: string;
     component: ({ type, size, label, iconLeft, iconRight, disabled, customStyles, onClick, htmlType, className, }: import("./Button.interface").ButtonState) => import("react").ReactElement;
     parameters: {
         layout: string;
     };
-    decorators: ((Story: import("@storybook/csf").PartialStoryFn<import("@storybook/react").ReactRenderer, {
-        type: ButtonTypeEnum;
-        size: import("./Button.interface").ButtonSize;
-        label?: import("react").ReactNode;
-        iconLeft?: (import("react").ReactElement | null) | undefined;
-        iconRight?: (import("react").ReactElement | null) | undefined;
-        disabled?: boolean | undefined;
-        customStyles?: import("react").CSSProperties | undefined;
-        onClick?: (() => void) | undefined;
-        htmlType?: HtmlButtonTypeEnum | undefined;
-        id?: string | number | undefined;
-        className?: string | undefined;
-    }>) => import("react/jsx-runtime").JSX.Element)[];
     tags: string[];
     argTypes: {
         type: {
             control: {
                 type: "select";
-                options: string[];
+                options: ButtonTypeEnum[];
             };
         };
         size: {
@@ -71,6 +58,65 @@ declare const meta: {
         };
         onClick: {
             action: string;
+        };
+        themes: {
+            control: {
+                type: "select";
+            };
+            options: string[];
+            mapping: {
+                light: {
+                    colors: {
+                        primary: {
+                            main: string;
+                            700: string;
+                        };
+                        neutral: {
+                            100: string;
+                            400: string;
+                            900: string;
+                        };
+                        system: {
+                            success: {
+                                main: string;
+                                700: string;
+                                300: string;
+                            };
+                            error: {
+                                main: string;
+                                700: string;
+                                300: string;
+                            };
+                        };
+                    };
+                };
+                dark: {
+                    colors: {
+                        primary: {
+                            main: string;
+                            700: string;
+                        };
+                        neutral: {
+                            100: string;
+                            400: string;
+                            900: string;
+                        };
+                        system: {
+                            success: {
+                                main: string;
+                                700: string;
+                                300: string;
+                            };
+                            error: {
+                                main: string;
+                                700: string;
+                                300: string;
+                            };
+                        };
+                    };
+                };
+            };
+            defaultValue: string;
         };
     };
     args: {

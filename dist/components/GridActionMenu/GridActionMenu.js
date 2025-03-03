@@ -2,7 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from 'react';
 import Popover from '@mui/material/Popover';
 import { Container, ActionsContent, StyledIconButton } from './GridActionMenu.styles';
-import { MoreVertRoundedIcon } from '../../svg/MoreVertRoundedIcon';
+import { MoreVertRoundedIcon } from '../../icons/MoreVertRoundedIcon';
 export var GridActionMenu = function (props) {
     var _a, _b, _c;
     var _d = useState(null), anchorEl = _d[0], setAnchorEl = _d[1];

@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Tile } from './Tile';
 import { UserActivity } from '../../svg';
+
 export default {
     title: 'Components/Tile',
     component: Tile,

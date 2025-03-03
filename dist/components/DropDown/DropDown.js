@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import ReactSelect from 'react-select';
 import { StyledLabel } from '../Input/styled-components';
-import { CaretDown } from '../../svg';
+import { CaretDown } from '../../icons';
 import { ContainerSelect, customStyles, ErrorMessage } from './DropDown.styles';
 export var DropDown = function (props) {
     var DropdownIndicator = function () { return _jsx(CaretDown, {}); };

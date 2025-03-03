@@ -6,6 +6,10 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./icons": "./dist/icons/index.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "rollup -c && tsc",
@@ -43,6 +47,7 @@
     "react-router-dom": "^7.1.5",
     "react-select": "^5.10.0",
     "react-transition-group": "4.4.5",
+    "rollup-plugin-multi-input": "^1.5.0",
     "styled-components": "^6.1.14"
   },
   "files": [
