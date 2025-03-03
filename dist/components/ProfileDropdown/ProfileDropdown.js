@@ -5,7 +5,7 @@ import Popover from '@mui/material/Popover';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
-import { Logout, MyProfile } from '../../svg';
+import { Logout, MyProfile } from '../../icons';
 export var ProfileDropdown = function (_a) {
     var user = _a.user, logout = _a.logout, navigate = _a.navigate;
     var t = useTranslation().t;

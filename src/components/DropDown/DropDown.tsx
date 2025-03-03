@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import ReactSelect from 'react-select'
 import { StyledLabel } from '../Input/styled-components'
-import { CaretDown } from '../../svg'
+import { CaretDown } from '../../icons'
 import { ContainerSelect, customStyles, ErrorMessage } from './DropDown.styles'
 import { ISelectFieldProps } from './DropDown.interface'
 

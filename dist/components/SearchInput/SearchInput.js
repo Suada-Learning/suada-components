@@ -1,5 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import { SearchRounded } from '../../svg/SearchRounded';
+import { SearchRounded } from '../../icons/SearchRounded';
 import { Input } from '../Input';
 import IconButton from '@mui/material/IconButton';
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta } from '@storybook/react'
-import * as Icons from '../../svg/index'
+import * as Icons from '../../icons/index'
 
 export default {
   title: 'Icons',

@@ -1,7 +1,7 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 import { Tile } from './Tile'
-import { UserActivity } from '../../svg'
+import { UserActivity } from '../../icons'
 
 export default {
   title: 'Components/Tile',

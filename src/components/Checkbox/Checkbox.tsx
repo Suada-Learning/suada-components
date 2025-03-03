@@ -2,7 +2,7 @@ import { Checkbox as MUICheckBox, FormControlLabel, Tooltip } from '@mui/materia
 import React, { ReactElement } from 'react'
 import { LabelContainer } from './styled-components'
 import { ICheckboxV2Props } from './checkboxV2.interface'
-import { Help } from '../../svg'
+import { Help } from '../../icons'
 
 export const Checkbox = ({
   checked,

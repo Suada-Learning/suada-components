@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { EditButton, Wrapper } from './styled-components'
-import { Edit } from '../../svg'
+import { Edit } from '../../icons'
 
 export const Badge = ({
   src,

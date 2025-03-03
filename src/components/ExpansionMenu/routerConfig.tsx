@@ -7,7 +7,7 @@ import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 
 //customIcons
 import { IPermissionsBool, IUser, IUserCompany } from '../CourseCard/CourseCard.interface'
-import { Analytics, Circle, Company, GroupDefault, Learning, Library, UsersIcon } from '../../svg'
+import { Analytics, Circle, Company, GroupDefault, Learning, Library, UsersIcon } from '../../icons'
 import { IExpansionItem } from './ExpansionItem.interface'
 
 export const getAllNavigation = (
