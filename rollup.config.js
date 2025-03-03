@@ -8,31 +8,49 @@ import multiInput from 'rollup-plugin-multi-input'
 
 export default [
   {
-    input: ['src/index.ts', 'src/icons/index.ts'],
+    input: 'src/index.ts',
+    output: [
+      {
+        file: 'dist/index.js',
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      postcss({ modules: true, extract: true, minimize: true }),
+      typescript({ tsconfig: './tsconfig.json' }),
+      babel({
+        exclude: 'node_modules/**',
+        babelHelpers: 'bundled',
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      }),
+    ],
+    external: ['react', 'react-dom'],
+  },
+  {
+    input: 'src/icons/index.ts',
     output: [
       {
         dir: 'dist',
         format: 'esm',
         sourcemap: true,
         preserveModules: true,
-        preserveModulesRoot: 'src',
+        preserveModulesRoot: 'src/icons',
       },
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
-      commonjs({ include: /node_modules/ }),
+      commonjs(),
       postcss({ modules: true, extract: true, minimize: true }),
-      typescript({
-        tsconfig: './tsconfig.json',
-        declaration: true,
-        declarationDir: 'dist/types',
-        exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
-      }),
+      typescript({ tsconfig: './tsconfig.json' }),
       babel({
         exclude: 'node_modules/**',
         babelHelpers: 'bundled',
-        extensions: ['.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       }),
       multiInput(),
     ],
