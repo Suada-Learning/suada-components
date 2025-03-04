@@ -4,6 +4,7 @@ import babel from '@rollup/plugin-babel'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
+import image from '@rollup/plugin-image'
 
 export default {
   input: './src/index.ts',
@@ -46,6 +47,8 @@ export default {
       babelHelpers: 'bundled',
       extensions: ['.ts', '.tsx'],
     }),
+
+    image(),
   ],
   external: ['react', 'react-dom'],
 }
