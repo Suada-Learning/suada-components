@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { styled as MUIStyled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 
 // CourseLayout
@@ -463,12 +462,3 @@ export const GridItem = styled.div<{ $isFromUser?: boolean }>`
   `) ||
     ''}
 `
-
-export const Root = MUIStyled('div')(({ theme }) => ({
-  [`& .CourseLayout-paper`]: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}))

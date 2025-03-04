@@ -23,18 +23,3 @@ export const LoaderCircle = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 `
-
-const PREFIX = 'Loader'
-
-const classes = {
-  root: `${PREFIX}-root`,
-}
-
-export const StyledLoaderWrapper = muiStyled(LoaderWrapper)(({ theme }) => ({
-  [`& .${classes.root}`]: {
-    display: 'flex',
-    '& > * + *': {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}))
