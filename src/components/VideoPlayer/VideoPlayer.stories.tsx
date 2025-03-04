@@ -1,6 +1,6 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
-import { VideoPlayer } from './VideoPlayer'
+import { VideoPlayer } from './Player'
 
 export default {
   title: 'Components/VideoPlayer',

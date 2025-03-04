@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { VideoPlayer } from './VideoPlayer';
+import { VideoPlayer } from './Player';
 export default {
     title: 'Components/VideoPlayer',
     component: VideoPlayer,

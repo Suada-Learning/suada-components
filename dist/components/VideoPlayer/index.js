@@ -1,2 +1,2 @@
-export { VideoPlayer } from './VideoPlayer';
+export { VideoPlayer } from './Player';
 //# sourceMappingURL=index.js.map
