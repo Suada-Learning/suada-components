@@ -1,11 +1,7 @@
+import { ICourse } from '../CourseCard/CourseCard.interface';
 export interface IAction {
-    id?: string;
-    label?: string | JSX.Element;
-    width?: string;
+    render: (item: ICourse) => JSX.Element;
     hide?: boolean;
-    disablePadding?: boolean;
-    numeric?: boolean;
-    render: (item: any, index?: number) => JSX.Element;
 }
 export interface IKebabAction {
     id: number;
@@ -16,7 +12,7 @@ export interface IKebabAction {
     component: React.JSX.Element;
 }
 export interface IGridActionMenuProps {
-    actionConfig: IAction[];
+    actionConfig?: IAction[];
     row?: any;
     icon?: JSX.Element;
     button?: JSX.Element;

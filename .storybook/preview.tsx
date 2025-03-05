@@ -1,17 +1,22 @@
-import React from "react";
-import { Preview } from "@storybook/react";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle, theme } from "../src/global.styles";
+import { Preview } from '@storybook/react'
+import { themes } from '../src/theme/Theme'
+import { withProviders } from './withProviders'
+
+export const decorators = [withProviders]
 
 const preview: Preview = {
-  decorators: [
-    (Story) => (
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
-};
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Select theme',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        items: Object.keys(themes),
+        showName: true,
+      },
+    },
+  },
+}
 
-export default preview;
+export default preview

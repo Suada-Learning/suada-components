@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from 'react'
 import Popover from '@mui/material/Popover'
 import { Container, ActionsContent, StyledIconButton } from './GridActionMenu.styles'
 import { IGridActionMenuProps } from './gridActionMenu.interface'
-import MoreVertRoundedIcon from '../../svg/MoreVertRoundedIcon'
+import { MoreVertRoundedIcon } from '../../icons/MoreVertRoundedIcon'
 
 export const GridActionMenu = (props: IGridActionMenuProps): ReactElement => {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -12,7 +12,7 @@ export const GridActionMenu = (props: IGridActionMenuProps): ReactElement => {
 
   return (
     <div>
-      {props.actionConfig.length > 0 && (
+      {props.actionConfig && props.actionConfig.length > 0 && (
         <Container onClick={(e): void => e.stopPropagation()}>
           <div onClick={handleClick}>
             {props.button ?? (
@@ -38,7 +38,7 @@ export const GridActionMenu = (props: IGridActionMenuProps): ReactElement => {
             }}
           >
             <ActionsContent>
-              {props.actionConfig.map((i, index) => (
+              {props?.actionConfig?.map((i, index) => (
                 <div key={index} onClick={(): void => setAnchorEl(null)}>
                   {i.render(props.row)}
                 </div>
