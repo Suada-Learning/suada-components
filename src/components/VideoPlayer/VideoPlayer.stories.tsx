@@ -1,19 +1,39 @@
 import React from 'react'
-import { StoryFn, Meta } from '@storybook/react'
 import { VideoPlayer } from './Player'
+import { StoryFn } from '@storybook/react/*'
 
 export default {
   title: 'Components/VideoPlayer',
   component: VideoPlayer,
+  tags: ['autodocs', 'video-player'],
   parameters: {
     layout: 'centered',
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
   },
-  tags: ['autodocs'],
-} as Meta
+}
 
-const Template: StoryFn = args => <VideoPlayer {...args} />
-
+const Template: StoryFn<typeof VideoPlayer> = args => <VideoPlayer {...args} />
 export const Default = Template.bind({})
 Default.args = {
-  url: 'https://stream-akamai.castr.com/5b9352dbda7b8c769937e459/live_2361c920455111ea85db6911fe397b9e/index.fmp4.m3u8',
+  url: 'https://dl29bi0xnzte0.cloudfront.net/lesson-562ceec7-ece7-4b00-92a7-aee4055d08aa/master.m3u8',
+  thumbnail: 'https://via.placeholder.com/700x400',
+  // subtitle: 'off',
+  // downloadLink: 'https://example.com/sample-video.mp4',
+}
+
+export const WithoutSubtitles = Template.bind({})
+WithoutSubtitles.args = {
+  ...Default.args,
+  subtitle: 'off',
+}
+
+export const WithoutDownload = Template.bind({})
+WithoutDownload.args = {
+  ...Default.args,
+  downloadLink: '',
 }
