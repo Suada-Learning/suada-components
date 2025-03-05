@@ -21,6 +21,6 @@ declare const _default: {
     };
 };
 export default _default;
-export declare const Default: import("@storybook/core/types").AnnotatedStoryFn<import("@storybook/react/*").ReactRenderer, any>;
-export declare const WithoutSubtitles: import("@storybook/core/types").AnnotatedStoryFn<import("@storybook/react/*").ReactRenderer, any>;
-export declare const WithoutDownload: import("@storybook/core/types").AnnotatedStoryFn<import("@storybook/react/*").ReactRenderer, any>;
+export declare const Default: import("@storybook/core/csf").AnnotatedStoryFn<import("@storybook/react/*").ReactRenderer, any>;
+export declare const WithoutSubtitles: import("@storybook/core/csf").AnnotatedStoryFn<import("@storybook/react/*").ReactRenderer, any>;
+export declare const WithoutDownload: import("@storybook/core/csf").AnnotatedStoryFn<import("@storybook/react/*").ReactRenderer, any>;

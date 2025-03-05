@@ -6171,7 +6171,7 @@ process.env.NODE_ENV !== "production" ? GlobalStyles$2.propTypes = {
 } : void 0;
 
 /**
- * @mui/styled-engine v6.4.3
+ * @mui/styled-engine v6.4.6
  *
  * @license MIT
  * This source code is licensed under the MIT license found in the
@@ -10726,8 +10726,13 @@ function createThemeNoVars(options = {}, ...args) {
     shape: shapeInput,
     ...other
   } = options;
-  if (options.vars) {
-    throw new Error(process.env.NODE_ENV !== "production" ? 'MUI: `vars` is a private field used for CSS variables support.\n' + 'Please use another name.' : formatMuiErrorMessage$1(20));
+  if (options.vars &&
+  // The error should throw only for the root theme creation because user is not allowed to use a custom node `vars`.
+  // `generateThemeVars` is the closest identifier for checking that the `options` is a result of `createTheme` with CSS variables so that user can create new theme for nested ThemeProvider.
+  options.generateThemeVars === undefined) {
+    throw new Error(process.env.NODE_ENV !== "production" ? 'MUI: `vars` is a private field used for CSS variables support.\n' +
+    // #host-reference
+    'Please use another name or follow the [docs](https://mui.com/material-ui/customization/css-theme-variables/usage/) to enable the feature.' : formatMuiErrorMessage$1(20));
   }
   const palette = createPalette(paletteInput);
   const systemTheme = createTheme$1(options);
@@ -12196,7 +12201,7 @@ function omitEventHandlers$1(object) {
  * @param parameters
  * @returns
  */
-function mergeSlotProps$1(parameters) {
+function mergeSlotProps$2(parameters) {
   const {
     getSlotProps,
     additionalProps,
@@ -12301,7 +12306,7 @@ function useSlotProps$1(parameters) {
   const {
     props: mergedProps,
     internalRef
-  } = mergeSlotProps$1({
+  } = mergeSlotProps$2({
     ...other,
     externalSlotProps: resolvedComponentsProps
   });
@@ -12631,6 +12636,56 @@ function createSvgIcon(path, displayName) {
   }
   Component.muiName = SvgIcon.muiName;
   return /*#__PURE__*/React.memo(/*#__PURE__*/React.forwardRef(Component));
+}
+
+function mergeSlotProps$1(externalSlotProps, defaultSlotProps) {
+  if (!externalSlotProps) {
+    return defaultSlotProps;
+  }
+  if (typeof externalSlotProps === 'function' || typeof defaultSlotProps === 'function') {
+    return ownerState => {
+      const defaultSlotPropsValue = typeof defaultSlotProps === 'function' ? defaultSlotProps(ownerState) : defaultSlotProps;
+      const externalSlotPropsValue = typeof externalSlotProps === 'function' ? externalSlotProps({
+        ...ownerState,
+        ...defaultSlotPropsValue
+      }) : externalSlotProps;
+      const className = clsx$1(ownerState?.className, defaultSlotPropsValue?.className, externalSlotPropsValue?.className);
+      return {
+        ...defaultSlotPropsValue,
+        ...externalSlotPropsValue,
+        ...(!!className && {
+          className
+        }),
+        ...(defaultSlotPropsValue?.style && externalSlotPropsValue?.style && {
+          style: {
+            ...defaultSlotPropsValue.style,
+            ...externalSlotPropsValue.style
+          }
+        }),
+        ...(defaultSlotPropsValue?.sx && externalSlotPropsValue?.sx && {
+          sx: [...(Array.isArray(defaultSlotPropsValue.sx) ? defaultSlotPropsValue.sx : [defaultSlotPropsValue.sx]), ...(Array.isArray(externalSlotPropsValue.sx) ? externalSlotPropsValue.sx : [externalSlotPropsValue.sx])]
+        })
+      };
+    };
+  }
+  const typedDefaultSlotProps = defaultSlotProps;
+  const className = clsx$1(typedDefaultSlotProps?.className, externalSlotProps?.className);
+  return {
+    ...defaultSlotProps,
+    ...externalSlotProps,
+    ...(!!className && {
+      className
+    }),
+    ...(typedDefaultSlotProps?.style && externalSlotProps?.style && {
+      style: {
+        ...typedDefaultSlotProps.style,
+        ...externalSlotProps.style
+      }
+    }),
+    ...(typedDefaultSlotProps?.sx && externalSlotProps?.sx && {
+      sx: [...(Array.isArray(typedDefaultSlotProps.sx) ? typedDefaultSlotProps.sx : [typedDefaultSlotProps.sx]), ...(Array.isArray(externalSlotProps.sx) ? externalSlotProps.sx : [externalSlotProps.sx])]
+    })
+  };
 }
 
 function _objectWithoutPropertiesLoose$1(r, e) {
@@ -14292,7 +14347,7 @@ name, parameters) {
       ...mergedProps
     },
     internalRef
-  } = mergeSlotProps$1({
+  } = mergeSlotProps$2({
     className,
     ...useSlotPropsParams,
     externalForwardedProps: name === 'root' ? other : undefined,
@@ -21475,7 +21530,6 @@ const SwitchBase = /*#__PURE__*/React.forwardRef(function SwitchBase(props, ref)
     autoFocus,
     checked: checkedProp,
     checkedIcon,
-    className,
     defaultChecked,
     disabled: disabledProp,
     disableFocusRipple = false,
@@ -21493,6 +21547,8 @@ const SwitchBase = /*#__PURE__*/React.forwardRef(function SwitchBase(props, ref)
     tabIndex,
     type,
     value,
+    slots = {},
+    slotProps = {},
     ...other
   } = props;
   const [checked, setCheckedState] = useControlled$1({
@@ -21545,38 +21601,75 @@ const SwitchBase = /*#__PURE__*/React.forwardRef(function SwitchBase(props, ref)
     edge
   };
   const classes = useUtilityClasses$F(ownerState);
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(SwitchBaseRoot, {
-    component: "span",
-    className: clsx$1(classes.root, className),
-    centerRipple: true,
-    focusRipple: !disableFocusRipple,
-    disabled: disabled,
-    tabIndex: null,
-    role: undefined,
-    onFocus: handleFocus,
-    onBlur: handleBlur,
-    ownerState: ownerState,
-    ref: ref,
-    ...other,
-    children: [/*#__PURE__*/jsxRuntimeExports.jsx(SwitchBaseInput, {
-      autoFocus: autoFocus,
+  const externalForwardedProps = {
+    slots,
+    slotProps: {
+      input: inputProps,
+      ...slotProps
+    }
+  };
+  const [RootSlot, rootSlotProps] = useSlot('root', {
+    ref,
+    elementType: SwitchBaseRoot,
+    className: classes.root,
+    shouldForwardComponentProp: true,
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      component: 'span',
+      ...other
+    },
+    getSlotProps: handlers => ({
+      ...handlers,
+      onFocus: event => {
+        handlers.onFocus?.(event);
+        handleFocus(event);
+      },
+      onBlur: event => {
+        handlers.onBlur?.(event);
+        handleBlur(event);
+      }
+    }),
+    ownerState,
+    additionalProps: {
+      centerRipple: true,
+      focusRipple: !disableFocusRipple,
+      disabled,
+      role: undefined,
+      tabIndex: null
+    }
+  });
+  const [InputSlot, inputSlotProps] = useSlot('input', {
+    ref: inputRef,
+    elementType: SwitchBaseInput,
+    className: classes.input,
+    externalForwardedProps,
+    getSlotProps: handlers => ({
+      onChange: event => {
+        handlers.onChange?.(event);
+        handleInputChange(event);
+      }
+    }),
+    ownerState,
+    additionalProps: {
+      autoFocus,
       checked: checkedProp,
-      defaultChecked: defaultChecked,
-      className: classes.input,
-      disabled: disabled,
+      defaultChecked,
+      disabled,
       id: hasLabelFor ? id : undefined,
-      name: name,
-      onChange: handleInputChange,
-      readOnly: readOnly,
-      ref: inputRef,
-      required: required,
-      ownerState: ownerState,
-      tabIndex: tabIndex,
-      type: type,
+      name,
+      readOnly,
+      required,
+      tabIndex,
+      type,
       ...(type === 'checkbox' && value === undefined ? {} : {
         value
-      }),
-      ...inputProps
+      })
+    }
+  });
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(RootSlot, {
+    ...rootSlotProps,
+    children: [/*#__PURE__*/jsxRuntimeExports.jsx(InputSlot, {
+      ...inputSlotProps
     }), checked ? checkedIcon : icon]
   });
 });
@@ -21669,6 +21762,22 @@ process.env.NODE_ENV !== "production" ? SwitchBase.propTypes = {
    * If `true`, the `input` element is required.
    */
   required: PropTypes.bool,
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    input: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    input: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
@@ -21800,6 +21909,8 @@ const Checkbox$1 = /*#__PURE__*/React.forwardRef(function Checkbox(inProps, ref)
     size = 'medium',
     disableRipple = false,
     className,
+    slots = {},
+    slotProps = {},
     ...other
   } = props;
   const icon = indeterminate ? indeterminateIconProp : iconProp;
@@ -21812,23 +21923,37 @@ const Checkbox$1 = /*#__PURE__*/React.forwardRef(function Checkbox(inProps, ref)
     size
   };
   const classes = useUtilityClasses$E(ownerState);
-  return /*#__PURE__*/jsxRuntimeExports.jsx(CheckboxRoot, {
-    type: "checkbox",
-    inputProps: {
-      'data-indeterminate': indeterminate,
-      ...inputProps
-    },
-    icon: /*#__PURE__*/React.cloneElement(icon, {
-      fontSize: icon.props.fontSize ?? size
-    }),
-    checkedIcon: /*#__PURE__*/React.cloneElement(indeterminateIcon, {
-      fontSize: indeterminateIcon.props.fontSize ?? size
-    }),
-    ownerState: ownerState,
-    ref: ref,
+  const externalInputProps = slotProps.input ?? inputProps;
+  const [RootSlot, rootSlotProps] = useSlot('root', {
+    ref,
+    elementType: CheckboxRoot,
     className: clsx$1(classes.root, className),
-    disableRipple: disableRipple,
-    ...other,
+    shouldForwardComponentProp: true,
+    externalForwardedProps: {
+      slots,
+      slotProps,
+      ...other
+    },
+    ownerState,
+    additionalProps: {
+      type: 'checkbox',
+      icon: /*#__PURE__*/React.cloneElement(icon, {
+        fontSize: icon.props.fontSize ?? size
+      }),
+      checkedIcon: /*#__PURE__*/React.cloneElement(indeterminateIcon, {
+        fontSize: indeterminateIcon.props.fontSize ?? size
+      }),
+      disableRipple,
+      slots,
+      slotProps: {
+        input: mergeSlotProps$1(typeof externalInputProps === 'function' ? externalInputProps(ownerState) : externalInputProps, {
+          'data-indeterminate': indeterminate
+        })
+      }
+    }
+  });
+  return /*#__PURE__*/jsxRuntimeExports.jsx(RootSlot, {
+    ...rootSlotProps,
     classes: classes
   });
 });
@@ -21899,12 +22024,9 @@ process.env.NODE_ENV !== "production" ? Checkbox$1.propTypes /* remove-proptypes
   indeterminateIcon: PropTypes.node,
   /**
    * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    */
   inputProps: PropTypes.object,
-  /**
-   * Pass a ref to the `input` element.
-   */
-  inputRef: refType$1,
   /**
    * Callback fired when the state is changed.
    *
@@ -21923,6 +22045,22 @@ process.env.NODE_ENV !== "production" ? Checkbox$1.propTypes /* remove-proptypes
    * @default 'medium'
    */
   size: PropTypes /* @typescript-to-proptypes-ignore */.oneOfType([PropTypes.oneOf(['medium', 'small']), PropTypes.string]),
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    input: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    input: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
@@ -22807,7 +22945,6 @@ const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
     childProps.onExited = onExited;
   }
   const externalForwardedProps = {
-    ...other,
     slots: {
       root: components.Root,
       backdrop: components.Backdrop,
@@ -22819,19 +22956,22 @@ const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
     }
   };
   const [RootSlot, rootProps] = useSlot('root', {
+    ref,
     elementType: ModalRoot,
-    externalForwardedProps,
-    getSlotProps: getRootProps,
-    additionalProps: {
-      ref,
-      as: component
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      ...other,
+      component
     },
+    getSlotProps: getRootProps,
     ownerState,
     className: clsx$1(className, classes?.root, !ownerState.open && ownerState.exited && classes?.hidden)
   });
   const [BackdropSlot, backdropProps] = useSlot('backdrop', {
+    ref: BackdropProps?.ref,
     elementType: BackdropComponent,
     externalForwardedProps,
+    shouldForwardComponentProp: true,
     additionalProps: BackdropProps,
     getSlotProps: otherHandlers => {
       return getBackdropProps({
@@ -22849,7 +22989,6 @@ const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
     className: clsx$1(BackdropProps?.className, classes?.backdrop),
     ownerState
   });
-  const backdropRef = useForkRef$2(BackdropProps?.ref, backdropProps.ref);
   if (!keepMounted && !open && (!hasTransition || exited)) {
     return null;
   }
@@ -22860,8 +22999,7 @@ const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
     children: /*#__PURE__*/jsxRuntimeExports.jsxs(RootSlot, {
       ...rootProps,
       children: [!hideBackdrop && BackdropComponent ? /*#__PURE__*/jsxRuntimeExports.jsx(BackdropSlot, {
-        ...backdropProps,
-        ref: backdropRef
+        ...backdropProps
       }) : null, /*#__PURE__*/jsxRuntimeExports.jsx(FocusTrap, {
         disableEnforceFocus: disableEnforceFocus,
         disableAutoFocus: disableAutoFocus,
@@ -26572,22 +26710,21 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
     marginThreshold = 16,
     open,
     PaperProps: PaperPropsProp = {},
+    // TODO: remove in v7
     slots = {},
     slotProps = {},
     transformOrigin = {
       vertical: 'top',
       horizontal: 'left'
     },
-    TransitionComponent = Grow,
+    TransitionComponent,
+    // TODO: remove in v7
     transitionDuration: transitionDurationProp = 'auto',
-    TransitionProps: {
-      onEntering,
-      ...TransitionProps
-    } = {},
+    TransitionProps = {},
+    // TODO: remove in v7
     disableScrollLock = false,
     ...other
   } = props;
-  const externalPaperSlotProps = slotProps?.paper ?? PaperPropsProp;
   const paperRef = React.useRef();
   const ownerState = {
     ...props,
@@ -26595,7 +26732,6 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
     anchorReference,
     elevation,
     marginThreshold,
-    externalPaperSlotProps,
     transformOrigin,
     TransitionComponent,
     transitionDuration: transitionDurationProp,
@@ -26724,10 +26860,7 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
     }
     return () => window.removeEventListener('scroll', setPositioningStyles);
   }, [anchorEl, disableScrollLock, setPositioningStyles]);
-  const handleEntering = (element, isAppearing) => {
-    if (onEntering) {
-      onEntering(element, isAppearing);
-    }
+  const handleEntering = () => {
     setPositioningStyles();
   };
   const handleExited = () => {
@@ -26758,7 +26891,38 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
     };
   }, [anchorEl, open, setPositioningStyles]);
   let transitionDuration = transitionDurationProp;
-  if (transitionDurationProp === 'auto' && !TransitionComponent.muiSupportAuto) {
+  const externalForwardedProps = {
+    slots: {
+      transition: TransitionComponent,
+      ...slots
+    },
+    slotProps: {
+      transition: TransitionProps,
+      paper: PaperPropsProp,
+      ...slotProps
+    }
+  };
+  const [TransitionSlot, transitionSlotProps] = useSlot('transition', {
+    elementType: Grow,
+    externalForwardedProps,
+    ownerState,
+    getSlotProps: handlers => ({
+      ...handlers,
+      onEntering: (element, isAppearing) => {
+        handlers.onEntering?.(element, isAppearing);
+        handleEntering();
+      },
+      onExited: element => {
+        handlers.onExited?.(element);
+        handleExited();
+      }
+    }),
+    additionalProps: {
+      appear: true,
+      in: open
+    }
+  });
+  if (transitionDurationProp === 'auto' && !TransitionSlot.muiSupportAuto) {
     transitionDuration = undefined;
   }
 
@@ -26766,37 +26930,26 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
   // If the anchorEl prop is provided, use its parent body element as the container
   // If neither are provided let the Modal take care of choosing the container
   const container = containerProp || (anchorEl ? ownerDocument$1(resolveAnchorEl(anchorEl)).body : undefined);
-  const externalForwardedProps = {
-    slots,
-    slotProps: {
-      ...slotProps,
-      paper: externalPaperSlotProps
-    }
-  };
-  const [PaperSlot, paperProps] = useSlot('paper', {
-    elementType: PopoverPaper,
-    externalForwardedProps,
-    additionalProps: {
-      elevation,
-      className: clsx$1(classes.paper, externalPaperSlotProps?.className),
-      style: isPositioned ? externalPaperSlotProps.style : {
-        ...externalPaperSlotProps.style,
-        opacity: 0
-      }
-    },
-    ownerState
-  });
   const [RootSlot, {
+    slots: rootSlotsProp,
     slotProps: rootSlotPropsProp,
     ...rootProps
   }] = useSlot('root', {
+    ref,
     elementType: PopoverRoot,
-    externalForwardedProps,
+    externalForwardedProps: {
+      ...externalForwardedProps,
+      ...other
+    },
+    shouldForwardComponentProp: true,
     additionalProps: {
+      slots: {
+        backdrop: slots.backdrop
+      },
       slotProps: {
-        backdrop: {
+        backdrop: mergeSlotProps$1(typeof slotProps.backdrop === 'function' ? slotProps.backdrop(ownerState) : slotProps.backdrop, {
           invisible: true
-        }
+        })
       },
       container,
       open
@@ -26804,25 +26957,32 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
     ownerState,
     className: clsx$1(classes.root, className)
   });
-  const handlePaperRef = useForkRef$2(paperRef, paperProps.ref);
+  const [PaperSlot, paperProps] = useSlot('paper', {
+    ref: paperRef,
+    className: classes.paper,
+    elementType: PopoverPaper,
+    externalForwardedProps,
+    shouldForwardComponentProp: true,
+    additionalProps: {
+      elevation,
+      style: isPositioned ? undefined : {
+        opacity: 0
+      }
+    },
+    ownerState
+  });
   return /*#__PURE__*/jsxRuntimeExports.jsx(RootSlot, {
     ...rootProps,
     ...(!isHostComponent$1(RootSlot) && {
+      slots: rootSlotsProp,
       slotProps: rootSlotPropsProp,
       disableScrollLock
     }),
-    ...other,
-    ref: ref,
-    children: /*#__PURE__*/jsxRuntimeExports.jsx(TransitionComponent, {
-      appear: true,
-      in: open,
-      onEntering: handleEntering,
-      onExited: handleExited,
+    children: /*#__PURE__*/jsxRuntimeExports.jsx(TransitionSlot, {
+      ...transitionSlotProps,
       timeout: transitionDuration,
-      ...TransitionProps,
       children: /*#__PURE__*/jsxRuntimeExports.jsx(PaperSlot, {
         ...paperProps,
-        ref: handlePaperRef,
         children: children
       })
     })
@@ -26890,8 +27050,7 @@ process.env.NODE_ENV !== "production" ? Popover.propTypes /* remove-proptypes */
   anchorReference: PropTypes.oneOf(['anchorEl', 'anchorPosition', 'none']),
   /**
    * A backdrop component. This prop enables custom backdrop rendering.
-   * @deprecated Use `slotProps.root.slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
-   * Use the `slotProps.root.slots.backdrop` prop to make your application ready for the next version of Material UI.
+   * @deprecated Use `slots.backdrop` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default styled(Backdrop, {
    *   name: 'MuiModal',
    *   slot: 'Backdrop',
@@ -26905,7 +27064,7 @@ process.env.NODE_ENV !== "production" ? Popover.propTypes /* remove-proptypes */
   BackdropComponent: PropTypes.elementType,
   /**
    * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
-   * @deprecated Use `slotProps.root.slotProps.backdrop` instead.
+   * @deprecated Use `slotProps.backdrop` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    */
   BackdropProps: PropTypes.object,
   /**
@@ -26969,16 +27128,20 @@ process.env.NODE_ENV !== "production" ? Popover.propTypes /* remove-proptypes */
    * @default {}
    */
   slotProps: PropTypes.shape({
+    backdrop: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     paper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    transition: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
   }),
   /**
    * The components used for each slot inside.
    * @default {}
    */
   slots: PropTypes.shape({
+    backdrop: PropTypes.elementType,
     paper: PropTypes.elementType,
-    root: PropTypes.elementType
+    root: PropTypes.elementType,
+    transition: PropTypes.elementType
   }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -27003,6 +27166,7 @@ process.env.NODE_ENV !== "production" ? Popover.propTypes /* remove-proptypes */
   /**
    * The component used for the transition.
    * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+   * @deprecated use the `slots.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default Grow
    */
   TransitionComponent: PropTypes.elementType,
@@ -27018,6 +27182,7 @@ process.env.NODE_ENV !== "production" ? Popover.propTypes /* remove-proptypes */
   /**
    * Props applied to the transition element.
    * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   TransitionProps: PropTypes.object
@@ -27158,20 +27323,43 @@ const Menu$2 = /*#__PURE__*/React.forwardRef(function Menu(inProps, ref) {
       }
     }
   });
-  const PaperSlot = slots.paper ?? MenuPaper;
-  const paperExternalSlotProps = slotProps.paper ?? PaperProps;
+  const externalForwardedProps = {
+    slots,
+    slotProps: {
+      list: MenuListProps,
+      transition: TransitionProps,
+      paper: PaperProps,
+      ...slotProps
+    }
+  };
   const rootSlotProps = useSlotProps$1({
     elementType: slots.root,
     externalSlotProps: slotProps.root,
     ownerState,
     className: [classes.root, className]
   });
-  const paperSlotProps = useSlotProps$1({
-    elementType: PaperSlot,
-    externalSlotProps: paperExternalSlotProps,
-    ownerState,
-    className: classes.paper
+  const [PaperSlot, paperSlotProps] = useSlot('paper', {
+    className: classes.paper,
+    elementType: MenuPaper,
+    externalForwardedProps,
+    shouldForwardComponentProp: true,
+    ownerState
   });
+  const [ListSlot, listSlotProps] = useSlot('list', {
+    className: clsx$1(classes.list, MenuListProps.className),
+    elementType: MenuMenuList,
+    shouldForwardComponentProp: true,
+    externalForwardedProps,
+    getSlotProps: handlers => ({
+      ...handlers,
+      onKeyDown: event => {
+        handleListKeyDown(event);
+        handlers.onKeyDown?.(event);
+      }
+    }),
+    ownerState
+  });
+  const resolvedTransitionProps = typeof externalForwardedProps.slotProps.transition === 'function' ? externalForwardedProps.slotProps.transition(ownerState) : externalForwardedProps.slotProps.transition;
   return /*#__PURE__*/jsxRuntimeExports.jsx(MenuRoot, {
     onClose: onClose,
     anchorOrigin: {
@@ -27180,31 +27368,38 @@ const Menu$2 = /*#__PURE__*/React.forwardRef(function Menu(inProps, ref) {
     },
     transformOrigin: isRtl ? RTL_ORIGIN : LTR_ORIGIN,
     slots: {
+      root: slots.root,
       paper: PaperSlot,
-      root: slots.root
+      backdrop: slots.backdrop,
+      ...(slots.transition && {
+        // TODO: pass `slots.transition` directly once `TransitionComponent` is removed from Popover
+        transition: slots.transition
+      })
     },
     slotProps: {
       root: rootSlotProps,
-      paper: paperSlotProps
+      paper: paperSlotProps,
+      backdrop: typeof slotProps.backdrop === 'function' ? slotProps.backdrop(ownerState) : slotProps.backdrop,
+      transition: {
+        ...resolvedTransitionProps,
+        onEntering: (...args) => {
+          handleEntering(...args);
+          resolvedTransitionProps?.onEntering?.(...args);
+        }
+      }
     },
     open: open,
     ref: ref,
     transitionDuration: transitionDuration,
-    TransitionProps: {
-      onEntering: handleEntering,
-      ...TransitionProps
-    },
     ownerState: ownerState,
     ...other,
     classes: PopoverClasses,
-    children: /*#__PURE__*/jsxRuntimeExports.jsx(MenuMenuList, {
-      onKeyDown: handleListKeyDown,
+    children: /*#__PURE__*/jsxRuntimeExports.jsx(ListSlot, {
       actions: menuListActionsRef,
       autoFocus: autoFocus && (activeItemIndex === -1 || disableAutoFocusItem),
       autoFocusItem: autoFocusItem,
       variant: variant,
-      ...MenuListProps,
-      className: clsx$1(classes.list, MenuListProps.className),
+      ...listSlotProps,
       children: children
     })
   });
@@ -27249,6 +27444,7 @@ process.env.NODE_ENV !== "production" ? Menu$2.propTypes /* remove-proptypes */ 
   disableAutoFocusItem: PropTypes.bool,
   /**
    * Props applied to the [`MenuList`](https://mui.com/material-ui/api/menu-list/) element.
+   * @deprecated use the `slotProps.list` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   MenuListProps: PropTypes.object,
@@ -27276,16 +27472,22 @@ process.env.NODE_ENV !== "production" ? Menu$2.propTypes /* remove-proptypes */ 
    * @default {}
    */
   slotProps: PropTypes.shape({
+    backdrop: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    list: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     paper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    transition: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
   }),
   /**
    * The components used for each slot inside.
    * @default {}
    */
   slots: PropTypes.shape({
+    backdrop: PropTypes.elementType,
+    list: PropTypes.elementType,
     paper: PropTypes.elementType,
-    root: PropTypes.elementType
+    root: PropTypes.elementType,
+    transition: PropTypes.elementType
   }),
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -27303,6 +27505,7 @@ process.env.NODE_ENV !== "production" ? Menu$2.propTypes /* remove-proptypes */ 
   /**
    * Props applied to the transition element.
    * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    * @default {}
    */
   TransitionProps: PropTypes.object,
@@ -29392,16 +29595,16 @@ const SelectInput = /*#__PURE__*/React.forwardRef(function SelectInput(props, re
         horizontal: 'center'
       },
       ...MenuProps,
-      MenuListProps: {
-        'aria-labelledby': labelId,
-        role: 'listbox',
-        'aria-multiselectable': multiple ? 'true' : undefined,
-        disableListWrap: true,
-        id: listboxId,
-        ...MenuProps.MenuListProps
-      },
       slotProps: {
         ...MenuProps.slotProps,
+        list: {
+          'aria-labelledby': labelId,
+          role: 'listbox',
+          'aria-multiselectable': multiple ? 'true' : undefined,
+          disableListWrap: true,
+          id: listboxId,
+          ...MenuProps.MenuListProps
+        },
         paper: {
           ...paperProps,
           style: {
@@ -31010,10 +31213,12 @@ process.env.NODE_ENV !== "production" ? Switch.propTypes /* remove-proptypes */ 
   id: PropTypes.string,
   /**
    * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    */
   inputProps: PropTypes.object,
   /**
    * Pass a ref to the `input` element.
+   * @deprecated Use `slotProps.input.ref` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
    */
   inputRef: refType$1,
   /**
