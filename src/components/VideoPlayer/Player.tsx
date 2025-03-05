@@ -125,13 +125,7 @@ export const VideoPlayer = props => {
 
   return (
     <Container>
-      <VideoPlayer
-        ref={ref}
-        width={700}
-        height={400}
-        poster={props.thumbnail}
-        crossOrigin='anonymous'
-      >
+      <Player ref={ref} width={700} height={400} poster={props.thumbnail} crossOrigin='anonymous'>
         <BigPlayButton position='center' />
 
         <HlsVideoSrc isVideoChild video={ref.current} url={props.url} showSubtitles={subtitles} />
@@ -156,7 +150,7 @@ export const VideoPlayer = props => {
             </DownloadWrapper>
           )}
         </ControlBar>
-      </VideoPlayer>
+      </Player>
     </Container>
   )
 }
