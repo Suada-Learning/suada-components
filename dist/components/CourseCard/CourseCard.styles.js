@@ -3,7 +3,6 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     return cooked;
 };
 import styled from 'styled-components';
-import { styled as MUIStyled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 // CourseLayout
 export var ModalRef = styled.span(templateObject_1 || (templateObject_1 = __makeTemplateObject([""], [""])));
@@ -86,18 +85,6 @@ export var GridItem = styled.div(templateObject_32 || (templateObject_32 = __mak
     return ($isFromUser &&
         "\n  figure {\n    position: relative;\n    &:after {\n      content: 'View Analytics';\n      position: absolute;\n      top: 0;\n      opacity: 0;\n      color: #06c68f;\n      left: 0;\n      font-size: 24px;\n      font-weight: 700;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: rgba(255, 255, 255, 0.9);\n      width: 100%;\n      height: 100%;\n      transition: opacity 0.3s ease;\n      z-index: 10;\n    }\n  }\n\n  &:hover {\n    figure {\n      &:after {\n        opacity: 1;\n      }\n    }\n  }\n  ") ||
         '';
-});
-export var Root = MUIStyled('div')(function (_a) {
-    var _b;
-    var theme = _a.theme;
-    return (_b = {},
-        _b["& .CourseLayout-paper"] = {
-            backgroundColor: theme.palette.background.paper,
-            border: '2px solid #000',
-            boxShadow: theme.shadows[5],
-            padding: theme.spacing(2, 4, 3),
-        },
-        _b);
 });
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28, templateObject_29, templateObject_30, templateObject_31, templateObject_32;
 //# sourceMappingURL=CourseCard.styles.js.map
