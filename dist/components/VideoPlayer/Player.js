@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 // disabled eslint for this file as react-player is not fully compatible with typescript
 /* eslint-disable */
-// @ts-nocheck
+//@ts-nocheck
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Hls from 'hls.js';
@@ -13,8 +13,8 @@ StyledQualityMenuItem,
 // StyledVideo,
 SubtitlesMenuContainer, DownloadWrapper, } from './styled-components';
 import { useTranslation } from 'react-i18next';
-import useOutsideClick from '../../helperFunctions/useOutsideClick';
 import { ClosedCaptionIcon, CloudDownloadIcon } from '../../icons';
+import useOutsideClick from '../../helperFunctions/useOutsideClick';
 var SubtitlesButton = function (_a) {
     var subtitles = _a.subtitles, setSubtitles = _a.setSubtitles;
     var _b = useState(false), open = _b[0], setOpen = _b[1];

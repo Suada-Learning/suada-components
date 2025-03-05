@@ -28,6 +28,8 @@
     "@mui/x-date-pickers": "6.15.0",
     "@semantic-release/changelog": "^5.0.0",
     "@storybook/addon-links": "^8.5.2",
+    "@storybook/testing-library": "^0.2.2",
+    "@testing-library/react": "^16.2.0",
     "@types/lodash": "^4.17.15",
     "@types/react-transition-group": "4.4.6",
     "@types/video-react": "^0.15.8",
