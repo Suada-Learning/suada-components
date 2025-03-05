@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"file":"RangeSlider.styles.js","sourceRoot":"","sources":["../../../src/components/RangeSlider/RangeSlider.styles.tsx"],"names":[],"mappings":"AAAA,IAAM,MAAM,GAAG,aAAa,CAAA;AAE5B,MAAM,CAAC,IAAM,OAAO,GAAG;IACrB,IAAI,EAAE,UAAG,MAAM,UAAO;CACvB,CAAA"}
+=======
+{"version":3,"file":"RangeSlider.styles.js","sourceRoot":"","sources":["../../../src/components/RangeSlider/RangeSlider.styles.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,MAAM,EAAE,MAAM,aAAa,CAAA;AAEpC,IAAM,MAAM,GAAG,aAAa,CAAA;AAE5B,MAAM,CAAC,IAAM,OAAO,GAAG;IACrB,IAAI,EAAE,UAAG,MAAM,UAAO;CACvB,CAAA;AAED,MAAM,CAAC,IAAM,IAAI,GAAG,MAAM,CAAC,KAAK,CAAC,CAAC,UAAC,EAA2B;;QAAzB,KAAK,WAAA;IAAyB,OAAA;QACjE,GAAC,YAAK,OAAO,CAAC,IAAI,CAAE,IAAG;YACrB,KAAK,EAAE,MAAM;SACd;WACD;AAJiE,CAIjE,CAAC,CAAA"}
+>>>>>>> 394c0df (feat: add build files)

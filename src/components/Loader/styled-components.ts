@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { styled as muiStyled } from '@mui/material/styles'
+import { Theme } from '@mui/material/styles'
+import { styled as muiStyled } from '@mui/system'
 
 export const LoaderWrapper = styled.div`
   width: 100%;

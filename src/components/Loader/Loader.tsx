@@ -10,10 +10,16 @@ export const Loader = ({
   withBackground = false,
 }: ILoaderProps): ReactElement => {
   return (
+<<<<<<< HEAD
     <>
       <LoaderCircle>
         <CircularProgress style={{ width, height }} />
       </LoaderCircle>
     </>
+=======
+    <LoaderCircle>
+      <CircularProgress style={{ width, height }} />
+    </LoaderCircle>
+>>>>>>> 394c0df (feat: add build files)
   )
 }
