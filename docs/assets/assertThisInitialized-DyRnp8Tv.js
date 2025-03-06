@@ -1,1 +1,0 @@
-function t(){return t=Object.assign?Object.assign.bind():function(n){for(var e=1;e<arguments.length;e++){var r=arguments[e];for(var a in r)({}).hasOwnProperty.call(r,a)&&(n[a]=r[a])}return n},t.apply(null,arguments)}function s(n){if(n===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return n}export{s as _,t as a};

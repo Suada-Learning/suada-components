@@ -1,0 +1,1 @@
+import"./index-P7RG-sTI.js";import{G as n}from"./emotion-react.browser.esm-pFE7M3pz.js";import{j as r}from"./jsx-runtime-BMn0QxmW.js";function i(t){return t==null||Object.keys(t).length===0}function u(t){const{styles:s,defaultTheme:l={}}=t,e=typeof s=="function"?o=>s(i(o)?l:o):s;return r.jsx(n,{styles:e})}export{u as G};
