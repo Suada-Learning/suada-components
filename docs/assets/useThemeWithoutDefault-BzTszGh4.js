@@ -1,0 +1,1 @@
+import{r as n}from"./index-P7RG-sTI.js";import{T as o}from"./emotion-element-f0de968e.browser.esm-D4p4t6Fx.js";function r(t){return Object.keys(t).length===0}function u(t=null){const e=n.useContext(o);return!e||r(e)?t:e}export{u};
