@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import RangeSlider from './RangeSlider';
+import { RangeSlider } from './RangeSlider';
 declare const meta: Meta<typeof RangeSlider>;
 export default meta;
 type Story = StoryObj<typeof meta>;

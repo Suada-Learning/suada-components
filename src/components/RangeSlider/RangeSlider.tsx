@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import Slider from '@mui/material/Slider'
 import { IRangeSliderProps } from './rangeSlider.interface'
 
-const RangeSlider = ({
+export const RangeSlider = ({
   label,
   style,
   value = [0, 0],
@@ -44,5 +44,3 @@ const RangeSlider = ({
     </>
   )
 }
-
-export default RangeSlider
