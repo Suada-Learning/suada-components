@@ -1,2 +1,2 @@
-export { default } from './RangeSlider';
+export { RangeSlider } from './RangeSlider';
 //# sourceMappingURL=index.js.map
