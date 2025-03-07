@@ -19,7 +19,6 @@
     "@date-io/date-fns": "^3.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/base": "5.14.9",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^6.1.4",
     "@mui/styles": "^5.14.10",
