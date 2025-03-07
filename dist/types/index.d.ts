@@ -20,6 +20,7 @@ export { TooltipHeight } from './components/Tooltip';
 export { CustomTooltip } from './components/Tooltip';
 export { VideoPlayer } from './components/VideoPlayer';
 export { SplashScreen } from './components/SplashScreen';
+export { AudioPlayer } from './components/AudioPlayer';
 export { ColumnNavigation } from './components/ColumnNavigation';
 export { StatusIndicator } from './components/StatusIndicator';
 export { WelcomeUser } from './components/WelcomeUser';
