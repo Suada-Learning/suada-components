@@ -1,10 +1,11 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { Container, ItemWrapper, PathItem } from './styled-components'
 import { useNavigate } from 'react-router'
 import { IBreadcrumbItemV2, IBreadcrumbPropsV2 } from './types'
 import { ChevronRightIcon } from '../../icons'
 
-export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
+const BreadcrumbComponent: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
   const navigate = useNavigate()
 
   const handleClick = (
@@ -13,12 +14,10 @@ export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
     state: object | undefined = {},
   ): void => {
     event.preventDefault()
-    navigate(link, {
-      state,
-    })
+    navigate(link, { state })
   }
 
-  if (!data) return
+  if (!data) return null
 
   return (
     <Container>
@@ -40,3 +39,9 @@ export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
     </Container>
   )
 }
+
+export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = props => (
+  <BrowserRouter>
+    <BreadcrumbComponent {...props} />
+  </BrowserRouter>
+)
