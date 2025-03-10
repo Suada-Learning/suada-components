@@ -10,7 +10,7 @@ export const DropDown = (props: ISelectFieldProps): ReactElement => {
 
   return (
     <ContainerSelect error={!!(props.error && props.touched)}>
-      {props.label && <StyledLabel>{props.label}</StyledLabel>}
+      {props.label && <StyledLabel $required={props.required}>{props.label}</StyledLabel>}
       <ReactSelect
         className={props.className}
         isMulti={props.isMulti}
