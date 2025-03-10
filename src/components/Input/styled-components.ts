@@ -113,11 +113,22 @@ export const StyledTextArea = styled.textarea`
   }
 `
 
-export const StyledLabel = styled.p`
+export const StyledLabel = styled.p<{ $required?: boolean }>`
   font-size: 16px;
   font-weight: 550;
   padding-top: 0px;
   margin-bottom: 5px;
+
+  ${({ $required }): string =>
+    $required
+      ? `
+    &::after {
+      content: '*';
+      color: red;
+      margin-left: 3px;
+    }
+  `
+      : ''}
 `
 
 export const ErrorMessage = styled.div`
