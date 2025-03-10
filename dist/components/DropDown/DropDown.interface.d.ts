@@ -40,6 +40,7 @@ export interface IAsyncSelectProps {
     isClearable?: boolean;
 }
 export interface ISelectFieldProps {
+    required?: boolean;
     className?: string;
     isMulti?: boolean;
     onChange?: (value: any) => void;
