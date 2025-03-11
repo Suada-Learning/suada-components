@@ -25,6 +25,7 @@ export { ColumnNavigation } from './components/ColumnNavigation';
 export { StatusIndicator } from './components/StatusIndicator';
 export { WelcomeUser } from './components/WelcomeUser';
 export { TabPanel, TabNavigation, activeTabClassName } from './components/Tabs';
+export { NavigationBar } from './components/ExpansionMenu';
 export { RadioButton } from './components/RadioButton';
 export { DrawerTips } from './components/DrawerTips';
 export { RangeSlider } from './components/RangeSlider';

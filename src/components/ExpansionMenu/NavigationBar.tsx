@@ -7,7 +7,15 @@ import ExpansionNavMenu from './ExpansionNavMenu'
 import { IExpansionItemProps } from './ExpansionItem.interface'
 import { IPermissionsBool, IUser, IUserCompany } from '../CourseCard/CourseCard.interface'
 import { getAllNavigation } from './routerConfig'
-import { mockUser } from './NavigationBar.stories'
+
+const mockUser: IUser = {
+  id: 'user1',
+  role: 'SUPER_ADMIN',
+  companyId: 'company1',
+  firstName: 'John',
+  lastName: 'Doe',
+  email: 'john@gmail.com',
+}
 
 export const NavigationBar: React.FC<IExpansionItemProps> = ({
   isOpened,
