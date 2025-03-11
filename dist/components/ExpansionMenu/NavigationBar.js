@@ -3,7 +3,14 @@ import { Container } from './styled-components';
 import ExpansionItem from './ExpansionItem';
 import ExpansionNavMenu from './ExpansionNavMenu';
 import { getAllNavigation } from './routerConfig';
-import { mockUser } from './NavigationBar.stories';
+var mockUser = {
+    id: 'user1',
+    role: 'SUPER_ADMIN',
+    companyId: 'company1',
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@gmail.com',
+};
 export var NavigationBar = function (_a) {
     var isOpened = _a.isOpened, currentUser = _a.currentUser, checkRole = _a.checkRole, state = _a.state;
     var role = checkRole && checkRole(currentUser === null || currentUser === void 0 ? void 0 : currentUser.role, !!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.companyId));

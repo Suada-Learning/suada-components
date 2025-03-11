@@ -45,7 +45,7 @@ export default {
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'bundled',
-      extensions: ['.ts', '.tsx'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
     }),
 
     image(),
