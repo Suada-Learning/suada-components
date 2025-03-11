@@ -1,5 +1,4 @@
 import React, { ReactElement, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 
 import { ExpansionMenuItem, ExpansionMenuItemList } from './styled-components'
 import { NavLink } from 'react-router-dom'
@@ -10,6 +9,7 @@ import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { styled } from '@mui/system'
 import { IExpansionItemProps } from './ExpansionItem.interface'
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
 
 const ExpansionPanelCustom = styled(Accordion)(() => ({
   backgroundColor: 'transparent',
