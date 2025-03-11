@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { Container } from './styled-components'
 
 import ExpansionItem from './ExpansionItem'
@@ -17,7 +18,7 @@ const mockUser: IUser = {
   email: 'john@gmail.com',
 }
 
-export const NavigationBar: React.FC<IExpansionItemProps> = ({
+const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   isOpened,
   currentUser,
   checkRole,
@@ -42,3 +43,9 @@ export const NavigationBar: React.FC<IExpansionItemProps> = ({
     </Container>
   )
 }
+
+export const NavigationBar: React.FC<IExpansionItemProps> = props => (
+  <BrowserRouter>
+    <NavigationBarComponent {...props} />
+  </BrowserRouter>
+)
