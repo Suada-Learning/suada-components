@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react'
-import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 import { IExpansionItemProps } from './ExpansionItem.interface'
 import {
@@ -7,6 +6,7 @@ import {
   StyledExpansionPanelSummary,
   StyledTypography,
 } from './styled-components'
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
 
 const ExpansionItem = ({ item, index, isOpened }: IExpansionItemProps): ReactElement => {
   const { t } = useTranslation()
