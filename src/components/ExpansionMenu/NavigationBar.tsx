@@ -23,9 +23,8 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   currentUser,
   checkRole,
   state,
+  location,
 }) => {
-  const location = useLocation()
-
   console.log('✅ Current path:', location.pathname)
 
   const role = checkRole && checkRole(currentUser?.role as string, !!currentUser?.companyId)
