@@ -14,7 +14,6 @@ export interface IExpansionItem {
     currentUser?: IUser;
 }
 export interface IExpansionItemProps {
-    location?: any;
     state?: {
         userPermission?: IPermissionsBool;
         currentUser?: IUser;

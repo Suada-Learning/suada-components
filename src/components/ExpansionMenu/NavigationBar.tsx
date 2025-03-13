@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import { Container } from './styled-components'
 
@@ -8,6 +8,7 @@ import ExpansionNavMenu from './ExpansionNavMenu'
 import { IExpansionItemProps } from './ExpansionItem.interface'
 import { IPermissionsBool, IUser, IUserCompany } from '../CourseCard/CourseCard.interface'
 import { getAllNavigation } from './routerConfig'
+import { SuadaRouterProvider } from '../Providers/RouterProvider'
 
 const mockUser: IUser = {
   id: 'user1',
@@ -23,9 +24,14 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   currentUser,
   checkRole,
   state,
-  location,
 }) => {
-  console.log('✅ Current path:', location.pathname)
+  const location = useLocation()
+  const [renderKey, setRenderKey] = useState(0)
+
+  useEffect(() => {
+    console.log('URL changed:', location.pathname)
+    setRenderKey(prevKey => prevKey + 1) //
+  }, [location.pathname])
 
   const role = checkRole && checkRole(currentUser?.role as string, !!currentUser?.companyId)
   const routerData = getAllNavigation(
@@ -35,7 +41,7 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   )
 
   return (
-    <Container $isOpened={isOpened as boolean} key={location.pathname}>
+    <Container key={renderKey} $isOpened={isOpened as boolean}>
       {routerData.map((item, index) =>
         item.children ? (
           <ExpansionNavMenu item={item} index={index} key={index} isOpened={isOpened} role={role} />
@@ -48,7 +54,7 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
 }
 
 export const NavigationBar: React.FC<IExpansionItemProps> = props => (
-  <BrowserRouter>
+  <SuadaRouterProvider>
     <NavigationBarComponent {...props} />
-  </BrowserRouter>
+  </SuadaRouterProvider>
 )
