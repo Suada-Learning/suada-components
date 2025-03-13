@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import { Container } from './styled-components'
 
 import ExpansionItem from './ExpansionItem'
@@ -24,6 +24,12 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   checkRole,
   state,
 }) => {
+  const location = useLocation()
+
+  useEffect(() => {
+    console.log('URL changed:', location.pathname)
+  }, [location.pathname])
+
   const role = checkRole && checkRole(currentUser?.role as string, !!currentUser?.companyId)
   const routerData = getAllNavigation(
     state?.userPermission || ({} as IPermissionsBool),
@@ -45,5 +51,7 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
 }
 
 export const NavigationBar: React.FC<IExpansionItemProps> = props => (
-  <NavigationBarComponent {...props} />
+  <BrowserRouter>
+    <NavigationBarComponent {...props} />
+  </BrowserRouter>
 )
