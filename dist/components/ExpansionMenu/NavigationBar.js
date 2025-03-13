@@ -10,7 +10,6 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { BrowserRouter } from 'react-router-dom';
 import { Container } from './styled-components';
 import ExpansionItem from './ExpansionItem';
 import ExpansionNavMenu from './ExpansionNavMenu';
@@ -31,5 +30,5 @@ var NavigationBarComponent = function (_a) {
             return item.children ? (_jsx(ExpansionNavMenu, { item: item, index: index, isOpened: isOpened, role: role }, index)) : (_jsx(ExpansionItem, { item: item, index: index, isOpened: isOpened, role: role }, index));
         }) }));
 };
-export var NavigationBar = function (props) { return (_jsx(BrowserRouter, { children: _jsx(NavigationBarComponent, __assign({}, props)) })); };
+export var NavigationBar = function (props) { return (_jsx(NavigationBarComponent, __assign({}, props))); };
 //# sourceMappingURL=NavigationBar.js.map
