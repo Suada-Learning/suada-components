@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import { Container } from './styled-components'
 
@@ -25,12 +25,8 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   state,
 }) => {
   const location = useLocation()
-  const [renderKey, setRenderKey] = useState(0)
 
-  useEffect(() => {
-    console.log('URL changed:', location.pathname)
-    setRenderKey(prevKey => prevKey + 1) //
-  }, [location.pathname])
+  console.log('✅ Current path:', location.pathname)
 
   const role = checkRole && checkRole(currentUser?.role as string, !!currentUser?.companyId)
   const routerData = getAllNavigation(
@@ -40,7 +36,7 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   )
 
   return (
-    <Container key={renderKey} $isOpened={isOpened as boolean}>
+    <Container $isOpened={isOpened as boolean} key={location.pathname}>
       {routerData.map((item, index) =>
         item.children ? (
           <ExpansionNavMenu item={item} index={index} key={index} isOpened={isOpened} role={role} />
