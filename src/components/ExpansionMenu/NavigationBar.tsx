@@ -45,7 +45,5 @@ const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
 }
 
 export const NavigationBar: React.FC<IExpansionItemProps> = props => (
-  <BrowserRouter>
-    <NavigationBarComponent {...props} />
-  </BrowserRouter>
+  <NavigationBarComponent {...props} />
 )
