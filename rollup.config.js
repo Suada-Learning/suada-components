@@ -8,9 +8,9 @@ import image from '@rollup/plugin-image'
 
 export default {
   input: {
-    index: 'src/index.ts',
-    components: 'src/components/index.ts',
-    icons: 'src/icons/index.ts',
+    index: './src/index.ts',
+    components: './src/components/index.ts',
+    icons: './src/icons/index.ts',
   },
   output: [
     {
@@ -29,14 +29,8 @@ export default {
   plugins: [
     peerDepsExternal(),
     resolve(),
-    commonjs({
-      include: /node_modules/,
-    }),
-    postcss({
-      modules: true,
-      extract: true,
-      minimize: true,
-    }),
+    commonjs({ include: /node_modules/ }),
+    postcss({ modules: true, extract: true, minimize: true }),
     typescript({
       tsconfig: './tsconfig.json',
       declaration: true,

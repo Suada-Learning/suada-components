@@ -1,7 +1,7 @@
 'use strict';
 
-var SchoolIcon = require('./SchoolIcon-mFTJktez.js');
-var ChevronRightIcon = require('./ChevronRightIcon-Bev7I_mi.js');
+var SchoolIcon = require('./SchoolIcon-CyKu52it.js');
+var ChevronRightIcon = require('./ChevronRightIcon-BvXEbNB5.js');
 require('react');
 
 

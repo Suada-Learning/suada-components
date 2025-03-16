@@ -12,20 +12,12 @@
       "require": "./dist/index.js"
     },
     "./components": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
-    },
-    "./components/button": {
-      "import": "./dist/components/button/index.esm.js",
-      "require": "./dist/components/button/index.js"
-    },
-    "./components/card": {
-      "import": "./dist/components/card/index.esm.js",
-      "require": "./dist/components/card/index.js"
+      "import": "./dist/components/index.js",
+      "require": "./dist/components/index.js"
     },
     "./icons": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
     }
   },
   "scripts": {
