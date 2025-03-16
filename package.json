@@ -9,15 +9,18 @@
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./components": {
-      "import": "./dist/components/index.js",
-      "require": "./dist/components/index.js"
+      "import": "./dist/components/index.esm.js",
+      "require": "./dist/components/index.js",
+      "types": "./dist/components/index.d.ts"
     },
     "./icons": {
-      "import": "./dist/icons/index.js",
-      "require": "./dist/icons/index.js"
+      "import": "./dist/icons/index.esm.js",
+      "require": "./dist/icons/index.js",
+      "types": "./dist/icons/index.d.ts"
     }
   },
   "scripts": {

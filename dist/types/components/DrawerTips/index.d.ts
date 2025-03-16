@@ -1,1 +1,0 @@
-export { DrawerTips } from './DrawerTips';
