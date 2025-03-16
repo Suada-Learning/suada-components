@@ -1,0 +1,13 @@
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+import styled from 'styled-components';
+export var Wrapper = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  padding: 8px;\n  transition: 0.3s ease;\n  background: #fff;\n  border-radius: 8px;\n\n  &:hover {\n    background: #edeef2;\n  }\n\n  ", "\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n  padding: 8px;\n  transition: 0.3s ease;\n  background: #fff;\n  border-radius: 8px;\n\n  &:hover {\n    background: #edeef2;\n  }\n\n  ", "\n"])), function (_a) {
+    var open = _a.open;
+    return (open && 'background: #edeef2;') || '';
+});
+export var Title = styled.h4(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  font-size: 14px;\n  width: 100px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n\n  color: #414141;\n"], ["\n  font-size: 14px;\n  width: 100px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n\n  color: #414141;\n"])));
+export var PopoverContent = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  width: 180px;\n  flex-direction: column;\n  padding: 8px;\n  border-radius: 8px;\n\n  & > div {\n    cursor: pointer;\n    display: flex;\n    gap: 8px;\n    align-items: center;\n    font-family: 'Open Sans', sans-serif;\n    padding: 8px;\n    border-radius: 8px;\n    transition: 0.3s ease;\n    background: #fff;\n\n    &:hover {\n      background: #edeef2;\n    }\n\n    div {\n      width: 24px;\n      height: 24px;\n      display: flex;\n      justify-content: center;\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  width: 180px;\n  flex-direction: column;\n  padding: 8px;\n  border-radius: 8px;\n\n  & > div {\n    cursor: pointer;\n    display: flex;\n    gap: 8px;\n    align-items: center;\n    font-family: 'Open Sans', sans-serif;\n    padding: 8px;\n    border-radius: 8px;\n    transition: 0.3s ease;\n    background: #fff;\n\n    &:hover {\n      background: #edeef2;\n    }\n\n    div {\n      width: 24px;\n      height: 24px;\n      display: flex;\n      justify-content: center;\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n    }\n  }\n"])));
+var templateObject_1, templateObject_2, templateObject_3;
+//# sourceMappingURL=styled-components.js.map

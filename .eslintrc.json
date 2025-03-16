@@ -24,6 +24,12 @@
     "import/newline-after-import": ["error", { "count": 1 }],
     "import/no-duplicates": "error",
     "import/default": "off",
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["^suada-components/components", "^suada-components/icons"]
+      }
+    ],
     "import/order": [
       "error",
       {
@@ -52,7 +58,10 @@
   },
   "settings": {
     "import/resolver": {
-      "typescript": true
+      "typescript": true,
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }
