@@ -5,31 +5,28 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
 import image from '@rollup/plugin-image'
+import multiInput from 'rollup-plugin-multi-input'
 
 export default {
-  input: {
-    index: './src/index.ts',
-    components: './src/components/index.ts',
-    icons: './src/icons/index.ts',
-  },
+  input: ['src/index.ts', 'src/components/**/*.ts', 'src/icons/**/*.ts'],
   output: [
     {
       dir: 'dist',
-      format: 'cjs',
+      format: 'esm',
       sourcemap: true,
       entryFileNames: '[name].js',
     },
     {
       dir: 'dist',
-      format: 'esm',
+      format: 'cjs',
       sourcemap: true,
-      entryFileNames: '[name].esm.js',
+      entryFileNames: '[name].cjs.js',
     },
   ],
   plugins: [
     peerDepsExternal(),
     resolve(),
-    commonjs({ include: /node_modules/ }),
+    commonjs(),
     postcss({ modules: true, extract: true, minimize: true }),
     typescript({
       tsconfig: './tsconfig.json',
@@ -43,6 +40,7 @@ export default {
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     }),
     image(),
+    multiInput(),
   ],
   external: ['react', 'react-dom'],
 }
