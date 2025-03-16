@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "paths": {
+      "suada-components/components": ["node_modules/suada-components/dist/components"],
+      "suada-components/icons": ["node_modules/suada-components/dist/icons"]
+    },
     "target": "es5",
     "module": "esnext",
     "jsx": "react-jsx",
