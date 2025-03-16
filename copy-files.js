@@ -1,5 +1,9 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 // Ensure directories exist
 const dirs = ['dist/components', 'dist/icons']
@@ -34,40 +38,15 @@ const iconsPackage = {
 
 fs.writeFileSync(path.join('dist/icons', 'package.json'), JSON.stringify(iconsPackage, null, 2))
 
-// Create or copy index files if they don't exist
-const checkAndCreateIndexFile = (dir, content) => {
-  const indexPath = path.join('dist', dir, 'index.js')
-  const indexEsmPath = path.join('dist', dir, 'index.esm.js')
-  const dtsPath = path.join('dist', dir, 'index.d.ts')
-
-  if (!fs.existsSync(indexPath)) {
-    fs.writeFileSync(indexPath, content)
-    console.log(`Created ${indexPath}`)
-  }
-
-  if (!fs.existsSync(indexEsmPath)) {
-    fs.writeFileSync(
-      indexEsmPath,
-      content.replace('exports.', 'export ').replace('= require(', '= import('),
-    )
-    console.log(`Created ${indexEsmPath}`)
-  }
-
-  // Check if type definition exists, if not create a placeholder
-  if (!fs.existsSync(dtsPath)) {
-    fs.writeFileSync(dtsPath, '// Generated types\nexport * from "../src/components";\n')
-    console.log(`Created placeholder ${dtsPath}`)
-  }
-}
-
-checkAndCreateIndexFile(
-  'components',
-  "'use strict';\nObject.defineProperty(exports, '__esModule', { value: true });\nvar index = require('../src/components');\nObject.keys(index).forEach(function (key) {\n  exports[key] = index[key];\n});\n",
+// Create root-level component files to help with imports
+fs.writeFileSync(
+  'components.d.ts',
+  "// Root level declaration file to help TypeScript find the correct types\nexport * from './dist/components/index';\n",
 )
 
-checkAndCreateIndexFile(
-  'icons',
-  "'use strict';\nObject.defineProperty(exports, '__esModule', { value: true });\nvar index = require('../src/icons');\nObject.keys(index).forEach(function (key) {\n  exports[key] = index[key];\n});\n",
+fs.writeFileSync(
+  'icons.d.ts',
+  "// Root level declaration file to help TypeScript find the correct types\nexport * from './dist/icons/index';\n",
 )
 
 console.log('Post-build file creation completed!')

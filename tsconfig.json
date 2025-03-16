@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "suada-components/components": ["node_modules/suada-components/dist/components"],
-      "suada-components/icons": ["node_modules/suada-components/dist/icons"]
+      "components/*": ["src/components/*"],
+      "icons/*": ["src/icons/*"]
     },
     "target": "es5",
     "module": "esnext",
