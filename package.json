@@ -6,6 +6,28 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./components": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./components/button": {
+      "import": "./dist/components/button/index.esm.js",
+      "require": "./dist/components/button/index.js"
+    },
+    "./components/card": {
+      "import": "./dist/components/card/index.esm.js",
+      "require": "./dist/components/card/index.js"
+    },
+    "./icons": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "prebuild": "rm -rf dist",
     "dev": "vite",

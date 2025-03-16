@@ -7,47 +7,47 @@ import commonjs from '@rollup/plugin-commonjs'
 import image from '@rollup/plugin-image'
 
 export default {
-  input: './src/index.ts',
+  input: {
+    index: 'src/index.ts',
+    components: 'src/components/index.ts',
+    icons: 'src/icons/index.ts',
+  },
   output: [
     {
-      file: 'dist/index.js',
+      dir: 'dist',
       format: 'cjs',
       sourcemap: true,
+      entryFileNames: '[name].js',
     },
     {
-      file: 'dist/index.esm.js',
+      dir: 'dist',
       format: 'esm',
       sourcemap: true,
+      entryFileNames: '[name].esm.js',
     },
   ],
   plugins: [
     peerDepsExternal(),
-
     resolve(),
-
     commonjs({
       include: /node_modules/,
     }),
-
     postcss({
       modules: true,
       extract: true,
       minimize: true,
     }),
-
     typescript({
       tsconfig: './tsconfig.json',
       declaration: true,
       declarationDir: 'dist/types',
       exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
     }),
-
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'bundled',
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     }),
-
     image(),
   ],
   external: ['react', 'react-dom'],
