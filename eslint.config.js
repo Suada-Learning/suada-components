@@ -19,9 +19,19 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // Add this rule to enforce correct import paths
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['suada-components'],
+              message:
+                'Import directly from subpaths instead: use "suada-components/components" or "suada-components/icons"',
+            },
+          ],
+        },
       ],
     },
   },

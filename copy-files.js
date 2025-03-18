@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Ensure directories exist
 const dirs = ['dist/components', 'dist/icons']
 dirs.forEach(dir => {
   if (!fs.existsSync(dir)) {
