@@ -6,10 +6,37 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./components": {
+      "import": "./dist/components/index.esm.js",
+      "require": "./dist/components/index.js",
+      "types": "./dist/components/index.d.ts"
+    },
+    "./icons": {
+      "import": "./dist/icons/index.esm.js",
+      "require": "./dist/icons/index.js",
+      "types": "./dist/icons/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "components": [
+        "dist/components/index.d.ts"
+      ],
+      "icons": [
+        "dist/icons/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "prebuild": "rm -rf dist",
     "dev": "vite",
-    "build": "rollup -c && tsc",
+    "build": "rollup -c && tsc && node copy-files.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -102,8 +129,12 @@
     "vite": "^6.0.5"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
-  }
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    }
+}
 }
