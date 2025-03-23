@@ -11,11 +11,10 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Container, ItemWrapper, PathItem } from './styled-components';
-import { useNavigate } from 'react-router';
 import { ChevronRightIcon } from '../../icons';
-var BreadcrumbComponent = function (_a) {
+var BreadcrumbWithRouter = function (_a) {
     var data = _a.data;
     var navigate = useNavigate();
     var handleClick = function (event, link, state) {
@@ -25,7 +24,32 @@ var BreadcrumbComponent = function (_a) {
     };
     if (!data)
         return null;
-    return (_jsx(Container, { children: data.map(function (item, index) { return (_jsxs(React.Fragment, { children: [_jsxs(PathItem, { children: [item.icon, item.link ? (_jsx("a", { href: '/', onClick: function (e) { return handleClick(e, item.link, item.state); }, children: item.label })) : (_jsx(ItemWrapper, { children: item.label }))] }), index < data.length - 1 && (index === 0 ? _jsx(ChevronRightIcon, {}) : _jsx("span", { children: " / " }))] }, index)); }) }));
+    return (_jsx(Container, { children: data.map(function (item, index) { return (_jsxs(React.Fragment, { children: [_jsxs(PathItem, { children: [item.icon, item.link ? (_jsx("a", { href: item.link, onClick: function (e) { return handleClick(e, item.link, item.state); }, children: item.label })) : (_jsx(ItemWrapper, { children: item.label }))] }), index < data.length - 1 && (index === 0 ? _jsx(ChevronRightIcon, {}) : _jsx("span", { children: " / " }))] }, index)); }) }));
 };
-export var Breadcrumb = function (props) { return (_jsx(BrowserRouter, { children: _jsx(BreadcrumbComponent, __assign({}, props)) })); };
+var BreadcrumbWithoutRouter = function (_a) {
+    var data = _a.data;
+    if (!data)
+        return null;
+    return (_jsx(Container, { children: data.map(function (item, index) { return (_jsxs(React.Fragment, { children: [_jsxs(PathItem, { children: [item.icon, item.link ? (_jsx("a", { href: item.link, children: item.label })) : (_jsx(ItemWrapper, { children: item.label }))] }), index < data.length - 1 && (index === 0 ? _jsx(ChevronRightIcon, {}) : _jsx("span", { children: " / " }))] }, index)); }) }));
+};
+export var Breadcrumb = function (props) {
+    var isInRouterContext = React.useMemo(function () {
+        try {
+            useLocation();
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    }, []);
+    try {
+        if (isInRouterContext) {
+            return _jsx(BreadcrumbWithRouter, __assign({}, props));
+        }
+    }
+    catch (e) {
+        console.warn('Router context not detected, using regular links in breadcrumb');
+    }
+    return _jsx(BreadcrumbWithoutRouter, __assign({}, props));
+};
 //# sourceMappingURL=Breadcrumb.js.map
