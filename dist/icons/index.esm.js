@@ -4209,7 +4209,6 @@ var SettingsOutlinedIcon = function SettingsOutlinedIcon(_a) {
     height: '24px',
     viewBox: '0 0 24 24',
     width: '24px',
-    fill: fill,
     className: className,
     onClick: onClick
   }, props, {

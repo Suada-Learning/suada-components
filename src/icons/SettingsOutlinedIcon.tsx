@@ -13,7 +13,6 @@ export const SettingsOutlinedIcon: React.FC<SvgProps> = ({
       height='24px'
       viewBox='0 0 24 24'
       width='24px'
-      fill={fill}
       className={className}
       onClick={onClick}
       {...props}
