@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { default as CustomSwitch } from '@mui/material/Switch'
+import Switch from '@mui/material/Switch'
 import { Tooltip } from '@mui/material'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import {
@@ -29,8 +29,12 @@ export const CustomSwitcher: React.FC<ISwitchProps> = ({
       return (
         <ToolTipContainer>
           <StyledLabel style={labelStyle}>{label}</StyledLabel>
-          <Tooltip title={<TooltipTitle>{tooltip}</TooltipTitle>} arrow>
-            <Help color='primary' style={HelpIconStyles} />
+          <Tooltip title={<TooltipTitle>{tooltip}</TooltipTitle>} arrow placement='right'>
+            <div>
+              {' '}
+              {/* Adding wrapper div to ensure tooltip attaches properly */}
+              <Help color='primary' style={HelpIconStyles} />
+            </div>
           </Tooltip>
         </ToolTipContainer>
       )
@@ -46,7 +50,7 @@ export const CustomSwitcher: React.FC<ISwitchProps> = ({
       control={
         <FormControlWrapper>
           {off}
-          <CustomSwitch
+          <Switch
             checked={value}
             onChange={onChange}
             name={name}

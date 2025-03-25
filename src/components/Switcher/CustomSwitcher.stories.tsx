@@ -56,5 +56,6 @@ export const Default: Story = {
 export const Checked: Story = {
   args: {
     value: true,
+    tooltip: 'This is a checked switch component',
   },
 }
