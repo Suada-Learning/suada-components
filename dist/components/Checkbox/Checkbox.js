@@ -10,6 +10,6 @@ export var Checkbox = function (_a) {
                 '&.Mui-checked': {
                     color: checkedColor,
                 },
-            } }), label: _jsxs(LabelContainer, { children: [_jsx("span", { children: label }), tooltip && (_jsx(Tooltip, { title: tooltip, children: _jsx(Help, {}) }))] }) }));
+            } }), label: _jsxs(LabelContainer, { children: [_jsx("span", { children: label }), tooltip && (_jsx(Tooltip, { title: tooltip, arrow: true, placement: 'right', children: _jsx("div", { style: { display: 'flex', cursor: 'pointer' }, children: _jsx(Help, {}) }) }))] }) }));
 };
 //# sourceMappingURL=Checkbox.js.map

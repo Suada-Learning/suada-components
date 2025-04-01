@@ -1,4 +1,4 @@
-import require$$0 from 'react';
+import require$$0, { forwardRef } from 'react';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -2746,13 +2746,14 @@ var Person = function Person(_a) {
   }));
 };
 
-var HelpIcon = function HelpIcon(_a) {
+var HelpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#06C68F' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 -960 960 960',
@@ -2766,7 +2767,9 @@ var HelpIcon = function HelpIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+// Add display name for better debugging
+HelpIcon.displayName = 'HelpIcon';
 
 var PhoneIphoneIcon = function PhoneIphoneIcon(_a) {
   var className = _a.className,
