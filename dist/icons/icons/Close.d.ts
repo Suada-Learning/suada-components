@@ -1,3 +1,3 @@
 import React from 'react';
 import { SvgProps } from './svgTypes.interface';
-export declare const Close: React.FC<SvgProps>;
+export declare const Close: React.ForwardRefExoticComponent<Omit<SvgProps, "ref"> & React.RefAttributes<SVGSVGElement>>;

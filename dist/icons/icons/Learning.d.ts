@@ -4,4 +4,4 @@ export interface SvgProps extends SVGProps<SVGSVGElement> {
     onClick?: () => void;
     black?: boolean;
 }
-export declare const Learning: React.FC<SvgProps>;
+export declare const Learning: React.ForwardRefExoticComponent<Omit<SvgProps, "ref"> & React.RefAttributes<SVGSVGElement>>;

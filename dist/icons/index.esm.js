@@ -1389,11 +1389,12 @@ function requireJsxRuntime () {
 
 var jsxRuntimeExports = requireJsxRuntime();
 
-var ActivityIcon = function ActivityIcon(_a) {
+var ActivityIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1407,15 +1408,17 @@ var ActivityIcon = function ActivityIcon(_a) {
       fill: '#68707A'
     })
   }));
-};
+});
+ActivityIcon.displayName = 'ActivityIcon';
 
-var ArrowDropDownIcon = function ArrowDropDownIcon(_a) {
+var ArrowDropDownIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#fff' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 -960 960 960',
@@ -1429,13 +1432,15 @@ var ArrowDropDownIcon = function ArrowDropDownIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ArrowDropDownIcon.displayName = 'ArrowDropDownIcon';
 
-var Analytics = function Analytics(_a) {
+var Analytics = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1452,13 +1457,15 @@ var Analytics = function Analytics(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+Analytics.displayName = 'Analytics';
 
-var AddAlt = function AddAlt(_a) {
+var AddAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1475,13 +1482,15 @@ var AddAlt = function AddAlt(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+AddAlt.displayName = 'AddAlt';
 
-var Company = function Company(_a) {
+var Company = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1513,13 +1522,15 @@ var Company = function Company(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+Company.displayName = 'Company';
 
-var AddStudent = function AddStudent(_a) {
+var AddStudent = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1536,13 +1547,15 @@ var AddStudent = function AddStudent(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+AddStudent.displayName = 'AddStudent';
 
-var Learning = function Learning(_a) {
+var Learning = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1565,13 +1578,15 @@ var Learning = function Learning(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+Learning.displayName = 'Learning';
 
-var UsersIcon = function UsersIcon(_a) {
+var UsersIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1594,13 +1609,15 @@ var UsersIcon = function UsersIcon(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+UsersIcon.displayName = 'UsersIcon';
 
-var Circle = function Circle(_a) {
+var Circle = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1614,13 +1631,15 @@ var Circle = function Circle(_a) {
       fill: '#D6DAE0'
     })
   }));
-};
+});
+Circle.displayName = 'Circle';
 
-var Library = function Library(_a) {
+var Library = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1643,15 +1662,17 @@ var Library = function Library(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+Library.displayName = 'Library';
 
-var AddIcon = function AddIcon(_a) {
+var AddIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? 'white' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '25',
     height: '24',
     viewBox: '0 0 25 24',
@@ -1665,13 +1686,15 @@ var AddIcon = function AddIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+AddIcon.displayName = 'AddIcon';
 
-var AnalyticsIcon = function AnalyticsIcon(_a) {
+var AnalyticsIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -1688,13 +1711,15 @@ var AnalyticsIcon = function AnalyticsIcon(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+AnalyticsIcon.displayName = 'AnalyticsIcon';
 
-var AssignTutor = function AssignTutor(_a) {
+var AssignTutor = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1717,13 +1742,15 @@ var AssignTutor = function AssignTutor(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+AssignTutor.displayName = 'AssignTutor';
 
-var Book = function Book(_a) {
+var Book = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '94',
     height: '62',
     viewBox: '0 0 94 62',
@@ -1745,13 +1772,15 @@ var Book = function Book(_a) {
       })]
     })
   }));
-};
+});
+Book.displayName = 'Book';
 
-var BookWithBookmark = function BookWithBookmark(_a) {
+var BookWithBookmark = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -1765,13 +1794,15 @@ var BookWithBookmark = function BookWithBookmark(_a) {
       fill: '#020210'
     })
   }));
-};
+});
+BookWithBookmark.displayName = 'BookWithBookmark';
 
-var BusinessIcon = function BusinessIcon(_a) {
+var BusinessIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -1785,13 +1816,15 @@ var BusinessIcon = function BusinessIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+BusinessIcon.displayName = 'BusinessIcon';
 
-var CaretDown = function CaretDown(_a) {
+var CaretDown = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -1809,13 +1842,15 @@ var CaretDown = function CaretDown(_a) {
       })
     })
   }));
-};
+});
+CaretDown.displayName = 'CaretDown';
 
-var CheckedIcon = function CheckedIcon(_a) {
+var CheckedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '32',
     height: '32',
     viewBox: '0 0 32 32',
@@ -1837,13 +1872,15 @@ var CheckedIcon = function CheckedIcon(_a) {
       })]
     })
   }));
-};
+});
+CheckedIcon.displayName = 'Checked';
 
-var Checkmark = function Checkmark(_a) {
+var Checkmark = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1861,13 +1898,15 @@ var Checkmark = function Checkmark(_a) {
       })
     })
   }));
-};
+});
+Checkmark.displayName = 'Checkmark';
 
-var CheckmarkOutline = function CheckmarkOutline(_a) {
+var CheckmarkOutline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1890,13 +1929,15 @@ var CheckmarkOutline = function CheckmarkOutline(_a) {
       })
     })
   }));
-};
+});
+CheckmarkOutline.displayName = 'CheckmarkOutline';
 
-var CheckmarkOutlineAction = function CheckmarkOutlineAction(_a) {
+var CheckmarkOutlineAction = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '40',
     height: '40',
     viewBox: '0 0 40 40',
@@ -1913,13 +1954,15 @@ var CheckmarkOutlineAction = function CheckmarkOutlineAction(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+CheckmarkOutlineAction.displayName = 'CheckmarkOutlineAction';
 
-var Close = function Close(_a) {
+var Close = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1937,15 +1980,17 @@ var Close = function Close(_a) {
       })
     })
   }));
-};
+});
+Close.displayName = 'Close';
 
-var CloseIcon = function CloseIcon(_a) {
+var CloseIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -1959,13 +2004,15 @@ var CloseIcon = function CloseIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+CloseIcon.displayName = 'CloseIcon';
 
-var CloseOutline = function CloseOutline(_a) {
+var CloseOutline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -1988,13 +2035,15 @@ var CloseOutline = function CloseOutline(_a) {
       })
     })
   }));
-};
+});
+CloseOutline.displayName = 'CloseOutline';
 
-var CloseOutlineAction = function CloseOutlineAction(_a) {
+var CloseOutlineAction = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     version: '1.1',
     xmlns: 'http://www.w3.org/2000/svg',
     xmlnsXlink: 'http://www.w3.org/1999/xlink',
@@ -2029,13 +2078,15 @@ var CloseOutlineAction = function CloseOutlineAction(_a) {
       })
     })
   }));
-};
+});
+CloseOutlineAction.displayName = 'CloseOutlineAction';
 
-var Coach = function Coach(_a) {
+var Coach = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '20',
     height: '19',
     viewBox: '0 0 20 19',
@@ -2055,13 +2106,15 @@ var Coach = function Coach(_a) {
       stroke: 'white'
     })]
   }));
-};
+});
+Coach.displayName = 'Coach';
 
-var DarkAddAlt = function DarkAddAlt(_a) {
+var DarkAddAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2078,13 +2131,15 @@ var DarkAddAlt = function DarkAddAlt(_a) {
       fill: '#08C694'
     })]
   }));
-};
+});
+DarkAddAlt.displayName = 'DarkAddAlt';
 
-var DarkAiAssistent = function DarkAiAssistent(_a) {
+var DarkAiAssistent = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2107,13 +2162,15 @@ var DarkAiAssistent = function DarkAiAssistent(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+DarkAiAssistent.displayName = 'DarkAiAssistent';
 
-var DarkCloseOutline = function DarkCloseOutline(_a) {
+var DarkCloseOutline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -2136,13 +2193,15 @@ var DarkCloseOutline = function DarkCloseOutline(_a) {
       })
     })
   }));
-};
+});
+DarkCloseOutline.displayName = 'DarkCloseOutline';
 
-var DarkTrashCan = function DarkTrashCan(_a) {
+var DarkTrashCan = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -2171,13 +2230,15 @@ var DarkTrashCan = function DarkTrashCan(_a) {
       })
     })
   }));
-};
+});
+DarkTrashCan.displayName = 'DarkTrashCan';
 
-var DefaultAvatar = function DefaultAvatar(_a) {
+var DefaultAvatar = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     id: 'Profile_Picture',
     "data-name": 'Profile Picture',
     xmlns: 'http://www.w3.org/2000/svg',
@@ -2190,7 +2251,7 @@ var DefaultAvatar = function DefaultAvatar(_a) {
   }, props, {
     children: [jsxRuntimeExports.jsxs("defs", {
       children: [jsxRuntimeExports.jsx("style", {
-        children: "\n            .cls-1, .cls-5, .cls-7 { fill: none; }\n            .cls-1, .cls-5 { stroke: #06c68f; }\n            .cls-1 { stroke-width: 12px; }\n            .cls-2 { opacity: 0.7; }\n            .cls-3 { fill: #06c68f; }\n            .cls-4 { clip-path: url(#clip-path); }\n            .cls-5 { stroke-width: 5px; }\n            .cls-6 { stroke: none; }\n          "
+        children: "\n              .cls-1, .cls-5, .cls-7 { fill: none; }\n              .cls-1, .cls-5 { stroke: #06c68f; }\n              .cls-1 { stroke-width: 12px; }\n              .cls-2 { opacity: 0.7; }\n              .cls-3 { fill: #06c68f; }\n              .cls-4 { clip-path: url(#clip-path); }\n              .cls-5 { stroke-width: 5px; }\n              .cls-6 { stroke: none; }\n            "
       }), jsxRuntimeExports.jsx("clipPath", {
         id: 'clip-path',
         children: jsxRuntimeExports.jsx("ellipse", {
@@ -2258,13 +2319,15 @@ var DefaultAvatar = function DefaultAvatar(_a) {
       })]
     })]
   }));
-};
+});
+DefaultAvatar.displayName = 'DefaultAvatar';
 
-var Delete = function Delete(_a) {
+var Delete = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2287,13 +2350,15 @@ var Delete = function Delete(_a) {
       fill: '#EA382A'
     })]
   }));
-};
+});
+Delete.displayName = 'Delete';
 
-var DocumentAttachment = function DocumentAttachment(_a) {
+var DocumentAttachment = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -2325,13 +2390,15 @@ var DocumentAttachment = function DocumentAttachment(_a) {
       })
     })
   }));
-};
+});
+DocumentAttachment.displayName = 'DocumentAttachment';
 
-var DownloadIcon = function DownloadIcon(_a) {
+var DownloadIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2348,13 +2415,15 @@ var DownloadIcon = function DownloadIcon(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+DownloadIcon.displayName = 'DownloadIcon';
 
-var Download = function Download(_a) {
+var Download = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -2377,13 +2446,15 @@ var Download = function Download(_a) {
       })
     })
   }));
-};
+});
+Download.displayName = 'Download';
 
-var Edit = function Edit(_a) {
+var Edit = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2400,13 +2471,15 @@ var Edit = function Edit(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+Edit.displayName = 'Edit';
 
-var EditRounded = function EditRounded(_a) {
+var EditRounded = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '40',
     height: '40',
     viewBox: '0 0 40 40',
@@ -2423,13 +2496,15 @@ var EditRounded = function EditRounded(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+EditRounded.displayName = 'EditRounded';
 
-var EditUsers = function EditUsers(_a) {
+var EditUsers = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -2446,13 +2521,15 @@ var EditUsers = function EditUsers(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+EditUsers.displayName = 'EditUsers';
 
-var Education = function Education(_a) {
+var Education = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2472,13 +2549,15 @@ var Education = function Education(_a) {
       fill: '#8438C6'
     })]
   }));
-};
+});
+Education.displayName = 'Education';
 
-var EducationDefault = function EducationDefault(_a) {
+var EducationDefault = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -2498,13 +2577,15 @@ var EducationDefault = function EducationDefault(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+EducationDefault.displayName = 'EducationDefault';
 
-var EmailIcon = function EmailIcon(_a) {
+var EmailIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2518,13 +2599,15 @@ var EmailIcon = function EmailIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+EmailIcon.displayName = 'EmailIcon';
 
-var EventIcon = function EventIcon(_a) {
+var EventIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2538,13 +2621,15 @@ var EventIcon = function EventIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+EventIcon.displayName = 'EventIcon';
 
-var LocationCityIcon = function LocationCityIcon(_a) {
+var LocationCityIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2558,13 +2643,15 @@ var LocationCityIcon = function LocationCityIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+LocationCityIcon.displayName = 'LocationCityIcon';
 
-var LocationOnIcon = function LocationOnIcon(_a) {
+var LocationOnIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2578,13 +2665,15 @@ var LocationOnIcon = function LocationOnIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+LocationOnIcon.displayName = 'LocationOnIcon';
 
-var MarkunreadMailboxIcon = function MarkunreadMailboxIcon(_a) {
+var MarkunreadMailboxIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2598,15 +2687,17 @@ var MarkunreadMailboxIcon = function MarkunreadMailboxIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+MarkunreadMailboxIcon.displayName = 'MarkunreadMailboxIcon';
 
-var ArrowDropUpIcon = function ArrowDropUpIcon(_a) {
+var ArrowDropUpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#fff' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 -960 960 960',
@@ -2620,15 +2711,17 @@ var ArrowDropUpIcon = function ArrowDropUpIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ArrowDropUpIcon.displayName = 'ArrowDropUpIcon';
 
-var CircleNotificationsIcon = function CircleNotificationsIcon(_a) {
+var CircleNotificationsIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 -960 960 960',
@@ -2642,15 +2735,17 @@ var CircleNotificationsIcon = function CircleNotificationsIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+CircleNotificationsIcon.displayName = 'CircleNotificationsIcon';
 
-var KeyboardBackspaceIcon = function KeyboardBackspaceIcon(_a) {
+var KeyboardBackspaceIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? 'inherit' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 -960 960 960',
@@ -2664,13 +2759,15 @@ var KeyboardBackspaceIcon = function KeyboardBackspaceIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+KeyboardBackspaceIcon.displayName = 'KeyboardBackspaceIcon';
 
-var FilterIcon = function FilterIcon(_a) {
+var FilterIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -2684,13 +2781,15 @@ var FilterIcon = function FilterIcon(_a) {
       fill: '#68707A'
     })
   }));
-};
+});
+FilterIcon.displayName = 'FilterIcon';
 
-var GrayDownload = function GrayDownload(_a) {
+var GrayDownload = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     version: '1.1',
     xmlns: 'http://www.w3.org/2000/svg',
     width: '24',
@@ -2724,13 +2823,15 @@ var GrayDownload = function GrayDownload(_a) {
       })
     })
   }));
-};
+});
+GrayDownload.displayName = 'GrayDownload';
 
-var Person = function Person(_a) {
+var Person = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2744,7 +2845,8 @@ var Person = function Person(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+Person.displayName = 'Person';
 
 var HelpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
@@ -2768,14 +2870,14 @@ var HelpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
     })
   }));
 });
-// Add display name for better debugging
 HelpIcon.displayName = 'HelpIcon';
 
-var PhoneIphoneIcon = function PhoneIphoneIcon(_a) {
+var PhoneIphoneIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2789,13 +2891,15 @@ var PhoneIphoneIcon = function PhoneIphoneIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+PhoneIphoneIcon.displayName = 'PhoneIphoneIcon';
 
-var PublicIcon = function PublicIcon(_a) {
+var PublicIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -2809,19 +2913,24 @@ var PublicIcon = function PublicIcon(_a) {
       fill: '#06C68F'
     })
   }));
-};
+});
+PublicIcon.displayName = 'PublicIcon';
 
-var PlayGrayButton = function PlayGrayButton(_a) {
+var PlayGrayButton = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
-  return jsxRuntimeExports.jsx("svg", {
+  return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     version: '1.1',
     xmlns: 'http://www.w3.org/2000/svg',
     width: '24',
     height: '24',
     viewBox: '0,0,256,256',
-    children: jsxRuntimeExports.jsx("g", __assign({
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("g", {
       "fill-opacity": '0.52941',
       fill: '#7a7a7a',
       "fill-rule": 'nonzero',
@@ -2836,24 +2945,23 @@ var PlayGrayButton = function PlayGrayButton(_a) {
       "font-weight": 'none',
       "font-size": 'none',
       "text-anchor": 'none',
-      className: className,
-      onClick: onClick
-    }, props, {
       children: jsxRuntimeExports.jsx("g", {
         transform: 'translate(-8,-0.00053) scale(10.66667,10.66667)',
         children: jsxRuntimeExports.jsx("path", {
           d: 'M5.25,21.0001c-0.19891,0 -0.38968,-0.0791 -0.53033,-0.2197c-0.14065,-0.1407 -0.21967,-0.3314 -0.21967,-0.5303v-16.50004c-0.00001,-0.13034 0.03395,-0.25843 0.09852,-0.37164c0.06458,-0.11322 0.15754,-0.20765 0.26973,-0.27399c0.11219,-0.06635 0.23973,-0.10231 0.37005,-0.10434c0.13032,-0.00203 0.25892,0.02993 0.37313,0.09274l14.99997,8.24997c0.1177,0.0647 0.2159,0.1599 0.2842,0.2755c0.0684,0.1156 0.1044,0.2474 0.1044,0.3817c0,0.1343 -0.036,0.2662 -0.1044,0.3818c-0.0683,0.1156 -0.1665,0.2107 -0.2842,0.2754l-14.99997,8.25c-0.11074,0.0609 -0.23506,0.0928 -0.36143,0.0929zM6,5.01823v13.96347l12.6936,-6.9816z'
         })
       })
-    }))
-  });
-};
+    })
+  }));
+});
+PlayGrayButton.displayName = 'PlayGrayButton';
 
-var GrayPlayIcon = function GrayPlayIcon(_a) {
+var GrayPlayIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     version: '1.1',
     xmlns: 'http://www.w3.org/2000/svg',
     xmlnsXlink: 'http://www.w3.org/1999/xlink',
@@ -2889,13 +2997,15 @@ var GrayPlayIcon = function GrayPlayIcon(_a) {
       })
     })
   }));
-};
+});
+GrayPlayIcon.displayName = 'GrayPlayIcon';
 
-var GridView = function GridView(_a) {
+var GridView = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -2924,13 +3034,15 @@ var GridView = function GridView(_a) {
       })
     })
   }));
-};
+});
+GridView.displayName = 'GridView';
 
-var Group = function Group(_a) {
+var Group = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -2959,13 +3071,15 @@ var Group = function Group(_a) {
       })
     })
   }));
-};
+});
+Group.displayName = 'Group';
 
-var GroupDefault = function GroupDefault(_a) {
+var GroupDefault = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -2988,13 +3102,15 @@ var GroupDefault = function GroupDefault(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+GroupDefault.displayName = 'GroupDefault';
 
-var Help = function Help(_a) {
+var Help = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -3014,13 +3130,15 @@ var Help = function Help(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+Help.displayName = 'Help';
 
-var HorizontalView = function HorizontalView(_a) {
+var HorizontalView = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3043,13 +3161,15 @@ var HorizontalView = function HorizontalView(_a) {
       })
     })
   }));
-};
+});
+HorizontalView.displayName = 'HorizontalView';
 
-var Information = function Information(_a) {
+var Information = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3075,13 +3195,15 @@ var Information = function Information(_a) {
       })
     })
   }));
-};
+});
+Information.displayName = 'Information';
 
-var Locked = function Locked(_a) {
+var Locked = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3099,13 +3221,15 @@ var Locked = function Locked(_a) {
       })
     })
   }));
-};
+});
+Locked.displayName = 'Locked';
 
-var Logout = function Logout(_a) {
+var Logout = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3122,13 +3246,15 @@ var Logout = function Logout(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+Logout.displayName = 'Logout';
 
-var MoreVertRoundedIcon = function MoreVertRoundedIcon(_a) {
+var MoreVertRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3148,13 +3274,15 @@ var MoreVertRoundedIcon = function MoreVertRoundedIcon(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+MoreVertRoundedIcon.displayName = 'MoreVertRoundedIcon';
 
-var MyProfile = function MyProfile(_a) {
+var MyProfile = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3171,13 +3299,15 @@ var MyProfile = function MyProfile(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+MyProfile.displayName = 'MyProfile';
 
-var NewFilter = function NewFilter(_a) {
+var NewFilter = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3192,13 +3322,15 @@ var NewFilter = function NewFilter(_a) {
       fill: 'red'
     })
   }));
-};
+});
+NewFilter.displayName = 'NewFilter';
 
-var Notification = function Notification(_a) {
+var Notification = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3212,19 +3344,24 @@ var Notification = function Notification(_a) {
       fill: '#020210'
     })
   }));
-};
+});
+Notification.displayName = 'Notification';
 
-var PlayButton = function PlayButton(_a) {
+var PlayButton = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
-  return jsxRuntimeExports.jsx("svg", {
+  return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     version: '1.1',
     xmlns: 'http://www.w3.org/2000/svg',
     width: '24',
     height: '24',
     viewBox: '0,0,256,256',
-    children: jsxRuntimeExports.jsx("g", __assign({
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("g", {
       "fill-opacity": '0.52941',
       fill: '#020210',
       "fill-rule": 'nonzero',
@@ -3239,24 +3376,23 @@ var PlayButton = function PlayButton(_a) {
       "font-weight": 'none',
       "font-size": 'none',
       "text-anchor": 'none',
-      className: className,
-      onClick: onClick
-    }, props, {
       children: jsxRuntimeExports.jsx("g", {
         transform: 'translate(-8,-0.00053) scale(10.66667,10.66667)',
         children: jsxRuntimeExports.jsx("path", {
           d: 'M5.25,21.0001c-0.19891,0 -0.38968,-0.0791 -0.53033,-0.2197c-0.14065,-0.1407 -0.21967,-0.3314 -0.21967,-0.5303v-16.50004c-0.00001,-0.13034 0.03395,-0.25843 0.09852,-0.37164c0.06458,-0.11322 0.15754,-0.20765 0.26973,-0.27399c0.11219,-0.06635 0.23973,-0.10231 0.37005,-0.10434c0.13032,-0.00203 0.25892,0.02993 0.37313,0.09274l14.99997,8.24997c0.1177,0.0647 0.2159,0.1599 0.2842,0.2755c0.0684,0.1156 0.1044,0.2474 0.1044,0.3817c0,0.1343 -0.036,0.2662 -0.1044,0.3818c-0.0683,0.1156 -0.1665,0.2107 -0.2842,0.2754l-14.99997,8.25c-0.11074,0.0609 -0.23506,0.0928 -0.36143,0.0929zM6,5.01823v13.96347l12.6936,-6.9816z'
         })
       })
-    }))
-  });
-};
+    })
+  }));
+});
+PlayButton.displayName = 'PlayButton';
 
-var PresentationScreen = function PresentationScreen(_a) {
+var PresentationScreen = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '64',
     height: '64',
     viewBox: '0 0 64 64',
@@ -3287,13 +3423,15 @@ var PresentationScreen = function PresentationScreen(_a) {
       })]
     })]
   }));
-};
+});
+PresentationScreen.displayName = 'PresentationScreen';
 
-var Profile = function Profile(_a) {
+var Profile = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     id: 'Profile_Picture',
     "data-name": 'Profile Picture',
     xmlns: 'http://www.w3.org/2000/svg',
@@ -3306,7 +3444,7 @@ var Profile = function Profile(_a) {
   }, props, {
     children: [jsxRuntimeExports.jsxs("defs", {
       children: [jsxRuntimeExports.jsx("style", {
-        children: "\n            .cls-1, .cls-5, .cls-7 {\n              fill: none;\n            }\n            .cls-1, .cls-5 {\n              stroke: #06c68f;\n            }\n            .cls-1 {\n              stroke-width: 12px;\n            }\n            .cls-2 {\n              opacity: 0.7;\n            }\n            .cls-3 {\n              fill: #06c68f;\n            }\n            .cls-4 {\n              clip-path: url(#clip-path);\n            }\n            .cls-5 {\n              stroke-width: 5px;\n            }\n            .cls-6 {\n              stroke: none;\n            }\n          "
+        children: "\n              .cls-1, .cls-5, .cls-7 {\n                fill: none;\n              }\n              .cls-1, .cls-5 {\n                stroke: #06c68f;\n              }\n              .cls-1 {\n                stroke-width: 12px;\n              }\n              .cls-2 {\n                opacity: 0.7;\n              }\n              .cls-3 {\n                fill: #06c68f;\n              }\n              .cls-4 {\n                clip-path: url(#clip-path);\n              }\n              .cls-5 {\n                stroke-width: 5px;\n              }\n              .cls-6 {\n                stroke: none;\n              }\n            "
       }), jsxRuntimeExports.jsx("clipPath", {
         id: 'clip-path',
         children: jsxRuntimeExports.jsx("ellipse", {
@@ -3374,13 +3512,15 @@ var Profile = function Profile(_a) {
       })]
     })]
   }));
-};
+});
+Profile.displayName = 'Profile';
 
-var RedDeleteIcon = function RedDeleteIcon(_a) {
+var RedDeleteIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     version: '1.1',
     xmlns: 'http://www.w3.org/2000/svg',
     xmlnsXlink: 'http://www.w3.org/1999/xlink',
@@ -3419,13 +3559,15 @@ var RedDeleteIcon = function RedDeleteIcon(_a) {
       })
     })
   }));
-};
+});
+RedDeleteIcon.displayName = 'RedDeleteIcon';
 
-var RemoveAlt = function RemoveAlt(_a) {
+var RemoveAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3448,13 +3590,15 @@ var RemoveAlt = function RemoveAlt(_a) {
       })
     })
   }));
-};
+});
+RemoveAlt.displayName = 'RemoveAlt';
 
-var RemoveAltDisable = function RemoveAltDisable(_a) {
+var RemoveAltDisable = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3471,13 +3615,15 @@ var RemoveAltDisable = function RemoveAltDisable(_a) {
       fill: '#FBD7D4'
     })]
   }));
-};
+});
+RemoveAltDisable.displayName = 'RemoveAltDisable';
 
-var RemoveFilter = function RemoveFilter(_a) {
+var RemoveFilter = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 16 16',
@@ -3494,13 +3640,15 @@ var RemoveFilter = function RemoveFilter(_a) {
       fill: '#020210'
     })]
   }));
-};
+});
+RemoveFilter.displayName = 'RemoveFilter';
 
-var Reset = function Reset(_a) {
+var Reset = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3514,13 +3662,15 @@ var Reset = function Reset(_a) {
       fill: '#020210'
     })
   }));
-};
+});
+Reset.displayName = 'Reset';
 
-var Search = function Search(_a) {
+var Search = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3534,13 +3684,15 @@ var Search = function Search(_a) {
       fill: '#68707A'
     })
   }));
-};
+});
+Search.displayName = 'Search';
 
-var SearchRounded = function SearchRounded(_a) {
+var SearchRounded = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3554,13 +3706,15 @@ var SearchRounded = function SearchRounded(_a) {
       fill: '#68707A'
     })
   }));
-};
+});
+SearchRounded.displayName = 'SearchRounded';
 
-var SendAlt = function SendAlt(_a) {
+var SendAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3574,13 +3728,15 @@ var SendAlt = function SendAlt(_a) {
       fill: '#020210'
     })
   }));
-};
+});
+SendAlt.displayName = 'SendAlt';
 
-var DeleteIcon = function DeleteIcon(_a) {
+var DeleteIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '18',
     height: '18',
     viewBox: '0 0 18 18',
@@ -3603,13 +3759,15 @@ var DeleteIcon = function DeleteIcon(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+DeleteIcon.displayName = 'DeleteIcon';
 
-var Unlocked = function Unlocked(_a) {
+var Unlocked = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 24 24',
@@ -3623,13 +3781,15 @@ var Unlocked = function Unlocked(_a) {
       fill: '#020210'
     })
   }));
-};
+});
+Unlocked.displayName = 'Unlocked';
 
-var SwitchCompany = function SwitchCompany(_a) {
+var SwitchCompany = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3646,13 +3806,15 @@ var SwitchCompany = function SwitchCompany(_a) {
       fill: '#08C694'
     })]
   }));
-};
+});
+SwitchCompany.displayName = 'SwitchCompany';
 
-var TrashCan = function TrashCan(_a) {
+var TrashCan = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3681,13 +3843,15 @@ var TrashCan = function TrashCan(_a) {
       })
     })
   }));
-};
+});
+TrashCan.displayName = 'TrashCan';
 
-var TrashCanAction = function TrashCanAction(_a) {
+var TrashCanAction = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '40',
     height: '40',
     viewBox: '0 0 40 40',
@@ -3710,13 +3874,15 @@ var TrashCanAction = function TrashCanAction(_a) {
       fill: '#68707A'
     })]
   }));
-};
+});
+TrashCanAction.displayName = 'TrashCanAction';
 
-var TrashCanRed = function TrashCanRed(_a) {
+var TrashCanRed = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3739,13 +3905,15 @@ var TrashCanRed = function TrashCanRed(_a) {
       fill: '#EA382A'
     })]
   }));
-};
+});
+TrashCanRed.displayName = 'TrashCanRed';
 
-var UnfillPlay = function UnfillPlay(_a) {
+var UnfillPlay = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '16',
     height: '16',
     viewBox: '0 0 16 16',
@@ -3763,13 +3931,15 @@ var UnfillPlay = function UnfillPlay(_a) {
       })
     })
   }));
-};
+});
+UnfillPlay.displayName = 'UnfillPlay';
 
-var Unlock = function Unlock(_a) {
+var Unlock = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3783,13 +3953,15 @@ var Unlock = function Unlock(_a) {
       fill: '#020210'
     })
   }));
-};
+});
+Unlock.displayName = 'Unlock';
 
-var UserActivity = function UserActivity(_a) {
+var UserActivity = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3815,13 +3987,15 @@ var UserActivity = function UserActivity(_a) {
       })
     })
   }));
-};
+});
+UserActivity.displayName = 'UserActivity';
 
-var UserSpeaker = function UserSpeaker(_a) {
+var UserSpeaker = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -3838,13 +4012,15 @@ var UserSpeaker = function UserSpeaker(_a) {
       fill: '#20A8C6'
     })]
   }));
-};
+});
+UserSpeaker.displayName = 'UserSpeaker';
 
-var WhiteAiAssistant = function WhiteAiAssistant(_a) {
+var WhiteAiAssistant = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '20',
     height: '20',
     viewBox: '0 0 20 20',
@@ -3867,15 +4043,17 @@ var WhiteAiAssistant = function WhiteAiAssistant(_a) {
       fill: 'white'
     })]
   }));
-};
+});
+WhiteAiAssistant.displayName = 'WhiteAiAssistant';
 
-var ArchiveIcon = function ArchiveIcon(_a) {
+var ArchiveIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -3889,15 +4067,17 @@ var ArchiveIcon = function ArchiveIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ArchiveIcon.displayName = 'ArchiveIcon';
 
-var BackspaceRoundedIcon = function BackspaceRoundedIcon(_a) {
+var BackspaceRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -3911,15 +4091,17 @@ var BackspaceRoundedIcon = function BackspaceRoundedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+BackspaceRoundedIcon.displayName = 'BackspaceRoundedIcon';
 
-var BackupIcon = function BackupIcon(_a) {
+var BackupIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -3933,15 +4115,17 @@ var BackupIcon = function BackupIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+BackupIcon.displayName = 'BackupIcon';
 
-var CheckCircleOutlineRoundedIcon = function CheckCircleOutlineRoundedIcon(_a) {
+var CheckCircleOutlineRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -3955,15 +4139,17 @@ var CheckCircleOutlineRoundedIcon = function CheckCircleOutlineRoundedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+CheckCircleOutlineRoundedIcon.displayName = 'CheckCircleOutlineRoundedIcon';
 
-var ClosedCaptionIcon = function ClosedCaptionIcon(_a) {
+var ClosedCaptionIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -3977,15 +4163,17 @@ var ClosedCaptionIcon = function ClosedCaptionIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ClosedCaptionIcon.displayName = 'ClosedCaptionIcon';
 
-var CloudDownloadIcon = function CloudDownloadIcon(_a) {
+var CloudDownloadIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -3999,15 +4187,17 @@ var CloudDownloadIcon = function CloudDownloadIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+CloudDownloadIcon.displayName = 'CloudDownloadIcon';
 
-var ContactSupportOutlinedIcon = function ContactSupportOutlinedIcon(_a) {
+var ContactSupportOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -4023,15 +4213,17 @@ var ContactSupportOutlinedIcon = function ContactSupportOutlinedIcon(_a) {
       d: 'M11 23.59v-3.6c-5.01-.26-9-4.42-9-9.49C2 5.26 6.26 1 11.5 1S21 5.26 21 10.5c0 4.95-3.44 9.93-8.57 12.4l-1.43.69zM11.5 3C7.36 3 4 6.36 4 10.5S7.36 18 11.5 18H13v2.3c3.64-2.3 6-6.08 6-9.8C19 6.36 15.64 3 11.5 3zm-1 11.5h2v2h-2zm2-1.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z'
     })]
   }));
-};
+});
+ContactSupportOutlinedIcon.displayName = 'ContactSupportOutlinedIcon';
 
-var ErrorOutlineRoundedIcon = function ErrorOutlineRoundedIcon(_a) {
+var ErrorOutlineRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4045,15 +4237,17 @@ var ErrorOutlineRoundedIcon = function ErrorOutlineRoundedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ErrorOutlineRoundedIcon.displayName = 'ErrorOutlineRoundedIcon';
 
-var FileCopyIcon = function FileCopyIcon(_a) {
+var FileCopyIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#06C68F' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4067,15 +4261,17 @@ var FileCopyIcon = function FileCopyIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+FileCopyIcon.displayName = 'FileCopyIcon';
 
-var HeadsetIcon = function HeadsetIcon(_a) {
+var HeadsetIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? 'secondary' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4089,15 +4285,17 @@ var HeadsetIcon = function HeadsetIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+HeadsetIcon.displayName = 'HeadsetIcon';
 
-var LockIcon = function LockIcon(_a) {
+var LockIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4111,15 +4309,17 @@ var LockIcon = function LockIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+LockIcon.displayName = 'LockIcon';
 
-var NotificationsOutlined = function NotificationsOutlined(_a) {
+var NotificationsOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4133,15 +4333,17 @@ var NotificationsOutlined = function NotificationsOutlined(_a) {
       fill: fill
     })
   }));
-};
+});
+NotificationsOutlined.displayName = 'NotificationsOutlined';
 
-var PlayCircleOutlineIcon = function PlayCircleOutlineIcon(_a) {
+var PlayCircleOutlineIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4155,15 +4357,17 @@ var PlayCircleOutlineIcon = function PlayCircleOutlineIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+PlayCircleOutlineIcon.displayName = 'PlayCircleOutlineIcon';
 
-var PlaylistPlayIcon = function PlaylistPlayIcon(_a) {
+var PlaylistPlayIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4177,15 +4381,17 @@ var PlaylistPlayIcon = function PlaylistPlayIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+PlaylistPlayIcon.displayName = 'PlaylistPlayIcon';
 
-var SchoolOutlinedIcon = function SchoolOutlinedIcon(_a) {
+var SchoolOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4199,15 +4405,17 @@ var SchoolOutlinedIcon = function SchoolOutlinedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+SchoolOutlinedIcon.displayName = 'SchoolOutlinedIcon';
 
-var SettingsOutlinedIcon = function SettingsOutlinedIcon(_a) {
+var SettingsOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -4224,15 +4432,17 @@ var SettingsOutlinedIcon = function SettingsOutlinedIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+SettingsOutlinedIcon.displayName = 'SettingsOutlinedIcon';
 
-var Timeline = function Timeline(_a) {
+var Timeline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4246,15 +4456,17 @@ var Timeline = function Timeline(_a) {
       fill: fill
     })
   }));
-};
+});
+Timeline.displayName = 'Timeline';
 
-var TrendingUpOutlinedIcon = function TrendingUpOutlinedIcon(_a) {
+var TrendingUpOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4268,15 +4480,17 @@ var TrendingUpOutlinedIcon = function TrendingUpOutlinedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+TrendingUpOutlinedIcon.displayName = 'TrendingUpOutlinedIcon';
 
-var Visibility = function Visibility(_a) {
+var Visibility = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4290,15 +4504,17 @@ var Visibility = function Visibility(_a) {
       fill: fill
     })
   }));
-};
+});
+Visibility.displayName = 'Visibility';
 
-var VisibilityOff = function VisibilityOff(_a) {
+var VisibilityOff = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4312,15 +4528,17 @@ var VisibilityOff = function VisibilityOff(_a) {
       fill: fill
     })
   }));
-};
+});
+VisibilityOff.displayName = 'VisibilityOff';
 
-var DeleteForeverRoundedIcon = function DeleteForeverRoundedIcon(_a) {
+var DeleteForeverRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4334,15 +4552,17 @@ var DeleteForeverRoundedIcon = function DeleteForeverRoundedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+DeleteForeverRoundedIcon.displayName = 'DeleteForeverRoundedIcon';
 
-var FeaturedPlayListIcon = function FeaturedPlayListIcon(_a) {
+var FeaturedPlayListIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4356,15 +4576,17 @@ var FeaturedPlayListIcon = function FeaturedPlayListIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+FeaturedPlayListIcon.displayName = 'FeaturedPlayListIcon';
 
-var FiberManualRecordIcon = function FiberManualRecordIcon(_a) {
+var FiberManualRecordIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#06C68F' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -4383,15 +4605,17 @@ var FiberManualRecordIcon = function FiberManualRecordIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+FiberManualRecordIcon.displayName = 'FiberManualRecordIcon';
 
-var GroupOutlined = function GroupOutlined(_a) {
+var GroupOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4405,15 +4629,17 @@ var GroupOutlined = function GroupOutlined(_a) {
       fill: fill
     })
   }));
-};
+});
+GroupOutlined.displayName = 'GroupOutlined';
 
-var GroupsOutlined = function GroupsOutlined(_a) {
+var GroupsOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4427,15 +4653,17 @@ var GroupsOutlined = function GroupsOutlined(_a) {
       fill: fill
     })
   }));
-};
+});
+GroupsOutlined.displayName = 'GroupsOutlined';
 
-var HourglassEmptyIcon = function HourglassEmptyIcon(_a) {
+var HourglassEmptyIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4449,15 +4677,17 @@ var HourglassEmptyIcon = function HourglassEmptyIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+HourglassEmptyIcon.displayName = 'HourglassEmptyIcon';
 
-var ImageIcon = function ImageIcon(_a) {
+var ImageIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4471,15 +4701,17 @@ var ImageIcon = function ImageIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ImageIcon.displayName = 'ImageIcon';
 
-var MoreHorizIcon = function MoreHorizIcon(_a) {
+var MoreHorizIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4493,15 +4725,17 @@ var MoreHorizIcon = function MoreHorizIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+MoreHorizIcon.displayName = 'MoreHorizIcon';
 
-var PermMediaIcon = function PermMediaIcon(_a) {
+var PermMediaIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4515,15 +4749,17 @@ var PermMediaIcon = function PermMediaIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+PermMediaIcon.displayName = 'PermMediaIcon';
 
-var PlaylistAddIcon = function PlaylistAddIcon(_a) {
+var PlaylistAddIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4537,15 +4773,17 @@ var PlaylistAddIcon = function PlaylistAddIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+PlaylistAddIcon.displayName = 'PlaylistAddIcon';
 
-var RecordVoiceOverOutlined = function RecordVoiceOverOutlined(_a) {
+var RecordVoiceOverOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4559,15 +4797,17 @@ var RecordVoiceOverOutlined = function RecordVoiceOverOutlined(_a) {
       fill: fill
     })
   }));
-};
+});
+RecordVoiceOverOutlined.displayName = 'RecordVoiceOverOutlined';
 
-var Send = function Send(_a) {
+var Send = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4581,15 +4821,17 @@ var Send = function Send(_a) {
       fill: fill
     })
   }));
-};
+});
+Send.displayName = 'Send';
 
-var ViewCompactIcon = function ViewCompactIcon(_a) {
+var ViewCompactIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4603,15 +4845,17 @@ var ViewCompactIcon = function ViewCompactIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ViewCompactIcon.displayName = 'ViewCompactIcon';
 
-var ViewListIcon = function ViewListIcon(_a) {
+var ViewListIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4625,15 +4869,17 @@ var ViewListIcon = function ViewListIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ViewListIcon.displayName = 'ViewListIcon';
 
-var WorkOutlineOutlinedIcon = function WorkOutlineOutlinedIcon(_a) {
+var WorkOutlineOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4647,15 +4893,17 @@ var WorkOutlineOutlinedIcon = function WorkOutlineOutlinedIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+WorkOutlineOutlinedIcon.displayName = 'WorkOutlineOutlinedIcon';
 
-var ZoomInIcon = function ZoomInIcon(_a) {
+var ZoomInIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsx("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 -960 960 960',
@@ -4669,15 +4917,17 @@ var ZoomInIcon = function ZoomInIcon(_a) {
       fill: fill
     })
   }));
-};
+});
+ZoomInIcon.displayName = 'ZoomInIcon';
 
-var AddCircleIcon = function AddCircleIcon(_a) {
+var AddCircleIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4694,15 +4944,17 @@ var AddCircleIcon = function AddCircleIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+AddCircleIcon.displayName = 'AddCircleIcon';
 
-var CancelIcon = function CancelIcon(_a) {
+var CancelIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4719,15 +4971,17 @@ var CancelIcon = function CancelIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+CancelIcon.displayName = 'CancelIcon';
 
-var Check = function Check(_a) {
+var Check = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4744,15 +4998,17 @@ var Check = function Check(_a) {
       fill: fill
     })]
   }));
-};
+});
+Check.displayName = 'Check';
 
-var CheckBoxIcon = function CheckBoxIcon(_a) {
+var CheckBoxIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4769,15 +5025,17 @@ var CheckBoxIcon = function CheckBoxIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+CheckBoxIcon.displayName = 'CheckBoxIcon';
 
-var CheckCircleIcon = function CheckCircleIcon(_a) {
+var CheckCircleIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4794,15 +5052,17 @@ var CheckCircleIcon = function CheckCircleIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+CheckCircleIcon.displayName = 'CheckCircleIcon';
 
-var CheckCircleOutlineOutlinedIcon = function CheckCircleOutlineOutlinedIcon(_a) {
+var CheckCircleOutlineOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4819,15 +5079,17 @@ var CheckCircleOutlineOutlinedIcon = function CheckCircleOutlineOutlinedIcon(_a)
       fill: fill
     })]
   }));
-};
+});
+CheckCircleOutlineOutlinedIcon.displayName = 'CheckCircleOutlineOutlinedIcon';
 
-var DragIndicatorIcon = function DragIndicatorIcon(_a) {
+var DragIndicatorIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4844,15 +5106,17 @@ var DragIndicatorIcon = function DragIndicatorIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+DragIndicatorIcon.displayName = 'DragIndicatorIcon';
 
-var EditIcon = function EditIcon(_a) {
+var EditIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4869,15 +5133,17 @@ var EditIcon = function EditIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+EditIcon.displayName = 'EditIcon';
 
-var ErrorOutlineIcon = function ErrorOutlineIcon(_a) {
+var ErrorOutlineIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4894,15 +5160,17 @@ var ErrorOutlineIcon = function ErrorOutlineIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+ErrorOutlineIcon.displayName = 'ErrorOutlineIcon';
 
-var ExpandMoreIcon = function ExpandMoreIcon(_a) {
+var ExpandMoreIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4920,15 +5188,17 @@ var ExpandMoreIcon = function ExpandMoreIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+ExpandMoreIcon.displayName = 'ExpandMoreIcon';
 
-var GetAppIcon = function GetAppIcon(_a) {
+var GetAppIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4945,15 +5215,17 @@ var GetAppIcon = function GetAppIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+GetAppIcon.displayName = 'GetAppIcon';
 
-var HighlightOffRoundedIcon = function HighlightOffRoundedIcon(_a) {
+var HighlightOffRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#e8eaed' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4970,15 +5242,17 @@ var HighlightOffRoundedIcon = function HighlightOffRoundedIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+HighlightOffRoundedIcon.displayName = 'HighlightOffRoundedIcon';
 
-var InsertDriveFileIcon = function InsertDriveFileIcon(_a) {
+var InsertDriveFileIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -4995,15 +5269,17 @@ var InsertDriveFileIcon = function InsertDriveFileIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+InsertDriveFileIcon.displayName = 'InsertDriveFileIcon';
 
-var OndemandVideoIcon = function OndemandVideoIcon(_a) {
+var OndemandVideoIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5020,15 +5296,17 @@ var OndemandVideoIcon = function OndemandVideoIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+OndemandVideoIcon.displayName = 'OndemandVideoIcon';
 
-var PublishIcon = function PublishIcon(_a) {
+var PublishIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5045,15 +5323,17 @@ var PublishIcon = function PublishIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+PublishIcon.displayName = 'PublishIcon';
 
-var RemoveCircleIcon = function RemoveCircleIcon(_a) {
+var RemoveCircleIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5070,15 +5350,17 @@ var RemoveCircleIcon = function RemoveCircleIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+RemoveCircleIcon.displayName = 'RemoveCircleIcon';
 
-var ReportProblemIcon = function ReportProblemIcon(_a) {
+var ReportProblemIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5095,15 +5377,17 @@ var ReportProblemIcon = function ReportProblemIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+ReportProblemIcon.displayName = 'ReportProblemIcon';
 
-var SettingsApplicationsIcon = function SettingsApplicationsIcon(_a) {
+var SettingsApplicationsIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5120,15 +5404,17 @@ var SettingsApplicationsIcon = function SettingsApplicationsIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+SettingsApplicationsIcon.displayName = 'SettingsApplicationsIcon';
 
-var StarsRoundedIcon = function StarsRoundedIcon(_a) {
+var StarsRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5145,15 +5431,17 @@ var StarsRoundedIcon = function StarsRoundedIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+StarsRoundedIcon.displayName = 'StarsRoundedIcon';
 
-var VideoCallIcon = function VideoCallIcon(_a) {
+var VideoCallIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#e8eaed' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5170,15 +5458,17 @@ var VideoCallIcon = function VideoCallIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+VideoCallIcon.displayName = 'VideoCallIcon';
 
-var VolumeUpIcon = function VolumeUpIcon(_a) {
+var VolumeUpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5195,15 +5485,17 @@ var VolumeUpIcon = function VolumeUpIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+VolumeUpIcon.displayName = 'VolumeUpIcon';
 
-var FileUploadOutlinedIcon = function FileUploadOutlinedIcon(_a) {
+var FileUploadOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5225,15 +5517,17 @@ var FileUploadOutlinedIcon = function FileUploadOutlinedIcon(_a) {
       })
     })]
   }));
-};
+});
+FileUploadOutlinedIcon.displayName = 'FileUploadOutlinedIcon';
 
-var DashboardIcon = function DashboardIcon(_a) {
+var DashboardIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     width: '24',
     height: '24',
     viewBox: '0 0 24 24',
@@ -5250,15 +5544,17 @@ var DashboardIcon = function DashboardIcon(_a) {
       fill: fill
     })]
   }));
-};
+});
+DashboardIcon.displayName = 'DashboardIcon';
 
-var CheckBoxOutlineBlankIcon = function CheckBoxOutlineBlankIcon(_a) {
+var CheckBoxOutlineBlankIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -5274,15 +5570,17 @@ var CheckBoxOutlineBlankIcon = function CheckBoxOutlineBlankIcon(_a) {
       d: 'M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'
     })]
   }));
-};
+});
+CheckBoxOutlineBlankIcon.displayName = 'CheckBoxOutlineBlankIcon';
 
-var ChevronRightIcon = function ChevronRightIcon(_a) {
+var ChevronRightIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -5298,15 +5596,17 @@ var ChevronRightIcon = function ChevronRightIcon(_a) {
       d: 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'
     })]
   }));
-};
+});
+ChevronRightIcon.displayName = 'ChevronRightIcon';
 
-var DeleteIconRounded = function DeleteIconRounded(_a) {
+var DeleteIconRounded = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -5322,15 +5622,17 @@ var DeleteIconRounded = function DeleteIconRounded(_a) {
       d: 'M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z'
     })]
   }));
-};
+});
+DeleteIconRounded.displayName = 'DeleteIconRounded';
 
-var SchoolIcon = function SchoolIcon(_a) {
+var SchoolIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
+    ref: ref,
     xmlns: 'http://www.w3.org/2000/svg',
     height: '24px',
     viewBox: '0 0 24 24',
@@ -5346,7 +5648,8 @@ var SchoolIcon = function SchoolIcon(_a) {
       d: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z'
     })]
   }));
-};
+});
+SchoolIcon.displayName = 'SchoolIcon';
 
 export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, Analytics, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckBoxOutlineBlankIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, ChevronRightIcon, Circle, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, Company, ContactSupportOutlinedIcon, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DeleteIconRounded, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridView, Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Learning, Library, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, PermMediaIcon, Person, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, SchoolIcon, SchoolOutlinedIcon, Search, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, StarsRoundedIcon, SwitchCompany, Timeline, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, UsersIcon, VideoCallIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
 //# sourceMappingURL=index.esm.js.map

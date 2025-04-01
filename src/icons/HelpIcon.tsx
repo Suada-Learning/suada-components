@@ -24,5 +24,4 @@ export const HelpIcon = forwardRef<SVGSVGElement, SvgProps>(
   },
 )
 
-// Add display name for better debugging
 HelpIcon.displayName = 'HelpIcon'

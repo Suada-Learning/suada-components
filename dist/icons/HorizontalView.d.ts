@@ -1,3 +1,3 @@
 import React from 'react';
 import { SvgProps } from './svgTypes.interface';
-export declare const HorizontalView: React.FC<SvgProps>;
+export declare const HorizontalView: React.ForwardRefExoticComponent<Omit<SvgProps, "ref"> & React.RefAttributes<SVGSVGElement>>;

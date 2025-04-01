@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-export const Help: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const Help = forwardRef<SVGSVGElement, SvgProps>(({ className, onClick, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
       width='16'
       height='16'
       viewBox='0 0 16 16'
@@ -27,4 +28,6 @@ export const Help: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
       />
     </svg>
   )
-}
+})
+
+Help.displayName = 'Help'

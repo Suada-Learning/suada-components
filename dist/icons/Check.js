@@ -21,8 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export var Check = function (_a) {
+import { forwardRef } from 'react';
+export var Check = forwardRef(function (_a, ref) {
     var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#68707A' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsxs("svg", __assign({ width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M0 0h24v24H0V0z', fill: 'none' }), _jsx("path", { d: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z', fill: fill })] })));
-};
+    return (_jsxs("svg", __assign({ ref: ref, width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M0 0h24v24H0V0z', fill: 'none' }), _jsx("path", { d: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z', fill: fill })] })));
+});
+Check.displayName = 'Check';
 //# sourceMappingURL=Check.js.map

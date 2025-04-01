@@ -21,8 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var ArrowDropUpIcon = function (_a) {
+import { forwardRef } from 'react';
+export var ArrowDropUpIcon = forwardRef(function (_a, ref) {
     var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#fff' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsx("svg", __assign({ width: '20', height: '20', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M288-384 480-576 672-384H288Z', fill: fill }) })));
-};
+    return (_jsx("svg", __assign({ ref: ref, width: '20', height: '20', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M288-384 480-576 672-384H288Z', fill: fill }) })));
+});
+ArrowDropUpIcon.displayName = 'ArrowDropUpIcon';
 //# sourceMappingURL=ArrowDropUpIcon.js.map

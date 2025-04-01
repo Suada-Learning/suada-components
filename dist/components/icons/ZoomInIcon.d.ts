@@ -1,3 +1,3 @@
 import React from 'react';
 import { SvgProps } from './svgTypes.interface';
-export declare const ZoomInIcon: React.FC<SvgProps>;
+export declare const ZoomInIcon: React.ForwardRefExoticComponent<Omit<SvgProps, "ref"> & React.RefAttributes<SVGSVGElement>>;

@@ -1,3 +1,3 @@
 import React from 'react';
 import { SvgProps } from './svgTypes.interface';
-export declare const RemoveAltDisable: React.FC<SvgProps>;
+export declare const RemoveAltDisable: React.ForwardRefExoticComponent<Omit<SvgProps, "ref"> & React.RefAttributes<SVGSVGElement>>;

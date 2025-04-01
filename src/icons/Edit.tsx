@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { SvgProps } from './svgTypes.interface'
 
-export const Edit: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
+export const Edit = forwardRef<SVGSVGElement, SvgProps>(({ className, onClick, ...props }, ref) => {
   return (
     <svg
+      ref={ref}
       width='24'
       height='24'
       viewBox='0 0 24 24'
@@ -20,4 +21,6 @@ export const Edit: React.FC<SvgProps> = ({ className, onClick, ...props }) => {
       />
     </svg>
   )
-}
+})
+
+Edit.displayName = 'Edit'
