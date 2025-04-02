@@ -12,6 +12,7 @@
     "declarationDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
+    "sourceRoot": "",
     "outDir": "dist",
     "strict": true,
     "moduleResolution": "node",

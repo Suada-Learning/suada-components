@@ -14,11 +14,17 @@ const mainConfig = {
       file: 'dist/index.js',
       format: 'cjs',
       sourcemap: true,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
     {
       file: 'dist/index.esm.js',
       format: 'esm',
       sourcemap: true,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
   ],
   plugins: [
@@ -51,11 +57,17 @@ const componentsConfig = {
       file: 'dist/components/index.js',
       format: 'cjs',
       sourcemap: true,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
     {
       file: 'dist/components/index.esm.js',
       format: 'esm',
       sourcemap: true,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
   ],
   plugins: [
@@ -88,11 +100,17 @@ const iconsConfig = {
       file: 'dist/icons/index.js',
       format: 'cjs',
       sourcemap: true,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
     {
       file: 'dist/icons/index.esm.js',
       format: 'esm',
       sourcemap: true,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
   ],
   plugins: [
