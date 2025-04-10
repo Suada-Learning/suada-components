@@ -21,8 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var HeadsetIcon = function (_a) {
+import { forwardRef } from 'react';
+export var HeadsetIcon = forwardRef(function (_a, ref) {
     var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? 'secondary' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsx("svg", __assign({ width: '24', height: '24', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z', fill: fill }) })));
-};
+    return (_jsx("svg", __assign({ ref: ref, width: '24', height: '24', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z', fill: fill }) })));
+});
+HeadsetIcon.displayName = 'HeadsetIcon';
 //# sourceMappingURL=HeadsetIcon.js.map

@@ -1,12 +1,12 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ExpansionMenuItem, ExpansionMenuItemList } from './styled-components';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/system';
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';
 var ExpansionPanelCustom = styled(Accordion)(function () { return ({
     backgroundColor: 'transparent',
     color: '#06c68f',

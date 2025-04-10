@@ -2,9 +2,8 @@ import React, { ReactElement } from 'react'
 import Typography from '@mui/material/Typography'
 import Slider from '@mui/material/Slider'
 import { IRangeSliderProps } from './rangeSlider.interface'
-import { classes, Root } from './RangeSlider.styles'
 
-const RangeSlider = ({
+export const RangeSlider = ({
   label,
   style,
   value = [0, 0],
@@ -17,7 +16,7 @@ const RangeSlider = ({
     onRangeChange(newValue as number[], name)
   }
   return (
-    <Root className={classes.root}>
+    <>
       <Typography id='range-slider' gutterBottom>
         <div
           style={{
@@ -42,8 +41,6 @@ const RangeSlider = ({
         name={name}
         style={style}
       />
-    </Root>
+    </>
   )
 }
-
-export default RangeSlider

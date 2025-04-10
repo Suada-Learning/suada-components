@@ -21,8 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var AddIcon = function (_a) {
+import { forwardRef } from 'react';
+export var AddIcon = forwardRef(function (_a, ref) {
     var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? 'white' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsx("svg", __assign({ width: '25', height: '24', viewBox: '0 0 25 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M13.25 11.25V6H11.75V11.25H6.5V12.75H11.75V18H13.25V12.75H18.5V11.25H13.25Z', fill: fill }) })));
-};
+    return (_jsx("svg", __assign({ ref: ref, width: '25', height: '24', viewBox: '0 0 25 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M13.25 11.25V6H11.75V11.25H6.5V12.75H11.75V18H13.25V12.75H18.5V11.25H13.25Z', fill: fill }) })));
+});
+AddIcon.displayName = 'AddIcon';
 //# sourceMappingURL=AddIcon.js.map

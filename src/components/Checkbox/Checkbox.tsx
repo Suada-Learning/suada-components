@@ -31,8 +31,10 @@ export const Checkbox = ({
         <LabelContainer>
           <span>{label}</span>
           {tooltip && (
-            <Tooltip title={tooltip}>
-              <Help />
+            <Tooltip title={tooltip} arrow placement='right'>
+              <div style={{ display: 'flex', cursor: 'pointer' }}>
+                <Help />
+              </div>
             </Tooltip>
           )}
         </LabelContainer>

@@ -6,49 +6,133 @@ import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
 import image from '@rollup/plugin-image'
 
-export default {
-  input: './src/index.ts',
+// Main bundle
+const mainConfig = {
+  input: 'src/index.ts',
   output: [
     {
       file: 'dist/index.js',
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: false,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
     {
       file: 'dist/index.esm.js',
       format: 'esm',
-      sourcemap: true,
+      sourcemap: false,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
     },
   ],
   plugins: [
     peerDepsExternal(),
-
     resolve(),
-
-    commonjs({
-      include: /node_modules/,
-    }),
-
-    postcss({
-      modules: true,
-      extract: true,
-      minimize: true,
-    }),
-
+    commonjs(),
+    postcss({ modules: true, extract: false, minimize: true }),
     typescript({
       tsconfig: './tsconfig.json',
       declaration: true,
-      declarationDir: 'dist/types',
+      declarationDir: 'dist',
       exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+      outDir: 'dist',
     }),
-
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'bundled',
-      extensions: ['.ts', '.tsx'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
     }),
-
     image(),
   ],
   external: ['react', 'react-dom'],
 }
+
+// Components bundle
+const componentsConfig = {
+  input: 'src/components/index.ts',
+  output: [
+    {
+      file: 'dist/components/index.js',
+      format: 'cjs',
+      sourcemap: false,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
+    },
+    {
+      file: 'dist/components/index.esm.js',
+      format: 'esm',
+      sourcemap: false,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
+    },
+  ],
+  plugins: [
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    postcss({ modules: true, extract: false, minimize: true }),
+    typescript({
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist/components',
+      exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+      outDir: 'dist/components',
+    }),
+    babel({
+      exclude: 'node_modules/**',
+      babelHelpers: 'bundled',
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    }),
+    image(),
+  ],
+  external: ['react', 'react-dom'],
+}
+
+// Icons bundle
+const iconsConfig = {
+  input: 'src/icons/index.ts',
+  output: [
+    {
+      file: 'dist/icons/index.js',
+      format: 'cjs',
+      sourcemap: false,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
+    },
+    {
+      file: 'dist/icons/index.esm.js',
+      format: 'esm',
+      sourcemap: false,
+      sourcemapPathTransform: relativeSourcePath => {
+        return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
+      },
+    },
+  ],
+  plugins: [
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    postcss({ modules: true, extract: false, minimize: true }),
+    typescript({
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist/icons',
+      exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+      outDir: 'dist/icons',
+    }),
+    babel({
+      exclude: 'node_modules/**',
+      babelHelpers: 'bundled',
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    }),
+    image(),
+  ],
+  external: ['react', 'react-dom'],
+}
+
+export default [mainConfig, componentsConfig, iconsConfig]

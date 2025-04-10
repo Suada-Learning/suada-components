@@ -3,7 +3,6 @@ import React from 'react'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import ContactSupportOutlinedIcon from '@mui/icons-material/ContactSupportOutlined'
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 
 //customIcons
 import { IPermissionsBool, IUser, IUserCompany } from '../CourseCard/CourseCard.interface'

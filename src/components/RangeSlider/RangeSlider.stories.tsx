@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import RangeSlider from './RangeSlider'
 import { CustomThemeProvider } from '../../theme/ThemeProvider'
 import { GlobalStyle } from '../../global.styles'
+import { RangeSlider } from './RangeSlider'
 
 const meta: Meta<typeof RangeSlider> = {
   title: 'Components/RangeSlider',

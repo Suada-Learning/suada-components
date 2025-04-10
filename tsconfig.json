@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "suada-components/components": ["node_modules/suada-components/dist/components"],
+      "suada-components/icons": ["node_modules/suada-components/dist/icons"]
+    },
     "target": "es5",
     "module": "esnext",
     "jsx": "react-jsx",
@@ -7,6 +12,7 @@
     "declarationDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
+    "sourceRoot": "",
     "outDir": "dist",
     "strict": true,
     "moduleResolution": "node",

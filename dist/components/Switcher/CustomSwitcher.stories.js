@@ -45,6 +45,7 @@ export var Default = {
 export var Checked = {
     args: {
         value: true,
+        tooltip: 'This is a checked switch component',
     },
 };
 //# sourceMappingURL=CustomSwitcher.stories.js.map

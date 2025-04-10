@@ -21,8 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var PlaylistPlayIcon = function (_a) {
+import { forwardRef } from 'react';
+export var PlaylistPlayIcon = forwardRef(function (_a, ref) {
     var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#68707A' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsx("svg", __assign({ width: '24', height: '24', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Zm520 520v-320l240 160-240 160Z', fill: fill }) })));
-};
+    return (_jsx("svg", __assign({ ref: ref, width: '24', height: '24', viewBox: '0 -960 960 960', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', className: className, onClick: onClick }, props, { children: _jsx("path", { d: 'M120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Zm520 520v-320l240 160-240 160Z', fill: fill }) })));
+});
+PlaylistPlayIcon.displayName = 'PlaylistPlayIcon';
 //# sourceMappingURL=PlaylistPlayIcon.js.map

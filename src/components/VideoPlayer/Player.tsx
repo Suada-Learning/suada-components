@@ -1,6 +1,6 @@
 // disabled eslint for this file as react-player is not fully compatible with typescript
 /* eslint-disable */
-// @ts-nocheck
+//@ts-nocheck
 
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
@@ -18,8 +18,8 @@ import {
   DownloadWrapper,
 } from './styled-components'
 import { useTranslation } from 'react-i18next'
-import useOutsideClick from '../../helperFunctions/useOutsideClick'
 import { ClosedCaptionIcon, CloudDownloadIcon } from '../../icons'
+import useOutsideClick from '../../helperFunctions/useOutsideClick'
 
 const SubtitlesButton = ({ subtitles, setSubtitles }) => {
   const [open, setOpen] = useState(false)

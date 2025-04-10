@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import RangeSlider from './RangeSlider';
 import { CustomThemeProvider } from '../../theme/ThemeProvider';
 import { GlobalStyle } from '../../global.styles';
+import { RangeSlider } from './RangeSlider';
 var meta = {
     title: 'Components/RangeSlider',
     component: RangeSlider,

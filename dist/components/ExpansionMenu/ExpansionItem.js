@@ -1,7 +1,7 @@
 import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { StyledExpansionPanel, StyledExpansionPanelSummary, StyledTypography, } from './styled-components';
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider';
 var ExpansionItem = function (_a) {
     var item = _a.item, index = _a.index, isOpened = _a.isOpened;
     var t = useTranslation().t;

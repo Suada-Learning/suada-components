@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import { Container } from './styled-components'
 
 import ExpansionItem from './ExpansionItem'
@@ -7,14 +8,28 @@ import ExpansionNavMenu from './ExpansionNavMenu'
 import { IExpansionItemProps } from './ExpansionItem.interface'
 import { IPermissionsBool, IUser, IUserCompany } from '../CourseCard/CourseCard.interface'
 import { getAllNavigation } from './routerConfig'
-import { mockUser } from './NavigationBar.stories'
 
-export const NavigationBar: React.FC<IExpansionItemProps> = ({
+const mockUser: IUser = {
+  id: 'user1',
+  role: 'SUPER_ADMIN',
+  companyId: 'company1',
+  firstName: 'John',
+  lastName: 'Doe',
+  email: 'john@gmail.com',
+}
+
+const NavigationBarComponent: React.FC<IExpansionItemProps> = ({
   isOpened,
   currentUser,
   checkRole,
   state,
 }) => {
+  const location = useLocation()
+
+  useEffect(() => {
+    console.log('URL changed:', location.pathname)
+  }, [location.pathname])
+
   const role = checkRole && checkRole(currentUser?.role as string, !!currentUser?.companyId)
   const routerData = getAllNavigation(
     state?.userPermission || ({} as IPermissionsBool),
@@ -34,3 +49,9 @@ export const NavigationBar: React.FC<IExpansionItemProps> = ({
     </Container>
   )
 }
+
+export const NavigationBar: React.FC<IExpansionItemProps> = props => (
+  <BrowserRouter>
+    <NavigationBarComponent {...props} />
+  </BrowserRouter>
+)

@@ -21,8 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export var SchoolIcon = function (_a) {
+import { forwardRef } from 'react';
+export var SchoolIcon = forwardRef(function (_a, ref) {
     var className = _a.className, onClick = _a.onClick, _b = _a.fill, fill = _b === void 0 ? '#68707A' : _b, props = __rest(_a, ["className", "onClick", "fill"]);
-    return (_jsxs("svg", __assign({ xmlns: 'http://www.w3.org/2000/svg', height: '24px', viewBox: '0 0 24 24', width: '24px', fill: fill, className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M0 0h24v24H0z', fill: 'none' }), _jsx("path", { d: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z' })] })));
-};
+    return (_jsxs("svg", __assign({ ref: ref, xmlns: 'http://www.w3.org/2000/svg', height: '24px', viewBox: '0 0 24 24', width: '24px', fill: fill, className: className, onClick: onClick }, props, { children: [_jsx("path", { d: 'M0 0h24v24H0z', fill: 'none' }), _jsx("path", { d: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z' })] })));
+});
+SchoolIcon.displayName = 'SchoolIcon';
 //# sourceMappingURL=SchoolIcon.js.map
