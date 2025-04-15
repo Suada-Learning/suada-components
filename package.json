@@ -40,7 +40,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "publish": "npm publish"
   },
   "dependencies": {
     "@date-io/date-fns": "^3.2.0",
@@ -141,5 +146,24 @@
         }
       }
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bekatom/suada-components.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "material-ui"
+  ],
+  "author": "bekatom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bekatom/suada-components/issues"
+  },
+  "homepage": "https://github.com/bekatom/suada-components#readme",
+  "publishConfig": {
+    "access": "public"
   }
 }
