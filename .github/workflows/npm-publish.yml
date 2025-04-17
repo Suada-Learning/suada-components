@@ -18,24 +18,25 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Debug package version
-        run: |
-          echo "Package version in package.json:"
-          cat package.json | grep version
-
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Generate unique version
+        id: unique_version
+        run: |
+          # Generate a unique version using current date, time and run ID
+          UNIQUE_SUFFIX=$(date +'%y%m%d%H%M')
+          CURRENT_VERSION=$(node -p "require('./package.json').version.split('.').slice(0, 2).join('.')")
+          NEW_VERSION="${CURRENT_VERSION}.${UNIQUE_SUFFIX}"
+
+          # Update package.json with new version
+          npm version $NEW_VERSION --no-git-tag-version
+
+          echo "New version: $NEW_VERSION"
+          echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
       - name: Build package
         run: npm run build
-
-      - name: Set new version
-        run: |
-          # Increment patch version
-          npm version patch --no-git-tag-version
-          # Display new version
-          NEW_VERSION=$(node -p "require('./package.json').version")
-          echo "Updated to version: $NEW_VERSION"
 
       - name: Publish to npm
         run: npm publish --access=public
