@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -20,22 +18,24 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Configure Git
+      - name: Debug package version
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          echo "Package version in package.json:"
+          cat package.json | grep version
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Increment version
-        run: |
-          npm version patch
-          git push
-          git push --tags
-
       - name: Build package
         run: npm run build
+
+      - name: Set new version
+        run: |
+          # Increment patch version
+          npm version patch --no-git-tag-version
+          # Display new version
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "Updated to version: $NEW_VERSION"
 
       - name: Publish to npm
         run: npm publish --access=public
