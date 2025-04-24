@@ -1,8 +1,11 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { VideoPlayer } from './Player'
 
 // Define the Meta for the component
+
+type VideoPlayerProps = React.ComponentProps<typeof VideoPlayer>
+
 const meta: Meta<typeof VideoPlayer> = {
   title: 'Components/VideoPlayer',
   component: VideoPlayer,
@@ -75,14 +78,15 @@ export default meta
 type Story = StoryObj<typeof VideoPlayer>
 
 // Wrapper component to handle state
-const PlayerWrapper = args => {
+
+const PlayerWrapper = (args: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(args.isPlaying || false)
   const [loading, setLoading] = useState(false)
   const [isFavorite, setIsFavorite] = useState(args.isFavorite || false)
 
   // Ensure we have default handlers for everything
-  const handleTrackProgress = duration => {
-    console.log('Track progress:', duration)
+  const handleTrackProgress = (currentTime: number) => {
+    console.log('Track progress:', currentTime)
   }
 
   const handleNextVideo = () => {

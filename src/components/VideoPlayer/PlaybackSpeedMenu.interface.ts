@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
-
-import { IDynamicPosition } from '@/hooks/useDynamicPosition'
+import { IDynamicPosition } from './useDynamicPosition'
 
 export type OnPlaybackSpeedChangeFnType = (speed: number) => void
 

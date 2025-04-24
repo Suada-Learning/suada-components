@@ -1,7 +1,7 @@
 import React, { RefObject } from 'react'
 import ReactPlayer from 'react-player'
+import { ControlsProps } from './Controls/Controls.interface'
 
-import { ControlsProps } from '../Controls/Controls.interface'
 
 export interface VideoState {
   muted: boolean

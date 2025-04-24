@@ -110,7 +110,7 @@ export const VideoPlayer = ({
               handleTrackProgress(totalDuration)
             }
 
-            setVideoState(prev => ({ ...prev, playing: false }))
+            setVideoState(( prev:any) => ({ ...prev, playing: false }))
             if (handleNextVideo) handleNextVideo()
           }}
           controls={false}
@@ -174,5 +174,4 @@ export const VideoPlayer = ({
   )
 }
 
-// Also export as default for compatibility
-export default VideoPlayer
+

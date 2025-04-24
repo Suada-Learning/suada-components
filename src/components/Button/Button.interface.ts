@@ -51,4 +51,5 @@ export interface ButtonState {
 export interface StyledButtonProps {
   $type: ButtonType
   $size: ButtonSize
+  theme: any // eslint-disable-line
 }

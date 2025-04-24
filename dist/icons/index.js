@@ -1,4 +1,15 @@
 export { ActivityIcon } from './Activity';
+export { VideoCheckmarkIcon } from './VideoCheckmark';
+export { HeartIcon } from './Heart';
+export { MinimizeIcon } from './Minimize';
+export { MaximizeIcon } from './Maximize';
+export { PauseIcon } from './Pause';
+export { VolumeMuteIcon } from './VolumeMute';
+export { PlayIcon } from './Play';
+export { RewindIcon } from './Rewind';
+export { SkipIcon } from './Skip';
+export { SubtitlesIcon } from './Subtitles';
+export { MeterIcon } from './Meter';
 export { ArrowDropDownIcon } from './ArrowDropDownIcon';
 export { Analytics } from './Analytics';
 export { AddAlt } from './AddAlt';

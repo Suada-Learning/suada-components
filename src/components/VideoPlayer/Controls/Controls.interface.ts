@@ -1,6 +1,6 @@
 import { ChangeEvent, MouseEvent } from 'react'
 
-import { VideoState } from '../Player/Player.interface'
+import { VideoState } from '../Player.interface'
 
 export interface ControlsProps {
   setVideoState: (value: (prev: VideoState) => VideoState) => void

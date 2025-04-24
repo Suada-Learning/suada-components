@@ -14,7 +14,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
 
 
 var __assign = function() {
@@ -1410,6 +1410,313 @@ var ActivityIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   }));
 });
 ActivityIcon.displayName = 'ActivityIcon';
+
+var VideoCheckmarkIcon = function VideoCheckmarkIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M9.75 18L3 11.25L4.0605 10.1895L9.75 15.8782L19.9395 5.68945L21 6.74995L9.75 18Z',
+      fill: '#020210'
+    })
+  }));
+};
+
+var HeartIcon = function HeartIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    active = _a.active,
+    props = __rest(_a, ["className", "onClick", "active"]);
+  return active ? jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M16.8754 3C15.3754 3 13.9504 3.6 12.9004 4.65L12.0004 5.55L11.1754 4.725C9.00039 2.475 5.40039 2.475 3.22539 4.65L3.15039 4.725C0.900391 6.975 0.900391 10.575 3.15039 12.825L12.0004 21.75L20.8504 12.825C23.1004 10.575 23.1004 6.975 20.8504 4.725C19.8004 3.6 18.3754 3 16.8754 3Z',
+      fill: 'white'
+    })
+  })) : jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M16.8375 4.5C17.3835 4.49954 17.9242 4.6081 18.4278 4.81931C18.9313 5.03052 19.3876 5.34014 19.77 5.73C20.5578 6.52979 20.9994 7.60737 20.9994 8.73C20.9994 9.85264 20.5578 10.9302 19.77 11.73L12 19.5975L4.22998 11.73C3.44217 10.9302 3.00058 9.85264 3.00058 8.73C3.00058 7.60737 3.44217 6.52979 4.22998 5.73C4.61255 5.34042 5.06892 5.03096 5.57242 4.81972C6.07592 4.60848 6.61646 4.49968 7.16248 4.49968C7.7085 4.49968 8.24905 4.60848 8.75255 4.81972C9.25605 5.03096 9.71241 5.34042 10.095 5.73L12 7.68L13.8975 5.745C14.2787 5.35049 14.7355 5.0369 15.2406 4.82298C15.7458 4.60906 16.2889 4.49921 16.8375 4.5ZM16.8375 3C16.0917 2.99937 15.3533 3.14764 14.6656 3.43613C13.9778 3.72461 13.3546 4.1475 12.8325 4.68L12 5.52L11.1675 4.68C10.6447 4.14846 10.0213 3.72631 9.33372 3.43814C8.64612 3.14998 7.90803 3.00157 7.16248 3.00157C6.41694 3.00157 5.67885 3.14998 4.99124 3.43814C4.30364 3.72631 3.68027 4.14846 3.15748 4.68C2.09389 5.76272 1.49796 7.21977 1.49796 8.7375C1.49796 10.2552 2.09389 11.7123 3.15748 12.795L12 21.75L20.8425 12.795C21.9061 11.7123 22.502 10.2552 22.502 8.7375C22.502 7.21977 21.9061 5.76272 20.8425 4.68C20.3198 4.14818 19.6965 3.72573 19.0089 3.4373C18.3213 3.14886 17.5831 3.00021 16.8375 3Z',
+      fill: '#020210'
+    })
+  }));
+};
+
+var MinimizeIcon = function MinimizeIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M3 13.5V15H7.9395L1.5 21.4365L2.5605 22.5L9 16.0605V21H10.5V13.5H3Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M22.5 2.562L21.444 1.5L15 7.9395V3H13.5V10.5H21V9H16.0605L22.5 2.562Z',
+      fill: 'white'
+    })]
+  }));
+};
+
+var MaximizeIcon = function MaximizeIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M15 1.5V3H19.9395L13.5 9.4365L14.5605 10.5L21 4.0605V9H22.5V1.5H15Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M10.5 14.562L9.444 13.5L3 19.9395V15H1.5V22.5H9V21H4.0605L10.5 14.562Z',
+      fill: 'white'
+    })]
+  }));
+};
+
+var PauseIcon = function PauseIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M9 4.5H7.5C7.10218 4.5 6.72064 4.65804 6.43934 4.93934C6.15804 5.22064 6 5.60218 6 6V18C6 18.3978 6.15804 18.7794 6.43934 19.0607C6.72064 19.342 7.10218 19.5 7.5 19.5H9C9.39782 19.5 9.77936 19.342 10.0607 19.0607C10.342 18.7794 10.5 18.3978 10.5 18V6C10.5 5.60218 10.342 5.22064 10.0607 4.93934C9.77936 4.65804 9.39782 4.5 9 4.5Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M16.5 4.5H15C14.6022 4.5 14.2206 4.65804 13.9393 4.93934C13.658 5.22064 13.5 5.60218 13.5 6V18C13.5 18.3978 13.658 18.7794 13.9393 19.0607C14.2206 19.342 14.6022 19.5 15 19.5H16.5C16.8978 19.5 17.2794 19.342 17.5607 19.0607C17.842 18.7794 18 18.3978 18 18V6C18 5.60218 17.842 5.22064 17.5607 4.93934C17.2794 4.65804 16.8978 4.5 16.5 4.5Z',
+      fill: 'white'
+    })]
+  }));
+};
+
+var VolumeMuteIcon = function VolumeMuteIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    dark = _a.dark,
+    props = __rest(_a, ["className", "onClick", "dark"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M23.25 9.30743L22.1925 8.24993L19.5 10.9424L16.8075 8.24993L15.75 9.30743L18.4425 11.9999L15.75 14.6924L16.8075 15.7499L19.5 13.0574L22.1925 15.7499L23.25 14.6924L20.5575 11.9999L23.25 9.30743Z',
+      fill: dark ? '#000' : '#fff'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M13.5 22.4999C13.4008 22.4995 13.3026 22.4794 13.2112 22.4408C13.1198 22.4022 13.037 22.3458 12.9675 22.2749L7.2525 16.4999H2.25C2.05109 16.4999 1.86032 16.4209 1.71967 16.2803C1.57902 16.1396 1.5 15.9488 1.5 15.7499V8.24993C1.5 8.05102 1.57902 7.86025 1.71967 7.7196C1.86032 7.57895 2.05109 7.49993 2.25 7.49993H7.2525L12.9675 1.72493C13.108 1.58524 13.2981 1.50684 13.4963 1.50684C13.6944 1.50684 13.8845 1.58524 14.025 1.72493C14.1663 1.8634 14.2472 2.0521 14.25 2.24993V21.7499C14.25 21.9488 14.171 22.1396 14.0303 22.2803C13.8897 22.4209 13.6989 22.4999 13.5 22.4999ZM3 14.9999H7.5C7.71863 14.9985 7.92993 15.0787 8.0925 15.2249L12.75 19.9274V4.07243L8.0925 8.77493C7.92993 8.92112 7.71863 9.00136 7.5 8.99993H3V14.9999Z',
+      fill: dark ? '#000' : '#fff'
+    })]
+  }));
+};
+
+var PlayIcon = function PlayIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M5.25 21.0001C5.05109 21.0001 4.86032 20.921 4.71967 20.7804C4.57902 20.6397 4.5 20.449 4.5 20.2501V3.75006C4.49999 3.61972 4.53395 3.49163 4.59852 3.37842C4.6631 3.2652 4.75606 3.17077 4.86825 3.10443C4.98044 3.03808 5.10798 3.00212 5.2383 3.00009C5.36862 2.99806 5.49722 3.03002 5.61143 3.09283L20.6114 11.3428C20.7291 11.4075 20.8273 11.5027 20.8956 11.6183C20.964 11.7339 21 11.8657 21 12C21 12.1343 20.964 12.2662 20.8956 12.3818C20.8273 12.4974 20.7291 12.5925 20.6114 12.6572L5.61143 20.9072C5.50069 20.9681 5.37637 21 5.25 21.0001Z',
+      fill: 'white'
+    })
+  }));
+};
+
+var RewindIcon = function RewindIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    forward = _a.forward,
+    props = __rest(_a, ["className", "onClick", "forward"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: forward ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+      children: [jsxRuntimeExports.jsx("path", {
+        d: 'M21 13.5C21 15.28 20.4722 17.0201 19.4832 18.5001C18.4943 19.9802 17.0887 21.1337 15.4442 21.8149C13.7996 22.4961 11.99 22.6743 10.2442 22.3271C8.49836 21.9798 6.89471 21.1226 5.63604 19.864C4.37737 18.6053 3.5202 17.0016 3.17293 15.2558C2.82566 13.51 3.00389 11.7004 3.68508 10.0559C4.36627 8.41131 5.51982 7.00571 6.99987 6.01677C8.47991 5.02784 10.22 4.5 12 4.5H15V0.75L19.5 5.25L15 9.75V6H12C10.5166 6 9.06659 6.43987 7.83322 7.26398C6.59985 8.08809 5.63856 9.25943 5.0709 10.6299C4.50324 12.0003 4.35472 13.5083 4.64411 14.9632C4.9335 16.418 5.6478 17.7544 6.6967 18.8033C7.74559 19.8522 9.08196 20.5665 10.5368 20.8559C11.9917 21.1453 13.4997 20.9968 14.8701 20.4291C16.2406 19.8614 17.4119 18.9001 18.236 17.6668C19.0601 16.4334 19.5 14.9834 19.5 13.5H21Z',
+        fill: 'white'
+      }), jsxRuntimeExports.jsx("path", {
+        d: 'M7.97156 16.5V15.615H9.47156V11.7225L8.07656 12.4725L7.66406 11.6775L9.40406 10.7007H10.4991V15.5775H11.8341V16.5H7.97156Z',
+        fill: 'white'
+      }), jsxRuntimeExports.jsx("path", {
+        d: 'M15.4991 16.5007H13.4991V15.3007H15.4991V14.1007H13.4991V10.7007H16.4991V11.7657H14.4991V12.9007H15.4991C15.7643 12.9007 16.0186 13.0272 16.2062 13.2522C16.3937 13.4772 16.4991 13.7825 16.4991 14.1007V15.3007C16.4991 15.619 16.3937 15.9242 16.2062 16.1493C16.0186 16.3743 15.7643 16.5007 15.4991 16.5007Z',
+        fill: 'white'
+      })]
+    }) : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+      children: [jsxRuntimeExports.jsx("path", {
+        d: 'M3 13.5C3 15.28 3.52784 17.0201 4.51677 18.5001C5.50571 19.9802 6.91131 21.1337 8.55585 21.8149C10.2004 22.4961 12.01 22.6743 13.7558 22.3271C15.5016 21.9798 17.1053 21.1226 18.364 19.864C19.6226 18.6053 20.4798 17.0016 20.8271 15.2558C21.1743 13.51 20.9961 11.7004 20.3149 10.0559C19.6337 8.41131 18.4802 7.00571 17.0001 6.01677C15.5201 5.02784 13.78 4.5 12 4.5H9V0.75L4.5 5.25L9 9.75V6H12C13.4834 6 14.9334 6.43987 16.1668 7.26398C17.4001 8.08809 18.3614 9.25943 18.9291 10.6299C19.4968 12.0003 19.6453 13.5083 19.3559 14.9632C19.0665 16.418 18.3522 17.7544 17.3033 18.8033C16.2544 19.8522 14.918 20.5665 13.4632 20.8559C12.0083 21.1453 10.5003 20.9968 9.12987 20.4291C7.75943 19.8614 6.58809 18.9001 5.76398 17.6668C4.93987 16.4334 4.5 14.9834 4.5 13.5H3Z',
+        fill: 'white'
+      }), jsxRuntimeExports.jsx("path", {
+        d: 'M7.9725 16.5V15.615H9.4725V11.7225L8.0775 12.4725L7.665 11.6775L9.405 10.7007H10.5V15.5775H11.835V16.5H7.9725Z',
+        fill: 'white'
+      }), jsxRuntimeExports.jsx("path", {
+        d: 'M15.5 16.5007H13.5V15.3007H15.5V14.1007H13.5V10.7007H16.5V11.7657H14.5V12.9007H15.5C15.7652 12.9007 16.0196 13.0272 16.2071 13.2522C16.3946 13.4772 16.5 13.7825 16.5 14.1007V15.3007C16.5 15.619 16.3946 15.9242 16.2071 16.1493C16.0196 16.3743 15.7652 16.5007 15.5 16.5007Z',
+        fill: 'white'
+      })]
+    })
+  }));
+};
+
+var SkipIcon = function SkipIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    forward = _a.forward,
+    props = __rest(_a, ["className", "onClick", "forward"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: forward ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+      children: [jsxRuntimeExports.jsx("path", {
+        d: 'M3.75001 21.0001C3.55109 21.0001 3.36033 20.921 3.21968 20.7804C3.07902 20.6397 3.00001 20.449 3.00001 20.2501V3.75005C2.99948 3.61789 3.03389 3.48794 3.09974 3.37336C3.16559 3.25878 3.26055 3.16363 3.37501 3.09755C3.48902 3.03173 3.61835 2.99707 3.75001 2.99707C3.88166 2.99707 4.01099 3.03173 4.12501 3.09755L18.375 11.3476C18.4904 11.413 18.5864 11.5078 18.6532 11.6225C18.72 11.7371 18.7552 11.8674 18.7552 12.0001C18.7552 12.1327 18.72 12.263 18.6532 12.3776C18.5864 12.4923 18.4904 12.5871 18.375 12.6526L4.12501 20.9026C4.0107 20.9673 3.88139 21.001 3.75001 21.0001ZM4.50001 5.04755V18.9526L16.5 12.0001L4.50001 5.04755Z',
+        fill: 'white'
+      }), jsxRuntimeExports.jsx("path", {
+        d: 'M22.5 3.00005H21V21.0001H22.5V3.00005Z',
+        fill: 'white'
+      })]
+    }) : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+      children: [jsxRuntimeExports.jsx("path", {
+        d: 'M20.25 21.0001C20.1186 21.001 19.9893 20.9673 19.875 20.9026L5.625 12.6526C5.50958 12.5871 5.41357 12.4923 5.34678 12.3776C5.27998 12.263 5.24479 12.1327 5.24479 12.0001C5.24479 11.8674 5.27998 11.7371 5.34678 11.6225C5.41357 11.5078 5.50958 11.413 5.625 11.3476L19.875 3.09755C19.989 3.03173 20.1183 2.99707 20.25 2.99707C20.3817 2.99707 20.511 3.03173 20.625 3.09755C20.7395 3.16363 20.8344 3.25878 20.9003 3.37336C20.9661 3.48794 21.0005 3.61789 21 3.75005V20.2501C21 20.449 20.921 20.6397 20.7803 20.7804C20.6397 20.921 20.4489 21.0001 20.25 21.0001ZM7.5 12.0001L19.5 18.9526V5.04755L7.5 12.0001Z',
+        fill: 'white'
+      }), jsxRuntimeExports.jsx("path", {
+        d: 'M3 3.00005H1.5V21.0001H3V3.00005Z',
+        fill: 'white'
+      })]
+    })
+  }));
+};
+
+var SubtitlesIcon = function SubtitlesIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    active = _a.active,
+    props = __rest(_a, ["className", "onClick", "active"]);
+  return active ? jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M21 4.5H3C2.60218 4.5 2.22064 4.65804 1.93934 4.93934C1.65804 5.22064 1.5 5.60218 1.5 6V18C1.5 18.3978 1.65804 18.7794 1.93934 19.0607C2.22064 19.342 2.60218 19.5 3 19.5H21C21.3978 19.5 21.7794 19.342 22.0607 19.0607C22.342 18.7794 22.5 18.3978 22.5 18V6C22.5 5.60218 22.342 5.22064 22.0607 4.93934C21.7794 4.65804 21.3978 4.5 21 4.5ZM11.25 9.75H7.5V14.25H11.25V15.75H7.5C7.10218 15.75 6.72064 15.592 6.43934 15.3107C6.15804 15.0294 6 14.6478 6 14.25V9.75C6 9.35218 6.15804 8.97064 6.43934 8.68934C6.72064 8.40804 7.10218 8.25 7.5 8.25H11.25V9.75ZM18.75 9.75H15V14.25H18.75V15.75H15C14.6022 15.75 14.2206 15.592 13.9393 15.3107C13.658 15.0294 13.5 14.6478 13.5 14.25V9.75C13.5 9.35218 13.658 8.97064 13.9393 8.68934C14.2206 8.40804 14.6022 8.25 15 8.25H18.75V9.75Z',
+      fill: 'white'
+    })
+  })) : jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M11.25 15.75H7.5C7.10218 15.75 6.72064 15.592 6.43934 15.3107C6.15804 15.0294 6 14.6478 6 14.25V9.75C6 9.35218 6.15804 8.97064 6.43934 8.68934C6.72064 8.40804 7.10218 8.25 7.5 8.25H11.25V9.75H7.5V14.25H11.25V15.75Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M18.75 15.75H15C14.6022 15.75 14.2206 15.592 13.9393 15.3107C13.658 15.0294 13.5 14.6478 13.5 14.25V9.75C13.5 9.35218 13.658 8.97064 13.9393 8.68934C14.2206 8.40804 14.6022 8.25 15 8.25H18.75V9.75H15V14.25H18.75V15.75Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M21 19.5H3C2.60218 19.5 2.22064 19.342 1.93934 19.0607C1.65804 18.7794 1.5 18.3978 1.5 18V6C1.5 5.60218 1.65804 5.22064 1.93934 4.93934C2.22064 4.65804 2.60218 4.5 3 4.5H21C21.3978 4.5 21.7794 4.65804 22.0607 4.93934C22.342 5.22064 22.5 5.60218 22.5 6V18C22.5 18.3978 22.342 18.7794 22.0607 19.0607C21.7794 19.342 21.3978 19.5 21 19.5ZM3 6V18H21V6H3Z',
+      fill: 'white'
+    })]
+  }));
+};
+
+var MeterIcon = function MeterIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsxs("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: [jsxRuntimeExports.jsx("path", {
+      d: 'M22.5 15C22.499 12.996 21.9184 11.035 20.8282 9.35342L19.7443 10.4374C20.5661 11.8175 20.9999 13.3938 21 15H22.5Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M21 7.06052L19.9394 6.00002L13.5143 12.4252C13.057 12.1497 12.5338 12.0028 12 12C11.4067 12 10.8267 12.176 10.3333 12.5056C9.83996 12.8353 9.45544 13.3038 9.22838 13.852C9.00131 14.4001 8.9419 15.0033 9.05766 15.5853C9.17341 16.1672 9.45914 16.7018 9.87869 17.1213C10.2983 17.5409 10.8328 17.8266 11.4147 17.9424C11.9967 18.0581 12.5999 17.9987 13.1481 17.7717C13.6962 17.5446 14.1648 17.1601 14.4944 16.6667C14.8241 16.1734 15 15.5934 15 15C14.9972 14.4662 14.8503 13.943 14.5748 13.4857L21 7.06052ZM12 16.5C11.7033 16.5 11.4133 16.412 11.1667 16.2472C10.92 16.0824 10.7277 15.8481 10.6142 15.574C10.5007 15.3 10.471 14.9984 10.5288 14.7074C10.5867 14.4164 10.7296 14.1491 10.9394 13.9394C11.1491 13.7296 11.4164 13.5867 11.7074 13.5288C11.9984 13.471 12.3 13.5007 12.574 13.6142C12.8481 13.7277 13.0824 13.92 13.2472 14.1667C13.412 14.4133 13.5 14.7033 13.5 15C13.4996 15.3977 13.3414 15.779 13.0602 16.0602C12.779 16.3414 12.3977 16.4996 12 16.5Z',
+      fill: 'white'
+    }), jsxRuntimeExports.jsx("path", {
+      d: 'M12 6.00002C13.6061 6.00077 15.1822 6.43457 16.5625 7.25574L17.6527 6.16554C16.0679 5.14651 14.2378 4.57343 12.3548 4.5066C10.4719 4.43976 8.60573 4.88164 6.95268 5.78575C5.29964 6.68986 3.92082 8.02277 2.96128 9.64427C2.00174 11.2658 1.49695 13.1159 1.50001 15H3.00001C3.00273 12.6139 3.95182 10.3263 5.63906 8.63906C7.3263 6.95182 9.6139 6.00274 12 6.00002Z',
+      fill: 'white'
+    })]
+  }));
+};
 
 var ArrowDropDownIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
@@ -5651,4 +5958,4 @@ var SchoolIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
 });
 SchoolIcon.displayName = 'SchoolIcon';
 
-export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, Analytics, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckBoxOutlineBlankIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, ChevronRightIcon, Circle, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, Company, ContactSupportOutlinedIcon, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DeleteIconRounded, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridView, Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Learning, Library, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, PermMediaIcon, Person, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, SchoolIcon, SchoolOutlinedIcon, Search, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, StarsRoundedIcon, SwitchCompany, Timeline, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, UsersIcon, VideoCallIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
+export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, Analytics, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckBoxOutlineBlankIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, ChevronRightIcon, Circle, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, Company, ContactSupportOutlinedIcon, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DeleteIconRounded, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridView, Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, HeartIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Learning, Library, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MaximizeIcon, MeterIcon, MinimizeIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, PauseIcon, PermMediaIcon, Person, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlayIcon, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, RewindIcon, SchoolIcon, SchoolOutlinedIcon, Search, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, SkipIcon, StarsRoundedIcon, SubtitlesIcon, SwitchCompany, Timeline, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, UsersIcon, VideoCallIcon, VideoCheckmarkIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeMuteIcon, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
