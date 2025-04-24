@@ -1,23 +1,23 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Container, ItemWrapper, PathItem } from './styled-components';
-import { IBreadcrumbItemV2, IBreadcrumbPropsV2 } from './types';
-import { ChevronRightIcon } from '../../icons';
+import React from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { Container, ItemWrapper, PathItem } from './styled-components'
+import { IBreadcrumbItemV2, IBreadcrumbPropsV2 } from './types'
+import { ChevronRightIcon } from '../../icons'
 
 const BreadcrumbWithRouter: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
-  const navigate = useNavigate();
-  
+  const navigate = useNavigate()
+
   const handleClick = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     link: string,
     state: object | undefined = {},
   ): void => {
-    event.preventDefault();
-    navigate(link, { state });
-  };
-  
-  if (!data) return null;
-  
+    event.preventDefault()
+    navigate(link, { state })
+  }
+
+  if (!data) return null
+
   return (
     <Container>
       {data.map((item: IBreadcrumbItemV2, index) => (
@@ -36,12 +36,12 @@ const BreadcrumbWithRouter: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
         </React.Fragment>
       ))}
     </Container>
-  );
-};
+  )
+}
 
 const BreadcrumbWithoutRouter: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
-  if (!data) return null;
-  
+  if (!data) return null
+
   return (
     <Container>
       {data.map((item: IBreadcrumbItemV2, index) => (
@@ -49,9 +49,7 @@ const BreadcrumbWithoutRouter: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
           <PathItem>
             {item.icon}
             {item.link ? (
-              <a href={item.link}>
-                {item.label}
-              </a>
+              <a href={item.link}>{item.label}</a>
             ) : (
               <ItemWrapper>{item.label}</ItemWrapper>
             )}
@@ -60,31 +58,26 @@ const BreadcrumbWithoutRouter: React.FC<IBreadcrumbPropsV2> = ({ data }) => {
         </React.Fragment>
       ))}
     </Container>
-  );
-};
+  )
+}
 
-
-export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = (props) => {
+export const Breadcrumb: React.FC<IBreadcrumbPropsV2> = props => {
   const isInRouterContext = React.useMemo(() => {
     try {
-      
-      useLocation();
-      return true;
+      useLocation()
+      return true
     } catch (e) {
-      return false;
+      return false
     }
-  }, []);
+  }, [])
 
   try {
-    
     if (isInRouterContext) {
-      return <BreadcrumbWithRouter {...props} />;
+      return <BreadcrumbWithRouter {...props} />
     }
   } catch (e) {
-    
-    console.warn('Router context not detected, using regular links in breadcrumb');
+    console.warn('Router context not detected, using regular links in breadcrumb')
   }
-  
-  
-  return <BreadcrumbWithoutRouter {...props} />;
-};
+
+  return <BreadcrumbWithoutRouter {...props} />
+}

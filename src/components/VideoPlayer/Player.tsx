@@ -1,175 +1,178 @@
-// disabled eslint for this file as react-player is not fully compatible with typescript
-/* eslint-disable */
-//@ts-nocheck
+import { ReactElement } from 'react'
+import ReactPlayer from 'react-player'
 
-import React, { useEffect, useRef, useState } from 'react'
-import PropTypes from 'prop-types'
-import Hls from 'hls.js'
-import { Player, ControlBar, PlaybackRateMenuButton, BigPlayButton } from 'video-react'
-import 'video-react/dist/video-react.css'
+import { PlayerProps } from './Player.interface'
 import {
-  ButtonWrapper,
-  Container,
-  QualityButtonWrapper,
-  // StyledQualityMenu,
-  StyledQualityMenuItem,
-  // StyledVideo,
-  SubtitlesMenuContainer,
-  DownloadWrapper,
-} from './styled-components'
-import { useTranslation } from 'react-i18next'
-import { ClosedCaptionIcon, CloudDownloadIcon } from '../../icons'
-import useOutsideClick from '../../helperFunctions/useOutsideClick'
+  StyledWrapper,
+  StyledPlayerLoader,
+  StyledControlsContainer,
+  StyledVideoPlayerWrapper,
+  StyledLoader,
+  StyledSubtitles,
+} from './Player.styles'
+import Controls from './Controls'
+import usePlayerControls from './usePlayerControls'
 
-const SubtitlesButton = ({ subtitles, setSubtitles }) => {
-  const [open, setOpen] = useState(false)
-  const ref = useRef()
-  const { t } = useTranslation()
+export const VideoPlayer = ({
+  customStyles,
+  startTime = 0,
+  loading,
+  setLoading,
+  handleTrackProgress,
+  url,
+  subtitle: subtitleUrl,
+  handleNextVideo,
+  handlePreviousVideo,
+  isNextVideo,
+  isPreviousVideo,
+  isPlaying,
+  setIsPlaying,
+  shouldPlayerBeFocusedOnSpaceClick = false,
+  showFavorite,
+  isFavorite = false,
+  toggleFavorite = async (): Promise<void> => {},
+}: PlayerProps): ReactElement => {
+  const {
+    mouseMoveHandler,
+    playerContainerRef,
+    playPauseHandler,
+    handleFullScreen,
+    videoPlayerRef,
+    playing,
+    volume,
+    muted,
+    progressHandler,
+    bufferStartHandler,
+    bufferEndHandler,
+    onPlayerStart,
+    setVideoState,
+    playbackRate,
+    controlRef,
+    rewindHandler,
+    handleFastForward,
+    formatCurrentTime,
+    played,
+    onSeekMouseDownHandler,
+    seekHandler,
+    seekMouseUpHandler,
+    muteHandler,
+    volumeChangeHandler,
+    formatDuration,
+    isSubtitlesChecked,
+    toggleSubtitlesCheck,
+    isFullscreen,
+    isControlsActive,
+    currentSubtitle,
+  } = usePlayerControls({
+    startTime,
+    setLoading,
+    handleTrackProgress,
+    url,
+    subtitleUrl,
+    isPlaying,
+    setIsPlaying,
+    shouldPlayerBeFocusedOnSpaceClick,
+  })
 
-  useOutsideClick(ref, () => open && setOpen(false))
+  // Make sure we have a valid URL to avoid ReactPlayer errors
+  const validUrl = url || ''
 
   return (
-    <QualityButtonWrapper ref={ref}>
-      <ButtonWrapper onClick={() => setOpen(!open)}>
-        <ClosedCaptionIcon fontSize='small' />
-      </ButtonWrapper>
+    <StyledWrapper
+      tabIndex={0}
+      onMouseMove={mouseMoveHandler}
+      ref={playerContainerRef}
+      style={customStyles}
+      onClick={(e): void => e.stopPropagation()}
+      data-testid='video-player-wrapper'
+    >
+      <StyledVideoPlayerWrapper onClick={playPauseHandler} onDoubleClick={handleFullScreen}>
+        <ReactPlayer
+          key={validUrl}
+          url={validUrl}
+          ref={videoPlayerRef}
+          className='react-player'
+          width='100%'
+          height='100%'
+          playing={isPlaying}
+          volume={volume}
+          muted={muted}
+          onProgress={progressHandler}
+          onBuffer={bufferStartHandler}
+          onBufferEnd={bufferEndHandler}
+          onReady={onPlayerStart}
+          onPlay={(): void => setIsPlaying(true)}
+          onPause={(): void => setIsPlaying(false)}
+          onEnded={(): void => {
+            const totalDuration = videoPlayerRef.current?.getDuration()
 
-      {open && (
-        <SubtitlesMenuContainer>
-          <StyledQualityMenuItem onClick={() => setSubtitles('off')} color={subtitles === 'off'}>
-            {t('general.off')}
-          </StyledQualityMenuItem>
+            if (totalDuration) {
+              handleTrackProgress(totalDuration)
+            }
 
-          <StyledQualityMenuItem onClick={() => setSubtitles('on')} color={subtitles === 'on'}>
-            {t('general.on')}
-          </StyledQualityMenuItem>
-        </SubtitlesMenuContainer>
+            setVideoState(prev => ({ ...prev, playing: false }))
+            if (handleNextVideo) handleNextVideo()
+          }}
+          controls={false}
+          pip
+          playbackRate={playbackRate}
+          preload='metadata'
+          config={{
+            file: {
+              hlsOptions: {
+                autoStartLoad: true,
+                renderTextTracksNatively: false,
+              },
+            },
+          }}
+        />
+      </StyledVideoPlayerWrapper>
+
+      {loading && (
+        <StyledPlayerLoader>
+          <StyledLoader />
+        </StyledPlayerLoader>
       )}
-    </QualityButtonWrapper>
+
+      <StyledControlsContainer ref={controlRef}>
+        <Controls
+          setVideoState={setVideoState}
+          playbackRate={playbackRate}
+          rewindHandler={rewindHandler}
+          playPauseHandler={playPauseHandler}
+          handleFastForward={handleFastForward}
+          formatCurrentTime={formatCurrentTime}
+          played={played}
+          onSeekMouseDownHandler={onSeekMouseDownHandler}
+          seekHandler={seekHandler}
+          seekMouseUpHandler={seekMouseUpHandler}
+          volume={volume}
+          muted={muted}
+          muteHandler={muteHandler}
+          volumeChangeHandler={volumeChangeHandler}
+          formatDuration={formatDuration}
+          handleFullScreen={handleFullScreen}
+          playing={playing}
+          isSubtitlesChecked={isSubtitlesChecked}
+          toggleSubtitlesCheck={toggleSubtitlesCheck}
+          isFavorite={isFavorite}
+          toggleIsFavorite={toggleFavorite}
+          isFullscreen={isFullscreen}
+          subtitle={!!subtitleUrl}
+          handleSkipBackward={handlePreviousVideo}
+          handleSkipForward={handleNextVideo}
+          isNextVideo={isNextVideo}
+          isPreviousVideo={isPreviousVideo}
+          showFavorite={showFavorite}
+        />
+      </StyledControlsContainer>
+
+      {isSubtitlesChecked && currentSubtitle && (
+        <StyledSubtitles $controls={isControlsActive}>{currentSubtitle}</StyledSubtitles>
+      )}
+    </StyledWrapper>
   )
 }
 
-// commented out Quality menu for now as we only playing 720p hls videos
-// const QualityMenu = ({ setQuality, quality }) => {
-//   const [open, setOpen] = useState(false)
-//   const ref = useRef()
-
-//   const selectOptions = (i) => {
-//     setQuality(i)
-//   }
-
-//   useOutsideClick(ref, () => open && setOpen(false))
-
-//   return (
-//     <QualityButtonWrapper ref={ref}>
-//       <ButtonWrapper onClick={() => setOpen(!open)}>
-//         {quality === 2 ? (
-//           <HighQualityIcon fontSize="small" />
-//         ) : (
-//           <HdIcon fontSize="small" />
-//         )}
-//       </ButtonWrapper>
-
-//       {open && (
-//         <StyledQualityMenu>
-//           {['360p', '720p', '1080p'].map((item, index) => (
-//             <StyledQualityMenuItem
-//               key=""
-//               onClick={() => selectOptions(index)}
-//               color={quality === index}
-//             >
-//               {item}
-//             </StyledQualityMenuItem>
-//           ))}
-//         </StyledQualityMenu>
-//       )}
-//     </QualityButtonWrapper>
-//   )
-// }
-
-const HlsVideoSrc = props => {
-  const hlsRef = useRef()
-
-  const { video, url, type, showSubtitles } = props
-
-  useEffect(() => {
-    if (!Hls.isSupported()) return
-
-    hlsRef.current = new Hls()
-    hlsRef.current.loadSource(url)
-    hlsRef.current.attachMedia(video)
-    hlsRef.current.subtitleDisplay = false
-  }, [url])
-
-  useEffect(() => {
-    if (!hlsRef) return
-    hlsRef.current.subtitleDisplay = showSubtitles === 'on'
-  }, [showSubtitles])
-
-  return (
-    <>
-      <source src={url} type={type || 'application/x-mpegURL'} />
-    </>
-  )
-}
-
-export const VideoPlayer = props => {
-  const [subtitles, setSubtitles] = useState('off')
-
-  const ref = useRef()
-
-  useEffect(() => {
-    ref.current.playbackRate = 2
-    ref.current.forceUpdate()
-  }, [])
-
-  return (
-    <Container>
-      <Player ref={ref} width={700} height={400} poster={props.thumbnail} crossOrigin='anonymous'>
-        <BigPlayButton position='center' />
-
-        <HlsVideoSrc isVideoChild video={ref.current} url={props.url} showSubtitles={subtitles} />
-
-        <ControlBar>
-          <PlaybackRateMenuButton rates={[3, 2, 1.6, 1.2, 1, 0.5, 0.1]} order={7} />
-          {props.subtitle && (
-            <SubtitlesButton
-              order={7}
-              setSubtitles={setSubtitles}
-              subtitles={subtitles}
-              list={props.subtitle}
-            />
-          )}
-          {/* quality switcher */}
-          {/* <QualityMenu order={7} setQuality={setQuality} quality={quality} /> */}
-          {props.downloadLink && (
-            <DownloadWrapper order={7}>
-              <a href={props.downloadLink} rel='noreferrer' target='_blank' download>
-                <CloudDownloadIcon fontSize='small' />
-              </a>
-            </DownloadWrapper>
-          )}
-        </ControlBar>
-      </Player>
-    </Container>
-  )
-}
-
-HlsVideoSrc.propTypes = {
-  url: PropTypes.string,
-  type: PropTypes.string,
-  video: PropTypes.object,
-  showSubtitles: PropTypes.string,
-}
-
-VideoPlayer.propTypes = {
-  url: PropTypes.string,
-  thumbnail: PropTypes.string,
-  subtitle: PropTypes.string,
-  downloadLink: PropTypes.string,
-}
-
-SubtitlesButton.propTypes = {
-  setSubtitles: PropTypes.func,
-  subtitles: PropTypes.string,
-}
+// Also export as default for compatibility
+export default VideoPlayer

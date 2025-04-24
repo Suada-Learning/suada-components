@@ -1,0 +1,1 @@
+import{r as e}from"./index-P7RG-sTI.js";const t=e.createContext(null);function m(){return e.useContext(t)}const o=typeof Symbol=="function"&&Symbol.for,r=o?Symbol.for("mui.nested"):"__THEME_NESTED__";export{t as T,r as n,m as u};
