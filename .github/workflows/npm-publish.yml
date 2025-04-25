@@ -39,9 +39,6 @@ jobs:
       #     echo "New version: $NEW_VERSION"
       #     echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
-      - name: Build package
-        run: npm run build
-
       - name: Publish to npm
         run: npm publish
         env:
