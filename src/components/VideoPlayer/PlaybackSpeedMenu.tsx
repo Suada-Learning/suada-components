@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
 
 import { PLAYBACK_SPEED_LIST } from './constants'
 import { PlaybackSpeedMenuProps } from './PlaybackSpeedMenu.interface'
@@ -10,6 +9,7 @@ import {
 } from './PlaybackSpeedMenu.styles'
 import useMenuToggle from './useMenuToggle'
 import { MeterIcon, VideoCheckmarkIcon } from '../../icons'
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
 
 const PlaybackSpeedMenu: FC<PlaybackSpeedMenuProps> = ({
   playbackSpeed,

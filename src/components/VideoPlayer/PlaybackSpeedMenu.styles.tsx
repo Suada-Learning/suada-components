@@ -19,7 +19,7 @@ export const StyledPlaybackMenu = styled.div<StyledPlaybackMenuProps>`
   flex-direction: column;
   gap: 16px;
   border-radius: 8px;
-  background: var(--neutral-colors-light);
+  background: #ffffff;
   box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);
   width: 220px;
   height: 312px;
