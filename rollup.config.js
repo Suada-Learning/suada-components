@@ -11,16 +11,20 @@ const mainConfig = {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.js',
+      dir: 'dist',
       format: 'cjs',
       sourcemap: false,
+      entryFileNames: '[name].js',
+      chunkFileNames: '[name]-[hash].js',
       sourcemapPathTransform: relativeSourcePath => {
         return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
       },
     },
     {
-      file: 'dist/index.esm.js',
+      dir: 'dist',
       format: 'esm',
+      entryFileNames: '[name].esm.js',
+      chunkFileNames: '[name]-[hash].esm.js',
       sourcemap: false,
       sourcemapPathTransform: relativeSourcePath => {
         return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
@@ -54,16 +58,20 @@ const componentsConfig = {
   input: 'src/components/index.ts',
   output: [
     {
-      file: 'dist/components/index.js',
+      dir: 'dist/components',
       format: 'cjs',
+      entryFileNames: 'index.js',
+      chunkFileNames: '[name]-[hash].js',
       sourcemap: false,
       sourcemapPathTransform: relativeSourcePath => {
         return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
       },
     },
     {
-      file: 'dist/components/index.esm.js',
+      dir: 'dist/components',
       format: 'esm',
+      entryFileNames: 'index.esm.js',
+      chunkFileNames: '[name]-[hash].esm.js',
       sourcemap: false,
       sourcemapPathTransform: relativeSourcePath => {
         return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
@@ -97,16 +105,20 @@ const iconsConfig = {
   input: 'src/icons/index.ts',
   output: [
     {
-      file: 'dist/icons/index.js',
+      dir: 'dist/icons',
       format: 'cjs',
+      entryFileNames: 'index.js',
+      chunkFileNames: '[name]-[hash].js',
       sourcemap: false,
       sourcemapPathTransform: relativeSourcePath => {
         return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
       },
     },
     {
-      file: 'dist/icons/index.esm.js',
+      dir: 'dist/icons',
       format: 'esm',
+      entryFileNames: 'index.esm.js',
+      chunkFileNames: '[name]-[hash].esm.js',
       sourcemap: false,
       sourcemapPathTransform: relativeSourcePath => {
         return `suada-components/${relativeSourcePath.replace(/^\.\.\//, '')}`
