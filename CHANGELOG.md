@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/bekatom/suada-components/compare/v1.0.0...v1.1.0) (2025-04-30)
+
+
+### Bug Fixes
+
+* set npmPublish to false ([0559093](https://github.com/bekatom/suada-components/commit/055909344a67a550a1be99a824f9439985492c84))
+
 # 1.0.0 (2025-04-30)
 
 
