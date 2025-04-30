@@ -9,12 +9,16 @@ jobs:
   release:
     name: Semantic Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credentials: false
+          token: ${{ secrets.GH_RELEASE_CHANGELOGS_SUADA_COMPONENTS  }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -31,7 +35,7 @@ jobs:
       - name: Semantic Release
         id: semantic
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_RELEASE_CHANGELOGS_SUADA_COMPONENTS }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 
@@ -43,7 +47,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: main # Ensure we get the latest code with updated package.json
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
