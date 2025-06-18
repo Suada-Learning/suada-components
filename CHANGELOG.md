@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Suada-Learning/suada-components/compare/v1.1.0...v1.2.0) (2025-06-18)
+
+
+### Features
+
+* added custom no options message support for dropdown ([f11ab95](https://github.com/Suada-Learning/suada-components/commit/f11ab95985d24f4e5acc785a65f406b8d467205b))
+
 # [1.1.0](https://github.com/bekatom/suada-components/compare/v1.0.0...v1.1.0) (2025-04-30)
 
 
