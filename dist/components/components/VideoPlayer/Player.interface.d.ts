@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import React, { Dispatch, RefObject, SetStateAction } from 'react';
 import ReactPlayer from 'react-player';
 import { ControlsProps } from './Controls/Controls.interface';
 export interface VideoState {
@@ -59,5 +59,6 @@ export interface UsePlayerControlsState extends Omit<ControlsProps, 'isFavorite'
     isFullscreen: boolean;
     isControlsActive: boolean;
     currentSubtitle: string;
+    setCurrentSubtitle: Dispatch<SetStateAction<string>>;
 }
 export {};
