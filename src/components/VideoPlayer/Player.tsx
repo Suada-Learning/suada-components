@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ReactElement, useEffect, useRef } from 'react'
 import ReactPlayer from 'react-player'
 
 import { PlayerProps } from './Player.interface'
@@ -9,9 +9,11 @@ import {
   StyledVideoPlayerWrapper,
   StyledLoader,
   StyledSubtitles,
+  injectHLSSubtitleStyles,
 } from './Player.styles'
 import Controls from './Controls'
 import usePlayerControls from './usePlayerControls'
+import { useHLSSubtitles } from 'src/components/VideoPlayer/useHlsSubtitles'
 
 export const VideoPlayer = ({
   customStyles,
@@ -32,6 +34,7 @@ export const VideoPlayer = ({
   isFavorite = false,
   toggleFavorite = async (): Promise<void> => {},
 }: PlayerProps): ReactElement => {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
   const {
     mouseMoveHandler,
     playerContainerRef,
@@ -63,6 +66,7 @@ export const VideoPlayer = ({
     isFullscreen,
     isControlsActive,
     currentSubtitle,
+    setCurrentSubtitle,
   } = usePlayerControls({
     startTime,
     setLoading,
@@ -74,8 +78,26 @@ export const VideoPlayer = ({
     shouldPlayerBeFocusedOnSpaceClick,
   })
 
-  // Make sure we have a valid URL to avoid ReactPlayer errors
-  const validUrl = url || ''
+  const { setupHLSSubtitleTracking } = useHLSSubtitles({
+    videoPlayerRef,
+    isSubtitlesChecked,
+    setCurrentSubtitle,
+  })
+
+  useEffect(() => {
+    const cleanup = injectHLSSubtitleStyles()
+    return cleanup
+  }, [])
+
+  const handlePlayerReady = (): void => {
+    onPlayerStart()
+    setupHLSSubtitleTracking()
+
+    const videoElement = videoPlayerRef.current?.getInternalPlayer()
+    if (videoElement && videoElement instanceof HTMLVideoElement) {
+      videoRef.current = videoElement
+    }
+  }
 
   return (
     <StyledWrapper
@@ -84,12 +106,11 @@ export const VideoPlayer = ({
       ref={playerContainerRef}
       style={customStyles}
       onClick={(e): void => e.stopPropagation()}
-      data-testid='video-player-wrapper'
     >
       <StyledVideoPlayerWrapper onClick={playPauseHandler} onDoubleClick={handleFullScreen}>
         <ReactPlayer
-          key={validUrl}
-          url={validUrl}
+          key={url}
+          url={url}
           ref={videoPlayerRef}
           className='react-player'
           width='100%'
@@ -100,7 +121,7 @@ export const VideoPlayer = ({
           onProgress={progressHandler}
           onBuffer={bufferStartHandler}
           onBufferEnd={bufferEndHandler}
-          onReady={onPlayerStart}
+          onReady={handlePlayerReady}
           onPlay={(): void => setIsPlaying(true)}
           onPause={(): void => setIsPlaying(false)}
           onEnded={(): void => {
@@ -110,7 +131,7 @@ export const VideoPlayer = ({
               handleTrackProgress(totalDuration)
             }
 
-            setVideoState(( prev:any) => ({ ...prev, playing: false }))
+            setVideoState(prev => ({ ...prev, playing: false }))
             if (handleNextVideo) handleNextVideo()
           }}
           controls={false}
@@ -121,18 +142,23 @@ export const VideoPlayer = ({
             file: {
               hlsOptions: {
                 autoStartLoad: true,
-                renderTextTracksNatively: false,
+                renderTextTracksNatively: true,
               },
             },
           }}
         />
-      </StyledVideoPlayerWrapper>
 
-      {loading && (
-        <StyledPlayerLoader>
-          <StyledLoader />
-        </StyledPlayerLoader>
-      )}
+        {loading && (
+          <StyledPlayerLoader>
+            <StyledLoader />
+          </StyledPlayerLoader>
+        )}
+
+        {/* Show custom subtitles - either external VTT or extracted HLS subtitles */}
+        {isSubtitlesChecked && currentSubtitle && (
+          <StyledSubtitles $controls={isControlsActive}>{currentSubtitle}</StyledSubtitles>
+        )}
+      </StyledVideoPlayerWrapper>
 
       <StyledControlsContainer ref={controlRef}>
         <Controls
@@ -158,7 +184,9 @@ export const VideoPlayer = ({
           isFavorite={isFavorite}
           toggleIsFavorite={toggleFavorite}
           isFullscreen={isFullscreen}
-          subtitle={!!subtitleUrl}
+          subtitle={
+            !!subtitleUrl || videoPlayerRef.current?.getInternalPlayer()?.textTracks?.length > 0
+          }
           handleSkipBackward={handlePreviousVideo}
           handleSkipForward={handleNextVideo}
           isNextVideo={isNextVideo}
@@ -166,12 +194,8 @@ export const VideoPlayer = ({
           showFavorite={showFavorite}
         />
       </StyledControlsContainer>
-
-      {isSubtitlesChecked && currentSubtitle && (
-        <StyledSubtitles $controls={isControlsActive}>{currentSubtitle}</StyledSubtitles>
-      )}
     </StyledWrapper>
   )
 }
 
-
+export default VideoPlayer
