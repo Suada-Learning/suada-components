@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Suada-Learning/suada-components/compare/v1.2.0...v1.2.1) (2025-06-24)
+
+
+### Bug Fixes
+
+* support hls with subtitles ([88849f2](https://github.com/Suada-Learning/suada-components/commit/88849f2498b066c4b86324b374b32f25dc84dbcb))
+
 # [1.2.0](https://github.com/Suada-Learning/suada-components/compare/v1.1.0...v1.2.0) (2025-06-18)
 
 
