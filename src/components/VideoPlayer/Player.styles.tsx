@@ -126,3 +126,122 @@ export const StyledSubtitles = styled.div<{ $controls: boolean }>`
   max-width: 80%;
   width: fit-content;
 `
+
+export const HLS_SUBTITLE_STYLES = `
+  /* Hide native HLS subtitles completely - comprehensive approach */
+  video::cue {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  video::-webkit-media-text-track-display {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  video::cue-region {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  video::-webkit-media-text-track-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Target ReactPlayer specifically */
+  .react-player video::cue {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .react-player video::-webkit-media-text-track-display {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .react-player video::cue-region {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .react-player video::-webkit-media-text-track-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Additional selectors for different browsers */
+  video::-moz-media-text-track-display {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  video::-ms-media-text-track-display {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide any subtitle overlays */
+  .react-player video + div[style*="position: absolute"] {
+    display: none !important;
+  }
+  
+  /* Target HLS video player specifically */
+  .hls-video-player::cue {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .hls-video-player::-webkit-media-text-track-display {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .hls-video-player::-webkit-media-text-track-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .hls-video-player::cue-region {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+`
+
+export const injectHLSSubtitleStyles = (): (() => void) => {
+  const addSubtitleStyles = (): void => {
+    const existingStyle = document.getElementById('hls-subtitle-styles')
+    if (existingStyle) {
+      existingStyle.remove()
+    }
+
+    const style = document.createElement('style')
+    style.id = 'hls-subtitle-styles'
+    style.textContent = HLS_SUBTITLE_STYLES
+    document.head.appendChild(style)
+  }
+
+  addSubtitleStyles()
+
+  // Return cleanup function
+  return () => {
+    const existingStyle = document.getElementById('hls-subtitle-styles')
+    if (existingStyle) {
+      existingStyle.remove()
+    }
+  }
+}

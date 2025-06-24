@@ -56,13 +56,19 @@ function usePlayerControls({
   const formatCurrentTime = FormatSecondsToTimeString(currentTime)
   const formatDuration = FormatSecondsToTimeString(duration)
 
+  // Using previous method for old videos(we used to parse subtitles via link)
   useEffect(() => {
-    fetch(subtitleUrl)
-      .then(response => response.text())
-      .then(content => {
-        const parsedSubtitles = parseVTT(content)
-        setSubtitles(parsedSubtitles)
-      })
+    if (subtitleUrl) {
+      fetch(subtitleUrl)
+        .then(response => response.text())
+        .then(content => {
+          const parsedSubtitles = parseVTT(content)
+          setSubtitles(parsedSubtitles)
+        })
+        .catch(error => {
+          console.error('Error fetching external subtitles:', error)
+        })
+    }
   }, [subtitleUrl])
 
   useEffect(() => {
@@ -112,49 +118,53 @@ function usePlayerControls({
         count += 1
       }
 
-      let currentSubtitleEntry: SubtitleEntry | undefined
+      // Only process external VTT subtitles if we have them and no HLS subtitles are active
+      const videoElement = videoPlayerRef.current?.getInternalPlayer()
+      const hasHLSSubtitles = videoElement?.textTracks?.length > 0
 
-      if (lastSubtitleIndexRef.current !== null) {
-        if (state.playedSeconds > lastPlaybackTimeRef.current) {
-          // Searching forward
-          for (let i = lastSubtitleIndexRef.current; i < subtitles.length; i++) {
-            const sub = subtitles[i]
-            if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
-              currentSubtitleEntry = sub
-              lastSubtitleIndexRef.current = i
-              break
+      if (subtitles.length > 0 && !hasHLSSubtitles && isSubtitlesChecked) {
+        let currentSubtitleEntry: SubtitleEntry | undefined
+
+        if (lastSubtitleIndexRef.current !== null) {
+          if (state.playedSeconds > lastPlaybackTimeRef.current) {
+            for (let i = lastSubtitleIndexRef.current; i < subtitles.length; i++) {
+              const sub = subtitles[i]
+              if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
+                currentSubtitleEntry = sub
+                lastSubtitleIndexRef.current = i
+                break
+              }
             }
-          }
-        } else {
-          // Searching backward
-          for (let i = lastSubtitleIndexRef.current; i >= 0; i--) {
-            const sub = subtitles[i]
-            if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
-              currentSubtitleEntry = sub
-              lastSubtitleIndexRef.current = i
-              break
+          } else {
+            for (let i = lastSubtitleIndexRef.current; i >= 0; i--) {
+              const sub = subtitles[i]
+              if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
+                currentSubtitleEntry = sub
+                lastSubtitleIndexRef.current = i
+                break
+              }
             }
           }
         }
-      }
 
-      if (!currentSubtitleEntry) {
-        currentSubtitleEntry = subtitles.find(
-          sub => state.playedSeconds >= sub.start && state.playedSeconds <= sub.end,
-        )
+        if (!currentSubtitleEntry) {
+          currentSubtitleEntry = subtitles.find(
+            sub => state.playedSeconds >= sub.start && state.playedSeconds <= sub.end,
+          )
+
+          if (currentSubtitleEntry) {
+            lastSubtitleIndexRef.current = subtitles.indexOf(currentSubtitleEntry)
+          }
+        }
+
+        lastPlaybackTimeRef.current = state.playedSeconds
 
         if (currentSubtitleEntry) {
-          lastSubtitleIndexRef.current = subtitles.indexOf(currentSubtitleEntry)
+          setCurrentSubtitle(currentSubtitleEntry.text)
+        } else {
+          setCurrentSubtitle('') // Clear subtitle if none should be displayed
+          lastSubtitleIndexRef.current = null
         }
-      }
-
-      lastPlaybackTimeRef.current = state.playedSeconds
-
-      if (currentSubtitleEntry) {
-        setCurrentSubtitle(currentSubtitleEntry.text)
-      } else {
-        setCurrentSubtitle('') // Clear subtitle if none should be displayed
-        lastSubtitleIndexRef.current = null
       }
 
       if (!seeking) {
@@ -170,7 +180,7 @@ function usePlayerControls({
         }
       }
     },
-    [seeking, handleTrackProgress, isControlsActive, subtitles],
+    [seeking, handleTrackProgress, isControlsActive, subtitles, isSubtitlesChecked],
   )
 
   const seekHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -181,7 +191,7 @@ function usePlayerControls({
     }
   }
 
-  const seekMouseUpHandler = (e: React.MouseEvent<HTMLInputElement>): void => {
+  const seekMouseUpHandler = (): void => {
     setVideoState(prev => ({ ...prev, seeking: false }))
     if (videoPlayerRef.current) {
       videoPlayerRef.current.seekTo(videoState.played)
@@ -218,7 +228,7 @@ function usePlayerControls({
     }
   }
 
-  const onSeekMouseDownHandler = (e: React.MouseEvent<HTMLInputElement>): void => {
+  const onSeekMouseDownHandler = (): void => {
     setVideoState(prev => ({ ...prev, seeking: true }))
   }
 
@@ -373,6 +383,7 @@ function usePlayerControls({
     isFullscreen,
     isControlsActive,
     currentSubtitle,
+    setCurrentSubtitle,
     playing: isPlaying,
   }
 }

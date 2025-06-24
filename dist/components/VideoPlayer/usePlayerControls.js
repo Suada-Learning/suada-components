@@ -80,13 +80,19 @@ function usePlayerControls(_a) {
     var duration = videoPlayerRef.current ? videoPlayerRef.current.getDuration() : 0;
     var formatCurrentTime = FormatSecondsToTimeString(currentTime);
     var formatDuration = FormatSecondsToTimeString(duration);
+    // Using previous method for old videos(we used to parse subtitles via link)
     useEffect(function () {
-        fetch(subtitleUrl)
-            .then(function (response) { return response.text(); })
-            .then(function (content) {
-            var parsedSubtitles = parseVTT(content);
-            setSubtitles(parsedSubtitles);
-        });
+        if (subtitleUrl) {
+            fetch(subtitleUrl)
+                .then(function (response) { return response.text(); })
+                .then(function (content) {
+                var parsedSubtitles = parseVTT(content);
+                setSubtitles(parsedSubtitles);
+            })
+                .catch(function (error) {
+                console.error('Error fetching external subtitles:', error);
+            });
+        }
     }, [subtitleUrl]);
     useEffect(function () {
         var handleFullscreenChange = function () {
@@ -114,8 +120,9 @@ function usePlayerControls(_a) {
         }
     }, [videoPlayerRef]);
     var progressHandler = useCallback(function (state) { return __awaiter(_this, void 0, void 0, function () {
-        var currentSubtitleEntry, i, sub, i, sub, currentTime_1, now;
-        return __generator(this, function (_a) {
+        var videoElement, hasHLSSubtitles, currentSubtitleEntry, i, sub, i, sub, currentTime_1, now;
+        var _a, _b;
+        return __generator(this, function (_c) {
             if (count > 2) {
                 if (controlRef.current) {
                     controlRef.current.style.visibility = 'hidden';
@@ -127,43 +134,46 @@ function usePlayerControls(_a) {
                 isControlsActive) {
                 count += 1;
             }
-            if (lastSubtitleIndexRef.current !== null) {
-                if (state.playedSeconds > lastPlaybackTimeRef.current) {
-                    // Searching forward
-                    for (i = lastSubtitleIndexRef.current; i < subtitles.length; i++) {
-                        sub = subtitles[i];
-                        if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
-                            currentSubtitleEntry = sub;
-                            lastSubtitleIndexRef.current = i;
-                            break;
+            videoElement = (_a = videoPlayerRef.current) === null || _a === void 0 ? void 0 : _a.getInternalPlayer();
+            hasHLSSubtitles = ((_b = videoElement === null || videoElement === void 0 ? void 0 : videoElement.textTracks) === null || _b === void 0 ? void 0 : _b.length) > 0;
+            if (subtitles.length > 0 && !hasHLSSubtitles && isSubtitlesChecked) {
+                currentSubtitleEntry = void 0;
+                if (lastSubtitleIndexRef.current !== null) {
+                    if (state.playedSeconds > lastPlaybackTimeRef.current) {
+                        for (i = lastSubtitleIndexRef.current; i < subtitles.length; i++) {
+                            sub = subtitles[i];
+                            if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
+                                currentSubtitleEntry = sub;
+                                lastSubtitleIndexRef.current = i;
+                                break;
+                            }
                         }
                     }
+                    else {
+                        for (i = lastSubtitleIndexRef.current; i >= 0; i--) {
+                            sub = subtitles[i];
+                            if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
+                                currentSubtitleEntry = sub;
+                                lastSubtitleIndexRef.current = i;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (!currentSubtitleEntry) {
+                    currentSubtitleEntry = subtitles.find(function (sub) { return state.playedSeconds >= sub.start && state.playedSeconds <= sub.end; });
+                    if (currentSubtitleEntry) {
+                        lastSubtitleIndexRef.current = subtitles.indexOf(currentSubtitleEntry);
+                    }
+                }
+                lastPlaybackTimeRef.current = state.playedSeconds;
+                if (currentSubtitleEntry) {
+                    setCurrentSubtitle(currentSubtitleEntry.text);
                 }
                 else {
-                    // Searching backward
-                    for (i = lastSubtitleIndexRef.current; i >= 0; i--) {
-                        sub = subtitles[i];
-                        if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
-                            currentSubtitleEntry = sub;
-                            lastSubtitleIndexRef.current = i;
-                            break;
-                        }
-                    }
+                    setCurrentSubtitle(''); // Clear subtitle if none should be displayed
+                    lastSubtitleIndexRef.current = null;
                 }
-            }
-            if (!currentSubtitleEntry) {
-                currentSubtitleEntry = subtitles.find(function (sub) { return state.playedSeconds >= sub.start && state.playedSeconds <= sub.end; });
-                if (currentSubtitleEntry) {
-                    lastSubtitleIndexRef.current = subtitles.indexOf(currentSubtitleEntry);
-                }
-            }
-            lastPlaybackTimeRef.current = state.playedSeconds;
-            if (currentSubtitleEntry) {
-                setCurrentSubtitle(currentSubtitleEntry.text);
-            }
-            else {
-                setCurrentSubtitle(''); // Clear subtitle if none should be displayed
-                lastSubtitleIndexRef.current = null;
             }
             if (!seeking) {
                 setVideoState(function (prev) { return (__assign(__assign({}, prev), state)); });
@@ -177,7 +187,7 @@ function usePlayerControls(_a) {
             }
             return [2 /*return*/];
         });
-    }); }, [seeking, handleTrackProgress, isControlsActive, subtitles]);
+    }); }, [seeking, handleTrackProgress, isControlsActive, subtitles, isSubtitlesChecked]);
     var seekHandler = function (e) {
         var v = parseFloat(e.target.value) / 100;
         setVideoState(function (prev) { return (__assign(__assign({}, prev), { played: v })); });
@@ -185,7 +195,7 @@ function usePlayerControls(_a) {
             videoPlayerRef.current.seekTo(v);
         }
     };
-    var seekMouseUpHandler = function (e) {
+    var seekMouseUpHandler = function () {
         setVideoState(function (prev) { return (__assign(__assign({}, prev), { seeking: false })); });
         if (videoPlayerRef.current) {
             videoPlayerRef.current.seekTo(videoState.played);
@@ -204,7 +214,7 @@ function usePlayerControls(_a) {
             setVideoState(function (prev) { return (__assign(__assign({}, prev), { muted: true, prevVolume: volume, volume: 0 })); });
         }
     };
-    var onSeekMouseDownHandler = function (e) {
+    var onSeekMouseDownHandler = function () {
         setVideoState(function (prev) { return (__assign(__assign({}, prev), { seeking: true })); });
     };
     var mouseMoveHandler = function () {
@@ -323,6 +333,7 @@ function usePlayerControls(_a) {
         isFullscreen: isFullscreen,
         isControlsActive: isControlsActive,
         currentSubtitle: currentSubtitle,
+        setCurrentSubtitle: setCurrentSubtitle,
         playing: isPlaying,
     };
 }
