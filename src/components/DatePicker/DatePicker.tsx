@@ -10,6 +10,8 @@ export const DatePicker = ({
   errorMessage,
   value = null,
   onChange = (): void => undefined,
+  minDate,
+  maxDate,
 }: IDatePickerProps): ReactElement => {
   const ref = useRef(null)
 
@@ -45,8 +47,8 @@ export const DatePicker = ({
               />
             ),
           }}
-          minDate={new Date('1900-01-01')} // Customize as needed
-          maxDate={new Date()} // Customize as needed
+          minDate={minDate || new Date('1900-01-01')} // Customize as needed
+          maxDate={maxDate || new Date()} // Customize as needed
         />
       </LocalizationProvider>
       {error && touched && (

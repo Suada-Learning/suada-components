@@ -24,6 +24,7 @@ export const DropDown = (props: ISelectFieldProps): ReactElement => {
         isDisabled={props.isDisabled}
         isLoading={props.isLoading}
         components={{ DropdownIndicator }}
+        noOptionsMessage={props.noOptionsMessage}
       />
 
       {props.touched && props.error && props.errorMessage && (
