@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const PaginationWrapper = styled.div`
+export const PaginationWrapper = styled.div<{ $themeColor?: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +25,11 @@ export const PaginationWrapper = styled.div`
     }
 
     &.Mui-selected {
-      background: #08c694;
+      background: ${({ $themeColor }): string => $themeColor || '#08c694'};
       color: white;
 
       &:hover {
-        background: #08c694;
+        background: ${({ $themeColor }): string => $themeColor || '#08c694'};
         border: none;
       }
     }

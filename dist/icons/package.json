@@ -1,7 +1,0 @@
-{
-  "name": "suada-components/icons",
-  "main": "index.js",
-  "module": "index.esm.js",
-  "types": "index.d.ts",
-  "sideEffects": false
-}

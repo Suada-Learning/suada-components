@@ -9,10 +9,11 @@ export const Pagination = ({
   totalPages,
   handleChange,
   perPage,
+  themeColor,
   handlePerPageChange,
 }: IPaginationV2Props): ReactElement => {
   return (
-    <PaginationWrapper className='pagination-theme-color'>
+    <PaginationWrapper $themeColor={themeColor}>
       {perPage && (
         <Select
           variant='standard'
