@@ -25,11 +25,11 @@ export const PaginationWrapper = styled.div`
     }
 
     &.Mui-selected {
-      background: #08c694;
+      background: ${({ theme }) => theme.colors.primary};
       color: white;
 
       &:hover {
-        background: #08c694;
+        background: ${({ theme }) => theme.colors.primary};
         border: none;
       }
     }
