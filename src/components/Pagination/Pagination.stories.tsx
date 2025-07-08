@@ -22,6 +22,7 @@ const meta: Meta<typeof Pagination> = {
     currentPage: { control: 'number' },
     totalPages: { control: 'number' },
     perPage: { control: 'select', options: [12, 24, 48] },
+    themeColor: { control: 'color' },
     handleChange: { action: 'Page Changed' },
     handlePerPageChange: { action: 'Per Page Changed' },
   },
@@ -29,6 +30,7 @@ const meta: Meta<typeof Pagination> = {
     currentPage: 1,
     totalPages: 10,
     perPage: 12,
+    themeColor: '#08c694',
   },
 }
 
