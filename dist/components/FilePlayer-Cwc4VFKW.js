@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-qTIAETxO.js');
+var index = require('./index-ClXrFANI.js');
 var React = require('react');
 
 function _mergeNamespaces(n, m) {

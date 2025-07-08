@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Streamable_1;
-var hasRequiredStreamable;
+var Vidyard_1;
+var hasRequiredVidyard;
 
-function requireStreamable () {
-	if (hasRequiredStreamable) return Streamable_1;
-	hasRequiredStreamable = 1;
+function requireVidyard () {
+	if (hasRequiredVidyard) return Vidyard_1;
+	hasRequiredVidyard = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,61 +54,67 @@ function requireStreamable () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Streamable_exports = {};
-	__export(Streamable_exports, {
-	  default: () => Streamable
+	var Vidyard_exports = {};
+	__export(Vidyard_exports, {
+	  default: () => Vidyard
 	});
-	Streamable_1 = __toCommonJS(Streamable_exports);
+	Vidyard_1 = __toCommonJS(Vidyard_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
-	const SDK_GLOBAL = "playerjs";
-	class Streamable extends import_react.Component {
+	const SDK_URL = "https://play.vidyard.com/embed/v4.js";
+	const SDK_GLOBAL = "VidyardV4";
+	const SDK_GLOBAL_READY = "onVidyardAPI";
+	class Vidyard extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "duration", null);
-	    __publicField(this, "currentTime", null);
-	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
+	      this.setVolume(0);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
+	      if (this.props.volume !== null) {
+	        this.setVolume(this.props.volume);
+	      }
 	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
-	      if (!this.iframe)
+	    const { playing, config, onError, onDuration } = this.props;
+	    const id = url && url.match(import_patterns.MATCH_URL_VIDYARD)[1];
+	    if (this.player) {
+	      this.stop();
+	    }
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((Vidyard2) => {
+	      if (!this.container)
 	        return;
-	      this.player = new playerjs.Player(this.iframe);
-	      this.player.setLoop(this.props.loop);
-	      this.player.on("ready", this.props.onReady);
-	      this.player.on("play", this.props.onPlay);
-	      this.player.on("pause", this.props.onPause);
-	      this.player.on("seeked", this.props.onSeek);
-	      this.player.on("ended", this.props.onEnded);
-	      this.player.on("error", this.props.onError);
-	      this.player.on("timeupdate", ({ duration, seconds }) => {
-	        this.duration = duration;
-	        this.currentTime = seconds;
-	      });
-	      this.player.on("buffered", ({ percent }) => {
-	        if (this.duration) {
-	          this.secondsLoaded = this.duration * percent;
+	      Vidyard2.api.addReadyListener((data, player) => {
+	        if (this.player) {
+	          return;
 	        }
+	        this.player = player;
+	        this.player.on("ready", this.props.onReady);
+	        this.player.on("play", this.props.onPlay);
+	        this.player.on("pause", this.props.onPause);
+	        this.player.on("seek", this.props.onSeek);
+	        this.player.on("playerComplete", this.props.onEnded);
+	      }, id);
+	      Vidyard2.api.renderPlayer({
+	        uuid: id,
+	        container: this.container,
+	        autoplay: playing ? 1 : 0,
+	        ...config.options
 	      });
-	      if (this.props.muted) {
-	        this.player.mute();
-	      }
-	    }, this.props.onError);
+	      Vidyard2.api.getPlayerMetadata(id).then((meta) => {
+	        this.duration = meta.length_in_seconds;
+	        onDuration(meta.length_in_seconds);
+	      });
+	    }, onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -117,58 +123,50 @@ function requireStreamable () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
+	    window.VidyardV4.api.destroyPlayer(this.player);
 	  }
-	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("setCurrentTime", seconds);
+	  seekTo(amount, keepPlaying = true) {
+	    this.callPlayer("seek", amount);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction * 100);
+	    this.callPlayer("setVolume", fraction);
 	  }
-	  setLoop(loop) {
-	    this.callPlayer("setLoop", loop);
+	  setPlaybackRate(rate) {
+	    this.callPlayer("setPlaybackSpeed", rate);
 	  }
 	  getDuration() {
 	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.currentTime;
+	    return this.callPlayer("currentTime");
 	  }
 	  getSecondsLoaded() {
-	    return this.secondsLoaded;
+	    return null;
 	  }
 	  render() {
-	    const id = this.props.url.match(import_patterns.MATCH_URL_STREAMABLE)[1];
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      display
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
-	      {
-	        ref: this.ref,
-	        src: `https://streamable.com/o/${id}`,
-	        frameBorder: "0",
-	        scrolling: "no",
-	        style,
-	        allow: "encrypted-media; autoplay; fullscreen;"
-	      }
-	    );
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(Streamable, "displayName", "Streamable");
-	__publicField(Streamable, "canPlay", import_patterns.canPlay.streamable);
-	return Streamable_1;
+	__publicField(Vidyard, "displayName", "Vidyard");
+	__publicField(Vidyard, "canPlay", import_patterns.canPlay.vidyard);
+	return Vidyard_1;
 }
 
-var StreamableExports = /*@__PURE__*/ requireStreamable();
-var Streamable = /*@__PURE__*/getDefaultExportFromCjs(StreamableExports);
+var VidyardExports = /*@__PURE__*/ requireVidyard();
+var Vidyard = /*@__PURE__*/getDefaultExportFromCjs(VidyardExports);
 
-var Streamable$1 = /*#__PURE__*/_mergeNamespaces({
+var Vidyard$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Streamable
-}, [StreamableExports]);
+  default: Vidyard
+}, [VidyardExports]);
 
-export { Streamable$1 as S };
+export { Vidyard$1 as V };

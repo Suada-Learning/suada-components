@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-qTIAETxO.js');
-var React = require('react');
+import { g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,7 +59,7 @@ function requirePreview () {
 	  default: () => Preview
 	});
 	Preview_1 = __toCommonJS(Preview_exports);
-	var import_react = __toESM(React);
+	var import_react = __toESM(React__default);
 	const ICON_SIZE = "64px";
 	const cache = {};
 	class Preview extends import_react.Component {
@@ -165,11 +163,11 @@ function requirePreview () {
 }
 
 var PreviewExports = /*@__PURE__*/ requirePreview();
-var Preview = /*@__PURE__*/index.getDefaultExportFromCjs(PreviewExports);
+var Preview = /*@__PURE__*/getDefaultExportFromCjs(PreviewExports);
 
 var Preview$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: Preview
 }, [PreviewExports]);
 
-exports.Preview = Preview$1;
+export { Preview$1 as P };

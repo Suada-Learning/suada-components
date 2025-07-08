@@ -1,27 +1,7 @@
-'use strict';
-
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-function _interopNamespaceDefault(e) {
-	var n = Object.create(null);
-	if (e) {
-		Object.keys(e).forEach(function (k) {
-			if (k !== 'default') {
-				var d = Object.getOwnPropertyDescriptor(e, k);
-				Object.defineProperty(n, k, d.get ? d : {
-					enumerable: true,
-					get: function () { return e[k]; }
-				});
-			}
-		});
-	}
-	n.default = e;
-	return Object.freeze(n);
-}
-
-var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React);
-var ReactDOM__namespace = /*#__PURE__*/_interopNamespaceDefault(ReactDOM);
+import * as React from 'react';
+import React__default, { useDebugValue, createElement, useRef, useContext, forwardRef, isValidElement, cloneElement, Children, useState, useEffect, createContext, useCallback, useLayoutEffect, useMemo, Fragment, Component } from 'react';
+import * as ReactDOM from 'react-dom';
+import ReactDOM__default, { createPortal } from 'react-dom';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -73,7 +53,7 @@ var hasRequiredReactJsxRuntime_production_min;
 function requireReactJsxRuntime_production_min () {
 	if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
 	hasRequiredReactJsxRuntime_production_min = 1;
-var f=React,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:true,ref:true,__self:true,__source:true};
+var f=React__default,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:true,ref:true,__self:true,__source:true};
 	function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a) void 0===d[b]&&(d[b]=a[b]);return {$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}reactJsxRuntime_production_min.Fragment=l;reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
 	return reactJsxRuntime_production_min;
 }
@@ -99,7 +79,7 @@ function requireReactJsxRuntime_development () {
 	if (process.env.NODE_ENV !== "production") {
 	  (function() {
 
-	var React$1 = React;
+	var React = React__default;
 
 	// ATTENTION
 	// When adding new symbols to this file,
@@ -134,7 +114,7 @@ function requireReactJsxRuntime_development () {
 	  return null;
 	}
 
-	var ReactSharedInternals = React$1.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+	var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
 	function error(format) {
 	  {
@@ -2390,9 +2370,12 @@ var unitlessKeys$1 = {
   strokeWidth: 1
 };
 
-var f="undefined"!=typeof process&&void 0!==process.env&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",m="active",y="data-styled-version",v="6.1.17",g="/*!sc*/\n",S="undefined"!=typeof window&&"HTMLElement"in window,w$1=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!==process.env.NODE_ENV),E=/invalid hook call/i,N=new Set,P=function(t,n){if("production"!==process.env.NODE_ENV){var o=n?' with the id of "'.concat(n,'"'):"",s="The component ".concat(t).concat(o," has been created dynamically.\n")+"You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n",i=console.error;try{var a=!0;console.error=function(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];E.test(t)?(a=!1,N.delete(s)):i.apply(void 0,__spreadArray([t],n,!1));},React.useRef(),a&&!N.has(s)&&(console.warn(s),N.add(s));}catch(e){E.test(e.message)&&N.delete(s);}finally{console.error=i;}}},_$2=Object.freeze([]),C=Object.freeze({});function I(e,t,n){return void 0===n&&(n=C),e.theme!==n.theme&&e.theme||t||n.theme}var A=new Set(["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","track","u","ul","use","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"]),O=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,D=/(^-|-$)/g;function R(e){return e.replace(O,"-").replace(D,"")}var T=/(a)(d)/gi,k=52,j$1=function(e){return String.fromCharCode(e+(e>25?39:97))};function x(e){var t,n="";for(t=Math.abs(e);t>k;t=t/k|0)n=j$1(t%k)+n;return (j$1(t%k)+n).replace(T,"$1-$2")}var V,F=5381,M=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},z=function(e){return M(F,e)};function $(e){return x(z(e)>>>0)}function B(e){return "production"!==process.env.NODE_ENV&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function L(e){return "string"==typeof e&&("production"===process.env.NODE_ENV||e.charAt(0)===e.charAt(0).toLowerCase())}var G="function"==typeof Symbol&&Symbol.for,Y=G?Symbol.for("react.memo"):60115,q=G?Symbol.for("react.forward_ref"):60112,W={childContextTypes:true,contextType:true,contextTypes:true,defaultProps:true,displayName:true,getDefaultProps:true,getDerivedStateFromError:true,getDerivedStateFromProps:true,mixins:true,propTypes:true,type:true},H={name:true,length:true,prototype:true,caller:true,callee:true,arguments:true,arity:true},U={$$typeof:true,compare:true,defaultProps:true,displayName:true,propTypes:true,type:true},J=((V={})[q]={$$typeof:true,render:true,defaultProps:true,displayName:true,propTypes:true},V[Y]=U,V);function X(e){return ("type"in(t=e)&&t.type.$$typeof)===Y?U:"$$typeof"in e?J[e.$$typeof]:W;var t;}var Z=Object.defineProperty,K=Object.getOwnPropertyNames,Q=Object.getOwnPropertySymbols,ee=Object.getOwnPropertyDescriptor,te=Object.getPrototypeOf,ne=Object.prototype;function oe(e,t,n){if("string"!=typeof t){if(ne){var o=te(t);o&&o!==ne&&oe(e,o,n);}var r=K(t);Q&&(r=r.concat(Q(t)));for(var s=X(e),i=X(t),a=0;a<r.length;++a){var c=r[a];if(!(c in H||n&&n[c]||i&&c in i||s&&c in s)){var l=ee(t,c);try{Z(e,c,l);}catch(e){}}}}return e}function re(e){return "function"==typeof e}function se(e){return "object"==typeof e&&"styledComponentId"in e}function ie(e,t){return e&&t?"".concat(e," ").concat(t):e||t||""}function ae(e,t){if(0===e.length)return "";for(var n=e[0],o=1;o<e.length;o++)n+=e[o];return n}function ce(e){return null!==e&&"object"==typeof e&&e.constructor.name===Object.name&&!("props"in e&&e.$$typeof)}function le(e,t,n){if(void 0===n&&(n=false),!n&&!ce(e)&&!Array.isArray(e))return t;if(Array.isArray(t))for(var o=0;o<t.length;o++)e[o]=le(e[o],t[o]);else if(ce(t))for(var o in t)e[o]=le(e[o],t[o]);return e}function ue(e,t){Object.defineProperty(e,"toString",{value:t});}var pe="production"!==process.env.NODE_ENV?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",18:"ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"}:{};function de(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];for(var n=e[0],o=[],r=1,s=e.length;r<s;r+=1)o.push(e[r]);return o.forEach(function(e){n=n.replace(/%[a-z]/,e);}),n}function he(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];return "production"===process.env.NODE_ENV?new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/main/packages/styled-components/src/utils/errors.md#".concat(t," for more information.").concat(n.length>0?" Args: ".concat(n.join(", ")):"")):new Error(de.apply(void 0,__spreadArray([pe[t]],n,false)).trim())}var fe=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}return e.prototype.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},e.prototype.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,o=n.length,r=o;e>=r;)if((r<<=1)<0)throw he(16,"".concat(e));this.groupSizes=new Uint32Array(r),this.groupSizes.set(n),this.length=r;for(var s=o;s<r;s++)this.groupSizes[s]=0;}for(var i=this.indexOfGroup(e+1),a=(s=0,t.length);s<a;s++)this.tag.insertRule(i,t[s])&&(this.groupSizes[e]++,i++);},e.prototype.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),o=n+t;this.groupSizes[e]=0;for(var r=n;r<o;r++)this.tag.deleteRule(n);}},e.prototype.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],o=this.indexOfGroup(e),r=o+n,s=o;s<r;s++)t+="".concat(this.tag.getRule(s)).concat(g);return t},e}(),me=1<<30,ye=new Map,ve=new Map,ge=1,Se=function(e){if(ye.has(e))return ye.get(e);for(;ve.has(ge);)ge++;var t=ge++;if("production"!==process.env.NODE_ENV&&((0|t)<0||t>me))throw he(16,"".concat(t));return ye.set(e,t),ve.set(t,e),t},we=function(e,t){ge=t+1,ye.set(e,t),ve.set(t,e);},be="style[".concat(f,"][").concat(y,'="').concat(v,'"]'),Ee=new RegExp("^".concat(f,'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')),Ne=function(e,t,n){for(var o,r=n.split(","),s=0,i=r.length;s<i;s++)(o=r[s])&&e.registerName(t,o);},Pe=function(e,t){for(var n,o=(null!==(n=t.textContent)&&void 0!==n?n:"").split(g),r=[],s=0,i=o.length;s<i;s++){var a=o[s].trim();if(a){var c=a.match(Ee);if(c){var l=0|parseInt(c[1],10),u=c[2];0!==l&&(we(u,l),Ne(e,u,c[3]),e.getTag().insertRules(l,r)),r.length=0;}else r.push(a);}}},_e=function(e){for(var t=document.querySelectorAll(be),n=0,o=t.length;n<o;n++){var r=t[n];r&&r.getAttribute(f)!==m&&(Pe(e,r),r.parentNode&&r.parentNode.removeChild(r));}};function Ce(){return "undefined"!=typeof __webpack_nonce__?__webpack_nonce__:null}var Ie=function(e){var t=document.head,n=e||t,o=document.createElement("style"),r=function(e){var t=Array.from(e.querySelectorAll("style[".concat(f,"]")));return t[t.length-1]}(n),s=void 0!==r?r.nextSibling:null;o.setAttribute(f,m),o.setAttribute(y,v);var i=Ce();return i&&o.setAttribute("nonce",i),n.insertBefore(o,s),o},Ae=function(){function e(e){this.element=Ie(e),this.element.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,o=t.length;n<o;n++){var r=t[n];if(r.ownerNode===e)return r}throw he(17)}(this.element),this.length=0;}return e.prototype.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return  false}},e.prototype.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},e.prototype.getRule=function(e){var t=this.sheet.cssRules[e];return t&&t.cssText?t.cssText:""},e}(),Oe=function(){function e(e){this.element=Ie(e),this.nodes=this.element.childNodes,this.length=0;}return e.prototype.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t);return this.element.insertBefore(n,this.nodes[e]||null),this.length++,true}return  false},e.prototype.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),De=function(){function e(e){this.rules=[],this.length=0;}return e.prototype.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,true)},e.prototype.deleteRule=function(e){this.rules.splice(e,1),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),Re=S,Te={isServer:!S,useCSSOMInjection:!w$1},ke=function(){function e(e,n,o){ void 0===e&&(e=C),void 0===n&&(n={});var r=this;this.options=__assign(__assign({},Te),e),this.gs=n,this.names=new Map(o),this.server=!!e.isServer,!this.server&&S&&Re&&(Re=false,_e(this)),ue(this,function(){return function(e){for(var t=e.getTag(),n=t.length,o="",r=function(n){var r=function(e){return ve.get(e)}(n);if(void 0===r)return "continue";var s=e.names.get(r),i=t.getGroup(n);if(void 0===s||!s.size||0===i.length)return "continue";var a="".concat(f,".g").concat(n,'[id="').concat(r,'"]'),c="";void 0!==s&&s.forEach(function(e){e.length>0&&(c+="".concat(e,","));}),o+="".concat(i).concat(a,'{content:"').concat(c,'"}').concat(g);},s=0;s<n;s++)r(s);return o}(r)});}return e.registerId=function(e){return Se(e)},e.prototype.rehydrate=function(){!this.server&&S&&_e(this);},e.prototype.reconstructWithOptions=function(n,o){return void 0===o&&(o=true),new e(__assign(__assign({},this.options),n),this.gs,o&&this.names||void 0)},e.prototype.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},e.prototype.getTag=function(){return this.tag||(this.tag=(e=function(e){var t=e.useCSSOMInjection,n=e.target;return e.isServer?new De(n):t?new Ae(n):new Oe(n)}(this.options),new fe(e)));var e;},e.prototype.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},e.prototype.registerName=function(e,t){if(Se(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},e.prototype.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(Se(e),n);},e.prototype.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},e.prototype.clearRules=function(e){this.getTag().clearGroup(Se(e)),this.clearNames(e);},e.prototype.clearTag=function(){this.tag=void 0;},e}(),je=/&/g,xe=/^\s*\/\/.*$/gm;function Ve(e,t){return e.map(function(e){return "rule"===e.type&&(e.value="".concat(t," ").concat(e.value),e.value=e.value.replaceAll(",",",".concat(t," ")),e.props=e.props.map(function(e){return "".concat(t," ").concat(e)})),Array.isArray(e.children)&&"@keyframes"!==e.type&&(e.children=Ve(e.children,t)),e})}function Fe(e){var t,n,o,r=C,s=r.options,i=void 0===s?C:s,a=r.plugins,c=void 0===a?_$2:a,l=function(e,o,r){return r.startsWith(n)&&r.endsWith(n)&&r.replaceAll(n,"").length>0?".".concat(t):e},u=c.slice();u.push(function(e){e.type===RULESET$1&&e.value.includes("&")&&(e.props[0]=e.props[0].replace(je,n).replace(o,l));}),i.prefix&&u.push(prefixer$1),u.push(stringify$1);var p=function(e,r,s,a){ void 0===r&&(r=""),void 0===s&&(s=""),void 0===a&&(a="&"),t=a,n=r,o=new RegExp("\\".concat(n,"\\b"),"g");var c=e.replace(xe,""),l=compile$1(s||r?"".concat(s," ").concat(r," { ").concat(c," }"):c);i.namespace&&(l=Ve(l,i.namespace));var p=[];return serialize$1(l,middleware$1(u.concat(rulesheet$1(function(e){return p.push(e)})))),p};return p.hash=c.length?c.reduce(function(e,t){return t.name||he(15),M(e,t.name)},F).toString():"",p}var Me=new ke,ze=Fe(),$e=React.createContext({shouldForwardProp:void 0,styleSheet:Me,stylis:ze});$e.Consumer;React.createContext(void 0);function Ge(){return React.useContext($e)}var qe=function(){function e(e,t){var n=this;this.inject=function(e,t){ void 0===t&&(t=ze);var o=n.name+t.hash;e.hasNameForId(n.id,o)||e.insertRules(n.id,o,t(n.rules,o,"@keyframes"));},this.name=e,this.id="sc-keyframes-".concat(e),this.rules=t,ue(this,function(){throw he(12,String(n.name))});}return e.prototype.getName=function(e){return void 0===e&&(e=ze),this.name+e.hash},e}(),We=function(e){return e>="A"&&e<="Z"};function He(e){for(var t="",n=0;n<e.length;n++){var o=e[n];if(1===n&&"-"===o&&"-"===e[0])return e;We(o)?t+="-"+o.toLowerCase():t+=o;}return t.startsWith("ms-")?"-"+t:t}var Ue=function(e){return null==e||false===e||""===e},Je=function(t){var n,o,r=[];for(var s in t){var i=t[s];t.hasOwnProperty(s)&&!Ue(i)&&(Array.isArray(i)&&i.isCss||re(i)?r.push("".concat(He(s),":"),i,";"):ce(i)?r.push.apply(r,__spreadArray(__spreadArray(["".concat(s," {")],Je(i),false),["}"],false)):r.push("".concat(He(s),": ").concat((n=s,null==(o=i)||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||n in unitlessKeys$1||n.startsWith("--")?String(o).trim():"".concat(o,"px")),";")));}return r};function Xe(e,t,n,o){if(Ue(e))return [];if(se(e))return [".".concat(e.styledComponentId)];if(re(e)){if(!re(s=e)||s.prototype&&s.prototype.isReactComponent||!t)return [e];var r=e(t);return "production"===process.env.NODE_ENV||"object"!=typeof r||Array.isArray(r)||r instanceof qe||ce(r)||null===r||console.error("".concat(B(e)," is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")),Xe(r,t,n,o)}var s;return e instanceof qe?n?(e.inject(n,o),[e.getName(o)]):[e]:ce(e)?Je(e):Array.isArray(e)?Array.prototype.concat.apply(_$2,e.map(function(e){return Xe(e,t,n,o)})):[e.toString()]}function Ze(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(re(n)&&!se(n))return  false}return  true}var Ke=z(v),Qe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"===process.env.NODE_ENV&&(void 0===n||n.isStatic)&&Ze(e),this.componentId=t,this.baseHash=M(Ke,t),this.baseStyle=n,ke.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var o=this.baseStyle?this.baseStyle.generateAndInjectStyles(e,t,n):"";if(this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(this.componentId,this.staticRulesId))o=ie(o,this.staticRulesId);else {var r=ae(Xe(this.rules,e,t,n)),s=x(M(this.baseHash,r)>>>0);if(!t.hasNameForId(this.componentId,s)){var i=n(r,".".concat(s),void 0,this.componentId);t.insertRules(this.componentId,s,i);}o=ie(o,s),this.staticRulesId=s;}else {for(var a=M(this.baseHash,n.hash),c="",l=0;l<this.rules.length;l++){var u=this.rules[l];if("string"==typeof u)c+=u,"production"!==process.env.NODE_ENV&&(a=M(a,u));else if(u){var p=ae(Xe(u,e,t,n));a=M(a,p+l),c+=p;}}if(c){var d=x(a>>>0);t.hasNameForId(this.componentId,d)||t.insertRules(this.componentId,d,n(c,".".concat(d),void 0,this.componentId)),o=ie(o,d);}}return o},e}(),et=React.createContext(void 0);et.Consumer;var rt={},st=new Set;function it(e,r,s){var i=se(e),a=e,c=!L(e),p=r.attrs,d=void 0===p?_$2:p,h=r.componentId,f=void 0===h?function(e,t){var n="string"!=typeof e?"sc":R(e);rt[n]=(rt[n]||0)+1;var o="".concat(n,"-").concat($(v+n+rt[n]));return t?"".concat(t,"-").concat(o):o}(r.displayName,r.parentComponentId):h,m=r.displayName,y=void 0===m?function(e){return L(e)?"styled.".concat(e):"Styled(".concat(B(e),")")}(e):m,g=r.displayName&&r.componentId?"".concat(R(r.displayName),"-").concat(r.componentId):r.componentId||f,S=i&&a.attrs?a.attrs.concat(d).filter(Boolean):d,w=r.shouldForwardProp;if(i&&a.shouldForwardProp){var b=a.shouldForwardProp;if(r.shouldForwardProp){var E=r.shouldForwardProp;w=function(e,t){return b(e,t)&&E(e,t)};}else w=b;}var N=new Qe(s,g,i?a.componentStyle:void 0);function O(e,r){return function(e,r,s){var i=e.attrs,a=e.componentStyle,c=e.defaultProps,p=e.foldedComponentIds,d=e.styledComponentId,h=e.target,f=React.useContext(et),m=Ge(),y=e.shouldForwardProp||m.shouldForwardProp;"production"!==process.env.NODE_ENV&&React.useDebugValue(d);var v=I(r,f,c)||C,g=function(e,n,o){for(var r,s=__assign(__assign({},n),{className:void 0,theme:o}),i=0;i<e.length;i+=1){var a=re(r=e[i])?r(s):r;for(var c in a)s[c]="className"===c?ie(s[c],a[c]):"style"===c?__assign(__assign({},s[c]),a[c]):a[c];}return n.className&&(s.className=ie(s.className,n.className)),s}(i,r,v),S=g.as||h,w={};for(var b in g) void 0===g[b]||"$"===b[0]||"as"===b||"theme"===b&&g.theme===v||("forwardedAs"===b?w.as=g.forwardedAs:y&&!y(b,S)||(w[b]=g[b],y||"development"!==process.env.NODE_ENV||isPropValid$1(b)||st.has(b)||!A.has(S)||(st.add(b),console.warn('styled-components: it looks like an unknown prop "'.concat(b,'" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));var E=function(e,t){var n=Ge(),o=e.generateAndInjectStyles(t,n.styleSheet,n.stylis);return "production"!==process.env.NODE_ENV&&React.useDebugValue(o),o}(a,g);"production"!==process.env.NODE_ENV&&e.warnTooManyClasses&&e.warnTooManyClasses(E);var N=ie(p,d);return E&&(N+=" "+E),g.className&&(N+=" "+g.className),w[L(S)&&!A.has(S)?"class":"className"]=N,s&&(w.ref=s),React.createElement(S,w)}(D,e,r)}O.displayName=y;var D=React.forwardRef(O);return D.attrs=S,D.componentStyle=N,D.displayName=y,D.shouldForwardProp=w,D.foldedComponentIds=i?ie(a.foldedComponentIds,a.styledComponentId):"",D.styledComponentId=g,D.target=i?a.target:e,Object.defineProperty(D,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(e){this._foldedDefaultProps=i?function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var o=0,r=t;o<r.length;o++)le(e,r[o],true);return e}({},a.defaultProps,e):e;}}),"production"!==process.env.NODE_ENV&&(P(y,g),D.warnTooManyClasses=function(e,t){var n={},o=false;return function(r){if(!o&&(n[r]=true,Object.keys(n).length>=200)){var s=t?' with the id of "'.concat(t,'"'):"";console.warn("Over ".concat(200," classes were generated for component ").concat(e).concat(s,".\n")+"Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),o=true,n={};}}}(y,g)),ue(D,function(){return ".".concat(D.styledComponentId)}),c&&oe(D,e,{attrs:true,componentStyle:true,displayName:true,foldedComponentIds:true,shouldForwardProp:true,styledComponentId:true,target:true}),D}function at$1(e,t){for(var n=[e[0]],o=0,r=t.length;o<r;o+=1)n.push(t[o],e[o+1]);return n}var ct=function(e){return Object.assign(e,{isCss:true})};function lt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];if(re(t)||ce(t))return ct(Xe(at$1(_$2,__spreadArray([t],n,true))));var r=t;return 0===n.length&&1===r.length&&"string"==typeof r[0]?Xe(r):ct(Xe(at$1(r,n)))}function ut(n,o,r){if(void 0===r&&(r=C),!o)throw he(1,o);var s=function(t){for(var s=[],i=1;i<arguments.length;i++)s[i-1]=arguments[i];return n(o,r,lt.apply(void 0,__spreadArray([t],s,false)))};return s.attrs=function(e){return ut(n,o,__assign(__assign({},r),{attrs:Array.prototype.concat(r.attrs,e).filter(Boolean)}))},s.withConfig=function(e){return ut(n,o,__assign(__assign({},r),e))},s}var pt=function(e){return ut(it,e)},dt=pt;A.forEach(function(e){dt[e]=pt(e);});function mt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");var r=ae(lt.apply(void 0,__spreadArray([t],n,false))),s=$(r);return new qe(s,r)}"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");var wt="__sc-".concat(f,"__");"production"!==process.env.NODE_ENV&&"test"!==process.env.NODE_ENV&&"undefined"!=typeof window&&(window[wt]||(window[wt]=0),1===window[wt]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window[wt]+=1);
+var f="undefined"!=typeof process&&void 0!==process.env&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",m="active",y="data-styled-version",v="6.1.17",g="/*!sc*/\n",S="undefined"!=typeof window&&"HTMLElement"in window,w$1=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!==process.env.NODE_ENV),E=/invalid hook call/i,N=new Set,P=function(t,n){if("production"!==process.env.NODE_ENV){var o=n?' with the id of "'.concat(n,'"'):"",s="The component ".concat(t).concat(o," has been created dynamically.\n")+"You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n",i=console.error;try{var a=!0;console.error=function(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];E.test(t)?(a=!1,N.delete(s)):i.apply(void 0,__spreadArray([t],n,!1));},useRef(),a&&!N.has(s)&&(console.warn(s),N.add(s));}catch(e){E.test(e.message)&&N.delete(s);}finally{console.error=i;}}},_$2=Object.freeze([]),C=Object.freeze({});function I(e,t,n){return void 0===n&&(n=C),e.theme!==n.theme&&e.theme||t||n.theme}var A=new Set(["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","track","u","ul","use","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"]),O=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,D=/(^-|-$)/g;function R(e){return e.replace(O,"-").replace(D,"")}var T=/(a)(d)/gi,k=52,j$1=function(e){return String.fromCharCode(e+(e>25?39:97))};function x(e){var t,n="";for(t=Math.abs(e);t>k;t=t/k|0)n=j$1(t%k)+n;return (j$1(t%k)+n).replace(T,"$1-$2")}var V,F=5381,M=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},z=function(e){return M(F,e)};function $(e){return x(z(e)>>>0)}function B(e){return "production"!==process.env.NODE_ENV&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function L(e){return "string"==typeof e&&("production"===process.env.NODE_ENV||e.charAt(0)===e.charAt(0).toLowerCase())}var G="function"==typeof Symbol&&Symbol.for,Y=G?Symbol.for("react.memo"):60115,q=G?Symbol.for("react.forward_ref"):60112,W={childContextTypes:true,contextType:true,contextTypes:true,defaultProps:true,displayName:true,getDefaultProps:true,getDerivedStateFromError:true,getDerivedStateFromProps:true,mixins:true,propTypes:true,type:true},H={name:true,length:true,prototype:true,caller:true,callee:true,arguments:true,arity:true},U={$$typeof:true,compare:true,defaultProps:true,displayName:true,propTypes:true,type:true},J=((V={})[q]={$$typeof:true,render:true,defaultProps:true,displayName:true,propTypes:true},V[Y]=U,V);function X(e){return ("type"in(t=e)&&t.type.$$typeof)===Y?U:"$$typeof"in e?J[e.$$typeof]:W;var t;}var Z=Object.defineProperty,K=Object.getOwnPropertyNames,Q=Object.getOwnPropertySymbols,ee=Object.getOwnPropertyDescriptor,te=Object.getPrototypeOf,ne=Object.prototype;function oe(e,t,n){if("string"!=typeof t){if(ne){var o=te(t);o&&o!==ne&&oe(e,o,n);}var r=K(t);Q&&(r=r.concat(Q(t)));for(var s=X(e),i=X(t),a=0;a<r.length;++a){var c=r[a];if(!(c in H||n&&n[c]||i&&c in i||s&&c in s)){var l=ee(t,c);try{Z(e,c,l);}catch(e){}}}}return e}function re(e){return "function"==typeof e}function se(e){return "object"==typeof e&&"styledComponentId"in e}function ie(e,t){return e&&t?"".concat(e," ").concat(t):e||t||""}function ae(e,t){if(0===e.length)return "";for(var n=e[0],o=1;o<e.length;o++)n+=e[o];return n}function ce(e){return null!==e&&"object"==typeof e&&e.constructor.name===Object.name&&!("props"in e&&e.$$typeof)}function le(e,t,n){if(void 0===n&&(n=false),!n&&!ce(e)&&!Array.isArray(e))return t;if(Array.isArray(t))for(var o=0;o<t.length;o++)e[o]=le(e[o],t[o]);else if(ce(t))for(var o in t)e[o]=le(e[o],t[o]);return e}function ue(e,t){Object.defineProperty(e,"toString",{value:t});}var pe="production"!==process.env.NODE_ENV?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",18:"ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"}:{};function de(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];for(var n=e[0],o=[],r=1,s=e.length;r<s;r+=1)o.push(e[r]);return o.forEach(function(e){n=n.replace(/%[a-z]/,e);}),n}function he(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];return "production"===process.env.NODE_ENV?new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/main/packages/styled-components/src/utils/errors.md#".concat(t," for more information.").concat(n.length>0?" Args: ".concat(n.join(", ")):"")):new Error(de.apply(void 0,__spreadArray([pe[t]],n,false)).trim())}var fe=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}return e.prototype.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},e.prototype.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,o=n.length,r=o;e>=r;)if((r<<=1)<0)throw he(16,"".concat(e));this.groupSizes=new Uint32Array(r),this.groupSizes.set(n),this.length=r;for(var s=o;s<r;s++)this.groupSizes[s]=0;}for(var i=this.indexOfGroup(e+1),a=(s=0,t.length);s<a;s++)this.tag.insertRule(i,t[s])&&(this.groupSizes[e]++,i++);},e.prototype.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),o=n+t;this.groupSizes[e]=0;for(var r=n;r<o;r++)this.tag.deleteRule(n);}},e.prototype.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],o=this.indexOfGroup(e),r=o+n,s=o;s<r;s++)t+="".concat(this.tag.getRule(s)).concat(g);return t},e}(),me=1<<30,ye=new Map,ve=new Map,ge=1,Se=function(e){if(ye.has(e))return ye.get(e);for(;ve.has(ge);)ge++;var t=ge++;if("production"!==process.env.NODE_ENV&&((0|t)<0||t>me))throw he(16,"".concat(t));return ye.set(e,t),ve.set(t,e),t},we=function(e,t){ge=t+1,ye.set(e,t),ve.set(t,e);},be="style[".concat(f,"][").concat(y,'="').concat(v,'"]'),Ee=new RegExp("^".concat(f,'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')),Ne=function(e,t,n){for(var o,r=n.split(","),s=0,i=r.length;s<i;s++)(o=r[s])&&e.registerName(t,o);},Pe=function(e,t){for(var n,o=(null!==(n=t.textContent)&&void 0!==n?n:"").split(g),r=[],s=0,i=o.length;s<i;s++){var a=o[s].trim();if(a){var c=a.match(Ee);if(c){var l=0|parseInt(c[1],10),u=c[2];0!==l&&(we(u,l),Ne(e,u,c[3]),e.getTag().insertRules(l,r)),r.length=0;}else r.push(a);}}},_e=function(e){for(var t=document.querySelectorAll(be),n=0,o=t.length;n<o;n++){var r=t[n];r&&r.getAttribute(f)!==m&&(Pe(e,r),r.parentNode&&r.parentNode.removeChild(r));}};function Ce(){return "undefined"!=typeof __webpack_nonce__?__webpack_nonce__:null}var Ie=function(e){var t=document.head,n=e||t,o=document.createElement("style"),r=function(e){var t=Array.from(e.querySelectorAll("style[".concat(f,"]")));return t[t.length-1]}(n),s=void 0!==r?r.nextSibling:null;o.setAttribute(f,m),o.setAttribute(y,v);var i=Ce();return i&&o.setAttribute("nonce",i),n.insertBefore(o,s),o},Ae=function(){function e(e){this.element=Ie(e),this.element.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,o=t.length;n<o;n++){var r=t[n];if(r.ownerNode===e)return r}throw he(17)}(this.element),this.length=0;}return e.prototype.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return  false}},e.prototype.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},e.prototype.getRule=function(e){var t=this.sheet.cssRules[e];return t&&t.cssText?t.cssText:""},e}(),Oe=function(){function e(e){this.element=Ie(e),this.nodes=this.element.childNodes,this.length=0;}return e.prototype.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t);return this.element.insertBefore(n,this.nodes[e]||null),this.length++,true}return  false},e.prototype.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),De=function(){function e(e){this.rules=[],this.length=0;}return e.prototype.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,true)},e.prototype.deleteRule=function(e){this.rules.splice(e,1),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),Re=S,Te={isServer:!S,useCSSOMInjection:!w$1},ke=function(){function e(e,n,o){ void 0===e&&(e=C),void 0===n&&(n={});var r=this;this.options=__assign(__assign({},Te),e),this.gs=n,this.names=new Map(o),this.server=!!e.isServer,!this.server&&S&&Re&&(Re=false,_e(this)),ue(this,function(){return function(e){for(var t=e.getTag(),n=t.length,o="",r=function(n){var r=function(e){return ve.get(e)}(n);if(void 0===r)return "continue";var s=e.names.get(r),i=t.getGroup(n);if(void 0===s||!s.size||0===i.length)return "continue";var a="".concat(f,".g").concat(n,'[id="').concat(r,'"]'),c="";void 0!==s&&s.forEach(function(e){e.length>0&&(c+="".concat(e,","));}),o+="".concat(i).concat(a,'{content:"').concat(c,'"}').concat(g);},s=0;s<n;s++)r(s);return o}(r)});}return e.registerId=function(e){return Se(e)},e.prototype.rehydrate=function(){!this.server&&S&&_e(this);},e.prototype.reconstructWithOptions=function(n,o){return void 0===o&&(o=true),new e(__assign(__assign({},this.options),n),this.gs,o&&this.names||void 0)},e.prototype.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},e.prototype.getTag=function(){return this.tag||(this.tag=(e=function(e){var t=e.useCSSOMInjection,n=e.target;return e.isServer?new De(n):t?new Ae(n):new Oe(n)}(this.options),new fe(e)));var e;},e.prototype.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},e.prototype.registerName=function(e,t){if(Se(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},e.prototype.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(Se(e),n);},e.prototype.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},e.prototype.clearRules=function(e){this.getTag().clearGroup(Se(e)),this.clearNames(e);},e.prototype.clearTag=function(){this.tag=void 0;},e}(),je=/&/g,xe=/^\s*\/\/.*$/gm;function Ve(e,t){return e.map(function(e){return "rule"===e.type&&(e.value="".concat(t," ").concat(e.value),e.value=e.value.replaceAll(",",",".concat(t," ")),e.props=e.props.map(function(e){return "".concat(t," ").concat(e)})),Array.isArray(e.children)&&"@keyframes"!==e.type&&(e.children=Ve(e.children,t)),e})}function Fe(e){var t,n,o,r=C,s=r.options,i=void 0===s?C:s,a=r.plugins,c=void 0===a?_$2:a,l=function(e,o,r){return r.startsWith(n)&&r.endsWith(n)&&r.replaceAll(n,"").length>0?".".concat(t):e},u=c.slice();u.push(function(e){e.type===RULESET$1&&e.value.includes("&")&&(e.props[0]=e.props[0].replace(je,n).replace(o,l));}),i.prefix&&u.push(prefixer$1),u.push(stringify$1);var p=function(e,r,s,a){ void 0===r&&(r=""),void 0===s&&(s=""),void 0===a&&(a="&"),t=a,n=r,o=new RegExp("\\".concat(n,"\\b"),"g");var c=e.replace(xe,""),l=compile$1(s||r?"".concat(s," ").concat(r," { ").concat(c," }"):c);i.namespace&&(l=Ve(l,i.namespace));var p=[];return serialize$1(l,middleware$1(u.concat(rulesheet$1(function(e){return p.push(e)})))),p};return p.hash=c.length?c.reduce(function(e,t){return t.name||he(15),M(e,t.name)},F).toString():"",p}var Me=new ke,ze=Fe(),$e=React__default.createContext({shouldForwardProp:void 0,styleSheet:Me,stylis:ze});$e.Consumer;React__default.createContext(void 0);function Ge(){return useContext($e)}var qe=function(){function e(e,t){var n=this;this.inject=function(e,t){ void 0===t&&(t=ze);var o=n.name+t.hash;e.hasNameForId(n.id,o)||e.insertRules(n.id,o,t(n.rules,o,"@keyframes"));},this.name=e,this.id="sc-keyframes-".concat(e),this.rules=t,ue(this,function(){throw he(12,String(n.name))});}return e.prototype.getName=function(e){return void 0===e&&(e=ze),this.name+e.hash},e}(),We=function(e){return e>="A"&&e<="Z"};function He(e){for(var t="",n=0;n<e.length;n++){var o=e[n];if(1===n&&"-"===o&&"-"===e[0])return e;We(o)?t+="-"+o.toLowerCase():t+=o;}return t.startsWith("ms-")?"-"+t:t}var Ue=function(e){return null==e||false===e||""===e},Je=function(t){var n,o,r=[];for(var s in t){var i=t[s];t.hasOwnProperty(s)&&!Ue(i)&&(Array.isArray(i)&&i.isCss||re(i)?r.push("".concat(He(s),":"),i,";"):ce(i)?r.push.apply(r,__spreadArray(__spreadArray(["".concat(s," {")],Je(i),false),["}"],false)):r.push("".concat(He(s),": ").concat((n=s,null==(o=i)||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||n in unitlessKeys$1||n.startsWith("--")?String(o).trim():"".concat(o,"px")),";")));}return r};function Xe(e,t,n,o){if(Ue(e))return [];if(se(e))return [".".concat(e.styledComponentId)];if(re(e)){if(!re(s=e)||s.prototype&&s.prototype.isReactComponent||!t)return [e];var r=e(t);return "production"===process.env.NODE_ENV||"object"!=typeof r||Array.isArray(r)||r instanceof qe||ce(r)||null===r||console.error("".concat(B(e)," is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")),Xe(r,t,n,o)}var s;return e instanceof qe?n?(e.inject(n,o),[e.getName(o)]):[e]:ce(e)?Je(e):Array.isArray(e)?Array.prototype.concat.apply(_$2,e.map(function(e){return Xe(e,t,n,o)})):[e.toString()]}function Ze(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(re(n)&&!se(n))return  false}return  true}var Ke=z(v),Qe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"===process.env.NODE_ENV&&(void 0===n||n.isStatic)&&Ze(e),this.componentId=t,this.baseHash=M(Ke,t),this.baseStyle=n,ke.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var o=this.baseStyle?this.baseStyle.generateAndInjectStyles(e,t,n):"";if(this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(this.componentId,this.staticRulesId))o=ie(o,this.staticRulesId);else {var r=ae(Xe(this.rules,e,t,n)),s=x(M(this.baseHash,r)>>>0);if(!t.hasNameForId(this.componentId,s)){var i=n(r,".".concat(s),void 0,this.componentId);t.insertRules(this.componentId,s,i);}o=ie(o,s),this.staticRulesId=s;}else {for(var a=M(this.baseHash,n.hash),c="",l=0;l<this.rules.length;l++){var u=this.rules[l];if("string"==typeof u)c+=u,"production"!==process.env.NODE_ENV&&(a=M(a,u));else if(u){var p=ae(Xe(u,e,t,n));a=M(a,p+l),c+=p;}}if(c){var d=x(a>>>0);t.hasNameForId(this.componentId,d)||t.insertRules(this.componentId,d,n(c,".".concat(d),void 0,this.componentId)),o=ie(o,d);}}return o},e}(),et=React__default.createContext(void 0);et.Consumer;var rt={},st=new Set;function it(e,r,s){var i=se(e),a=e,c=!L(e),p=r.attrs,d=void 0===p?_$2:p,h=r.componentId,f=void 0===h?function(e,t){var n="string"!=typeof e?"sc":R(e);rt[n]=(rt[n]||0)+1;var o="".concat(n,"-").concat($(v+n+rt[n]));return t?"".concat(t,"-").concat(o):o}(r.displayName,r.parentComponentId):h,m=r.displayName,y=void 0===m?function(e){return L(e)?"styled.".concat(e):"Styled(".concat(B(e),")")}(e):m,g=r.displayName&&r.componentId?"".concat(R(r.displayName),"-").concat(r.componentId):r.componentId||f,S=i&&a.attrs?a.attrs.concat(d).filter(Boolean):d,w=r.shouldForwardProp;if(i&&a.shouldForwardProp){var b=a.shouldForwardProp;if(r.shouldForwardProp){var E=r.shouldForwardProp;w=function(e,t){return b(e,t)&&E(e,t)};}else w=b;}var N=new Qe(s,g,i?a.componentStyle:void 0);function O(e,r){return function(e,r,s){var i=e.attrs,a=e.componentStyle,c=e.defaultProps,p=e.foldedComponentIds,d=e.styledComponentId,h=e.target,f=React__default.useContext(et),m=Ge(),y=e.shouldForwardProp||m.shouldForwardProp;"production"!==process.env.NODE_ENV&&useDebugValue(d);var v=I(r,f,c)||C,g=function(e,n,o){for(var r,s=__assign(__assign({},n),{className:void 0,theme:o}),i=0;i<e.length;i+=1){var a=re(r=e[i])?r(s):r;for(var c in a)s[c]="className"===c?ie(s[c],a[c]):"style"===c?__assign(__assign({},s[c]),a[c]):a[c];}return n.className&&(s.className=ie(s.className,n.className)),s}(i,r,v),S=g.as||h,w={};for(var b in g) void 0===g[b]||"$"===b[0]||"as"===b||"theme"===b&&g.theme===v||("forwardedAs"===b?w.as=g.forwardedAs:y&&!y(b,S)||(w[b]=g[b],y||"development"!==process.env.NODE_ENV||isPropValid$1(b)||st.has(b)||!A.has(S)||(st.add(b),console.warn('styled-components: it looks like an unknown prop "'.concat(b,'" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));var E=function(e,t){var n=Ge(),o=e.generateAndInjectStyles(t,n.styleSheet,n.stylis);return "production"!==process.env.NODE_ENV&&useDebugValue(o),o}(a,g);"production"!==process.env.NODE_ENV&&e.warnTooManyClasses&&e.warnTooManyClasses(E);var N=ie(p,d);return E&&(N+=" "+E),g.className&&(N+=" "+g.className),w[L(S)&&!A.has(S)?"class":"className"]=N,s&&(w.ref=s),createElement(S,w)}(D,e,r)}O.displayName=y;var D=React__default.forwardRef(O);return D.attrs=S,D.componentStyle=N,D.displayName=y,D.shouldForwardProp=w,D.foldedComponentIds=i?ie(a.foldedComponentIds,a.styledComponentId):"",D.styledComponentId=g,D.target=i?a.target:e,Object.defineProperty(D,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(e){this._foldedDefaultProps=i?function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var o=0,r=t;o<r.length;o++)le(e,r[o],true);return e}({},a.defaultProps,e):e;}}),"production"!==process.env.NODE_ENV&&(P(y,g),D.warnTooManyClasses=function(e,t){var n={},o=false;return function(r){if(!o&&(n[r]=true,Object.keys(n).length>=200)){var s=t?' with the id of "'.concat(t,'"'):"";console.warn("Over ".concat(200," classes were generated for component ").concat(e).concat(s,".\n")+"Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),o=true,n={};}}}(y,g)),ue(D,function(){return ".".concat(D.styledComponentId)}),c&&oe(D,e,{attrs:true,componentStyle:true,displayName:true,foldedComponentIds:true,shouldForwardProp:true,styledComponentId:true,target:true}),D}function at$1(e,t){for(var n=[e[0]],o=0,r=t.length;o<r;o+=1)n.push(t[o],e[o+1]);return n}var ct=function(e){return Object.assign(e,{isCss:true})};function lt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];if(re(t)||ce(t))return ct(Xe(at$1(_$2,__spreadArray([t],n,true))));var r=t;return 0===n.length&&1===r.length&&"string"==typeof r[0]?Xe(r):ct(Xe(at$1(r,n)))}function ut(n,o,r){if(void 0===r&&(r=C),!o)throw he(1,o);var s=function(t){for(var s=[],i=1;i<arguments.length;i++)s[i-1]=arguments[i];return n(o,r,lt.apply(void 0,__spreadArray([t],s,false)))};return s.attrs=function(e){return ut(n,o,__assign(__assign({},r),{attrs:Array.prototype.concat(r.attrs,e).filter(Boolean)}))},s.withConfig=function(e){return ut(n,o,__assign(__assign({},r),e))},s}var pt=function(e){return ut(it,e)},dt=pt;A.forEach(function(e){dt[e]=pt(e);});function mt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");var r=ae(lt.apply(void 0,__spreadArray([t],n,false))),s=$(r);return new qe(s,r)}"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");var wt="__sc-".concat(f,"__");"production"!==process.env.NODE_ENV&&"test"!==process.env.NODE_ENV&&"undefined"!=typeof window&&(window[wt]||(window[wt]=0),1===window[wt]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window[wt]+=1);
 
-var StyledButton = dt.button(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledButton = dt.button.withConfig({
+  displayName: "Buttonstyles__StyledButton",
+  componentId: "sc-1w2ehyn-0"
+})(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"])), function (_a) {
   var $size = _a.$size;
   switch ($size) {
     case ButtonSizeEnum.SM:
@@ -4560,13 +4543,13 @@ var syncFallback = function syncFallback(create) {
   return create();
 };
 
-var useInsertionEffect = React__namespace['useInsertion' + 'Effect'] ? React__namespace['useInsertion' + 'Effect'] : false;
+var useInsertionEffect = React['useInsertion' + 'Effect'] ? React['useInsertion' + 'Effect'] : false;
 var useInsertionEffectAlwaysWithSyncFallback = !isBrowser$4 ? syncFallback : useInsertionEffect || syncFallback;
-var useInsertionEffectWithLayoutFallback = useInsertionEffect || React__namespace.useLayoutEffect;
+var useInsertionEffectWithLayoutFallback = useInsertionEffect || React.useLayoutEffect;
 
 var isBrowser$3 = typeof document !== 'undefined';
 
-var EmotionCacheContext = /* #__PURE__ */React__namespace.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
+var EmotionCacheContext = /* #__PURE__ */React.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
 // because this module is primarily intended for the browser and node
 // but it's also required in react native and similar environments sometimes
 // and we could have a special build just for that
@@ -4579,9 +4562,9 @@ typeof HTMLElement !== 'undefined' ? /* #__PURE__ */createCache({
 var CacheProvider = EmotionCacheContext.Provider;
 
 var withEmotionCache = function withEmotionCache(func) {
-  return /*#__PURE__*/React.forwardRef(function (props, ref) {
+  return /*#__PURE__*/forwardRef(function (props, ref) {
     // the cache will never be null in the browser
-    var cache = React.useContext(EmotionCacheContext);
+    var cache = useContext(EmotionCacheContext);
     return func(props, cache, ref);
   });
 };
@@ -4589,7 +4572,7 @@ var withEmotionCache = function withEmotionCache(func) {
 if (!isBrowser$3) {
   withEmotionCache = function withEmotionCache(func) {
     return function (props) {
-      var cache = React.useContext(EmotionCacheContext);
+      var cache = useContext(EmotionCacheContext);
 
       if (cache === null) {
         // yes, we're potentially creating this on every render
@@ -4600,7 +4583,7 @@ if (!isBrowser$3) {
         cache = createCache({
           key: 'css'
         });
-        return /*#__PURE__*/React__namespace.createElement(EmotionCacheContext.Provider, {
+        return /*#__PURE__*/React.createElement(EmotionCacheContext.Provider, {
           value: cache
         }, func(props, cache));
       } else {
@@ -4610,7 +4593,7 @@ if (!isBrowser$3) {
   };
 }
 
-var ThemeContext$2 = /* #__PURE__ */React__namespace.createContext({});
+var ThemeContext$2 = /* #__PURE__ */React.createContext({});
 
 var hasOwn = {}.hasOwnProperty;
 
@@ -4650,7 +4633,7 @@ var Insertion$1 = function Insertion(_ref) {
       next = next.next;
     }
 
-    return /*#__PURE__*/React__namespace.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
+    return /*#__PURE__*/React.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
       __html: rules
     }, _ref2.nonce = cache.sheet.nonce, _ref2));
   }
@@ -4677,7 +4660,7 @@ var Emotion = /* #__PURE__ */withEmotionCache(function (props, cache, ref) {
     className = props.className + " ";
   }
 
-  var serialized = serializeStyles(registeredStyles, undefined, React__namespace.useContext(ThemeContext$2));
+  var serialized = serializeStyles(registeredStyles, undefined, React.useContext(ThemeContext$2));
 
   className += cache.key + "-" + serialized.name;
   var newProps = {};
@@ -4694,11 +4677,11 @@ var Emotion = /* #__PURE__ */withEmotionCache(function (props, cache, ref) {
     newProps.ref = ref;
   }
 
-  return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Insertion$1, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Insertion$1, {
     cache: cache,
     serialized: serialized,
     isStringTag: typeof WrappedComponent === 'string'
-  }), /*#__PURE__*/React__namespace.createElement(WrappedComponent, newProps));
+  }), /*#__PURE__*/React.createElement(WrappedComponent, newProps));
 });
 
 var Emotion$1 = Emotion;
@@ -4708,7 +4691,7 @@ var jsx = function jsx(type, props) {
   var args = arguments;
 
   if (props == null || !hasOwn.call(props, 'css')) {
-    return React__namespace.createElement.apply(undefined, args);
+    return React.createElement.apply(undefined, args);
   }
 
   var argsLength = args.length;
@@ -4720,7 +4703,7 @@ var jsx = function jsx(type, props) {
     createElementArgArray[i] = args[i];
   }
 
-  return React__namespace.createElement.apply(null, createElementArgArray);
+  return React.createElement.apply(null, createElementArgArray);
 };
 
 (function (_jsx) {
@@ -4735,7 +4718,7 @@ var jsx = function jsx(type, props) {
 var Global = /* #__PURE__ */withEmotionCache(function (props, cache) {
 
   var styles = props.styles;
-  var serialized = serializeStyles([styles], undefined, React__namespace.useContext(ThemeContext$2));
+  var serialized = serializeStyles([styles], undefined, React.useContext(ThemeContext$2));
 
   if (!isBrowser$3) {
     var _ref;
@@ -4760,7 +4743,7 @@ var Global = /* #__PURE__ */withEmotionCache(function (props, cache) {
       return null;
     }
 
-    return /*#__PURE__*/React__namespace.createElement("style", (_ref = {}, _ref["data-emotion"] = cache.key + "-global " + serializedNames, _ref.dangerouslySetInnerHTML = {
+    return /*#__PURE__*/React.createElement("style", (_ref = {}, _ref["data-emotion"] = cache.key + "-global " + serializedNames, _ref.dangerouslySetInnerHTML = {
       __html: rules
     }, _ref.nonce = cache.sheet.nonce, _ref));
   } // yes, i know these hooks are used conditionally
@@ -4769,7 +4752,7 @@ var Global = /* #__PURE__ */withEmotionCache(function (props, cache) {
   // so it's not actually breaking anything
 
 
-  var sheetRef = React__namespace.useRef();
+  var sheetRef = React.useRef();
   useInsertionEffectWithLayoutFallback(function () {
     var key = cache.key + "-global"; // use case of https://github.com/emotion-js/emotion/issues/2675
 
@@ -4910,7 +4893,7 @@ var Insertion = function Insertion(_ref) {
       next = next.next;
     }
 
-    return /*#__PURE__*/React__namespace.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
+    return /*#__PURE__*/React.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
       __html: rules
     }, _ref2.nonce = cache.sheet.nonce, _ref2));
   }
@@ -4971,7 +4954,7 @@ var createStyled$3 = function createStyled(tag, options) {
           mergedProps[key] = props[key];
         }
 
-        mergedProps.theme = React__namespace.useContext(ThemeContext$2);
+        mergedProps.theme = React.useContext(ThemeContext$2);
       }
 
       if (typeof props.className === 'string') {
@@ -5004,11 +4987,11 @@ var createStyled$3 = function createStyled(tag, options) {
         newProps.ref = ref;
       }
 
-      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Insertion, {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Insertion, {
         cache: cache,
         serialized: serialized,
         isStringTag: typeof FinalTag === 'string'
-      }), /*#__PURE__*/React__namespace.createElement(FinalTag, newProps));
+      }), /*#__PURE__*/React.createElement(FinalTag, newProps));
     });
     Styled.displayName = identifierName !== undefined ? identifierName : "Styled(" + (typeof baseTag === 'string' ? baseTag : baseTag.displayName || baseTag.name || 'Component') + ")";
     Styled.defaultProps = tag.defaultProps;
@@ -6333,7 +6316,7 @@ function isPlainObject$2(item) {
   return (prototype === null || prototype === Object.prototype || Object.getPrototypeOf(prototype) === null) && !(Symbol.toStringTag in item) && !(Symbol.iterator in item);
 }
 function deepClone$2(source) {
-  if ( /*#__PURE__*/React__namespace.isValidElement(source) || !isPlainObject$2(source)) {
+  if ( /*#__PURE__*/React.isValidElement(source) || !isPlainObject$2(source)) {
     return source;
   }
   const output = {};
@@ -6348,7 +6331,7 @@ function deepmerge$3(target, source, options = {
   const output = options.clone ? _extends$2({}, target) : target;
   if (isPlainObject$2(target) && isPlainObject$2(source)) {
     Object.keys(source).forEach(key => {
-      if ( /*#__PURE__*/React__namespace.isValidElement(source[key])) {
+      if ( /*#__PURE__*/React.isValidElement(source[key])) {
         output[key] = source[key];
       } else if (isPlainObject$2(source[key]) &&
       // Avoid prototype pollution
@@ -7610,7 +7593,7 @@ function isObjectEmpty$1(obj) {
   return Object.keys(obj).length === 0;
 }
 function useTheme$5(defaultTheme = null) {
-  const contextTheme = React__namespace.useContext(ThemeContext$2);
+  const contextTheme = React.useContext(ThemeContext$2);
   return !contextTheme || isObjectEmpty$1(contextTheme) ? defaultTheme : contextTheme;
 }
 
@@ -7732,7 +7715,7 @@ function createBox(options = {}) {
   const BoxRoot = styled$2('div', {
     shouldForwardProp: prop => prop !== 'theme' && prop !== 'sx' && prop !== 'as'
   })(styleFunctionSx$1);
-  const Box = /*#__PURE__*/React__namespace.forwardRef(function Box(inProps, ref) {
+  const Box = /*#__PURE__*/React.forwardRef(function Box(inProps, ref) {
     const theme = useTheme$4(defaultTheme);
     const _extendSxProp = extendSxProp(inProps),
       {
@@ -8423,7 +8406,7 @@ function useThemeProps$1({
  * Before you use this hook, make sure to read https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
  * and confirm it doesn't apply to your use-case.
  */
-const useEnhancedEffect$2 = typeof window !== 'undefined' ? React__namespace.useLayoutEffect : React__namespace.useEffect;
+const useEnhancedEffect$2 = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 
 /**
  * @deprecated Not used internally. Use `MediaQueryListEvent` from lib.dom.d.ts instead.
@@ -8438,7 +8421,7 @@ const useEnhancedEffect$2 = typeof window !== 'undefined' ? React__namespace.use
  */
 
 function useMediaQueryOld(query, defaultMatches, matchMedia, ssrMatchMedia, noSsr) {
-  const [match, setMatch] = React__namespace.useState(() => {
+  const [match, setMatch] = React.useState(() => {
     if (noSsr && matchMedia) {
       return matchMedia(query).matches;
     }
@@ -8476,10 +8459,10 @@ function useMediaQueryOld(query, defaultMatches, matchMedia, ssrMatchMedia, noSs
 }
 
 // eslint-disable-next-line no-useless-concat -- Workaround for https://github.com/webpack/webpack/issues/14814
-const maybeReactUseSyncExternalStore = React__namespace['useSyncExternalStore' + ''];
+const maybeReactUseSyncExternalStore = React['useSyncExternalStore' + ''];
 function useMediaQueryNew(query, defaultMatches, matchMedia, ssrMatchMedia, noSsr) {
-  const getDefaultSnapshot = React__namespace.useCallback(() => defaultMatches, [defaultMatches]);
-  const getServerSnapshot = React__namespace.useMemo(() => {
+  const getDefaultSnapshot = React.useCallback(() => defaultMatches, [defaultMatches]);
+  const getServerSnapshot = React.useMemo(() => {
     if (noSsr && matchMedia) {
       return () => matchMedia(query).matches;
     }
@@ -8491,7 +8474,7 @@ function useMediaQueryNew(query, defaultMatches, matchMedia, ssrMatchMedia, noSs
     }
     return getDefaultSnapshot;
   }, [getDefaultSnapshot, query, ssrMatchMedia, noSsr, matchMedia]);
-  const [getSnapshot, subscribe] = React__namespace.useMemo(() => {
+  const [getSnapshot, subscribe] = React.useMemo(() => {
     if (matchMedia === null) {
       return [getDefaultSnapshot, () => () => {}];
     }
@@ -8533,7 +8516,7 @@ function useMediaQuery(queryInput, options = {}) {
   const match = useMediaQueryImplementation(query, defaultMatches, matchMedia, ssrMatchMedia, noSsr);
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useDebugValue({
+    React.useDebugValue({
       query,
       match
     });
@@ -8698,16 +8681,16 @@ function exactProp$3(propTypes) {
   });
 }
 
-const ThemeContext$1 = /*#__PURE__*/React__namespace.createContext(null);
+const ThemeContext$1 = /*#__PURE__*/React.createContext(null);
 if (process.env.NODE_ENV !== 'production') {
   ThemeContext$1.displayName = 'ThemeContext';
 }
 
 function useTheme$3() {
-  const theme = React__namespace.useContext(ThemeContext$1);
+  const theme = React.useContext(ThemeContext$1);
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useDebugValue(theme);
+    React.useDebugValue(theme);
   }
   return theme;
 }
@@ -8744,7 +8727,7 @@ function ThemeProvider$3(props) {
       console.error(['MUI: You are providing a theme function prop to the ThemeProvider component:', '<ThemeProvider theme={outerTheme => outerTheme} />', '', 'However, no outer theme is present.', 'Make sure a theme is already injected higher in the React tree ' + 'or provide a theme object.'].join('\n'));
     }
   }
-  const theme = React__namespace.useMemo(() => {
+  const theme = React.useMemo(() => {
     const output = outerTheme === null ? localTheme : mergeOuterLocalTheme(outerTheme, localTheme);
     if (output != null) {
       output[nested] = outerTheme !== null;
@@ -8791,7 +8774,7 @@ function exactProp$2(propTypes) {
 }
 
 const _excluded$1p = ["value"];
-const RtlContext = /*#__PURE__*/React__namespace.createContext();
+const RtlContext = /*#__PURE__*/React.createContext();
 function RtlProvider(_ref) {
   let {
       value
@@ -8806,11 +8789,11 @@ process.env.NODE_ENV !== "production" ? RtlProvider.propTypes = {
   value: PropTypes.bool
 } : void 0;
 const useRtl = () => {
-  const value = React__namespace.useContext(RtlContext);
+  const value = React.useContext(RtlContext);
   return value != null ? value : false;
 };
 
-const PropsContext = /*#__PURE__*/React__namespace.createContext(undefined);
+const PropsContext = /*#__PURE__*/React.createContext(undefined);
 function DefaultPropsProvider({
   value,
   children
@@ -8858,7 +8841,7 @@ function useDefaultProps$1({
   props,
   name
 }) {
-  const ctx = React__namespace.useContext(PropsContext);
+  const ctx = React.useContext(PropsContext);
   return getThemeProps({
     props,
     name,
@@ -8870,7 +8853,7 @@ function useDefaultProps$1({
 
 const EMPTY_THEME = {};
 function useThemeScoping(themeId, upperTheme, localTheme, isPrivate = false) {
-  return React__namespace.useMemo(() => {
+  return React.useMemo(() => {
     const resolvedTheme = themeId ? upperTheme[themeId] || upperTheme : upperTheme;
     if (typeof localTheme === 'function') {
       const mergedTheme = localTheme(resolvedTheme);
@@ -9021,11 +9004,11 @@ function useThemePropsDefault(props) {
  * [1,0,2,0,3]
  */
 function joinChildren(children, separator) {
-  const childrenArray = React__namespace.Children.toArray(children).filter(Boolean);
+  const childrenArray = React.Children.toArray(children).filter(Boolean);
   return childrenArray.reduce((output, child, index) => {
     output.push(child);
     if (index < childrenArray.length - 1) {
-      output.push( /*#__PURE__*/React__namespace.cloneElement(separator, {
+      output.push( /*#__PURE__*/React.cloneElement(separator, {
         key: `separator-${index}`
       }));
     }
@@ -9118,7 +9101,7 @@ function createStack(options = {}) {
     return composeClasses$2(slots, slot => generateUtilityClass$2(componentName, slot), {});
   };
   const StackRoot = createStyledComponent(style$1);
-  const Stack = /*#__PURE__*/React__namespace.forwardRef(function Grid(inProps, ref) {
+  const Stack = /*#__PURE__*/React.forwardRef(function Grid(inProps, ref) {
     const themeProps = useThemeProps(inProps);
     const props = extendSxProp(themeProps); // `color` type conflicts with html color attribute.
     const {
@@ -9165,7 +9148,7 @@ function isPlainObject$1(item) {
   return (prototype === null || prototype === Object.prototype || Object.getPrototypeOf(prototype) === null) && !(Symbol.toStringTag in item) && !(Symbol.iterator in item);
 }
 function deepClone$1(source) {
-  if ( /*#__PURE__*/React__namespace.isValidElement(source) || !isPlainObject$1(source)) {
+  if ( /*#__PURE__*/React.isValidElement(source) || !isPlainObject$1(source)) {
     return source;
   }
   const output = {};
@@ -9180,7 +9163,7 @@ function deepmerge$1(target, source, options = {
   const output = options.clone ? _extends$2({}, target) : target;
   if (isPlainObject$1(target) && isPlainObject$1(source)) {
     Object.keys(source).forEach(key => {
-      if ( /*#__PURE__*/React__namespace.isValidElement(source[key])) {
+      if ( /*#__PURE__*/React.isValidElement(source[key])) {
         output[key] = source[key];
       } else if (isPlainObject$1(source[key]) &&
       // Avoid prototype pollution
@@ -10220,7 +10203,7 @@ function useTheme$2() {
   const theme = useTheme$4(defaultTheme$2);
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useDebugValue(theme);
+    React.useDebugValue(theme);
   }
   return theme[THEME_ID] || theme;
 }
@@ -10803,7 +10786,7 @@ function deprecatedPropType(validator, reason) {
 
 function isMuiElement(element, muiNames) {
   var _muiName, _element$type;
-  return /*#__PURE__*/React__namespace.isValidElement(element) && muiNames.indexOf( // For server components `muiName` is avaialble in element.type._payload.value.muiName
+  return /*#__PURE__*/React.isValidElement(element) && muiNames.indexOf( // For server components `muiName` is avaialble in element.type._payload.value.muiName
   // relevant info - https://github.com/facebook/react/blob/2807d781a08db8e9873687fccc25c0f12b4fb3d4/packages/react/src/ReactLazy.js#L45
   // eslint-disable-next-line no-underscore-dangle
   (_muiName = element.type.muiName) != null ? _muiName : (_element$type = element.type) == null || (_element$type = _element$type._payload) == null || (_element$type = _element$type.value) == null ? void 0 : _element$type.muiName) !== -1;
@@ -10870,13 +10853,13 @@ function setRef$2(ref, value) {
  * Before you use this hook, make sure to read https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
  * and confirm it doesn't apply to your use-case.
  */
-const useEnhancedEffect$1 = typeof window !== 'undefined' ? React__namespace.useLayoutEffect : React__namespace.useEffect;
+const useEnhancedEffect$1 = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 
 let globalId$1 = 0;
 function useGlobalId$1(idOverride) {
-  const [defaultId, setDefaultId] = React__namespace.useState(idOverride);
+  const [defaultId, setDefaultId] = React.useState(idOverride);
   const id = idOverride || defaultId;
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (defaultId == null) {
       // Fallback to this default id when possible.
       // Use the incrementing value for client-side rendering only.
@@ -10890,7 +10873,7 @@ function useGlobalId$1(idOverride) {
 }
 
 // downstream bundlers may remove unnecessary concatenation, but won't remove toString call -- Workaround for https://github.com/webpack/webpack/issues/14814
-const maybeReactUseId$1 = React__namespace['useId'.toString()];
+const maybeReactUseId$1 = React['useId'.toString()];
 /**
  *
  * @example <div id={useId()} />
@@ -10926,25 +10909,25 @@ function useControlled$1({
   // isControlled is ignored in the hook dependency lists as it should never change.
   const {
     current: isControlled
-  } = React__namespace.useRef(controlled !== undefined);
-  const [valueState, setValue] = React__namespace.useState(defaultProp);
+  } = React.useRef(controlled !== undefined);
+  const [valueState, setValue] = React.useState(defaultProp);
   const value = isControlled ? controlled : valueState;
   if (process.env.NODE_ENV !== 'production') {
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (isControlled !== (controlled !== undefined)) {
         console.error([`MUI: A component is changing the ${isControlled ? '' : 'un'}controlled ${state} state of ${name} to be ${isControlled ? 'un' : ''}controlled.`, 'Elements should not switch from uncontrolled to controlled (or vice versa).', `Decide between using a controlled or uncontrolled ${name} ` + 'element for the lifetime of the component.', "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
       }
     }, [state, name, controlled]);
     const {
       current: defaultValue
-    } = React__namespace.useRef(defaultProp);
-    React__namespace.useEffect(() => {
+    } = React.useRef(defaultProp);
+    React.useEffect(() => {
       if (!isControlled && !Object.is(defaultValue, defaultProp)) {
         console.error([`MUI: A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. ` + `To suppress this warning opt to use a controlled ${name}.`].join('\n'));
       }
     }, [JSON.stringify(defaultProp)]);
   }
-  const setValueIfUncontrolled = React__namespace.useCallback(newValue => {
+  const setValueIfUncontrolled = React.useCallback(newValue => {
     if (!isControlled) {
       setValue(newValue);
     }
@@ -10958,11 +10941,11 @@ function useControlled$1({
  */
 
 function useEventCallback$1(fn) {
-  const ref = React__namespace.useRef(fn);
+  const ref = React.useRef(fn);
   useEnhancedEffect$1(() => {
     ref.current = fn;
   });
-  return React__namespace.useRef((...args) =>
+  return React.useRef((...args) =>
   // @ts-expect-error hide `this`
   (0, ref.current)(...args)).current;
 }
@@ -10973,7 +10956,7 @@ function useForkRef$2(...refs) {
    * This means react will call the old forkRef with `null` and the new forkRef
    * with the ref. Cleanup naturally emerges from this behavior.
    */
-  return React__namespace.useMemo(() => {
+  return React.useMemo(() => {
     if (refs.every(ref => ref == null)) {
       return null;
     }
@@ -10996,7 +10979,7 @@ const UNINITIALIZED = {};
  *   const ref = useLazyRef(sortColumns, columns)
  */
 function useLazyRef(init, initArg) {
-  const ref = React__namespace.useRef(UNINITIALIZED);
+  const ref = React.useRef(UNINITIALIZED);
   if (ref.current === UNINITIALIZED) {
     ref.current = init(initArg);
   }
@@ -11010,7 +10993,7 @@ const EMPTY = [];
  */
 function useOnMount(fn) {
   /* eslint-disable react-hooks/exhaustive-deps */
-  React__namespace.useEffect(fn, EMPTY);
+  React.useEffect(fn, EMPTY);
   /* eslint-enable react-hooks/exhaustive-deps */
 }
 
@@ -11150,12 +11133,12 @@ function isFocusVisible(event) {
   return hadKeyboardEvent || focusTriggersKeyboardModality(target);
 }
 function useIsFocusVisible() {
-  const ref = React__namespace.useCallback(node => {
+  const ref = React.useCallback(node => {
     if (node != null) {
       prepare(node.ownerDocument);
     }
   }, []);
-  const isFocusVisibleRef = React__namespace.useRef(false);
+  const isFocusVisibleRef = React.useRef(false);
 
   /**
    * Should be called if a blur event is fired
@@ -11524,7 +11507,7 @@ function useSlotProps$1(parameters) {
  */
 function getReactElementRef(element) {
   // 'ref' is passed as prop in React 19, whereas 'ref' is directly attached to children in older versions
-  if (parseInt(React__namespace.version, 10) >= 19) {
+  if (parseInt(React.version, 10) >= 19) {
     var _element$props;
     return (element == null || (_element$props = element.props) == null ? void 0 : _element$props.ref) || null;
   }
@@ -11608,7 +11591,7 @@ const SvgIconRoot = styled('svg', {
     }[ownerState.color]
   };
 });
-const SvgIcon = /*#__PURE__*/React__namespace.forwardRef(function SvgIcon(inProps, ref) {
+const SvgIcon = /*#__PURE__*/React.forwardRef(function SvgIcon(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiSvgIcon'
@@ -11625,7 +11608,7 @@ const SvgIcon = /*#__PURE__*/React__namespace.forwardRef(function SvgIcon(inProp
       viewBox = '0 0 24 24'
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$1h);
-  const hasSvgAsChild = /*#__PURE__*/React__namespace.isValidElement(children) && children.type === 'svg';
+  const hasSvgAsChild = /*#__PURE__*/React.isValidElement(children) && children.type === 'svg';
   const ownerState = _extends$2({}, props, {
     color,
     component,
@@ -11744,7 +11727,7 @@ function createSvgIcon$1(path, displayName) {
     Component.displayName = `${displayName}Icon`;
   }
   Component.muiName = SvgIcon.muiName;
-  return /*#__PURE__*/React__namespace.memo( /*#__PURE__*/React__namespace.forwardRef(Component));
+  return /*#__PURE__*/React.memo( /*#__PURE__*/React.forwardRef(Component));
 }
 
 // TODO: remove this export once ClassNameGenerator is stable
@@ -11855,7 +11838,7 @@ var classNamesShape = process.env.NODE_ENV !== 'production' ? PropTypes.oneOfTyp
   exitActive: PropTypes.string
 })]) : null;
 
-var TransitionGroupContext = React.createContext(null);
+var TransitionGroupContext = React__default.createContext(null);
 
 var forceReflow = function forceReflow(node) {
   return node.scrollTop;
@@ -12081,7 +12064,7 @@ var Transition = /*#__PURE__*/function (_React$Component) {
 
       if (nextStatus === ENTERING) {
         if (this.props.unmountOnExit || this.props.mountOnEnter) {
-          var node = this.props.nodeRef ? this.props.nodeRef.current : ReactDOM.findDOMNode(this); // https://github.com/reactjs/react-transition-group/pull/749
+          var node = this.props.nodeRef ? this.props.nodeRef.current : ReactDOM__default.findDOMNode(this); // https://github.com/reactjs/react-transition-group/pull/749
           // With unmountOnExit or mountOnEnter, the enter animation should happen at the transition between `exited` and `entering`.
           // To make the animation happen,  we have to separate each rendering and avoid being processed as batched.
 
@@ -12105,7 +12088,7 @@ var Transition = /*#__PURE__*/function (_React$Component) {
     var enter = this.props.enter;
     var appearing = this.context ? this.context.isMounting : mounting;
 
-    var _ref2 = this.props.nodeRef ? [appearing] : [ReactDOM.findDOMNode(this), appearing],
+    var _ref2 = this.props.nodeRef ? [appearing] : [ReactDOM__default.findDOMNode(this), appearing],
         maybeNode = _ref2[0],
         maybeAppearing = _ref2[1];
 
@@ -12143,7 +12126,7 @@ var Transition = /*#__PURE__*/function (_React$Component) {
 
     var exit = this.props.exit;
     var timeouts = this.getTimeouts();
-    var maybeNode = this.props.nodeRef ? undefined : ReactDOM.findDOMNode(this); // no exit animation skip right to EXITED
+    var maybeNode = this.props.nodeRef ? undefined : ReactDOM__default.findDOMNode(this); // no exit animation skip right to EXITED
 
     if (!exit || config.disabled) {
       this.safeSetState({
@@ -12207,7 +12190,7 @@ var Transition = /*#__PURE__*/function (_React$Component) {
 
   _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
     this.setNextCallback(handler);
-    var node = this.props.nodeRef ? this.props.nodeRef.current : ReactDOM.findDOMNode(this);
+    var node = this.props.nodeRef ? this.props.nodeRef.current : ReactDOM__default.findDOMNode(this);
     var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
 
     if (!node || doesNotHaveTimeoutOrListener) {
@@ -12257,14 +12240,14 @@ var Transition = /*#__PURE__*/function (_React$Component) {
     return (
       /*#__PURE__*/
       // allows for nested Transitions
-      React.createElement(TransitionGroupContext.Provider, {
+      React__default.createElement(TransitionGroupContext.Provider, {
         value: null
-      }, typeof children === 'function' ? children(status, childProps) : React.cloneElement(React.Children.only(children), childProps))
+      }, typeof children === 'function' ? children(status, childProps) : React__default.cloneElement(React__default.Children.only(children), childProps))
     );
   };
 
   return Transition;
-}(React.Component);
+}(React__default.Component);
 
 Transition.contextType = TransitionGroupContext;
 Transition.propTypes = process.env.NODE_ENV !== "production" ? {
@@ -12731,7 +12714,7 @@ var CSSTransition = /*#__PURE__*/function (_React$Component) {
         _this$props.classNames;
         var props = _objectWithoutPropertiesLoose$1(_this$props, ["classNames"]);
 
-    return /*#__PURE__*/React.createElement(Transition, _extends$2({}, props, {
+    return /*#__PURE__*/React__default.createElement(Transition, _extends$2({}, props, {
       onEnter: this.onEnter,
       onEntered: this.onEntered,
       onEntering: this.onEntering,
@@ -12742,7 +12725,7 @@ var CSSTransition = /*#__PURE__*/function (_React$Component) {
   };
 
   return CSSTransition;
-}(React.Component);
+}(React__default.Component);
 
 CSSTransition.defaultProps = {
   classNames: ''
@@ -12892,11 +12875,11 @@ function _assertThisInitialized(e) {
 
 function getChildMapping(children, mapFn) {
   var mapper = function mapper(child) {
-    return mapFn && React.isValidElement(child) ? mapFn(child) : child;
+    return mapFn && isValidElement(child) ? mapFn(child) : child;
   };
 
   var result = Object.create(null);
-  if (children) React.Children.map(children, function (c) {
+  if (children) Children.map(children, function (c) {
     return c;
   }).forEach(function (child) {
     // run the map function here instead so that the key is the computed one
@@ -12974,7 +12957,7 @@ function getProp(child, prop, props) {
 
 function getInitialChildMapping(props, onExited) {
   return getChildMapping(props.children, function (child) {
-    return React.cloneElement(child, {
+    return cloneElement(child, {
       onExited: onExited.bind(null, child),
       in: true,
       appear: getProp(child, 'appear', props),
@@ -12988,15 +12971,15 @@ function getNextChildMapping(nextProps, prevChildMapping, onExited) {
   var children = mergeChildMappings(prevChildMapping, nextChildMapping);
   Object.keys(children).forEach(function (key) {
     var child = children[key];
-    if (!React.isValidElement(child)) return;
+    if (!isValidElement(child)) return;
     var hasPrev = (key in prevChildMapping);
     var hasNext = (key in nextChildMapping);
     var prevChild = prevChildMapping[key];
-    var isLeaving = React.isValidElement(prevChild) && !prevChild.props.in; // item is new (entering)
+    var isLeaving = isValidElement(prevChild) && !prevChild.props.in; // item is new (entering)
 
     if (hasNext && (!hasPrev || isLeaving)) {
       // console.log('entering', key)
-      children[key] = React.cloneElement(child, {
+      children[key] = cloneElement(child, {
         onExited: onExited.bind(null, child),
         in: true,
         exit: getProp(child, 'exit', nextProps),
@@ -13005,14 +12988,14 @@ function getNextChildMapping(nextProps, prevChildMapping, onExited) {
     } else if (!hasNext && hasPrev && !isLeaving) {
       // item is old (exiting)
       // console.log('leaving', key)
-      children[key] = React.cloneElement(child, {
+      children[key] = cloneElement(child, {
         in: false
       });
-    } else if (hasNext && hasPrev && React.isValidElement(prevChild)) {
+    } else if (hasNext && hasPrev && isValidElement(prevChild)) {
       // item hasn't changed transition states
       // copy over the last transition props;
       // console.log('unchanged', key)
-      children[key] = React.cloneElement(child, {
+      children[key] = cloneElement(child, {
         onExited: onExited.bind(null, child),
         in: prevChild.props.in,
         exit: getProp(child, 'exit', nextProps),
@@ -13130,18 +13113,18 @@ var TransitionGroup = /*#__PURE__*/function (_React$Component) {
     delete props.exit;
 
     if (Component === null) {
-      return /*#__PURE__*/React.createElement(TransitionGroupContext.Provider, {
+      return /*#__PURE__*/React__default.createElement(TransitionGroupContext.Provider, {
         value: contextValue
       }, children);
     }
 
-    return /*#__PURE__*/React.createElement(TransitionGroupContext.Provider, {
+    return /*#__PURE__*/React__default.createElement(TransitionGroupContext.Provider, {
       value: contextValue
-    }, /*#__PURE__*/React.createElement(Component, props, children));
+    }, /*#__PURE__*/React__default.createElement(Component, props, children));
   };
 
   return TransitionGroup;
-}(React.Component);
+}(React__default.Component);
 
 TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
   /**
@@ -13298,7 +13281,7 @@ const CollapseWrapperInner = styled('div', {
  * [Vertical Stepper](/material-ui/react-stepper/#vertical-stepper) StepContent component.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  */
-const Collapse = /*#__PURE__*/React__namespace.forwardRef(function Collapse(inProps, ref) {
+const Collapse = /*#__PURE__*/React.forwardRef(function Collapse(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiCollapse'
@@ -13331,12 +13314,12 @@ const Collapse = /*#__PURE__*/React__namespace.forwardRef(function Collapse(inPr
   const classes = useUtilityClasses$X(ownerState);
   const theme = useTheme$2();
   const timer = useTimeout();
-  const wrapperRef = React__namespace.useRef(null);
-  const autoTransitionDuration = React__namespace.useRef();
+  const wrapperRef = React.useRef(null);
+  const autoTransitionDuration = React.useRef();
   const collapsedSize = typeof collapsedSizeProp === 'number' ? `${collapsedSizeProp}px` : collapsedSizeProp;
   const isHorizontal = orientation === 'horizontal';
   const size = isHorizontal ? 'width' : 'height';
-  const nodeRef = React__namespace.useRef(null);
+  const nodeRef = React.useRef(null);
   const handleRef = useForkRef$2(ref, nodeRef);
   const normalizedTransitionCallback = callback => maybeIsAppearing => {
     if (callback) {
@@ -13629,7 +13612,7 @@ const PaperRoot = styled('div', {
     backgroundImage: (_theme$vars$overlays = theme.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
   }));
 });
-const Paper = /*#__PURE__*/React__namespace.forwardRef(function Paper(inProps, ref) {
+const Paper = /*#__PURE__*/React.forwardRef(function Paper(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiPaper'
@@ -13720,7 +13703,7 @@ process.env.NODE_ENV !== "production" ? Paper.propTypes /* remove-proptypes */ =
  * @ignore - internal component.
  * @type {React.Context<{} | {expanded: boolean, disabled: boolean, toggle: () => void}>}
  */
-const AccordionContext = /*#__PURE__*/React__namespace.createContext({});
+const AccordionContext = /*#__PURE__*/React.createContext({});
 if (process.env.NODE_ENV !== 'production') {
   AccordionContext.displayName = 'AccordionContext';
 }
@@ -13910,7 +13893,7 @@ const AccordionRoot = styled(Paper, {
     }
   }]
 }));
-const Accordion = /*#__PURE__*/React__namespace.forwardRef(function Accordion(inProps, ref) {
+const Accordion = /*#__PURE__*/React.forwardRef(function Accordion(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiAccordion'
@@ -13936,14 +13919,14 @@ const Accordion = /*#__PURE__*/React__namespace.forwardRef(function Accordion(in
     name: 'Accordion',
     state: 'expanded'
   });
-  const handleChange = React__namespace.useCallback(event => {
+  const handleChange = React.useCallback(event => {
     setExpandedState(!expanded);
     if (onChange) {
       onChange(event, !expanded);
     }
   }, [expanded, onChange, setExpandedState]);
-  const [summary, ...children] = React__namespace.Children.toArray(childrenProp);
-  const contextValue = React__namespace.useMemo(() => ({
+  const [summary, ...children] = React.Children.toArray(childrenProp);
+  const contextValue = React.useMemo(() => ({
     expanded,
     disabled,
     disableGutters,
@@ -14002,11 +13985,11 @@ process.env.NODE_ENV !== "production" ? Accordion.propTypes /* remove-proptypes 
    * The content of the component.
    */
   children: chainPropTypes(PropTypes.node.isRequired, props => {
-    const summary = React__namespace.Children.toArray(props.children)[0];
+    const summary = React.Children.toArray(props.children)[0];
     if (reactIsExports.isFragment(summary)) {
       return new Error("MUI: The Accordion doesn't accept a Fragment as a child. " + 'Consider providing an array instead.');
     }
-    if (! /*#__PURE__*/React__namespace.isValidElement(summary)) {
+    if (! /*#__PURE__*/React.isValidElement(summary)) {
       return new Error('MUI: Expected the first child of Accordion to be a valid element.');
     }
     return null;
@@ -14107,7 +14090,7 @@ const AccordionDetailsRoot = styled('div', {
 }) => ({
   padding: theme.spacing(1, 2, 2)
 }));
-const AccordionDetails = /*#__PURE__*/React__namespace.forwardRef(function AccordionDetails(inProps, ref) {
+const AccordionDetails = /*#__PURE__*/React.forwardRef(function AccordionDetails(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiAccordionDetails'
@@ -14159,7 +14142,7 @@ function Ripple(props) {
     onExited,
     timeout
   } = props;
-  const [leaving, setLeaving] = React__namespace.useState(false);
+  const [leaving, setLeaving] = React.useState(false);
   const rippleClassName = clsx$2(className, classes.ripple, classes.rippleVisible, pulsate && classes.ripplePulsate);
   const rippleStyles = {
     width: rippleSize,
@@ -14171,7 +14154,7 @@ function Ripple(props) {
   if (!inProp && !leaving) {
     setLeaving(true);
   }
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (!inProp && onExited != null) {
       // react-transition-group#onExited
       const timeoutId = setTimeout(onExited, timeout);
@@ -14346,7 +14329,7 @@ const TouchRippleRipple = styled(Ripple, {
  *
  * TODO v5: Make private
  */
-const TouchRipple = /*#__PURE__*/React__namespace.forwardRef(function TouchRipple(inProps, ref) {
+const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiTouchRipple'
@@ -14357,10 +14340,10 @@ const TouchRipple = /*#__PURE__*/React__namespace.forwardRef(function TouchRippl
       className
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$1b);
-  const [ripples, setRipples] = React__namespace.useState([]);
-  const nextKey = React__namespace.useRef(0);
-  const rippleCallback = React__namespace.useRef(null);
-  React__namespace.useEffect(() => {
+  const [ripples, setRipples] = React.useState([]);
+  const nextKey = React.useRef(0);
+  const rippleCallback = React.useRef(null);
+  React.useEffect(() => {
     if (rippleCallback.current) {
       rippleCallback.current();
       rippleCallback.current = null;
@@ -14368,15 +14351,15 @@ const TouchRipple = /*#__PURE__*/React__namespace.forwardRef(function TouchRippl
   }, [ripples]);
 
   // Used to filter out mouse emulated events on mobile.
-  const ignoringMouseDown = React__namespace.useRef(false);
+  const ignoringMouseDown = React.useRef(false);
   // We use a timer in order to only show the ripples for touch "click" like events.
   // We don't want to display the ripple for touch scroll events.
   const startTimer = useTimeout();
 
   // This is the hook called once the previous timeout is ready.
-  const startTimerCommit = React__namespace.useRef(null);
-  const container = React__namespace.useRef(null);
-  const startCommit = React__namespace.useCallback(params => {
+  const startTimerCommit = React.useRef(null);
+  const container = React.useRef(null);
+  const startCommit = React.useCallback(params => {
     const {
       pulsate,
       rippleX,
@@ -14402,7 +14385,7 @@ const TouchRipple = /*#__PURE__*/React__namespace.forwardRef(function TouchRippl
     nextKey.current += 1;
     rippleCallback.current = cb;
   }, [classes]);
-  const start = React__namespace.useCallback((event = {}, options = {}, cb = () => {}) => {
+  const start = React.useCallback((event = {}, options = {}, cb = () => {}) => {
     const {
       pulsate = false,
       center = centerProp || options.pulsate,
@@ -14486,12 +14469,12 @@ const TouchRipple = /*#__PURE__*/React__namespace.forwardRef(function TouchRippl
       });
     }
   }, [centerProp, startCommit, startTimer]);
-  const pulsate = React__namespace.useCallback(() => {
+  const pulsate = React.useCallback(() => {
     start({}, {
       pulsate: true
     });
   }, [start]);
-  const stop = React__namespace.useCallback((event, cb) => {
+  const stop = React.useCallback((event, cb) => {
     startTimer.clear();
 
     // The touch interaction occurs too quickly.
@@ -14513,7 +14496,7 @@ const TouchRipple = /*#__PURE__*/React__namespace.forwardRef(function TouchRippl
     });
     rippleCallback.current = cb;
   }, [startTimer]);
-  React__namespace.useImperativeHandle(ref, () => ({
+  React.useImperativeHandle(ref, () => ({
     pulsate,
     start,
     stop
@@ -14616,7 +14599,7 @@ const ButtonBaseRoot = styled('button', {
  * It aims to be a simple building block for creating a button.
  * It contains a load of style reset and some focus/ripple logic.
  */
-const ButtonBase = /*#__PURE__*/React__namespace.forwardRef(function ButtonBase(inProps, ref) {
+const ButtonBase = /*#__PURE__*/React.forwardRef(function ButtonBase(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiButtonBase'
@@ -14652,8 +14635,8 @@ const ButtonBase = /*#__PURE__*/React__namespace.forwardRef(function ButtonBase(
       type
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$1a);
-  const buttonRef = React__namespace.useRef(null);
-  const rippleRef = React__namespace.useRef(null);
+  const buttonRef = React.useRef(null);
+  const rippleRef = React.useRef(null);
   const handleRippleRef = useForkRef$2(rippleRef, touchRippleRef);
   const {
     isFocusVisibleRef,
@@ -14661,22 +14644,22 @@ const ButtonBase = /*#__PURE__*/React__namespace.forwardRef(function ButtonBase(
     onBlur: handleBlurVisible,
     ref: focusVisibleRef
   } = useIsFocusVisible();
-  const [focusVisible, setFocusVisible] = React__namespace.useState(false);
+  const [focusVisible, setFocusVisible] = React.useState(false);
   if (disabled && focusVisible) {
     setFocusVisible(false);
   }
-  React__namespace.useImperativeHandle(action, () => ({
+  React.useImperativeHandle(action, () => ({
     focusVisible: () => {
       setFocusVisible(true);
       buttonRef.current.focus();
     }
   }), []);
-  const [mountedState, setMountedState] = React__namespace.useState(false);
-  React__namespace.useEffect(() => {
+  const [mountedState, setMountedState] = React.useState(false);
+  React.useEffect(() => {
     setMountedState(true);
   }, []);
   const enableTouchRipple = mountedState && !disableRipple && !disabled;
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (focusVisible && focusRipple && !disableRipple && mountedState) {
       rippleRef.current.pulsate();
     }
@@ -14741,7 +14724,7 @@ const ButtonBase = /*#__PURE__*/React__namespace.forwardRef(function ButtonBase(
   /**
    * IE11 shim for https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/repeat
    */
-  const keydownRef = React__namespace.useRef(false);
+  const keydownRef = React.useRef(false);
   const handleKeyDown = useEventCallback$1(event => {
     // Check if key is already down to avoid repeats being counted as multiple activations
     if (focusRipple && !keydownRef.current && focusVisible && rippleRef.current && event.key === ' ') {
@@ -14802,7 +14785,7 @@ const ButtonBase = /*#__PURE__*/React__namespace.forwardRef(function ButtonBase(
   const handleRef = useForkRef$2(ref, focusVisibleRef, buttonRef);
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (enableTouchRipple && !rippleRef.current) {
         console.error(['MUI: The `component` prop provided to ButtonBase is invalid.', 'Please make sure the children prop is rendered in this custom component.'].join('\n'));
       }
@@ -15102,7 +15085,7 @@ const AccordionSummaryExpandIconWrapper = styled('div', {
     transform: 'rotate(180deg)'
   }
 }));
-const AccordionSummary = /*#__PURE__*/React__namespace.forwardRef(function AccordionSummary(inProps, ref) {
+const AccordionSummary = /*#__PURE__*/React.forwardRef(function AccordionSummary(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiAccordionSummary'
@@ -15120,7 +15103,7 @@ const AccordionSummary = /*#__PURE__*/React__namespace.forwardRef(function Accor
     disableGutters,
     expanded,
     toggle
-  } = React__namespace.useContext(AccordionContext);
+  } = React.useContext(AccordionContext);
   const handleChange = event => {
     if (toggle) {
       toggle(event);
@@ -15290,7 +15273,7 @@ const IconButtonRoot = styled(ButtonBase, {
  * Refer to the [Icons](/material-ui/icons/) section of the documentation
  * regarding the available icon options.
  */
-const IconButton = /*#__PURE__*/React__namespace.forwardRef(function IconButton(inProps, ref) {
+const IconButton = /*#__PURE__*/React.forwardRef(function IconButton(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiIconButton'
@@ -15333,7 +15316,7 @@ process.env.NODE_ENV !== "production" ? IconButton.propTypes /* remove-proptypes
    * The icon to display.
    */
   children: chainPropTypes(PropTypes.node, props => {
-    const found = React__namespace.Children.toArray(props.children).some(child => /*#__PURE__*/React__namespace.isValidElement(child) && child.props.onClick);
+    const found = React.Children.toArray(props.children).some(child => /*#__PURE__*/React.isValidElement(child) && child.props.onClick);
     if (found) {
       return new Error(['MUI: You are providing an onClick event listener to a child of a button element.', 'Prefer applying it to the IconButton directly.', 'This guarantees that the whole <button> will be responsive to click events.'].join('\n'));
     }
@@ -15465,7 +15448,7 @@ const colorTransformations = {
 const transformDeprecatedColors = color => {
   return colorTransformations[color] || color;
 };
-const Typography = /*#__PURE__*/React__namespace.forwardRef(function Typography(inProps, ref) {
+const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, ref) {
   const themeProps = useDefaultProps({
     props: inProps,
     name: 'MuiTypography'
@@ -15593,7 +15576,7 @@ function requireUseThemeWithoutDefault () {
 	  value: true
 	});
 	useThemeWithoutDefault.default = void 0;
-	var React$1 = _interopRequireWildcard(React);
+	var React = _interopRequireWildcard(React__default);
 	var _styledEngine = require$$1;
 	function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 	function _interopRequireWildcard(e, r) { if (e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
@@ -15601,7 +15584,7 @@ function requireUseThemeWithoutDefault () {
 	  return Object.keys(obj).length === 0;
 	}
 	function useTheme(defaultTheme = null) {
-	  const contextTheme = React$1.useContext(_styledEngine.ThemeContext);
+	  const contextTheme = React.useContext(_styledEngine.ThemeContext);
 	  return !contextTheme || isObjectEmpty(contextTheme) ? defaultTheme : contextTheme;
 	}
 	useThemeWithoutDefault.default = useTheme;
@@ -17416,14 +17399,14 @@ function getContainer$1(container) {
  *
  * - [Portal API](https://mui.com/material-ui/api/portal/)
  */
-const Portal = /*#__PURE__*/React__namespace.forwardRef(function Portal(props, forwardedRef) {
+const Portal = /*#__PURE__*/React.forwardRef(function Portal(props, forwardedRef) {
   const {
     children,
     container,
     disablePortal = false
   } = props;
-  const [mountNode, setMountNode] = React__namespace.useState(null);
-  const handleRef = useForkRef$2( /*#__PURE__*/React__namespace.isValidElement(children) ? getReactElementRef(children) : null, forwardedRef);
+  const [mountNode, setMountNode] = React.useState(null);
+  const handleRef = useForkRef$2( /*#__PURE__*/React.isValidElement(children) ? getReactElementRef(children) : null, forwardedRef);
   useEnhancedEffect$1(() => {
     if (!disablePortal) {
       setMountNode(getContainer$1(container) || document.body);
@@ -17439,18 +17422,18 @@ const Portal = /*#__PURE__*/React__namespace.forwardRef(function Portal(props, f
     return undefined;
   }, [forwardedRef, mountNode, disablePortal]);
   if (disablePortal) {
-    if ( /*#__PURE__*/React__namespace.isValidElement(children)) {
+    if ( /*#__PURE__*/React.isValidElement(children)) {
       const newProps = {
         ref: handleRef
       };
-      return /*#__PURE__*/React__namespace.cloneElement(children, newProps);
+      return /*#__PURE__*/React.cloneElement(children, newProps);
     }
-    return /*#__PURE__*/jsxRuntimeExports.jsx(React__namespace.Fragment, {
+    return /*#__PURE__*/jsxRuntimeExports.jsx(React.Fragment, {
       children: children
     });
   }
-  return /*#__PURE__*/jsxRuntimeExports.jsx(React__namespace.Fragment, {
-    children: mountNode ? /*#__PURE__*/ReactDOM__namespace.createPortal(children, mountNode) : mountNode
+  return /*#__PURE__*/jsxRuntimeExports.jsx(React.Fragment, {
+    children: mountNode ? /*#__PURE__*/ReactDOM.createPortal(children, mountNode) : mountNode
   });
 });
 process.env.NODE_ENV !== "production" ? Portal.propTypes /* remove-proptypes */ = {
@@ -17527,7 +17510,7 @@ const useUtilityClasses$P = ownerState => {
   return composeClasses$1(slots, getPopperUtilityClass, classes);
 };
 const defaultPopperOptions = {};
-const PopperTooltip = /*#__PURE__*/React__namespace.forwardRef(function PopperTooltip(props, forwardedRef) {
+const PopperTooltip = /*#__PURE__*/React.forwardRef(function PopperTooltip(props, forwardedRef) {
   var _slots$root;
   const {
       anchorEl,
@@ -17546,28 +17529,28 @@ const PopperTooltip = /*#__PURE__*/React__namespace.forwardRef(function PopperTo
       // prevent from spreading to DOM, it can come from the parent component e.g. Select.
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$16);
-  const tooltipRef = React__namespace.useRef(null);
+  const tooltipRef = React.useRef(null);
   const ownRef = useForkRef$2(tooltipRef, forwardedRef);
-  const popperRef = React__namespace.useRef(null);
+  const popperRef = React.useRef(null);
   const handlePopperRef = useForkRef$2(popperRef, popperRefProp);
-  const handlePopperRefRef = React__namespace.useRef(handlePopperRef);
+  const handlePopperRefRef = React.useRef(handlePopperRef);
   useEnhancedEffect$1(() => {
     handlePopperRefRef.current = handlePopperRef;
   }, [handlePopperRef]);
-  React__namespace.useImperativeHandle(popperRefProp, () => popperRef.current, []);
+  React.useImperativeHandle(popperRefProp, () => popperRef.current, []);
   const rtlPlacement = flipPlacement(initialPlacement, direction);
   /**
    * placement initialized from prop but can change during lifetime if modifiers.flip.
    * modifiers.flip is essentially a flip for controlled/uncontrolled behavior
    */
-  const [placement, setPlacement] = React__namespace.useState(rtlPlacement);
-  const [resolvedAnchorElement, setResolvedAnchorElement] = React__namespace.useState(resolveAnchorEl$1(anchorEl));
-  React__namespace.useEffect(() => {
+  const [placement, setPlacement] = React.useState(rtlPlacement);
+  const [resolvedAnchorElement, setResolvedAnchorElement] = React.useState(resolveAnchorEl$1(anchorEl));
+  React.useEffect(() => {
     if (popperRef.current) {
       popperRef.current.forceUpdate();
     }
   });
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (anchorEl) {
       setResolvedAnchorElement(resolveAnchorEl$1(anchorEl));
     }
@@ -17651,7 +17634,7 @@ const PopperTooltip = /*#__PURE__*/React__namespace.forwardRef(function PopperTo
 /**
  * @ignore - internal component.
  */
-const Popper$1 = /*#__PURE__*/React__namespace.forwardRef(function Popper(props, forwardedRef) {
+const Popper$1 = /*#__PURE__*/React.forwardRef(function Popper(props, forwardedRef) {
   const {
       anchorEl,
       children,
@@ -17670,7 +17653,7 @@ const Popper$1 = /*#__PURE__*/React__namespace.forwardRef(function Popper(props,
       slots = {}
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded2$b);
-  const [exited, setExited] = React__namespace.useState(true);
+  const [exited, setExited] = React.useState(true);
   const handleEnter = () => {
     setExited(false);
   };
@@ -17867,7 +17850,7 @@ const PopperRoot = styled(Popper$1, {
  *
  * - [Popper API](https://mui.com/material-ui/api/popper/)
  */
-const Popper = /*#__PURE__*/React__namespace.forwardRef(function Popper(inProps, ref) {
+const Popper = /*#__PURE__*/React.forwardRef(function Popper(inProps, ref) {
   var _slots$root;
   const theme = useTheme$1();
   const props = useDefaultProps({
@@ -18315,7 +18298,7 @@ function isDeleteKeyboardEvent(keyboardEvent) {
 /**
  * Chips represent complex entities in small blocks, such as a contact.
  */
-const Chip = /*#__PURE__*/React__namespace.forwardRef(function Chip(inProps, ref) {
+const Chip = /*#__PURE__*/React.forwardRef(function Chip(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiChip'
@@ -18340,7 +18323,7 @@ const Chip = /*#__PURE__*/React__namespace.forwardRef(function Chip(inProps, ref
       skipFocusWhenDisabled = false // TODO v6: Rename to `focusableWhenDisabled`.
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$14);
-  const chipRef = React__namespace.useRef(null);
+  const chipRef = React.useRef(null);
   const handleRef = useForkRef$2(chipRef, ref);
   const handleDeleteIconClick = event => {
     // Stop the event from bubbling up to the `Chip`
@@ -18380,7 +18363,7 @@ const Chip = /*#__PURE__*/React__namespace.forwardRef(function Chip(inProps, ref
     disabled,
     size,
     color,
-    iconColor: /*#__PURE__*/React__namespace.isValidElement(iconProp) ? iconProp.props.color || color : color,
+    iconColor: /*#__PURE__*/React.isValidElement(iconProp) ? iconProp.props.color || color : color,
     onDelete: !!onDelete,
     clickable,
     variant
@@ -18394,7 +18377,7 @@ const Chip = /*#__PURE__*/React__namespace.forwardRef(function Chip(inProps, ref
   }) : {};
   let deleteIcon = null;
   if (onDelete) {
-    deleteIcon = deleteIconProp && /*#__PURE__*/React__namespace.isValidElement(deleteIconProp) ? ( /*#__PURE__*/React__namespace.cloneElement(deleteIconProp, {
+    deleteIcon = deleteIconProp && /*#__PURE__*/React.isValidElement(deleteIconProp) ? ( /*#__PURE__*/React.cloneElement(deleteIconProp, {
       className: clsx$2(deleteIconProp.props.className, classes.deleteIcon),
       onClick: handleDeleteIconClick
     })) : /*#__PURE__*/jsxRuntimeExports.jsx(CancelIcon$2, {
@@ -18403,14 +18386,14 @@ const Chip = /*#__PURE__*/React__namespace.forwardRef(function Chip(inProps, ref
     });
   }
   let avatar = null;
-  if (avatarProp && /*#__PURE__*/React__namespace.isValidElement(avatarProp)) {
-    avatar = /*#__PURE__*/React__namespace.cloneElement(avatarProp, {
+  if (avatarProp && /*#__PURE__*/React.isValidElement(avatarProp)) {
+    avatar = /*#__PURE__*/React.cloneElement(avatarProp, {
       className: clsx$2(classes.avatar, avatarProp.props.className)
     });
   }
   let icon = null;
-  if (iconProp && /*#__PURE__*/React__namespace.isValidElement(iconProp)) {
-    icon = /*#__PURE__*/React__namespace.cloneElement(iconProp, {
+  if (iconProp && /*#__PURE__*/React.isValidElement(iconProp)) {
+    icon = /*#__PURE__*/React.cloneElement(iconProp, {
       className: clsx$2(classes.icon, iconProp.props.className)
     });
   }
@@ -18580,7 +18563,7 @@ function isEmpty$2(obj) {
  *
  * - [TextareaAutosize API](https://mui.com/material-ui/api/textarea-autosize/)
  */
-const TextareaAutosize = /*#__PURE__*/React__namespace.forwardRef(function TextareaAutosize(props, forwardedRef) {
+const TextareaAutosize = /*#__PURE__*/React.forwardRef(function TextareaAutosize(props, forwardedRef) {
   const {
       onChange,
       maxRows,
@@ -18591,12 +18574,12 @@ const TextareaAutosize = /*#__PURE__*/React__namespace.forwardRef(function Texta
     other = _objectWithoutPropertiesLoose$1(props, _excluded$13);
   const {
     current: isControlled
-  } = React__namespace.useRef(value != null);
-  const textareaRef = React__namespace.useRef(null);
+  } = React.useRef(value != null);
+  const textareaRef = React.useRef(null);
   const handleRef = useForkRef$2(forwardedRef, textareaRef);
-  const heightRef = React__namespace.useRef(null);
-  const hiddenTextareaRef = React__namespace.useRef(null);
-  const calculateTextareaStyles = React__namespace.useCallback(() => {
+  const heightRef = React.useRef(null);
+  const hiddenTextareaRef = React.useRef(null);
+  const calculateTextareaStyles = React.useCallback(() => {
     const textarea = textareaRef.current;
     const hiddenTextarea = hiddenTextareaRef.current;
     if (!textarea || !hiddenTextarea) {
@@ -18658,7 +18641,7 @@ const TextareaAutosize = /*#__PURE__*/React__namespace.forwardRef(function Texta
     const outerHeightStyle = textareaStyles.outerHeightStyle;
     return heightRef.current != null && heightRef.current !== outerHeightStyle;
   });
-  const syncHeight = React__namespace.useCallback(() => {
+  const syncHeight = React.useCallback(() => {
     const textarea = textareaRef.current;
     const textareaStyles = calculateTextareaStyles();
     if (!textarea || !textareaStyles || isEmpty$2(textareaStyles)) {
@@ -18671,7 +18654,7 @@ const TextareaAutosize = /*#__PURE__*/React__namespace.forwardRef(function Texta
     }
     textarea.style.overflow = textareaStyles.overflowing ? 'hidden' : '';
   }, [calculateTextareaStyles]);
-  const frameRef = React__namespace.useRef(-1);
+  const frameRef = React.useRef(-1);
   useEnhancedEffect$1(() => {
     const debouncedHandleResize = debounce$1(syncHeight);
     const textarea = textareaRef == null ? void 0 : textareaRef.current;
@@ -18717,7 +18700,7 @@ const TextareaAutosize = /*#__PURE__*/React__namespace.forwardRef(function Texta
       onChange(event);
     }
   };
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [/*#__PURE__*/jsxRuntimeExports.jsx("textarea", _extends$2({
       value: value,
       onChange: handleChange,
@@ -18794,13 +18777,13 @@ function formControlState({
 /**
  * @ignore - internal component.
  */
-const FormControlContext = /*#__PURE__*/React__namespace.createContext(undefined);
+const FormControlContext = /*#__PURE__*/React.createContext(undefined);
 if (process.env.NODE_ENV !== 'production') {
   FormControlContext.displayName = 'FormControlContext';
 }
 
 function useFormControl() {
-  return React__namespace.useContext(FormControlContext);
+  return React.useContext(FormControlContext);
 }
 
 function GlobalStyles(props) {
@@ -19043,7 +19026,7 @@ const inputGlobalStyles = /*#__PURE__*/jsxRuntimeExports.jsx(GlobalStyles, {
  * It aims to be a simple building block for creating an input.
  * It contains a load of style reset and some state logic.
  */
-const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(inProps, ref) {
+const InputBase = /*#__PURE__*/React.forwardRef(function InputBase(inProps, ref) {
   var _slotProps$input;
   const props = useDefaultProps({
     props: inProps,
@@ -19089,9 +19072,9 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
   const value = inputPropsProp.value != null ? inputPropsProp.value : valueProp;
   const {
     current: isControlled
-  } = React__namespace.useRef(value != null);
-  const inputRef = React__namespace.useRef();
-  const handleInputRefWarning = React__namespace.useCallback(instance => {
+  } = React.useRef(value != null);
+  const inputRef = React.useRef();
+  const handleInputRefWarning = React.useCallback(instance => {
     if (process.env.NODE_ENV !== 'production') {
       if (instance && instance.nodeName !== 'INPUT' && !instance.focus) {
         console.error(['MUI: You have provided a `inputComponent` to the input component', 'that does not correctly handle the `ref` prop.', 'Make sure the `ref` prop is called with a HTMLInputElement.'].join('\n'));
@@ -19099,11 +19082,11 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
     }
   }, []);
   const handleInputRef = useForkRef$2(inputRef, inputRefProp, inputPropsProp.ref, handleInputRefWarning);
-  const [focused, setFocused] = React__namespace.useState(false);
+  const [focused, setFocused] = React.useState(false);
   const muiFormControl = useFormControl();
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (muiFormControl) {
         return muiFormControl.registerEffect();
       }
@@ -19119,7 +19102,7 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
 
   // The blur won't fire when the disabled state is set on a focused input.
   // We need to book keep the focused state manually.
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (!muiFormControl && disabled && focused) {
       setFocused(false);
       if (onBlur) {
@@ -19129,7 +19112,7 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
   }, [muiFormControl, disabled, focused, onBlur]);
   const onFilled = muiFormControl && muiFormControl.onFilled;
   const onEmpty = muiFormControl && muiFormControl.onEmpty;
-  const checkDirty = React__namespace.useCallback(obj => {
+  const checkDirty = React.useCallback(obj => {
     if (isFilled(obj)) {
       if (onFilled) {
         onFilled();
@@ -19199,7 +19182,7 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
 
   // Check the input state on mount, in case it was filled by the user
   // or auto filled by the browser before the hydration (for SSR).
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     checkDirty(inputRef.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -19240,7 +19223,7 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
       value: 'x'
     });
   };
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (muiFormControl) {
       muiFormControl.setAdornedStart(Boolean(startAdornment));
     }
@@ -19264,7 +19247,7 @@ const InputBase = /*#__PURE__*/React__namespace.forwardRef(function InputBase(in
   const rootProps = slotProps.root || componentsProps.root || {};
   const Input = slots.input || components.Input || InputBaseComponent;
   inputProps = _extends$2({}, inputProps, (_slotProps$input = slotProps.input) != null ? _slotProps$input : componentsProps.input);
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [!disableInjectingGlobalStyles && inputGlobalStyles, /*#__PURE__*/jsxRuntimeExports.jsxs(Root, _extends$2({}, rootProps, !isHostComponent$1(Root) && {
       ownerState: _extends$2({}, ownerState, rootProps.ownerState)
     }, {
@@ -19573,7 +19556,7 @@ const styles$2 = {
  * The Fade transition is used by the [Modal](/material-ui/react-modal/) component.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  */
-const Fade = /*#__PURE__*/React__namespace.forwardRef(function Fade(props, ref) {
+const Fade = /*#__PURE__*/React.forwardRef(function Fade(props, ref) {
   const theme = useTheme$2();
   const defaultTimeout = {
     enter: theme.transitions.duration.enteringScreen,
@@ -19597,7 +19580,7 @@ const Fade = /*#__PURE__*/React__namespace.forwardRef(function Fade(props, ref) 
       TransitionComponent = Transition
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$11);
-  const nodeRef = React__namespace.useRef(null);
+  const nodeRef = React.useRef(null);
   const handleRef = useForkRef$2(nodeRef, getReactElementRef(children), ref);
   const normalizedTransitionCallback = callback => maybeIsAppearing => {
     if (callback) {
@@ -19665,7 +19648,7 @@ const Fade = /*#__PURE__*/React__namespace.forwardRef(function Fade(props, ref) 
     timeout: timeout
   }, other, {
     children: (state, childProps) => {
-      return /*#__PURE__*/React__namespace.cloneElement(children, _extends$2({
+      return /*#__PURE__*/React.cloneElement(children, _extends$2({
         style: _extends$2({
           opacity: 0,
           visibility: state === 'exited' && !inProp ? 'hidden' : undefined
@@ -19792,7 +19775,7 @@ const BackdropRoot = styled('div', {
 }, ownerState.invisible && {
   backgroundColor: 'transparent'
 }));
-const Backdrop = /*#__PURE__*/React__namespace.forwardRef(function Backdrop(inProps, ref) {
+const Backdrop = /*#__PURE__*/React.forwardRef(function Backdrop(inProps, ref) {
   var _slotProps$root, _ref, _slots$root;
   const props = useDefaultProps({
     props: inProps,
@@ -19968,7 +19951,7 @@ const buttonClasses = generateUtilityClasses$1('MuiButton', ['root', 'text', 'te
 /**
  * @ignore - internal component.
  */
-const ButtonGroupContext = /*#__PURE__*/React__namespace.createContext({});
+const ButtonGroupContext = /*#__PURE__*/React.createContext({});
 if (process.env.NODE_ENV !== 'production') {
   ButtonGroupContext.displayName = 'ButtonGroupContext';
 }
@@ -19976,7 +19959,7 @@ if (process.env.NODE_ENV !== 'production') {
 /**
  * @ignore - internal component.
  */
-const ButtonGroupButtonContext = /*#__PURE__*/React__namespace.createContext(undefined);
+const ButtonGroupButtonContext = /*#__PURE__*/React.createContext(undefined);
 if (process.env.NODE_ENV !== 'production') {
   ButtonGroupButtonContext.displayName = 'ButtonGroupButtonContext';
 }
@@ -20183,10 +20166,10 @@ const ButtonEndIcon = styled('span', {
 }, ownerState.size === 'small' && {
   marginRight: -2
 }, commonIconStyles(ownerState)));
-const Button = /*#__PURE__*/React__namespace.forwardRef(function Button(inProps, ref) {
+const Button = /*#__PURE__*/React.forwardRef(function Button(inProps, ref) {
   // props priority: `inProps` > `contextProps` > `themeDefaultProps`
-  const contextProps = React__namespace.useContext(ButtonGroupContext);
-  const buttonGroupButtonContextPositionClassName = React__namespace.useContext(ButtonGroupButtonContext);
+  const contextProps = React.useContext(ButtonGroupContext);
+  const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
   const resolvedProps = resolveProps(contextProps, inProps);
   const props = useDefaultProps({
     props: resolvedProps,
@@ -20365,7 +20348,7 @@ const CardRoot = styled(Paper, {
     overflow: 'hidden'
   };
 });
-const Card = /*#__PURE__*/React__namespace.forwardRef(function Card(inProps, ref) {
+const Card = /*#__PURE__*/React.forwardRef(function Card(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiCard'
@@ -20446,7 +20429,7 @@ const CardContentRoot = styled('div', {
     }
   };
 });
-const CardContent = /*#__PURE__*/React__namespace.forwardRef(function CardContent(inProps, ref) {
+const CardContent = /*#__PURE__*/React.forwardRef(function CardContent(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiCardContent'
@@ -20542,7 +20525,7 @@ const SwitchBaseInput = styled('input', {
 /**
  * @ignore - internal component.
  */
-const SwitchBase = /*#__PURE__*/React__namespace.forwardRef(function SwitchBase(props, ref) {
+const SwitchBase = /*#__PURE__*/React.forwardRef(function SwitchBase(props, ref) {
   const {
       autoFocus,
       checked: checkedProp,
@@ -20821,7 +20804,7 @@ const CheckboxRoot = styled(SwitchBase, {
 const defaultCheckedIcon$1 = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxIcon$1, {});
 const defaultIcon$1 = /*#__PURE__*/jsxRuntimeExports.jsx(CheckBoxOutlineBlankIcon$1, {});
 const defaultIndeterminateIcon = /*#__PURE__*/jsxRuntimeExports.jsx(IndeterminateCheckBoxIcon, {});
-const Checkbox$1 = /*#__PURE__*/React__namespace.forwardRef(function Checkbox(inProps, ref) {
+const Checkbox$1 = /*#__PURE__*/React.forwardRef(function Checkbox(inProps, ref) {
   var _icon$props$fontSize, _indeterminateIcon$pr;
   const props = useDefaultProps({
     props: inProps,
@@ -20851,10 +20834,10 @@ const Checkbox$1 = /*#__PURE__*/React__namespace.forwardRef(function Checkbox(in
     inputProps: _extends$2({
       'data-indeterminate': indeterminate
     }, inputProps),
-    icon: /*#__PURE__*/React__namespace.cloneElement(icon, {
+    icon: /*#__PURE__*/React.cloneElement(icon, {
       fontSize: (_icon$props$fontSize = icon.props.fontSize) != null ? _icon$props$fontSize : size
     }),
-    checkedIcon: /*#__PURE__*/React__namespace.cloneElement(indeterminateIcon, {
+    checkedIcon: /*#__PURE__*/React.cloneElement(indeterminateIcon, {
       fontSize: (_indeterminateIcon$pr = indeterminateIcon.props.fontSize) != null ? _indeterminateIcon$pr : size
     }),
     ownerState: ownerState,
@@ -21080,7 +21063,7 @@ const CircularProgressCircle = styled('circle', {
  * you should use `aria-describedby` to point to the progress bar, and set the `aria-busy`
  * attribute to `true` on that region until it has finished loading.
  */
-const CircularProgress = /*#__PURE__*/React__namespace.forwardRef(function CircularProgress(inProps, ref) {
+const CircularProgress = /*#__PURE__*/React.forwardRef(function CircularProgress(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiCircularProgress'
@@ -21498,25 +21481,25 @@ function FocusTrap(props) {
     isEnabled = defaultIsEnabled,
     open
   } = props;
-  const ignoreNextEnforceFocus = React__namespace.useRef(false);
-  const sentinelStart = React__namespace.useRef(null);
-  const sentinelEnd = React__namespace.useRef(null);
-  const nodeToRestore = React__namespace.useRef(null);
-  const reactFocusEventTarget = React__namespace.useRef(null);
+  const ignoreNextEnforceFocus = React.useRef(false);
+  const sentinelStart = React.useRef(null);
+  const sentinelEnd = React.useRef(null);
+  const nodeToRestore = React.useRef(null);
+  const reactFocusEventTarget = React.useRef(null);
   // This variable is useful when disableAutoFocus is true.
   // It waits for the active element to move into the component to activate.
-  const activated = React__namespace.useRef(false);
-  const rootRef = React__namespace.useRef(null);
+  const activated = React.useRef(false);
+  const rootRef = React.useRef(null);
   const handleRef = useForkRef$2(getReactElementRef(children), rootRef);
-  const lastKeydown = React__namespace.useRef(null);
-  React__namespace.useEffect(() => {
+  const lastKeydown = React.useRef(null);
+  React.useEffect(() => {
     // We might render an empty child.
     if (!open || !rootRef.current) {
       return;
     }
     activated.current = !disableAutoFocus;
   }, [disableAutoFocus, open]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     // We might render an empty child.
     if (!open || !rootRef.current) {
       return;
@@ -21551,7 +21534,7 @@ function FocusTrap(props) {
     // We don't support changing that prop on an open FocusTrap
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     // We might render an empty child.
     if (!open || !rootRef.current) {
       return;
@@ -21667,13 +21650,13 @@ function FocusTrap(props) {
     }
     activated.current = true;
   };
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [/*#__PURE__*/jsxRuntimeExports.jsx("div", {
       tabIndex: open ? 0 : -1,
       onFocus: handleFocusSentinel,
       ref: sentinelStart,
       "data-testid": "sentinelStart"
-    }), /*#__PURE__*/React__namespace.cloneElement(children, {
+    }), /*#__PURE__*/React.cloneElement(children, {
       ref: handleRef,
       onFocus
     }), /*#__PURE__*/jsxRuntimeExports.jsx("div", {
@@ -21780,11 +21763,11 @@ function useModal(parameters) {
   } = parameters;
 
   // @ts-ignore internal logic
-  const modal = React__namespace.useRef({});
-  const mountNodeRef = React__namespace.useRef(null);
-  const modalRef = React__namespace.useRef(null);
+  const modal = React.useRef({});
+  const mountNodeRef = React.useRef(null);
+  const modalRef = React.useRef(null);
   const handleRef = useForkRef$2(modalRef, rootRef);
-  const [exited, setExited] = React__namespace.useState(!open);
+  const [exited, setExited] = React.useState(!open);
   const hasTransition = getHasTransition(children);
   let ariaHiddenProp = true;
   if (parameters['aria-hidden'] === 'false' || parameters['aria-hidden'] === false) {
@@ -21815,7 +21798,7 @@ function useModal(parameters) {
       handleMounted();
     }
   });
-  const isTopModal = React__namespace.useCallback(() => manager.isTopModal(getModal()), [manager]);
+  const isTopModal = React.useCallback(() => manager.isTopModal(getModal()), [manager]);
   const handlePortalRef = useEventCallback$1(node => {
     mountNodeRef.current = node;
     if (!node) {
@@ -21827,15 +21810,15 @@ function useModal(parameters) {
       ariaHidden(modalRef.current, ariaHiddenProp);
     }
   });
-  const handleClose = React__namespace.useCallback(() => {
+  const handleClose = React.useCallback(() => {
     manager.remove(getModal(), ariaHiddenProp);
   }, [ariaHiddenProp, manager]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     return () => {
       handleClose();
     };
   }, [handleClose]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (open) {
       handleOpen();
     } else if (!hasTransition || !closeAfterTransition) {
@@ -21994,7 +21977,7 @@ const ModalBackdrop = styled(Backdrop, {
  *
  * This component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).
  */
-const Modal = /*#__PURE__*/React__namespace.forwardRef(function Modal(inProps, ref) {
+const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
   var _ref, _slots$root, _ref2, _slots$backdrop, _slotProps$root, _slotProps$backdrop;
   const props = useDefaultProps({
     name: 'MuiModal',
@@ -22114,7 +22097,7 @@ const Modal = /*#__PURE__*/React__namespace.forwardRef(function Modal(inProps, r
         disableRestoreFocus: disableRestoreFocus,
         isEnabled: isTopModal,
         open: open,
-        children: /*#__PURE__*/React__namespace.cloneElement(children, childProps)
+        children: /*#__PURE__*/React.cloneElement(children, childProps)
       })]
     }))
   });
@@ -22339,7 +22322,7 @@ const DialogActionsRoot = styled('div', {
     marginLeft: 8
   }
 }));
-const DialogActions = /*#__PURE__*/React__namespace.forwardRef(function DialogActions(inProps, ref) {
+const DialogActions = /*#__PURE__*/React.forwardRef(function DialogActions(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiDialogActions'
@@ -22555,7 +22538,7 @@ const FilledInputInput = styled(InputBaseComponent, {
   paddingLeft: 0,
   paddingRight: 0
 }));
-const FilledInput = /*#__PURE__*/React__namespace.forwardRef(function FilledInput(inProps, ref) {
+const FilledInput = /*#__PURE__*/React.forwardRef(function FilledInput(inProps, ref) {
   var _ref, _slots$root, _ref2, _slots$input;
   const props = useDefaultProps({
     props: inProps,
@@ -22872,7 +22855,7 @@ const FormControlRoot = styled('div', {
  * ⚠️ Only one `InputBase` can be used within a FormControl because it creates visual inconsistencies.
  * For instance, only one input can be focused at the same time, the state shouldn't be shared.
  */
-const FormControl = /*#__PURE__*/React__namespace.forwardRef(function FormControl(inProps, ref) {
+const FormControl = /*#__PURE__*/React.forwardRef(function FormControl(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiFormControl'
@@ -22906,12 +22889,12 @@ const FormControl = /*#__PURE__*/React__namespace.forwardRef(function FormContro
     variant
   });
   const classes = useUtilityClasses$C(ownerState);
-  const [adornedStart, setAdornedStart] = React__namespace.useState(() => {
+  const [adornedStart, setAdornedStart] = React.useState(() => {
     // We need to iterate through the children and find the Input in order
     // to fully support server-side rendering.
     let initialAdornedStart = false;
     if (children) {
-      React__namespace.Children.forEach(children, child => {
+      React.Children.forEach(children, child => {
         if (!isMuiElement(child, ['Input', 'Select'])) {
           return;
         }
@@ -22923,12 +22906,12 @@ const FormControl = /*#__PURE__*/React__namespace.forwardRef(function FormContro
     }
     return initialAdornedStart;
   });
-  const [filled, setFilled] = React__namespace.useState(() => {
+  const [filled, setFilled] = React.useState(() => {
     // We need to iterate through the children and find the Input in order
     // to fully support server-side rendering.
     let initialFilled = false;
     if (children) {
-      React__namespace.Children.forEach(children, child => {
+      React.Children.forEach(children, child => {
         if (!isMuiElement(child, ['Input', 'Select'])) {
           return;
         }
@@ -22939,7 +22922,7 @@ const FormControl = /*#__PURE__*/React__namespace.forwardRef(function FormContro
     }
     return initialFilled;
   });
-  const [focusedState, setFocused] = React__namespace.useState(false);
+  const [focusedState, setFocused] = React.useState(false);
   if (disabled && focusedState) {
     setFocused(false);
   }
@@ -22947,7 +22930,7 @@ const FormControl = /*#__PURE__*/React__namespace.forwardRef(function FormContro
   let registerEffect;
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const registeredInput = React__namespace.useRef(false);
+    const registeredInput = React.useRef(false);
     registerEffect = () => {
       if (registeredInput.current) {
         console.error(['MUI: There are multiple `InputBase` components inside a FormControl.', 'This creates visual inconsistencies, only use one `InputBase`.'].join('\n'));
@@ -22958,7 +22941,7 @@ const FormControl = /*#__PURE__*/React__namespace.forwardRef(function FormContro
       };
     };
   }
-  const childContext = React__namespace.useMemo(() => {
+  const childContext = React.useMemo(() => {
     return {
       adornedStart,
       setAdornedStart,
@@ -23218,7 +23201,7 @@ const AsteriskComponent$1 = styled('span', {
  * Drop-in replacement of the `Radio`, `Switch` and `Checkbox` component.
  * Use this component if you want to display an extra label.
  */
-const FormControlLabel = /*#__PURE__*/React__namespace.forwardRef(function FormControlLabel(inProps, ref) {
+const FormControlLabel = /*#__PURE__*/React.forwardRef(function FormControlLabel(inProps, ref) {
   var _ref, _slotProps$typography;
   const props = useDefaultProps({
     props: inProps,
@@ -23275,7 +23258,7 @@ const FormControlLabel = /*#__PURE__*/React__namespace.forwardRef(function FormC
     ownerState: ownerState,
     ref: ref
   }, other, {
-    children: [/*#__PURE__*/React__namespace.cloneElement(control, controlProps), required ? /*#__PURE__*/jsxRuntimeExports.jsxs(Stack, {
+    children: [/*#__PURE__*/React.cloneElement(control, controlProps), required ? /*#__PURE__*/jsxRuntimeExports.jsxs(Stack, {
       display: "block",
       children: [label, /*#__PURE__*/jsxRuntimeExports.jsxs(AsteriskComponent$1, {
         ownerState: ownerState,
@@ -23422,7 +23405,7 @@ const FormHelperTextRoot = styled('p', {
   marginLeft: 14,
   marginRight: 14
 }));
-const FormHelperText = /*#__PURE__*/React__namespace.forwardRef(function FormHelperText(inProps, ref) {
+const FormHelperText = /*#__PURE__*/React.forwardRef(function FormHelperText(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiFormHelperText'
@@ -23583,7 +23566,7 @@ const AsteriskComponent = styled('span', {
     color: (theme.vars || theme).palette.error.main
   }
 }));
-const FormLabel = /*#__PURE__*/React__namespace.forwardRef(function FormLabel(inProps, ref) {
+const FormLabel = /*#__PURE__*/React.forwardRef(function FormLabel(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiFormLabel'
@@ -23704,7 +23687,7 @@ const isWebKit154 = typeof navigator !== 'undefined' && /^((?!chrome|android).)*
  * [Popover](/material-ui/react-popover/) components.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  */
-const Grow = /*#__PURE__*/React__namespace.forwardRef(function Grow(props, ref) {
+const Grow = /*#__PURE__*/React.forwardRef(function Grow(props, ref) {
   const {
       addEndListener,
       appear = true,
@@ -23724,9 +23707,9 @@ const Grow = /*#__PURE__*/React__namespace.forwardRef(function Grow(props, ref) 
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$O);
   const timer = useTimeout();
-  const autoTimeout = React__namespace.useRef();
+  const autoTimeout = React.useRef();
   const theme = useTheme$2();
-  const nodeRef = React__namespace.useRef(null);
+  const nodeRef = React.useRef(null);
   const handleRef = useForkRef$2(nodeRef, getReactElementRef(children), ref);
   const normalizedTransitionCallback = callback => maybeIsAppearing => {
     if (callback) {
@@ -23833,7 +23816,7 @@ const Grow = /*#__PURE__*/React__namespace.forwardRef(function Grow(props, ref) 
     timeout: timeout === 'auto' ? null : timeout
   }, other, {
     children: (state, childProps) => {
-      return /*#__PURE__*/React__namespace.cloneElement(children, _extends$2({
+      return /*#__PURE__*/React.cloneElement(children, _extends$2({
         style: _extends$2({
           opacity: 0,
           transform: getScale$1(0.75),
@@ -24014,7 +23997,7 @@ const InputInput = styled(InputBaseComponent, {
   slot: 'Input',
   overridesResolver: inputOverridesResolver
 })({});
-const Input$2 = /*#__PURE__*/React__namespace.forwardRef(function Input(inProps, ref) {
+const Input$2 = /*#__PURE__*/React.forwardRef(function Input(inProps, ref) {
   var _ref, _slots$root, _ref2, _slots$input;
   const props = useDefaultProps({
     props: inProps,
@@ -24304,7 +24287,7 @@ const InputAdornmentRoot = styled('div', {
   // Styles applied to the root element if `disablePointerEvents={true}`.
   pointerEvents: 'none'
 }));
-const InputAdornment = /*#__PURE__*/React__namespace.forwardRef(function InputAdornment(inProps, ref) {
+const InputAdornment = /*#__PURE__*/React.forwardRef(function InputAdornment(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiInputAdornment'
@@ -24350,7 +24333,7 @@ const InputAdornment = /*#__PURE__*/React__namespace.forwardRef(function InputAd
       children: typeof children === 'string' && !disableTypography ? /*#__PURE__*/jsxRuntimeExports.jsx(Typography, {
         color: "text.secondary",
         children: children
-      }) : /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+      }) : /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
         children: [position === 'start' ? ( /* notranslate needed while Google Translate will not fix zero-width space issue */_span$2 || (_span$2 = /*#__PURE__*/jsxRuntimeExports.jsx("span", {
           className: "notranslate",
           children: "\u200B"
@@ -24505,7 +24488,7 @@ const InputLabelRoot = styled(FormLabel, {
   maxWidth: 'calc(133% - 32px)',
   transform: 'translate(14px, -9px) scale(0.75)'
 })));
-const InputLabel$1 = /*#__PURE__*/React__namespace.forwardRef(function InputLabel(inProps, ref) {
+const InputLabel$1 = /*#__PURE__*/React.forwardRef(function InputLabel(inProps, ref) {
   const props = useDefaultProps({
     name: 'MuiInputLabel',
     props: inProps
@@ -24616,7 +24599,7 @@ process.env.NODE_ENV !== "production" ? InputLabel$1.propTypes /* remove-proptyp
 /**
  * @ignore - internal component.
  */
-const ListContext = /*#__PURE__*/React__namespace.createContext({});
+const ListContext = /*#__PURE__*/React.createContext({});
 if (process.env.NODE_ENV !== 'production') {
   ListContext.displayName = 'ListContext';
 }
@@ -24661,7 +24644,7 @@ const ListRoot = styled('ul', {
 }, ownerState.subheader && {
   paddingTop: 0
 }));
-const List = /*#__PURE__*/React__namespace.forwardRef(function List(inProps, ref) {
+const List = /*#__PURE__*/React.forwardRef(function List(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiList'
@@ -24675,7 +24658,7 @@ const List = /*#__PURE__*/React__namespace.forwardRef(function List(inProps, ref
       subheader
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$K);
-  const context = React__namespace.useMemo(() => ({
+  const context = React.useMemo(() => ({
     dense
   }), [dense]);
   const ownerState = _extends$2({}, props, {
@@ -24786,7 +24769,7 @@ const ListItemSecondaryActionRoot = styled('div', {
 /**
  * Must be used as the last child of ListItem to function properly.
  */
-const ListItemSecondaryAction = /*#__PURE__*/React__namespace.forwardRef(function ListItemSecondaryAction(inProps, ref) {
+const ListItemSecondaryAction = /*#__PURE__*/React.forwardRef(function ListItemSecondaryAction(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiListItemSecondaryAction'
@@ -24795,7 +24778,7 @@ const ListItemSecondaryAction = /*#__PURE__*/React__namespace.forwardRef(functio
       className
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$J);
-  const context = React__namespace.useContext(ListContext);
+  const context = React.useContext(ListContext);
   const ownerState = _extends$2({}, props, {
     disableGutters: context.disableGutters
   });
@@ -24943,7 +24926,7 @@ const ListItemContainer = styled('li', {
 /**
  * Uses an additional container component if `ListItemSecondaryAction` is the last child.
  */
-const ListItem = /*#__PURE__*/React__namespace.forwardRef(function ListItem(inProps, ref) {
+const ListItem = /*#__PURE__*/React.forwardRef(function ListItem(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiListItem'
@@ -24974,13 +24957,13 @@ const ListItem = /*#__PURE__*/React__namespace.forwardRef(function ListItem(inPr
     } = props,
     ContainerProps = _objectWithoutPropertiesLoose$1(props.ContainerProps, _excluded$I),
     other = _objectWithoutPropertiesLoose$1(props, _excluded2$a);
-  const context = React__namespace.useContext(ListContext);
-  const childContext = React__namespace.useMemo(() => ({
+  const context = React.useContext(ListContext);
+  const childContext = React.useMemo(() => ({
     dense: dense || context.dense || false,
     alignItems,
     disableGutters
   }), [alignItems, context.dense, dense, disableGutters]);
-  const listItemRef = React__namespace.useRef(null);
+  const listItemRef = React.useRef(null);
   useEnhancedEffect$1(() => {
     if (autoFocus) {
       if (listItemRef.current) {
@@ -24990,7 +24973,7 @@ const ListItem = /*#__PURE__*/React__namespace.forwardRef(function ListItem(inPr
       }
     }
   }, [autoFocus]);
-  const children = React__namespace.Children.toArray(childrenProp);
+  const children = React.Children.toArray(childrenProp);
 
   // v4 implementation, deprecated in v5, will be removed in v6
   const hasSecondaryAction = children.length && isMuiElement(children[children.length - 1], ['ListItemSecondaryAction']);
@@ -25094,7 +25077,7 @@ process.env.NODE_ENV !== "production" ? ListItem.propTypes /* remove-proptypes *
    * be the last child.
    */
   children: chainPropTypes(PropTypes.node, props => {
-    const children = React__namespace.Children.toArray(props.children);
+    const children = React.Children.toArray(props.children);
 
     // React.Children.toArray(props.children).findLastIndex(isListItemSecondaryAction)
     let secondaryActionIndex = -1;
@@ -25296,7 +25279,7 @@ function moveFocus(list, currentFocus, disableListWrap, disabledItemsFocusable, 
  * use it separately you need to move focus into the component manually. Once
  * the focus is placed inside the component it is fully keyboard accessible.
  */
-const MenuList$1 = /*#__PURE__*/React__namespace.forwardRef(function MenuList(props, ref) {
+const MenuList$1 = /*#__PURE__*/React.forwardRef(function MenuList(props, ref) {
   const {
       // private
       // eslint-disable-next-line react/prop-types
@@ -25311,8 +25294,8 @@ const MenuList$1 = /*#__PURE__*/React__namespace.forwardRef(function MenuList(pr
       variant = 'selectedMenu'
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$H);
-  const listRef = React__namespace.useRef(null);
-  const textCriteriaRef = React__namespace.useRef({
+  const listRef = React.useRef(null);
+  const textCriteriaRef = React.useRef({
     keys: [],
     repeating: true,
     previousKeyMatched: true,
@@ -25323,7 +25306,7 @@ const MenuList$1 = /*#__PURE__*/React__namespace.forwardRef(function MenuList(pr
       listRef.current.focus();
     }
   }, [autoFocus]);
-  React__namespace.useImperativeHandle(actions, () => ({
+  React.useImperativeHandle(actions, () => ({
     adjustStyleForScrollbar: (containerElement, {
       direction
     }) => {
@@ -25399,8 +25382,8 @@ const MenuList$1 = /*#__PURE__*/React__namespace.forwardRef(function MenuList(pr
   // since we inject focus related props into children we have to do a lookahead
   // to check if there is a `selected` item. We're looking for the last `selected`
   // item and use the first valid item as a fallback
-  React__namespace.Children.forEach(children, (child, index) => {
-    if (! /*#__PURE__*/React__namespace.isValidElement(child)) {
+  React.Children.forEach(children, (child, index) => {
+    if (! /*#__PURE__*/React.isValidElement(child)) {
       if (activeItemIndex === index) {
         activeItemIndex += 1;
         if (activeItemIndex >= children.length) {
@@ -25430,7 +25413,7 @@ const MenuList$1 = /*#__PURE__*/React__namespace.forwardRef(function MenuList(pr
       }
     }
   });
-  const items = React__namespace.Children.map(children, (child, index) => {
+  const items = React.Children.map(children, (child, index) => {
     if (index === activeItemIndex) {
       const newChildProps = {};
       if (autoFocusItem) {
@@ -25439,7 +25422,7 @@ const MenuList$1 = /*#__PURE__*/React__namespace.forwardRef(function MenuList(pr
       if (child.props.tabIndex === undefined && variant === 'selectedMenu') {
         newChildProps.tabIndex = 0;
       }
-      return /*#__PURE__*/React__namespace.cloneElement(child, newChildProps);
+      return /*#__PURE__*/React.cloneElement(child, newChildProps);
     }
     return child;
   });
@@ -25567,7 +25550,7 @@ const PopoverPaper = styled(Paper, {
   // We disable the focus ring for mouse, touch and keyboard users.
   outline: 0
 });
-const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProps, ref) {
+const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
   var _slotProps$paper, _slots$root, _slots$paper;
   const props = useDefaultProps({
     props: inProps,
@@ -25605,7 +25588,7 @@ const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProp
     TransitionProps = _objectWithoutPropertiesLoose$1(props.TransitionProps, _excluded$G),
     other = _objectWithoutPropertiesLoose$1(props, _excluded2$9);
   const externalPaperSlotProps = (_slotProps$paper = slotProps == null ? void 0 : slotProps.paper) != null ? _slotProps$paper : PaperPropsProp;
-  const paperRef = React__namespace.useRef();
+  const paperRef = React.useRef();
   const handlePaperRef = useForkRef$2(paperRef, externalPaperSlotProps.ref);
   const ownerState = _extends$2({}, props, {
     anchorOrigin,
@@ -25622,7 +25605,7 @@ const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProp
 
   // Returns the top/left offset of the position
   // to attach to on the anchor element (or body if none is provided)
-  const getAnchorOffset = React__namespace.useCallback(() => {
+  const getAnchorOffset = React.useCallback(() => {
     if (anchorReference === 'anchorPosition') {
       if (process.env.NODE_ENV !== 'production') {
         if (!anchorPosition) {
@@ -25649,13 +25632,13 @@ const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProp
   }, [anchorEl, anchorOrigin.horizontal, anchorOrigin.vertical, anchorPosition, anchorReference]);
 
   // Returns the base transform origin using the element
-  const getTransformOrigin = React__namespace.useCallback(elemRect => {
+  const getTransformOrigin = React.useCallback(elemRect => {
     return {
       vertical: getOffsetTop(elemRect, transformOrigin.vertical),
       horizontal: getOffsetLeft(elemRect, transformOrigin.horizontal)
     };
   }, [transformOrigin.horizontal, transformOrigin.vertical]);
-  const getPositioningStyle = React__namespace.useCallback(element => {
+  const getPositioningStyle = React.useCallback(element => {
     const elemRect = {
       width: element.offsetWidth,
       height: element.offsetHeight
@@ -25719,8 +25702,8 @@ const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProp
       transformOrigin: getTransformOriginValue(elemTransformOrigin)
     };
   }, [anchorEl, anchorReference, getAnchorOffset, getTransformOrigin, marginThreshold]);
-  const [isPositioned, setIsPositioned] = React__namespace.useState(open);
-  const setPositioningStyles = React__namespace.useCallback(() => {
+  const [isPositioned, setIsPositioned] = React.useState(open);
+  const setPositioningStyles = React.useCallback(() => {
     const element = paperRef.current;
     if (!element) {
       return;
@@ -25735,7 +25718,7 @@ const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProp
     element.style.transformOrigin = positioning.transformOrigin;
     setIsPositioned(true);
   }, [getPositioningStyle]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (disableScrollLock) {
       window.addEventListener('scroll', setPositioningStyles);
     }
@@ -25750,17 +25733,17 @@ const Popover = /*#__PURE__*/React__namespace.forwardRef(function Popover(inProp
   const handleExited = () => {
     setIsPositioned(false);
   };
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (open) {
       setPositioningStyles();
     }
   });
-  React__namespace.useImperativeHandle(action, () => open ? {
+  React.useImperativeHandle(action, () => open ? {
     updatePosition: () => {
       setPositioningStyles();
     }
   } : null, [open, setPositioningStyles]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (!open) {
       return undefined;
     }
@@ -26067,7 +26050,7 @@ const MenuMenuList = styled(MenuList$1, {
   // We disable the focus ring for mouse, touch and keyboard users.
   outline: 0
 });
-const Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function Menu(inProps, ref) {
+const Menu$2 = /*#__PURE__*/React.forwardRef(function Menu(inProps, ref) {
   var _slots$paper, _slotProps$paper;
   const props = useDefaultProps({
     props: inProps,
@@ -26106,7 +26089,7 @@ const Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function Menu(inProps, r
   });
   const classes = useUtilityClasses$r(ownerState);
   const autoFocusItem = autoFocus && !disableAutoFocusItem && open;
-  const menuListActionsRef = React__namespace.useRef(null);
+  const menuListActionsRef = React.useRef(null);
   const handleEntering = (element, isAppearing) => {
     if (menuListActionsRef.current) {
       menuListActionsRef.current.adjustStyleForScrollbar(element, {
@@ -26135,8 +26118,8 @@ const Menu$2 = /*#__PURE__*/React__namespace.forwardRef(function Menu(inProps, r
   // since we inject focus related props into children we have to do a lookahead
   // to check if there is a `selected` item. We're looking for the last `selected`
   // item and use the first valid item as a fallback
-  React__namespace.Children.map(children, (child, index) => {
-    if (! /*#__PURE__*/React__namespace.isValidElement(child)) {
+  React.Children.map(children, (child, index) => {
+    if (! /*#__PURE__*/React.isValidElement(child)) {
       return;
     }
     if (process.env.NODE_ENV !== 'production') {
@@ -26432,7 +26415,7 @@ const NativeSelectIcon = styled('svg', {
 /**
  * @ignore - internal component.
  */
-const NativeSelectInput = /*#__PURE__*/React__namespace.forwardRef(function NativeSelectInput(props, ref) {
+const NativeSelectInput = /*#__PURE__*/React.forwardRef(function NativeSelectInput(props, ref) {
   const {
       className,
       disabled,
@@ -26448,7 +26431,7 @@ const NativeSelectInput = /*#__PURE__*/React__namespace.forwardRef(function Nati
     error
   });
   const classes = useUtilityClasses$q(ownerState);
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [/*#__PURE__*/jsxRuntimeExports.jsx(NativeSelectSelect, _extends$2({
       ownerState: ownerState,
       className: clsx$2(classes.select, className),
@@ -26748,7 +26731,7 @@ const OutlinedInputInput = styled(InputBaseComponent, {
 }, ownerState.endAdornment && {
   paddingRight: 0
 }));
-const OutlinedInput = /*#__PURE__*/React__namespace.forwardRef(function OutlinedInput(inProps, ref) {
+const OutlinedInput = /*#__PURE__*/React.forwardRef(function OutlinedInput(inProps, ref) {
   var _ref, _slots$root, _ref2, _slots$input, _React$Fragment;
   const props = useDefaultProps({
     props: inProps,
@@ -26794,7 +26777,7 @@ const OutlinedInput = /*#__PURE__*/React__namespace.forwardRef(function Outlined
     renderSuffix: state => /*#__PURE__*/jsxRuntimeExports.jsx(NotchedOutlineRoot, {
       ownerState: ownerState,
       className: classes.notchedOutline,
-      label: label != null && label !== '' && fcs.required ? _React$Fragment || (_React$Fragment = /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+      label: label != null && label !== '' && fcs.required ? _React$Fragment || (_React$Fragment = /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
         children: [label, "\u2009", '*']
       })) : label,
       notched: typeof notched !== 'undefined' ? notched : Boolean(state.startAdornment || state.filled || state.focused)
@@ -27301,7 +27284,7 @@ const PaginationItemPageIcon = styled('div', {
 }, ownerState.size === 'large' && {
   fontSize: theme.typography.pxToRem(22)
 }));
-const PaginationItem = /*#__PURE__*/React__namespace.forwardRef(function PaginationItem(inProps, ref) {
+const PaginationItem = /*#__PURE__*/React.forwardRef(function PaginationItem(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiPaginationItem'
@@ -27499,7 +27482,7 @@ function defaultGetAriaLabel(type, page, selected) {
   }
   return `Go to ${type} page`;
 }
-const Pagination$1 = /*#__PURE__*/React__namespace.forwardRef(function Pagination(inProps, ref) {
+const Pagination$1 = /*#__PURE__*/React.forwardRef(function Pagination(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiPagination'
@@ -27767,13 +27750,13 @@ process.env.NODE_ENV !== "production" ? RadioButtonIcon.propTypes = {
 /**
  * @ignore - internal component.
  */
-const RadioGroupContext = /*#__PURE__*/React__namespace.createContext(undefined);
+const RadioGroupContext = /*#__PURE__*/React.createContext(undefined);
 if (process.env.NODE_ENV !== 'production') {
   RadioGroupContext.displayName = 'RadioGroupContext';
 }
 
 function useRadioGroup() {
-  return React__namespace.useContext(RadioGroupContext);
+  return React.useContext(RadioGroupContext);
 }
 
 function getRadioUtilityClass(slot) {
@@ -27837,7 +27820,7 @@ const defaultCheckedIcon = /*#__PURE__*/jsxRuntimeExports.jsx(RadioButtonIcon, {
   checked: true
 });
 const defaultIcon = /*#__PURE__*/jsxRuntimeExports.jsx(RadioButtonIcon, {});
-const Radio = /*#__PURE__*/React__namespace.forwardRef(function Radio(inProps, ref) {
+const Radio = /*#__PURE__*/React.forwardRef(function Radio(inProps, ref) {
   var _defaultIcon$props$fo, _defaultCheckedIcon$p;
   const props = useDefaultProps({
     props: inProps,
@@ -27873,10 +27856,10 @@ const Radio = /*#__PURE__*/React__namespace.forwardRef(function Radio(inProps, r
   }
   return /*#__PURE__*/jsxRuntimeExports.jsx(RadioRoot, _extends$2({
     type: "radio",
-    icon: /*#__PURE__*/React__namespace.cloneElement(icon, {
+    icon: /*#__PURE__*/React.cloneElement(icon, {
       fontSize: (_defaultIcon$props$fo = defaultIcon.props.fontSize) != null ? _defaultIcon$props$fo : size
     }),
-    checkedIcon: /*#__PURE__*/React__namespace.cloneElement(checkedIcon, {
+    checkedIcon: /*#__PURE__*/React.cloneElement(checkedIcon, {
       fontSize: (_defaultCheckedIcon$p = defaultCheckedIcon.props.fontSize) != null ? _defaultCheckedIcon$p : size
     }),
     ownerState: ownerState,
@@ -28069,7 +28052,7 @@ const useUtilityClasses$l = ownerState => {
 /**
  * @ignore - internal component.
  */
-const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInput(props, ref) {
+const SelectInput = /*#__PURE__*/React.forwardRef(function SelectInput(props, ref) {
   var _MenuProps$slotProps;
   const {
       'aria-describedby': ariaDescribedby,
@@ -28116,22 +28099,22 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
     default: defaultOpen,
     name: 'Select'
   });
-  const inputRef = React__namespace.useRef(null);
-  const displayRef = React__namespace.useRef(null);
-  const [displayNode, setDisplayNode] = React__namespace.useState(null);
+  const inputRef = React.useRef(null);
+  const displayRef = React.useRef(null);
+  const [displayNode, setDisplayNode] = React.useState(null);
   const {
     current: isOpenControlled
-  } = React__namespace.useRef(openProp != null);
-  const [menuMinWidthState, setMenuMinWidthState] = React__namespace.useState();
+  } = React.useRef(openProp != null);
+  const [menuMinWidthState, setMenuMinWidthState] = React.useState();
   const handleRef = useForkRef$2(ref, inputRefProp);
-  const handleDisplayRef = React__namespace.useCallback(node => {
+  const handleDisplayRef = React.useCallback(node => {
     displayRef.current = node;
     if (node) {
       setDisplayNode(node);
     }
   }, []);
   const anchorElement = displayNode == null ? void 0 : displayNode.parentNode;
-  React__namespace.useImperativeHandle(handleRef, () => ({
+  React.useImperativeHandle(handleRef, () => ({
     focus: () => {
       displayRef.current.focus();
     },
@@ -28140,7 +28123,7 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
   }), [value]);
 
   // Resize menu on `defaultOpen` automatic toggle.
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (defaultOpen && openState && displayNode && !isOpenControlled) {
       setMenuMinWidthState(autoWidth ? null : anchorElement.clientWidth);
       displayRef.current.focus();
@@ -28149,12 +28132,12 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
   }, [displayNode, autoWidth]);
   // `isOpenControlled` is ignored because the component should never switch between controlled and uncontrolled modes.
   // `defaultOpen` and `openState` are ignored to avoid unnecessary callbacks.
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (autoFocus) {
       displayRef.current.focus();
     }
   }, [autoFocus]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (!labelId) {
       return undefined;
     }
@@ -28198,7 +28181,7 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
   const handleClose = event => {
     update(false, event);
   };
-  const childrenArray = React__namespace.Children.toArray(children);
+  const childrenArray = React.Children.toArray(children);
 
   // Support autofill.
   const handleChange = event => {
@@ -28300,7 +28283,7 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
     }
   }
   const items = childrenArray.map(child => {
-    if (! /*#__PURE__*/React__namespace.isValidElement(child)) {
+    if (! /*#__PURE__*/React.isValidElement(child)) {
       return null;
     }
     if (process.env.NODE_ENV !== 'production') {
@@ -28326,7 +28309,7 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
     if (selected) {
       foundMatch = true;
     }
-    return /*#__PURE__*/React__namespace.cloneElement(child, {
+    return /*#__PURE__*/React.cloneElement(child, {
       'aria-selected': selected ? 'true' : 'false',
       onClick: handleItemClick(child),
       onKeyUp: event => {
@@ -28349,7 +28332,7 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
   });
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (!foundMatch && !multiple && value !== '') {
         const values = childrenArray.map(child => child.props.value);
         console.warn([`MUI: You have provided an out-of-range value \`${value}\` for the select ${name ? `(name="${name}") ` : ''}component.`, "Consider providing a value that matches one of the available options or ''.", `The available values are ${values.filter(x => x != null).map(x => `\`${x}\``).join(', ') || '""'}.`].join('\n'));
@@ -28395,7 +28378,7 @@ const SelectInput = /*#__PURE__*/React__namespace.forwardRef(function SelectInpu
   const classes = useUtilityClasses$l(ownerState);
   const paperProps = _extends$2({}, MenuProps.PaperProps, (_MenuProps$slotProps = MenuProps.slotProps) == null ? void 0 : _MenuProps$slotProps.paper);
   const listboxId = useId$1();
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [/*#__PURE__*/jsxRuntimeExports.jsx(SelectSelect, _extends$2({
       ref: handleDisplayRef,
       tabIndex: tabIndex,
@@ -28632,7 +28615,7 @@ const styledRootConfig = {
 const StyledInput = styled(Input$2, styledRootConfig)('');
 const StyledOutlinedInput = styled(OutlinedInput, styledRootConfig)('');
 const StyledFilledInput = styled(FilledInput, styledRootConfig)('');
-const Select$1 = /*#__PURE__*/React__namespace.forwardRef(function Select(inProps, ref) {
+const Select$1 = /*#__PURE__*/React.forwardRef(function Select(inProps, ref) {
   const props = useDefaultProps({
     name: 'MuiSelect',
     props: inProps
@@ -28688,8 +28671,8 @@ const Select$1 = /*#__PURE__*/React__namespace.forwardRef(function Select(inProp
     })
   }[variant];
   const inputComponentRef = useForkRef$2(ref, getReactElementRef(InputComponent));
-  return /*#__PURE__*/jsxRuntimeExports.jsx(React__namespace.Fragment, {
-    children: /*#__PURE__*/React__namespace.cloneElement(InputComponent, _extends$2({
+  return /*#__PURE__*/jsxRuntimeExports.jsx(React.Fragment, {
+    children: /*#__PURE__*/React.cloneElement(InputComponent, _extends$2({
       // Most of the logic is implemented in `SelectInput`.
       // The `Select` component is a simple API wrapper to expose something better to play with.
       inputComponent,
@@ -29058,14 +29041,14 @@ function useSlider(parameters) {
     tabIndex,
     value: valueProp
   } = parameters;
-  const touchId = React__namespace.useRef(undefined);
+  const touchId = React.useRef(undefined);
   // We can't use the :active browser pseudo-classes.
   // - The active state isn't triggered when clicking on the rail.
   // - The active state isn't transferred when inversing a range slider.
-  const [active, setActive] = React__namespace.useState(-1);
-  const [open, setOpen] = React__namespace.useState(-1);
-  const [dragging, setDragging] = React__namespace.useState(false);
-  const moveCount = React__namespace.useRef(0);
+  const [active, setActive] = React.useState(-1);
+  const [open, setOpen] = React.useState(-1);
+  const [dragging, setDragging] = React.useState(false);
+  const moveCount = React.useRef(0);
   const [valueDerived, setValueState] = useControlled$1({
     controlled: valueProp,
     default: defaultValue != null ? defaultValue : min,
@@ -29101,8 +29084,8 @@ function useSlider(parameters) {
     onFocus: handleFocusVisible,
     ref: focusVisibleRef
   } = useIsFocusVisible();
-  const [focusedThumbIndex, setFocusedThumbIndex] = React__namespace.useState(-1);
-  const sliderRef = React__namespace.useRef(null);
+  const [focusedThumbIndex, setFocusedThumbIndex] = React.useState(-1);
+  const sliderRef = React.useRef(null);
   const handleFocusRef = useForkRef$2(focusVisibleRef, sliderRef);
   const handleRef = useForkRef$2(ref, handleFocusRef);
   const createHandleHiddenInputFocus = otherHandlers => event => {
@@ -29213,7 +29196,7 @@ function useSlider(parameters) {
     // @ts-ignore
     changeValue(event, event.target.valueAsNumber);
   };
-  const previousIndex = React__namespace.useRef(undefined);
+  const previousIndex = React.useRef(undefined);
   let axis = orientation;
   if (isRtl && orientation === 'horizontal') {
     axis += '-reverse';
@@ -29377,14 +29360,14 @@ function useSlider(parameters) {
       passive: true
     });
   });
-  const stopListening = React__namespace.useCallback(() => {
+  const stopListening = React.useCallback(() => {
     const doc = ownerDocument$1(sliderRef.current);
     doc.removeEventListener('mousemove', handleTouchMove);
     doc.removeEventListener('mouseup', handleTouchEnd);
     doc.removeEventListener('touchmove', handleTouchMove);
     doc.removeEventListener('touchend', handleTouchEnd);
   }, [handleTouchEnd, handleTouchMove]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     const {
       current: slider
     } = sliderRef;
@@ -29396,7 +29379,7 @@ function useSlider(parameters) {
       stopListening();
     };
   }, [stopListening, handleTouchStart]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (disabled) {
       stopListening();
     }
@@ -29565,9 +29548,9 @@ function SliderValueLabel$1(props) {
   if (!children) {
     return null;
   }
-  return /*#__PURE__*/React__namespace.cloneElement(children, {
+  return /*#__PURE__*/React.cloneElement(children, {
     className: clsx$2(children.props.className)
-  }, /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+  }, /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
     children: [children.props.children, /*#__PURE__*/jsxRuntimeExports.jsx("span", {
       className: clsx$2(classes.offset, className),
       "aria-hidden": true,
@@ -30113,7 +30096,7 @@ const useUtilityClasses$j = ownerState => {
 const Forward = ({
   children
 }) => children;
-const Slider = /*#__PURE__*/React__namespace.forwardRef(function Slider(inputProps, ref) {
+const Slider = /*#__PURE__*/React.forwardRef(function Slider(inputProps, ref) {
   var _ref, _slots$root, _ref2, _slots$rail, _ref3, _slots$track, _ref4, _slots$thumb, _ref5, _slots$valueLabel, _ref6, _slots$mark, _ref7, _slots$markLabel, _ref8, _slots$input, _slotProps$root, _slotProps$rail, _slotProps$track, _slotProps$thumb, _slotProps$valueLabel, _slotProps$mark, _slotProps$markLabel, _slotProps$input;
   const props = useDefaultProps({
     props: inputProps,
@@ -30276,7 +30259,7 @@ const Slider = /*#__PURE__*/React__namespace.forwardRef(function Slider(inputPro
       } else {
         markActive = track === 'normal' && (range ? mark.value >= values[0] && mark.value <= values[values.length - 1] : mark.value <= values[0]) || track === 'inverted' && (range ? mark.value <= values[0] || mark.value >= values[values.length - 1] : mark.value >= values[0]);
       }
-      return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+      return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
         children: [/*#__PURE__*/jsxRuntimeExports.jsx(MarkSlot, _extends$2({
           "data-index": index
         }, markProps, !isHostComponent$1(MarkSlot) && {
@@ -30799,7 +30782,7 @@ function composeEventHandler(handler, eventHandler) {
 }
 
 // TODO v6: Remove PopperComponent, PopperProps, TransitionComponent and TransitionProps.
-const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProps, ref) {
+const Tooltip = /*#__PURE__*/React.forwardRef(function Tooltip(inProps, ref) {
   var _ref, _slots$popper, _ref2, _ref3, _slots$transition, _ref4, _slots$tooltip, _ref5, _slots$arrow, _slotProps$popper, _ref6, _slotProps$popper2, _slotProps$transition, _slotProps$tooltip, _ref7, _slotProps$tooltip2, _slotProps$arrow, _ref8, _slotProps$arrow2;
   const props = useDefaultProps({
     props: inProps,
@@ -30837,14 +30820,14 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
     other = _objectWithoutPropertiesLoose$1(props, _excluded$u);
 
   // to prevent runtime errors, developers will need to provide a child as a React element anyway.
-  const children = /*#__PURE__*/React__namespace.isValidElement(childrenProp) ? childrenProp : /*#__PURE__*/jsxRuntimeExports.jsx("span", {
+  const children = /*#__PURE__*/React.isValidElement(childrenProp) ? childrenProp : /*#__PURE__*/jsxRuntimeExports.jsx("span", {
     children: childrenProp
   });
   const theme = useTheme$2();
   const isRtl = useRtl();
-  const [childNode, setChildNode] = React__namespace.useState();
-  const [arrowRef, setArrowRef] = React__namespace.useState(null);
-  const ignoreNonTouchEvents = React__namespace.useRef(false);
+  const [childNode, setChildNode] = React.useState();
+  const [arrowRef, setArrowRef] = React.useState(null);
+  const ignoreNonTouchEvents = React.useRef(false);
   const disableInteractive = disableInteractiveProp || followCursor;
   const closeTimer = useTimeout();
   const enterTimer = useTimeout();
@@ -30861,17 +30844,17 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const {
       current: isControlled
-    } = React__namespace.useRef(openProp !== undefined);
+    } = React.useRef(openProp !== undefined);
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (childNode && childNode.disabled && !isControlled && title !== '' && childNode.tagName.toLowerCase() === 'button') {
         console.error(['MUI: You are providing a disabled `button` child to the Tooltip component.', 'A disabled element does not fire events.', "Tooltip needs to listen to the child element's events to display the title.", '', 'Add a simple wrapper element, such as a `span`.'].join('\n'));
       }
     }, [title, childNode, isControlled]);
   }
   const id = useId$1(idProp);
-  const prevUserSelect = React__namespace.useRef();
+  const prevUserSelect = React.useRef();
   const stopTouchInteraction = useEventCallback$1(() => {
     if (prevUserSelect.current !== undefined) {
       document.body.style.WebkitUserSelect = prevUserSelect.current;
@@ -30879,7 +30862,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
     }
     touchTimer.clear();
   });
-  React__namespace.useEffect(() => stopTouchInteraction, [stopTouchInteraction]);
+  React.useEffect(() => stopTouchInteraction, [stopTouchInteraction]);
   const handleOpen = event => {
     hystersisTimer.clear();
     hystersisOpen = true;
@@ -30943,7 +30926,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
   } = useIsFocusVisible();
   // We don't necessarily care about the focusVisible state (which is safe to access via ref anyway).
   // We just need to re-render the Tooltip if the focus-visible state changes.
-  const [, setChildIsFocusVisible] = React__namespace.useState(false);
+  const [, setChildIsFocusVisible] = React.useState(false);
   const handleBlur = event => {
     handleBlurVisible(event);
     if (isFocusVisibleRef.current === false) {
@@ -30993,7 +30976,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
       handleClose(event);
     });
   };
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (!open) {
       return undefined;
     }
@@ -31019,7 +31002,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
   if (!title && title !== 0) {
     open = false;
   }
-  const popperRef = React__namespace.useRef();
+  const popperRef = React.useRef();
   const handleMouseMove = event => {
     const childrenProps = children.props;
     if (childrenProps.onMouseMove) {
@@ -31053,7 +31036,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
     childrenProps['data-mui-internal-clone-element'] = true;
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (childNode && !childNode.getAttribute('data-mui-internal-clone-element')) {
         console.error(['MUI: The `children` component of the Tooltip is not forwarding its props correctly.', 'Please make sure that props are spread on the same element that the ref is applied to.'].join('\n'));
       }
@@ -31085,7 +31068,7 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
       console.error(['MUI: You have provided a `title` prop to the child of <Tooltip />.', `Remove this title prop \`${children.props.title}\` or the Tooltip component.`].join('\n'));
     }
   }
-  const popperOptions = React__namespace.useMemo(() => {
+  const popperOptions = React.useMemo(() => {
     var _PopperProps$popperOp;
     let tooltipModifiers = [{
       name: 'arrow',
@@ -31125,8 +31108,8 @@ const Tooltip = /*#__PURE__*/React__namespace.forwardRef(function Tooltip(inProp
   const tooltipArrowProps = appendOwnerState$1(ArrowComponent, _extends$2({}, (_slotProps$arrow = slotProps.arrow) != null ? _slotProps$arrow : componentsProps.arrow, {
     className: clsx$2(classes.arrow, (_ref8 = (_slotProps$arrow2 = slotProps.arrow) != null ? _slotProps$arrow2 : componentsProps.arrow) == null ? void 0 : _ref8.className)
   }), ownerState);
-  return /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
-    children: [/*#__PURE__*/React__namespace.cloneElement(children, childrenProps), /*#__PURE__*/jsxRuntimeExports.jsx(PopperComponent, _extends$2({
+  return /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
+    children: [/*#__PURE__*/React.cloneElement(children, childrenProps), /*#__PURE__*/jsxRuntimeExports.jsx(PopperComponent, _extends$2({
       as: PopperComponentProp != null ? PopperComponentProp : Popper,
       placement: placement,
       anchorEl: followCursor ? {
@@ -31541,7 +31524,7 @@ const SwitchThumb = styled('span', {
   height: 20,
   borderRadius: '50%'
 }));
-const Switch = /*#__PURE__*/React__namespace.forwardRef(function Switch(inProps, ref) {
+const Switch = /*#__PURE__*/React.forwardRef(function Switch(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiSwitch'
@@ -31737,7 +31720,7 @@ const TextFieldRoot = styled(FormControl, {
  * - using the upper case props for passing values directly to the components
  * - using the underlying components directly as shown in the demos
  */
-const TextField = /*#__PURE__*/React__namespace.forwardRef(function TextField(inProps, ref) {
+const TextField = /*#__PURE__*/React.forwardRef(function TextField(inProps, ref) {
   const props = useDefaultProps({
     props: inProps,
     name: 'MuiTextField'
@@ -32051,42 +32034,96 @@ var RecordVoiceOverOutlined$1 = createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.
 }), 'RecordVoiceOverOutlined');
 
 // CourseLayout
-dt.span(templateObject_1$o || (templateObject_1$o = __makeTemplateObject([""], [""])));
-var GridItemContentHeader = dt.header(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
-var GridItemTitle = dt.h3(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
-dt.span(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
-dt(Typography)(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  color: #7a7a7a;\n  opacity: 0.7;\n"], ["\n  color: #7a7a7a;\n  opacity: 0.7;\n"])));
-dt.div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
+dt.span.withConfig({
+  displayName: "CourseCardstyles__ModalRef",
+  componentId: "sc-mrcdz5-0"
+})(templateObject_1$o || (templateObject_1$o = __makeTemplateObject([""], [""])));
+var GridItemContentHeader = dt.header.withConfig({
+  displayName: "CourseCardstyles__GridItemContentHeader",
+  componentId: "sc-mrcdz5-1"
+})(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
+var GridItemTitle = dt.h3.withConfig({
+  displayName: "CourseCardstyles__GridItemTitle",
+  componentId: "sc-mrcdz5-2"
+})(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
+dt.span.withConfig({
+  displayName: "CourseCardstyles__DeleteSpan",
+  componentId: "sc-mrcdz5-3"
+})(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
+dt(Typography).withConfig({
+  displayName: "CourseCardstyles__DisabledTypography",
+  componentId: "sc-mrcdz5-4"
+})(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  color: #7a7a7a;\n  opacity: 0.7;\n"], ["\n  color: #7a7a7a;\n  opacity: 0.7;\n"])));
+dt.div.withConfig({
+  displayName: "CourseCardstyles__ActionConfig",
+  componentId: "sc-mrcdz5-5"
+})(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
   var hoverBackground = _a.hoverBackground;
   return hoverBackground || 'rgba(0, 0, 0, 0.1)';
 }, function (_a) {
   var $hoverColor = _a.$hoverColor;
   return $hoverColor && "svg path {\n          fill: ".concat($hoverColor, ";\n           }");
 });
-dt.div(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"], ["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"])));
-dt.div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  margin-top: 30px;\n\n  ", "\n"], ["\n  margin-top: 30px;\n\n  ", "\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "CourseCardstyles__ToolbarItemWrapper",
+  componentId: "sc-mrcdz5-6"
+})(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"], ["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "CourseCardstyles__ContentWrapper",
+  componentId: "sc-mrcdz5-7"
+})(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  margin-top: 30px;\n\n  ", "\n"], ["\n  margin-top: 30px;\n\n  ", "\n"])), function (_a) {
   var $isGrid = _a.$isGrid;
   return !$isGrid ? "\n      .card {\n          grid-template-columns:none\n      }\n    " : "\n      .card {\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n\n\n        @media (max-width: 1450px) {\n          grid-template-columns: repeat(3, 1fr);\n        }\n      }\n    ";
 });
-var CardActionBar = dt.div(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])), function (_a) {
+var CardActionBar = dt.div.withConfig({
+  displayName: "CourseCardstyles__CardActionBar",
+  componentId: "sc-mrcdz5-8"
+})(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])), function (_a) {
   var $switched = _a.$switched;
   return $switched ? "\n    top: 0px;\n    left: 0px;\n    grid-template-columns: 1fr 35px;\n  " : "\n    bottom: 0px;\n    right: 0px;\n    justify-content: end;\n    grid-template-columns: 35px 35px;\n  ";
 });
-var StylesCardWrapper = dt.div(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"])), function (_a) {
+var StylesCardWrapper = dt.div.withConfig({
+  displayName: "CourseCardstyles__StylesCardWrapper",
+  componentId: "sc-mrcdz5-9"
+})(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"])), function (_a) {
   var $canOpen = _a.$canOpen;
   return $canOpen ? 'pointer' : 'default';
 });
-var StyledChecked = dt.div(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"])));
-dt.div(templateObject_12$2 || (templateObject_12$2 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"])));
-var CourseStatusContainer = dt.div(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
+var StyledChecked = dt.div.withConfig({
+  displayName: "CourseCardstyles__StyledChecked",
+  componentId: "sc-mrcdz5-10"
+})(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"])));
+dt.div.withConfig({
+  displayName: "CourseCardstyles__VideoProcessingContainer",
+  componentId: "sc-mrcdz5-11"
+})(templateObject_12$2 || (templateObject_12$2 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"])));
+var CourseStatusContainer = dt.div.withConfig({
+  displayName: "CourseCardstyles__CourseStatusContainer",
+  componentId: "sc-mrcdz5-12"
+})(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
   var $status = _a.$status;
   return !$status ? '#EA382A' : '#00905E';
 });
-dt.div(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"])));
-var TooltipContent = dt.div(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"])));
-var StyledCardBottomContainer = dt.div(templateObject_16$1 || (templateObject_16$1 = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"], ["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"])));
-var StyledActionsContainer = dt.div(templateObject_17$1 || (templateObject_17$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"])));
-var StyledActionItem = dt.span(templateObject_18$1 || (templateObject_18$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "CourseCardstyles__ItemWrapper",
+  componentId: "sc-mrcdz5-13"
+})(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"])));
+var TooltipContent = dt.div.withConfig({
+  displayName: "CourseCardstyles__TooltipContent",
+  componentId: "sc-mrcdz5-14"
+})(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"])));
+var StyledCardBottomContainer = dt.div.withConfig({
+  displayName: "CourseCardstyles__StyledCardBottomContainer",
+  componentId: "sc-mrcdz5-15"
+})(templateObject_16$1 || (templateObject_16$1 = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"], ["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"])));
+var StyledActionsContainer = dt.div.withConfig({
+  displayName: "CourseCardstyles__StyledActionsContainer",
+  componentId: "sc-mrcdz5-16"
+})(templateObject_17$1 || (templateObject_17$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"])));
+var StyledActionItem = dt.span.withConfig({
+  displayName: "CourseCardstyles__StyledActionItem",
+  componentId: "sc-mrcdz5-17"
+})(templateObject_18$1 || (templateObject_18$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
   var disabled = _a.disabled;
   return disabled ? 'default' : 'pointer';
 }, function (_a) {
@@ -32106,30 +32143,72 @@ var StyledActionItem = dt.span(templateObject_18$1 || (templateObject_18$1 = __m
     color = _b === void 0 ? '#68707a' : _b;
   return disabled ? '#ccc' : color;
 });
-dt.span(templateObject_19$1 || (templateObject_19$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
-var ItemBlock = dt.div(templateObject_20$1 || (templateObject_20$1 = __makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
-var StyledItemWrapper = dt.div(templateObject_21$1 || (templateObject_21$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"
+dt.span.withConfig({
+  displayName: "CourseCardstyles__StyledCourseContent",
+  componentId: "sc-mrcdz5-18"
+})(templateObject_19$1 || (templateObject_19$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
+var ItemBlock = dt.div.withConfig({
+  displayName: "CourseCardstyles__ItemBlock",
+  componentId: "sc-mrcdz5-19"
+})(templateObject_20$1 || (templateObject_20$1 = __makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
+var StyledItemWrapper = dt.div.withConfig({
+  displayName: "CourseCardstyles__StyledItemWrapper",
+  componentId: "sc-mrcdz5-20"
+})(templateObject_21$1 || (templateObject_21$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"
 // gridConfig
 ])));
 // gridConfig
-var StyledCourseCardContent = dt.span(templateObject_22$1 || (templateObject_22$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
-var GridItemLessons = dt.div(templateObject_23$1 || (templateObject_23$1 = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"], ["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"])), function (props) {
+var StyledCourseCardContent = dt.span.withConfig({
+  displayName: "CourseCardstyles__StyledCourseCardContent",
+  componentId: "sc-mrcdz5-21"
+})(templateObject_22$1 || (templateObject_22$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
+var GridItemLessons = dt.div.withConfig({
+  displayName: "CourseCardstyles__GridItemLessons",
+  componentId: "sc-mrcdz5-22"
+})(templateObject_23$1 || (templateObject_23$1 = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"], ["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"])), function (props) {
   return props.checked ? 'none' : '#edf8fa';
 }, function (props) {
   return props.checked ? '#333333' : '#20a8c6';
 });
-var StyledToolTipContainer = dt.div(templateObject_24$1 || (templateObject_24$1 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
-dt.div(templateObject_25 || (templateObject_25 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"])), function (_a) {
+var StyledToolTipContainer = dt.div.withConfig({
+  displayName: "CourseCardstyles__StyledToolTipContainer",
+  componentId: "sc-mrcdz5-23"
+})(templateObject_24$1 || (templateObject_24$1 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+dt.div.withConfig({
+  displayName: "CourseCardstyles__Action",
+  componentId: "sc-mrcdz5-24"
+})(templateObject_25 || (templateObject_25 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"])), function (_a) {
   var disabled = _a.disabled;
   return disabled ? '0.5' : '1';
 });
-dt.div(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"], ["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"])));
-var GridItemContent = dt.section(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"], ["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"])));
-var GridItemWrapper = dt.div(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"])));
-dt.div(templateObject_29 || (templateObject_29 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"], ["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"])));
-dt.div(templateObject_30 || (templateObject_30 = __makeTemplateObject(["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"], ["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"])));
-var GridItemImage = dt.figure(templateObject_31 || (templateObject_31 = __makeTemplateObject(["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"], ["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"])));
-var GridItem = dt.div(templateObject_32 || (templateObject_32 = __makeTemplateObject(["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"], ["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "CourseCardstyles__Wrapper",
+  componentId: "sc-mrcdz5-25"
+})(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"], ["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"])));
+var GridItemContent = dt.section.withConfig({
+  displayName: "CourseCardstyles__GridItemContent",
+  componentId: "sc-mrcdz5-26"
+})(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"], ["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"])));
+var GridItemWrapper = dt.div.withConfig({
+  displayName: "CourseCardstyles__GridItemWrapper",
+  componentId: "sc-mrcdz5-27"
+})(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"])));
+dt.div.withConfig({
+  displayName: "CourseCardstyles__GridTableWrapper",
+  componentId: "sc-mrcdz5-28"
+})(templateObject_29 || (templateObject_29 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"], ["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "CourseCardstyles__StyledPagination",
+  componentId: "sc-mrcdz5-29"
+})(templateObject_30 || (templateObject_30 = __makeTemplateObject(["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"], ["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"])));
+var GridItemImage = dt.figure.withConfig({
+  displayName: "CourseCardstyles__GridItemImage",
+  componentId: "sc-mrcdz5-30"
+})(templateObject_31 || (templateObject_31 = __makeTemplateObject(["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"], ["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"])));
+var GridItem = dt.div.withConfig({
+  displayName: "CourseCardstyles__GridItem",
+  componentId: "sc-mrcdz5-31"
+})(templateObject_32 || (templateObject_32 = __makeTemplateObject(["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"], ["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"])), function (_a) {
   var $isFromUser = _a.$isFromUser;
   return $isFromUser && "\n  figure {\n    position: relative;\n    &:after {\n      content: 'View Analytics';\n      position: absolute;\n      top: 0;\n      opacity: 0;\n      color: #06c68f;\n      left: 0;\n      font-size: 24px;\n      font-weight: 700;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: rgba(255, 255, 255, 0.9);\n      width: 100%;\n      height: 100%;\n      transition: opacity 0.3s ease;\n      z-index: 10;\n    }\n  }\n\n  &:hover {\n    figure {\n      &:after {\n        opacity: 1;\n      }\n    }\n  }\n  " || '';
 });
@@ -32138,11 +32217,11 @@ var templateObject_1$o, templateObject_2$j, templateObject_3$f, templateObject_4
 var TooltipHeight$1 = function TooltipHeight(_a) {
   var text = _a.text,
     lines = _a.lines;
-  var textElementRef = React.useRef(null);
-  var _b = React.useState(false),
+  var textElementRef = useRef(null);
+  var _b = useState(false),
     isOverflowing = _b[0],
     setIsOverflowing = _b[1];
-  React.useEffect(function () {
+  useEffect(function () {
     var isOverflow = textElementRef.current ? textElementRef.current.scrollHeight > textElementRef.current.clientHeight : false;
     setIsOverflowing(isOverflow);
   }, [text]);
@@ -32172,7 +32251,7 @@ var TooltipHeight$1 = function TooltipHeight(_a) {
   });
 };
 
-var Edit = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Edit = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -32197,7 +32276,7 @@ var Edit = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Edit.displayName = 'Edit';
 
-var PlayButton = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PlayButton = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -32237,7 +32316,7 @@ var PlayButton = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PlayButton.displayName = 'PlayButton';
 
-var Unlock = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Unlock = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -32362,7 +32441,7 @@ const getDefaults = () => defaultOptions$2;
 let i18nInstance;
 const getI18n = () => i18nInstance;
 
-const I18nContext = React.createContext();
+const I18nContext = createContext();
 class ReportNamespaces {
   constructor() {
     this.usedNamespaces = {};
@@ -32378,14 +32457,14 @@ class ReportNamespaces {
 }
 
 const usePrevious = (value, ignore) => {
-  const ref = React.useRef();
-  React.useEffect(() => {
+  const ref = useRef();
+  useEffect(() => {
     ref.current = value;
   }, [value, ignore]);
   return ref.current;
 };
 const alwaysNewT = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
-const useMemoizedT = (i18n, language, namespace, keyPrefix) => React.useCallback(alwaysNewT(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
+const useMemoizedT = (i18n, language, namespace, keyPrefix) => useCallback(alwaysNewT(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
 const useTranslation$1 = (ns, props = {}) => {
   const {
     i18n: i18nFromProps
@@ -32393,7 +32472,7 @@ const useTranslation$1 = (ns, props = {}) => {
   const {
     i18n: i18nFromContext,
     defaultNS: defaultNSFromContext
-  } = React.useContext(I18nContext) || {};
+  } = useContext(I18nContext) || {};
   const i18n = i18nFromProps || i18nFromContext || getI18n();
   if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces();
   if (!i18n) {
@@ -32426,12 +32505,12 @@ const useTranslation$1 = (ns, props = {}) => {
   const memoGetT = useMemoizedT(i18n, props.lng || null, i18nOptions.nsMode === 'fallback' ? namespaces : namespaces[0], keyPrefix);
   const getT = () => memoGetT;
   const getNewT = () => alwaysNewT(i18n, props.lng || null, i18nOptions.nsMode === 'fallback' ? namespaces : namespaces[0], keyPrefix);
-  const [t, setT] = React.useState(getT);
+  const [t, setT] = useState(getT);
   let joinedNS = namespaces.join();
   if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
   const previousJoinedNS = usePrevious(joinedNS);
-  const isMounted = React.useRef(true);
-  React.useEffect(() => {
+  const isMounted = useRef(true);
+  useEffect(() => {
     const {
       bindI18n,
       bindI18nStore
@@ -32462,7 +32541,7 @@ const useTranslation$1 = (ns, props = {}) => {
       if (bindI18nStore && i18n) bindI18nStore.split(' ').forEach(e => i18n.store.off(e, boundReset));
     };
   }, [i18n, joinedNS]);
-  React.useEffect(() => {
+  useEffect(() => {
     if (isMounted.current && ready) {
       setT(getT);
     }
@@ -32482,10 +32561,22 @@ const useTranslation$1 = (ns, props = {}) => {
   });
 };
 
-var Container$4 = dt.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject([""], [""])));
-var ActionsContent = dt.div(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  padding: 5px;\n"], ["\n  padding: 5px;\n"])));
-var StyledIconButton = dt.div(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"], ["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"])));
-dt.div(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
+var Container$4 = dt.div.withConfig({
+  displayName: "GridActionMenustyles__Container",
+  componentId: "sc-k3nu39-0"
+})(templateObject_1$n || (templateObject_1$n = __makeTemplateObject([""], [""])));
+var ActionsContent = dt.div.withConfig({
+  displayName: "GridActionMenustyles__ActionsContent",
+  componentId: "sc-k3nu39-1"
+})(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  padding: 5px;\n"], ["\n  padding: 5px;\n"])));
+var StyledIconButton = dt.div.withConfig({
+  displayName: "GridActionMenustyles__StyledIconButton",
+  componentId: "sc-k3nu39-2"
+})(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"], ["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "GridActionMenustyles__Action",
+  componentId: "sc-k3nu39-3"
+})(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
   var hoverBackground = _a.hoverBackground;
   return hoverBackground || "rgba(0, 0, 0, 0.1)";
 }, function (_a) {
@@ -32494,7 +32585,7 @@ dt.div(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  di
 });
 var templateObject_1$n, templateObject_2$i, templateObject_3$e, templateObject_4$b;
 
-var MoreVertRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var MoreVertRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -32524,7 +32615,7 @@ MoreVertRoundedIcon.displayName = 'MoreVertRoundedIcon';
 
 var GridActionMenu = function GridActionMenu(props) {
   var _a, _b, _c;
-  var _d = React.useState(null),
+  var _d = useState(null),
     anchorEl = _d[0],
     setAnchorEl = _d[1];
   var handleClick = function handleClick(event) {
@@ -32805,7 +32896,7 @@ var CourseCard = function CourseCard(_a) {
   }, item.id);
 };
 
-var SearchRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SearchRounded = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -32827,24 +32918,51 @@ var SearchRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 SearchRounded.displayName = 'SearchRounded';
 
-var Field = dt.div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"], ["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"])), function (_a) {
+var Field = dt.div.withConfig({
+  displayName: "styled-components__Field",
+  componentId: "sc-193scoi-0"
+})(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"], ["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"])), function (_a) {
   var $iconInStart = _a.$iconInStart;
   return $iconInStart ? 'padding-left: 40px;' : 'padding-right: 40px;';
 }, function (_a) {
   var $iconInStart = _a.$iconInStart;
   return $iconInStart ? 'left: 5px;' : 'right: 5px;';
 });
-var ValidationIcon = dt.div(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"], ["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"])));
-var StyledComponentContainer = dt.div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"], ["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"])));
-var CharactersContainer = dt.div(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"], ["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"])));
-dt.input(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
-dt.textarea(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
-var StyledLabel$1 = dt.p(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
+var ValidationIcon = dt.div.withConfig({
+  displayName: "styled-components__ValidationIcon",
+  componentId: "sc-193scoi-1"
+})(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"], ["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"])));
+var StyledComponentContainer = dt.div.withConfig({
+  displayName: "styled-components__StyledComponentContainer",
+  componentId: "sc-193scoi-2"
+})(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"], ["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"])));
+var CharactersContainer = dt.div.withConfig({
+  displayName: "styled-components__CharactersContainer",
+  componentId: "sc-193scoi-3"
+})(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"], ["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"])));
+dt.input.withConfig({
+  displayName: "styled-components__StyledInput",
+  componentId: "sc-193scoi-4"
+})(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
+dt.textarea.withConfig({
+  displayName: "styled-components__StyledTextArea",
+  componentId: "sc-193scoi-5"
+})(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
+var StyledLabel$1 = dt.p.withConfig({
+  displayName: "styled-components__StyledLabel",
+  componentId: "sc-193scoi-6"
+})(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
-dt.div(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
-var Title$1 = dt.h2(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "styled-components__ErrorMessage",
+  componentId: "sc-193scoi-7"
+})(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
+var Title$1 = dt.h2.withConfig({
+  displayName: "styled-components__Title",
+  componentId: "sc-193scoi-8"
+})(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
@@ -33059,7 +33177,7 @@ var TextInput = function TextInput(_a) {
   });
 };
 
-var TranslationContext = /*#__PURE__*/React.createContext(undefined);
+var TranslationContext = /*#__PURE__*/createContext(undefined);
 var TranslationProvider = function TranslationProvider(_a) {
   var children = _a.children,
     translations = _a.translations;
@@ -33074,7 +33192,7 @@ var TranslationProvider = function TranslationProvider(_a) {
   });
 };
 var useTranslation = function useTranslation() {
-  var context = React.useContext(TranslationContext);
+  var context = useContext(TranslationContext);
   if (!context) {
     throw new Error('useTranslation must be used within a TranslationProvider');
   }
@@ -33102,7 +33220,7 @@ var SearchInput = function SearchInput(_a) {
   });
 };
 
-var ThemeContext = /*#__PURE__*/React.createContext(undefined);
+var ThemeContext = /*#__PURE__*/createContext(undefined);
 var ThemeProvider = function ThemeProvider(_a) {
   var children = _a.children,
     theme = _a.theme;
@@ -33117,9 +33235,18 @@ var ThemeProvider = function ThemeProvider(_a) {
   });
 };
 
-var StyledLabel = dt.div(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n"])));
-var ToolTipContainer = dt.div(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"])));
-var TooltipTitle = dt.span(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  font-size: 14px;\n"], ["\n  font-size: 14px;\n"])));
+var StyledLabel = dt.div.withConfig({
+  displayName: "CustomSwitcherstyles__StyledLabel",
+  componentId: "sc-dqblgl-0"
+})(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n"])));
+var ToolTipContainer = dt.div.withConfig({
+  displayName: "CustomSwitcherstyles__ToolTipContainer",
+  componentId: "sc-dqblgl-1"
+})(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"])));
+var TooltipTitle = dt.span.withConfig({
+  displayName: "CustomSwitcherstyles__TooltipTitle",
+  componentId: "sc-dqblgl-2"
+})(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  font-size: 14px;\n"], ["\n  font-size: 14px;\n"])));
 var HelpIconStyles = {
   color: '#06C68F'
 };
@@ -33130,10 +33257,13 @@ var FormControlLabelStyles = {
   justifyContent: 'space-between',
   marginLeft: 0
 };
-var FormControlWrapper = dt(ToolTipContainer)(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"], ["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"])));
+var FormControlWrapper = dt(ToolTipContainer).withConfig({
+  displayName: "CustomSwitcherstyles__FormControlWrapper",
+  componentId: "sc-dqblgl-3"
+})(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"], ["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"])));
 var templateObject_1$l, templateObject_2$g, templateObject_3$c, templateObject_4$9;
 
-var ActivityIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ActivityIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33462,7 +33592,7 @@ var MeterIcon = function MeterIcon(_a) {
   }));
 };
 
-var ArrowDropDownIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ArrowDropDownIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -33486,7 +33616,7 @@ var ArrowDropDownIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ArrowDropDownIcon$1.displayName = 'ArrowDropDownIcon';
 
-var Analytics = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Analytics = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33511,7 +33641,7 @@ var Analytics = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Analytics.displayName = 'Analytics';
 
-var AddAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var AddAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33536,7 +33666,7 @@ var AddAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 AddAlt.displayName = 'AddAlt';
 
-var Company = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Company = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33576,7 +33706,7 @@ var Company = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Company.displayName = 'Company';
 
-var AddStudent = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var AddStudent = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33601,7 +33731,7 @@ var AddStudent = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 AddStudent.displayName = 'AddStudent';
 
-var Learning = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Learning = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33632,7 +33762,7 @@ var Learning = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Learning.displayName = 'Learning';
 
-var UsersIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var UsersIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33663,7 +33793,7 @@ var UsersIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 UsersIcon.displayName = 'UsersIcon';
 
-var Circle = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Circle = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33685,7 +33815,7 @@ var Circle = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Circle.displayName = 'Circle';
 
-var Library = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Library = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33716,7 +33846,7 @@ var Library = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Library.displayName = 'Library';
 
-var AddIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var AddIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -33740,7 +33870,7 @@ var AddIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 AddIcon.displayName = 'AddIcon';
 
-var AnalyticsIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var AnalyticsIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33765,7 +33895,7 @@ var AnalyticsIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 AnalyticsIcon.displayName = 'AnalyticsIcon';
 
-var AssignTutor = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var AssignTutor = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33796,7 +33926,7 @@ var AssignTutor = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 AssignTutor.displayName = 'AssignTutor';
 
-var Book = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Book = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33826,7 +33956,7 @@ var Book = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Book.displayName = 'Book';
 
-var BookWithBookmark = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var BookWithBookmark = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33848,7 +33978,7 @@ var BookWithBookmark = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 BookWithBookmark.displayName = 'BookWithBookmark';
 
-var BusinessIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var BusinessIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33870,7 +34000,7 @@ var BusinessIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 BusinessIcon.displayName = 'BusinessIcon';
 
-var CaretDown = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CaretDown = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33896,7 +34026,7 @@ var CaretDown = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CaretDown.displayName = 'CaretDown';
 
-var CheckedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33926,7 +34056,7 @@ var CheckedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CheckedIcon.displayName = 'Checked';
 
-var Checkmark = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Checkmark = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33952,7 +34082,7 @@ var Checkmark = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Checkmark.displayName = 'Checkmark';
 
-var CheckmarkOutline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckmarkOutline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -33983,7 +34113,7 @@ var CheckmarkOutline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CheckmarkOutline.displayName = 'CheckmarkOutline';
 
-var CheckmarkOutlineAction = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckmarkOutlineAction = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34008,7 +34138,7 @@ var CheckmarkOutlineAction = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CheckmarkOutlineAction.displayName = 'CheckmarkOutlineAction';
 
-var Close = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Close = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34034,7 +34164,7 @@ var Close = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Close.displayName = 'Close';
 
-var CloseIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CloseIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -34058,7 +34188,7 @@ var CloseIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CloseIcon.displayName = 'CloseIcon';
 
-var CloseOutline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CloseOutline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34089,7 +34219,7 @@ var CloseOutline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CloseOutline.displayName = 'CloseOutline';
 
-var CloseOutlineAction = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CloseOutlineAction = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34132,7 +34262,7 @@ var CloseOutlineAction = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CloseOutlineAction.displayName = 'CloseOutlineAction';
 
-var Coach = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Coach = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34160,7 +34290,7 @@ var Coach = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Coach.displayName = 'Coach';
 
-var DarkAddAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DarkAddAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34185,7 +34315,7 @@ var DarkAddAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DarkAddAlt.displayName = 'DarkAddAlt';
 
-var DarkAiAssistent = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DarkAiAssistent = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34216,7 +34346,7 @@ var DarkAiAssistent = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DarkAiAssistent.displayName = 'DarkAiAssistent';
 
-var DarkCloseOutline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DarkCloseOutline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34247,7 +34377,7 @@ var DarkCloseOutline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DarkCloseOutline.displayName = 'DarkCloseOutline';
 
-var DarkTrashCan = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DarkTrashCan = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34284,7 +34414,7 @@ var DarkTrashCan = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DarkTrashCan.displayName = 'DarkTrashCan';
 
-var DefaultAvatar = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DefaultAvatar = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34373,7 +34503,7 @@ var DefaultAvatar = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DefaultAvatar.displayName = 'DefaultAvatar';
 
-var Delete = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Delete = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34404,7 +34534,7 @@ var Delete = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Delete.displayName = 'Delete';
 
-var DocumentAttachment = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DocumentAttachment = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34444,7 +34574,7 @@ var DocumentAttachment = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DocumentAttachment.displayName = 'DocumentAttachment';
 
-var DownloadIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DownloadIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34469,7 +34599,7 @@ var DownloadIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DownloadIcon.displayName = 'DownloadIcon';
 
-var Download = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Download = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34500,7 +34630,7 @@ var Download = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Download.displayName = 'Download';
 
-var EditRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var EditRounded = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34525,7 +34655,7 @@ var EditRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 EditRounded.displayName = 'EditRounded';
 
-var EditUsers = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var EditUsers = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34550,7 +34680,7 @@ var EditUsers = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 EditUsers.displayName = 'EditUsers';
 
-var Education = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Education = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34578,7 +34708,7 @@ var Education = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Education.displayName = 'Education';
 
-var EducationDefault = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var EducationDefault = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34606,7 +34736,7 @@ var EducationDefault = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 EducationDefault.displayName = 'EducationDefault';
 
-var EmailIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var EmailIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34628,7 +34758,7 @@ var EmailIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 EmailIcon.displayName = 'EmailIcon';
 
-var EventIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var EventIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34650,7 +34780,7 @@ var EventIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 EventIcon.displayName = 'EventIcon';
 
-var LocationCityIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var LocationCityIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34672,7 +34802,7 @@ var LocationCityIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 LocationCityIcon.displayName = 'LocationCityIcon';
 
-var LocationOnIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var LocationOnIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34694,7 +34824,7 @@ var LocationOnIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 LocationOnIcon.displayName = 'LocationOnIcon';
 
-var MarkunreadMailboxIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var MarkunreadMailboxIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34716,7 +34846,7 @@ var MarkunreadMailboxIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 MarkunreadMailboxIcon.displayName = 'MarkunreadMailboxIcon';
 
-var ArrowDropUpIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ArrowDropUpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -34740,7 +34870,7 @@ var ArrowDropUpIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ArrowDropUpIcon.displayName = 'ArrowDropUpIcon';
 
-var CircleNotificationsIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CircleNotificationsIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -34764,7 +34894,7 @@ var CircleNotificationsIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CircleNotificationsIcon.displayName = 'CircleNotificationsIcon';
 
-var KeyboardBackspaceIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var KeyboardBackspaceIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -34788,7 +34918,7 @@ var KeyboardBackspaceIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 KeyboardBackspaceIcon.displayName = 'KeyboardBackspaceIcon';
 
-var FilterIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var FilterIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34810,7 +34940,7 @@ var FilterIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 FilterIcon.displayName = 'FilterIcon';
 
-var GrayDownload = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GrayDownload = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34852,7 +34982,7 @@ var GrayDownload = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GrayDownload.displayName = 'GrayDownload';
 
-var Person = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Person = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34874,7 +35004,7 @@ var Person = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Person.displayName = 'Person';
 
-var HelpIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var HelpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -34898,7 +35028,7 @@ var HelpIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 HelpIcon.displayName = 'HelpIcon';
 
-var PhoneIphoneIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PhoneIphoneIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34920,7 +35050,7 @@ var PhoneIphoneIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PhoneIphoneIcon.displayName = 'PhoneIphoneIcon';
 
-var PublicIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PublicIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34942,7 +35072,7 @@ var PublicIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PublicIcon.displayName = 'PublicIcon';
 
-var PlayGrayButton = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PlayGrayButton = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -34982,7 +35112,7 @@ var PlayGrayButton = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PlayGrayButton.displayName = 'PlayGrayButton';
 
-var GrayPlayIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GrayPlayIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35026,7 +35156,7 @@ var GrayPlayIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GrayPlayIcon.displayName = 'GrayPlayIcon';
 
-var GridView = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GridView = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35063,7 +35193,7 @@ var GridView = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GridView.displayName = 'GridView';
 
-var Group$2 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Group$2 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35100,7 +35230,7 @@ var Group$2 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Group$2.displayName = 'Group';
 
-var GroupDefault = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GroupDefault = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35131,7 +35261,7 @@ var GroupDefault = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GroupDefault.displayName = 'GroupDefault';
 
-var Help = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Help = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35159,7 +35289,7 @@ var Help = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Help.displayName = 'Help';
 
-var HorizontalView = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var HorizontalView = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35190,7 +35320,7 @@ var HorizontalView = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 HorizontalView.displayName = 'HorizontalView';
 
-var Information = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Information = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35224,7 +35354,7 @@ var Information = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Information.displayName = 'Information';
 
-var Locked = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Locked = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35250,7 +35380,7 @@ var Locked = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Locked.displayName = 'Locked';
 
-var Logout = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Logout = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35275,7 +35405,7 @@ var Logout = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Logout.displayName = 'Logout';
 
-var MyProfile = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var MyProfile = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35300,7 +35430,7 @@ var MyProfile = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 MyProfile.displayName = 'MyProfile';
 
-var NewFilter = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var NewFilter = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35323,7 +35453,7 @@ var NewFilter = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 NewFilter.displayName = 'NewFilter';
 
-var Notification = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Notification = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35345,7 +35475,7 @@ var Notification = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Notification.displayName = 'Notification';
 
-var PresentationScreen = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PresentationScreen = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35384,7 +35514,7 @@ var PresentationScreen = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PresentationScreen.displayName = 'PresentationScreen';
 
-var Profile = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Profile = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35473,7 +35603,7 @@ var Profile = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Profile.displayName = 'Profile';
 
-var RedDeleteIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var RedDeleteIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35520,7 +35650,7 @@ var RedDeleteIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 RedDeleteIcon.displayName = 'RedDeleteIcon';
 
-var RemoveAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var RemoveAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35551,7 +35681,7 @@ var RemoveAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 RemoveAlt.displayName = 'RemoveAlt';
 
-var RemoveAltDisable = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var RemoveAltDisable = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35576,7 +35706,7 @@ var RemoveAltDisable = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 RemoveAltDisable.displayName = 'RemoveAltDisable';
 
-var RemoveFilter = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var RemoveFilter = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35601,7 +35731,7 @@ var RemoveFilter = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 RemoveFilter.displayName = 'RemoveFilter';
 
-var Reset = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Reset = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35623,7 +35753,7 @@ var Reset = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Reset.displayName = 'Reset';
 
-var Search = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Search = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35645,7 +35775,7 @@ var Search = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Search.displayName = 'Search';
 
-var SendAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SendAlt = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35667,7 +35797,7 @@ var SendAlt = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 SendAlt.displayName = 'SendAlt';
 
-var DeleteIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DeleteIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35698,7 +35828,7 @@ var DeleteIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DeleteIcon.displayName = 'DeleteIcon';
 
-var Unlocked = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Unlocked = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35720,7 +35850,7 @@ var Unlocked = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Unlocked.displayName = 'Unlocked';
 
-var SwitchCompany = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SwitchCompany = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35745,7 +35875,7 @@ var SwitchCompany = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 SwitchCompany.displayName = 'SwitchCompany';
 
-var TrashCan = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var TrashCan = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35782,7 +35912,7 @@ var TrashCan = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 TrashCan.displayName = 'TrashCan';
 
-var TrashCanAction = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var TrashCanAction = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35813,7 +35943,7 @@ var TrashCanAction = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 TrashCanAction.displayName = 'TrashCanAction';
 
-var TrashCanRed = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var TrashCanRed = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35844,7 +35974,7 @@ var TrashCanRed = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 TrashCanRed.displayName = 'TrashCanRed';
 
-var UnfillPlay = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var UnfillPlay = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35870,7 +36000,7 @@ var UnfillPlay = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 UnfillPlay.displayName = 'UnfillPlay';
 
-var UserActivity = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var UserActivity = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35904,7 +36034,7 @@ var UserActivity = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 UserActivity.displayName = 'UserActivity';
 
-var UserSpeaker = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var UserSpeaker = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35929,7 +36059,7 @@ var UserSpeaker = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 UserSpeaker.displayName = 'UserSpeaker';
 
-var WhiteAiAssistant = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var WhiteAiAssistant = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     props = __rest(_a, ["className", "onClick"]);
@@ -35960,7 +36090,7 @@ var WhiteAiAssistant = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 WhiteAiAssistant.displayName = 'WhiteAiAssistant';
 
-var ArchiveIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ArchiveIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -35984,7 +36114,7 @@ var ArchiveIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ArchiveIcon.displayName = 'ArchiveIcon';
 
-var BackspaceRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var BackspaceRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36008,7 +36138,7 @@ var BackspaceRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 BackspaceRoundedIcon.displayName = 'BackspaceRoundedIcon';
 
-var BackupIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var BackupIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36032,7 +36162,7 @@ var BackupIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 BackupIcon.displayName = 'BackupIcon';
 
-var CheckCircleOutlineRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckCircleOutlineRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36056,7 +36186,7 @@ var CheckCircleOutlineRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, 
 });
 CheckCircleOutlineRoundedIcon.displayName = 'CheckCircleOutlineRoundedIcon';
 
-var ClosedCaptionIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ClosedCaptionIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36080,7 +36210,7 @@ var ClosedCaptionIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ClosedCaptionIcon.displayName = 'ClosedCaptionIcon';
 
-var CloudDownloadIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CloudDownloadIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36104,7 +36234,7 @@ var CloudDownloadIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CloudDownloadIcon.displayName = 'CloudDownloadIcon';
 
-var ContactSupportOutlinedIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ContactSupportOutlinedIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36130,7 +36260,7 @@ var ContactSupportOutlinedIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, r
 });
 ContactSupportOutlinedIcon$1.displayName = 'ContactSupportOutlinedIcon';
 
-var ErrorOutlineRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ErrorOutlineRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36154,7 +36284,7 @@ var ErrorOutlineRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ErrorOutlineRoundedIcon.displayName = 'ErrorOutlineRoundedIcon';
 
-var FileCopyIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var FileCopyIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36178,7 +36308,7 @@ var FileCopyIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 FileCopyIcon.displayName = 'FileCopyIcon';
 
-var HeadsetIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var HeadsetIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36202,7 +36332,7 @@ var HeadsetIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 HeadsetIcon$1.displayName = 'HeadsetIcon';
 
-var LockIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var LockIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36226,7 +36356,7 @@ var LockIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 LockIcon.displayName = 'LockIcon';
 
-var NotificationsOutlined$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var NotificationsOutlined$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36250,7 +36380,7 @@ var NotificationsOutlined$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 NotificationsOutlined$1.displayName = 'NotificationsOutlined';
 
-var PlayCircleOutlineIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PlayCircleOutlineIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36274,7 +36404,7 @@ var PlayCircleOutlineIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PlayCircleOutlineIcon.displayName = 'PlayCircleOutlineIcon';
 
-var PlaylistPlayIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PlaylistPlayIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36298,7 +36428,7 @@ var PlaylistPlayIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PlaylistPlayIcon.displayName = 'PlaylistPlayIcon';
 
-var SchoolOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SchoolOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36322,7 +36452,7 @@ var SchoolOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 SchoolOutlinedIcon.displayName = 'SchoolOutlinedIcon';
 
-var SettingsOutlinedIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SettingsOutlinedIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36349,7 +36479,7 @@ var SettingsOutlinedIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 SettingsOutlinedIcon$1.displayName = 'SettingsOutlinedIcon';
 
-var Timeline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Timeline = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36373,7 +36503,7 @@ var Timeline = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Timeline.displayName = 'Timeline';
 
-var TrendingUpOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var TrendingUpOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36397,7 +36527,7 @@ var TrendingUpOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 TrendingUpOutlinedIcon.displayName = 'TrendingUpOutlinedIcon';
 
-var Visibility = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Visibility = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36421,7 +36551,7 @@ var Visibility = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Visibility.displayName = 'Visibility';
 
-var VisibilityOff = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var VisibilityOff = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36445,7 +36575,7 @@ var VisibilityOff = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 VisibilityOff.displayName = 'VisibilityOff';
 
-var DeleteForeverRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DeleteForeverRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36469,7 +36599,7 @@ var DeleteForeverRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) 
 });
 DeleteForeverRoundedIcon.displayName = 'DeleteForeverRoundedIcon';
 
-var FeaturedPlayListIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var FeaturedPlayListIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36493,7 +36623,7 @@ var FeaturedPlayListIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 FeaturedPlayListIcon.displayName = 'FeaturedPlayListIcon';
 
-var FiberManualRecordIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var FiberManualRecordIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36522,7 +36652,7 @@ var FiberManualRecordIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 FiberManualRecordIcon.displayName = 'FiberManualRecordIcon';
 
-var GroupOutlined = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GroupOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36546,7 +36676,7 @@ var GroupOutlined = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GroupOutlined.displayName = 'GroupOutlined';
 
-var GroupsOutlined = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GroupsOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36570,7 +36700,7 @@ var GroupsOutlined = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GroupsOutlined.displayName = 'GroupsOutlined';
 
-var HourglassEmptyIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var HourglassEmptyIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36594,7 +36724,7 @@ var HourglassEmptyIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 HourglassEmptyIcon.displayName = 'HourglassEmptyIcon';
 
-var ImageIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ImageIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36618,7 +36748,7 @@ var ImageIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ImageIcon.displayName = 'ImageIcon';
 
-var MoreHorizIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var MoreHorizIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36642,7 +36772,7 @@ var MoreHorizIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 MoreHorizIcon.displayName = 'MoreHorizIcon';
 
-var PermMediaIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PermMediaIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36666,7 +36796,7 @@ var PermMediaIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PermMediaIcon.displayName = 'PermMediaIcon';
 
-var PlaylistAddIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PlaylistAddIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36690,7 +36820,7 @@ var PlaylistAddIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PlaylistAddIcon.displayName = 'PlaylistAddIcon';
 
-var RecordVoiceOverOutlined = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var RecordVoiceOverOutlined = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36714,7 +36844,7 @@ var RecordVoiceOverOutlined = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 RecordVoiceOverOutlined.displayName = 'RecordVoiceOverOutlined';
 
-var Send = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Send = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36738,7 +36868,7 @@ var Send = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Send.displayName = 'Send';
 
-var ViewCompactIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ViewCompactIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36762,7 +36892,7 @@ var ViewCompactIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ViewCompactIcon.displayName = 'ViewCompactIcon';
 
-var ViewListIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ViewListIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36786,7 +36916,7 @@ var ViewListIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ViewListIcon.displayName = 'ViewListIcon';
 
-var WorkOutlineOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var WorkOutlineOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36810,7 +36940,7 @@ var WorkOutlineOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 WorkOutlineOutlinedIcon.displayName = 'WorkOutlineOutlinedIcon';
 
-var ZoomInIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ZoomInIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36834,7 +36964,7 @@ var ZoomInIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ZoomInIcon.displayName = 'ZoomInIcon';
 
-var AddCircleIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var AddCircleIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36861,7 +36991,7 @@ var AddCircleIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 AddCircleIcon.displayName = 'AddCircleIcon';
 
-var CancelIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CancelIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36888,7 +37018,7 @@ var CancelIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CancelIcon$1.displayName = 'CancelIcon';
 
-var Check = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var Check = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36915,7 +37045,7 @@ var Check = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 Check.displayName = 'Check';
 
-var CheckBoxIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckBoxIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36942,7 +37072,7 @@ var CheckBoxIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CheckBoxIcon.displayName = 'CheckBoxIcon';
 
-var CheckCircleIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckCircleIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36969,7 +37099,7 @@ var CheckCircleIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 CheckCircleIcon.displayName = 'CheckCircleIcon';
 
-var CheckCircleOutlineOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckCircleOutlineOutlinedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -36996,7 +37126,7 @@ var CheckCircleOutlineOutlinedIcon = /*#__PURE__*/React.forwardRef(function (_a,
 });
 CheckCircleOutlineOutlinedIcon.displayName = 'CheckCircleOutlineOutlinedIcon';
 
-var DragIndicatorIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DragIndicatorIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37023,7 +37153,7 @@ var DragIndicatorIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DragIndicatorIcon.displayName = 'DragIndicatorIcon';
 
-var EditIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var EditIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37050,7 +37180,7 @@ var EditIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 EditIcon.displayName = 'EditIcon';
 
-var ErrorOutlineIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ErrorOutlineIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37077,7 +37207,7 @@ var ErrorOutlineIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ErrorOutlineIcon.displayName = 'ErrorOutlineIcon';
 
-var ExpandMoreIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ExpandMoreIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37105,7 +37235,7 @@ var ExpandMoreIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ExpandMoreIcon$1.displayName = 'ExpandMoreIcon';
 
-var GetAppIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var GetAppIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37132,7 +37262,7 @@ var GetAppIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 GetAppIcon.displayName = 'GetAppIcon';
 
-var HighlightOffRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var HighlightOffRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37159,7 +37289,7 @@ var HighlightOffRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 HighlightOffRoundedIcon.displayName = 'HighlightOffRoundedIcon';
 
-var InsertDriveFileIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var InsertDriveFileIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37186,7 +37316,7 @@ var InsertDriveFileIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 InsertDriveFileIcon$1.displayName = 'InsertDriveFileIcon';
 
-var OndemandVideoIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var OndemandVideoIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37213,7 +37343,7 @@ var OndemandVideoIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 OndemandVideoIcon$1.displayName = 'OndemandVideoIcon';
 
-var PublishIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var PublishIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37240,7 +37370,7 @@ var PublishIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 PublishIcon.displayName = 'PublishIcon';
 
-var RemoveCircleIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var RemoveCircleIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37267,7 +37397,7 @@ var RemoveCircleIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 RemoveCircleIcon.displayName = 'RemoveCircleIcon';
 
-var ReportProblemIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ReportProblemIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37294,7 +37424,7 @@ var ReportProblemIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ReportProblemIcon.displayName = 'ReportProblemIcon';
 
-var SettingsApplicationsIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SettingsApplicationsIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37321,7 +37451,7 @@ var SettingsApplicationsIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) 
 });
 SettingsApplicationsIcon.displayName = 'SettingsApplicationsIcon';
 
-var StarsRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var StarsRoundedIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37348,7 +37478,7 @@ var StarsRoundedIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 StarsRoundedIcon.displayName = 'StarsRoundedIcon';
 
-var VideoCallIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var VideoCallIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37375,7 +37505,7 @@ var VideoCallIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 VideoCallIcon.displayName = 'VideoCallIcon';
 
-var VolumeUpIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var VolumeUpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37402,7 +37532,7 @@ var VolumeUpIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 VolumeUpIcon.displayName = 'VolumeUpIcon';
 
-var FileUploadOutlinedIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var FileUploadOutlinedIcon$1 = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37434,7 +37564,7 @@ var FileUploadOutlinedIcon$1 = /*#__PURE__*/React.forwardRef(function (_a, ref) 
 });
 FileUploadOutlinedIcon$1.displayName = 'FileUploadOutlinedIcon';
 
-var DashboardIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DashboardIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37461,7 +37591,7 @@ var DashboardIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DashboardIcon.displayName = 'DashboardIcon';
 
-var CheckBoxOutlineBlankIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var CheckBoxOutlineBlankIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37487,7 +37617,7 @@ var CheckBoxOutlineBlankIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) 
 });
 CheckBoxOutlineBlankIcon.displayName = 'CheckBoxOutlineBlankIcon';
 
-var ChevronRightIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var ChevronRightIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37513,7 +37643,7 @@ var ChevronRightIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 ChevronRightIcon.displayName = 'ChevronRightIcon';
 
-var DeleteIconRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var DeleteIconRounded = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37539,7 +37669,7 @@ var DeleteIconRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 DeleteIconRounded.displayName = 'DeleteIconRounded';
 
-var SchoolIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
+var SchoolIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
     _b = _a.fill,
@@ -37733,38 +37863,38 @@ function useStateManager(_ref) {
     propsOnMenuOpen = _ref.onMenuOpen,
     propsValue = _ref.value,
     restSelectProps = _objectWithoutProperties(_ref, _excluded$r);
-  var _useState = React.useState(propsInputValue !== undefined ? propsInputValue : defaultInputValue),
+  var _useState = useState(propsInputValue !== undefined ? propsInputValue : defaultInputValue),
     _useState2 = _slicedToArray(_useState, 2),
     stateInputValue = _useState2[0],
     setStateInputValue = _useState2[1];
-  var _useState3 = React.useState(propsMenuIsOpen !== undefined ? propsMenuIsOpen : defaultMenuIsOpen),
+  var _useState3 = useState(propsMenuIsOpen !== undefined ? propsMenuIsOpen : defaultMenuIsOpen),
     _useState4 = _slicedToArray(_useState3, 2),
     stateMenuIsOpen = _useState4[0],
     setStateMenuIsOpen = _useState4[1];
-  var _useState5 = React.useState(propsValue !== undefined ? propsValue : defaultValue),
+  var _useState5 = useState(propsValue !== undefined ? propsValue : defaultValue),
     _useState6 = _slicedToArray(_useState5, 2),
     stateValue = _useState6[0],
     setStateValue = _useState6[1];
-  var onChange = React.useCallback(function (value, actionMeta) {
+  var onChange = useCallback(function (value, actionMeta) {
     if (typeof propsOnChange === 'function') {
       propsOnChange(value, actionMeta);
     }
     setStateValue(value);
   }, [propsOnChange]);
-  var onInputChange = React.useCallback(function (value, actionMeta) {
+  var onInputChange = useCallback(function (value, actionMeta) {
     var newValue;
     if (typeof propsOnInputChange === 'function') {
       newValue = propsOnInputChange(value, actionMeta);
     }
     setStateInputValue(newValue !== undefined ? newValue : value);
   }, [propsOnInputChange]);
-  var onMenuOpen = React.useCallback(function () {
+  var onMenuOpen = useCallback(function () {
     if (typeof propsOnMenuOpen === 'function') {
       propsOnMenuOpen();
     }
     setStateMenuIsOpen(true);
   }, [propsOnMenuOpen]);
-  var onMenuClose = React.useCallback(function () {
+  var onMenuClose = useCallback(function () {
     if (typeof propsOnMenuClose === 'function') {
       propsOnMenuClose();
     }
@@ -38301,7 +38431,7 @@ function autoUpdate(reference, floating, update, options) {
 
 var isClient = typeof document !== 'undefined';
 
-var index = isClient ? React.useLayoutEffect : React.useEffect;
+var index = isClient ? useLayoutEffect : useEffect;
 
 var _excluded$4$1 = ["className", "clearValue", "cx", "getStyles", "getClassNames", "getValue", "hasValue", "isMulti", "isRtl", "options", "selectOption", "selectProps", "setValue", "theme"];
 // ==============================
@@ -38779,7 +38909,7 @@ var menuCSS = function menuCSS(_ref2, unstyled) {
     marginTop: spacing.menuGutter
   });
 };
-var PortalPlacementContext = /*#__PURE__*/React.createContext(null);
+var PortalPlacementContext = /*#__PURE__*/createContext(null);
 
 // NOTE: internal only
 var MenuPlacer = function MenuPlacer(props) {
@@ -38790,14 +38920,14 @@ var MenuPlacer = function MenuPlacer(props) {
     menuPosition = props.menuPosition,
     menuShouldScrollIntoView = props.menuShouldScrollIntoView,
     theme = props.theme;
-  var _ref3 = React.useContext(PortalPlacementContext) || {},
+  var _ref3 = useContext(PortalPlacementContext) || {},
     setPortalPlacement = _ref3.setPortalPlacement;
-  var ref = React.useRef(null);
-  var _useState = React.useState(maxMenuHeight),
+  var ref = useRef(null);
+  var _useState = useState(maxMenuHeight),
     _useState2 = _slicedToArray(_useState, 2),
     maxHeight = _useState2[0],
     setMaxHeight = _useState2[1];
-  var _useState3 = React.useState(null),
+  var _useState3 = useState(null),
     _useState4 = _slicedToArray(_useState3, 2),
     placement = _useState4[0],
     setPlacement = _useState4[1];
@@ -38940,22 +39070,22 @@ var MenuPortal = function MenuPortal(props) {
     innerProps = props.innerProps,
     menuPlacement = props.menuPlacement,
     menuPosition = props.menuPosition;
-  var menuPortalRef = React.useRef(null);
-  var cleanupRef = React.useRef(null);
-  var _useState5 = React.useState(coercePlacement(menuPlacement)),
+  var menuPortalRef = useRef(null);
+  var cleanupRef = useRef(null);
+  var _useState5 = useState(coercePlacement(menuPlacement)),
     _useState6 = _slicedToArray(_useState5, 2),
     placement = _useState6[0],
     setPortalPlacement = _useState6[1];
-  var portalPlacementContext = React.useMemo(function () {
+  var portalPlacementContext = useMemo(function () {
     return {
       setPortalPlacement: setPortalPlacement
     };
   }, []);
-  var _useState7 = React.useState(null),
+  var _useState7 = useState(null),
     _useState8 = _slicedToArray(_useState7, 2),
     computedPosition = _useState8[0],
     setComputedPosition = _useState8[1];
-  var updateComputedPosition = React.useCallback(function () {
+  var updateComputedPosition = useCallback(function () {
     if (!controlElement) return;
     var rect = getBoundingClientObj(controlElement);
     var scrollDistance = menuPosition === 'fixed' ? 0 : window.pageYOffset;
@@ -38970,7 +39100,7 @@ var MenuPortal = function MenuPortal(props) {
   index(function () {
     updateComputedPosition();
   }, [updateComputedPosition]);
-  var runAutoUpdate = React.useCallback(function () {
+  var runAutoUpdate = useCallback(function () {
     if (typeof cleanupRef.current === 'function') {
       cleanupRef.current();
       cleanupRef.current = null;
@@ -38984,7 +39114,7 @@ var MenuPortal = function MenuPortal(props) {
   index(function () {
     runAutoUpdate();
   }, [runAutoUpdate]);
-  var setMenuPortalElement = React.useCallback(function (menuPortalElement) {
+  var setMenuPortalElement = useCallback(function (menuPortalElement) {
     menuPortalRef.current = menuPortalElement;
     runAutoUpdate();
   }, [runAutoUpdate]);
@@ -39004,7 +39134,7 @@ var MenuPortal = function MenuPortal(props) {
   }), innerProps), children);
   return jsx(PortalPlacementContext.Provider, {
     value: portalPlacementContext
-  }, appendTo ? /*#__PURE__*/ReactDOM.createPortal(menuWrapper, appendTo) : menuWrapper);
+  }, appendTo ? /*#__PURE__*/createPortal(menuWrapper, appendTo) : menuWrapper);
 };
 
 // ==============================
@@ -39835,12 +39965,12 @@ var LiveRegion = function LiveRegion(props) {
   var ariaLive = selectProps['aria-live'];
 
   // Update aria live message configuration when prop changes
-  var messages = React.useMemo(function () {
+  var messages = useMemo(function () {
     return _objectSpread2(_objectSpread2({}, defaultAriaLiveMessages), ariaLiveMessages || {});
   }, [ariaLiveMessages]);
 
   // Update aria live selected option when prop changes
-  var ariaSelected = React.useMemo(function () {
+  var ariaSelected = useMemo(function () {
     var message = '';
     if (ariaSelection && messages.onChange) {
       var option = ariaSelection.option,
@@ -39871,7 +40001,7 @@ var LiveRegion = function LiveRegion(props) {
     }
     return message;
   }, [ariaSelection, messages, isOptionDisabled, selectValue, getOptionLabel]);
-  var ariaFocused = React.useMemo(function () {
+  var ariaFocused = useMemo(function () {
     var focusMsg = '';
     var focused = focusedOption || focusedValue;
     var isSelected = !!(focusedOption && selectValue && selectValue.includes(focusedOption));
@@ -39890,7 +40020,7 @@ var LiveRegion = function LiveRegion(props) {
     }
     return focusMsg;
   }, [focusedOption, focusedValue, getOptionLabel, isOptionDisabled, messages, focusableOptions, selectValue, isAppleDevice]);
-  var ariaResults = React.useMemo(function () {
+  var ariaResults = useMemo(function () {
     var resultsMsg = '';
     if (menuIsOpen && options.length && !isLoading && messages.onFilter) {
       var resultsMessage = screenReaderStatus({
@@ -39904,7 +40034,7 @@ var LiveRegion = function LiveRegion(props) {
     return resultsMsg;
   }, [focusableOptions, inputValue, menuIsOpen, messages, options, screenReaderStatus, isLoading]);
   var isInitialFocus = (ariaSelection === null || ariaSelection === void 0 ? void 0 : ariaSelection.action) === 'initial-input-focus';
-  var ariaGuidance = React.useMemo(function () {
+  var ariaGuidance = useMemo(function () {
     var guidanceMsg = '';
     if (messages.guidance) {
       var context = focusedValue ? 'value' : menuIsOpen ? 'menu' : 'input';
@@ -39920,7 +40050,7 @@ var LiveRegion = function LiveRegion(props) {
     }
     return guidanceMsg;
   }, [ariaLabel, focusedOption, focusedValue, isMulti, isOptionDisabled, isSearchable, menuIsOpen, messages, selectValue, tabSelectsValue, isInitialFocus]);
-  var ScreenReaderText = jsx(React.Fragment, null, jsx("span", {
+  var ScreenReaderText = jsx(Fragment, null, jsx("span", {
     id: "aria-selection"
   }, ariaSelected), jsx("span", {
     id: "aria-focused"
@@ -39929,7 +40059,7 @@ var LiveRegion = function LiveRegion(props) {
   }, ariaResults), jsx("span", {
     id: "aria-guidance"
   }, ariaGuidance));
-  return jsx(React.Fragment, null, jsx(A11yText$1, {
+  return jsx(Fragment, null, jsx(A11yText$1, {
     id: id
   }, isInitialFocus && ScreenReaderText), jsx(A11yText$1, {
     "aria-live": ariaLive,
@@ -40289,11 +40419,11 @@ function useScrollCapture(_ref) {
     onBottomLeave = _ref.onBottomLeave,
     onTopArrive = _ref.onTopArrive,
     onTopLeave = _ref.onTopLeave;
-  var isBottom = React.useRef(false);
-  var isTop = React.useRef(false);
-  var touchStart = React.useRef(0);
-  var scrollTarget = React.useRef(null);
-  var handleEventDelta = React.useCallback(function (event, delta) {
+  var isBottom = useRef(false);
+  var isTop = useRef(false);
+  var touchStart = useRef(0);
+  var scrollTarget = useRef(null);
+  var handleEventDelta = useCallback(function (event, delta) {
     if (scrollTarget.current === null) return;
     var _scrollTarget$current = scrollTarget.current,
       scrollTop = _scrollTarget$current.scrollTop,
@@ -40338,18 +40468,18 @@ function useScrollCapture(_ref) {
       cancelScroll(event);
     }
   }, [onBottomArrive, onBottomLeave, onTopArrive, onTopLeave]);
-  var onWheel = React.useCallback(function (event) {
+  var onWheel = useCallback(function (event) {
     handleEventDelta(event, event.deltaY);
   }, [handleEventDelta]);
-  var onTouchStart = React.useCallback(function (event) {
+  var onTouchStart = useCallback(function (event) {
     // set touch start so we can calculate touchmove delta
     touchStart.current = event.changedTouches[0].clientY;
   }, []);
-  var onTouchMove = React.useCallback(function (event) {
+  var onTouchMove = useCallback(function (event) {
     var deltaY = touchStart.current - event.changedTouches[0].clientY;
     handleEventDelta(event, deltaY);
   }, [handleEventDelta]);
-  var startListening = React.useCallback(function (el) {
+  var startListening = useCallback(function (el) {
     // bail early if no element is available to attach to
     if (!el) return;
     var notPassive = supportsPassiveEvents ? {
@@ -40359,14 +40489,14 @@ function useScrollCapture(_ref) {
     el.addEventListener('touchstart', onTouchStart, notPassive);
     el.addEventListener('touchmove', onTouchMove, notPassive);
   }, [onTouchMove, onTouchStart, onWheel]);
-  var stopListening = React.useCallback(function (el) {
+  var stopListening = useCallback(function (el) {
     // bail early if no element is available to detach from
     if (!el) return;
     el.removeEventListener('wheel', onWheel, false);
     el.removeEventListener('touchstart', onTouchStart, false);
     el.removeEventListener('touchmove', onTouchMove, false);
   }, [onTouchMove, onTouchStart, onWheel]);
-  React.useEffect(function () {
+  useEffect(function () {
     if (!isEnabled) return;
     var element = scrollTarget.current;
     startListening(element);
@@ -40419,9 +40549,9 @@ function useScrollLock(_ref) {
   var isEnabled = _ref.isEnabled,
     _ref$accountForScroll = _ref.accountForScrollbars,
     accountForScrollbars = _ref$accountForScroll === void 0 ? true : _ref$accountForScroll;
-  var originalStyles = React.useRef({});
-  var scrollTarget = React.useRef(null);
-  var addScrollLock = React.useCallback(function (touchScrollTarget) {
+  var originalStyles = useRef({});
+  var scrollTarget = useRef(null);
+  var addScrollLock = useCallback(function (touchScrollTarget) {
     if (!canUseDOM) return;
     var target = document.body;
     var targetStyle = target && target.style;
@@ -40464,7 +40594,7 @@ function useScrollLock(_ref) {
     // increment active scroll locks
     activeScrollLocks += 1;
   }, [accountForScrollbars]);
-  var removeScrollLock = React.useCallback(function (touchScrollTarget) {
+  var removeScrollLock = useCallback(function (touchScrollTarget) {
     if (!canUseDOM) return;
     var target = document.body;
     var targetStyle = target && target.style;
@@ -40491,7 +40621,7 @@ function useScrollLock(_ref) {
       }
     }
   }, [accountForScrollbars]);
-  React.useEffect(function () {
+  useEffect(function () {
     if (!isEnabled) return;
     var element = scrollTarget.current;
     addScrollLock(element);
@@ -40541,7 +40671,7 @@ function ScrollManager(_ref) {
     setScrollCaptureTarget(element);
     setScrollLockTarget(element);
   };
-  return jsx(React.Fragment, null, lockEnabled && jsx("div", {
+  return jsx(Fragment, null, lockEnabled && jsx("div", {
     onClick: blurSelectInput,
     css: _ref2$1
   }), children(targetRef));
@@ -41828,7 +41958,7 @@ var Select = /*#__PURE__*/function (_Component) {
       });
       if (!isSearchable) {
         // use a dummy input to maintain focus/blur functionality
-        return /*#__PURE__*/React__namespace.createElement(DummyInput, _extends$2({
+        return /*#__PURE__*/React.createElement(DummyInput, _extends$2({
           id: id,
           innerRef: this.getInputRef,
           onBlur: this.onInputBlur,
@@ -41841,7 +41971,7 @@ var Select = /*#__PURE__*/function (_Component) {
           value: ""
         }, ariaAttributes));
       }
-      return /*#__PURE__*/React__namespace.createElement(Input, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(Input, _extends$2({}, commonProps, {
         autoCapitalize: "none",
         autoComplete: "off",
         autoCorrect: "off",
@@ -41882,7 +42012,7 @@ var Select = /*#__PURE__*/function (_Component) {
         focusedValue = _this$state5.focusedValue,
         isFocused = _this$state5.isFocused;
       if (!this.hasValue() || !controlShouldRenderValue) {
-        return inputValue ? null : /*#__PURE__*/React__namespace.createElement(Placeholder, _extends$2({}, commonProps, {
+        return inputValue ? null : /*#__PURE__*/React.createElement(Placeholder, _extends$2({}, commonProps, {
           key: "placeholder",
           isDisabled: isDisabled,
           isFocused: isFocused,
@@ -41895,7 +42025,7 @@ var Select = /*#__PURE__*/function (_Component) {
         return selectValue.map(function (opt, index) {
           var isOptionFocused = opt === focusedValue;
           var key = "".concat(_this3.getOptionLabel(opt), "-").concat(_this3.getOptionValue(opt));
-          return /*#__PURE__*/React__namespace.createElement(MultiValue, _extends$2({}, commonProps, {
+          return /*#__PURE__*/React.createElement(MultiValue, _extends$2({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
@@ -41924,7 +42054,7 @@ var Select = /*#__PURE__*/function (_Component) {
         return null;
       }
       var singleValue = selectValue[0];
-      return /*#__PURE__*/React__namespace.createElement(SingleValue, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(SingleValue, _extends$2({}, commonProps, {
         data: singleValue,
         isDisabled: isDisabled
       }), this.formatOptionLabel(singleValue, 'value'));
@@ -41947,7 +42077,7 @@ var Select = /*#__PURE__*/function (_Component) {
         onTouchEnd: this.onClearIndicatorTouchEnd,
         'aria-hidden': 'true'
       };
-      return /*#__PURE__*/React__namespace.createElement(ClearIndicator, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(ClearIndicator, _extends$2({}, commonProps, {
         innerProps: innerProps,
         isFocused: isFocused
       }));
@@ -41966,7 +42096,7 @@ var Select = /*#__PURE__*/function (_Component) {
       var innerProps = {
         'aria-hidden': 'true'
       };
-      return /*#__PURE__*/React__namespace.createElement(LoadingIndicator, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(LoadingIndicator, _extends$2({}, commonProps, {
         innerProps: innerProps,
         isDisabled: isDisabled,
         isFocused: isFocused
@@ -41984,7 +42114,7 @@ var Select = /*#__PURE__*/function (_Component) {
       var commonProps = this.commonProps;
       var isDisabled = this.props.isDisabled;
       var isFocused = this.state.isFocused;
-      return /*#__PURE__*/React__namespace.createElement(IndicatorSeparator, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(IndicatorSeparator, _extends$2({}, commonProps, {
         isDisabled: isDisabled,
         isFocused: isFocused
       }));
@@ -42003,7 +42133,7 @@ var Select = /*#__PURE__*/function (_Component) {
         onTouchEnd: this.onDropdownIndicatorTouchEnd,
         'aria-hidden': 'true'
       };
-      return /*#__PURE__*/React__namespace.createElement(DropdownIndicator, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(DropdownIndicator, _extends$2({}, commonProps, {
         innerProps: innerProps,
         isDisabled: isDisabled,
         isFocused: isFocused
@@ -42068,7 +42198,7 @@ var Select = /*#__PURE__*/function (_Component) {
           'aria-selected': _this4.isAppleDevice ? undefined : isSelected // is not supported on Apple devices
         };
 
-        return /*#__PURE__*/React__namespace.createElement(Option, _extends$2({}, commonProps, {
+        return /*#__PURE__*/React.createElement(Option, _extends$2({}, commonProps, {
           innerProps: innerProps,
           data: data,
           isDisabled: isDisabled,
@@ -42090,7 +42220,7 @@ var Select = /*#__PURE__*/function (_Component) {
               groupIndex = item.index;
             var groupId = "".concat(_this4.getElementId('group'), "-").concat(groupIndex);
             var headingId = "".concat(groupId, "-heading");
-            return /*#__PURE__*/React__namespace.createElement(Group, _extends$2({}, commonProps, {
+            return /*#__PURE__*/React.createElement(Group, _extends$2({}, commonProps, {
               key: groupId,
               data: _data,
               options: options,
@@ -42112,13 +42242,13 @@ var Select = /*#__PURE__*/function (_Component) {
           inputValue: inputValue
         });
         if (message === null) return null;
-        menuUI = /*#__PURE__*/React__namespace.createElement(LoadingMessage, commonProps, message);
+        menuUI = /*#__PURE__*/React.createElement(LoadingMessage, commonProps, message);
       } else {
         var _message = noOptionsMessage({
           inputValue: inputValue
         });
         if (_message === null) return null;
-        menuUI = /*#__PURE__*/React__namespace.createElement(NoOptionsMessage, commonProps, _message);
+        menuUI = /*#__PURE__*/React.createElement(NoOptionsMessage, commonProps, _message);
       }
       var menuPlacementProps = {
         minMenuHeight: minMenuHeight,
@@ -42127,12 +42257,12 @@ var Select = /*#__PURE__*/function (_Component) {
         menuPosition: menuPosition,
         menuShouldScrollIntoView: menuShouldScrollIntoView
       };
-      var menuElement = /*#__PURE__*/React__namespace.createElement(MenuPlacer, _extends$2({}, commonProps, menuPlacementProps), function (_ref4) {
+      var menuElement = /*#__PURE__*/React.createElement(MenuPlacer, _extends$2({}, commonProps, menuPlacementProps), function (_ref4) {
         var ref = _ref4.ref,
           _ref4$placerProps = _ref4.placerProps,
           placement = _ref4$placerProps.placement,
           maxHeight = _ref4$placerProps.maxHeight;
-        return /*#__PURE__*/React__namespace.createElement(Menu, _extends$2({}, commonProps, menuPlacementProps, {
+        return /*#__PURE__*/React.createElement(Menu, _extends$2({}, commonProps, menuPlacementProps, {
           innerRef: ref,
           innerProps: {
             onMouseDown: _this4.onMenuMouseDown,
@@ -42140,13 +42270,13 @@ var Select = /*#__PURE__*/function (_Component) {
           },
           isLoading: isLoading,
           placement: placement
-        }), /*#__PURE__*/React__namespace.createElement(ScrollManager, {
+        }), /*#__PURE__*/React.createElement(ScrollManager, {
           captureEnabled: captureMenuScroll,
           onTopArrive: onMenuScrollToTop,
           onBottomArrive: onMenuScrollToBottom,
           lockEnabled: menuShouldBlockScroll
         }, function (scrollTargetRef) {
-          return /*#__PURE__*/React__namespace.createElement(MenuList, _extends$2({}, commonProps, {
+          return /*#__PURE__*/React.createElement(MenuList, _extends$2({}, commonProps, {
             innerRef: function innerRef(instance) {
               _this4.getMenuListRef(instance);
               scrollTargetRef(instance);
@@ -42166,7 +42296,7 @@ var Select = /*#__PURE__*/function (_Component) {
       // positioning behaviour is almost identical for portalled and fixed,
       // so we use the same component. the actual portalling logic is forked
       // within the component based on `menuPosition`
-      return menuPortalTarget || menuPosition === 'fixed' ? /*#__PURE__*/React__namespace.createElement(MenuPortal, _extends$2({}, commonProps, {
+      return menuPortalTarget || menuPosition === 'fixed' ? /*#__PURE__*/React.createElement(MenuPortal, _extends$2({}, commonProps, {
         appendTo: menuPortalTarget,
         controlElement: this.controlRef,
         menuPlacement: menuPlacement,
@@ -42185,7 +42315,7 @@ var Select = /*#__PURE__*/function (_Component) {
         required = _this$props13.required;
       var selectValue = this.state.selectValue;
       if (required && !this.hasValue() && !isDisabled) {
-        return /*#__PURE__*/React__namespace.createElement(RequiredInput$1, {
+        return /*#__PURE__*/React.createElement(RequiredInput$1, {
           name: name,
           onFocus: this.onValueInputFocus
         });
@@ -42196,29 +42326,29 @@ var Select = /*#__PURE__*/function (_Component) {
           var value = selectValue.map(function (opt) {
             return _this5.getOptionValue(opt);
           }).join(delimiter);
-          return /*#__PURE__*/React__namespace.createElement("input", {
+          return /*#__PURE__*/React.createElement("input", {
             name: name,
             type: "hidden",
             value: value
           });
         } else {
           var input = selectValue.length > 0 ? selectValue.map(function (opt, i) {
-            return /*#__PURE__*/React__namespace.createElement("input", {
+            return /*#__PURE__*/React.createElement("input", {
               key: "i-".concat(i),
               name: name,
               type: "hidden",
               value: _this5.getOptionValue(opt)
             });
-          }) : /*#__PURE__*/React__namespace.createElement("input", {
+          }) : /*#__PURE__*/React.createElement("input", {
             name: name,
             type: "hidden",
             value: ""
           });
-          return /*#__PURE__*/React__namespace.createElement("div", null, input);
+          return /*#__PURE__*/React.createElement("div", null, input);
         }
       } else {
         var _value = selectValue[0] ? this.getOptionValue(selectValue[0]) : '';
-        return /*#__PURE__*/React__namespace.createElement("input", {
+        return /*#__PURE__*/React.createElement("input", {
           name: name,
           type: "hidden",
           value: _value
@@ -42236,7 +42366,7 @@ var Select = /*#__PURE__*/function (_Component) {
         isFocused = _this$state6.isFocused,
         selectValue = _this$state6.selectValue;
       var focusableOptions = this.getFocusableOptions();
-      return /*#__PURE__*/React__namespace.createElement(LiveRegion$1, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(LiveRegion$1, _extends$2({}, commonProps, {
         id: this.getElementId('live-region'),
         ariaSelection: ariaSelection,
         focusedOption: focusedOption,
@@ -42262,7 +42392,7 @@ var Select = /*#__PURE__*/function (_Component) {
         menuIsOpen = _this$props14.menuIsOpen;
       var isFocused = this.state.isFocused;
       var commonProps = this.commonProps = this.getCommonProps();
-      return /*#__PURE__*/React__namespace.createElement(SelectContainer, _extends$2({}, commonProps, {
+      return /*#__PURE__*/React.createElement(SelectContainer, _extends$2({}, commonProps, {
         className: className,
         innerProps: {
           id: id,
@@ -42270,7 +42400,7 @@ var Select = /*#__PURE__*/function (_Component) {
         },
         isDisabled: isDisabled,
         isFocused: isFocused
-      }), this.renderLiveRegion(), /*#__PURE__*/React__namespace.createElement(Control, _extends$2({}, commonProps, {
+      }), this.renderLiveRegion(), /*#__PURE__*/React.createElement(Control, _extends$2({}, commonProps, {
         innerRef: this.getControlRef,
         innerProps: {
           onMouseDown: this.onControlMouseDown,
@@ -42279,9 +42409,9 @@ var Select = /*#__PURE__*/function (_Component) {
         isDisabled: isDisabled,
         isFocused: isFocused,
         menuIsOpen: menuIsOpen
-      }), /*#__PURE__*/React__namespace.createElement(ValueContainer, _extends$2({}, commonProps, {
+      }), /*#__PURE__*/React.createElement(ValueContainer, _extends$2({}, commonProps, {
         isDisabled: isDisabled
-      }), this.renderPlaceholderOrValue(), this.renderInput()), /*#__PURE__*/React__namespace.createElement(IndicatorsContainer, _extends$2({}, commonProps, {
+      }), this.renderPlaceholderOrValue(), this.renderInput()), /*#__PURE__*/React.createElement(IndicatorsContainer, _extends$2({}, commonProps, {
         isDisabled: isDisabled
       }), this.renderClearIndicator(), this.renderLoadingIndicator(), this.renderIndicatorSeparator(), this.renderDropdownIndicator())), this.renderMenu(), this.renderFormField());
     }
@@ -42348,12 +42478,12 @@ var Select = /*#__PURE__*/function (_Component) {
     }
   }]);
   return Select;
-}(React.Component);
+}(Component);
 Select.defaultProps = defaultProps;
 
-var StateManagedSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
+var StateManagedSelect = /*#__PURE__*/forwardRef(function (props, ref) {
   var baseSelectProps = useStateManager(props);
-  return /*#__PURE__*/React__namespace.createElement(Select, _extends$2({
+  return /*#__PURE__*/React.createElement(Select, _extends$2({
     ref: ref
   }, baseSelectProps));
 });
@@ -42396,7 +42526,10 @@ var customStyles = {
     });
   }
 };
-dt.div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "DropDownstyles__Container",
+  componentId: "sc-x0hqtm-0"
+})(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"])), function (_a) {
   var error = _a.error;
   return error ? '#f44336' : 'rgba(0, 0, 0, 0.23)';
 }, function (_a) {
@@ -42409,15 +42542,24 @@ dt.div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  wi
   var error = _a.error;
   return error ? '#f44336' : '#06c68f';
 });
-var ErrorMessage = dt.div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
-var ContainerSelect = dt.div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"])), function (_a) {
+var ErrorMessage = dt.div.withConfig({
+  displayName: "DropDownstyles__ErrorMessage",
+  componentId: "sc-x0hqtm-1"
+})(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
+var ContainerSelect = dt.div.withConfig({
+  displayName: "DropDownstyles__ContainerSelect",
+  componentId: "sc-x0hqtm-2"
+})(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"])), function (_a) {
   var error = _a.error;
   return error ? '#f44336' : 'rgba(0, 0, 0, 0.23)';
 }, function (_a) {
   var error = _a.error;
   return error ? '#f44336' : 'rgba(0, 0, 0, 0.54) ';
 });
-dt.div(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"], ["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "DropDownstyles__SelectFieldWrapper",
+  componentId: "sc-x0hqtm-3"
+})(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"], ["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"])));
 var templateObject_1$k, templateObject_2$f, templateObject_3$b, templateObject_4$8;
 
 var DropDown = function DropDown(props) {
@@ -42499,52 +42641,124 @@ function requireOndemandVideo () {
 var OndemandVideoExports = /*@__PURE__*/ requireOndemandVideo();
 var OndemandVideoIcon = /*@__PURE__*/getDefaultExportFromCjs(OndemandVideoExports);
 
-dt.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"])));
-dt.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"], ["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"])));
-dt.div(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"])));
-dt.div(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  margin-bottom: 15px;\n"], ["\n  margin-bottom: 15px;\n"])));
-dt.header(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"], ["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"])));
-dt.div(templateObject_6$5 || (templateObject_6$5 = __makeTemplateObject([""], [""])));
-dt.div(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"], ["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"
+dt.div.withConfig({
+  displayName: "styled-components__FileUploaderContainer",
+  componentId: "sc-1fyxek4-0"
+})(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__MediaUploading",
+  componentId: "sc-1fyxek4-1"
+})(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"], ["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__MediaUploadingWrapper",
+  componentId: "sc-1fyxek4-2"
+})(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__LoadingText",
+  componentId: "sc-1fyxek4-3"
+})(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  margin-bottom: 15px;\n"], ["\n  margin-bottom: 15px;\n"])));
+dt.header.withConfig({
+  displayName: "styled-components__FileUploaderHeader",
+  componentId: "sc-1fyxek4-4"
+})(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"], ["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__FileUploaderContent",
+  componentId: "sc-1fyxek4-5"
+})(templateObject_6$5 || (templateObject_6$5 = __makeTemplateObject([""], [""])));
+dt.div.withConfig({
+  displayName: "styled-components__Content",
+  componentId: "sc-1fyxek4-6"
+})(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"], ["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"
 // Uploader
 ])));
 // Uploader
-var Container$3 = dt.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"], ["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"])));
-var ErrorText = dt.div(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"], ["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"])));
-var FlexContainer = dt.div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"])));
-var ItemContainer = dt.div(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  width: ", ";\n  position: relative;\n"], ["\n  width: ", ";\n  position: relative;\n"])), function (_a) {
+var Container$3 = dt.div.withConfig({
+  displayName: "styled-components__Container",
+  componentId: "sc-1fyxek4-7"
+})(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"], ["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"])));
+var ErrorText = dt.div.withConfig({
+  displayName: "styled-components__ErrorText",
+  componentId: "sc-1fyxek4-8"
+})(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"], ["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"])));
+var FlexContainer = dt.div.withConfig({
+  displayName: "styled-components__FlexContainer",
+  componentId: "sc-1fyxek4-9"
+})(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"])));
+var ItemContainer = dt.div.withConfig({
+  displayName: "styled-components__ItemContainer",
+  componentId: "sc-1fyxek4-10"
+})(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  width: ", ";\n  position: relative;\n"], ["\n  width: ", ";\n  position: relative;\n"])), function (_a) {
   var width = _a.width;
   return width || '100%';
 });
-dt.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  width: 390px;\n"], ["\n  width: 390px;\n"])));
-var CancelButton = dt.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"], ["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "styled-components__InputContainer",
+  componentId: "sc-1fyxek4-11"
+})(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  width: 390px;\n"], ["\n  width: 390px;\n"])));
+var CancelButton = dt.div.withConfig({
+  displayName: "styled-components__CancelButton",
+  componentId: "sc-1fyxek4-12"
+})(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"], ["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"])), function (_a) {
   var right = _a.right;
   return right || '-13px';
 }, function (_a) {
   var top = _a.top;
   return top || '5px';
 });
-var InputFileContainer = dt.div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"])));
-var UploadInput = dt.input(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"], ["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"])));
-dt.div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"], ["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"])));
-var ImagePlaceholder = dt.div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"])), function (_a) {
+var InputFileContainer = dt.div.withConfig({
+  displayName: "styled-components__InputFileContainer",
+  componentId: "sc-1fyxek4-13"
+})(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"])));
+var UploadInput = dt.input.withConfig({
+  displayName: "styled-components__UploadInput",
+  componentId: "sc-1fyxek4-14"
+})(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"], ["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__Label",
+  componentId: "sc-1fyxek4-15"
+})(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"], ["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"])));
+var ImagePlaceholder = dt.div.withConfig({
+  displayName: "styled-components__ImagePlaceholder",
+  componentId: "sc-1fyxek4-16"
+})(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"])), function (_a) {
   var height = _a.height;
   return height || 60;
 });
-var InputLabel = dt.label(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"
+var InputLabel = dt.label.withConfig({
+  displayName: "styled-components__InputLabel",
+  componentId: "sc-1fyxek4-17"
+})(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"
 // UploaderButton
 ])));
 // UploaderButton
-dt.label(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"], ["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"])));
-dt.div(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"], ["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"])));
-var VideoPlaceholder = dt.div(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"], ["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"])));
-var DefaultPlaceholder = dt.div(templateObject_22 || (templateObject_22 = __makeTemplateObject(["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"], ["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"])));
-var LoadingProgressContainer = dt.div(templateObject_23 || (templateObject_23 = __makeTemplateObject(["\n  margin-left: 19px;\n  margin-top: 2px;\n"], ["\n  margin-left: 19px;\n  margin-top: 2px;\n"])));
+dt.label.withConfig({
+  displayName: "styled-components__ButtonInputLabel",
+  componentId: "sc-1fyxek4-18"
+})(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"], ["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__FileUploadButton",
+  componentId: "sc-1fyxek4-19"
+})(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"], ["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"])));
+var VideoPlaceholder = dt.div.withConfig({
+  displayName: "styled-components__VideoPlaceholder",
+  componentId: "sc-1fyxek4-20"
+})(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"], ["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"])));
+var DefaultPlaceholder = dt.div.withConfig({
+  displayName: "styled-components__DefaultPlaceholder",
+  componentId: "sc-1fyxek4-21"
+})(templateObject_22 || (templateObject_22 = __makeTemplateObject(["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"], ["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"])));
+var LoadingProgressContainer = dt.div.withConfig({
+  displayName: "styled-components__LoadingProgressContainer",
+  componentId: "sc-1fyxek4-22"
+})(templateObject_23 || (templateObject_23 = __makeTemplateObject(["\n  margin-left: 19px;\n  margin-top: 2px;\n"], ["\n  margin-left: 19px;\n  margin-top: 2px;\n"])));
 var CircularProgressStyles = {
   width: '32px',
   height: '32px'
 };
-var Title = dt.h2(templateObject_24 || (templateObject_24 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
+var Title = dt.h2.withConfig({
+  displayName: "styled-components__Title",
+  componentId: "sc-1fyxek4-23"
+})(templateObject_24 || (templateObject_24 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
@@ -50629,12 +50843,18 @@ class AdapterDateFns extends AdapterDateFnsBase {
   }
 }
 
-dt.div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__DatePickerWrapper",
+  componentId: "sc-6bwyy3-0"
+})(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"])));
 var PREFIX = 'DatePicker';
 var classes = {
   datePicker: "".concat(PREFIX, "-datePicker")
 };
-var StyledDatePickerWrapper = dt('div')(function () {
+var StyledDatePickerWrapper = dt('div').withConfig({
+  displayName: "styled-components__StyledDatePickerWrapper",
+  componentId: "sc-6bwyy3-1"
+})(function () {
   var _a;
   return _a = {}, _a["& .".concat(classes.datePicker)] = {
     marginTop: 0,
@@ -50682,13 +50902,13 @@ function setRef$1(ref, value) {
  * Before you use this hook, make sure to read https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
  * and confirm it doesn't apply to your use-case.
  */
-const useEnhancedEffect = typeof window !== 'undefined' ? React__namespace.useLayoutEffect : React__namespace.useEffect;
+const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 
 let globalId = 0;
 function useGlobalId(idOverride) {
-  const [defaultId, setDefaultId] = React__namespace.useState(idOverride);
+  const [defaultId, setDefaultId] = React.useState(idOverride);
   const id = defaultId;
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (defaultId == null) {
       // Fallback to this default id when possible.
       // Use the incrementing value for client-side rendering only.
@@ -50702,7 +50922,7 @@ function useGlobalId(idOverride) {
 }
 
 // downstream bundlers may remove unnecessary concatenation, but won't remove toString call -- Workaround for https://github.com/webpack/webpack/issues/14814
-const maybeReactUseId = React__namespace['useId'.toString()];
+const maybeReactUseId = React['useId'.toString()];
 /**
  *
  * @example <div id={useId()} />
@@ -50727,25 +50947,25 @@ function useControlled({
   // isControlled is ignored in the hook dependency lists as it should never change.
   const {
     current: isControlled
-  } = React__namespace.useRef(controlled !== undefined);
-  const [valueState, setValue] = React__namespace.useState(defaultProp);
+  } = React.useRef(controlled !== undefined);
+  const [valueState, setValue] = React.useState(defaultProp);
   const value = isControlled ? controlled : valueState;
   if (process.env.NODE_ENV !== 'production') {
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (isControlled !== (controlled !== undefined)) {
         console.error([`MUI: A component is changing the ${isControlled ? '' : 'un'}controlled ${state} state of ${name} to be ${isControlled ? 'un' : ''}controlled.`, 'Elements should not switch from uncontrolled to controlled (or vice versa).', `Decide between using a controlled or uncontrolled ${name} ` + 'element for the lifetime of the component.', "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
       }
     }, [state, name, controlled]);
     const {
       current: defaultValue
-    } = React__namespace.useRef(defaultProp);
-    React__namespace.useEffect(() => {
+    } = React.useRef(defaultProp);
+    React.useEffect(() => {
       if (!isControlled && !Object.is(defaultValue, defaultProp)) {
         console.error([`MUI: A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. ` + `To suppress this warning opt to use a controlled ${name}.`].join('\n'));
       }
     }, [JSON.stringify(defaultProp)]);
   }
-  const setValueIfUncontrolled = React__namespace.useCallback(newValue => {
+  const setValueIfUncontrolled = React.useCallback(newValue => {
     if (!isControlled) {
       setValue(newValue);
     }
@@ -50759,11 +50979,11 @@ function useControlled({
  */
 
 function useEventCallback(fn) {
-  const ref = React__namespace.useRef(fn);
+  const ref = React.useRef(fn);
   useEnhancedEffect(() => {
     ref.current = fn;
   });
-  return React__namespace.useRef((...args) =>
+  return React.useRef((...args) =>
   // @ts-expect-error hide `this`
   (0, ref.current)(...args)).current;
 }
@@ -50774,7 +50994,7 @@ function useForkRef$1(...refs) {
    * This means react will call the old forkRef with `null` and the new forkRef
    * with the ref. Cleanup naturally emerges from this behavior.
    */
-  return React__namespace.useMemo(() => {
+  return React.useMemo(() => {
     if (refs.every(ref => ref == null)) {
       return null;
     }
@@ -50854,7 +51074,7 @@ function generateUtilityClasses(componentName, slots, globalStatePrefix = 'Mui')
 }
 
 const _excluded$o = ["localeText"];
-const MuiPickersAdapterContext = /*#__PURE__*/React__namespace.createContext(null);
+const MuiPickersAdapterContext = /*#__PURE__*/React.createContext(null);
 if (process.env.NODE_ENV !== 'production') {
   MuiPickersAdapterContext.displayName = 'MuiPickersAdapterContext';
 }
@@ -50879,7 +51099,7 @@ const LocalizationProvider = function LocalizationProvider(inProps) {
   const {
     utils: parentUtils,
     localeText: parentLocaleText
-  } = (_React$useContext = React__namespace.useContext(MuiPickersAdapterContext)) != null ? _React$useContext : {
+  } = (_React$useContext = React.useContext(MuiPickersAdapterContext)) != null ? _React$useContext : {
     utils: undefined,
     localeText: undefined
   };
@@ -50897,8 +51117,8 @@ const LocalizationProvider = function LocalizationProvider(inProps) {
     adapterLocale,
     localeText: themeLocaleText
   } = props;
-  const localeText = React__namespace.useMemo(() => _extends$2({}, themeLocaleText, parentLocaleText, inLocaleText), [themeLocaleText, parentLocaleText, inLocaleText]);
-  const utils = React__namespace.useMemo(() => {
+  const localeText = React.useMemo(() => _extends$2({}, themeLocaleText, parentLocaleText, inLocaleText), [themeLocaleText, parentLocaleText, inLocaleText]);
+  const utils = React.useMemo(() => {
     if (!DateAdapter) {
       if (parentUtils) {
         return parentUtils;
@@ -50915,7 +51135,7 @@ const LocalizationProvider = function LocalizationProvider(inProps) {
     }
     return adapter;
   }, [DateAdapter, adapterLocale, dateFormats, dateLibInstance, parentUtils]);
-  const defaultDates = React__namespace.useMemo(() => {
+  const defaultDates = React.useMemo(() => {
     if (!utils) {
       return null;
     }
@@ -50924,7 +51144,7 @@ const LocalizationProvider = function LocalizationProvider(inProps) {
       maxDate: utils.date('2099-12-31T00:00:00.000')
     };
   }, [utils]);
-  const contextValue = React__namespace.useMemo(() => {
+  const contextValue = React.useMemo(() => {
     return {
       utils,
       defaultDates,
@@ -51065,15 +51285,15 @@ const DEFAULT_LOCALE = enUSPickers;
 getPickersLocalization(enUSPickers);
 
 const useLocalizationContext = () => {
-  const localization = React__namespace.useContext(MuiPickersAdapterContext);
+  const localization = React.useContext(MuiPickersAdapterContext);
   if (localization === null) {
     throw new Error(['MUI: Can not find the date and time pickers localization context.', 'It looks like you forgot to wrap your component in LocalizationProvider.', 'This can also happen if you are bundling multiple versions of the `@mui/x-date-pickers` package'].join('\n'));
   }
   if (localization.utils === null) {
     throw new Error(['MUI: Can not find the date and time pickers adapter from its localization context.', 'It looks like you forgot to pass a `dateAdapter` to your LocalizationProvider.'].join('\n'));
   }
-  const localeText = React__namespace.useMemo(() => _extends$2({}, DEFAULT_LOCALE, localization.localeText), [localization.localeText]);
-  return React__namespace.useMemo(() => _extends$2({}, localization, {
+  const localeText = React.useMemo(() => _extends$2({}, DEFAULT_LOCALE, localization.localeText), [localization.localeText]);
+  return React.useMemo(() => _extends$2({}, localization, {
     localeText
   }), [localization, localeText]);
 };
@@ -51082,7 +51302,7 @@ const useDefaultDates = () => useLocalizationContext().defaultDates;
 const useLocaleText = () => useLocalizationContext().localeText;
 const useNow = timezone => {
   const utils = useUtils();
-  const now = React__namespace.useRef();
+  const now = React.useRef();
   if (now.current === undefined) {
     now.current = utils.dateWithTimezone(undefined, timezone);
   }
@@ -51194,7 +51414,7 @@ function useForkRef(...refs) {
    * This means react will call the old forkRef with `null` and the new forkRef
    * with the ref. Cleanup naturally emerges from this behavior.
    */
-  return React__namespace.useMemo(() => {
+  return React.useMemo(() => {
     if (refs.every(ref => ref == null)) {
       return null;
     }
@@ -51386,7 +51606,7 @@ const CalendarIcon = createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.jsx("path",
 /**
  * @ignore - internal component.
  */
-createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
   children: [/*#__PURE__*/jsxRuntimeExports.jsx("path", {
     d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
   }), /*#__PURE__*/jsxRuntimeExports.jsx("path", {
@@ -51404,7 +51624,7 @@ createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.jsx("path", {
 /**
  * @ignore - internal component.
  */
-createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
   children: [/*#__PURE__*/jsxRuntimeExports.jsx("path", {
     d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
   }), /*#__PURE__*/jsxRuntimeExports.jsx("path", {
@@ -51463,7 +51683,7 @@ const useUtilityClasses$f = ownerState => {
   };
   return composeClasses(slots, getPickersArrowSwitcherUtilityClass, classes);
 };
-const PickersArrowSwitcher = /*#__PURE__*/React__namespace.forwardRef(function PickersArrowSwitcher(inProps, ref) {
+const PickersArrowSwitcher = /*#__PURE__*/React.forwardRef(function PickersArrowSwitcher(inProps, ref) {
   var _slots$previousIconBu, _slots$nextIconButton, _slots$leftArrowIcon, _slots$rightArrowIcon;
   const theme = useTheme$2();
   const isRTL = theme.direction === 'rtl';
@@ -51641,23 +51861,23 @@ function useViews({
       }
     }
   }
-  const previousOpenTo = React__namespace.useRef(openTo);
-  const previousViews = React__namespace.useRef(views);
-  const defaultView = React__namespace.useRef(views.includes(openTo) ? openTo : views[0]);
+  const previousOpenTo = React.useRef(openTo);
+  const previousViews = React.useRef(views);
+  const defaultView = React.useRef(views.includes(openTo) ? openTo : views[0]);
   const [view, setView] = useControlled({
     name: 'useViews',
     state: 'view',
     controlled: inView,
     default: defaultView.current
   });
-  const defaultFocusedView = React__namespace.useRef(autoFocus ? view : null);
+  const defaultFocusedView = React.useRef(autoFocus ? view : null);
   const [focusedView, setFocusedView] = useControlled({
     name: 'useViews',
     state: 'focusedView',
     controlled: inFocusedView,
     default: defaultFocusedView.current
   });
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     // Update the current view when `openTo` or `views` props change
     if (previousOpenTo.current && previousOpenTo.current !== openTo || previousViews.current && previousViews.current.some(previousView => !views.includes(previousView))) {
       setView(views.includes(openTo) ? openTo : views[0]);
@@ -51735,7 +51955,7 @@ function useNextMonthDisabled(month, {
   timezone
 }) {
   const utils = useUtils();
-  return React__namespace.useMemo(() => {
+  return React.useMemo(() => {
     const now = utils.dateWithTimezone(undefined, timezone);
     const lastEnabledMonth = utils.startOfMonth(disableFuture && utils.isBefore(now, maxDate) ? now : maxDate);
     return !utils.isAfter(lastEnabledMonth, month);
@@ -51747,7 +51967,7 @@ function usePreviousMonthDisabled(month, {
   timezone
 }) {
   const utils = useUtils();
-  return React__namespace.useMemo(() => {
+  return React.useMemo(() => {
     const now = utils.dateWithTimezone(undefined, timezone);
     const firstEnabledMonth = utils.startOfMonth(disablePast && utils.isAfter(now, minDate) ? now : minDate);
     return !utils.isBefore(firstEnabledMonth, month);
@@ -51902,9 +52122,9 @@ const useValueWithTimezone = ({
 }) => {
   var _ref, _ref2;
   const utils = useUtils();
-  const firstDefaultValue = React__namespace.useRef(defaultValue);
+  const firstDefaultValue = React.useRef(defaultValue);
   const inputValue = (_ref = valueProp != null ? valueProp : firstDefaultValue.current) != null ? _ref : valueManager.emptyValue;
-  const inputTimezone = React__namespace.useMemo(() => valueManager.getTimezone(utils, inputValue), [utils, valueManager, inputValue]);
+  const inputTimezone = React.useMemo(() => valueManager.getTimezone(utils, inputValue), [utils, valueManager, inputValue]);
   const setInputTimezone = useEventCallback(newValue => {
     if (inputTimezone == null) {
       return newValue;
@@ -51912,7 +52132,7 @@ const useValueWithTimezone = ({
     return valueManager.setTimezone(utils, inputTimezone, newValue);
   });
   const timezoneToRender = (_ref2 = timezoneProp != null ? timezoneProp : inputTimezone) != null ? _ref2 : 'default';
-  const valueWithTimezoneToRender = React__namespace.useMemo(() => valueManager.setTimezone(utils, timezoneToRender, inputValue), [valueManager, utils, timezoneToRender, inputValue]);
+  const valueWithTimezoneToRender = React.useMemo(() => valueManager.setTimezone(utils, timezoneToRender, inputValue), [valueManager, utils, timezoneToRender, inputValue]);
   const handleValueChange = useEventCallback((newValue, ...otherParams) => {
     const newValueWithInputTimezone = setInputTimezone(newValue);
     onChange == null || onChange(newValueWithInputTimezone, ...otherParams);
@@ -52896,7 +53116,7 @@ const PickersDayFiller = styled('div', {
   pointerEvents: 'none'
 }));
 const noop = () => {};
-const PickersDayRaw = /*#__PURE__*/React__namespace.forwardRef(function PickersDay(inProps, forwardedRef) {
+const PickersDayRaw = /*#__PURE__*/React.forwardRef(function PickersDay(inProps, forwardedRef) {
   const props = useThemeProps({
     props: inProps,
     name: 'MuiPickersDay'
@@ -52934,7 +53154,7 @@ const PickersDayRaw = /*#__PURE__*/React__namespace.forwardRef(function PickersD
   });
   const classes = useUtilityClasses$e(ownerState);
   const utils = useUtils();
-  const ref = React__namespace.useRef(null);
+  const ref = React.useRef(null);
   const handleRef = useForkRef$1(ref, forwardedRef);
 
   // Since this is rendered when a Popper is opened we can't use passive effects.
@@ -53140,7 +53360,7 @@ process.env.NODE_ENV !== "production" ? PickersDayRaw.propTypes = {
  *
  * - [PickersDay API](https://mui.com/x/api/date-pickers/pickers-day/)
  */
-const PickersDay = /*#__PURE__*/React__namespace.memo(PickersDayRaw);
+const PickersDay = /*#__PURE__*/React.memo(PickersDayRaw);
 
 function useValidation(props, validate, isSameError, defaultErrorState) {
   const {
@@ -53148,13 +53368,13 @@ function useValidation(props, validate, isSameError, defaultErrorState) {
     onError
   } = props;
   const adapter = useLocalizationContext();
-  const previousValidationErrorRef = React__namespace.useRef(defaultErrorState);
+  const previousValidationErrorRef = React.useRef(defaultErrorState);
   const validationError = validate({
     adapter,
     value,
     props
   });
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (onError && !isSameError(validationError, previousValidationErrorRef.current)) {
       onError(validationError, value);
     }
@@ -53199,10 +53419,10 @@ const useFieldState = params => {
     onChange,
     valueManager
   });
-  const sectionsValueBoundaries = React__namespace.useMemo(() => getSectionsBoundaries(utils, timezone), [utils, timezone]);
-  const getSectionsFromValue = React__namespace.useCallback((value, fallbackSections = null) => fieldValueManager.getSectionsFromValue(utils, value, fallbackSections, isRTL, date => splitFormatIntoSections(utils, timezone, localeText, format, date, formatDensity, shouldRespectLeadingZeros, isRTL)), [fieldValueManager, format, localeText, isRTL, shouldRespectLeadingZeros, utils, formatDensity, timezone]);
-  const placeholder = React__namespace.useMemo(() => fieldValueManager.getValueStrFromSections(getSectionsFromValue(valueManager.emptyValue), isRTL), [fieldValueManager, getSectionsFromValue, valueManager.emptyValue, isRTL]);
-  const [state, setState] = React__namespace.useState(() => {
+  const sectionsValueBoundaries = React.useMemo(() => getSectionsBoundaries(utils, timezone), [utils, timezone]);
+  const getSectionsFromValue = React.useCallback((value, fallbackSections = null) => fieldValueManager.getSectionsFromValue(utils, value, fallbackSections, isRTL, date => splitFormatIntoSections(utils, timezone, localeText, format, date, formatDensity, shouldRespectLeadingZeros, isRTL)), [fieldValueManager, format, localeText, isRTL, shouldRespectLeadingZeros, utils, formatDensity, timezone]);
+  const placeholder = React.useMemo(() => fieldValueManager.getValueStrFromSections(getSectionsFromValue(valueManager.emptyValue), isRTL), [fieldValueManager, getSectionsFromValue, valueManager.emptyValue, isRTL]);
+  const [state, setState] = React.useState(() => {
     const sections = getSectionsFromValue(valueFromTheOutside);
     validateSections(sections, valueType);
     const stateWithoutReferenceDate = {
@@ -53237,7 +53457,7 @@ const useFieldState = params => {
       selectedSectionQuery: null
     }));
   };
-  const selectedSectionIndexes = React__namespace.useMemo(() => {
+  const selectedSectionIndexes = React.useMemo(() => {
     if (selectedSections == null) {
       return null;
     }
@@ -53397,7 +53617,7 @@ const useFieldState = params => {
   const setTempAndroidValueStr = tempValueStrAndroid => setState(prev => _extends$2({}, prev, {
     tempValueStrAndroid
   }));
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     const sections = getSectionsFromValue(state.value);
     validateSections(sections, valueType);
     setState(prevState => _extends$2({}, prevState, {
@@ -53405,7 +53625,7 @@ const useFieldState = params => {
     }));
   }, [format, utils.locale]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     let shouldUpdate = false;
     if (!valueManager.areValuesEqual(utils, state.value, valueFromTheOutside)) {
       shouldUpdate = true;
@@ -53476,15 +53696,15 @@ const useFieldCharacterEditing = ({
   timezone
 }) => {
   const utils = useUtils();
-  const [query, setQuery] = React__namespace.useState(null);
+  const [query, setQuery] = React.useState(null);
   const resetQuery = useEventCallback(() => setQuery(null));
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     var _sections$query$secti;
     if (query != null && ((_sections$query$secti = sections[query.sectionIndex]) == null ? void 0 : _sections$query$secti.type) !== query.sectionType) {
       resetQuery();
     }
   }, [sections, query, resetQuery]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (query != null) {
       const timeout = setTimeout(() => resetQuery(), QUERY_LIFE_DURATION_MS);
       return () => {
@@ -53756,12 +53976,12 @@ const useField = params => {
     setTempAndroidValueStr,
     timezone
   });
-  const inputRef = React__namespace.useRef(null);
+  const inputRef = React.useRef(null);
   const handleRef = useForkRef$1(inputRefProp, inputRef);
-  const focusTimeoutRef = React__namespace.useRef(undefined);
+  const focusTimeoutRef = React.useRef(undefined);
   const theme = useTheme$2();
   const isRTL = theme.direction === 'rtl';
-  const sectionOrder = React__namespace.useMemo(() => getSectionOrder(state.sections, isRTL), [state.sections, isRTL]);
+  const sectionOrder = React.useMemo(() => getSectionOrder(state.sections, isRTL), [state.sections, isRTL]);
   const syncSelectionFromDOM = () => {
     var _selectionStart;
     if (readOnly) {
@@ -54045,7 +54265,7 @@ const useField = params => {
     value: state.value,
     timezone
   }), validator, valueManager.isSameError, valueManager.defaultErrorState);
-  const inputError = React__namespace.useMemo(() => {
+  const inputError = React.useMemo(() => {
     // only override when `error` is undefined.
     // in case of multi input fields, the `error` value is provided externally and will always be defined.
     if (error !== undefined) {
@@ -54053,13 +54273,13 @@ const useField = params => {
     }
     return valueManager.hasError(validationError);
   }, [valueManager, validationError, error]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (!inputError && !selectedSectionIndexes) {
       resetCharacterQuery();
     }
   }, [state.referenceValue, selectedSectionIndexes, inputError]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     // Select the right section when focused on mount (`autoFocus = true` on the input)
     if (inputRef.current && inputRef.current === document.activeElement) {
       setSelectedSections('all');
@@ -54071,18 +54291,18 @@ const useField = params => {
   // Then `onChange` has only been called once, which means the user pressed `Backspace` to reset the section.
   // This causes a small flickering on Android,
   // But we can't use `useEnhancedEffect` which is always called before the second `onChange` call and then would cause false positives.
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (state.tempValueStrAndroid != null && selectedSectionIndexes != null) {
       resetCharacterQuery();
       clearActiveSection();
     }
   }, [state.tempValueStrAndroid]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const valueStr = React__namespace.useMemo(() => {
+  const valueStr = React.useMemo(() => {
     var _state$tempValueStrAn;
     return (_state$tempValueStrAn = state.tempValueStrAndroid) != null ? _state$tempValueStrAn : fieldValueManager.getValueStrFromSections(state.sections, isRTL);
   }, [state.sections, fieldValueManager, state.tempValueStrAndroid, isRTL]);
-  const inputMode = React__namespace.useMemo(() => {
+  const inputMode = React.useMemo(() => {
     if (selectedSectionIndexes == null) {
       return 'text';
     }
@@ -54094,7 +54314,7 @@ const useField = params => {
   const inputHasFocus = inputRef.current && inputRef.current === getActiveElement(document);
   const areAllSectionsEmpty = valueManager.areValuesEqual(utils, state.value, valueManager.emptyValue);
   const shouldShowPlaceholder = !inputHasFocus && areAllSectionsEmpty;
-  React__namespace.useImperativeHandle(unstableFieldRef, () => ({
+  React.useImperativeHandle(unstableFieldRef, () => ({
     getSections: () => state.sections,
     getActiveSectionIndex: () => {
       var _selectionStart2, _selectionEnd, _inputRef$current;
@@ -54311,11 +54531,11 @@ function clickedRootScrollbar(event, doc) {
  * @returns {Array} The ref and event handler to listen to the outside clicks.
  */
 function useClickAwayListener(active, onClickAway) {
-  const movedRef = React__namespace.useRef(false);
-  const syntheticEventRef = React__namespace.useRef(false);
-  const nodeRef = React__namespace.useRef(null);
-  const activatedRef = React__namespace.useRef(false);
-  React__namespace.useEffect(() => {
+  const movedRef = React.useRef(false);
+  const syntheticEventRef = React.useRef(false);
+  const nodeRef = React.useRef(null);
+  const activatedRef = React.useRef(false);
+  React.useEffect(() => {
     if (!active) {
       return undefined;
     }
@@ -54382,7 +54602,7 @@ function useClickAwayListener(active, onClickAway) {
   const handleSynthetic = () => {
     syntheticEventRef.current = true;
   };
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (active) {
       const doc = ownerDocument(nodeRef.current);
       const handleTouchMove = () => {
@@ -54397,7 +54617,7 @@ function useClickAwayListener(active, onClickAway) {
     }
     return undefined;
   }, [active, handleClickAway]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     // TODO This behavior is not tested automatically
     // It's unclear whether this is due to different update semantics in test (batched in act() vs discrete on click).
     // Or if this is a timing related issues due to different Transition components
@@ -54415,7 +54635,7 @@ function useClickAwayListener(active, onClickAway) {
   }, [active, handleClickAway]);
   return [nodeRef, handleSynthetic, handleSynthetic];
 }
-const PickersPopperPaperWrapper = /*#__PURE__*/React__namespace.forwardRef((props, ref) => {
+const PickersPopperPaperWrapper = /*#__PURE__*/React.forwardRef((props, ref) => {
   const {
       PaperComponent,
       popperPlacement,
@@ -54478,7 +54698,7 @@ function PickersPopper(inProps) {
     slotProps,
     reduceAnimations: inReduceAnimations
   } = props;
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     function handleKeyDown(nativeEvent) {
       // IE11, Edge (prior to using Blink?) use 'Esc'
       if (open && (nativeEvent.key === 'Escape' || nativeEvent.key === 'Esc')) {
@@ -54490,8 +54710,8 @@ function PickersPopper(inProps) {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [onDismiss, open]);
-  const lastFocusedElementRef = React__namespace.useRef(null);
-  React__namespace.useEffect(() => {
+  const lastFocusedElementRef = React.useRef(null);
+  React.useEffect(() => {
     if (role === 'tooltip' || shouldRestoreFocus && !shouldRestoreFocus()) {
       return;
     }
@@ -54508,7 +54728,7 @@ function PickersPopper(inProps) {
     }
   }, [open, role, shouldRestoreFocus]);
   const [clickAwayRef, onPaperClick, onPaperTouchStart] = useClickAwayListener(open, onBlur != null ? onBlur : onDismiss);
-  const paperRef = React__namespace.useRef(null);
+  const paperRef = React.useRef(null);
   const handleRef = useForkRef$1(paperRef, containerRef);
   const handlePaperRef = useForkRef$1(handleRef, clickAwayRef);
   const ownerState = props;
@@ -54627,7 +54847,7 @@ const PickersToolbarContent = styled('div', {
     alignItems: ownerState.isLandscape ? 'flex-start' : 'center'
   };
 });
-const PickersToolbar = /*#__PURE__*/React__namespace.forwardRef(function PickersToolbar(inProps, ref) {
+const PickersToolbar = /*#__PURE__*/React.forwardRef(function PickersToolbar(inProps, ref) {
   const props = useThemeProps({
     props: inProps,
     name: 'MuiPickersToolbar'
@@ -54666,12 +54886,12 @@ const useOpenState = ({
   onOpen,
   onClose
 }) => {
-  const isControllingOpenProp = React__namespace.useRef(typeof open === 'boolean').current;
-  const [openState, setIsOpenState] = React__namespace.useState(false);
+  const isControllingOpenProp = React.useRef(typeof open === 'boolean').current;
+  const [openState, setIsOpenState] = React.useState(false);
 
   // It is required to update inner state in useEffect in order to avoid situation when
   // Our component is not mounted yet, but `open` state is set to `true` (e.g. initially opened)
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (isControllingOpenProp) {
       if (typeof open !== 'boolean') {
         throw new Error('You must not mix controlling and uncontrolled mode for `open` prop');
@@ -54679,7 +54899,7 @@ const useOpenState = ({
       setIsOpenState(open);
     }
   }, [isControllingOpenProp, open]);
-  const setIsOpen = React__namespace.useCallback(newIsOpen => {
+  const setIsOpen = React.useCallback(newIsOpen => {
     if (!isControllingOpenProp) {
       setIsOpenState(newIsOpen);
     }
@@ -54818,19 +55038,19 @@ const usePickerValue = ({
   } = props;
   const {
     current: defaultValue
-  } = React__namespace.useRef(inDefaultValue);
+  } = React.useRef(inDefaultValue);
   const {
     current: isControlled
-  } = React__namespace.useRef(inValue !== undefined);
+  } = React.useRef(inValue !== undefined);
 
   /* eslint-disable react-hooks/rules-of-hooks, react-hooks/exhaustive-deps */
   if (process.env.NODE_ENV !== 'production') {
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (isControlled !== (inValue !== undefined)) {
         console.error([`MUI: A component is changing the ${isControlled ? '' : 'un'}controlled value of a picker to be ${isControlled ? 'un' : ''}controlled.`, 'Elements should not switch from uncontrolled to controlled (or vice versa).', `Decide between using a controlled or uncontrolled value` + 'for the lifetime of the component.', "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
       }
     }, [inValue]);
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (!isControlled && defaultValue !== inDefaultValue) {
         console.error([`MUI: A component is changing the defaultValue of an uncontrolled picker after being initialized. ` + `To suppress this warning opt to use a controlled value.`].join('\n'));
       }
@@ -54850,7 +55070,7 @@ const usePickerValue = ({
     isOpen,
     setIsOpen
   } = useOpenState(props);
-  const [dateState, setDateState] = React__namespace.useState(() => {
+  const [dateState, setDateState] = React.useState(() => {
     let initialValue;
     if (inValue !== undefined) {
       initialValue = inValue;
@@ -55009,7 +55229,7 @@ const usePickerValue = ({
     selectedSections,
     onSelectedSectionsChange: handleFieldSelectedSectionsChange
   };
-  const viewValue = React__namespace.useMemo(() => valueManager.cleanValue(utils, dateState.draft), [utils, valueManager, dateState.draft]);
+  const viewValue = React.useMemo(() => valueManager.cleanValue(utils, dateState.draft), [utils, valueManager, dateState.draft]);
   const viewResponse = {
     value: viewValue,
     onChange: handleChange,
@@ -55103,7 +55323,7 @@ const usePickerViews = ({
   const {
     hasUIView,
     viewModeLookup
-  } = React__namespace.useMemo(() => views.reduce((acc, viewForReduce) => {
+  } = React.useMemo(() => views.reduce((acc, viewForReduce) => {
     let viewMode;
     if (viewRenderers[viewForReduce] != null) {
       viewMode = 'UI';
@@ -55119,7 +55339,7 @@ const usePickerViews = ({
     hasUIView: false,
     viewModeLookup: {}
   }), [viewRenderers, views]);
-  const timeViewsCount = React__namespace.useMemo(() => views.reduce((acc, viewForReduce) => {
+  const timeViewsCount = React.useMemo(() => views.reduce((acc, viewForReduce) => {
     if (viewRenderers[viewForReduce] != null && isTimeView(viewForReduce)) {
       return acc + 1;
     }
@@ -55127,7 +55347,7 @@ const usePickerViews = ({
   }, 0), [viewRenderers, views]);
   const currentViewMode = viewModeLookup[view];
   const shouldRestoreFocus = useEventCallback(() => currentViewMode === 'UI');
-  const [popperView, setPopperView] = React__namespace.useState(currentViewMode === 'UI' ? view : null);
+  const [popperView, setPopperView] = React.useState(currentViewMode === 'UI' ? view : null);
   if (popperView !== view && viewModeLookup[view] === 'UI') {
     setPopperView(view);
   }
@@ -55212,7 +55432,7 @@ function getOrientation() {
   return 'portrait';
 }
 const useIsLandscape = (views, customOrientation) => {
-  const [orientation, setOrientation] = React__namespace.useState(getOrientation);
+  const [orientation, setOrientation] = React.useState(getOrientation);
   useEnhancedEffect(() => {
     const eventHandler = () => {
       setOrientation(getOrientation());
@@ -55748,9 +55968,9 @@ const PickersLayout = function PickersLayout(inProps) {
     ownerState: ownerState,
     children: [isLandscape ? shortcuts : toolbar, isLandscape ? toolbar : shortcuts, /*#__PURE__*/jsxRuntimeExports.jsx(PickersLayoutContentWrapper, {
       className: classes.contentWrapper,
-      children: wrapperVariant === 'desktop' ? /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+      children: wrapperVariant === 'desktop' ? /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
         children: [content, tabs]
-      }) : /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+      }) : /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
         children: [tabs, content]
       })
     }), actionBar]
@@ -55932,7 +56152,7 @@ function PickersSlideTransition(inProps) {
   };
   return /*#__PURE__*/jsxRuntimeExports.jsx(PickersSlideTransitionRoot, {
     className: clsx$1(classes.root, className),
-    childFactory: element => /*#__PURE__*/React__namespace.cloneElement(element, {
+    childFactory: element => /*#__PURE__*/React.cloneElement(element, {
       classNames: transitionClasses
     }),
     role: "presentation",
@@ -55958,7 +56178,7 @@ const useIsDateDisabled = ({
   timezone
 }) => {
   const adapter = useLocalizationContext();
-  return React__namespace.useCallback(day => validateDate({
+  return React.useCallback(day => validateDate({
     adapter,
     value: day,
     props: {
@@ -56140,16 +56360,16 @@ function WrappedDay(_ref) {
       })
     }),
     dayProps = _objectWithoutPropertiesLoose$1(_useSlotProps, _excluded2$3);
-  const isDisabled = React__namespace.useMemo(() => disabled || isDateDisabled(day), [disabled, isDateDisabled, day]);
-  const outsideCurrentMonth = React__namespace.useMemo(() => utils.getMonth(day) !== currentMonthNumber, [utils, day, currentMonthNumber]);
-  const isFirstVisibleCell = React__namespace.useMemo(() => {
+  const isDisabled = React.useMemo(() => disabled || isDateDisabled(day), [disabled, isDateDisabled, day]);
+  const outsideCurrentMonth = React.useMemo(() => utils.getMonth(day) !== currentMonthNumber, [utils, day, currentMonthNumber]);
+  const isFirstVisibleCell = React.useMemo(() => {
     const startOfMonth = utils.startOfMonth(utils.setMonth(day, currentMonthNumber));
     if (!showDaysOutsideCurrentMonth) {
       return utils.isSameDay(day, startOfMonth);
     }
     return utils.isSameDay(day, utils.startOfWeek(startOfMonth));
   }, [currentMonthNumber, day, showDaysOutsideCurrentMonth, utils]);
-  const isLastVisibleCell = React__namespace.useMemo(() => {
+  const isLastVisibleCell = React.useMemo(() => {
     const endOfMonth = utils.endOfMonth(utils.setMonth(day, currentMonthNumber));
     if (!showDaysOutsideCurrentMonth) {
       return utils.isSameDay(day, endOfMonth);
@@ -56236,7 +56456,7 @@ function DayCalendar(inProps) {
     controlled: hasFocus,
     default: autoFocus != null ? autoFocus : false
   });
-  const [internalFocusedDay, setInternalFocusedDay] = React__namespace.useState(() => focusedDay || now);
+  const [internalFocusedDay, setInternalFocusedDay] = React.useState(() => focusedDay || now);
   const handleDaySelect = useEventCallback(day => {
     if (readOnly) {
       return;
@@ -56318,14 +56538,14 @@ function DayCalendar(inProps) {
     }
   });
   const currentMonthNumber = utils.getMonth(currentMonth);
-  const validSelectedDays = React__namespace.useMemo(() => selectedDays.filter(day => !!day).map(day => utils.startOfDay(day)), [utils, selectedDays]);
+  const validSelectedDays = React.useMemo(() => selectedDays.filter(day => !!day).map(day => utils.startOfDay(day)), [utils, selectedDays]);
 
   // need a new ref whenever the `key` of the transition changes: http://reactcommunity.org/react-transition-group/transition/#Transition-prop-nodeRef.
   const transitionKey = currentMonthNumber;
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const slideNodeRef = React__namespace.useMemo(() => /*#__PURE__*/React__namespace.createRef(), [transitionKey]);
+  const slideNodeRef = React.useMemo(() => /*#__PURE__*/React.createRef(), [transitionKey]);
   const startOfCurrentWeek = utils.startOfWeek(now);
-  const focusableDay = React__namespace.useMemo(() => {
+  const focusableDay = React.useMemo(() => {
     const startOfMonth = utils.startOfMonth(currentMonth);
     const endOfMonth = utils.endOfMonth(currentMonth);
     if (isDateDisabled(internalFocusedDay) || utils.isAfterDay(internalFocusedDay, endOfMonth) || utils.isBeforeDay(internalFocusedDay, startOfMonth)) {
@@ -56342,7 +56562,7 @@ function DayCalendar(inProps) {
     }
     return internalFocusedDay;
   }, [currentMonth, disableFuture, disablePast, internalFocusedDay, isDateDisabled, utils, timezone]);
-  const weeksToDisplay = React__namespace.useMemo(() => {
+  const weeksToDisplay = React.useMemo(() => {
     const currentMonthWithTimezone = utils.setTimezone(currentMonth, timezone);
     const toDisplay = utils.getWeekArray(currentMonthWithTimezone);
     let nextMonth = utils.addMonths(currentMonthWithTimezone, 1);
@@ -56476,8 +56696,8 @@ const useCalendarState = params => {
     timezone
   } = params;
   const utils = useUtils();
-  const reducerFn = React__namespace.useRef(createCalendarStateReducer(Boolean(reduceAnimations), disableSwitchToMonthOnDayFocus, utils)).current;
-  const referenceDate = React__namespace.useMemo(() => {
+  const reducerFn = React.useRef(createCalendarStateReducer(Boolean(reduceAnimations), disableSwitchToMonthOnDayFocus, utils)).current;
+  const referenceDate = React.useMemo(() => {
     let externalReferenceDate = null;
     if (referenceDateProp) {
       externalReferenceDate = referenceDateProp;
@@ -56495,13 +56715,13 @@ const useCalendarState = params => {
     });
   }, [] // eslint-disable-line react-hooks/exhaustive-deps
   );
-  const [calendarState, dispatch] = React__namespace.useReducer(reducerFn, {
+  const [calendarState, dispatch] = React.useReducer(reducerFn, {
     isMonthSwitchingAnimating: false,
     focusedDay: referenceDate,
     currentMonth: utils.startOfMonth(referenceDate),
     slideDirection: 'left'
   });
-  const handleChangeMonth = React__namespace.useCallback(payload => {
+  const handleChangeMonth = React.useCallback(payload => {
     dispatch(_extends$2({
       type: 'changeMonth'
     }, payload));
@@ -56509,7 +56729,7 @@ const useCalendarState = params => {
       onMonthChange(payload.newMonth);
     }
   }, [onMonthChange]);
-  const changeMonth = React__namespace.useCallback(newDate => {
+  const changeMonth = React.useCallback(newDate => {
     const newDateRequested = newDate;
     if (utils.isSameMonth(newDateRequested, calendarState.currentMonth)) {
       return;
@@ -56527,7 +56747,7 @@ const useCalendarState = params => {
     disablePast,
     timezone
   });
-  const onMonthSwitchingAnimationEnd = React__namespace.useCallback(() => {
+  const onMonthSwitchingAnimationEnd = React.useCallback(() => {
     dispatch({
       type: 'finishMonthSwitchingAnimation'
     });
@@ -56584,7 +56804,7 @@ const useClearableField = ({
     ownerState: {}
   });
   const InputProps = _extends$2({}, ForwardedInputProps, {
-    endAdornment: /*#__PURE__*/jsxRuntimeExports.jsxs(React__namespace.Fragment, {
+    endAdornment: /*#__PURE__*/jsxRuntimeExports.jsxs(React.Fragment, {
       children: [clearable && /*#__PURE__*/jsxRuntimeExports.jsx(InputAdornment, {
         position: "end",
         sx: {
@@ -56635,7 +56855,7 @@ const _excluded$c = ["components", "componentsProps", "slots", "slotProps", "Inp
  *
  * - [DateField API](https://mui.com/x/api/date-pickers/date-field/)
  */
-const DateField = /*#__PURE__*/React__namespace.forwardRef(function DateField(inProps, ref) {
+const DateField = /*#__PURE__*/React.forwardRef(function DateField(inProps, ref) {
   var _ref, _slots$textField, _slotProps$textField;
   const themeProps = useThemeProps({
     props: inProps,
@@ -57113,7 +57333,7 @@ const PickersMonthButton = styled('button', {
 /**
  * @ignore - do not document.
  */
-const PickersMonth = /*#__PURE__*/React__namespace.memo(function PickersMonth(inProps) {
+const PickersMonth = /*#__PURE__*/React.memo(function PickersMonth(inProps) {
   const props = useThemeProps({
     props: inProps,
     name: 'MuiPickersMonth'
@@ -57134,7 +57354,7 @@ const PickersMonth = /*#__PURE__*/React__namespace.memo(function PickersMonth(in
       // We don't want to forward this prop to the root element
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$b);
-  const ref = React__namespace.useRef(null);
+  const ref = React.useRef(null);
   const classes = useUtilityClasses$6(props);
   useEnhancedEffect(() => {
     if (autoFocus) {
@@ -57218,7 +57438,7 @@ const MonthCalendarRoot = styled('div', {
  *
  * - [MonthCalendar API](https://mui.com/x/api/date-pickers/month-calendar/)
  */
-const MonthCalendar = /*#__PURE__*/React__namespace.forwardRef(function MonthCalendar(inProps, ref) {
+const MonthCalendar = /*#__PURE__*/React.forwardRef(function MonthCalendar(inProps, ref) {
   const props = useMonthCalendarDefaultizedProps(inProps, 'MuiMonthCalendar');
   const {
       className,
@@ -57258,7 +57478,7 @@ const MonthCalendar = /*#__PURE__*/React__namespace.forwardRef(function MonthCal
   const now = useNow(timezone);
   const theme = useTheme$4();
   const utils = useUtils();
-  const referenceDate = React__namespace.useMemo(() => singleItemValueManager.getInitialReferenceValue({
+  const referenceDate = React.useMemo(() => singleItemValueManager.getInitialReferenceValue({
     value,
     utils,
     props,
@@ -57269,8 +57489,8 @@ const MonthCalendar = /*#__PURE__*/React__namespace.forwardRef(function MonthCal
   );
   const ownerState = props;
   const classes = useUtilityClasses$5(ownerState);
-  const todayMonth = React__namespace.useMemo(() => utils.getMonth(now), [utils, now]);
-  const selectedMonth = React__namespace.useMemo(() => {
+  const todayMonth = React.useMemo(() => utils.getMonth(now), [utils, now]);
+  const selectedMonth = React.useMemo(() => {
     if (value != null) {
       return utils.getMonth(value);
     }
@@ -57279,7 +57499,7 @@ const MonthCalendar = /*#__PURE__*/React__namespace.forwardRef(function MonthCal
     }
     return utils.getMonth(referenceDate);
   }, [value, utils, disableHighlightToday, referenceDate]);
-  const [focusedMonth, setFocusedMonth] = React__namespace.useState(() => selectedMonth || todayMonth);
+  const [focusedMonth, setFocusedMonth] = React.useState(() => selectedMonth || todayMonth);
   const [internalHasFocus, setInternalHasFocus] = useControlled({
     name: 'MonthCalendar',
     state: 'hasFocus',
@@ -57292,7 +57512,7 @@ const MonthCalendar = /*#__PURE__*/React__namespace.forwardRef(function MonthCal
       onFocusedViewChange(newHasFocus);
     }
   });
-  const isMonthDisabled = React__namespace.useCallback(dateToValidate => {
+  const isMonthDisabled = React.useCallback(dateToValidate => {
     const firstEnabledMonth = utils.startOfMonth(disablePast && utils.isAfter(now, minDate) ? now : minDate);
     const lastEnabledMonth = utils.startOfMonth(disableFuture && utils.isBefore(now, maxDate) ? now : maxDate);
     const monthToValidate = utils.startOfMonth(dateToValidate);
@@ -57323,7 +57543,7 @@ const MonthCalendar = /*#__PURE__*/React__namespace.forwardRef(function MonthCal
       }
     }
   });
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     setFocusedMonth(prevFocusedMonth => selectedMonth !== null && prevFocusedMonth !== selectedMonth ? selectedMonth : prevFocusedMonth);
   }, [selectedMonth]);
   const handleKeyDown = useEventCallback((event, month) => {
@@ -57559,7 +57779,7 @@ const PickersYearButton = styled('button', {
 /**
  * @ignore - internal component.
  */
-const PickersYear = /*#__PURE__*/React__namespace.memo(function PickersYear(inProps) {
+const PickersYear = /*#__PURE__*/React.memo(function PickersYear(inProps) {
   const props = useThemeProps({
     props: inProps,
     name: 'MuiPickersYear'
@@ -57580,11 +57800,11 @@ const PickersYear = /*#__PURE__*/React__namespace.memo(function PickersYear(inPr
       // We don't want to forward this prop to the root element
     } = props,
     other = _objectWithoutPropertiesLoose$1(props, _excluded$9);
-  const ref = React__namespace.useRef(null);
+  const ref = React.useRef(null);
   const classes = useUtilityClasses$4(props);
 
   // We can't forward the `autoFocus` to the button because it is a native button, not a MUI Button
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (autoFocus) {
       // `ref.current` being `null` would be a bug in MUI.
       ref.current.focus();
@@ -57671,7 +57891,7 @@ const YearCalendarRoot = styled('div', {
  *
  * - [YearCalendar API](https://mui.com/x/api/date-pickers/year-calendar/)
  */
-const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalendar(inProps, ref) {
+const YearCalendar = /*#__PURE__*/React.forwardRef(function YearCalendar(inProps, ref) {
   const props = useYearCalendarDefaultizedProps(inProps, 'MuiYearCalendar');
   const {
       autoFocus,
@@ -57711,7 +57931,7 @@ const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalen
   const now = useNow(timezone);
   const theme = useTheme$4();
   const utils = useUtils();
-  const referenceDate = React__namespace.useMemo(() => singleItemValueManager.getInitialReferenceValue({
+  const referenceDate = React.useMemo(() => singleItemValueManager.getInitialReferenceValue({
     value,
     utils,
     props,
@@ -57722,8 +57942,8 @@ const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalen
   );
   const ownerState = props;
   const classes = useUtilityClasses$3(ownerState);
-  const todayYear = React__namespace.useMemo(() => utils.getYear(now), [utils, now]);
-  const selectedYear = React__namespace.useMemo(() => {
+  const todayYear = React.useMemo(() => utils.getYear(now), [utils, now]);
+  const selectedYear = React.useMemo(() => {
     if (value != null) {
       return utils.getYear(value);
     }
@@ -57732,7 +57952,7 @@ const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalen
     }
     return utils.getYear(referenceDate);
   }, [value, utils, disableHighlightToday, referenceDate]);
-  const [focusedYear, setFocusedYear] = React__namespace.useState(() => selectedYear || todayYear);
+  const [focusedYear, setFocusedYear] = React.useState(() => selectedYear || todayYear);
   const [internalHasFocus, setInternalHasFocus] = useControlled({
     name: 'YearCalendar',
     state: 'hasFocus',
@@ -57745,7 +57965,7 @@ const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalen
       onFocusedViewChange(newHasFocus);
     }
   });
-  const isYearDisabled = React__namespace.useCallback(dateToValidate => {
+  const isYearDisabled = React.useCallback(dateToValidate => {
     if (disablePast && utils.isBeforeYear(dateToValidate, now)) {
       return true;
     }
@@ -57778,7 +57998,7 @@ const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalen
       onYearFocus == null || onYearFocus(year);
     }
   });
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     setFocusedYear(prevFocusedYear => selectedYear !== null && prevFocusedYear !== selectedYear ? selectedYear : prevFocusedYear);
   }, [selectedYear]);
   const handleKeyDown = useEventCallback((event, year) => {
@@ -57809,9 +58029,9 @@ const YearCalendar = /*#__PURE__*/React__namespace.forwardRef(function YearCalen
       changeHasFocus(false);
     }
   });
-  const scrollerRef = React__namespace.useRef(null);
+  const scrollerRef = React.useRef(null);
   const handleRef = useForkRef$1(ref, scrollerRef);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (autoFocus || scrollerRef.current === null) {
       return;
     }
@@ -58046,7 +58266,7 @@ const PickersCalendarHeaderSwitchViewIcon = styled(ArrowDropDownIcon, {
  *
  * - [PickersCalendarHeader API](https://mui.com/x/api/date-pickers/pickers-calendar-header/)
  */
-const PickersCalendarHeader = /*#__PURE__*/React__namespace.forwardRef(function PickersCalendarHeader(inProps, ref) {
+const PickersCalendarHeader = /*#__PURE__*/React.forwardRef(function PickersCalendarHeader(inProps, ref) {
   var _ref, _slots$switchViewButt, _ref2, _slots$switchViewIcon;
   const localeText = useLocaleText();
   const utils = useUtils();
@@ -58280,7 +58500,7 @@ const DateCalendarViewTransitionContainer = styled(PickersFadeTransitionGroup, {
  *
  * - [DateCalendar API](https://mui.com/x/api/date-pickers/date-calendar/)
  */
-const DateCalendar = /*#__PURE__*/React__namespace.forwardRef(function DateCalendar(inProps, ref) {
+const DateCalendar = /*#__PURE__*/React.forwardRef(function DateCalendar(inProps, ref) {
   var _ref, _slots$calendarHeader, _slotProps$calendarHe;
   const utils = useUtils();
   const id = useId();
@@ -58460,7 +58680,7 @@ const DateCalendar = /*#__PURE__*/React__namespace.forwardRef(function DateCalen
     }
     return handleValueChange(day, 'finish', view);
   });
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (value != null && utils.isValid(value)) {
       changeMonth(value);
     }
@@ -58481,8 +58701,8 @@ const DateCalendar = /*#__PURE__*/React__namespace.forwardRef(function DateCalen
     timezone,
     gridLabelId
   };
-  const prevOpenViewRef = React__namespace.useRef(view);
-  React__namespace.useEffect(() => {
+  const prevOpenViewRef = React.useRef(view);
+  React.useEffect(() => {
     // If the view change and the focus was on the previous view
     // Then we update the focus.
     if (prevOpenViewRef.current === view) {
@@ -58493,7 +58713,7 @@ const DateCalendar = /*#__PURE__*/React__namespace.forwardRef(function DateCalen
     }
     prevOpenViewRef.current = view;
   }, [focusedView, setFocusedView, view]);
-  const selectedDays = React__namespace.useMemo(() => [value], [value]);
+  const selectedDays = React.useMemo(() => [value], [value]);
   return /*#__PURE__*/jsxRuntimeExports.jsxs(DateCalendarRoot, _extends$2({
     ref: ref,
     className: clsx$1(classes.root, className),
@@ -58828,7 +59048,7 @@ const DatePickerToolbarTitle = styled(Typography, {
  *
  * - [DatePickerToolbar API](https://mui.com/x/api/date-pickers/date-picker-toolbar/)
  */
-const DatePickerToolbar = /*#__PURE__*/React__namespace.forwardRef(function DatePickerToolbar(inProps, ref) {
+const DatePickerToolbar = /*#__PURE__*/React.forwardRef(function DatePickerToolbar(inProps, ref) {
   const props = useThemeProps({
     props: inProps,
     name: 'MuiDatePickerToolbar'
@@ -58845,7 +59065,7 @@ const DatePickerToolbar = /*#__PURE__*/React__namespace.forwardRef(function Date
   const utils = useUtils();
   const localeText = useLocaleText();
   const classes = useUtilityClasses(props);
-  const dateText = React__namespace.useMemo(() => {
+  const dateText = React.useMemo(() => {
     if (!value) {
       return toolbarPlaceholder;
     }
@@ -58929,7 +59149,7 @@ function useDatePickerDefaultizedProps(props, name) {
     props,
     name
   });
-  const localeText = React__namespace.useMemo(() => {
+  const localeText = React.useMemo(() => {
     var _themeProps$localeTex;
     if (((_themeProps$localeTex = themeProps.localeText) == null ? void 0 : _themeProps$localeTex.toolbarTitle) == null) {
       return themeProps.localeText;
@@ -58992,8 +59212,8 @@ const useDesktopPicker = _ref => {
     reduceAnimations
   } = props;
   const utils = useUtils();
-  const internalInputRef = React__namespace.useRef(null);
-  const containerRef = React__namespace.useRef(null);
+  const internalInputRef = React.useRef(null);
+  const containerRef = React.useRef(null);
   const labelId = useId();
   const isToolbarHidden = (_innerSlotProps$toolb = innerSlotProps == null || (_innerSlotProps$toolb2 = innerSlotProps.toolbar) == null ? void 0 : _innerSlotProps$toolb2.hidden) != null ? _innerSlotProps$toolb : false;
   const {
@@ -59214,7 +59434,7 @@ const renderDateViewCalendar = ({
  *
  * - [DesktopDatePicker API](https://mui.com/x/api/date-pickers/desktop-date-picker/)
  */
-const DesktopDatePicker = /*#__PURE__*/React__namespace.forwardRef(function DesktopDatePicker(inProps, ref) {
+const DesktopDatePicker = /*#__PURE__*/React.forwardRef(function DesktopDatePicker(inProps, ref) {
   var _defaultizedProps$yea, _defaultizedProps$slo2, _props$localeText$ope, _props$localeText;
   const localeText = useLocaleText();
   const utils = useUtils();
@@ -59595,7 +59815,7 @@ var DatePicker = function DatePicker(_a) {
     } : _c,
     minDate = _a.minDate,
     maxDate = _a.maxDate;
-  var ref = React.useRef(null);
+  var ref = useRef(null);
   return jsxRuntimeExports.jsxs(StyledDatePickerWrapper, {
     className: "".concat(error && touched ? 'error' : ''),
     ref: ref,
@@ -59644,18 +59864,36 @@ var DatePicker = function DatePicker(_a) {
   });
 };
 
-dt.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"], ["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "styled-components__Container",
+  componentId: "sc-17kyp8d-0"
+})(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"], ["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"])), function (_a) {
   var error = _a.error;
   return error ? 'red' : 'rgba(0, 0, 0, 0.23)';
 });
-var InputContainer = dt.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"], ["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"])));
-dt.input(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"], ["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"])));
-dt.div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"], ["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"])), function (_a) {
+var InputContainer = dt.div.withConfig({
+  displayName: "styled-components__InputContainer",
+  componentId: "sc-17kyp8d-1"
+})(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"], ["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"])));
+dt.input.withConfig({
+  displayName: "styled-components__Input",
+  componentId: "sc-17kyp8d-2"
+})(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"], ["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__Label",
+  componentId: "sc-17kyp8d-3"
+})(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"], ["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"])), function (_a) {
   var error = _a.error;
   return error ? 'red' : 'rgba(0, 0, 0, 0.54)';
 });
-dt.div(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
-var Flex = dt.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__ErrorMessage",
+  componentId: "sc-17kyp8d-4"
+})(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
+var Flex = dt.div.withConfig({
+  displayName: "styled-components__Flex",
+  componentId: "sc-17kyp8d-5"
+})(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"])));
 var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$6, templateObject_5$5, templateObject_6$4;
 
 var countryList = (function () {
@@ -60673,7 +60911,7 @@ var ReactCountryFlag = function ReactCountryFlag(_ref) {
   }
   if (svg) {
     var flagUrl = "" + cdnUrl + countryCode.toLowerCase() + "." + cdnSuffix;
-    return React.createElement("img", Object.assign({}, props, {
+    return createElement("img", Object.assign({}, props, {
       src: flagUrl,
       style: _extends({
         display: 'inline-block',
@@ -60686,7 +60924,7 @@ var ReactCountryFlag = function ReactCountryFlag(_ref) {
   var emoji = countryCode.toUpperCase().replace(/./g, function (_char) {
     return String.fromCodePoint(_char.charCodeAt(0) + OFFSET);
   });
-  return React.createElement("span", Object.assign({
+  return createElement("span", Object.assign({
     role: "img"
   }, props, {
     style: _extends({
@@ -60709,7 +60947,7 @@ var PhoneCountryCode = function PhoneCountryCode(_a) {
     _a.touched;
     _a.error;
     _a.errorMessage;
-  var _b = React.useState(null),
+  var _b = useState(null),
     selectedCountry = _b[0],
     setSelectedCountry = _b[1];
   var Option = components.Option;
@@ -60738,7 +60976,7 @@ var PhoneCountryCode = function PhoneCountryCode(_a) {
       }), " ", dialCode]
     });
   };
-  React.useEffect(function () {
+  useEffect(function () {
     if (selectValue && selectValue.value) {
       setSelectedCountry({
         label: jsxRuntimeExports.jsx(CountryDisplay, {
@@ -60780,8 +61018,14 @@ var PhoneCountryCode = function PhoneCountryCode(_a) {
   });
 };
 
-dt.div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"])));
-var LoaderCircle = dt.div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__LoaderWrapper",
+  componentId: "sc-cbleze-0"
+})(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"])));
+var LoaderCircle = dt.div.withConfig({
+  displayName: "styled-components__LoaderCircle",
+  componentId: "sc-cbleze-1"
+})(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"])));
 var templateObject_1$g, templateObject_2$c;
 
 var Loader = function Loader(_a) {
@@ -60802,7 +61046,10 @@ var Loader = function Loader(_a) {
   });
 };
 
-var LabelContainer = dt.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"])));
+var LabelContainer = dt.div.withConfig({
+  displayName: "styled-components__LabelContainer",
+  componentId: "sc-1rr8x43-0"
+})(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"])));
 var templateObject_1$f;
 
 var Checkbox = function Checkbox(_a) {
@@ -60844,7 +61091,10 @@ var Checkbox = function Checkbox(_a) {
   });
 };
 
-var PaginationWrapper = dt.div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: ", ";\n      color: white;\n\n      &:hover {\n        background: ", ";\n        border: none;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: ", ";\n      color: white;\n\n      &:hover {\n        background: ", ";\n        border: none;\n      }\n    }\n  }\n"])), function (_a) {
+var PaginationWrapper = dt.div.withConfig({
+  displayName: "styled-components__PaginationWrapper",
+  componentId: "sc-1msacdz-0"
+})(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: ", ";\n      color: white;\n\n      &:hover {\n        background: ", ";\n        border: none;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: ", ";\n      color: white;\n\n      &:hover {\n        background: ", ";\n        border: none;\n      }\n    }\n  }\n"])), function (_a) {
   var theme = _a.theme;
   return theme.colors.primary;
 }, function (_a) {
@@ -61709,35 +61959,35 @@ var validRequestMethodsArr = [
   ...validMutationMethodsArr
 ];
 new Set(validRequestMethodsArr);
-var DataRouterContext = React__namespace.createContext(null);
+var DataRouterContext = React.createContext(null);
 DataRouterContext.displayName = "DataRouter";
-var DataRouterStateContext = React__namespace.createContext(null);
+var DataRouterStateContext = React.createContext(null);
 DataRouterStateContext.displayName = "DataRouterState";
-var ViewTransitionContext = React__namespace.createContext({
+var ViewTransitionContext = React.createContext({
   isTransitioning: false
 });
 ViewTransitionContext.displayName = "ViewTransition";
-var FetchersContext = React__namespace.createContext(
+var FetchersContext = React.createContext(
   /* @__PURE__ */ new Map()
 );
 FetchersContext.displayName = "Fetchers";
-var AwaitContext = React__namespace.createContext(null);
+var AwaitContext = React.createContext(null);
 AwaitContext.displayName = "Await";
-var NavigationContext = React__namespace.createContext(
+var NavigationContext = React.createContext(
   null
 );
 NavigationContext.displayName = "Navigation";
-var LocationContext = React__namespace.createContext(
+var LocationContext = React.createContext(
   null
 );
 LocationContext.displayName = "Location";
-var RouteContext = React__namespace.createContext({
+var RouteContext = React.createContext({
   outlet: null,
   matches: [],
   isDataRoute: false
 });
 RouteContext.displayName = "Route";
-var RouteErrorContext = React__namespace.createContext(null);
+var RouteErrorContext = React.createContext(null);
 RouteErrorContext.displayName = "RouteError";
 function useHref(to, { relative } = {}) {
   invariant(
@@ -61746,7 +61996,7 @@ function useHref(to, { relative } = {}) {
     // router loaded. We can help them understand how to avoid that.
     `useHref() may be used only in the context of a <Router> component.`
   );
-  let { basename, navigator: navigator2 } = React__namespace.useContext(NavigationContext);
+  let { basename, navigator: navigator2 } = React.useContext(NavigationContext);
   let { hash, pathname, search } = useResolvedPath(to, { relative });
   let joinedPathname = pathname;
   if (basename !== "/") {
@@ -61755,7 +62005,7 @@ function useHref(to, { relative } = {}) {
   return navigator2.createHref({ pathname: joinedPathname, search, hash });
 }
 function useInRouterContext() {
-  return React__namespace.useContext(LocationContext) != null;
+  return React.useContext(LocationContext) != null;
 }
 function useLocation() {
   invariant(
@@ -61764,17 +62014,17 @@ function useLocation() {
     // router loaded. We can help them understand how to avoid that.
     `useLocation() may be used only in the context of a <Router> component.`
   );
-  return React__namespace.useContext(LocationContext).location;
+  return React.useContext(LocationContext).location;
 }
 var navigateEffectWarning = `You should call navigate() in a React.useEffect(), not when your component is first rendered.`;
 function useIsomorphicLayoutEffect(cb) {
-  let isStatic = React__namespace.useContext(NavigationContext).static;
+  let isStatic = React.useContext(NavigationContext).static;
   if (!isStatic) {
-    React__namespace.useLayoutEffect(cb);
+    React.useLayoutEffect(cb);
   }
 }
 function useNavigate() {
-  let { isDataRoute } = React__namespace.useContext(RouteContext);
+  let { isDataRoute } = React.useContext(RouteContext);
   return isDataRoute ? useNavigateStable() : useNavigateUnstable();
 }
 function useNavigateUnstable() {
@@ -61784,16 +62034,16 @@ function useNavigateUnstable() {
     // router loaded. We can help them understand how to avoid that.
     `useNavigate() may be used only in the context of a <Router> component.`
   );
-  let dataRouterContext = React__namespace.useContext(DataRouterContext);
-  let { basename, navigator: navigator2 } = React__namespace.useContext(NavigationContext);
-  let { matches } = React__namespace.useContext(RouteContext);
+  let dataRouterContext = React.useContext(DataRouterContext);
+  let { basename, navigator: navigator2 } = React.useContext(NavigationContext);
+  let { matches } = React.useContext(RouteContext);
   let { pathname: locationPathname } = useLocation();
   let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
-  let activeRef = React__namespace.useRef(false);
+  let activeRef = React.useRef(false);
   useIsomorphicLayoutEffect(() => {
     activeRef.current = true;
   });
-  let navigate = React__namespace.useCallback(
+  let navigate = React.useCallback(
     (to, options = {}) => {
       warning$1(activeRef.current, navigateEffectWarning);
       if (!activeRef.current) return;
@@ -61826,12 +62076,12 @@ function useNavigateUnstable() {
   );
   return navigate;
 }
-React__namespace.createContext(null);
+React.createContext(null);
 function useResolvedPath(to, { relative } = {}) {
-  let { matches } = React__namespace.useContext(RouteContext);
+  let { matches } = React.useContext(RouteContext);
   let { pathname: locationPathname } = useLocation();
   let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
-  return React__namespace.useMemo(
+  return React.useMemo(
     () => resolveTo(
       to,
       JSON.parse(routePathnamesJson),
@@ -61848,8 +62098,8 @@ function useRoutesImpl(routes, locationArg, dataRouterState, future) {
     // router loaded. We can help them understand how to avoid that.
     `useRoutes() may be used only in the context of a <Router> component.`
   );
-  let { navigator: navigator2, static: isStatic } = React__namespace.useContext(NavigationContext);
-  let { matches: parentMatches } = React__namespace.useContext(RouteContext);
+  let { navigator: navigator2, static: isStatic } = React.useContext(NavigationContext);
+  let { matches: parentMatches } = React.useContext(RouteContext);
   let routeMatch = parentMatches[parentMatches.length - 1];
   let parentParams = routeMatch ? routeMatch.params : {};
   let parentPathname = routeMatch ? routeMatch.pathname : "/";
@@ -61923,12 +62173,12 @@ function DefaultErrorComponent() {
       "Error handled by React Router default ErrorBoundary:",
       error
     );
-    devInfo = /* @__PURE__ */ React__namespace.createElement(React__namespace.Fragment, null, /* @__PURE__ */ React__namespace.createElement("p", null, "\u{1F4BF} Hey developer \u{1F44B}"), /* @__PURE__ */ React__namespace.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /* @__PURE__ */ React__namespace.createElement("code", { style: codeStyles }, "ErrorBoundary"), " or", " ", /* @__PURE__ */ React__namespace.createElement("code", { style: codeStyles }, "errorElement"), " prop on your route."));
+    devInfo = /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "\u{1F4BF} Hey developer \u{1F44B}"), /* @__PURE__ */ React.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /* @__PURE__ */ React.createElement("code", { style: codeStyles }, "ErrorBoundary"), " or", " ", /* @__PURE__ */ React.createElement("code", { style: codeStyles }, "errorElement"), " prop on your route."));
   }
-  return /* @__PURE__ */ React__namespace.createElement(React__namespace.Fragment, null, /* @__PURE__ */ React__namespace.createElement("h2", null, "Unexpected Application Error!"), /* @__PURE__ */ React__namespace.createElement("h3", { style: { fontStyle: "italic" } }, message), stack ? /* @__PURE__ */ React__namespace.createElement("pre", { style: preStyles }, stack) : null, devInfo);
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h2", null, "Unexpected Application Error!"), /* @__PURE__ */ React.createElement("h3", { style: { fontStyle: "italic" } }, message), stack ? /* @__PURE__ */ React.createElement("pre", { style: preStyles }, stack) : null, devInfo);
 }
-var defaultErrorElement = /* @__PURE__ */ React__namespace.createElement(DefaultErrorComponent, null);
-var RenderErrorBoundary = class extends React__namespace.Component {
+var defaultErrorElement = /* @__PURE__ */ React.createElement(DefaultErrorComponent, null);
+var RenderErrorBoundary = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61962,7 +62212,7 @@ var RenderErrorBoundary = class extends React__namespace.Component {
     );
   }
   render() {
-    return this.state.error !== void 0 ? /* @__PURE__ */ React__namespace.createElement(RouteContext.Provider, { value: this.props.routeContext }, /* @__PURE__ */ React__namespace.createElement(
+    return this.state.error !== void 0 ? /* @__PURE__ */ React.createElement(RouteContext.Provider, { value: this.props.routeContext }, /* @__PURE__ */ React.createElement(
       RouteErrorContext.Provider,
       {
         value: this.state.error,
@@ -61972,11 +62222,11 @@ var RenderErrorBoundary = class extends React__namespace.Component {
   }
 };
 function RenderedRoute({ routeContext, match, children }) {
-  let dataRouterContext = React__namespace.useContext(DataRouterContext);
+  let dataRouterContext = React.useContext(DataRouterContext);
   if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match.route.errorElement || match.route.ErrorBoundary)) {
     dataRouterContext.staticContext._deepestRenderedBoundaryId = match.route.id;
   }
-  return /* @__PURE__ */ React__namespace.createElement(RouteContext.Provider, { value: routeContext }, children);
+  return /* @__PURE__ */ React.createElement(RouteContext.Provider, { value: routeContext }, children);
 }
 function _renderMatches(matches, parentMatches = [], dataRouterState = null, future = null) {
   if (matches == null) {
@@ -62062,13 +62312,13 @@ function _renderMatches(matches, parentMatches = [], dataRouterState = null, fut
       } else if (shouldRenderHydrateFallback) {
         children = hydrateFallbackElement;
       } else if (match.route.Component) {
-        children = /* @__PURE__ */ React__namespace.createElement(match.route.Component, null);
+        children = /* @__PURE__ */ React.createElement(match.route.Component, null);
       } else if (match.route.element) {
         children = match.route.element;
       } else {
         children = outlet;
       }
-      return /* @__PURE__ */ React__namespace.createElement(
+      return /* @__PURE__ */ React.createElement(
         RenderedRoute,
         {
           match,
@@ -62081,7 +62331,7 @@ function _renderMatches(matches, parentMatches = [], dataRouterState = null, fut
         }
       );
     };
-    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /* @__PURE__ */ React__namespace.createElement(
+    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /* @__PURE__ */ React.createElement(
       RenderErrorBoundary,
       {
         location: dataRouterState.location,
@@ -62098,17 +62348,17 @@ function getDataRouterConsoleError(hookName) {
   return `${hookName} must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.`;
 }
 function useDataRouterContext(hookName) {
-  let ctx = React__namespace.useContext(DataRouterContext);
+  let ctx = React.useContext(DataRouterContext);
   invariant(ctx, getDataRouterConsoleError(hookName));
   return ctx;
 }
 function useDataRouterState(hookName) {
-  let state = React__namespace.useContext(DataRouterStateContext);
+  let state = React.useContext(DataRouterStateContext);
   invariant(state, getDataRouterConsoleError(hookName));
   return state;
 }
 function useRouteContext(hookName) {
-  let route = React__namespace.useContext(RouteContext);
+  let route = React.useContext(RouteContext);
   invariant(route, getDataRouterConsoleError(hookName));
   return route;
 }
@@ -62125,7 +62375,7 @@ function useRouteId() {
   return useCurrentRouteId("useRouteId" /* UseRouteId */);
 }
 function useRouteError() {
-  let error = React__namespace.useContext(RouteErrorContext);
+  let error = React.useContext(RouteErrorContext);
   let state = useDataRouterState("useRouteError" /* UseRouteError */);
   let routeId = useCurrentRouteId("useRouteError" /* UseRouteError */);
   if (error !== void 0) {
@@ -62136,11 +62386,11 @@ function useRouteError() {
 function useNavigateStable() {
   let { router } = useDataRouterContext("useNavigate" /* UseNavigateStable */);
   let id = useCurrentRouteId("useNavigate" /* UseNavigateStable */);
-  let activeRef = React__namespace.useRef(false);
+  let activeRef = React.useRef(false);
   useIsomorphicLayoutEffect(() => {
     activeRef.current = true;
   });
-  let navigate = React__namespace.useCallback(
+  let navigate = React.useCallback(
     async (to, options = {}) => {
       warning$1(activeRef.current, navigateEffectWarning);
       if (!activeRef.current) return;
@@ -62161,7 +62411,7 @@ function warningOnce(key, cond, message) {
     warning$1(false, message);
   }
 }
-React__namespace.memo(DataRoutes);
+React.memo(DataRoutes);
 function DataRoutes({
   routes,
   future,
@@ -62182,7 +62432,7 @@ function Router({
     `You cannot render a <Router> inside another <Router>. You should never have more than one in your app.`
   );
   let basename = basenameProp.replace(/^\/*/, "/");
-  let navigationContext = React__namespace.useMemo(
+  let navigationContext = React.useMemo(
     () => ({
       basename,
       navigator: navigator2,
@@ -62201,7 +62451,7 @@ function Router({
     state = null,
     key = "default"
   } = locationProp;
-  let locationContext = React__namespace.useMemo(() => {
+  let locationContext = React.useMemo(() => {
     let trailingPathname = stripBasename(pathname, basename);
     if (trailingPathname == null) {
       return null;
@@ -62224,7 +62474,7 @@ function Router({
   if (locationContext == null) {
     return null;
   }
-  return /* @__PURE__ */ React__namespace.createElement(NavigationContext.Provider, { value: navigationContext }, /* @__PURE__ */ React__namespace.createElement(LocationContext.Provider, { children, value: locationContext }));
+  return /* @__PURE__ */ React.createElement(NavigationContext.Provider, { value: navigationContext }, /* @__PURE__ */ React.createElement(LocationContext.Provider, { children, value: locationContext }));
 }
 
 // lib/dom/dom.ts
@@ -62358,7 +62608,7 @@ async function loadRouteModule(route, routeModulesCache) {
     );
     console.error(error);
     if (window.__reactRouterContext && window.__reactRouterContext.isSpaMode && // @ts-expect-error
-    undefined) {
+    import.meta.hot) {
       throw error;
     }
     window.location.reload();
@@ -62504,7 +62754,7 @@ function singleFetchUrl(reqUrl, basename) {
 
 // lib/dom/ssr/components.tsx
 function useDataRouterContext2() {
-  let context = React__namespace.useContext(DataRouterContext);
+  let context = React.useContext(DataRouterContext);
   invariant2(
     context,
     "You must render this element inside a <DataRouterContext.Provider> element"
@@ -62512,17 +62762,17 @@ function useDataRouterContext2() {
   return context;
 }
 function useDataRouterStateContext() {
-  let context = React__namespace.useContext(DataRouterStateContext);
+  let context = React.useContext(DataRouterStateContext);
   invariant2(
     context,
     "You must render this element inside a <DataRouterStateContext.Provider> element"
   );
   return context;
 }
-var FrameworkContext = React__namespace.createContext(void 0);
+var FrameworkContext = React.createContext(void 0);
 FrameworkContext.displayName = "FrameworkContext";
 function useFrameworkContext() {
-  let context = React__namespace.useContext(FrameworkContext);
+  let context = React.useContext(FrameworkContext);
   invariant2(
     context,
     "You must render this element inside a <HydratedRouter> element"
@@ -62530,12 +62780,12 @@ function useFrameworkContext() {
   return context;
 }
 function usePrefetchBehavior(prefetch, theirElementProps) {
-  let frameworkContext = React__namespace.useContext(FrameworkContext);
-  let [maybePrefetch, setMaybePrefetch] = React__namespace.useState(false);
-  let [shouldPrefetch, setShouldPrefetch] = React__namespace.useState(false);
+  let frameworkContext = React.useContext(FrameworkContext);
+  let [maybePrefetch, setMaybePrefetch] = React.useState(false);
+  let [shouldPrefetch, setShouldPrefetch] = React.useState(false);
   let { onFocus, onBlur, onMouseEnter, onMouseLeave, onTouchStart } = theirElementProps;
-  let ref = React__namespace.useRef(null);
-  React__namespace.useEffect(() => {
+  let ref = React.useRef(null);
+  React.useEffect(() => {
     if (prefetch === "render") {
       setShouldPrefetch(true);
     }
@@ -62552,7 +62802,7 @@ function usePrefetchBehavior(prefetch, theirElementProps) {
       };
     }
   }, [prefetch]);
-  React__namespace.useEffect(() => {
+  React.useEffect(() => {
     if (maybePrefetch) {
       let id = setTimeout(() => {
         setShouldPrefetch(true);
@@ -62600,19 +62850,19 @@ function PrefetchPageLinks({
   ...dataLinkProps
 }) {
   let { router } = useDataRouterContext2();
-  let matches = React__namespace.useMemo(
+  let matches = React.useMemo(
     () => matchRoutes(router.routes, page, router.basename),
     [router.routes, page, router.basename]
   );
   if (!matches) {
     return null;
   }
-  return /* @__PURE__ */ React__namespace.createElement(PrefetchPageLinksImpl, { page, matches, ...dataLinkProps });
+  return /* @__PURE__ */ React.createElement(PrefetchPageLinksImpl, { page, matches, ...dataLinkProps });
 }
 function useKeyedPrefetchLinks(matches) {
   let { manifest, routeModules } = useFrameworkContext();
-  let [keyedPrefetchLinks, setKeyedPrefetchLinks] = React__namespace.useState([]);
-  React__namespace.useEffect(() => {
+  let [keyedPrefetchLinks, setKeyedPrefetchLinks] = React.useState([]);
+  React.useEffect(() => {
     let interrupted = false;
     void getKeyedPrefetchLinks(matches, manifest, routeModules).then(
       (links) => {
@@ -62636,7 +62886,7 @@ function PrefetchPageLinksImpl({
   let { manifest, routeModules } = useFrameworkContext();
   let { basename } = useDataRouterContext2();
   let { loaderData, matches } = useDataRouterStateContext();
-  let newMatchesForData = React__namespace.useMemo(
+  let newMatchesForData = React.useMemo(
     () => getNewMatchesForLinks(
       page,
       nextMatches,
@@ -62647,7 +62897,7 @@ function PrefetchPageLinksImpl({
     ),
     [page, nextMatches, matches, manifest, location]
   );
-  let newMatchesForAssets = React__namespace.useMemo(
+  let newMatchesForAssets = React.useMemo(
     () => getNewMatchesForLinks(
       page,
       nextMatches,
@@ -62658,7 +62908,7 @@ function PrefetchPageLinksImpl({
     ),
     [page, nextMatches, matches, manifest, location]
   );
-  let dataHrefs = React__namespace.useMemo(() => {
+  let dataHrefs = React.useMemo(() => {
     if (page === location.pathname + location.search + location.hash) {
       return [];
     }
@@ -62698,15 +62948,15 @@ function PrefetchPageLinksImpl({
     page,
     routeModules
   ]);
-  let moduleHrefs = React__namespace.useMemo(
+  let moduleHrefs = React.useMemo(
     () => getModuleLinkHrefs(newMatchesForAssets, manifest),
     [newMatchesForAssets, manifest]
   );
   let keyedPrefetchLinks = useKeyedPrefetchLinks(newMatchesForAssets);
-  return /* @__PURE__ */ React__namespace.createElement(React__namespace.Fragment, null, dataHrefs.map((href2) => /* @__PURE__ */ React__namespace.createElement("link", { key: href2, rel: "prefetch", as: "fetch", href: href2, ...linkProps })), moduleHrefs.map((href2) => /* @__PURE__ */ React__namespace.createElement("link", { key: href2, rel: "modulepreload", href: href2, ...linkProps })), keyedPrefetchLinks.map(({ key, link }) => (
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, dataHrefs.map((href2) => /* @__PURE__ */ React.createElement("link", { key: href2, rel: "prefetch", as: "fetch", href: href2, ...linkProps })), moduleHrefs.map((href2) => /* @__PURE__ */ React.createElement("link", { key: href2, rel: "modulepreload", href: href2, ...linkProps })), keyedPrefetchLinks.map(({ key, link }) => (
     // these don't spread `linkProps` because they are full link descriptors
     // already with their own props
-    /* @__PURE__ */ React__namespace.createElement("link", { key, ...link })
+    /* @__PURE__ */ React.createElement("link", { key, ...link })
   )));
 }
 function mergeRefs(...refs) {
@@ -62734,23 +62984,23 @@ function BrowserRouter({
   children,
   window: window2
 }) {
-  let historyRef = React__namespace.useRef();
+  let historyRef = React.useRef();
   if (historyRef.current == null) {
     historyRef.current = createBrowserHistory({ window: window2, v5Compat: true });
   }
   let history = historyRef.current;
-  let [state, setStateImpl] = React__namespace.useState({
+  let [state, setStateImpl] = React.useState({
     action: history.action,
     location: history.location
   });
-  let setState = React__namespace.useCallback(
+  let setState = React.useCallback(
     (newState) => {
-      React__namespace.startTransition(() => setStateImpl(newState));
+      React.startTransition(() => setStateImpl(newState));
     },
     [setStateImpl]
   );
-  React__namespace.useLayoutEffect(() => history.listen(setState), [history, setState]);
-  return /* @__PURE__ */ React__namespace.createElement(
+  React.useLayoutEffect(() => history.listen(setState), [history, setState]);
+  return /* @__PURE__ */ React.createElement(
     Router,
     {
       basename,
@@ -62762,7 +63012,7 @@ function BrowserRouter({
   );
 }
 var ABSOLUTE_URL_REGEX2 = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
-var Link = React__namespace.forwardRef(
+var Link = React.forwardRef(
   function LinkWithRef({
     onClick,
     discover = "render",
@@ -62777,7 +63027,7 @@ var Link = React__namespace.forwardRef(
     viewTransition,
     ...rest
   }, forwardedRef) {
-    let { basename } = React__namespace.useContext(NavigationContext);
+    let { basename } = React.useContext(NavigationContext);
     let isAbsolute = typeof to === "string" && ABSOLUTE_URL_REGEX2.test(to);
     let absoluteHref;
     let isExternal = false;
@@ -62822,7 +63072,7 @@ var Link = React__namespace.forwardRef(
     }
     let link = (
       // eslint-disable-next-line jsx-a11y/anchor-has-content
-      /* @__PURE__ */ React__namespace.createElement(
+      /* @__PURE__ */ React.createElement(
         "a",
         {
           ...rest,
@@ -62835,11 +63085,11 @@ var Link = React__namespace.forwardRef(
         }
       )
     );
-    return shouldPrefetch && !isAbsolute ? /* @__PURE__ */ React__namespace.createElement(React__namespace.Fragment, null, link, /* @__PURE__ */ React__namespace.createElement(PrefetchPageLinks, { page: href2 })) : link;
+    return shouldPrefetch && !isAbsolute ? /* @__PURE__ */ React.createElement(React.Fragment, null, link, /* @__PURE__ */ React.createElement(PrefetchPageLinks, { page: href2 })) : link;
   }
 );
 Link.displayName = "Link";
-var NavLink = React__namespace.forwardRef(
+var NavLink = React.forwardRef(
   function NavLinkWithRef({
     "aria-current": ariaCurrentProp = "page",
     caseSensitive = false,
@@ -62853,8 +63103,8 @@ var NavLink = React__namespace.forwardRef(
   }, ref) {
     let path = useResolvedPath(to, { relative: rest.relative });
     let location = useLocation();
-    let routerState = React__namespace.useContext(DataRouterStateContext);
-    let { navigator: navigator2, basename } = React__namespace.useContext(NavigationContext);
+    let routerState = React.useContext(DataRouterStateContext);
+    let { navigator: navigator2, basename } = React.useContext(NavigationContext);
     let isTransitioning = routerState != null && // Conditional usage is OK here because the usage of a data router is static
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useViewTransitionState(path) && viewTransition === true;
@@ -62890,7 +63140,7 @@ var NavLink = React__namespace.forwardRef(
       ].filter(Boolean).join(" ");
     }
     let style = typeof styleProp === "function" ? styleProp(renderProps) : styleProp;
-    return /* @__PURE__ */ React__namespace.createElement(
+    return /* @__PURE__ */ React.createElement(
       Link,
       {
         ...rest,
@@ -62906,7 +63156,7 @@ var NavLink = React__namespace.forwardRef(
   }
 );
 NavLink.displayName = "NavLink";
-var Form = React__namespace.forwardRef(
+var Form = React.forwardRef(
   ({
     discover = "render",
     fetcherKey,
@@ -62943,7 +63193,7 @@ var Form = React__namespace.forwardRef(
         viewTransition
       });
     };
-    return /* @__PURE__ */ React__namespace.createElement(
+    return /* @__PURE__ */ React.createElement(
       "form",
       {
         ref: forwardedRef,
@@ -62961,7 +63211,7 @@ function getDataRouterConsoleError2(hookName) {
   return `${hookName} must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.`;
 }
 function useDataRouterContext3(hookName) {
-  let ctx = React__namespace.useContext(DataRouterContext);
+  let ctx = React.useContext(DataRouterContext);
   invariant(ctx, getDataRouterConsoleError2(hookName));
   return ctx;
 }
@@ -62976,7 +63226,7 @@ function useLinkClickHandler(to, {
   let navigate = useNavigate();
   let location = useLocation();
   let path = useResolvedPath(to, { relative });
-  return React__namespace.useCallback(
+  return React.useCallback(
     (event) => {
       if (shouldProcessLinkClick(event, target)) {
         event.preventDefault();
@@ -63008,9 +63258,9 @@ var fetcherId = 0;
 var getUniqueFetcherId = () => `__${String(++fetcherId)}__`;
 function useSubmit() {
   let { router } = useDataRouterContext3("useSubmit" /* UseSubmit */);
-  let { basename } = React__namespace.useContext(NavigationContext);
+  let { basename } = React.useContext(NavigationContext);
   let currentRouteId = useRouteId();
-  return React__namespace.useCallback(
+  return React.useCallback(
     async (target, options = {}) => {
       let { action, method, encType, formData, body } = getFormSubmissionInfo(
         target,
@@ -63045,8 +63295,8 @@ function useSubmit() {
   );
 }
 function useFormAction(action, { relative } = {}) {
-  let { basename } = React__namespace.useContext(NavigationContext);
-  let routeContext = React__namespace.useContext(RouteContext);
+  let { basename } = React.useContext(NavigationContext);
+  let routeContext = React.useContext(RouteContext);
   invariant(routeContext, "useFormAction must be used inside a RouteContext");
   let [match] = routeContext.matches.slice(-1);
   let path = { ...useResolvedPath(action ? action : ".", { relative }) };
@@ -63072,7 +63322,7 @@ function useFormAction(action, { relative } = {}) {
   return createPath(path);
 }
 function useViewTransitionState(to, opts = {}) {
-  let vtContext = React__namespace.useContext(ViewTransitionContext);
+  let vtContext = React.useContext(ViewTransitionContext);
   invariant(
     vtContext != null,
     "`useViewTransitionState` must be used within `react-router-dom`'s `RouterProvider`.  Did you accidentally import `RouterProvider` from `react-router`?"
@@ -63098,11 +63348,26 @@ new TextEncoder();
   304
 ]);
 
-dt.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject([""], [""])));
-var Container$2 = dt.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"])));
-var PathItem = dt.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"], ["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"])));
-dt.div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var ItemWrapper = dt.div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__Header",
+  componentId: "sc-1cair09-0"
+})(templateObject_1$d || (templateObject_1$d = __makeTemplateObject([""], [""])));
+var Container$2 = dt.div.withConfig({
+  displayName: "styled-components__Container",
+  componentId: "sc-1cair09-1"
+})(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"])));
+var PathItem = dt.div.withConfig({
+  displayName: "styled-components__PathItem",
+  componentId: "sc-1cair09-2"
+})(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"], ["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__Wrapper",
+  componentId: "sc-1cair09-3"
+})(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var ItemWrapper = dt.div.withConfig({
+  displayName: "styled-components__ItemWrapper",
+  componentId: "sc-1cair09-4"
+})(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
 var templateObject_1$d, templateObject_2$b, templateObject_3$8, templateObject_4$5, templateObject_5$4;
 
 var BreadcrumbWithRouter = function BreadcrumbWithRouter(_a) {
@@ -63120,7 +63385,7 @@ var BreadcrumbWithRouter = function BreadcrumbWithRouter(_a) {
   if (!data) return null;
   return jsxRuntimeExports.jsx(Container$2, {
     children: data.map(function (item, index) {
-      return jsxRuntimeExports.jsxs(React.Fragment, {
+      return jsxRuntimeExports.jsxs(React__default.Fragment, {
         children: [jsxRuntimeExports.jsxs(PathItem, {
           children: [item.icon, item.link ? jsxRuntimeExports.jsx("a", {
             href: item.link,
@@ -63143,7 +63408,7 @@ var BreadcrumbWithoutRouter = function BreadcrumbWithoutRouter(_a) {
   if (!data) return null;
   return jsxRuntimeExports.jsx(Container$2, {
     children: data.map(function (item, index) {
-      return jsxRuntimeExports.jsxs(React.Fragment, {
+      return jsxRuntimeExports.jsxs(React__default.Fragment, {
         children: [jsxRuntimeExports.jsxs(PathItem, {
           children: [item.icon, item.link ? jsxRuntimeExports.jsx("a", {
             href: item.link,
@@ -63159,7 +63424,7 @@ var BreadcrumbWithoutRouter = function BreadcrumbWithoutRouter(_a) {
   });
 };
 var Breadcrumb = function Breadcrumb(props) {
-  var isInRouterContext = React.useMemo(function () {
+  var isInRouterContext = React__default.useMemo(function () {
     try {
       useLocation();
       return true;
@@ -63177,9 +63442,18 @@ var Breadcrumb = function Breadcrumb(props) {
   return jsxRuntimeExports.jsx(BreadcrumbWithoutRouter, __assign({}, props));
 };
 
-var CardContainer = dt.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var StyledCard = dt(Card)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"], ["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"])));
-var StyledIcon = dt.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"], ["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"])), function (_a) {
+var CardContainer = dt.div.withConfig({
+  displayName: "styled-components__CardContainer",
+  componentId: "sc-4c0zu3-0"
+})(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
+var StyledCard = dt(Card).withConfig({
+  displayName: "styled-components__StyledCard",
+  componentId: "sc-4c0zu3-1"
+})(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"], ["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"])));
+var StyledIcon = dt.div.withConfig({
+  displayName: "styled-components__StyledIcon",
+  componentId: "sc-4c0zu3-2"
+})(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"], ["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"])), function (_a) {
   var $backgroundColor = _a.$backgroundColor;
   return $backgroundColor;
 }, function (_a) {
@@ -63189,14 +63463,29 @@ var StyledIcon = dt.div(templateObject_3$7 || (templateObject_3$7 = __makeTempla
   var color = _a.color;
   return color || '#000000';
 });
-var TextWrapper = dt.div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject([""], [""])));
-var StyledCardContent = dt(CardContent)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"])), function (_a) {
+var TextWrapper = dt.div.withConfig({
+  displayName: "styled-components__TextWrapper",
+  componentId: "sc-4c0zu3-3"
+})(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject([""], [""])));
+var StyledCardContent = dt(CardContent).withConfig({
+  displayName: "styled-components__StyledCardContent",
+  componentId: "sc-4c0zu3-4"
+})(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"])), function (_a) {
   var gap = _a.gap;
   return gap || 20;
 });
-var HeaderText = dt.span(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"], ["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"])));
-var NumberText = dt.span(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"], ["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"])));
-dt.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"], ["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"])));
+var HeaderText = dt.span.withConfig({
+  displayName: "styled-components__HeaderText",
+  componentId: "sc-4c0zu3-5"
+})(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"], ["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"])));
+var NumberText = dt.span.withConfig({
+  displayName: "styled-components__NumberText",
+  componentId: "sc-4c0zu3-6"
+})(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"], ["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"])));
+dt.div.withConfig({
+  displayName: "styled-components__Container",
+  componentId: "sc-4c0zu3-7"
+})(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"], ["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"])));
 var templateObject_1$c, templateObject_2$a, templateObject_3$7, templateObject_4$4, templateObject_5$3, templateObject_6$3, templateObject_7$2, templateObject_8$1;
 
 var Tile = function Tile(_a) {
@@ -63232,13 +63521,25 @@ var Tile = function Tile(_a) {
 
 var colors = ['#b3ecda', '#b4e0fb', '#f0bec4', '#fddbb6', '#fef4c4', '#f4d2fa', '#d0d0d0', '#b2b5ff', '#e4ffb4', '#b4fffc', '#ffb6e3'];
 
-var Container$1 = dt.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"])));
-var Grid = dt.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"])));
-var ColorContainerInput = dt.input(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"])), function (_a) {
+var Container$1 = dt.div.withConfig({
+  displayName: "styledcomponents__Container",
+  componentId: "sc-1f35rrb-0"
+})(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"])));
+var Grid = dt.div.withConfig({
+  displayName: "styledcomponents__Grid",
+  componentId: "sc-1f35rrb-1"
+})(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"])));
+var ColorContainerInput = dt.input.withConfig({
+  displayName: "styledcomponents__ColorContainerInput",
+  componentId: "sc-1f35rrb-2"
+})(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"])), function (_a) {
   var color = _a.color;
   return color;
 });
-var ColorContainer = dt.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"])), function (_a) {
+var ColorContainer = dt.div.withConfig({
+  displayName: "styledcomponents__ColorContainer",
+  componentId: "sc-1f35rrb-3"
+})(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"])), function (_a) {
   var color = _a.color;
   return color;
 });
@@ -80458,7 +80759,7 @@ var lodashExports = requireLodash();
 var ColorPicker = function ColorPicker(_a) {
   var selectedColor = _a.selectedColor,
     setSelectedColor = _a.setSelectedColor;
-  var _b = React.useState('#828282'),
+  var _b = useState('#828282'),
     customColor = _b[0],
     setCustomColor = _b[1];
   // Debounce the setSelectedColor function
@@ -80489,9 +80790,18 @@ var ColorPicker = function ColorPicker(_a) {
   });
 };
 
-var Wrapper = dt.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
-dt.iframe(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"], ["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"])));
-var EditButton = dt.div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"], ["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"])));
+var Wrapper = dt.div.withConfig({
+  displayName: "styled-components__Wrapper",
+  componentId: "sc-1fppv7o-0"
+})(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
+dt.iframe.withConfig({
+  displayName: "styled-components__ScaledIframe",
+  componentId: "sc-1fppv7o-1"
+})(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"], ["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"])));
+var EditButton = dt.div.withConfig({
+  displayName: "styled-components__EditButton",
+  componentId: "sc-1fppv7o-2"
+})(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"], ["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"])));
 var templateObject_1$a, templateObject_2$8, templateObject_3$5;
 
 var Badge = function Badge(_a) {
@@ -80515,11 +80825,11 @@ var Badge = function Badge(_a) {
 var TooltipHeight = function TooltipHeight(_a) {
   var text = _a.text,
     lines = _a.lines;
-  var textElementRef = React.useRef(null);
-  var _b = React.useState(false),
+  var textElementRef = useRef(null);
+  var _b = useState(false),
     isOverflowing = _b[0],
     setIsOverflowing = _b[1];
-  React.useEffect(function () {
+  useEffect(function () {
     var isOverflow = textElementRef.current ? textElementRef.current.scrollHeight > textElementRef.current.clientHeight : false;
     setIsOverflowing(isOverflow);
   }, [text]);
@@ -80823,7 +81133,7 @@ function requireUtils () {
 	  supportsWebKitPresentationMode: () => supportsWebKitPresentationMode
 	});
 	utils = __toCommonJS(utils_exports);
-	var import_react = __toESM(React);
+	var import_react = __toESM(React__default);
 	var import_load_script = __toESM(requireLoadScript());
 	var import_deepmerge = __toESM(requireCjs());
 	const lazy = (componentImportFn) => import_react.default.lazy(async () => {
@@ -81107,109 +81417,109 @@ function requirePlayers () {
 	    key: "youtube",
 	    name: "YouTube",
 	    canPlay: import_patterns.canPlay.youtube,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerYouTube' */
-	      './YouTube-BqLsDLYS.js'
-	    ); }).then(function (n) { return n.YouTube; }))
+	      './YouTube-DW1lQ1Kw.esm.js'
+	    ).then(function (n) { return n.Y; }))
 	  },
 	  {
 	    key: "soundcloud",
 	    name: "SoundCloud",
 	    canPlay: import_patterns.canPlay.soundcloud,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerSoundCloud' */
-	      './SoundCloud-CuGHEDth.js'
-	    ); }).then(function (n) { return n.SoundCloud; }))
+	      './SoundCloud-BMm7MA81.esm.js'
+	    ).then(function (n) { return n.S; }))
 	  },
 	  {
 	    key: "vimeo",
 	    name: "Vimeo",
 	    canPlay: import_patterns.canPlay.vimeo,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerVimeo' */
-	      './Vimeo-ChdR__dv.js'
-	    ); }).then(function (n) { return n.Vimeo; }))
+	      './Vimeo-BTQBzenU.esm.js'
+	    ).then(function (n) { return n.V; }))
 	  },
 	  {
 	    key: "mux",
 	    name: "Mux",
 	    canPlay: import_patterns.canPlay.mux,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerMux' */
-	      './Mux-CrpRlzTM.js'
-	    ); }).then(function (n) { return n.Mux; }))
+	      './Mux-qhvqjr1y.esm.js'
+	    ).then(function (n) { return n.M; }))
 	  },
 	  {
 	    key: "facebook",
 	    name: "Facebook",
 	    canPlay: import_patterns.canPlay.facebook,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerFacebook' */
-	      './Facebook-CUoA9M4h.js'
-	    ); }).then(function (n) { return n.Facebook; }))
+	      './Facebook-aPzObTqa.esm.js'
+	    ).then(function (n) { return n.F; }))
 	  },
 	  {
 	    key: "streamable",
 	    name: "Streamable",
 	    canPlay: import_patterns.canPlay.streamable,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerStreamable' */
-	      './Streamable-BvawPhj9.js'
-	    ); }).then(function (n) { return n.Streamable; }))
+	      './Streamable-Dq5gBLNV.esm.js'
+	    ).then(function (n) { return n.S; }))
 	  },
 	  {
 	    key: "wistia",
 	    name: "Wistia",
 	    canPlay: import_patterns.canPlay.wistia,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerWistia' */
-	      './Wistia-DTfK-_h_.js'
-	    ); }).then(function (n) { return n.Wistia; }))
+	      './Wistia-9j4wC1ZH.esm.js'
+	    ).then(function (n) { return n.W; }))
 	  },
 	  {
 	    key: "twitch",
 	    name: "Twitch",
 	    canPlay: import_patterns.canPlay.twitch,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerTwitch' */
-	      './Twitch-DcRXu007.js'
-	    ); }).then(function (n) { return n.Twitch; }))
+	      './Twitch-BGYr0EYT.esm.js'
+	    ).then(function (n) { return n.T; }))
 	  },
 	  {
 	    key: "dailymotion",
 	    name: "DailyMotion",
 	    canPlay: import_patterns.canPlay.dailymotion,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerDailyMotion' */
-	      './DailyMotion-DnEJ79zC.js'
-	    ); }).then(function (n) { return n.DailyMotion; }))
+	      './DailyMotion-DJg2u17d.esm.js'
+	    ).then(function (n) { return n.D; }))
 	  },
 	  {
 	    key: "mixcloud",
 	    name: "Mixcloud",
 	    canPlay: import_patterns.canPlay.mixcloud,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerMixcloud' */
-	      './Mixcloud-C9RMn_4y.js'
-	    ); }).then(function (n) { return n.Mixcloud; }))
+	      './Mixcloud-CqWkBNPh.esm.js'
+	    ).then(function (n) { return n.M; }))
 	  },
 	  {
 	    key: "vidyard",
 	    name: "Vidyard",
 	    canPlay: import_patterns.canPlay.vidyard,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerVidyard' */
-	      './Vidyard-DeBzXYoR.js'
-	    ); }).then(function (n) { return n.Vidyard; }))
+	      './Vidyard-Dsrhu_0f.esm.js'
+	    ).then(function (n) { return n.V; }))
 	  },
 	  {
 	    key: "kaltura",
 	    name: "Kaltura",
 	    canPlay: import_patterns.canPlay.kaltura,
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerKaltura' */
-	      './Kaltura-0bM8xFAh.js'
-	    ); }).then(function (n) { return n.Kaltura; }))
+	      './Kaltura-BxdAYISJ.esm.js'
+	    ).then(function (n) { return n.K; }))
 	  },
 	  {
 	    key: "file",
@@ -81218,10 +81528,10 @@ function requirePlayers () {
 	    canEnablePIP: (url) => {
 	      return import_patterns.canPlay.file(url) && (document.pictureInPictureEnabled || (0, import_utils.supportsWebKitPresentationMode)()) && !import_patterns.AUDIO_EXTENSIONS.test(url);
 	    },
-	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	    lazyPlayer: (0, import_utils.lazy)(() => import(
 	      /* webpackChunkName: 'reactPlayerFilePlayer' */
-	      './FilePlayer-DGsornYb.js'
-	    ); }).then(function (n) { return n.FilePlayer; }))
+	      './FilePlayer-B981JXk8.esm.js'
+	    ).then(function (n) { return n.F; }))
 	  }
 	];
 	return players;
@@ -81737,7 +82047,7 @@ function requirePlayer () {
 	  default: () => Player
 	});
 	Player_1 = __toCommonJS(Player_exports);
-	var import_react = __toESM(React);
+	var import_react = __toESM(React__default);
 	var import_react_fast_compare = __toESM(requireReactFastCompare());
 	var import_props = /*@__PURE__*/ requireProps();
 	var import_utils = /*@__PURE__*/ requireUtils();
@@ -82032,17 +82342,17 @@ function requireReactPlayer () {
 	  createReactPlayer: () => createReactPlayer
 	});
 	ReactPlayer$1 = __toCommonJS(ReactPlayer_exports);
-	var import_react = __toESM(React);
+	var import_react = __toESM(React__default);
 	var import_deepmerge = __toESM(requireCjs());
 	var import_memoize_one = __toESM(require$$2);
 	var import_react_fast_compare = __toESM(requireReactFastCompare());
 	var import_props = /*@__PURE__*/ requireProps();
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_Player = __toESM(/*@__PURE__*/ requirePlayer());
-	const Preview = (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
+	const Preview = (0, import_utils.lazy)(() => import(
 	  /* webpackChunkName: 'reactPlayerPreview' */
-	  './Preview-CCZ8SG96.js'
-	); }).then(function (n) { return n.Preview; }));
+	  './Preview-mnswqHNc.esm.js'
+	).then(function (n) { return n.P; }));
 	const IS_BROWSER = typeof window !== "undefined" && window.document && typeof document !== "undefined";
 	const IS_GLOBAL = typeof commonjsGlobal !== "undefined" && commonjsGlobal.window && commonjsGlobal.window.document;
 	const SUPPORTED_PROPS = Object.keys(import_props.propTypes);
@@ -82250,13 +82560,31 @@ function requireLib () {
 var libExports = /*@__PURE__*/ requireLib();
 var ReactPlayer = /*@__PURE__*/getDefaultExportFromCjs(libExports);
 
-var StyledVideoPlayerWrapper = dt.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"], ["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"])));
-var StyledWrapper = dt.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"])), StyledVideoPlayerWrapper);
-var StyledPlayerLoader = dt.div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"], ["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"])));
+var StyledVideoPlayerWrapper = dt.div.withConfig({
+  displayName: "Playerstyles__StyledVideoPlayerWrapper",
+  componentId: "sc-kq71kt-0"
+})(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"], ["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"])));
+var StyledWrapper = dt.div.withConfig({
+  displayName: "Playerstyles__StyledWrapper",
+  componentId: "sc-kq71kt-1"
+})(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"])), StyledVideoPlayerWrapper);
+var StyledPlayerLoader = dt.div.withConfig({
+  displayName: "Playerstyles__StyledPlayerLoader",
+  componentId: "sc-kq71kt-2"
+})(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"], ["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"])));
 var rotate = mt(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n"], ["\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n"])));
-var StyledLoader = dt.div(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"], ["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"])), rotate);
-var StyledControlsContainer = dt.div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"], ["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"])));
-var StyledSubtitles = dt.div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"], ["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"])), function (_a) {
+var StyledLoader = dt.div.withConfig({
+  displayName: "Playerstyles__StyledLoader",
+  componentId: "sc-kq71kt-3"
+})(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"], ["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"])), rotate);
+var StyledControlsContainer = dt.div.withConfig({
+  displayName: "Playerstyles__StyledControlsContainer",
+  componentId: "sc-kq71kt-4"
+})(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"], ["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"])));
+var StyledSubtitles = dt.div.withConfig({
+  displayName: "Playerstyles__StyledSubtitles",
+  componentId: "sc-kq71kt-5"
+})(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"], ["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"])), function (_a) {
   var $controls = _a.$controls;
   return $controls ? '60px' : '10px';
 });
@@ -82283,28 +82611,64 @@ var injectHLSSubtitleStyles = function injectHLSSubtitleStyles() {
 };
 var templateObject_1$9, templateObject_2$7, templateObject_3$4, templateObject_4$2, templateObject_5$2, templateObject_6$2, templateObject_7$1;
 
-var StyledControls = dt.div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"])), {
+var StyledControls = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledControls",
+  componentId: "sc-1d6s9xo-0"
+})(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"])), {
   fontStyle: 'descriptor'
 });
-var StyledSlider = dt.input(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"])), function (_a) {
+var StyledSlider = dt.input.withConfig({
+  displayName: "Controlsstyles__StyledSlider",
+  componentId: "sc-1d6s9xo-1"
+})(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"])), function (_a) {
   var value = _a.value;
   return "linear-gradient(\n    to right,\n    var(--brand-colors-accent) 0%,\n    var(--brand-colors-accent) ".concat(value, "%,\n    var(--level-dark-200) ").concat(value, "%,\n    var(--level-dark-200) 100%\n  )");
 });
-var StyledVolumeWrapper = dt.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"])));
-var StyledVolumeSlider = dt.input(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"], ["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"])), function (_a) {
+var StyledVolumeWrapper = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledVolumeWrapper",
+  componentId: "sc-1d6s9xo-2"
+})(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"])));
+var StyledVolumeSlider = dt.input.withConfig({
+  displayName: "Controlsstyles__StyledVolumeSlider",
+  componentId: "sc-1d6s9xo-3"
+})(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"], ["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"])), function (_a) {
   var value = _a.value;
   return "linear-gradient(\n    to right,\n    var(--neutral-colors-light) 0%,\n    var(--neutral-colors-light) ".concat(value, "%,\n    var(--level-grey-500) ").concat(value, "%,\n    var(--level-grey-500) 100%\n  )");
 });
-var StyledControllerLeft = dt.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"])));
-var StyledControllerRight = dt.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"])));
-var StyledTimeTrack = dt.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"], ["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"])), {
+var StyledControllerLeft = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledControllerLeft",
+  componentId: "sc-1d6s9xo-4"
+})(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"])));
+var StyledControllerRight = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledControllerRight",
+  componentId: "sc-1d6s9xo-5"
+})(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"])));
+var StyledTimeTrack = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledTimeTrack",
+  componentId: "sc-1d6s9xo-6"
+})(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"], ["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"])), {
   fontStyle: 'descriptor'
 });
-var StyledHeartIconContainer = dt.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"])));
-var StyledSubtitlesIconContainer = dt.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])));
-var StyledFullscreenIconContainer = dt.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
-var StyledVolumeIconContainer = dt.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
-var StyledPlayPauseIconContainer = dt.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
+var StyledHeartIconContainer = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledHeartIconContainer",
+  componentId: "sc-1d6s9xo-7"
+})(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"])));
+var StyledSubtitlesIconContainer = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledSubtitlesIconContainer",
+  componentId: "sc-1d6s9xo-8"
+})(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])));
+var StyledFullscreenIconContainer = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledFullscreenIconContainer",
+  componentId: "sc-1d6s9xo-9"
+})(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
+var StyledVolumeIconContainer = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledVolumeIconContainer",
+  componentId: "sc-1d6s9xo-10"
+})(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
+var StyledPlayPauseIconContainer = dt.div.withConfig({
+  displayName: "Controlsstyles__StyledPlayPauseIconContainer",
+  componentId: "sc-1d6s9xo-11"
+})(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
 var templateObject_1$8, templateObject_2$6, templateObject_3$3, templateObject_4$1, templateObject_5$1, templateObject_6$1, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12;
 
 var PLAYBACK_SPEED_LIST = [{
@@ -82348,10 +82712,10 @@ var useDynamicPosition = function useDynamicPosition(isActive, ref, offset) {
   if (offset === void 0) {
     offset = 0;
   }
-  var _a = React.useState(defaultPosition),
+  var _a = useState(defaultPosition),
     position = _a[0],
     setPosition = _a[1];
-  React.useEffect(function () {
+  useEffect(function () {
     if (isActive && ref.current) {
       var element = ref.current;
       var rect = element.getBoundingClientRect();
@@ -82383,7 +82747,7 @@ var useDynamicPosition = function useDynamicPosition(isActive, ref, offset) {
 };
 
 var useOnOutsideClick = function useOnOutsideClick(ref, handler) {
-  React.useEffect(function () {
+  useEffect(function () {
     var listener = function listener(event) {
       if (ref.current && !ref.current.contains(event.target)) {
         handler(event);
@@ -82413,10 +82777,10 @@ var useMenuToggle = function useMenuToggle(initialIsVisible, offset) {
   if (offset === void 0) {
     offset = 8;
   }
-  var _a = React.useState(initialIsVisible),
+  var _a = useState(initialIsVisible),
     isVisible = _a[0],
     setIsVisible = _a[1];
-  var menuRef = React.useRef(null);
+  var menuRef = useRef(null);
   var menuPosition = useDynamicPosition(isVisible, menuRef, offset);
   useOnOutsideClick(menuRef, function () {
     return setIsVisible(false);
@@ -82435,8 +82799,14 @@ var useMenuToggle = function useMenuToggle(initialIsVisible, offset) {
   };
 };
 
-var StyledPlaybackMenuWrapper = dt.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"])));
-var StyledPlaybackMenu = dt.div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"])), function (_a) {
+var StyledPlaybackMenuWrapper = dt.div.withConfig({
+  displayName: "PlaybackSpeedMenustyles__StyledPlaybackMenuWrapper",
+  componentId: "sc-ydef7t-0"
+})(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"])));
+var StyledPlaybackMenu = dt.div.withConfig({
+  displayName: "PlaybackSpeedMenustyles__StyledPlaybackMenu",
+  componentId: "sc-ydef7t-1"
+})(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"])), function (_a) {
   var $position = _a.$position;
   return "\n    ".concat($position.vertical === DropdownVerticalPositionEnum.Top ? 'bottom: calc(100% + 8px);' : 'top: calc(100% + 8px);', "\n    ").concat($position.horizontal === DropdownHorizontalPositionEnum.Left ? 'right: calc(100% + 8px);' : 'left: calc(100% + 8px);', "\n  ");
 }, {
@@ -82444,7 +82814,10 @@ var StyledPlaybackMenu = dt.div(templateObject_2$5 || (templateObject_2$5 = __ma
 }, {
   fontStyle: 'bodyS'
 });
-var StyledPlaybackSpeedItem = dt.p(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"], ["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"])), {
+var StyledPlaybackSpeedItem = dt.p.withConfig({
+  displayName: "PlaybackSpeedMenustyles__StyledPlaybackSpeedItem",
+  componentId: "sc-ydef7t-2"
+})(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"], ["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"])), {
   fontStyle: 'labelM'
 }, {
   fontStyle: 'bodyS'
@@ -88352,11 +88725,11 @@ var useEventListener = function useEventListener(eventName, handler, element, sh
       return true;
     };
   }
-  var savedHandler = React.useRef();
-  React.useEffect(function () {
+  var savedHandler = useRef();
+  useEffect(function () {
     savedHandler.current = handler;
   }, [handler]);
-  React.useEffect(function () {
+  useEffect(function () {
     var targetElement = element && 'current' in element ? element.current : window;
     if (!targetElement) return;
     var isSupported = targetElement.addEventListener;
@@ -88394,33 +88767,33 @@ function usePlayerControls(_a) {
     setIsPlaying = _a.setIsPlaying,
     isPlaying = _a.isPlaying,
     shouldPlayerBeFocusedOnSpaceClick = _a.shouldPlayerBeFocusedOnSpaceClick;
-  var _c = React.useState(false),
+  var _c = useState(false),
     startPlayed = _c[0],
     setStartPlayed = _c[1];
-  var _d = React.useState(defaultVideoState),
+  var _d = useState(defaultVideoState),
     videoState = _d[0],
     setVideoState = _d[1];
-  var _e = React.useState(false),
+  var _e = useState(false),
     isSubtitlesChecked = _e[0],
     setIsSubtitlesChecked = _e[1];
-  var _f = React.useState(false),
+  var _f = useState(false),
     isFullscreen = _f[0],
     setIsFullscreen = _f[1];
-  var _g = React.useState(false),
+  var _g = useState(false),
     isControlsActive = _g[0],
     setIsControlsActive = _g[1];
-  var videoPlayerRef = React.useRef(null);
-  var controlRef = React.useRef(null);
-  var playerContainerRef = React.useRef(null);
-  var _h = React.useState([]),
+  var videoPlayerRef = useRef(null);
+  var controlRef = useRef(null);
+  var playerContainerRef = useRef(null);
+  var _h = useState([]),
     subtitles = _h[0],
     setSubtitles = _h[1];
-  var _j = React.useState(''),
+  var _j = useState(''),
     currentSubtitle = _j[0],
     setCurrentSubtitle = _j[1];
-  var lastSubtitleIndexRef = React.useRef(null);
-  var lastPlaybackTimeRef = React.useRef(0);
-  var lastCallTimeRef = React.useRef(Date.now());
+  var lastSubtitleIndexRef = useRef(null);
+  var lastPlaybackTimeRef = useRef(0);
+  var lastCallTimeRef = useRef(Date.now());
   var muted = videoState.muted,
     volume = videoState.volume,
     prevVolume = videoState.prevVolume,
@@ -88432,7 +88805,7 @@ function usePlayerControls(_a) {
   var formatCurrentTime = FormatSecondsToTimeString(currentTime);
   var formatDuration = FormatSecondsToTimeString(duration);
   // Using previous method for old videos(we used to parse subtitles via link)
-  React.useEffect(function () {
+  useEffect(function () {
     if (subtitleUrl) {
       fetch(subtitleUrl).then(function (response) {
         return response.text();
@@ -88444,7 +88817,7 @@ function usePlayerControls(_a) {
       });
     }
   }, [subtitleUrl]);
-  React.useEffect(function () {
+  useEffect(function () {
     var handleFullscreenChange = function handleFullscreenChange() {
       setIsFullscreen(!!document.fullscreenElement);
     };
@@ -88453,25 +88826,25 @@ function usePlayerControls(_a) {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
-  React.useEffect(function () {
+  useEffect(function () {
     setStartPlayed(false);
   }, [url]);
-  var playPauseHandler = React.useCallback(function () {
+  var playPauseHandler = useCallback(function () {
     setIsPlaying(function (prev) {
       return !prev;
     });
   }, [setIsPlaying]);
-  var rewindHandler = React.useCallback(function () {
+  var rewindHandler = useCallback(function () {
     if (videoPlayerRef.current) {
       videoPlayerRef.current.seekTo(videoPlayerRef.current.getCurrentTime() - 5);
     }
   }, [videoPlayerRef]);
-  var handleFastForward = React.useCallback(function () {
+  var handleFastForward = useCallback(function () {
     if (videoPlayerRef.current) {
       videoPlayerRef.current.seekTo(videoPlayerRef.current.getCurrentTime() + 10);
     }
   }, [videoPlayerRef]);
-  var progressHandler = React.useCallback(function (state) {
+  var progressHandler = useCallback(function (state) {
     return __awaiter(_this, void 0, void 0, function () {
       var videoElement, hasHLSSubtitles, currentSubtitleEntry, i, sub, i, sub, currentTime_1, now;
       var _a, _b;
@@ -88605,14 +88978,14 @@ function usePlayerControls(_a) {
     }
     count = 0;
   };
-  var bufferStartHandler = React.useCallback(function () {
+  var bufferStartHandler = useCallback(function () {
     setVideoState(function (prev) {
       return __assign(__assign({}, prev), {
         buffer: true
       });
     });
   }, [setVideoState]);
-  var bufferEndHandler = React.useCallback(function () {
+  var bufferEndHandler = useCallback(function () {
     if (startPlayed) {
       setVideoState(function (prev) {
         return __assign(__assign({}, prev), {
@@ -88622,7 +88995,7 @@ function usePlayerControls(_a) {
       setIsPlaying(true);
     }
   }, [startPlayed, setVideoState, setIsPlaying]);
-  var onPlayerStart = React.useCallback(function () {
+  var onPlayerStart = useCallback(function () {
     if (videoPlayerRef.current && !startPlayed) {
       videoPlayerRef.current.seekTo(startTime);
       setStartPlayed(true);
@@ -88640,7 +89013,7 @@ function usePlayerControls(_a) {
       playerContainer.requestFullscreen()["catch"](console.error);
     }
   };
-  var handleKeyDown = React.useCallback(function (event) {
+  var handleKeyDown = useCallback(function (event) {
     if ('code' in event) {
       switch (event.code) {
         case 'ArrowLeft':
@@ -88676,7 +89049,7 @@ function usePlayerControls(_a) {
       }
     }
   }, [rewindHandler, handleFastForward, setVideoState]);
-  var handleSpaceKeyDown = React.useCallback(function (event) {
+  var handleSpaceKeyDown = useCallback(function (event) {
     if ('code' in event) {
       switch (event.code) {
         case 'Space':
@@ -88740,8 +89113,8 @@ var useHLSSubtitles = function useHLSSubtitles(_a) {
   var videoPlayerRef = _a.videoPlayerRef,
     isSubtitlesChecked = _a.isSubtitlesChecked,
     setCurrentSubtitle = _a.setCurrentSubtitle;
-  var hlsSubtitleTrackRef = React.useRef(null);
-  var extractHLSSubtitleText = React.useCallback(function () {
+  var hlsSubtitleTrackRef = useRef(null);
+  var extractHLSSubtitleText = useCallback(function () {
     var _a;
     var videoElement = (_a = videoPlayerRef.current) === null || _a === void 0 ? void 0 : _a.getInternalPlayer();
     if (!videoElement || !videoElement.textTracks) return;
@@ -88770,7 +89143,7 @@ var useHLSSubtitles = function useHLSSubtitles(_a) {
       if (state_1 === "break") break;
     }
   }, [isSubtitlesChecked, setCurrentSubtitle, videoPlayerRef]);
-  var setupHLSSubtitleTracking = React.useCallback(function () {
+  var setupHLSSubtitleTracking = useCallback(function () {
     var _a;
     var videoElement = (_a = videoPlayerRef.current) === null || _a === void 0 ? void 0 : _a.getInternalPlayer();
     if (!videoElement) return;
@@ -88793,10 +89166,10 @@ var useHLSSubtitles = function useHLSSubtitles(_a) {
       _checkTextTracks();
     });
   }, [extractHLSSubtitleText, videoPlayerRef]);
-  React.useEffect(function () {
+  useEffect(function () {
     extractHLSSubtitleText();
   }, [isSubtitlesChecked, extractHLSSubtitleText]);
-  React.useEffect(function () {
+  useEffect(function () {
     var _a;
     var videoElement = (_a = videoPlayerRef.current) === null || _a === void 0 ? void 0 : _a.getInternalPlayer();
     if (videoElement && videoElement.textTracks && videoElement.textTracks.length > 0) {
@@ -88838,7 +89211,7 @@ var VideoPlayer = function VideoPlayer(_a) {
         });
       });
     } : _h;
-  var videoRef = React.useRef(null);
+  var videoRef = useRef(null);
   var _j = usePlayerControls({
       startTime: startTime,
       setLoading: setLoading,
@@ -88885,7 +89258,7 @@ var VideoPlayer = function VideoPlayer(_a) {
     isSubtitlesChecked: isSubtitlesChecked,
     setCurrentSubtitle: setCurrentSubtitle
   }).setupHLSSubtitleTracking;
-  React.useEffect(function () {
+  useEffect(function () {
     var cleanup = injectHLSSubtitleStyles();
     return cleanup;
   }, []);
@@ -88995,8 +89368,14 @@ var VideoPlayer = function VideoPlayer(_a) {
   });
 };
 
-var Whiteboard = dt.div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"], ["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"])));
-var CenteredText = dt.div(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"], ["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"])), function (_a) {
+var Whiteboard = dt.div.withConfig({
+  displayName: "styled-components__Whiteboard",
+  componentId: "sc-1mgerjq-0"
+})(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"], ["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"])));
+var CenteredText = dt.div.withConfig({
+  displayName: "styled-components__CenteredText",
+  componentId: "sc-1mgerjq-1"
+})(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"], ["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"])), function (_a) {
   var marginTop = _a.marginTop;
   return marginTop || '0px';
 });
@@ -89004,7 +89383,10 @@ var templateObject_1$6, templateObject_2$4;
 
 var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAABACAYAAABFqxrgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPJSURBVHgB7ZtLbExRGMf/504V1alqvKo0Xq1kEpJ6hKRCYiZIiUewsSEshQ22pU1sJDYs7S2UeESLpENIxcIruiBKEOKVJkYp1ZqZ43/OdJqaTqeN9N522u8/Offec853b+b73e+755zJHYV+tPe2njDZh3IFLGWZphQcZJm0RlwDrUrjUfQnWs5Uqc50dipd46E7uoweH2HvbhrkI/v1g0DOxYFTp9eql6mdfe7u4dt6KhsPEMC+UQLAyM9I3u9TOHjknp6e2pmT2hB1EOQJ6wkgZyJ75xUAM/L6CZkRLqYCvvwC3nwHOqLIYT0Yi6KJzed72/WBwPwpocOzjdfLyWxDKZA3Dlmrn3+Am++Apo/WtzlMi9mpNn0g0PkCFr85zMvJbgBGk/j9JyW9TPhVkGqTdU98NyQQIBCsBAIEgpVAgECwEggQCFYCAQLBSiBAIFgJBAgEK4EAgWAlECAQrAQCBIKVQIBAsBIIEAhWAgECwUogQCBYCQQIBCuBAIFgJRAgEKwEAgSClUBAulf4Rrk0P6FduzCuPRf5+V2oq6tLvKi6buOOJY4PlQqqoDCwJjR+2pyQaS8vZJmCrFdLhOVb4vh36/vGtmd3w4TxXcfQVOR3mpUBoHw4TgDbMcZEEJcI4vhYfiaYV5+1SYWedFAOQlBqupObN2H8lOIS094Z+fQh3vXrN0a29EAGaX3SuhVxNIZvXGyGaHjf4FfBqm2bHPg2xRGrDzdcrscg7qob8mF4pEJVO/cyUE8yBTkSOZULygJtr18+e4ph0LBACFbt3MwQPKoUAqbOfSGf1KXzFwa+vHn1/AU8ltcQTARsJYAaJuKyfzqUKuYwvWh+WeAzI6IFHspLCAbAFu6PEUBFegsUc+s5CM8gdKdAdTICtNafuWtnBOQzFT7y+AcjwW9AsL7Iy9TwBEI3ABMBy02dAJ7Q+XrlKPPnorl0/hHLTY4NubSZZVIDJiIIou1r5EVHRzvclOsQ0gGgs7VQupmOr2XTXJa37D+rNe7Ttrw3iOKSUtdBuDpt7g9A+PrFK0o5feYE4YYL17R5aGo8NHWCqOC51RUrK7cWFc10bU7jGoRMAJBhUtQLxANT9wKEGxCSw2BtEgAdesLQrxkIQFIEYWaPJ2j52F6QIFiql65avcXv9w85iCGHwMXYYq30np5hkAC4rWlsuHAVg58W62772iQIcz1z3RWV6xdjiOXuUjoDgHhUf+VQGEmY6YhmPfXsFBA9S9+hlis5ZpbmPh+WxGJovpVhqZq0i9Mu05I2mPjla0C7/9VfqPhM23MjJyAAAAAASUVORK5CYII=";
 
-var ImageContainer = dt.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"])));
+var ImageContainer = dt.div.withConfig({
+  displayName: "styled-components__ImageContainer",
+  componentId: "sc-1u783cc-0"
+})(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"])));
 var templateObject_1$5;
 
 var Presentation = function Presentation() {
@@ -89066,8 +89448,14 @@ var AudioPlayer = function AudioPlayer(props) {
   });
 };
 
-var ColumnNavigationContainer = dt.div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"], ["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"])));
-var NavigationItem = dt.div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"])), function (_a) {
+var ColumnNavigationContainer = dt.div.withConfig({
+  displayName: "styled-components__ColumnNavigationContainer",
+  componentId: "sc-1lyjqzm-0"
+})(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"], ["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"])));
+var NavigationItem = dt.div.withConfig({
+  displayName: "styled-components__NavigationItem",
+  componentId: "sc-1lyjqzm-1"
+})(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"])), function (_a) {
   var active = _a.active;
   return active ? ' #06c68f' : '#ccc';
 }, function (_a) {
@@ -89115,7 +89503,10 @@ var GridStatusEnums;
   GridStatusEnums["DECLINED"] = "DECLINED";
 })(GridStatusEnums || (GridStatusEnums = {}));
 
-var StatusWrapper = dt.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"])), function (_a) {
+var StatusWrapper = dt.div.withConfig({
+  displayName: "styled-components__StatusWrapper",
+  componentId: "sc-whxs20-0"
+})(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"])), function (_a) {
   var status = _a.status;
   switch (status) {
     case GridStatusEnums.ACTIVE:
@@ -89160,7 +89551,10 @@ var StatusWrapper = dt.div(templateObject_1$3 || (templateObject_1$3 = __makeTem
       return 'transparent';
   }
 });
-dt.div(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
+dt.div.withConfig({
+  displayName: "styled-components__CompanyStatusContainer",
+  componentId: "sc-whxs20-1"
+})(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
   var $isActive = _a.$isActive;
   return $isActive ? '#08C694' : '#EA382A';
 });
@@ -89175,7 +89569,10 @@ var StatusIndicator = function StatusIndicator(_a) {
   });
 };
 
-var StyledTabNavigationContainer = dt.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"], ["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"])), function (_a) {
+var StyledTabNavigationContainer = dt.div.withConfig({
+  displayName: "styled-components__StyledTabNavigationContainer",
+  componentId: "sc-98t12t-0"
+})(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"], ["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"])), function (_a) {
   var $isTransparent = _a.$isTransparent;
   return $isTransparent ? 'transparent' : '#fff';
 }, function (_a) {
@@ -89219,18 +89616,36 @@ var TabNavigation = function TabNavigation(props) {
 };
 
 // ExpansionNavMenu
-var ExpansionMenuItemList = dt.ul(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  width: 100%;\n  padding: 0;\n"], ["\n  width: 100%;\n  padding: 0;\n"])));
-var ExpansionMenuItem = dt.li(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"], ["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"
+var ExpansionMenuItemList = dt.ul.withConfig({
+  displayName: "styled-components__ExpansionMenuItemList",
+  componentId: "sc-169px4f-0"
+})(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  width: 100%;\n  padding: 0;\n"], ["\n  width: 100%;\n  padding: 0;\n"])));
+var ExpansionMenuItem = dt.li.withConfig({
+  displayName: "styled-components__ExpansionMenuItem",
+  componentId: "sc-169px4f-1"
+})(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"], ["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"
 // NavigationBar
 ])));
 // NavigationBar
-var Container = dt.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"], ["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"])), function (_a) {
+var Container = dt.div.withConfig({
+  displayName: "styled-components__Container",
+  componentId: "sc-169px4f-2"
+})(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"], ["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"])), function (_a) {
   var $isOpened = _a.$isOpened;
   return $isOpened ? "240px" : "70px";
 });
-var StyledExpansionPanel = dt.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"], ["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"])));
-var StyledExpansionPanelSummary = dt.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"], ["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"])));
-var StyledTypography = dt.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"], ["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"])));
+var StyledExpansionPanel = dt.div.withConfig({
+  displayName: "styled-components__StyledExpansionPanel",
+  componentId: "sc-169px4f-3"
+})(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"], ["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"])));
+var StyledExpansionPanelSummary = dt.div.withConfig({
+  displayName: "styled-components__StyledExpansionPanelSummary",
+  componentId: "sc-169px4f-4"
+})(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"], ["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"])));
+var StyledTypography = dt.div.withConfig({
+  displayName: "styled-components__StyledTypography",
+  componentId: "sc-169px4f-5"
+})(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"], ["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"])));
 var templateObject_1$1, templateObject_2$1, templateObject_3$1, templateObject_4, templateObject_5, templateObject_6;
 
 var ExpansionItem = function ExpansionItem(_a) {
@@ -89274,7 +89689,7 @@ function isPlainObject(item) {
   return (prototype === null || prototype === Object.prototype || Object.getPrototypeOf(prototype) === null) && !(Symbol.toStringTag in item) && !(Symbol.iterator in item);
 }
 function deepClone(source) {
-  if ( /*#__PURE__*/React__namespace.isValidElement(source) || !isPlainObject(source)) {
+  if ( /*#__PURE__*/React.isValidElement(source) || !isPlainObject(source)) {
     return source;
   }
   const output = {};
@@ -89289,7 +89704,7 @@ function deepmerge(target, source, options = {
   const output = options.clone ? _extends$2({}, target) : target;
   if (isPlainObject(target) && isPlainObject(source)) {
     Object.keys(source).forEach(key => {
-      if ( /*#__PURE__*/React__namespace.isValidElement(source[key])) {
+      if ( /*#__PURE__*/React.isValidElement(source[key])) {
         output[key] = source[key];
       } else if (isPlainObject(source[key]) &&
       // Avoid prototype pollution
@@ -93105,7 +93520,7 @@ const defaultOptions = {
   sheetsManager: defaultSheetsManager,
   sheetsRegistry: null
 };
-const StylesContext = /*#__PURE__*/React__namespace.createContext(defaultOptions);
+const StylesContext = /*#__PURE__*/React.createContext(defaultOptions);
 if (process.env.NODE_ENV !== 'production') {
   StylesContext.displayName = 'StylesContext';
 }
@@ -93117,7 +93532,7 @@ function StylesProvider(props) {
       disableGeneration = false
     } = props,
     localOptions = _objectWithoutPropertiesLoose$1(props, _excluded$2);
-  const outerOptions = React__namespace.useContext(StylesContext);
+  const outerOptions = React.useContext(StylesContext);
   const {
     generateClassName,
     jss,
@@ -93131,7 +93546,7 @@ function StylesProvider(props) {
       console.error('MUI: You cannot use the jss and injectFirst props at the same time.');
     }
   }
-  const value = React__namespace.useMemo(() => {
+  const value = React.useMemo(() => {
     const context = {
       disableGeneration,
       generateClassName,
@@ -93459,18 +93874,18 @@ function detach({
   }
 }
 function useSynchronousEffect(func, values) {
-  const key = React__namespace.useRef([]);
+  const key = React.useRef([]);
   let output;
 
   // Store "generation" key. Just returns a new object every time
-  const currentKey = React__namespace.useMemo(() => ({}), values); // eslint-disable-line react-hooks/exhaustive-deps
+  const currentKey = React.useMemo(() => ({}), values); // eslint-disable-line react-hooks/exhaustive-deps
 
   // "the first render", or "memo dropped the value"
   if (key.current !== currentKey) {
     key.current = currentKey;
     output = func();
   }
-  React__namespace.useEffect(() => () => {
+  React.useEffect(() => () => {
     if (output) {
       output();
     }
@@ -93497,9 +93912,9 @@ function makeStyles(stylesOrCreator, options = {}) {
   };
   const useStyles = (props = {}) => {
     const theme = useTheme() || defaultTheme;
-    const stylesOptions = _extends$2({}, React__namespace.useContext(StylesContext), stylesOptions2);
-    const instance = React__namespace.useRef();
-    const shouldUpdate = React__namespace.useRef();
+    const stylesOptions = _extends$2({}, React.useContext(StylesContext), stylesOptions2);
+    const instance = React.useRef();
+    const shouldUpdate = React.useRef();
     useSynchronousEffect(() => {
       const current = {
         name,
@@ -93515,7 +93930,7 @@ function makeStyles(stylesOrCreator, options = {}) {
         detach(current);
       };
     }, [theme, stylesCreator]);
-    React__namespace.useEffect(() => {
+    React.useEffect(() => {
       if (shouldUpdate.current) {
         update(instance.current, props);
       }
@@ -93524,7 +93939,7 @@ function makeStyles(stylesOrCreator, options = {}) {
     const classes = getClasses(instance.current, props.classes, Component);
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      React__namespace.useDebugValue(classes);
+      React.useDebugValue(classes);
     }
     if (process.env.NODE_ENV !== 'production') {
       const supportedComponents = ['MuiAvatar', 'MuiBadge', 'MuiButton', 'MuiButtonGroup', 'MuiChip', 'MuiDivider', 'MuiFab', 'MuiPaper', 'MuiToolbar', 'MuiTypography', 'MuiAlert', 'MuiPagination', 'MuiPaginationItem', 'MuiSkeleton', 'MuiTimelineDot'];
@@ -93647,7 +94062,7 @@ var useStyles = makeStyles(function () {
 var ExpansionNavMenu = function ExpansionNavMenu(props) {
   var _a;
   var t = useTranslation().t;
-  var _b = React.useState(''),
+  var _b = useState(''),
     expanded = _b[0],
     setExpanded = _b[1];
   var classes = useStyles();
@@ -93671,7 +94086,7 @@ var ExpansionNavMenu = function ExpansionNavMenu(props) {
       }), jsxRuntimeExports.jsx(ExpansionPanelDetailsCustom, {
         children: jsxRuntimeExports.jsx(ExpansionMenuItemList, {
           children: (_a = props.item.children) === null || _a === void 0 ? void 0 : _a.map(function (i, index) {
-            return jsxRuntimeExports.jsx(React.Fragment, {
+            return jsxRuntimeExports.jsx(React__default.Fragment, {
               children: i.canView && jsxRuntimeExports.jsx(ExpansionMenuItem, {
                 "$isOpened": props.isOpened,
                 children: jsxRuntimeExports.jsxs(NavLink, {
@@ -93896,7 +94311,7 @@ var NavigationBarComponent = function NavigationBarComponent(_a) {
     checkRole = _a.checkRole,
     state = _a.state;
   var location = useLocation();
-  React.useEffect(function () {
+  useEffect(function () {
     console.log('URL changed:', location.pathname);
   }, [location.pathname]);
   var role = checkRole && checkRole(currentUser === null || currentUser === void 0 ? void 0 : currentUser.role, !!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.companyId));
@@ -93943,9 +94358,18 @@ var RadioButton = function RadioButton(_a) {
   });
 };
 
-var TipItem = dt.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"])));
-var DrawerTipsContainer = dt.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"])));
-dt.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  font-weight: 400 !important;\n"])));
+var TipItem = dt.div.withConfig({
+  displayName: "styled-component__TipItem",
+  componentId: "sc-sgd7fw-0"
+})(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"])));
+var DrawerTipsContainer = dt.div.withConfig({
+  displayName: "styled-component__DrawerTipsContainer",
+  componentId: "sc-sgd7fw-1"
+})(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"])));
+dt.div.withConfig({
+  displayName: "styled-component__StyledRememberText",
+  componentId: "sc-sgd7fw-2"
+})(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  font-weight: 400 !important;\n"])));
 var styles = {
   svg: {
     width: '32px',
@@ -94027,38 +94451,4 @@ var RangeSlider = function RangeSlider(_a) {
   });
 };
 
-exports.AudioPlayer = AudioPlayer;
-exports.Badge = Badge;
-exports.Breadcrumb = Breadcrumb;
-exports.Button = Button$1;
-exports.Checkbox = Checkbox;
-exports.ColorPicker = ColorPicker;
-exports.ColumnNavigation = ColumnNavigation;
-exports.CourseCard = CourseCard;
-exports.CustomSwitcher = CustomSwitcher;
-exports.CustomTooltip = CustomTooltip;
-exports.DatePicker = DatePicker;
-exports.DrawerTips = DrawerTips;
-exports.DropDown = DropDown;
-exports.GridActionMenu = GridActionMenu;
-exports.Loader = Loader;
-exports.NavigationBar = NavigationBar;
-exports.Pagination = Pagination;
-exports.PhoneCountryCode = PhoneCountryCode;
-exports.RadioButton = RadioButton;
-exports.RangeSlider = RangeSlider;
-exports.SearchInput = SearchInput;
-exports.SplashScreen = SplashScreen;
-exports.StatusIndicator = StatusIndicator;
-exports.TabNavigation = TabNavigation;
-exports.TabPanel = TabPanel;
-exports.ThemeProvider = ThemeProvider;
-exports.Tile = Tile;
-exports.TooltipHeight = TooltipHeight;
-exports.TranslationProvider = TranslationProvider;
-exports.Uploader = Uploader;
-exports.VideoPlayer = VideoPlayer;
-exports.activeTabClassName = activeTabClassName;
-exports.getDefaultExportFromCjs = getDefaultExportFromCjs;
-exports.requirePatterns = requirePatterns;
-exports.requireUtils = requireUtils;
+export { AudioPlayer as A, Button$1 as B, CourseCard as C, DropDown as D, GridActionMenu as G, Loader as L, NavigationBar as N, PhoneCountryCode as P, RadioButton as R, SearchInput as S, TranslationProvider as T, Uploader as U, VideoPlayer as V, requirePatterns as a, ThemeProvider as b, CustomSwitcher as c, DatePicker as d, Checkbox as e, Pagination as f, getDefaultExportFromCjs as g, Breadcrumb as h, Tile as i, ColorPicker as j, Badge as k, TooltipHeight as l, CustomTooltip as m, SplashScreen as n, ColumnNavigation as o, StatusIndicator as p, TabPanel as q, requireUtils as r, TabNavigation as s, activeTabClassName as t, DrawerTips as u, RangeSlider as v };

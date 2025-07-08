@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Kaltura_1;
-var hasRequiredKaltura;
+var Vimeo_1;
+var hasRequiredVimeo;
 
-function requireKaltura () {
-	if (hasRequiredKaltura) return Kaltura_1;
-	hasRequiredKaltura = 1;
+function requireVimeo () {
+	if (hasRequiredVimeo) return Vimeo_1;
+	hasRequiredVimeo = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,71 +54,102 @@ function requireKaltura () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Kaltura_exports = {};
-	__export(Kaltura_exports, {
-	  default: () => Kaltura
+	var Vimeo_exports = {};
+	__export(Vimeo_exports, {
+	  default: () => Vimeo
 	});
-	Kaltura_1 = __toCommonJS(Kaltura_exports);
+	Vimeo_1 = __toCommonJS(Vimeo_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
-	const SDK_GLOBAL = "playerjs";
-	class Kaltura extends import_react.Component {
+	const SDK_URL = "https://player.vimeo.com/api/player.js";
+	const SDK_GLOBAL = "Vimeo";
+	const cleanUrl = (url) => {
+	  return url.replace("/manage/videos", "");
+	};
+	class Vimeo extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
+	    // Prevent checking isLoading when URL changes
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
 	    __publicField(this, "duration", null);
 	    __publicField(this, "currentTime", null);
 	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
+	      this.setMuted(true);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
+	      this.setMuted(false);
 	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
-	      if (!this.iframe)
+	    this.duration = null;
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Vimeo2) => {
+	      if (!this.container)
 	        return;
-	      this.player = new playerjs.Player(this.iframe);
-	      this.player.on("ready", () => {
-	        setTimeout(() => {
-	          this.player.isReady = true;
-	          this.player.setLoop(this.props.loop);
-	          if (this.props.muted) {
-	            this.player.mute();
-	          }
-	          this.addListeners(this.player, this.props);
-	          this.props.onReady();
-	        }, 500);
+	      const { playerOptions, title } = this.props.config;
+	      this.player = new Vimeo2.Player(this.container, {
+	        url: cleanUrl(url),
+	        autoplay: this.props.playing,
+	        muted: this.props.muted,
+	        loop: this.props.loop,
+	        playsinline: this.props.playsinline,
+	        controls: this.props.controls,
+	        ...playerOptions
 	      });
+	      this.player.ready().then(() => {
+	        const iframe = this.container.querySelector("iframe");
+	        iframe.style.width = "100%";
+	        iframe.style.height = "100%";
+	        if (title) {
+	          iframe.title = title;
+	        }
+	      }).catch(this.props.onError);
+	      this.player.on("loaded", () => {
+	        this.props.onReady();
+	        this.refreshDuration();
+	      });
+	      this.player.on("play", () => {
+	        this.props.onPlay();
+	        this.refreshDuration();
+	      });
+	      this.player.on("pause", this.props.onPause);
+	      this.player.on("seeked", (e) => this.props.onSeek(e.seconds));
+	      this.player.on("ended", this.props.onEnded);
+	      this.player.on("error", this.props.onError);
+	      this.player.on("timeupdate", ({ seconds }) => {
+	        this.currentTime = seconds;
+	      });
+	      this.player.on("progress", ({ seconds }) => {
+	        this.secondsLoaded = seconds;
+	      });
+	      this.player.on("bufferstart", this.props.onBuffer);
+	      this.player.on("bufferend", this.props.onBufferEnd);
+	      this.player.on("playbackratechange", (e) => this.props.onPlaybackRateChange(e.playbackRate));
 	    }, this.props.onError);
 	  }
-	  addListeners(player, props) {
-	    player.on("play", props.onPlay);
-	    player.on("pause", props.onPause);
-	    player.on("ended", props.onEnded);
-	    player.on("error", props.onError);
-	    player.on("timeupdate", ({ duration, seconds }) => {
+	  refreshDuration() {
+	    this.player.getDuration().then((duration) => {
 	      this.duration = duration;
-	      this.currentTime = seconds;
 	    });
 	  }
 	  play() {
-	    this.callPlayer("play");
+	    const promise = this.callPlayer("play");
+	    if (promise) {
+	      promise.catch(this.props.onError);
+	    }
 	  }
 	  pause() {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
+	    this.callPlayer("unload");
 	  }
 	  seekTo(seconds, keepPlaying = true) {
 	    this.callPlayer("setCurrentTime", seconds);
@@ -129,8 +160,14 @@ function requireKaltura () {
 	  setVolume(fraction) {
 	    this.callPlayer("setVolume", fraction);
 	  }
+	  setMuted(muted) {
+	    this.callPlayer("setMuted", muted);
+	  }
 	  setLoop(loop) {
 	    this.callPlayer("setLoop", loop);
+	  }
+	  setPlaybackRate(rate) {
+	    this.callPlayer("setPlaybackRate", rate);
 	  }
 	  getDuration() {
 	    return this.duration;
@@ -142,35 +179,35 @@ function requireKaltura () {
 	    return this.secondsLoaded;
 	  }
 	  render() {
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      overflow: "hidden",
+	      display
 	    };
 	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
+	      "div",
 	      {
+	        key: this.props.url,
 	        ref: this.ref,
-	        src: this.props.url,
-	        frameBorder: "0",
-	        scrolling: "no",
-	        style,
-	        allow: "encrypted-media; autoplay; fullscreen;",
-	        referrerPolicy: "no-referrer-when-downgrade"
+	        style
 	      }
 	    );
 	  }
 	}
-	__publicField(Kaltura, "displayName", "Kaltura");
-	__publicField(Kaltura, "canPlay", import_patterns.canPlay.kaltura);
-	return Kaltura_1;
+	__publicField(Vimeo, "displayName", "Vimeo");
+	__publicField(Vimeo, "canPlay", import_patterns.canPlay.vimeo);
+	__publicField(Vimeo, "forceLoad", true);
+	return Vimeo_1;
 }
 
-var KalturaExports = /*@__PURE__*/ requireKaltura();
-var Kaltura = /*@__PURE__*/getDefaultExportFromCjs(KalturaExports);
+var VimeoExports = /*@__PURE__*/ requireVimeo();
+var Vimeo = /*@__PURE__*/getDefaultExportFromCjs(VimeoExports);
 
-var Kaltura$1 = /*#__PURE__*/_mergeNamespaces({
+var Vimeo$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Kaltura
-}, [KalturaExports]);
+  default: Vimeo
+}, [VimeoExports]);
 
-export { Kaltura$1 as K };
+export { Vimeo$1 as V };

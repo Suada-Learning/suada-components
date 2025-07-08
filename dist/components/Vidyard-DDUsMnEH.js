@@ -1,5 +1,7 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
-import React__default from 'react';
+'use strict';
+
+var index = require('./index-ClXrFANI.js');
+var React = require('react');
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -16,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var SoundCloud_1;
-var hasRequiredSoundCloud;
+var Vidyard_1;
+var hasRequiredVidyard;
 
-function requireSoundCloud () {
-	if (hasRequiredSoundCloud) return SoundCloud_1;
-	hasRequiredSoundCloud = 1;
+function requireVidyard () {
+	if (hasRequiredVidyard) return Vidyard_1;
+	hasRequiredVidyard = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,23 +56,21 @@ function requireSoundCloud () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var SoundCloud_exports = {};
-	__export(SoundCloud_exports, {
-	  default: () => SoundCloud
+	var Vidyard_exports = {};
+	__export(Vidyard_exports, {
+	  default: () => Vidyard
 	});
-	SoundCloud_1 = __toCommonJS(SoundCloud_exports);
-	var import_react = __toESM(React__default);
-	var import_utils = /*@__PURE__*/ requireUtils();
-	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://w.soundcloud.com/player/api.js";
-	const SDK_GLOBAL = "SC";
-	class SoundCloud extends import_react.Component {
+	Vidyard_1 = __toCommonJS(Vidyard_exports);
+	var import_react = __toESM(React);
+	var import_utils = /*@__PURE__*/ index.requireUtils();
+	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	const SDK_URL = "https://play.vidyard.com/embed/v4.js";
+	const SDK_GLOBAL = "VidyardV4";
+	const SDK_GLOBAL_READY = "onVidyardAPI";
+	class Vidyard extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "duration", null);
-	    __publicField(this, "currentTime", null);
-	    __publicField(this, "fractionLoaded", null);
 	    __publicField(this, "mute", () => {
 	      this.setVolume(0);
 	    });
@@ -79,45 +79,44 @@ function requireSoundCloud () {
 	        this.setVolume(this.props.volume);
 	      }
 	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url, isReady) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((SC) => {
-	      if (!this.iframe)
+	  load(url) {
+	    const { playing, config, onError, onDuration } = this.props;
+	    const id = url && url.match(import_patterns.MATCH_URL_VIDYARD)[1];
+	    if (this.player) {
+	      this.stop();
+	    }
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((Vidyard2) => {
+	      if (!this.container)
 	        return;
-	      const { PLAY, PLAY_PROGRESS, PAUSE, FINISH, ERROR } = SC.Widget.Events;
-	      if (!isReady) {
-	        this.player = SC.Widget(this.iframe);
-	        this.player.bind(PLAY, this.props.onPlay);
-	        this.player.bind(PAUSE, () => {
-	          const remaining = this.duration - this.currentTime;
-	          if (remaining < 0.05) {
-	            return;
-	          }
-	          this.props.onPause();
-	        });
-	        this.player.bind(PLAY_PROGRESS, (e) => {
-	          this.currentTime = e.currentPosition / 1e3;
-	          this.fractionLoaded = e.loadedProgress;
-	        });
-	        this.player.bind(FINISH, () => this.props.onEnded());
-	        this.player.bind(ERROR, (e) => this.props.onError(e));
-	      }
-	      this.player.load(url, {
-	        ...this.props.config.options,
-	        callback: () => {
-	          this.player.getDuration((duration) => {
-	            this.duration = duration / 1e3;
-	            this.props.onReady();
-	          });
+	      Vidyard2.api.addReadyListener((data, player) => {
+	        if (this.player) {
+	          return;
 	        }
+	        this.player = player;
+	        this.player.on("ready", this.props.onReady);
+	        this.player.on("play", this.props.onPlay);
+	        this.player.on("pause", this.props.onPause);
+	        this.player.on("seek", this.props.onSeek);
+	        this.player.on("playerComplete", this.props.onEnded);
+	      }, id);
+	      Vidyard2.api.renderPlayer({
+	        uuid: id,
+	        container: this.container,
+	        autoplay: playing ? 1 : 0,
+	        ...config.options
 	      });
-	    });
+	      Vidyard2.api.getPlayerMetadata(id).then((meta) => {
+	        this.duration = meta.length_in_seconds;
+	        onDuration(meta.length_in_seconds);
+	      });
+	    }, onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -126,24 +125,28 @@ function requireSoundCloud () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
+	    window.VidyardV4.api.destroyPlayer(this.player);
 	  }
-	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seekTo", seconds * 1e3);
+	  seekTo(amount, keepPlaying = true) {
+	    this.callPlayer("seek", amount);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction * 100);
+	    this.callPlayer("setVolume", fraction);
+	  }
+	  setPlaybackRate(rate) {
+	    this.callPlayer("setPlaybackSpeed", rate);
 	  }
 	  getDuration() {
 	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.currentTime;
+	    return this.callPlayer("currentTime");
 	  }
 	  getSecondsLoaded() {
-	    return this.fractionLoaded * this.duration;
+	    return null;
 	  }
 	  render() {
 	    const { display } = this.props;
@@ -152,30 +155,20 @@ function requireSoundCloud () {
 	      height: "100%",
 	      display
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
-	      {
-	        ref: this.ref,
-	        src: `https://w.soundcloud.com/player/?url=${encodeURIComponent(this.props.url)}`,
-	        style,
-	        frameBorder: 0,
-	        allow: "autoplay"
-	      }
-	    );
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(SoundCloud, "displayName", "SoundCloud");
-	__publicField(SoundCloud, "canPlay", import_patterns.canPlay.soundcloud);
-	__publicField(SoundCloud, "loopOnEnded", true);
-	return SoundCloud_1;
+	__publicField(Vidyard, "displayName", "Vidyard");
+	__publicField(Vidyard, "canPlay", import_patterns.canPlay.vidyard);
+	return Vidyard_1;
 }
 
-var SoundCloudExports = /*@__PURE__*/ requireSoundCloud();
-var SoundCloud = /*@__PURE__*/getDefaultExportFromCjs(SoundCloudExports);
+var VidyardExports = /*@__PURE__*/ requireVidyard();
+var Vidyard = /*@__PURE__*/index.getDefaultExportFromCjs(VidyardExports);
 
-var SoundCloud$1 = /*#__PURE__*/_mergeNamespaces({
+var Vidyard$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: SoundCloud
-}, [SoundCloudExports]);
+  default: Vidyard
+}, [VidyardExports]);
 
-export { SoundCloud$1 as S };
+exports.Vidyard = Vidyard$1;

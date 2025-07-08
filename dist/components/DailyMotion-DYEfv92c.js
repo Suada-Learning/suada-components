@@ -1,5 +1,7 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
-import React__default from 'react';
+'use strict';
+
+var index = require('./index-ClXrFANI.js');
+var React = require('react');
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -59,9 +61,9 @@ function requireDailyMotion () {
 	  default: () => DailyMotion
 	});
 	DailyMotion_1 = __toCommonJS(DailyMotion_exports);
-	var import_react = __toESM(React__default);
-	var import_utils = /*@__PURE__*/ requireUtils();
-	var import_patterns = /*@__PURE__*/ requirePatterns();
+	var import_react = __toESM(React);
+	var import_utils = /*@__PURE__*/ index.requireUtils();
+	var import_patterns = /*@__PURE__*/ index.requirePatterns();
 	const SDK_URL = "https://api.dmcdn.net/all.js";
 	const SDK_GLOBAL = "DM";
 	const SDK_GLOBAL_READY = "dmAsyncInit";
@@ -168,11 +170,11 @@ function requireDailyMotion () {
 }
 
 var DailyMotionExports = /*@__PURE__*/ requireDailyMotion();
-var DailyMotion = /*@__PURE__*/getDefaultExportFromCjs(DailyMotionExports);
+var DailyMotion = /*@__PURE__*/index.getDefaultExportFromCjs(DailyMotionExports);
 
 var DailyMotion$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: DailyMotion
 }, [DailyMotionExports]);
 
-export { DailyMotion$1 as D };
+exports.DailyMotion = DailyMotion$1;

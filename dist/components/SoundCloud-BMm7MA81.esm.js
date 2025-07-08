@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-qTIAETxO.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,9 +59,9 @@ function requireSoundCloud () {
 	  default: () => SoundCloud
 	});
 	SoundCloud_1 = __toCommonJS(SoundCloud_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const SDK_URL = "https://w.soundcloud.com/player/api.js";
 	const SDK_GLOBAL = "SC";
 	class SoundCloud extends import_react.Component {
@@ -173,11 +171,11 @@ function requireSoundCloud () {
 }
 
 var SoundCloudExports = /*@__PURE__*/ requireSoundCloud();
-var SoundCloud = /*@__PURE__*/index.getDefaultExportFromCjs(SoundCloudExports);
+var SoundCloud = /*@__PURE__*/getDefaultExportFromCjs(SoundCloudExports);
 
 var SoundCloud$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: SoundCloud
 }, [SoundCloudExports]);
 
-exports.SoundCloud = SoundCloud$1;
+export { SoundCloud$1 as S };

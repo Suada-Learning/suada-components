@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-qTIAETxO.js');
+var index = require('./index-ClXrFANI.js');
 var React = require('react');
 
 function _mergeNamespaces(n, m) {
@@ -18,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Streamable_1;
-var hasRequiredStreamable;
+var Facebook_1;
+var hasRequiredFacebook;
 
-function requireStreamable () {
-	if (hasRequiredStreamable) return Streamable_1;
-	hasRequiredStreamable = 1;
+function requireFacebook () {
+	if (hasRequiredFacebook) return Facebook_1;
+	hasRequiredFacebook = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -56,61 +56,66 @@ function requireStreamable () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Streamable_exports = {};
-	__export(Streamable_exports, {
-	  default: () => Streamable
+	var Facebook_exports = {};
+	__export(Facebook_exports, {
+	  default: () => Facebook
 	});
-	Streamable_1 = __toCommonJS(Streamable_exports);
+	Facebook_1 = __toCommonJS(Facebook_exports);
 	var import_react = __toESM(React);
 	var import_utils = /*@__PURE__*/ index.requireUtils();
 	var import_patterns = /*@__PURE__*/ index.requirePatterns();
-	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
-	const SDK_GLOBAL = "playerjs";
-	class Streamable extends import_react.Component {
+	const SDK_URL = "https://connect.facebook.net/en_US/sdk.js";
+	const SDK_GLOBAL = "FB";
+	const SDK_GLOBAL_READY = "fbAsyncInit";
+	const PLAYER_ID_PREFIX = "facebook-player-";
+	class Facebook extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "duration", null);
-	    __publicField(this, "currentTime", null);
-	    __publicField(this, "secondsLoaded", null);
+	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
 	    __publicField(this, "mute", () => {
 	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
 	      this.callPlayer("unmute");
 	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
-	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
-	      if (!this.iframe)
-	        return;
-	      this.player = new playerjs.Player(this.iframe);
-	      this.player.setLoop(this.props.loop);
-	      this.player.on("ready", this.props.onReady);
-	      this.player.on("play", this.props.onPlay);
-	      this.player.on("pause", this.props.onPause);
-	      this.player.on("seeked", this.props.onSeek);
-	      this.player.on("ended", this.props.onEnded);
-	      this.player.on("error", this.props.onError);
-	      this.player.on("timeupdate", ({ duration, seconds }) => {
-	        this.duration = duration;
-	        this.currentTime = seconds;
+	  load(url, isReady) {
+	    if (isReady) {
+	      (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => FB.XFBML.parse());
+	      return;
+	    }
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => {
+	      FB.init({
+	        appId: this.props.config.appId,
+	        xfbml: true,
+	        version: this.props.config.version
 	      });
-	      this.player.on("buffered", ({ percent }) => {
-	        if (this.duration) {
-	          this.secondsLoaded = this.duration * percent;
+	      FB.Event.subscribe("xfbml.render", (msg) => {
+	        this.props.onLoaded();
+	      });
+	      FB.Event.subscribe("xfbml.ready", (msg) => {
+	        if (msg.type === "video" && msg.id === this.playerID) {
+	          this.player = msg.instance;
+	          this.player.subscribe("startedPlaying", this.props.onPlay);
+	          this.player.subscribe("paused", this.props.onPause);
+	          this.player.subscribe("finishedPlaying", this.props.onEnded);
+	          this.player.subscribe("startedBuffering", this.props.onBuffer);
+	          this.player.subscribe("finishedBuffering", this.props.onBufferEnd);
+	          this.player.subscribe("error", this.props.onError);
+	          if (this.props.muted) {
+	            this.callPlayer("mute");
+	          } else {
+	            this.callPlayer("unmute");
+	          }
+	          this.props.onReady();
+	          document.getElementById(this.playerID).querySelector("iframe").style.visibility = "visible";
 	        }
 	      });
-	      if (this.props.muted) {
-	        this.player.mute();
-	      }
-	    }, this.props.onError);
+	    });
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -121,56 +126,56 @@ function requireStreamable () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("setCurrentTime", seconds);
+	    this.callPlayer("seek", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction * 100);
-	  }
-	  setLoop(loop) {
-	    this.callPlayer("setLoop", loop);
+	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.duration;
+	    return this.callPlayer("getDuration");
 	  }
 	  getCurrentTime() {
-	    return this.currentTime;
+	    return this.callPlayer("getCurrentPosition");
 	  }
 	  getSecondsLoaded() {
-	    return this.secondsLoaded;
+	    return null;
 	  }
 	  render() {
-	    const id = this.props.url.match(import_patterns.MATCH_URL_STREAMABLE)[1];
+	    const { attributes } = this.props.config;
 	    const style = {
 	      width: "100%",
 	      height: "100%"
 	    };
 	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
+	      "div",
 	      {
-	        ref: this.ref,
-	        src: `https://streamable.com/o/${id}`,
-	        frameBorder: "0",
-	        scrolling: "no",
 	        style,
-	        allow: "encrypted-media; autoplay; fullscreen;"
+	        id: this.playerID,
+	        className: "fb-video",
+	        "data-href": this.props.url,
+	        "data-autoplay": this.props.playing ? "true" : "false",
+	        "data-allowfullscreen": "true",
+	        "data-controls": this.props.controls ? "true" : "false",
+	        ...attributes
 	      }
 	    );
 	  }
 	}
-	__publicField(Streamable, "displayName", "Streamable");
-	__publicField(Streamable, "canPlay", import_patterns.canPlay.streamable);
-	return Streamable_1;
+	__publicField(Facebook, "displayName", "Facebook");
+	__publicField(Facebook, "canPlay", import_patterns.canPlay.facebook);
+	__publicField(Facebook, "loopOnEnded", true);
+	return Facebook_1;
 }
 
-var StreamableExports = /*@__PURE__*/ requireStreamable();
-var Streamable = /*@__PURE__*/index.getDefaultExportFromCjs(StreamableExports);
+var FacebookExports = /*@__PURE__*/ requireFacebook();
+var Facebook = /*@__PURE__*/index.getDefaultExportFromCjs(FacebookExports);
 
-var Streamable$1 = /*#__PURE__*/_mergeNamespaces({
+var Facebook$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Streamable
-}, [StreamableExports]);
+  default: Facebook
+}, [FacebookExports]);
 
-exports.Streamable = Streamable$1;
+exports.Facebook = Facebook$1;

@@ -1,5 +1,7 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
-import React__default from 'react';
+'use strict';
+
+var index = require('./index-ClXrFANI.js');
+var React = require('react');
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -16,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Mixcloud_1;
-var hasRequiredMixcloud;
+var Streamable_1;
+var hasRequiredStreamable;
 
-function requireMixcloud () {
-	if (hasRequiredMixcloud) return Mixcloud_1;
-	hasRequiredMixcloud = 1;
+function requireStreamable () {
+	if (hasRequiredStreamable) return Streamable_1;
+	hasRequiredStreamable = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,17 +56,17 @@ function requireMixcloud () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Mixcloud_exports = {};
-	__export(Mixcloud_exports, {
-	  default: () => Mixcloud
+	var Streamable_exports = {};
+	__export(Streamable_exports, {
+	  default: () => Streamable
 	});
-	Mixcloud_1 = __toCommonJS(Mixcloud_exports);
-	var import_react = __toESM(React__default);
-	var import_utils = /*@__PURE__*/ requireUtils();
-	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://widget.mixcloud.com/media/js/widgetApi.js";
-	const SDK_GLOBAL = "Mixcloud";
-	class Mixcloud extends import_react.Component {
+	Streamable_1 = __toCommonJS(Streamable_exports);
+	var import_react = __toESM(React);
+	var import_utils = /*@__PURE__*/ index.requireUtils();
+	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
+	const SDK_GLOBAL = "playerjs";
+	class Streamable extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
@@ -72,8 +74,10 @@ function requireMixcloud () {
 	    __publicField(this, "currentTime", null);
 	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
+	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
+	      this.callPlayer("unmute");
 	    });
 	    __publicField(this, "ref", (iframe) => {
 	      this.iframe = iframe;
@@ -83,19 +87,29 @@ function requireMixcloud () {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Mixcloud2) => {
-	      this.player = Mixcloud2.PlayerWidget(this.iframe);
-	      this.player.ready.then(() => {
-	        this.player.events.play.on(this.props.onPlay);
-	        this.player.events.pause.on(this.props.onPause);
-	        this.player.events.ended.on(this.props.onEnded);
-	        this.player.events.error.on(this.props.error);
-	        this.player.events.progress.on((seconds, duration) => {
-	          this.currentTime = seconds;
-	          this.duration = duration;
-	        });
-	        this.props.onReady();
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
+	      if (!this.iframe)
+	        return;
+	      this.player = new playerjs.Player(this.iframe);
+	      this.player.setLoop(this.props.loop);
+	      this.player.on("ready", this.props.onReady);
+	      this.player.on("play", this.props.onPlay);
+	      this.player.on("pause", this.props.onPause);
+	      this.player.on("seeked", this.props.onSeek);
+	      this.player.on("ended", this.props.onEnded);
+	      this.player.on("error", this.props.onError);
+	      this.player.on("timeupdate", ({ duration, seconds }) => {
+	        this.duration = duration;
+	        this.currentTime = seconds;
 	      });
+	      this.player.on("buffered", ({ percent }) => {
+	        if (this.duration) {
+	          this.secondsLoaded = this.duration * percent;
+	        }
+	      });
+	      if (this.props.muted) {
+	        this.player.mute();
+	      }
 	    }, this.props.onError);
 	  }
 	  play() {
@@ -107,12 +121,16 @@ function requireMixcloud () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seek", seconds);
+	    this.callPlayer("setCurrentTime", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
+	    this.callPlayer("setVolume", fraction * 100);
+	  }
+	  setLoop(loop) {
+	    this.callPlayer("setLoop", loop);
 	  }
 	  getDuration() {
 	    return this.duration;
@@ -121,44 +139,38 @@ function requireMixcloud () {
 	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return null;
+	    return this.secondsLoaded;
 	  }
 	  render() {
-	    const { url, config } = this.props;
-	    const id = url.match(import_patterns.MATCH_URL_MIXCLOUD)[1];
+	    const id = this.props.url.match(import_patterns.MATCH_URL_STREAMABLE)[1];
 	    const style = {
 	      width: "100%",
 	      height: "100%"
 	    };
-	    const query = (0, import_utils.queryString)({
-	      ...config.options,
-	      feed: `/${id}/`
-	    });
 	    return /* @__PURE__ */ import_react.default.createElement(
 	      "iframe",
 	      {
-	        key: id,
 	        ref: this.ref,
-	        style,
-	        src: `https://www.mixcloud.com/widget/iframe/?${query}`,
+	        src: `https://streamable.com/o/${id}`,
 	        frameBorder: "0",
-	        allow: "autoplay"
+	        scrolling: "no",
+	        style,
+	        allow: "encrypted-media; autoplay; fullscreen;"
 	      }
 	    );
 	  }
 	}
-	__publicField(Mixcloud, "displayName", "Mixcloud");
-	__publicField(Mixcloud, "canPlay", import_patterns.canPlay.mixcloud);
-	__publicField(Mixcloud, "loopOnEnded", true);
-	return Mixcloud_1;
+	__publicField(Streamable, "displayName", "Streamable");
+	__publicField(Streamable, "canPlay", import_patterns.canPlay.streamable);
+	return Streamable_1;
 }
 
-var MixcloudExports = /*@__PURE__*/ requireMixcloud();
-var Mixcloud = /*@__PURE__*/getDefaultExportFromCjs(MixcloudExports);
+var StreamableExports = /*@__PURE__*/ requireStreamable();
+var Streamable = /*@__PURE__*/index.getDefaultExportFromCjs(StreamableExports);
 
-var Mixcloud$1 = /*#__PURE__*/_mergeNamespaces({
+var Streamable$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Mixcloud
-}, [MixcloudExports]);
+  default: Streamable
+}, [StreamableExports]);
 
-export { Mixcloud$1 as M };
+exports.Streamable = Streamable$1;
