@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-ClXrFANI.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DuMA7wzA.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,9 +59,9 @@ function requireFilePlayer () {
 	  default: () => FilePlayer
 	});
 	FilePlayer_1 = __toCommonJS(FilePlayer_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const HAS_NAVIGATOR = typeof navigator !== "undefined";
 	const IS_IPAD_PRO = HAS_NAVIGATOR && navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
 	const IS_IOS = HAS_NAVIGATOR && (/iPad|iPhone|iPod/.test(navigator.userAgent) || IS_IPAD_PRO) && !window.MSStream;
@@ -400,11 +398,11 @@ function requireFilePlayer () {
 }
 
 var FilePlayerExports = /*@__PURE__*/ requireFilePlayer();
-var FilePlayer = /*@__PURE__*/index.getDefaultExportFromCjs(FilePlayerExports);
+var FilePlayer = /*@__PURE__*/getDefaultExportFromCjs(FilePlayerExports);
 
 var FilePlayer$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: FilePlayer
 }, [FilePlayerExports]);
 
-exports.FilePlayer = FilePlayer$1;
+export { FilePlayer$1 as F };

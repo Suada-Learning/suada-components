@@ -1,5 +1,7 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
-import React__default from 'react';
+'use strict';
+
+var index = require('./index-Blp6r9di.js');
+var React = require('react');
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -16,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Twitch_1;
-var hasRequiredTwitch;
+var DailyMotion_1;
+var hasRequiredDailyMotion;
 
-function requireTwitch () {
-	if (hasRequiredTwitch) return Twitch_1;
-	hasRequiredTwitch = 1;
+function requireDailyMotion () {
+	if (hasRequiredDailyMotion) return DailyMotion_1;
+	hasRequiredDailyMotion = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,66 +56,75 @@ function requireTwitch () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Twitch_exports = {};
-	__export(Twitch_exports, {
-	  default: () => Twitch
+	var DailyMotion_exports = {};
+	__export(DailyMotion_exports, {
+	  default: () => DailyMotion
 	});
-	Twitch_1 = __toCommonJS(Twitch_exports);
-	var import_react = __toESM(React__default);
-	var import_utils = /*@__PURE__*/ requireUtils();
-	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://player.twitch.tv/js/embed/v1.js";
-	const SDK_GLOBAL = "Twitch";
-	const PLAYER_ID_PREFIX = "twitch-player-";
-	class Twitch extends import_react.Component {
+	DailyMotion_1 = __toCommonJS(DailyMotion_exports);
+	var import_react = __toESM(React);
+	var import_utils = /*@__PURE__*/ index.requireUtils();
+	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	const SDK_URL = "https://api.dmcdn.net/all.js";
+	const SDK_GLOBAL = "DM";
+	const SDK_GLOBAL_READY = "dmAsyncInit";
+	class DailyMotion extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
+	    __publicField(this, "onDurationChange", () => {
+	      const duration = this.getDuration();
+	      this.props.onDuration(duration);
+	    });
 	    __publicField(this, "mute", () => {
 	      this.callPlayer("setMuted", true);
 	    });
 	    __publicField(this, "unmute", () => {
 	      this.callPlayer("setMuted", false);
 	    });
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
+	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url, isReady) {
-	    const { playsinline, onError, config, controls } = this.props;
-	    const isChannel = import_patterns.MATCH_URL_TWITCH_CHANNEL.test(url);
-	    const id = isChannel ? url.match(import_patterns.MATCH_URL_TWITCH_CHANNEL)[1] : url.match(import_patterns.MATCH_URL_TWITCH_VIDEO)[1];
-	    if (isReady) {
-	      if (isChannel) {
-	        this.player.setChannel(id);
-	      } else {
-	        this.player.setVideo("v" + id);
-	      }
+	  load(url) {
+	    const { controls, config, onError, playing } = this.props;
+	    const [, id] = url.match(import_patterns.MATCH_URL_DAILYMOTION);
+	    if (this.player) {
+	      this.player.load(id, {
+	        start: (0, import_utils.parseStartTime)(url),
+	        autoplay: playing
+	      });
 	      return;
 	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Twitch2) => {
-	      this.player = new Twitch2.Player(this.playerID, {
-	        video: isChannel ? "" : id,
-	        channel: isChannel ? id : "",
-	        height: "100%",
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, (DM) => DM.player).then((DM) => {
+	      if (!this.container)
+	        return;
+	      const Player = DM.player;
+	      this.player = new Player(this.container, {
 	        width: "100%",
-	        playsinline,
-	        autoplay: this.props.playing,
-	        muted: this.props.muted,
-	        // https://github.com/CookPete/react-player/issues/733#issuecomment-549085859
-	        controls: isChannel ? true : controls,
-	        time: (0, import_utils.parseStartTime)(url),
-	        ...config.options
+	        height: "100%",
+	        video: id,
+	        params: {
+	          controls,
+	          autoplay: this.props.playing,
+	          mute: this.props.muted,
+	          start: (0, import_utils.parseStartTime)(url),
+	          origin: window.location.origin,
+	          ...config.params
+	        },
+	        events: {
+	          apiready: this.props.onReady,
+	          seeked: () => this.props.onSeek(this.player.currentTime),
+	          video_end: this.props.onEnded,
+	          durationchange: this.onDurationChange,
+	          pause: this.props.onPause,
+	          playing: this.props.onPlay,
+	          waiting: this.props.onBuffer,
+	          error: (event) => onError(event)
+	        }
 	      });
-	      const { READY, PLAYING, PAUSE, ENDED, ONLINE, OFFLINE, SEEK } = Twitch2.Player;
-	      this.player.addEventListener(READY, this.props.onReady);
-	      this.player.addEventListener(PLAYING, this.props.onPlay);
-	      this.player.addEventListener(PAUSE, this.props.onPause);
-	      this.player.addEventListener(ENDED, this.props.onEnded);
-	      this.player.addEventListener(SEEK, this.props.onSeek);
-	      this.player.addEventListener(ONLINE, this.props.onLoaded);
-	      this.player.addEventListener(OFFLINE, this.props.onLoaded);
 	    }, onError);
 	  }
 	  play() {
@@ -123,7 +134,6 @@ function requireTwitch () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
-	    this.callPlayer("pause");
 	  }
 	  seekTo(seconds, keepPlaying = true) {
 	    this.callPlayer("seek", seconds);
@@ -135,34 +145,36 @@ function requireTwitch () {
 	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.callPlayer("getDuration");
+	    return this.player.duration || null;
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("getCurrentTime");
+	    return this.player.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return null;
+	    return this.player.bufferedTime;
 	  }
 	  render() {
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      display
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement("div", { style, id: this.playerID });
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(Twitch, "displayName", "Twitch");
-	__publicField(Twitch, "canPlay", import_patterns.canPlay.twitch);
-	__publicField(Twitch, "loopOnEnded", true);
-	return Twitch_1;
+	__publicField(DailyMotion, "displayName", "DailyMotion");
+	__publicField(DailyMotion, "canPlay", import_patterns.canPlay.dailymotion);
+	__publicField(DailyMotion, "loopOnEnded", true);
+	return DailyMotion_1;
 }
 
-var TwitchExports = /*@__PURE__*/ requireTwitch();
-var Twitch = /*@__PURE__*/getDefaultExportFromCjs(TwitchExports);
+var DailyMotionExports = /*@__PURE__*/ requireDailyMotion();
+var DailyMotion = /*@__PURE__*/index.getDefaultExportFromCjs(DailyMotionExports);
 
-var Twitch$1 = /*#__PURE__*/_mergeNamespaces({
+var DailyMotion$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Twitch
-}, [TwitchExports]);
+  default: DailyMotion
+}, [DailyMotionExports]);
 
-export { Twitch$1 as T };
+exports.DailyMotion = DailyMotion$1;

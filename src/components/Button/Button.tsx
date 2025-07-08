@@ -22,7 +22,7 @@ export const Button = ({
       style={customStyles}
       onClick={onClick}
       type={htmlType}
-      className={className}
+      className={`${className} button-theme-color`}
     >
       {iconLeft}
       {label}

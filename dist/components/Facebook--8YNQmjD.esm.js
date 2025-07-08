@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DuMA7wzA.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var SoundCloud_1;
-var hasRequiredSoundCloud;
+var Facebook_1;
+var hasRequiredFacebook;
 
-function requireSoundCloud () {
-	if (hasRequiredSoundCloud) return SoundCloud_1;
-	hasRequiredSoundCloud = 1;
+function requireFacebook () {
+	if (hasRequiredFacebook) return Facebook_1;
+	hasRequiredFacebook = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,67 +54,63 @@ function requireSoundCloud () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var SoundCloud_exports = {};
-	__export(SoundCloud_exports, {
-	  default: () => SoundCloud
+	var Facebook_exports = {};
+	__export(Facebook_exports, {
+	  default: () => Facebook
 	});
-	SoundCloud_1 = __toCommonJS(SoundCloud_exports);
+	Facebook_1 = __toCommonJS(Facebook_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://w.soundcloud.com/player/api.js";
-	const SDK_GLOBAL = "SC";
-	class SoundCloud extends import_react.Component {
+	const SDK_URL = "https://connect.facebook.net/en_US/sdk.js";
+	const SDK_GLOBAL = "FB";
+	const SDK_GLOBAL_READY = "fbAsyncInit";
+	const PLAYER_ID_PREFIX = "facebook-player-";
+	class Facebook extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "duration", null);
-	    __publicField(this, "currentTime", null);
-	    __publicField(this, "fractionLoaded", null);
+	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
 	    __publicField(this, "mute", () => {
-	      this.setVolume(0);
+	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
-	      if (this.props.volume !== null) {
-	        this.setVolume(this.props.volume);
-	      }
-	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
+	      this.callPlayer("unmute");
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url, isReady) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((SC) => {
-	      if (!this.iframe)
-	        return;
-	      const { PLAY, PLAY_PROGRESS, PAUSE, FINISH, ERROR } = SC.Widget.Events;
-	      if (!isReady) {
-	        this.player = SC.Widget(this.iframe);
-	        this.player.bind(PLAY, this.props.onPlay);
-	        this.player.bind(PAUSE, () => {
-	          const remaining = this.duration - this.currentTime;
-	          if (remaining < 0.05) {
-	            return;
+	    if (isReady) {
+	      (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => FB.XFBML.parse());
+	      return;
+	    }
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => {
+	      FB.init({
+	        appId: this.props.config.appId,
+	        xfbml: true,
+	        version: this.props.config.version
+	      });
+	      FB.Event.subscribe("xfbml.render", (msg) => {
+	        this.props.onLoaded();
+	      });
+	      FB.Event.subscribe("xfbml.ready", (msg) => {
+	        if (msg.type === "video" && msg.id === this.playerID) {
+	          this.player = msg.instance;
+	          this.player.subscribe("startedPlaying", this.props.onPlay);
+	          this.player.subscribe("paused", this.props.onPause);
+	          this.player.subscribe("finishedPlaying", this.props.onEnded);
+	          this.player.subscribe("startedBuffering", this.props.onBuffer);
+	          this.player.subscribe("finishedBuffering", this.props.onBufferEnd);
+	          this.player.subscribe("error", this.props.onError);
+	          if (this.props.muted) {
+	            this.callPlayer("mute");
+	          } else {
+	            this.callPlayer("unmute");
 	          }
-	          this.props.onPause();
-	        });
-	        this.player.bind(PLAY_PROGRESS, (e) => {
-	          this.currentTime = e.currentPosition / 1e3;
-	          this.fractionLoaded = e.loadedProgress;
-	        });
-	        this.player.bind(FINISH, () => this.props.onEnded());
-	        this.player.bind(ERROR, (e) => this.props.onError(e));
-	      }
-	      this.player.load(url, {
-	        ...this.props.config.options,
-	        callback: () => {
-	          this.player.getDuration((duration) => {
-	            this.duration = duration / 1e3;
-	            this.props.onReady();
-	          });
+	          this.props.onReady();
+	          document.getElementById(this.playerID).querySelector("iframe").style.visibility = "visible";
 	        }
 	      });
 	    });
@@ -128,54 +124,56 @@ function requireSoundCloud () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seekTo", seconds * 1e3);
+	    this.callPlayer("seek", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction * 100);
+	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.duration;
+	    return this.callPlayer("getDuration");
 	  }
 	  getCurrentTime() {
-	    return this.currentTime;
+	    return this.callPlayer("getCurrentPosition");
 	  }
 	  getSecondsLoaded() {
-	    return this.fractionLoaded * this.duration;
+	    return null;
 	  }
 	  render() {
-	    const { display } = this.props;
+	    const { attributes } = this.props.config;
 	    const style = {
 	      width: "100%",
-	      height: "100%",
-	      display
+	      height: "100%"
 	    };
 	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
+	      "div",
 	      {
-	        ref: this.ref,
-	        src: `https://w.soundcloud.com/player/?url=${encodeURIComponent(this.props.url)}`,
 	        style,
-	        frameBorder: 0,
-	        allow: "autoplay"
+	        id: this.playerID,
+	        className: "fb-video",
+	        "data-href": this.props.url,
+	        "data-autoplay": this.props.playing ? "true" : "false",
+	        "data-allowfullscreen": "true",
+	        "data-controls": this.props.controls ? "true" : "false",
+	        ...attributes
 	      }
 	    );
 	  }
 	}
-	__publicField(SoundCloud, "displayName", "SoundCloud");
-	__publicField(SoundCloud, "canPlay", import_patterns.canPlay.soundcloud);
-	__publicField(SoundCloud, "loopOnEnded", true);
-	return SoundCloud_1;
+	__publicField(Facebook, "displayName", "Facebook");
+	__publicField(Facebook, "canPlay", import_patterns.canPlay.facebook);
+	__publicField(Facebook, "loopOnEnded", true);
+	return Facebook_1;
 }
 
-var SoundCloudExports = /*@__PURE__*/ requireSoundCloud();
-var SoundCloud = /*@__PURE__*/getDefaultExportFromCjs(SoundCloudExports);
+var FacebookExports = /*@__PURE__*/ requireFacebook();
+var Facebook = /*@__PURE__*/getDefaultExportFromCjs(FacebookExports);
 
-var SoundCloud$1 = /*#__PURE__*/_mergeNamespaces({
+var Facebook$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: SoundCloud
-}, [SoundCloudExports]);
+  default: Facebook
+}, [FacebookExports]);
 
-export { SoundCloud$1 as S };
+export { Facebook$1 as F };

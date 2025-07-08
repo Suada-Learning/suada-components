@@ -1,5 +1,7 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
-import React__default from 'react';
+'use strict';
+
+var index = require('./index-Blp6r9di.js');
+var React = require('react');
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -16,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Vidyard_1;
-var hasRequiredVidyard;
+var Kaltura_1;
+var hasRequiredKaltura;
 
-function requireVidyard () {
-	if (hasRequiredVidyard) return Vidyard_1;
-	hasRequiredVidyard = 1;
+function requireKaltura () {
+	if (hasRequiredKaltura) return Kaltura_1;
+	hasRequiredKaltura = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,67 +56,63 @@ function requireVidyard () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Vidyard_exports = {};
-	__export(Vidyard_exports, {
-	  default: () => Vidyard
+	var Kaltura_exports = {};
+	__export(Kaltura_exports, {
+	  default: () => Kaltura
 	});
-	Vidyard_1 = __toCommonJS(Vidyard_exports);
-	var import_react = __toESM(React__default);
-	var import_utils = /*@__PURE__*/ requireUtils();
-	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://play.vidyard.com/embed/v4.js";
-	const SDK_GLOBAL = "VidyardV4";
-	const SDK_GLOBAL_READY = "onVidyardAPI";
-	class Vidyard extends import_react.Component {
+	Kaltura_1 = __toCommonJS(Kaltura_exports);
+	var import_react = __toESM(React);
+	var import_utils = /*@__PURE__*/ index.requireUtils();
+	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
+	const SDK_GLOBAL = "playerjs";
+	class Kaltura extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
+	    __publicField(this, "duration", null);
+	    __publicField(this, "currentTime", null);
+	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.setVolume(0);
+	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
-	      if (this.props.volume !== null) {
-	        this.setVolume(this.props.volume);
-	      }
+	      this.callPlayer("unmute");
 	    });
-	    __publicField(this, "ref", (container) => {
-	      this.container = container;
+	    __publicField(this, "ref", (iframe) => {
+	      this.iframe = iframe;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    const { playing, config, onError, onDuration } = this.props;
-	    const id = url && url.match(import_patterns.MATCH_URL_VIDYARD)[1];
-	    if (this.player) {
-	      this.stop();
-	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((Vidyard2) => {
-	      if (!this.container)
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
+	      if (!this.iframe)
 	        return;
-	      Vidyard2.api.addReadyListener((data, player) => {
-	        if (this.player) {
-	          return;
-	        }
-	        this.player = player;
-	        this.player.on("ready", this.props.onReady);
-	        this.player.on("play", this.props.onPlay);
-	        this.player.on("pause", this.props.onPause);
-	        this.player.on("seek", this.props.onSeek);
-	        this.player.on("playerComplete", this.props.onEnded);
-	      }, id);
-	      Vidyard2.api.renderPlayer({
-	        uuid: id,
-	        container: this.container,
-	        autoplay: playing ? 1 : 0,
-	        ...config.options
+	      this.player = new playerjs.Player(this.iframe);
+	      this.player.on("ready", () => {
+	        setTimeout(() => {
+	          this.player.isReady = true;
+	          this.player.setLoop(this.props.loop);
+	          if (this.props.muted) {
+	            this.player.mute();
+	          }
+	          this.addListeners(this.player, this.props);
+	          this.props.onReady();
+	        }, 500);
 	      });
-	      Vidyard2.api.getPlayerMetadata(id).then((meta) => {
-	        this.duration = meta.length_in_seconds;
-	        onDuration(meta.length_in_seconds);
-	      });
-	    }, onError);
+	    }, this.props.onError);
+	  }
+	  addListeners(player, props) {
+	    player.on("play", props.onPlay);
+	    player.on("pause", props.onPause);
+	    player.on("ended", props.onEnded);
+	    player.on("error", props.onError);
+	    player.on("timeupdate", ({ duration, seconds }) => {
+	      this.duration = duration;
+	      this.currentTime = seconds;
+	    });
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -123,10 +121,9 @@ function requireVidyard () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
-	    window.VidyardV4.api.destroyPlayer(this.player);
 	  }
-	  seekTo(amount, keepPlaying = true) {
-	    this.callPlayer("seek", amount);
+	  seekTo(seconds, keepPlaying = true) {
+	    this.callPlayer("setCurrentTime", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
@@ -134,39 +131,48 @@ function requireVidyard () {
 	  setVolume(fraction) {
 	    this.callPlayer("setVolume", fraction);
 	  }
-	  setPlaybackRate(rate) {
-	    this.callPlayer("setPlaybackSpeed", rate);
+	  setLoop(loop) {
+	    this.callPlayer("setLoop", loop);
 	  }
 	  getDuration() {
 	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("currentTime");
+	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return null;
+	    return this.secondsLoaded;
 	  }
 	  render() {
-	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%",
-	      display
+	      height: "100%"
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
+	    return /* @__PURE__ */ import_react.default.createElement(
+	      "iframe",
+	      {
+	        ref: this.ref,
+	        src: this.props.url,
+	        frameBorder: "0",
+	        scrolling: "no",
+	        style,
+	        allow: "encrypted-media; autoplay; fullscreen;",
+	        referrerPolicy: "no-referrer-when-downgrade"
+	      }
+	    );
 	  }
 	}
-	__publicField(Vidyard, "displayName", "Vidyard");
-	__publicField(Vidyard, "canPlay", import_patterns.canPlay.vidyard);
-	return Vidyard_1;
+	__publicField(Kaltura, "displayName", "Kaltura");
+	__publicField(Kaltura, "canPlay", import_patterns.canPlay.kaltura);
+	return Kaltura_1;
 }
 
-var VidyardExports = /*@__PURE__*/ requireVidyard();
-var Vidyard = /*@__PURE__*/getDefaultExportFromCjs(VidyardExports);
+var KalturaExports = /*@__PURE__*/ requireKaltura();
+var Kaltura = /*@__PURE__*/index.getDefaultExportFromCjs(KalturaExports);
 
-var Vidyard$1 = /*#__PURE__*/_mergeNamespaces({
+var Kaltura$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Vidyard
-}, [VidyardExports]);
+  default: Kaltura
+}, [KalturaExports]);
 
-export { Vidyard$1 as V };
+exports.Kaltura = Kaltura$1;

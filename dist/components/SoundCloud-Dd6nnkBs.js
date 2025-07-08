@@ -1,5 +1,7 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
-import React__default from 'react';
+'use strict';
+
+var index = require('./index-Blp6r9di.js');
+var React = require('react');
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -16,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Streamable_1;
-var hasRequiredStreamable;
+var SoundCloud_1;
+var hasRequiredSoundCloud;
 
-function requireStreamable () {
-	if (hasRequiredStreamable) return Streamable_1;
-	hasRequiredStreamable = 1;
+function requireSoundCloud () {
+	if (hasRequiredSoundCloud) return SoundCloud_1;
+	hasRequiredSoundCloud = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,28 +56,30 @@ function requireStreamable () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Streamable_exports = {};
-	__export(Streamable_exports, {
-	  default: () => Streamable
+	var SoundCloud_exports = {};
+	__export(SoundCloud_exports, {
+	  default: () => SoundCloud
 	});
-	Streamable_1 = __toCommonJS(Streamable_exports);
-	var import_react = __toESM(React__default);
-	var import_utils = /*@__PURE__*/ requireUtils();
-	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
-	const SDK_GLOBAL = "playerjs";
-	class Streamable extends import_react.Component {
+	SoundCloud_1 = __toCommonJS(SoundCloud_exports);
+	var import_react = __toESM(React);
+	var import_utils = /*@__PURE__*/ index.requireUtils();
+	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	const SDK_URL = "https://w.soundcloud.com/player/api.js";
+	const SDK_GLOBAL = "SC";
+	class SoundCloud extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
 	    __publicField(this, "duration", null);
 	    __publicField(this, "currentTime", null);
-	    __publicField(this, "secondsLoaded", null);
+	    __publicField(this, "fractionLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
+	      this.setVolume(0);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
+	      if (this.props.volume !== null) {
+	        this.setVolume(this.props.volume);
+	      }
 	    });
 	    __publicField(this, "ref", (iframe) => {
 	      this.iframe = iframe;
@@ -84,31 +88,38 @@ function requireStreamable () {
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
+	  load(url, isReady) {
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((SC) => {
 	      if (!this.iframe)
 	        return;
-	      this.player = new playerjs.Player(this.iframe);
-	      this.player.setLoop(this.props.loop);
-	      this.player.on("ready", this.props.onReady);
-	      this.player.on("play", this.props.onPlay);
-	      this.player.on("pause", this.props.onPause);
-	      this.player.on("seeked", this.props.onSeek);
-	      this.player.on("ended", this.props.onEnded);
-	      this.player.on("error", this.props.onError);
-	      this.player.on("timeupdate", ({ duration, seconds }) => {
-	        this.duration = duration;
-	        this.currentTime = seconds;
-	      });
-	      this.player.on("buffered", ({ percent }) => {
-	        if (this.duration) {
-	          this.secondsLoaded = this.duration * percent;
+	      const { PLAY, PLAY_PROGRESS, PAUSE, FINISH, ERROR } = SC.Widget.Events;
+	      if (!isReady) {
+	        this.player = SC.Widget(this.iframe);
+	        this.player.bind(PLAY, this.props.onPlay);
+	        this.player.bind(PAUSE, () => {
+	          const remaining = this.duration - this.currentTime;
+	          if (remaining < 0.05) {
+	            return;
+	          }
+	          this.props.onPause();
+	        });
+	        this.player.bind(PLAY_PROGRESS, (e) => {
+	          this.currentTime = e.currentPosition / 1e3;
+	          this.fractionLoaded = e.loadedProgress;
+	        });
+	        this.player.bind(FINISH, () => this.props.onEnded());
+	        this.player.bind(ERROR, (e) => this.props.onError(e));
+	      }
+	      this.player.load(url, {
+	        ...this.props.config.options,
+	        callback: () => {
+	          this.player.getDuration((duration) => {
+	            this.duration = duration / 1e3;
+	            this.props.onReady();
+	          });
 	        }
 	      });
-	      if (this.props.muted) {
-	        this.player.mute();
-	      }
-	    }, this.props.onError);
+	    });
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -119,16 +130,13 @@ function requireStreamable () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("setCurrentTime", seconds);
+	    this.callPlayer("seekTo", seconds * 1e3);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
 	    this.callPlayer("setVolume", fraction * 100);
-	  }
-	  setLoop(loop) {
-	    this.callPlayer("setLoop", loop);
 	  }
 	  getDuration() {
 	    return this.duration;
@@ -137,38 +145,39 @@ function requireStreamable () {
 	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return this.secondsLoaded;
+	    return this.fractionLoaded * this.duration;
 	  }
 	  render() {
-	    const id = this.props.url.match(import_patterns.MATCH_URL_STREAMABLE)[1];
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      display
 	    };
 	    return /* @__PURE__ */ import_react.default.createElement(
 	      "iframe",
 	      {
 	        ref: this.ref,
-	        src: `https://streamable.com/o/${id}`,
-	        frameBorder: "0",
-	        scrolling: "no",
+	        src: `https://w.soundcloud.com/player/?url=${encodeURIComponent(this.props.url)}`,
 	        style,
-	        allow: "encrypted-media; autoplay; fullscreen;"
+	        frameBorder: 0,
+	        allow: "autoplay"
 	      }
 	    );
 	  }
 	}
-	__publicField(Streamable, "displayName", "Streamable");
-	__publicField(Streamable, "canPlay", import_patterns.canPlay.streamable);
-	return Streamable_1;
+	__publicField(SoundCloud, "displayName", "SoundCloud");
+	__publicField(SoundCloud, "canPlay", import_patterns.canPlay.soundcloud);
+	__publicField(SoundCloud, "loopOnEnded", true);
+	return SoundCloud_1;
 }
 
-var StreamableExports = /*@__PURE__*/ requireStreamable();
-var Streamable = /*@__PURE__*/getDefaultExportFromCjs(StreamableExports);
+var SoundCloudExports = /*@__PURE__*/ requireSoundCloud();
+var SoundCloud = /*@__PURE__*/index.getDefaultExportFromCjs(SoundCloudExports);
 
-var Streamable$1 = /*#__PURE__*/_mergeNamespaces({
+var SoundCloud$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Streamable
-}, [StreamableExports]);
+  default: SoundCloud
+}, [SoundCloudExports]);
 
-export { Streamable$1 as S };
+exports.SoundCloud = SoundCloud$1;

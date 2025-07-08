@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-ClXrFANI.js');
-var React = require('react');
+import { a as requirePatterns, g as getDefaultExportFromCjs } from './index-DuMA7wzA.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,8 +59,8 @@ function requireMux () {
 	  default: () => Mux
 	});
 	Mux_1 = __toCommonJS(Mux_exports);
-	var import_react = __toESM(React);
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const SDK_URL = "https://cdn.jsdelivr.net/npm/@mux/mux-player@VERSION/dist/mux-player.mjs";
 	class Mux extends import_react.Component {
 	  constructor() {
@@ -256,11 +254,11 @@ function requireMux () {
 }
 
 var MuxExports = /*@__PURE__*/ requireMux();
-var Mux = /*@__PURE__*/index.getDefaultExportFromCjs(MuxExports);
+var Mux = /*@__PURE__*/getDefaultExportFromCjs(MuxExports);
 
 var Mux$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: Mux
 }, [MuxExports]);
 
-exports.Mux = Mux$1;
+export { Mux$1 as M };

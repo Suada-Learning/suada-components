@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-Cw3NZQ3s.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DuMA7wzA.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Facebook_1;
-var hasRequiredFacebook;
+var Twitch_1;
+var hasRequiredTwitch;
 
-function requireFacebook () {
-	if (hasRequiredFacebook) return Facebook_1;
-	hasRequiredFacebook = 1;
+function requireTwitch () {
+	if (hasRequiredTwitch) return Twitch_1;
+	hasRequiredTwitch = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,66 +54,67 @@ function requireFacebook () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Facebook_exports = {};
-	__export(Facebook_exports, {
-	  default: () => Facebook
+	var Twitch_exports = {};
+	__export(Twitch_exports, {
+	  default: () => Twitch
 	});
-	Facebook_1 = __toCommonJS(Facebook_exports);
+	Twitch_1 = __toCommonJS(Twitch_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://connect.facebook.net/en_US/sdk.js";
-	const SDK_GLOBAL = "FB";
-	const SDK_GLOBAL_READY = "fbAsyncInit";
-	const PLAYER_ID_PREFIX = "facebook-player-";
-	class Facebook extends import_react.Component {
+	const SDK_URL = "https://player.twitch.tv/js/embed/v1.js";
+	const SDK_GLOBAL = "Twitch";
+	const PLAYER_ID_PREFIX = "twitch-player-";
+	class Twitch extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
 	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
+	      this.callPlayer("setMuted", true);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
+	      this.callPlayer("setMuted", false);
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url, isReady) {
+	    const { playsinline, onError, config, controls } = this.props;
+	    const isChannel = import_patterns.MATCH_URL_TWITCH_CHANNEL.test(url);
+	    const id = isChannel ? url.match(import_patterns.MATCH_URL_TWITCH_CHANNEL)[1] : url.match(import_patterns.MATCH_URL_TWITCH_VIDEO)[1];
 	    if (isReady) {
-	      (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => FB.XFBML.parse());
+	      if (isChannel) {
+	        this.player.setChannel(id);
+	      } else {
+	        this.player.setVideo("v" + id);
+	      }
 	      return;
 	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => {
-	      FB.init({
-	        appId: this.props.config.appId,
-	        xfbml: true,
-	        version: this.props.config.version
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Twitch2) => {
+	      this.player = new Twitch2.Player(this.playerID, {
+	        video: isChannel ? "" : id,
+	        channel: isChannel ? id : "",
+	        height: "100%",
+	        width: "100%",
+	        playsinline,
+	        autoplay: this.props.playing,
+	        muted: this.props.muted,
+	        // https://github.com/CookPete/react-player/issues/733#issuecomment-549085859
+	        controls: isChannel ? true : controls,
+	        time: (0, import_utils.parseStartTime)(url),
+	        ...config.options
 	      });
-	      FB.Event.subscribe("xfbml.render", (msg) => {
-	        this.props.onLoaded();
-	      });
-	      FB.Event.subscribe("xfbml.ready", (msg) => {
-	        if (msg.type === "video" && msg.id === this.playerID) {
-	          this.player = msg.instance;
-	          this.player.subscribe("startedPlaying", this.props.onPlay);
-	          this.player.subscribe("paused", this.props.onPause);
-	          this.player.subscribe("finishedPlaying", this.props.onEnded);
-	          this.player.subscribe("startedBuffering", this.props.onBuffer);
-	          this.player.subscribe("finishedBuffering", this.props.onBufferEnd);
-	          this.player.subscribe("error", this.props.onError);
-	          if (this.props.muted) {
-	            this.callPlayer("mute");
-	          } else {
-	            this.callPlayer("unmute");
-	          }
-	          this.props.onReady();
-	          document.getElementById(this.playerID).querySelector("iframe").style.visibility = "visible";
-	        }
-	      });
-	    });
+	      const { READY, PLAYING, PAUSE, ENDED, ONLINE, OFFLINE, SEEK } = Twitch2.Player;
+	      this.player.addEventListener(READY, this.props.onReady);
+	      this.player.addEventListener(PLAYING, this.props.onPlay);
+	      this.player.addEventListener(PAUSE, this.props.onPause);
+	      this.player.addEventListener(ENDED, this.props.onEnded);
+	      this.player.addEventListener(SEEK, this.props.onSeek);
+	      this.player.addEventListener(ONLINE, this.props.onLoaded);
+	      this.player.addEventListener(OFFLINE, this.props.onLoaded);
+	    }, onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -122,6 +123,7 @@ function requireFacebook () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
+	    this.callPlayer("pause");
 	  }
 	  seekTo(seconds, keepPlaying = true) {
 	    this.callPlayer("seek", seconds);
@@ -136,44 +138,31 @@ function requireFacebook () {
 	    return this.callPlayer("getDuration");
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("getCurrentPosition");
+	    return this.callPlayer("getCurrentTime");
 	  }
 	  getSecondsLoaded() {
 	    return null;
 	  }
 	  render() {
-	    const { attributes } = this.props.config;
 	    const style = {
 	      width: "100%",
 	      height: "100%"
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement(
-	      "div",
-	      {
-	        style,
-	        id: this.playerID,
-	        className: "fb-video",
-	        "data-href": this.props.url,
-	        "data-autoplay": this.props.playing ? "true" : "false",
-	        "data-allowfullscreen": "true",
-	        "data-controls": this.props.controls ? "true" : "false",
-	        ...attributes
-	      }
-	    );
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style, id: this.playerID });
 	  }
 	}
-	__publicField(Facebook, "displayName", "Facebook");
-	__publicField(Facebook, "canPlay", import_patterns.canPlay.facebook);
-	__publicField(Facebook, "loopOnEnded", true);
-	return Facebook_1;
+	__publicField(Twitch, "displayName", "Twitch");
+	__publicField(Twitch, "canPlay", import_patterns.canPlay.twitch);
+	__publicField(Twitch, "loopOnEnded", true);
+	return Twitch_1;
 }
 
-var FacebookExports = /*@__PURE__*/ requireFacebook();
-var Facebook = /*@__PURE__*/getDefaultExportFromCjs(FacebookExports);
+var TwitchExports = /*@__PURE__*/ requireTwitch();
+var Twitch = /*@__PURE__*/getDefaultExportFromCjs(TwitchExports);
 
-var Facebook$1 = /*#__PURE__*/_mergeNamespaces({
+var Twitch$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Facebook
-}, [FacebookExports]);
+  default: Twitch
+}, [TwitchExports]);
 
-export { Facebook$1 as F };
+export { Twitch$1 as T };

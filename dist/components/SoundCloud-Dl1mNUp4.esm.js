@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-ClXrFANI.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DuMA7wzA.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -18,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Mixcloud_1;
-var hasRequiredMixcloud;
+var SoundCloud_1;
+var hasRequiredSoundCloud;
 
-function requireMixcloud () {
-	if (hasRequiredMixcloud) return Mixcloud_1;
-	hasRequiredMixcloud = 1;
+function requireSoundCloud () {
+	if (hasRequiredSoundCloud) return SoundCloud_1;
+	hasRequiredSoundCloud = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -56,26 +54,30 @@ function requireMixcloud () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Mixcloud_exports = {};
-	__export(Mixcloud_exports, {
-	  default: () => Mixcloud
+	var SoundCloud_exports = {};
+	__export(SoundCloud_exports, {
+	  default: () => SoundCloud
 	});
-	Mixcloud_1 = __toCommonJS(Mixcloud_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
-	const SDK_URL = "https://widget.mixcloud.com/media/js/widgetApi.js";
-	const SDK_GLOBAL = "Mixcloud";
-	class Mixcloud extends import_react.Component {
+	SoundCloud_1 = __toCommonJS(SoundCloud_exports);
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
+	const SDK_URL = "https://w.soundcloud.com/player/api.js";
+	const SDK_GLOBAL = "SC";
+	class SoundCloud extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
 	    __publicField(this, "duration", null);
 	    __publicField(this, "currentTime", null);
-	    __publicField(this, "secondsLoaded", null);
+	    __publicField(this, "fractionLoaded", null);
 	    __publicField(this, "mute", () => {
+	      this.setVolume(0);
 	    });
 	    __publicField(this, "unmute", () => {
+	      if (this.props.volume !== null) {
+	        this.setVolume(this.props.volume);
+	      }
 	    });
 	    __publicField(this, "ref", (iframe) => {
 	      this.iframe = iframe;
@@ -84,21 +86,38 @@ function requireMixcloud () {
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Mixcloud2) => {
-	      this.player = Mixcloud2.PlayerWidget(this.iframe);
-	      this.player.ready.then(() => {
-	        this.player.events.play.on(this.props.onPlay);
-	        this.player.events.pause.on(this.props.onPause);
-	        this.player.events.ended.on(this.props.onEnded);
-	        this.player.events.error.on(this.props.error);
-	        this.player.events.progress.on((seconds, duration) => {
-	          this.currentTime = seconds;
-	          this.duration = duration;
+	  load(url, isReady) {
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((SC) => {
+	      if (!this.iframe)
+	        return;
+	      const { PLAY, PLAY_PROGRESS, PAUSE, FINISH, ERROR } = SC.Widget.Events;
+	      if (!isReady) {
+	        this.player = SC.Widget(this.iframe);
+	        this.player.bind(PLAY, this.props.onPlay);
+	        this.player.bind(PAUSE, () => {
+	          const remaining = this.duration - this.currentTime;
+	          if (remaining < 0.05) {
+	            return;
+	          }
+	          this.props.onPause();
 	        });
-	        this.props.onReady();
+	        this.player.bind(PLAY_PROGRESS, (e) => {
+	          this.currentTime = e.currentPosition / 1e3;
+	          this.fractionLoaded = e.loadedProgress;
+	        });
+	        this.player.bind(FINISH, () => this.props.onEnded());
+	        this.player.bind(ERROR, (e) => this.props.onError(e));
+	      }
+	      this.player.load(url, {
+	        ...this.props.config.options,
+	        callback: () => {
+	          this.player.getDuration((duration) => {
+	            this.duration = duration / 1e3;
+	            this.props.onReady();
+	          });
+	        }
 	      });
-	    }, this.props.onError);
+	    });
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -109,12 +128,13 @@ function requireMixcloud () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seek", seconds);
+	    this.callPlayer("seekTo", seconds * 1e3);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
+	    this.callPlayer("setVolume", fraction * 100);
 	  }
 	  getDuration() {
 	    return this.duration;
@@ -123,44 +143,39 @@ function requireMixcloud () {
 	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return null;
+	    return this.fractionLoaded * this.duration;
 	  }
 	  render() {
-	    const { url, config } = this.props;
-	    const id = url.match(import_patterns.MATCH_URL_MIXCLOUD)[1];
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      display
 	    };
-	    const query = (0, import_utils.queryString)({
-	      ...config.options,
-	      feed: `/${id}/`
-	    });
 	    return /* @__PURE__ */ import_react.default.createElement(
 	      "iframe",
 	      {
-	        key: id,
 	        ref: this.ref,
+	        src: `https://w.soundcloud.com/player/?url=${encodeURIComponent(this.props.url)}`,
 	        style,
-	        src: `https://www.mixcloud.com/widget/iframe/?${query}`,
-	        frameBorder: "0",
+	        frameBorder: 0,
 	        allow: "autoplay"
 	      }
 	    );
 	  }
 	}
-	__publicField(Mixcloud, "displayName", "Mixcloud");
-	__publicField(Mixcloud, "canPlay", import_patterns.canPlay.mixcloud);
-	__publicField(Mixcloud, "loopOnEnded", true);
-	return Mixcloud_1;
+	__publicField(SoundCloud, "displayName", "SoundCloud");
+	__publicField(SoundCloud, "canPlay", import_patterns.canPlay.soundcloud);
+	__publicField(SoundCloud, "loopOnEnded", true);
+	return SoundCloud_1;
 }
 
-var MixcloudExports = /*@__PURE__*/ requireMixcloud();
-var Mixcloud = /*@__PURE__*/index.getDefaultExportFromCjs(MixcloudExports);
+var SoundCloudExports = /*@__PURE__*/ requireSoundCloud();
+var SoundCloud = /*@__PURE__*/getDefaultExportFromCjs(SoundCloudExports);
 
-var Mixcloud$1 = /*#__PURE__*/_mergeNamespaces({
+var SoundCloud$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Mixcloud
-}, [MixcloudExports]);
+  default: SoundCloud
+}, [SoundCloudExports]);
 
-exports.Mixcloud = Mixcloud$1;
+export { SoundCloud$1 as S };

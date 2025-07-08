@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-ClXrFANI.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DuMA7wzA.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,9 +59,9 @@ function requireWistia () {
 	  default: () => Wistia
 	});
 	Wistia_1 = __toCommonJS(Wistia_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const SDK_URL = "https://fast.wistia.com/assets/external/E-v1.js";
 	const SDK_GLOBAL = "Wistia";
 	const PLAYER_ID_PREFIX = "wistia-player-";
@@ -180,11 +178,11 @@ function requireWistia () {
 }
 
 var WistiaExports = /*@__PURE__*/ requireWistia();
-var Wistia = /*@__PURE__*/index.getDefaultExportFromCjs(WistiaExports);
+var Wistia = /*@__PURE__*/getDefaultExportFromCjs(WistiaExports);
 
 var Wistia$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: Wistia
 }, [WistiaExports]);
 
-exports.Wistia = Wistia$1;
+export { Wistia$1 as W };

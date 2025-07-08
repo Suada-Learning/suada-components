@@ -2392,10 +2392,7 @@ var unitlessKeys$1 = {
 
 var f="undefined"!=typeof process&&void 0!==process.env&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",m="active",y="data-styled-version",v="6.1.17",g="/*!sc*/\n",S="undefined"!=typeof window&&"HTMLElement"in window,w$1=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!==process.env.NODE_ENV),E=/invalid hook call/i,N=new Set,P=function(t,n){if("production"!==process.env.NODE_ENV){var o=n?' with the id of "'.concat(n,'"'):"",s="The component ".concat(t).concat(o," has been created dynamically.\n")+"You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n",i=console.error;try{var a=!0;console.error=function(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];E.test(t)?(a=!1,N.delete(s)):i.apply(void 0,__spreadArray([t],n,!1));},React.useRef(),a&&!N.has(s)&&(console.warn(s),N.add(s));}catch(e){E.test(e.message)&&N.delete(s);}finally{console.error=i;}}},_$2=Object.freeze([]),C=Object.freeze({});function I(e,t,n){return void 0===n&&(n=C),e.theme!==n.theme&&e.theme||t||n.theme}var A=new Set(["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","track","u","ul","use","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"]),O=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,D=/(^-|-$)/g;function R(e){return e.replace(O,"-").replace(D,"")}var T=/(a)(d)/gi,k=52,j$1=function(e){return String.fromCharCode(e+(e>25?39:97))};function x(e){var t,n="";for(t=Math.abs(e);t>k;t=t/k|0)n=j$1(t%k)+n;return (j$1(t%k)+n).replace(T,"$1-$2")}var V,F=5381,M=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},z=function(e){return M(F,e)};function $(e){return x(z(e)>>>0)}function B(e){return "production"!==process.env.NODE_ENV&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function L(e){return "string"==typeof e&&("production"===process.env.NODE_ENV||e.charAt(0)===e.charAt(0).toLowerCase())}var G="function"==typeof Symbol&&Symbol.for,Y=G?Symbol.for("react.memo"):60115,q=G?Symbol.for("react.forward_ref"):60112,W={childContextTypes:true,contextType:true,contextTypes:true,defaultProps:true,displayName:true,getDefaultProps:true,getDerivedStateFromError:true,getDerivedStateFromProps:true,mixins:true,propTypes:true,type:true},H={name:true,length:true,prototype:true,caller:true,callee:true,arguments:true,arity:true},U={$$typeof:true,compare:true,defaultProps:true,displayName:true,propTypes:true,type:true},J=((V={})[q]={$$typeof:true,render:true,defaultProps:true,displayName:true,propTypes:true},V[Y]=U,V);function X(e){return ("type"in(t=e)&&t.type.$$typeof)===Y?U:"$$typeof"in e?J[e.$$typeof]:W;var t;}var Z=Object.defineProperty,K=Object.getOwnPropertyNames,Q=Object.getOwnPropertySymbols,ee=Object.getOwnPropertyDescriptor,te=Object.getPrototypeOf,ne=Object.prototype;function oe(e,t,n){if("string"!=typeof t){if(ne){var o=te(t);o&&o!==ne&&oe(e,o,n);}var r=K(t);Q&&(r=r.concat(Q(t)));for(var s=X(e),i=X(t),a=0;a<r.length;++a){var c=r[a];if(!(c in H||n&&n[c]||i&&c in i||s&&c in s)){var l=ee(t,c);try{Z(e,c,l);}catch(e){}}}}return e}function re(e){return "function"==typeof e}function se(e){return "object"==typeof e&&"styledComponentId"in e}function ie(e,t){return e&&t?"".concat(e," ").concat(t):e||t||""}function ae(e,t){if(0===e.length)return "";for(var n=e[0],o=1;o<e.length;o++)n+=e[o];return n}function ce(e){return null!==e&&"object"==typeof e&&e.constructor.name===Object.name&&!("props"in e&&e.$$typeof)}function le(e,t,n){if(void 0===n&&(n=false),!n&&!ce(e)&&!Array.isArray(e))return t;if(Array.isArray(t))for(var o=0;o<t.length;o++)e[o]=le(e[o],t[o]);else if(ce(t))for(var o in t)e[o]=le(e[o],t[o]);return e}function ue(e,t){Object.defineProperty(e,"toString",{value:t});}var pe="production"!==process.env.NODE_ENV?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",18:"ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"}:{};function de(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];for(var n=e[0],o=[],r=1,s=e.length;r<s;r+=1)o.push(e[r]);return o.forEach(function(e){n=n.replace(/%[a-z]/,e);}),n}function he(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];return "production"===process.env.NODE_ENV?new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/main/packages/styled-components/src/utils/errors.md#".concat(t," for more information.").concat(n.length>0?" Args: ".concat(n.join(", ")):"")):new Error(de.apply(void 0,__spreadArray([pe[t]],n,false)).trim())}var fe=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}return e.prototype.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},e.prototype.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,o=n.length,r=o;e>=r;)if((r<<=1)<0)throw he(16,"".concat(e));this.groupSizes=new Uint32Array(r),this.groupSizes.set(n),this.length=r;for(var s=o;s<r;s++)this.groupSizes[s]=0;}for(var i=this.indexOfGroup(e+1),a=(s=0,t.length);s<a;s++)this.tag.insertRule(i,t[s])&&(this.groupSizes[e]++,i++);},e.prototype.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),o=n+t;this.groupSizes[e]=0;for(var r=n;r<o;r++)this.tag.deleteRule(n);}},e.prototype.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],o=this.indexOfGroup(e),r=o+n,s=o;s<r;s++)t+="".concat(this.tag.getRule(s)).concat(g);return t},e}(),me=1<<30,ye=new Map,ve=new Map,ge=1,Se=function(e){if(ye.has(e))return ye.get(e);for(;ve.has(ge);)ge++;var t=ge++;if("production"!==process.env.NODE_ENV&&((0|t)<0||t>me))throw he(16,"".concat(t));return ye.set(e,t),ve.set(t,e),t},we=function(e,t){ge=t+1,ye.set(e,t),ve.set(t,e);},be="style[".concat(f,"][").concat(y,'="').concat(v,'"]'),Ee=new RegExp("^".concat(f,'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')),Ne=function(e,t,n){for(var o,r=n.split(","),s=0,i=r.length;s<i;s++)(o=r[s])&&e.registerName(t,o);},Pe=function(e,t){for(var n,o=(null!==(n=t.textContent)&&void 0!==n?n:"").split(g),r=[],s=0,i=o.length;s<i;s++){var a=o[s].trim();if(a){var c=a.match(Ee);if(c){var l=0|parseInt(c[1],10),u=c[2];0!==l&&(we(u,l),Ne(e,u,c[3]),e.getTag().insertRules(l,r)),r.length=0;}else r.push(a);}}},_e=function(e){for(var t=document.querySelectorAll(be),n=0,o=t.length;n<o;n++){var r=t[n];r&&r.getAttribute(f)!==m&&(Pe(e,r),r.parentNode&&r.parentNode.removeChild(r));}};function Ce(){return "undefined"!=typeof __webpack_nonce__?__webpack_nonce__:null}var Ie=function(e){var t=document.head,n=e||t,o=document.createElement("style"),r=function(e){var t=Array.from(e.querySelectorAll("style[".concat(f,"]")));return t[t.length-1]}(n),s=void 0!==r?r.nextSibling:null;o.setAttribute(f,m),o.setAttribute(y,v);var i=Ce();return i&&o.setAttribute("nonce",i),n.insertBefore(o,s),o},Ae=function(){function e(e){this.element=Ie(e),this.element.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,o=t.length;n<o;n++){var r=t[n];if(r.ownerNode===e)return r}throw he(17)}(this.element),this.length=0;}return e.prototype.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return  false}},e.prototype.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},e.prototype.getRule=function(e){var t=this.sheet.cssRules[e];return t&&t.cssText?t.cssText:""},e}(),Oe=function(){function e(e){this.element=Ie(e),this.nodes=this.element.childNodes,this.length=0;}return e.prototype.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t);return this.element.insertBefore(n,this.nodes[e]||null),this.length++,true}return  false},e.prototype.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),De=function(){function e(e){this.rules=[],this.length=0;}return e.prototype.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,true)},e.prototype.deleteRule=function(e){this.rules.splice(e,1),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),Re=S,Te={isServer:!S,useCSSOMInjection:!w$1},ke=function(){function e(e,n,o){ void 0===e&&(e=C),void 0===n&&(n={});var r=this;this.options=__assign(__assign({},Te),e),this.gs=n,this.names=new Map(o),this.server=!!e.isServer,!this.server&&S&&Re&&(Re=false,_e(this)),ue(this,function(){return function(e){for(var t=e.getTag(),n=t.length,o="",r=function(n){var r=function(e){return ve.get(e)}(n);if(void 0===r)return "continue";var s=e.names.get(r),i=t.getGroup(n);if(void 0===s||!s.size||0===i.length)return "continue";var a="".concat(f,".g").concat(n,'[id="').concat(r,'"]'),c="";void 0!==s&&s.forEach(function(e){e.length>0&&(c+="".concat(e,","));}),o+="".concat(i).concat(a,'{content:"').concat(c,'"}').concat(g);},s=0;s<n;s++)r(s);return o}(r)});}return e.registerId=function(e){return Se(e)},e.prototype.rehydrate=function(){!this.server&&S&&_e(this);},e.prototype.reconstructWithOptions=function(n,o){return void 0===o&&(o=true),new e(__assign(__assign({},this.options),n),this.gs,o&&this.names||void 0)},e.prototype.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},e.prototype.getTag=function(){return this.tag||(this.tag=(e=function(e){var t=e.useCSSOMInjection,n=e.target;return e.isServer?new De(n):t?new Ae(n):new Oe(n)}(this.options),new fe(e)));var e;},e.prototype.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},e.prototype.registerName=function(e,t){if(Se(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},e.prototype.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(Se(e),n);},e.prototype.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},e.prototype.clearRules=function(e){this.getTag().clearGroup(Se(e)),this.clearNames(e);},e.prototype.clearTag=function(){this.tag=void 0;},e}(),je=/&/g,xe=/^\s*\/\/.*$/gm;function Ve(e,t){return e.map(function(e){return "rule"===e.type&&(e.value="".concat(t," ").concat(e.value),e.value=e.value.replaceAll(",",",".concat(t," ")),e.props=e.props.map(function(e){return "".concat(t," ").concat(e)})),Array.isArray(e.children)&&"@keyframes"!==e.type&&(e.children=Ve(e.children,t)),e})}function Fe(e){var t,n,o,r=C,s=r.options,i=void 0===s?C:s,a=r.plugins,c=void 0===a?_$2:a,l=function(e,o,r){return r.startsWith(n)&&r.endsWith(n)&&r.replaceAll(n,"").length>0?".".concat(t):e},u=c.slice();u.push(function(e){e.type===RULESET$1&&e.value.includes("&")&&(e.props[0]=e.props[0].replace(je,n).replace(o,l));}),i.prefix&&u.push(prefixer$1),u.push(stringify$1);var p=function(e,r,s,a){ void 0===r&&(r=""),void 0===s&&(s=""),void 0===a&&(a="&"),t=a,n=r,o=new RegExp("\\".concat(n,"\\b"),"g");var c=e.replace(xe,""),l=compile$1(s||r?"".concat(s," ").concat(r," { ").concat(c," }"):c);i.namespace&&(l=Ve(l,i.namespace));var p=[];return serialize$1(l,middleware$1(u.concat(rulesheet$1(function(e){return p.push(e)})))),p};return p.hash=c.length?c.reduce(function(e,t){return t.name||he(15),M(e,t.name)},F).toString():"",p}var Me=new ke,ze=Fe(),$e=React.createContext({shouldForwardProp:void 0,styleSheet:Me,stylis:ze});$e.Consumer;React.createContext(void 0);function Ge(){return React.useContext($e)}var qe=function(){function e(e,t){var n=this;this.inject=function(e,t){ void 0===t&&(t=ze);var o=n.name+t.hash;e.hasNameForId(n.id,o)||e.insertRules(n.id,o,t(n.rules,o,"@keyframes"));},this.name=e,this.id="sc-keyframes-".concat(e),this.rules=t,ue(this,function(){throw he(12,String(n.name))});}return e.prototype.getName=function(e){return void 0===e&&(e=ze),this.name+e.hash},e}(),We=function(e){return e>="A"&&e<="Z"};function He(e){for(var t="",n=0;n<e.length;n++){var o=e[n];if(1===n&&"-"===o&&"-"===e[0])return e;We(o)?t+="-"+o.toLowerCase():t+=o;}return t.startsWith("ms-")?"-"+t:t}var Ue=function(e){return null==e||false===e||""===e},Je=function(t){var n,o,r=[];for(var s in t){var i=t[s];t.hasOwnProperty(s)&&!Ue(i)&&(Array.isArray(i)&&i.isCss||re(i)?r.push("".concat(He(s),":"),i,";"):ce(i)?r.push.apply(r,__spreadArray(__spreadArray(["".concat(s," {")],Je(i),false),["}"],false)):r.push("".concat(He(s),": ").concat((n=s,null==(o=i)||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||n in unitlessKeys$1||n.startsWith("--")?String(o).trim():"".concat(o,"px")),";")));}return r};function Xe(e,t,n,o){if(Ue(e))return [];if(se(e))return [".".concat(e.styledComponentId)];if(re(e)){if(!re(s=e)||s.prototype&&s.prototype.isReactComponent||!t)return [e];var r=e(t);return "production"===process.env.NODE_ENV||"object"!=typeof r||Array.isArray(r)||r instanceof qe||ce(r)||null===r||console.error("".concat(B(e)," is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")),Xe(r,t,n,o)}var s;return e instanceof qe?n?(e.inject(n,o),[e.getName(o)]):[e]:ce(e)?Je(e):Array.isArray(e)?Array.prototype.concat.apply(_$2,e.map(function(e){return Xe(e,t,n,o)})):[e.toString()]}function Ze(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(re(n)&&!se(n))return  false}return  true}var Ke=z(v),Qe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"===process.env.NODE_ENV&&(void 0===n||n.isStatic)&&Ze(e),this.componentId=t,this.baseHash=M(Ke,t),this.baseStyle=n,ke.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var o=this.baseStyle?this.baseStyle.generateAndInjectStyles(e,t,n):"";if(this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(this.componentId,this.staticRulesId))o=ie(o,this.staticRulesId);else {var r=ae(Xe(this.rules,e,t,n)),s=x(M(this.baseHash,r)>>>0);if(!t.hasNameForId(this.componentId,s)){var i=n(r,".".concat(s),void 0,this.componentId);t.insertRules(this.componentId,s,i);}o=ie(o,s),this.staticRulesId=s;}else {for(var a=M(this.baseHash,n.hash),c="",l=0;l<this.rules.length;l++){var u=this.rules[l];if("string"==typeof u)c+=u,"production"!==process.env.NODE_ENV&&(a=M(a,u));else if(u){var p=ae(Xe(u,e,t,n));a=M(a,p+l),c+=p;}}if(c){var d=x(a>>>0);t.hasNameForId(this.componentId,d)||t.insertRules(this.componentId,d,n(c,".".concat(d),void 0,this.componentId)),o=ie(o,d);}}return o},e}(),et=React.createContext(void 0);et.Consumer;var rt={},st=new Set;function it(e,r,s){var i=se(e),a=e,c=!L(e),p=r.attrs,d=void 0===p?_$2:p,h=r.componentId,f=void 0===h?function(e,t){var n="string"!=typeof e?"sc":R(e);rt[n]=(rt[n]||0)+1;var o="".concat(n,"-").concat($(v+n+rt[n]));return t?"".concat(t,"-").concat(o):o}(r.displayName,r.parentComponentId):h,m=r.displayName,y=void 0===m?function(e){return L(e)?"styled.".concat(e):"Styled(".concat(B(e),")")}(e):m,g=r.displayName&&r.componentId?"".concat(R(r.displayName),"-").concat(r.componentId):r.componentId||f,S=i&&a.attrs?a.attrs.concat(d).filter(Boolean):d,w=r.shouldForwardProp;if(i&&a.shouldForwardProp){var b=a.shouldForwardProp;if(r.shouldForwardProp){var E=r.shouldForwardProp;w=function(e,t){return b(e,t)&&E(e,t)};}else w=b;}var N=new Qe(s,g,i?a.componentStyle:void 0);function O(e,r){return function(e,r,s){var i=e.attrs,a=e.componentStyle,c=e.defaultProps,p=e.foldedComponentIds,d=e.styledComponentId,h=e.target,f=React.useContext(et),m=Ge(),y=e.shouldForwardProp||m.shouldForwardProp;"production"!==process.env.NODE_ENV&&React.useDebugValue(d);var v=I(r,f,c)||C,g=function(e,n,o){for(var r,s=__assign(__assign({},n),{className:void 0,theme:o}),i=0;i<e.length;i+=1){var a=re(r=e[i])?r(s):r;for(var c in a)s[c]="className"===c?ie(s[c],a[c]):"style"===c?__assign(__assign({},s[c]),a[c]):a[c];}return n.className&&(s.className=ie(s.className,n.className)),s}(i,r,v),S=g.as||h,w={};for(var b in g) void 0===g[b]||"$"===b[0]||"as"===b||"theme"===b&&g.theme===v||("forwardedAs"===b?w.as=g.forwardedAs:y&&!y(b,S)||(w[b]=g[b],y||"development"!==process.env.NODE_ENV||isPropValid$1(b)||st.has(b)||!A.has(S)||(st.add(b),console.warn('styled-components: it looks like an unknown prop "'.concat(b,'" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));var E=function(e,t){var n=Ge(),o=e.generateAndInjectStyles(t,n.styleSheet,n.stylis);return "production"!==process.env.NODE_ENV&&React.useDebugValue(o),o}(a,g);"production"!==process.env.NODE_ENV&&e.warnTooManyClasses&&e.warnTooManyClasses(E);var N=ie(p,d);return E&&(N+=" "+E),g.className&&(N+=" "+g.className),w[L(S)&&!A.has(S)?"class":"className"]=N,s&&(w.ref=s),React.createElement(S,w)}(D,e,r)}O.displayName=y;var D=React.forwardRef(O);return D.attrs=S,D.componentStyle=N,D.displayName=y,D.shouldForwardProp=w,D.foldedComponentIds=i?ie(a.foldedComponentIds,a.styledComponentId):"",D.styledComponentId=g,D.target=i?a.target:e,Object.defineProperty(D,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(e){this._foldedDefaultProps=i?function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var o=0,r=t;o<r.length;o++)le(e,r[o],true);return e}({},a.defaultProps,e):e;}}),"production"!==process.env.NODE_ENV&&(P(y,g),D.warnTooManyClasses=function(e,t){var n={},o=false;return function(r){if(!o&&(n[r]=true,Object.keys(n).length>=200)){var s=t?' with the id of "'.concat(t,'"'):"";console.warn("Over ".concat(200," classes were generated for component ").concat(e).concat(s,".\n")+"Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),o=true,n={};}}}(y,g)),ue(D,function(){return ".".concat(D.styledComponentId)}),c&&oe(D,e,{attrs:true,componentStyle:true,displayName:true,foldedComponentIds:true,shouldForwardProp:true,styledComponentId:true,target:true}),D}function at$1(e,t){for(var n=[e[0]],o=0,r=t.length;o<r;o+=1)n.push(t[o],e[o+1]);return n}var ct=function(e){return Object.assign(e,{isCss:true})};function lt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];if(re(t)||ce(t))return ct(Xe(at$1(_$2,__spreadArray([t],n,true))));var r=t;return 0===n.length&&1===r.length&&"string"==typeof r[0]?Xe(r):ct(Xe(at$1(r,n)))}function ut(n,o,r){if(void 0===r&&(r=C),!o)throw he(1,o);var s=function(t){for(var s=[],i=1;i<arguments.length;i++)s[i-1]=arguments[i];return n(o,r,lt.apply(void 0,__spreadArray([t],s,false)))};return s.attrs=function(e){return ut(n,o,__assign(__assign({},r),{attrs:Array.prototype.concat(r.attrs,e).filter(Boolean)}))},s.withConfig=function(e){return ut(n,o,__assign(__assign({},r),e))},s}var pt=function(e){return ut(it,e)},dt=pt;A.forEach(function(e){dt[e]=pt(e);});function mt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");var r=ae(lt.apply(void 0,__spreadArray([t],n,false))),s=$(r);return new qe(s,r)}"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");var wt="__sc-".concat(f,"__");"production"!==process.env.NODE_ENV&&"test"!==process.env.NODE_ENV&&"undefined"!=typeof window&&(window[wt]||(window[wt]=0),1===window[wt]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window[wt]+=1);
 
-var StyledButton = dt.button.withConfig({
-  displayName: "Buttonstyles__StyledButton",
-  componentId: "sc-1w2ehyn-0"
-})(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledButton = dt.button(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  padding: 12px;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  border-radius: 8px;\n  text-transform: capitalize;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  cursor: pointer;\n  white-space: nowrap;\n\n  & > svg > path {\n    transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n    transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n    & > svg > path {\n      transition: 0.1s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n    }\n  }\n\n  ", "\n\n  ", "\n"])), function (_a) {
   var $size = _a.$size;
   switch ($size) {
     case ButtonSizeEnum.SM:
@@ -2448,7 +2445,7 @@ var Button$1 = function Button(_a) {
     style: customStyles,
     onClick: onClick,
     type: htmlType,
-    className: className,
+    className: "".concat(className, " button-theme-color"),
     children: [iconLeft, label, iconRight]
   });
 };
@@ -32054,96 +32051,42 @@ var RecordVoiceOverOutlined$1 = createSvgIcon$1( /*#__PURE__*/jsxRuntimeExports.
 }), 'RecordVoiceOverOutlined');
 
 // CourseLayout
-dt.span.withConfig({
-  displayName: "CourseCardstyles__ModalRef",
-  componentId: "sc-mrcdz5-0"
-})(templateObject_1$o || (templateObject_1$o = __makeTemplateObject([""], [""])));
-var GridItemContentHeader = dt.header.withConfig({
-  displayName: "CourseCardstyles__GridItemContentHeader",
-  componentId: "sc-mrcdz5-1"
-})(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
-var GridItemTitle = dt.h3.withConfig({
-  displayName: "CourseCardstyles__GridItemTitle",
-  componentId: "sc-mrcdz5-2"
-})(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
-dt.span.withConfig({
-  displayName: "CourseCardstyles__DeleteSpan",
-  componentId: "sc-mrcdz5-3"
-})(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
-dt(Typography).withConfig({
-  displayName: "CourseCardstyles__DisabledTypography",
-  componentId: "sc-mrcdz5-4"
-})(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  color: #7a7a7a;\n  opacity: 0.7;\n"], ["\n  color: #7a7a7a;\n  opacity: 0.7;\n"])));
-dt.div.withConfig({
-  displayName: "CourseCardstyles__ActionConfig",
-  componentId: "sc-mrcdz5-5"
-})(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
+dt.span(templateObject_1$o || (templateObject_1$o = __makeTemplateObject([""], [""])));
+var GridItemContentHeader = dt.header(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
+var GridItemTitle = dt.h3(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"], ["\n  font-size: 18px;\n  font-weight: 500;\n\n  transition: color 0.3s ease;\n"])));
+dt.span(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  color: #ea382a;\n"], ["\n  color: #ea382a;\n"])));
+dt(Typography)(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  color: #7a7a7a;\n  opacity: 0.7;\n"], ["\n  color: #7a7a7a;\n  opacity: 0.7;\n"])));
+dt.div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
   var hoverBackground = _a.hoverBackground;
   return hoverBackground || 'rgba(0, 0, 0, 0.1)';
 }, function (_a) {
   var $hoverColor = _a.$hoverColor;
   return $hoverColor && "svg path {\n          fill: ".concat($hoverColor, ";\n           }");
 });
-dt.div.withConfig({
-  displayName: "CourseCardstyles__ToolbarItemWrapper",
-  componentId: "sc-mrcdz5-6"
-})(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"], ["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"])));
-dt.div.withConfig({
-  displayName: "CourseCardstyles__ContentWrapper",
-  componentId: "sc-mrcdz5-7"
-})(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  margin-top: 30px;\n\n  ", "\n"], ["\n  margin-top: 30px;\n\n  ", "\n"])), function (_a) {
+dt.div(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"], ["\n  display: flex;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 25px;\n  width: 100%;\n  box-sizing: border-box;\n  padding-right: 20px;\n  .wrapper {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n"])));
+dt.div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  margin-top: 30px;\n\n  ", "\n"], ["\n  margin-top: 30px;\n\n  ", "\n"])), function (_a) {
   var $isGrid = _a.$isGrid;
   return !$isGrid ? "\n      .card {\n          grid-template-columns:none\n      }\n    " : "\n      .card {\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n\n\n        @media (max-width: 1450px) {\n          grid-template-columns: repeat(3, 1fr);\n        }\n      }\n    ";
 });
-var CardActionBar = dt.div.withConfig({
-  displayName: "CourseCardstyles__CardActionBar",
-  componentId: "sc-mrcdz5-8"
-})(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])), function (_a) {
+var CardActionBar = dt.div(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  position: absolute;\n  z-index: 99;\n  box-sizing: border-box;\n  padding: 6px;\n  ", "\n  .action_block {\n    width: 35px;\n    height: 35px;\n    border-radius: 50%;\n    background: rgba(255, 255, 255, 0);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])), function (_a) {
   var $switched = _a.$switched;
   return $switched ? "\n    top: 0px;\n    left: 0px;\n    grid-template-columns: 1fr 35px;\n  " : "\n    bottom: 0px;\n    right: 0px;\n    justify-content: end;\n    grid-template-columns: 35px 35px;\n  ";
 });
-var StylesCardWrapper = dt.div.withConfig({
-  displayName: "CourseCardstyles__StylesCardWrapper",
-  componentId: "sc-mrcdz5-9"
-})(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"])), function (_a) {
+var StylesCardWrapper = dt.div(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  cursor: ", ";\n  height: 100%;\n  border-radius: 12px !important;\n  &:hover {\n    .action_block {\n      background: rgba(255, 255, 255, 0.59) !important;\n    }\n  }\n"])), function (_a) {
   var $canOpen = _a.$canOpen;
   return $canOpen ? 'pointer' : 'default';
 });
-var StyledChecked = dt.div.withConfig({
-  displayName: "CourseCardstyles__StyledChecked",
-  componentId: "sc-mrcdz5-10"
-})(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"])));
-dt.div.withConfig({
-  displayName: "CourseCardstyles__VideoProcessingContainer",
-  componentId: "sc-mrcdz5-11"
-})(templateObject_12$2 || (templateObject_12$2 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"])));
-var CourseStatusContainer = dt.div.withConfig({
-  displayName: "CourseCardstyles__CourseStatusContainer",
-  componentId: "sc-mrcdz5-12"
-})(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
+var StyledChecked = dt.div(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 2;\n  background-color: rgb(0 0 0 / 23%);\n"])));
+dt.div(templateObject_12$2 || (templateObject_12$2 = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  .icon_button {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  }\n"])));
+var CourseStatusContainer = dt.div(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
   var $status = _a.$status;
   return !$status ? '#EA382A' : '#00905E';
 });
-dt.div.withConfig({
-  displayName: "CourseCardstyles__ItemWrapper",
-  componentId: "sc-mrcdz5-13"
-})(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"])));
-var TooltipContent = dt.div.withConfig({
-  displayName: "CourseCardstyles__TooltipContent",
-  componentId: "sc-mrcdz5-14"
-})(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"])));
-var StyledCardBottomContainer = dt.div.withConfig({
-  displayName: "CourseCardstyles__StyledCardBottomContainer",
-  componentId: "sc-mrcdz5-15"
-})(templateObject_16$1 || (templateObject_16$1 = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"], ["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"])));
-var StyledActionsContainer = dt.div.withConfig({
-  displayName: "CourseCardstyles__StyledActionsContainer",
-  componentId: "sc-mrcdz5-16"
-})(templateObject_17$1 || (templateObject_17$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"])));
-var StyledActionItem = dt.span.withConfig({
-  displayName: "CourseCardstyles__StyledActionItem",
-  componentId: "sc-mrcdz5-17"
-})(templateObject_18$1 || (templateObject_18$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
+dt.div(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  div {\n    font-size: 13px;\n  }\n"])));
+var TooltipContent = dt.div(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  & > :first-child {\n    font-size: 14px;\n    margin-bottom: 5px;\n  }\n  div {\n    font-size: 14px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .tooltip-text {\n      font-size: 12px;\n      margin-top: 5px;\n      text-align: center;\n    }\n  }\n"])));
+var StyledCardBottomContainer = dt.div(templateObject_16$1 || (templateObject_16$1 = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"], ["\n  display: flex;\n  width: 100%;\n  flex-direction: column !important;\n  align-self: flex-end;\n  gap: 10px;\n  padding-bottom: 10px;\n"])));
+var StyledActionsContainer = dt.div(templateObject_17$1 || (templateObject_17$1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row !important;\n  width: 100%;\n"])));
+var StyledActionItem = dt.span(templateObject_18$1 || (templateObject_18$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  height: 14px;\n  cursor: ", ";\n  color: ", ";\n  font-size: 14px;\n  padding-bottom: 10px;\n  width: 100%;\n  justify-content: center;\n  gap: 8px;\n  padding: 12px 4px;\n  svg path {\n    fill: ", ";\n    width: 16px;\n    height: 16px;\n  }\n  svg {\n    width: 16px;\n    height: 16px;\n  }\n  &:hover {\n    color: ", ";\n    svg path {\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
   var disabled = _a.disabled;
   return disabled ? 'default' : 'pointer';
 }, function (_a) {
@@ -32163,72 +32106,30 @@ var StyledActionItem = dt.span.withConfig({
     color = _b === void 0 ? '#68707a' : _b;
   return disabled ? '#ccc' : color;
 });
-dt.span.withConfig({
-  displayName: "CourseCardstyles__StyledCourseContent",
-  componentId: "sc-mrcdz5-18"
-})(templateObject_19$1 || (templateObject_19$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
-var ItemBlock = dt.div.withConfig({
-  displayName: "CourseCardstyles__ItemBlock",
-  componentId: "sc-mrcdz5-19"
-})(templateObject_20$1 || (templateObject_20$1 = __makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
-var StyledItemWrapper = dt.div.withConfig({
-  displayName: "CourseCardstyles__StyledItemWrapper",
-  componentId: "sc-mrcdz5-20"
-})(templateObject_21$1 || (templateObject_21$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"
+dt.span(templateObject_19$1 || (templateObject_19$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
+var ItemBlock = dt.div(templateObject_20$1 || (templateObject_20$1 = __makeTemplateObject(["\n  text-transform: capitalize;\n"], ["\n  text-transform: capitalize;\n"])));
+var StyledItemWrapper = dt.div(templateObject_21$1 || (templateObject_21$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 4px;\n"
 // gridConfig
 ])));
 // gridConfig
-var StyledCourseCardContent = dt.span.withConfig({
-  displayName: "CourseCardstyles__StyledCourseCardContent",
-  componentId: "sc-mrcdz5-21"
-})(templateObject_22$1 || (templateObject_22$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
-var GridItemLessons = dt.div.withConfig({
-  displayName: "CourseCardstyles__GridItemLessons",
-  componentId: "sc-mrcdz5-22"
-})(templateObject_23$1 || (templateObject_23$1 = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"], ["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"])), function (props) {
+var StyledCourseCardContent = dt.span(templateObject_22$1 || (templateObject_22$1 = __makeTemplateObject(["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"], ["\n  color: #20a8c6;\n  font-size: 14px;\n  font-size: 12px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 18px;\n  padding: 8px;\n  justify-content: center;\n  align-items: center;\n  background-color: #edf8fa;\n"])));
+var GridItemLessons = dt.div(templateObject_23$1 || (templateObject_23$1 = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"], ["\n  margin-top: 10px;\n  display: flex;\n  gap: 10px;\n  align-items: flex-end;\n  flex-direction: row !important;\n  padding-left: 16px;\n\n  // when card is checked\n  span {\n    background: ", ";\n    color: ", ";\n  }\n  > div {\n    font-size: 12px;\n    position: relative;\n    padding-left: 12px;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 5px;\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background: rgba(0, 0, 0, 0.2);\n    }\n\n    :not(:last-child) {\n      margin-right: 10px;\n    }\n  }\n"])), function (props) {
   return props.checked ? 'none' : '#edf8fa';
 }, function (props) {
   return props.checked ? '#333333' : '#20a8c6';
 });
-var StyledToolTipContainer = dt.div.withConfig({
-  displayName: "CourseCardstyles__StyledToolTipContainer",
-  componentId: "sc-mrcdz5-23"
-})(templateObject_24$1 || (templateObject_24$1 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
-dt.div.withConfig({
-  displayName: "CourseCardstyles__Action",
-  componentId: "sc-mrcdz5-24"
-})(templateObject_25 || (templateObject_25 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"])), function (_a) {
+var StyledToolTipContainer = dt.div(templateObject_24$1 || (templateObject_24$1 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+dt.div(templateObject_25 || (templateObject_25 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px 10px;\n  transition: 0.3s ease;\n  border-radius: 5px;\n  opacity: ", ";\n  &:hover {\n    background: rgba(0, 0, 0, 0.1);\n  }\n  svg {\n    font-size: 1rem;\n    margin-right: 6px;\n    width: 20px;\n    height: 20px;\n  }\n  svg path {\n    width: 20px;\n    height: 20px;\n    fill: #717882;\n  }\n  /* .MuiTypography-body1 {\n    font-size: 0.875rem;\n  } */\n"])), function (_a) {
   var disabled = _a.disabled;
   return disabled ? '0.5' : '1';
 });
-dt.div.withConfig({
-  displayName: "CourseCardstyles__Wrapper",
-  componentId: "sc-mrcdz5-25"
-})(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"], ["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"])));
-var GridItemContent = dt.section.withConfig({
-  displayName: "CourseCardstyles__GridItemContent",
-  componentId: "sc-mrcdz5-26"
-})(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"], ["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"])));
-var GridItemWrapper = dt.div.withConfig({
-  displayName: "CourseCardstyles__GridItemWrapper",
-  componentId: "sc-mrcdz5-27"
-})(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"])));
-dt.div.withConfig({
-  displayName: "CourseCardstyles__GridTableWrapper",
-  componentId: "sc-mrcdz5-28"
-})(templateObject_29 || (templateObject_29 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"], ["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"])));
-dt.div.withConfig({
-  displayName: "CourseCardstyles__StyledPagination",
-  componentId: "sc-mrcdz5-29"
-})(templateObject_30 || (templateObject_30 = __makeTemplateObject(["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"], ["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"])));
-var GridItemImage = dt.figure.withConfig({
-  displayName: "CourseCardstyles__GridItemImage",
-  componentId: "sc-mrcdz5-30"
-})(templateObject_31 || (templateObject_31 = __makeTemplateObject(["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"], ["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"])));
-var GridItem = dt.div.withConfig({
-  displayName: "CourseCardstyles__GridItem",
-  componentId: "sc-mrcdz5-31"
-})(templateObject_32 || (templateObject_32 = __makeTemplateObject(["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"], ["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"])), function (_a) {
+dt.div(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"], ["\n  box-sizing: border-box;\n  padding: 0 20px 0 0;\n  text-transform: capitalize;\n"])));
+var GridItemContent = dt.section(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"], ["\n  position: relative;\n  z-index: 100;\n  font-size: 16px;\n  color: #333;\n  padding: 16px;\n"])));
+var GridItemWrapper = dt.div(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 12px;\n"])));
+dt.div(templateObject_29 || (templateObject_29 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"], ["\n  width: 100%;\n  height: fit-content;\n  flex-shrink: 0;\n  border-radius: 4px;\n  background: #fff;\n  margin-top: 20px;\n  padding: 16px;\n\n  th:last-child {\n    width: 10px;\n  }\n"])));
+dt.div(templateObject_30 || (templateObject_30 = __makeTemplateObject(["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"], ["\n  justify-content: flex-end;\n  display: flex;\n  margin-right: 40px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  margin-top: 20px;\n"])));
+var GridItemImage = dt.figure(templateObject_31 || (templateObject_31 = __makeTemplateObject(["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"], ["\n  width: 100%;\n  height: 200px;\n  overflow: hidden;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    vertical-align: middle;\n    transition: transform 0.3s ease;\n  }\n"])));
+var GridItem = dt.div(templateObject_32 || (templateObject_32 = __makeTemplateObject(["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"], ["\n  display: flex;\n  overflow: hidden;\n  flex-direction: column;\n\n  &:hover {\n    img {\n      transform: scale(1.2);\n    }\n\n    h3 {\n      color: #06c68f;\n    }\n  }\n\n  ", "\n"])), function (_a) {
   var $isFromUser = _a.$isFromUser;
   return $isFromUser && "\n  figure {\n    position: relative;\n    &:after {\n      content: 'View Analytics';\n      position: absolute;\n      top: 0;\n      opacity: 0;\n      color: #06c68f;\n      left: 0;\n      font-size: 24px;\n      font-weight: 700;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background: rgba(255, 255, 255, 0.9);\n      width: 100%;\n      height: 100%;\n      transition: opacity 0.3s ease;\n      z-index: 10;\n    }\n  }\n\n  &:hover {\n    figure {\n      &:after {\n        opacity: 1;\n      }\n    }\n  }\n  " || '';
 });
@@ -32581,22 +32482,10 @@ const useTranslation$1 = (ns, props = {}) => {
   });
 };
 
-var Container$4 = dt.div.withConfig({
-  displayName: "GridActionMenustyles__Container",
-  componentId: "sc-k3nu39-0"
-})(templateObject_1$n || (templateObject_1$n = __makeTemplateObject([""], [""])));
-var ActionsContent = dt.div.withConfig({
-  displayName: "GridActionMenustyles__ActionsContent",
-  componentId: "sc-k3nu39-1"
-})(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  padding: 5px;\n"], ["\n  padding: 5px;\n"])));
-var StyledIconButton = dt.div.withConfig({
-  displayName: "GridActionMenustyles__StyledIconButton",
-  componentId: "sc-k3nu39-2"
-})(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"], ["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"])));
-dt.div.withConfig({
-  displayName: "GridActionMenustyles__Action",
-  componentId: "sc-k3nu39-3"
-})(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
+var Container$4 = dt.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject([""], [""])));
+var ActionsContent = dt.div(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  padding: 5px;\n"], ["\n  padding: 5px;\n"])));
+var StyledIconButton = dt.div(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"], ["\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  &:hover {\n    background-color: transparent !important;\n  }\n"])));
+dt.div(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  padding: 6px;\n  transition: 0.3s ease;\n  gap: 6px;\n  border-radius: 5px;\n  &:hover {\n    /* background: ", "; */\n    ", "\n  }\n  svg {\n    font-size: 1rem;\n  }\n\n  &.disabled {\n    opacity: 0.5;\n    pointer-events: none;\n  }\n"])), function (_a) {
   var hoverBackground = _a.hoverBackground;
   return hoverBackground || "rgba(0, 0, 0, 0.1)";
 }, function (_a) {
@@ -32938,51 +32827,24 @@ var SearchRounded = /*#__PURE__*/React.forwardRef(function (_a, ref) {
 });
 SearchRounded.displayName = 'SearchRounded';
 
-var Field = dt.div.withConfig({
-  displayName: "styled-components__Field",
-  componentId: "sc-193scoi-0"
-})(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"], ["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"])), function (_a) {
+var Field = dt.div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"], ["\n  position: relative;\n  font-family: sans-serif;\n  background-color: white;\n\n  &.full {\n    width: 100%;\n  }\n\n  p:not(:first-child) {\n    position: absolute;\n    left: -10px;\n    bottom: -24px;\n  }\n\n  .MuiFormLabel-root,\n  .MuiFormLabel-root,\n  fieldset,\n  input {\n    ", ";\n  }\n\n  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {\n    border-color: #d32f2f !important;\n  }\n\n  button {\n    position: absolute;\n    ", ";\n    top: 50%;\n    transform: translateY(-50%);\n    padding: 5px;\n  }\n"])), function (_a) {
   var $iconInStart = _a.$iconInStart;
   return $iconInStart ? 'padding-left: 40px;' : 'padding-right: 40px;';
 }, function (_a) {
   var $iconInStart = _a.$iconInStart;
   return $iconInStart ? 'left: 5px;' : 'right: 5px;';
 });
-var ValidationIcon = dt.div.withConfig({
-  displayName: "styled-components__ValidationIcon",
-  componentId: "sc-193scoi-1"
-})(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"], ["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"])));
-var StyledComponentContainer = dt.div.withConfig({
-  displayName: "styled-components__StyledComponentContainer",
-  componentId: "sc-193scoi-2"
-})(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"], ["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"])));
-var CharactersContainer = dt.div.withConfig({
-  displayName: "styled-components__CharactersContainer",
-  componentId: "sc-193scoi-3"
-})(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"], ["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"])));
-dt.input.withConfig({
-  displayName: "styled-components__StyledInput",
-  componentId: "sc-193scoi-4"
-})(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
-dt.textarea.withConfig({
-  displayName: "styled-components__StyledTextArea",
-  componentId: "sc-193scoi-5"
-})(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
-var StyledLabel$1 = dt.p.withConfig({
-  displayName: "styled-components__StyledLabel",
-  componentId: "sc-193scoi-6"
-})(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
+var ValidationIcon = dt.div(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"], ["\n  position: absolute;\n  bottom: -10px;\n  transform: translateY(-50%);\n  right: 6px;\n  width: unset !important;\n\n  &.error svg {\n    color: red;\n  }\n\n  &.valid svg {\n    color: green;\n  }\n"])));
+var StyledComponentContainer = dt.div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"], ["\n  position: absolute;\n  top: 0px;\n  right: 4px;\n  z-index: 2;\n  .btn--small {\n    overflow: initial !important;\n  }\n"])));
+var CharactersContainer = dt.div(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"], ["\n  width: max-content;\n  font-size: 12px;\n  color: #68707a;\n  margin-top: 5px;\n  margin-left: 5px;\n  position: absolute;\n  bottom: -20px;\n  right: 6px;\n"])));
+dt.input(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
+dt.textarea(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"], ["\n  width: 100%;\n  border-radius: 6px;\n  border: 1px solid #e6e6e6;\n  min-height: 40px;\n  resize: none;\n  outline: none;\n  padding: 10px;\n  font-family: sans-serif;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  transition:\n    border 0.3s ease-in,\n    box-shadow 0.3s ease-in;\n\n  &:focus {\n    border: 1px solid #06c68f;\n    box-shadow: 0 1px 9px 5px rgb(0 0 0 / 3%);\n  }\n"])));
+var StyledLabel$1 = dt.p(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  padding-top: 0px;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
-dt.div.withConfig({
-  displayName: "styled-components__ErrorMessage",
-  componentId: "sc-193scoi-7"
-})(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
-var Title$1 = dt.h2.withConfig({
-  displayName: "styled-components__Title",
-  componentId: "sc-193scoi-8"
-})(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
+dt.div(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
+var Title$1 = dt.h2(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
@@ -33255,18 +33117,9 @@ var ThemeProvider = function ThemeProvider(_a) {
   });
 };
 
-var StyledLabel = dt.div.withConfig({
-  displayName: "CustomSwitcherstyles__StyledLabel",
-  componentId: "sc-dqblgl-0"
-})(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n"])));
-var ToolTipContainer = dt.div.withConfig({
-  displayName: "CustomSwitcherstyles__ToolTipContainer",
-  componentId: "sc-dqblgl-1"
-})(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"])));
-var TooltipTitle = dt.span.withConfig({
-  displayName: "CustomSwitcherstyles__TooltipTitle",
-  componentId: "sc-dqblgl-2"
-})(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  font-size: 14px;\n"], ["\n  font-size: 14px;\n"])));
+var StyledLabel = dt.div(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n"])));
+var ToolTipContainer = dt.div(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n"])));
+var TooltipTitle = dt.span(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  font-size: 14px;\n"], ["\n  font-size: 14px;\n"])));
 var HelpIconStyles = {
   color: '#06C68F'
 };
@@ -33277,10 +33130,7 @@ var FormControlLabelStyles = {
   justifyContent: 'space-between',
   marginLeft: 0
 };
-var FormControlWrapper = dt(ToolTipContainer).withConfig({
-  displayName: "CustomSwitcherstyles__FormControlWrapper",
-  componentId: "sc-dqblgl-3"
-})(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"], ["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"])));
+var FormControlWrapper = dt(ToolTipContainer)(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"], ["\n  color: #06c68f;\n\n  .CustomSwitcher-switchBase {\n    &.checked {\n      color: #06c68f;\n    }\n    &.checked + .track {\n      background-color: #06c68f;\n    }\n  }\n"])));
 var templateObject_1$l, templateObject_2$g, templateObject_3$c, templateObject_4$9;
 
 var ActivityIcon = /*#__PURE__*/React.forwardRef(function (_a, ref) {
@@ -42546,10 +42396,7 @@ var customStyles = {
     });
   }
 };
-dt.div.withConfig({
-  displayName: "DropDownstyles__Container",
-  componentId: "sc-x0hqtm-0"
-})(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"])), function (_a) {
+dt.div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n    &:hover {\n      border-color: ", ";\n    }\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  & > .css-1m92ju6-control {\n    border-color: ", ";\n  }\n  & > .css-1n7v3ny-option {\n    background-color: rgba(6, 198, 144, 0.1) !important;\n  }\n"])), function (_a) {
   var error = _a.error;
   return error ? '#f44336' : 'rgba(0, 0, 0, 0.23)';
 }, function (_a) {
@@ -42562,24 +42409,15 @@ dt.div.withConfig({
   var error = _a.error;
   return error ? '#f44336' : '#06c68f';
 });
-var ErrorMessage = dt.div.withConfig({
-  displayName: "DropDownstyles__ErrorMessage",
-  componentId: "sc-x0hqtm-1"
-})(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
-var ContainerSelect = dt.div.withConfig({
-  displayName: "DropDownstyles__ContainerSelect",
-  componentId: "sc-x0hqtm-2"
-})(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"])), function (_a) {
+var ErrorMessage = dt.div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
+var ContainerSelect = dt.div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"], ["\n  width: 100%;\n  position: relative;\n  .css-yk16xz-control {\n    border-color: ", ";\n    outline: none;\n  }\n  .css-1wa3eu0-placeholder {\n    color: ", ";\n  }\n  .css-1hb7zxy-IndicatorsContainer {\n    padding-right: 10px;\n    cursor: pointer;\n  }\n  .css-1okebmr-indicatorSeparator {\n    display: none;\n  }\n"])), function (_a) {
   var error = _a.error;
   return error ? '#f44336' : 'rgba(0, 0, 0, 0.23)';
 }, function (_a) {
   var error = _a.error;
   return error ? '#f44336' : 'rgba(0, 0, 0, 0.54) ';
 });
-dt.div.withConfig({
-  displayName: "DropDownstyles__SelectFieldWrapper",
-  componentId: "sc-x0hqtm-3"
-})(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"], ["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"])));
+dt.div(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"], ["\n  width: 372px !important;\n  height: 40px !important;\n  .selectField {\n    width: 372px !important;\n  }\n"])));
 var templateObject_1$k, templateObject_2$f, templateObject_3$b, templateObject_4$8;
 
 var DropDown = function DropDown(props) {
@@ -42661,124 +42499,52 @@ function requireOndemandVideo () {
 var OndemandVideoExports = /*@__PURE__*/ requireOndemandVideo();
 var OndemandVideoIcon = /*@__PURE__*/getDefaultExportFromCjs(OndemandVideoExports);
 
-dt.div.withConfig({
-  displayName: "styled-components__FileUploaderContainer",
-  componentId: "sc-1fyxek4-0"
-})(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__MediaUploading",
-  componentId: "sc-1fyxek4-1"
-})(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"], ["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__MediaUploadingWrapper",
-  componentId: "sc-1fyxek4-2"
-})(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__LoadingText",
-  componentId: "sc-1fyxek4-3"
-})(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  margin-bottom: 15px;\n"], ["\n  margin-bottom: 15px;\n"])));
-dt.header.withConfig({
-  displayName: "styled-components__FileUploaderHeader",
-  componentId: "sc-1fyxek4-4"
-})(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"], ["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__FileUploaderContent",
-  componentId: "sc-1fyxek4-5"
-})(templateObject_6$5 || (templateObject_6$5 = __makeTemplateObject([""], [""])));
-dt.div.withConfig({
-  displayName: "styled-components__Content",
-  componentId: "sc-1fyxek4-6"
-})(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"], ["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"
+dt.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"], ["\n  position: relative;\n  cursor: pointer;\n  overflow: hidden;\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 4px;\n  height: 100%;\n  transition: border 0.2s ease;\n\n  .image_wrapper {\n    position: relative;\n    padding-top: 10px;\n    width: 100px;\n    height: 100px;\n    border-radius: 4px;\n    svg {\n      position: absolute;\n      right: -11px;\n      top: 0px;\n    }\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .video_wrapper {\n    padding: 5px 10px;\n    background: #eee;\n    margin-top: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    svg {\n      color: red;\n    }\n  }\n\n  .file_wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    box-sizing: border-box;\n    svg {\n      font-size: 20px;\n      color: red;\n      margin-left: 10px;\n    }\n  }\n\n  label {\n    cursor: pointer;\n    display: flex;\n    .MuiSvgIcon-fontSizeLarge {\n      font-size: 5.1875rem;\n    }\n\n    svg {\n      transform: scale(0.8);\n      transition: transform 0.2s ease;\n    }\n  }\n  input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &.full {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    header {\n      margin-right: 15px;\n    }\n\n    label {\n      align-items: center;\n      justify-content: center;\n      width: 100%;\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n\n  &.uploaded {\n    border: 1px solid rgba(0, 0, 0, 0.3);\n\n    header {\n      color: rgba(0, 0, 0, 0.74);\n    }\n\n    label svg {\n      transform: scale(1);\n    }\n  }\n"])));
+dt.div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"], ["\n  position: absolute;\n  z-index: 2;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: #fff;\n  border-radius: 4px;\n"])));
+dt.div(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  padding: 0 30px;\n  > div {\n    width: 100%;\n    text-align: center;\n  }\n"])));
+dt.div(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  margin-bottom: 15px;\n"], ["\n  margin-bottom: 15px;\n"])));
+dt.header(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"], ["\n  color: rgba(0, 0, 0, 0.54);\n  transition: color 0.2 ease;\n  svg {\n    fill: #3f51b5;\n  }\n"])));
+dt.div(templateObject_6$5 || (templateObject_6$5 = __makeTemplateObject([""], [""])));
+dt.div(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"], ["\n  background: #fff;\n  position: relative;\n  padding: 10px;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n"
 // Uploader
 ])));
 // Uploader
-var Container$3 = dt.div.withConfig({
-  displayName: "styled-components__Container",
-  componentId: "sc-1fyxek4-7"
-})(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"], ["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"])));
-var ErrorText = dt.div.withConfig({
-  displayName: "styled-components__ErrorText",
-  componentId: "sc-1fyxek4-8"
-})(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"], ["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"])));
-var FlexContainer = dt.div.withConfig({
-  displayName: "styled-components__FlexContainer",
-  componentId: "sc-1fyxek4-9"
-})(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"])));
-var ItemContainer = dt.div.withConfig({
-  displayName: "styled-components__ItemContainer",
-  componentId: "sc-1fyxek4-10"
-})(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  width: ", ";\n  position: relative;\n"], ["\n  width: ", ";\n  position: relative;\n"])), function (_a) {
+var Container$3 = dt.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"], ["\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n"])));
+var ErrorText = dt.div(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"], ["\n  font-size: 12px;\n  color: #d32f2f;\n  margin-left: 5px;\n  margin-top: -15px;\n"])));
+var FlexContainer = dt.div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  align-items: center;\n"])));
+var ItemContainer = dt.div(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  width: ", ";\n  position: relative;\n"], ["\n  width: ", ";\n  position: relative;\n"])), function (_a) {
   var width = _a.width;
   return width || '100%';
 });
-dt.div.withConfig({
-  displayName: "styled-components__InputContainer",
-  componentId: "sc-1fyxek4-11"
-})(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  width: 390px;\n"], ["\n  width: 390px;\n"])));
-var CancelButton = dt.div.withConfig({
-  displayName: "styled-components__CancelButton",
-  componentId: "sc-1fyxek4-12"
-})(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"], ["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"])), function (_a) {
+dt.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  width: 390px;\n"], ["\n  width: 390px;\n"])));
+var CancelButton = dt.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"], ["\n  position: absolute;\n  right: ", ";\n  top: ", ";\n  cursor: pointer;\n"])), function (_a) {
   var right = _a.right;
   return right || '-13px';
 }, function (_a) {
   var top = _a.top;
   return top || '5px';
 });
-var InputFileContainer = dt.div.withConfig({
-  displayName: "styled-components__InputFileContainer",
-  componentId: "sc-1fyxek4-13"
-})(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"])));
-var UploadInput = dt.input.withConfig({
-  displayName: "styled-components__UploadInput",
-  componentId: "sc-1fyxek4-14"
-})(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"], ["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__Label",
-  componentId: "sc-1fyxek4-15"
-})(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"], ["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"])));
-var ImagePlaceholder = dt.div.withConfig({
-  displayName: "styled-components__ImagePlaceholder",
-  componentId: "sc-1fyxek4-16"
-})(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"])), function (_a) {
+var InputFileContainer = dt.div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-end;\n  /* input {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n\n  &label {\n    width: 85%;\n    height: 100%;\n    cursor: pointer;\n  } */\n"])));
+var UploadInput = dt.input(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"], ["\n  opacity: 0;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  width: 0;\n  top: 0;\n  overflow: hidden;\n"])));
+dt.div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"], ["\n  position: absolute;\n  left: 0px;\n  top: -15px;\n  background: #fff;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n"])));
+var ImagePlaceholder = dt.div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  cursor: pointer;\n\n  img {\n    position: relative;\n    border: 1px solid #08c694;\n    width: 100%;\n    height: ", "px;\n    object-fit: cover;\n    top: 2px;\n  }\n"])), function (_a) {
   var height = _a.height;
   return height || 60;
 });
-var InputLabel = dt.label.withConfig({
-  displayName: "styled-components__InputLabel",
-  componentId: "sc-1fyxek4-17"
-})(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"
+var InputLabel = dt.label(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 2px;\n  padding: 5px 5px;\n  max-width: 150px;\n  cursor: pointer;\n  background: #fff;\n  border: 1px solid #08c694;\n  color: #08c694;\n  font-size: 19px;\n  font-weight: 400;\n  border-radius: 4px;\n  width: 130px;\n"
 // UploaderButton
 ])));
 // UploaderButton
-dt.label.withConfig({
-  displayName: "styled-components__ButtonInputLabel",
-  componentId: "sc-1fyxek4-18"
-})(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"], ["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__FileUploadButton",
-  componentId: "sc-1fyxek4-19"
-})(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"], ["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"])));
-var VideoPlaceholder = dt.div.withConfig({
-  displayName: "styled-components__VideoPlaceholder",
-  componentId: "sc-1fyxek4-20"
-})(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"], ["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"])));
-var DefaultPlaceholder = dt.div.withConfig({
-  displayName: "styled-components__DefaultPlaceholder",
-  componentId: "sc-1fyxek4-21"
-})(templateObject_22 || (templateObject_22 = __makeTemplateObject(["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"], ["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"])));
-var LoadingProgressContainer = dt.div.withConfig({
-  displayName: "styled-components__LoadingProgressContainer",
-  componentId: "sc-1fyxek4-22"
-})(templateObject_23 || (templateObject_23 = __makeTemplateObject(["\n  margin-left: 19px;\n  margin-top: 2px;\n"], ["\n  margin-left: 19px;\n  margin-top: 2px;\n"])));
+dt.label(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"], ["\n  cursor: pointer;\n  color: #fff;\n  background: #06c68f;\n  font-size: 11px;\n  padding: 4px 6px;\n  border-radius: 4px;\n  display: flex;\n  align-items: center;\n"])));
+dt.div(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"], ["\n  input {\n    opacity: 0;\n    width: 1px;\n    position: absolute;\n    z-index: -1;\n    left: 0;\n    top: 0;\n    overflow: hidden;\n  }\n"])));
+var VideoPlaceholder = dt.div(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"], ["\n  margin-left: auto;\n  margin-top: 3px;\n  width: 60px;\n  cursor: pointer;\n"])));
+var DefaultPlaceholder = dt.div(templateObject_22 || (templateObject_22 = __makeTemplateObject(["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"], ["\n  margin-left: 23px;\n  margin-top: 3px;\n  cursor: pointer;\n"])));
+var LoadingProgressContainer = dt.div(templateObject_23 || (templateObject_23 = __makeTemplateObject(["\n  margin-left: 19px;\n  margin-top: 2px;\n"], ["\n  margin-left: 19px;\n  margin-top: 2px;\n"])));
 var CircularProgressStyles = {
   width: '32px',
   height: '32px'
 };
-var Title = dt.h2.withConfig({
-  displayName: "styled-components__Title",
-  componentId: "sc-1fyxek4-23"
-})(templateObject_24 || (templateObject_24 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
+var Title = dt.h2(templateObject_24 || (templateObject_24 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"], ["\n  font-size: 16px;\n  font-weight: 550;\n  margin-bottom: 5px;\n\n  ", "\n"])), function (_a) {
   var $required = _a.$required;
   return $required ? "\n    &::after {\n      content: '*';\n      color: red;\n      margin-left: 3px;\n    }\n  " : '';
 });
@@ -50863,18 +50629,12 @@ class AdapterDateFns extends AdapterDateFnsBase {
   }
 }
 
-dt.div.withConfig({
-  displayName: "styled-components__DatePickerWrapper",
-  componentId: "sc-6bwyy3-0"
-})(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"])));
+dt.div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n\n  &.error label {\n    color: #f44336;\n  }\n\n  &.error .MuiInputBase-root::before {\n    border-bottom: 2px solid #f44336;\n  }\n\n  div > p,\n  > p {\n    position: absolute;\n    bottom: -26px;\n    color: #f44336;\n    font-size: 0.75rem;\n  }\n"])));
 var PREFIX = 'DatePicker';
 var classes = {
   datePicker: "".concat(PREFIX, "-datePicker")
 };
-var StyledDatePickerWrapper = dt('div').withConfig({
-  displayName: "styled-components__StyledDatePickerWrapper",
-  componentId: "sc-6bwyy3-1"
-})(function () {
+var StyledDatePickerWrapper = dt('div')(function () {
   var _a;
   return _a = {}, _a["& .".concat(classes.datePicker)] = {
     marginTop: 0,
@@ -59884,36 +59644,18 @@ var DatePicker = function DatePicker(_a) {
   });
 };
 
-dt.div.withConfig({
-  displayName: "styled-components__Container",
-  componentId: "sc-17kyp8d-0"
-})(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"], ["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"])), function (_a) {
+dt.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"], ["\n  display: flex;\n  gap: 16px;\n  /* height: 40px; */\n  width: 60%;\n  align-items: center;\n  border: 1px solid ", ";\n  border-radius: 4px;\n  padding: 5px;\n  margin-bottom: 5px;\n"])), function (_a) {
   var error = _a.error;
   return error ? 'red' : 'rgba(0, 0, 0, 0.23)';
 });
-var InputContainer = dt.div.withConfig({
-  displayName: "styled-components__InputContainer",
-  componentId: "sc-17kyp8d-1"
-})(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"], ["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"])));
-dt.input.withConfig({
-  displayName: "styled-components__Input",
-  componentId: "sc-17kyp8d-2"
-})(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"], ["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__Label",
-  componentId: "sc-17kyp8d-3"
-})(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"], ["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"])), function (_a) {
+var InputContainer = dt.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"], ["\n  width: 60%;\n  gap: 8px;\n  min-height: 40px;\n  margin-right: 10px;\n\n  & > div > div {\n    min-height: 40px;\n  }\n"])));
+dt.input(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"], ["\n  flex: 1;\n  gap: 8px;\n  width: 100%;\n  outline: none;\n  border: none;\n  border-left: none;\n  padding: 6px;\n  font-family: 'Open Sans';\n  color: black;\n  font-size: 15px;\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  ::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n"])));
+dt.div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"], ["\n  position: absolute;\n  left: 12px;\n  top: -11px;\n  background: #fff;\n  z-index: 1;\n  font-size: 13px;\n  color: ", ";\n"])), function (_a) {
   var error = _a.error;
   return error ? 'red' : 'rgba(0, 0, 0, 0.54)';
 });
-dt.div.withConfig({
-  displayName: "styled-components__ErrorMessage",
-  componentId: "sc-17kyp8d-4"
-})(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
-var Flex = dt.div.withConfig({
-  displayName: "styled-components__Flex",
-  componentId: "sc-17kyp8d-5"
-})(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"])));
+dt.div(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"], ["\n  position: absolute;\n  color: #f44336;\n  bottom: -20px;\n  left: 6px;\n  font-size: 0.75rem;\n"])));
+var Flex = dt.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: stretch;\n"])));
 var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$6, templateObject_5$5, templateObject_6$4;
 
 var countryList = (function () {
@@ -61038,14 +60780,8 @@ var PhoneCountryCode = function PhoneCountryCode(_a) {
   });
 };
 
-dt.div.withConfig({
-  displayName: "styled-components__LoaderWrapper",
-  componentId: "sc-cbleze-0"
-})(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"])));
-var LoaderCircle = dt.div.withConfig({
-  displayName: "styled-components__LoaderCircle",
-  componentId: "sc-cbleze-1"
-})(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"])));
+dt.div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: 999;\n  background: rgba(0, 0, 0, 0.2);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n\n  &.withBackground {\n    background: rgba(255, 255, 255, 1);\n  }\n"])));
+var LoaderCircle = dt.div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"], ["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n"])));
 var templateObject_1$g, templateObject_2$c;
 
 var Loader = function Loader(_a) {
@@ -61066,10 +60802,7 @@ var Loader = function Loader(_a) {
   });
 };
 
-var LabelContainer = dt.div.withConfig({
-  displayName: "styled-components__LabelContainer",
-  componentId: "sc-1rr8x43-0"
-})(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"])));
+var LabelContainer = dt.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 10px;\n\n  span {\n    font-weight: 550;\n  }\n"])));
 var templateObject_1$f;
 
 var Checkbox = function Checkbox(_a) {
@@ -61111,16 +60844,7 @@ var Checkbox = function Checkbox(_a) {
   });
 };
 
-var PaginationWrapper = dt.div.withConfig({
-  displayName: "styled-components__PaginationWrapper",
-  componentId: "sc-1msacdz-0"
-})(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: ", ";\n      color: white;\n\n      &:hover {\n        background: ", ";\n        border: none;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: ", ";\n      color: white;\n\n      &:hover {\n        background: ", ";\n        border: none;\n      }\n    }\n  }\n"])), function (_a) {
-  var theme = _a.theme;
-  return theme.colors.primary;
-}, function (_a) {
-  var theme = _a.theme;
-  return theme.colors.primary;
-});
+var PaginationWrapper = dt.div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: #08c694;\n      color: white;\n\n      &:hover {\n        background: #08c694;\n        border: none;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n\n  .MuiPagination-ul {\n    flex-wrap: nowrap;\n  }\n  .MuiPaginationItem-root {\n    background: #ffffff;\n    border: 1px solid #e7e9ed !important;\n    border-radius: 4px !important;\n    width: 32px !important;\n    height: 32px !important;\n    padding: 6px 6px !important;\n\n    &:hover {\n      border: 1px solid #cdccd0;\n      background-color: #ffffff;\n    }\n\n    &.Mui-selected {\n      background: #08c694;\n      color: white;\n\n      &:hover {\n        background: #08c694;\n        border: none;\n      }\n    }\n  }\n"])));
 var templateObject_1$e;
 
 var Pagination = function Pagination(_a) {
@@ -61130,6 +60854,7 @@ var Pagination = function Pagination(_a) {
     perPage = _a.perPage,
     handlePerPageChange = _a.handlePerPageChange;
   return jsxRuntimeExports.jsxs(PaginationWrapper, {
+    className: 'pagination-theme-color',
     children: [perPage && jsxRuntimeExports.jsxs(Select$1, {
       variant: 'standard',
       "native": true,
@@ -63368,26 +63093,11 @@ new TextEncoder();
   304
 ]);
 
-dt.div.withConfig({
-  displayName: "styled-components__Header",
-  componentId: "sc-1cair09-0"
-})(templateObject_1$d || (templateObject_1$d = __makeTemplateObject([""], [""])));
-var Container$2 = dt.div.withConfig({
-  displayName: "styled-components__Container",
-  componentId: "sc-1cair09-1"
-})(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"])));
-var PathItem = dt.div.withConfig({
-  displayName: "styled-components__PathItem",
-  componentId: "sc-1cair09-2"
-})(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"], ["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__Wrapper",
-  componentId: "sc-1cair09-3"
-})(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var ItemWrapper = dt.div.withConfig({
-  displayName: "styled-components__ItemWrapper",
-  componentId: "sc-1cair09-4"
-})(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
+dt.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject([""], [""])));
+var Container$2 = dt.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  margin-bottom: 10px;\n"])));
+var PathItem = dt.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"], ["\n  color: #68707a;\n  font-weight: 400;\n  font-size: 16px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n\n  svg {\n    /* opacity: 0.5; */\n  }\n"])));
+dt.div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var ItemWrapper = dt.div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
 var templateObject_1$d, templateObject_2$b, templateObject_3$8, templateObject_4$5, templateObject_5$4;
 
 var BreadcrumbWithRouter = function BreadcrumbWithRouter(_a) {
@@ -63462,18 +63172,9 @@ var Breadcrumb = function Breadcrumb(props) {
   return jsxRuntimeExports.jsx(BreadcrumbWithoutRouter, __assign({}, props));
 };
 
-var CardContainer = dt.div.withConfig({
-  displayName: "styled-components__CardContainer",
-  componentId: "sc-4c0zu3-0"
-})(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var StyledCard = dt(Card).withConfig({
-  displayName: "styled-components__StyledCard",
-  componentId: "sc-4c0zu3-1"
-})(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"], ["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"])));
-var StyledIcon = dt.div.withConfig({
-  displayName: "styled-components__StyledIcon",
-  componentId: "sc-4c0zu3-2"
-})(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"], ["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"])), function (_a) {
+var CardContainer = dt.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
+var StyledCard = dt(Card)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"], ["\n  padding: 16px;\n  height: 88px;\n  border-radius: 4px;\n  border: 1px solid #d6dae0;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  align-self: stretch;\n  background-color: #fff;\n  box-shadow: none !important;\n"])));
+var StyledIcon = dt.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"], ["\n  width: 56px;\n  height: 56px;\n  border-radius: var(--Padding-4px, 4px);\n  background: ", ";\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  color: ", ";\n  svg {\n    width: 23.172px;\n    height: 23.172px;\n    flex-shrink: 0;\n    color: ", ";\n  }\n"])), function (_a) {
   var $backgroundColor = _a.$backgroundColor;
   return $backgroundColor;
 }, function (_a) {
@@ -63483,29 +63184,14 @@ var StyledIcon = dt.div.withConfig({
   var color = _a.color;
   return color || '#000000';
 });
-var TextWrapper = dt.div.withConfig({
-  displayName: "styled-components__TextWrapper",
-  componentId: "sc-4c0zu3-3"
-})(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject([""], [""])));
-var StyledCardContent = dt(CardContent).withConfig({
-  displayName: "styled-components__StyledCardContent",
-  componentId: "sc-4c0zu3-4"
-})(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"])), function (_a) {
+var TextWrapper = dt.div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject([""], [""])));
+var StyledCardContent = dt(CardContent)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 100%;\n  gap: ", "px;\n  padding-bottom: 0 !important;\n  padding: 10px !important;\n  background: #fff;\n  .MuiFab-sizeSmall {\n    width: 36px !important;\n    height: 36px !important;\n  }\n"])), function (_a) {
   var gap = _a.gap;
   return gap || 20;
 });
-var HeaderText = dt.span.withConfig({
-  displayName: "styled-components__HeaderText",
-  componentId: "sc-4c0zu3-5"
-})(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"], ["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"])));
-var NumberText = dt.span.withConfig({
-  displayName: "styled-components__NumberText",
-  componentId: "sc-4c0zu3-6"
-})(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"], ["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"])));
-dt.div.withConfig({
-  displayName: "styled-components__Container",
-  componentId: "sc-4c0zu3-7"
-})(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"], ["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"])));
+var HeaderText = dt.span(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"], ["\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 400;\n"])));
+var NumberText = dt.span(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"], ["\n  font-size: 15px;\n  font-weight: 500;\n  display: flex;\n  height: 22px;\n  align-items: center;\n"])));
+dt.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"], ["\n  position: absolute;\n  bottom: 28px;\n  left: -22px;\n  transform: translateY(100%);\n  width: 300px;\n  background: #fff;\n  z-index: 5;\n"])));
 var templateObject_1$c, templateObject_2$a, templateObject_3$7, templateObject_4$4, templateObject_5$3, templateObject_6$3, templateObject_7$2, templateObject_8$1;
 
 var Tile = function Tile(_a) {
@@ -63541,25 +63227,13 @@ var Tile = function Tile(_a) {
 
 var colors = ['#b3ecda', '#b4e0fb', '#f0bec4', '#fddbb6', '#fef4c4', '#f4d2fa', '#d0d0d0', '#b2b5ff', '#e4ffb4', '#b4fffc', '#ffb6e3'];
 
-var Container$1 = dt.div.withConfig({
-  displayName: "styledcomponents__Container",
-  componentId: "sc-1f35rrb-0"
-})(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"])));
-var Grid = dt.div.withConfig({
-  displayName: "styledcomponents__Grid",
-  componentId: "sc-1f35rrb-1"
-})(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"])));
-var ColorContainerInput = dt.input.withConfig({
-  displayName: "styledcomponents__ColorContainerInput",
-  componentId: "sc-1f35rrb-2"
-})(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"])), function (_a) {
+var Container$1 = dt.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  padding: 30px 0;\n"])));
+var Grid = dt.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 60px;\n  height: 100%;\n"])));
+var ColorContainerInput = dt.input(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n\n  &:before {\n    content: 'Custom \u270E';\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 20px;\n    text-align: center;\n    padding: 2px 0;\n    width: 80px;\n    height: 20px;\n    background: white;\n    z-index: 50;\n    transition: 0.3s ease;\n  }\n"])), function (_a) {
   var color = _a.color;
   return color;
 });
-var ColorContainer = dt.div.withConfig({
-  displayName: "styledcomponents__ColorContainer",
-  componentId: "sc-1f35rrb-3"
-})(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"])), function (_a) {
+var ColorContainer = dt.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"], ["\n  cursor: pointer;\n  width: 160px;\n  height: 156px;\n  background: ", ";\n  position: relative;\n  border: 1px solid transparent;\n  transform: scale(0.87);\n  transition: 0.3s ease;\n\n  &:hover,\n  &.selected {\n    border: 2px solid #06c68f;\n    transform: scale(1);\n  }\n\n  &.disabled {\n    pointer-events: none;\n    background: gray;\n  }\n"])), function (_a) {
   var color = _a.color;
   return color;
 });
@@ -80810,18 +80484,9 @@ var ColorPicker = function ColorPicker(_a) {
   });
 };
 
-var Wrapper = dt.div.withConfig({
-  displayName: "styled-components__Wrapper",
-  componentId: "sc-1fppv7o-0"
-})(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
-dt.iframe.withConfig({
-  displayName: "styled-components__ScaledIframe",
-  componentId: "sc-1fppv7o-1"
-})(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"], ["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"])));
-var EditButton = dt.div.withConfig({
-  displayName: "styled-components__EditButton",
-  componentId: "sc-1fppv7o-2"
-})(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"], ["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"])));
+var Wrapper = dt.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  aspect-ratio: 1;\n  width: 410px;\n  scale: 0.4;\n  transform: translate(-75%, -76%);\n  background-color: #f5f5f5;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  transition: 0.3s;\n  border-radius: 14px;\n  position: relative;\n  img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
+dt.iframe(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"], ["\n  width: 410px;\n  height: 410px;\n  border: 0;\n  border-radius: 4px;\n"])));
+var EditButton = dt.div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"], ["\n  background-color: rgb(6, 198, 143);\n  position: absolute;\n  right: -12px;\n  scale: 2.5;\n  top: -12px;\n  cursor: pointer;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  padding: 10px;\n  display: flex;\n"])));
 var templateObject_1$a, templateObject_2$8, templateObject_3$5;
 
 var Badge = function Badge(_a) {
@@ -81439,7 +81104,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.youtube,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerYouTube' */
-	      './YouTube-oaDfkHQB.js'
+	      './YouTube-Cwg8Lkq3.js'
 	    ); }).then(function (n) { return n.YouTube; }))
 	  },
 	  {
@@ -81448,7 +81113,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.soundcloud,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerSoundCloud' */
-	      './SoundCloud-DwTdm9dS.js'
+	      './SoundCloud-Dd6nnkBs.js'
 	    ); }).then(function (n) { return n.SoundCloud; }))
 	  },
 	  {
@@ -81457,7 +81122,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.vimeo,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerVimeo' */
-	      './Vimeo-IemdXgFU.js'
+	      './Vimeo-BT2-pWhZ.js'
 	    ); }).then(function (n) { return n.Vimeo; }))
 	  },
 	  {
@@ -81466,7 +81131,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.mux,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerMux' */
-	      './Mux-BJBXG9ch.js'
+	      './Mux-ccrNe765.js'
 	    ); }).then(function (n) { return n.Mux; }))
 	  },
 	  {
@@ -81475,7 +81140,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.facebook,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerFacebook' */
-	      './Facebook-Cf7Zqh5M.js'
+	      './Facebook-Bx5lzLlu.js'
 	    ); }).then(function (n) { return n.Facebook; }))
 	  },
 	  {
@@ -81484,7 +81149,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.streamable,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerStreamable' */
-	      './Streamable-D8-K68dw.js'
+	      './Streamable-CSZR40Qz.js'
 	    ); }).then(function (n) { return n.Streamable; }))
 	  },
 	  {
@@ -81493,7 +81158,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.wistia,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerWistia' */
-	      './Wistia-nnUSaeyK.js'
+	      './Wistia-C5smECBA.js'
 	    ); }).then(function (n) { return n.Wistia; }))
 	  },
 	  {
@@ -81502,7 +81167,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.twitch,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerTwitch' */
-	      './Twitch-7Ws7Z106.js'
+	      './Twitch-3agwEihM.js'
 	    ); }).then(function (n) { return n.Twitch; }))
 	  },
 	  {
@@ -81511,7 +81176,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.dailymotion,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerDailyMotion' */
-	      './DailyMotion-DYEfv92c.js'
+	      './DailyMotion-CpN-r05R.js'
 	    ); }).then(function (n) { return n.DailyMotion; }))
 	  },
 	  {
@@ -81520,7 +81185,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.mixcloud,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerMixcloud' */
-	      './Mixcloud-CNC30wHI.js'
+	      './Mixcloud-B_yRq86w.js'
 	    ); }).then(function (n) { return n.Mixcloud; }))
 	  },
 	  {
@@ -81529,7 +81194,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.vidyard,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerVidyard' */
-	      './Vidyard-DDUsMnEH.js'
+	      './Vidyard-CDZIF4D0.js'
 	    ); }).then(function (n) { return n.Vidyard; }))
 	  },
 	  {
@@ -81538,7 +81203,7 @@ function requirePlayers () {
 	    canPlay: import_patterns.canPlay.kaltura,
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerKaltura' */
-	      './Kaltura-BLOZAyCc.js'
+	      './Kaltura-Dh1dqM-I.js'
 	    ); }).then(function (n) { return n.Kaltura; }))
 	  },
 	  {
@@ -81550,7 +81215,7 @@ function requirePlayers () {
 	    },
 	    lazyPlayer: (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	      /* webpackChunkName: 'reactPlayerFilePlayer' */
-	      './FilePlayer-Cwc4VFKW.js'
+	      './FilePlayer-GccUjaFN.js'
 	    ); }).then(function (n) { return n.FilePlayer; }))
 	  }
 	];
@@ -82371,7 +82036,7 @@ function requireReactPlayer () {
 	var import_Player = __toESM(/*@__PURE__*/ requirePlayer());
 	const Preview = (0, import_utils.lazy)(() => Promise.resolve().then(function () { return require(
 	  /* webpackChunkName: 'reactPlayerPreview' */
-	  './Preview-DVVyT4Un.js'
+	  './Preview-B3LweTAi.js'
 	); }).then(function (n) { return n.Preview; }));
 	const IS_BROWSER = typeof window !== "undefined" && window.document && typeof document !== "undefined";
 	const IS_GLOBAL = typeof commonjsGlobal !== "undefined" && commonjsGlobal.window && commonjsGlobal.window.document;
@@ -82580,31 +82245,13 @@ function requireLib () {
 var libExports = /*@__PURE__*/ requireLib();
 var ReactPlayer = /*@__PURE__*/getDefaultExportFromCjs(libExports);
 
-var StyledVideoPlayerWrapper = dt.div.withConfig({
-  displayName: "Playerstyles__StyledVideoPlayerWrapper",
-  componentId: "sc-kq71kt-0"
-})(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"], ["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"])));
-var StyledWrapper = dt.div.withConfig({
-  displayName: "Playerstyles__StyledWrapper",
-  componentId: "sc-kq71kt-1"
-})(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"])), StyledVideoPlayerWrapper);
-var StyledPlayerLoader = dt.div.withConfig({
-  displayName: "Playerstyles__StyledPlayerLoader",
-  componentId: "sc-kq71kt-2"
-})(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"], ["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"])));
+var StyledVideoPlayerWrapper = dt.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"], ["\n  cursor: pointer;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > .react-player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    border-radius: 8px;\n    height: 50%;\n\n    & > video {\n      height: fit-content;\n      width: 100%;\n      object-fit: contain;\n      border-radius: 8px;\n      background-color: var(--neutral-colors-dark);\n    }\n  }\n"])));
+var StyledWrapper = dt.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  width: 100%;\n  border-radius: 8px;\n  overflow: hidden;\n\n  &::before {\n    content: '';\n    display: block;\n    padding-top: 56.25%;\n  }\n\n  & > ", " {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n  }\n"])), StyledVideoPlayerWrapper);
+var StyledPlayerLoader = dt.div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"], ["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 8px;\n  background: #e7e9ed;\n  display: flex;\n  align-items: center;\n  top: 0;\n  bottom: 0;\n  margin: auto 0;\n  color: var(--neutral-colors-light);\n  justify-content: center;\n  z-index: 5;\n"])));
 var rotate = mt(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n"], ["\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n"])));
-var StyledLoader = dt.div.withConfig({
-  displayName: "Playerstyles__StyledLoader",
-  componentId: "sc-kq71kt-3"
-})(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"], ["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"])), rotate);
-var StyledControlsContainer = dt.div.withConfig({
-  displayName: "Playerstyles__StyledControlsContainer",
-  componentId: "sc-kq71kt-4"
-})(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"], ["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"])));
-var StyledSubtitles = dt.div.withConfig({
-  displayName: "Playerstyles__StyledSubtitles",
-  componentId: "sc-kq71kt-5"
-})(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"], ["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"])), function (_a) {
+var StyledLoader = dt.div(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"], ["\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 3px solid var(--neutral-colors-light);\n  border-right: 3px solid var(--neutral-colors-light);\n  border-bottom: 3px solid var(--neutral-colors-light);\n  border-left: 3px solid var(--brand-colors-accent);\n  transform: translateZ(0);\n  animation: ", " 1.1s infinite linear;\n  border-radius: 50%;\n  width: 46px;\n  height: 46px;\n\n  &:after {\n    border-radius: 50%;\n    width: 46px;\n    height: 46px;\n  }\n"])), rotate);
+var StyledControlsContainer = dt.div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"], ["\n  width: 100%;\n  height: fit-content;\n  display: flex;\n  align-items: flex-end;\n  position: absolute;\n  flex-direction: column;\n  left: 0;\n  bottom: 0;\n  z-index: 2;\n"])));
+var StyledSubtitles = dt.div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"], ["\n  background-color: rgba(2, 2, 16, 0.32);\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 150%;\n  padding: 8px;\n  position: absolute;\n  z-index: 100;\n  bottom: ", ";\n  right: 0;\n  left: 0;\n  width: fit-content;\n  margin: 0 auto;\n  max-width: 80%;\n  width: fit-content;\n"])), function (_a) {
   var $controls = _a.$controls;
   return $controls ? '60px' : '10px';
 });
@@ -82631,64 +82278,28 @@ var injectHLSSubtitleStyles = function injectHLSSubtitleStyles() {
 };
 var templateObject_1$9, templateObject_2$7, templateObject_3$4, templateObject_4$2, templateObject_5$2, templateObject_6$2, templateObject_7$1;
 
-var StyledControls = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledControls",
-  componentId: "sc-1d6s9xo-0"
-})(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"])), {
+var StyledControls = dt.div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  width: 100%;\n  border-radius: 0px 0px 8px 8px;\n  background: #565a62;\n  padding: 12px 16px;\n  position: relative;\n\n  svg {\n    cursor: pointer;\n\n    @media screen and (max-width: 1500px) {\n      width: 20px;\n      height: 20px;\n    }\n\n    @media screen and (max-width: 1000px) {\n      width: 16px;\n      height: 16px;\n    }\n  }\n\n  & > p {\n    color: var(--neutral-colors-light);\n    font-family: 'Poppins', sans-serif;\n    ", "\n  }\n"])), {
   fontStyle: 'descriptor'
 });
-var StyledSlider = dt.input.withConfig({
-  displayName: "Controlsstyles__StyledSlider",
-  componentId: "sc-1d6s9xo-1"
-})(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"])), function (_a) {
+var StyledSlider = dt.input(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"], ["\n  width: 100%;\n  height: 2px;\n  border-radius: 5px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--brand-colors-accent);\n    cursor: pointer;\n  }\n"])), function (_a) {
   var value = _a.value;
   return "linear-gradient(\n    to right,\n    var(--brand-colors-accent) 0%,\n    var(--brand-colors-accent) ".concat(value, "%,\n    var(--level-dark-200) ").concat(value, "%,\n    var(--level-dark-200) 100%\n  )");
 });
-var StyledVolumeWrapper = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledVolumeWrapper",
-  componentId: "sc-1d6s9xo-2"
-})(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"])));
-var StyledVolumeSlider = dt.input.withConfig({
-  displayName: "Controlsstyles__StyledVolumeSlider",
-  componentId: "sc-1d6s9xo-3"
-})(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"], ["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"])), function (_a) {
+var StyledVolumeWrapper = dt.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 16px;\n\n  & > svg {\n    cursor: pointer;\n  }\n\n  & > input {\n    display: none;\n  }\n\n  &:hover > input {\n    display: block;\n  }\n"])));
+var StyledVolumeSlider = dt.input(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"], ["\n  width: 100px;\n  height: 4px;\n  border-radius: 5px;\n  background: ", ";\n  outline: none;\n  -webkit-transition: 0.2s;\n  transition: opacity 0.2s;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n\n  &::-moz-range-thumb {\n    appearance: none;\n    width: 12px;\n    height: 12px;\n    border-radius: 50%;\n    background: var(--neutral-colors-light);\n    cursor: pointer;\n  }\n"])), function (_a) {
   var value = _a.value;
   return "linear-gradient(\n    to right,\n    var(--neutral-colors-light) 0%,\n    var(--neutral-colors-light) ".concat(value, "%,\n    var(--level-grey-500) ").concat(value, "%,\n    var(--level-grey-500) 100%\n  )");
 });
-var StyledControllerLeft = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledControllerLeft",
-  componentId: "sc-1d6s9xo-4"
-})(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"])));
-var StyledControllerRight = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledControllerRight",
-  componentId: "sc-1d6s9xo-5"
-})(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"])));
-var StyledTimeTrack = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledTimeTrack",
-  componentId: "sc-1d6s9xo-6"
-})(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"], ["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"])), {
+var StyledControllerLeft = dt.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n"])));
+var StyledControllerRight = dt.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 16px;\n\n  .skip-icon-disabled {\n    cursor: default;\n\n    & > path {\n      fill: var(--level-dark-300);\n    }\n  }\n"])));
+var StyledTimeTrack = dt.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"], ["\n  color: var(--neutral-colors-light);\n  ", "\n  text-align: right;\n  white-space: nowrap;\n"])), {
   fontStyle: 'descriptor'
 });
-var StyledHeartIconContainer = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledHeartIconContainer",
-  componentId: "sc-1d6s9xo-7"
-})(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"])));
-var StyledSubtitlesIconContainer = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledSubtitlesIconContainer",
-  componentId: "sc-1d6s9xo-8"
-})(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])));
-var StyledFullscreenIconContainer = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledFullscreenIconContainer",
-  componentId: "sc-1d6s9xo-9"
-})(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
-var StyledVolumeIconContainer = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledVolumeIconContainer",
-  componentId: "sc-1d6s9xo-10"
-})(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
-var StyledPlayPauseIconContainer = dt.div.withConfig({
-  displayName: "Controlsstyles__StyledPlayPauseIconContainer",
-  componentId: "sc-1d6s9xo-11"
-})(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
+var StyledHeartIconContainer = dt.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  & > svg > path {\n    fill: var(--neutral-colors-light);\n  }\n"])));
+var StyledSubtitlesIconContainer = dt.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])));
+var StyledFullscreenIconContainer = dt.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
+var StyledVolumeIconContainer = dt.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
+var StyledPlayPauseIconContainer = dt.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n"])));
 var templateObject_1$8, templateObject_2$6, templateObject_3$3, templateObject_4$1, templateObject_5$1, templateObject_6$1, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12;
 
 var PLAYBACK_SPEED_LIST = [{
@@ -82819,14 +82430,8 @@ var useMenuToggle = function useMenuToggle(initialIsVisible, offset) {
   };
 };
 
-var StyledPlaybackMenuWrapper = dt.div.withConfig({
-  displayName: "PlaybackSpeedMenustyles__StyledPlaybackMenuWrapper",
-  componentId: "sc-ydef7t-0"
-})(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"])));
-var StyledPlaybackMenu = dt.div.withConfig({
-  displayName: "PlaybackSpeedMenustyles__StyledPlaybackMenu",
-  componentId: "sc-ydef7t-1"
-})(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"])), function (_a) {
+var StyledPlaybackMenuWrapper = dt.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  & > svg {\n    cursor: pointer;\n  }\n"])));
+var StyledPlaybackMenu = dt.div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 0px 4px 20px 0px rgba(71, 85, 105, 0.12);\n  width: 220px;\n  height: 312px;\n  ", "\n  padding: 8px 16px;\n  transition:\n    opacity 0.3s,\n    visibility 0.3s;\n  overflow: scroll;\n\n  & > h2 {\n    ", "\n    color: #0f172a;\n  }\n\n  @media screen and (max-width: 1500px) {\n    width: 180px;\n    height: 250px;\n    gap: 12px;\n\n    & > h2 {\n      ", "\n      font-weight: 600;\n    }\n  }\n\n  @media screen and (max-width: 1100px) {\n    width: 140px;\n    height: 200px;\n    gap: 8px;\n  }\n"])), function (_a) {
   var $position = _a.$position;
   return "\n    ".concat($position.vertical === DropdownVerticalPositionEnum.Top ? 'bottom: calc(100% + 8px);' : 'top: calc(100% + 8px);', "\n    ").concat($position.horizontal === DropdownHorizontalPositionEnum.Left ? 'right: calc(100% + 8px);' : 'left: calc(100% + 8px);', "\n  ");
 }, {
@@ -82834,10 +82439,7 @@ var StyledPlaybackMenu = dt.div.withConfig({
 }, {
   fontStyle: 'bodyS'
 });
-var StyledPlaybackSpeedItem = dt.p.withConfig({
-  displayName: "PlaybackSpeedMenustyles__StyledPlaybackSpeedItem",
-  componentId: "sc-ydef7t-2"
-})(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"], ["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"])), {
+var StyledPlaybackSpeedItem = dt.p(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"], ["\n  ", "\n  font-weight: 400;\n  color: #020210;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  transition: 0.6s cubic-bezier(0.79, 0.01, 0.15, 0.99);\n\n  @media screen and (max-width: 1500px) {\n    ", "\n  }\n"])), {
   fontStyle: 'labelM'
 }, {
   fontStyle: 'bodyS'
@@ -89388,14 +88990,8 @@ var VideoPlayer = function VideoPlayer(_a) {
   });
 };
 
-var Whiteboard = dt.div.withConfig({
-  displayName: "styled-components__Whiteboard",
-  componentId: "sc-1mgerjq-0"
-})(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"], ["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"])));
-var CenteredText = dt.div.withConfig({
-  displayName: "styled-components__CenteredText",
-  componentId: "sc-1mgerjq-1"
-})(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"], ["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"])), function (_a) {
+var Whiteboard = dt.div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"], ["\n  background-color: #ffffff;\n  padding: 20px;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 75vh;\n  border: 1px solid #e7e9ed;\n  border-radius: 4px;\n  flex-direction: column;\n  padding: 40px;\n"])));
+var CenteredText = dt.div(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"], ["\n  font-weight: 800;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 20px;\n  font-family: 'Open Sans', sans-serif;\n  text-align: center;\n  gap: 8px;\n  margin-top: ", ";\n\n  h1 {\n    font-size: 18px;\n    font-weight: 800;\n  }\n\n  h4 {\n    color: #68707a;\n    font-size: 16px;\n    font-weight: 500;\n  }\n"])), function (_a) {
   var marginTop = _a.marginTop;
   return marginTop || '0px';
 });
@@ -89403,10 +88999,7 @@ var templateObject_1$6, templateObject_2$4;
 
 var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAABACAYAAABFqxrgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPJSURBVHgB7ZtLbExRGMf/504V1alqvKo0Xq1kEpJ6hKRCYiZIiUewsSEshQ22pU1sJDYs7S2UeESLpENIxcIruiBKEOKVJkYp1ZqZ43/OdJqaTqeN9N522u8/Offec853b+b73e+755zJHYV+tPe2njDZh3IFLGWZphQcZJm0RlwDrUrjUfQnWs5Uqc50dipd46E7uoweH2HvbhrkI/v1g0DOxYFTp9eql6mdfe7u4dt6KhsPEMC+UQLAyM9I3u9TOHjknp6e2pmT2hB1EOQJ6wkgZyJ75xUAM/L6CZkRLqYCvvwC3nwHOqLIYT0Yi6KJzed72/WBwPwpocOzjdfLyWxDKZA3Dlmrn3+Am++Apo/WtzlMi9mpNn0g0PkCFr85zMvJbgBGk/j9JyW9TPhVkGqTdU98NyQQIBCsBAIEgpVAgECwEggQCFYCAQLBSiBAIFgJBAgEK4EAgWAlECAQrAQCBIKVQIBAsBIIEAhWAgECwUogQCBYCQQIBCuBAIFgJRAgEKwEAgSClUBAulf4Rrk0P6FduzCuPRf5+V2oq6tLvKi6buOOJY4PlQqqoDCwJjR+2pyQaS8vZJmCrFdLhOVb4vh36/vGtmd3w4TxXcfQVOR3mpUBoHw4TgDbMcZEEJcI4vhYfiaYV5+1SYWedFAOQlBqupObN2H8lOIS094Z+fQh3vXrN0a29EAGaX3SuhVxNIZvXGyGaHjf4FfBqm2bHPg2xRGrDzdcrscg7qob8mF4pEJVO/cyUE8yBTkSOZULygJtr18+e4ph0LBACFbt3MwQPKoUAqbOfSGf1KXzFwa+vHn1/AU8ltcQTARsJYAaJuKyfzqUKuYwvWh+WeAzI6IFHspLCAbAFu6PEUBFegsUc+s5CM8gdKdAdTICtNafuWtnBOQzFT7y+AcjwW9AsL7Iy9TwBEI3ABMBy02dAJ7Q+XrlKPPnorl0/hHLTY4NubSZZVIDJiIIou1r5EVHRzvclOsQ0gGgs7VQupmOr2XTXJa37D+rNe7Ttrw3iOKSUtdBuDpt7g9A+PrFK0o5feYE4YYL17R5aGo8NHWCqOC51RUrK7cWFc10bU7jGoRMAJBhUtQLxANT9wKEGxCSw2BtEgAdesLQrxkIQFIEYWaPJ2j52F6QIFiql65avcXv9w85iCGHwMXYYq30np5hkAC4rWlsuHAVg58W62772iQIcz1z3RWV6xdjiOXuUjoDgHhUf+VQGEmY6YhmPfXsFBA9S9+hlis5ZpbmPh+WxGJovpVhqZq0i9Mu05I2mPjla0C7/9VfqPhM23MjJyAAAAAASUVORK5CYII=";
 
-var ImageContainer = dt.div.withConfig({
-  displayName: "styled-components__ImageContainer",
-  componentId: "sc-1u783cc-0"
-})(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"])));
+var ImageContainer = dt.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  width: 64px;\n  height: 64px;\n\n  img {\n    width: 100%;\n  }\n"])));
 var templateObject_1$5;
 
 var Presentation = function Presentation() {
@@ -89468,14 +89061,8 @@ var AudioPlayer = function AudioPlayer(props) {
   });
 };
 
-var ColumnNavigationContainer = dt.div.withConfig({
-  displayName: "styled-components__ColumnNavigationContainer",
-  componentId: "sc-1lyjqzm-0"
-})(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"], ["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"])));
-var NavigationItem = dt.div.withConfig({
-  displayName: "styled-components__NavigationItem",
-  componentId: "sc-1lyjqzm-1"
-})(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"])), function (_a) {
+var ColumnNavigationContainer = dt.div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"], ["\n  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.03);\n  background: #fff;\n  border-radius: 28px;\n  padding: 10px 30px;\n  padding-bottom: 34px;\n  display: flex;\n  flex-direction: column;\n  @media (max-width: 1660px) {\n    padding: 10px 20px;\n    padding-bottom: 24px;\n  }\n"])));
+var NavigationItem = dt.div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1.1rem;\n  @media (max-width: 1660px) {\n    font-size: 0.9rem;\n    padding: 5px;\n  }\n  font-weight: 600;\n  color: #000;\n  position: relative;\n  transition: font-weight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n\n  svg {\n    fill: ", ";\n  }\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    transform: translateY(-50%);\n    width: ", ";\n    height: 2px;\n    border-radius: 20px;\n    background-color: ", ";\n    transition:\n      width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),\n      background-color 0.3s ease-in-out;\n  }\n"])), function (_a) {
   var active = _a.active;
   return active ? ' #06c68f' : '#ccc';
 }, function (_a) {
@@ -89523,10 +89110,7 @@ var GridStatusEnums;
   GridStatusEnums["DECLINED"] = "DECLINED";
 })(GridStatusEnums || (GridStatusEnums = {}));
 
-var StatusWrapper = dt.div.withConfig({
-  displayName: "styled-components__StatusWrapper",
-  componentId: "sc-whxs20-0"
-})(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"])), function (_a) {
+var StatusWrapper = dt.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  text-align: center;\n  width: 92px;\n  font-size: 12px;\n  padding: 4px 12px;\n  border-radius: 4px;\n  display: inline-block;\n\n  background: ", ";\n\n  color: ", ";\n"])), function (_a) {
   var status = _a.status;
   switch (status) {
     case GridStatusEnums.ACTIVE:
@@ -89571,10 +89155,7 @@ var StatusWrapper = dt.div.withConfig({
       return 'transparent';
   }
 });
-dt.div.withConfig({
-  displayName: "styled-components__CompanyStatusContainer",
-  componentId: "sc-whxs20-1"
-})(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
+dt.div(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  font-size: 13px;\n  color: #fff;\n  height: 32px;\n  padding: 4px 12px;\n  text-transform: capitalize;\n  border-radius: 4px;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
   var $isActive = _a.$isActive;
   return $isActive ? '#08C694' : '#EA382A';
 });
@@ -89589,10 +89170,7 @@ var StatusIndicator = function StatusIndicator(_a) {
   });
 };
 
-var StyledTabNavigationContainer = dt.div.withConfig({
-  displayName: "styled-components__StyledTabNavigationContainer",
-  componentId: "sc-98t12t-0"
-})(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"], ["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"])), function (_a) {
+var StyledTabNavigationContainer = dt.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"], ["\n  .MuiTabs-indicator {\n    top: 0 !important;\n    background-color: #0074d9 !important;\n  }\n\n  .MuiTab-root {\n    min-width: 90px !important;\n    width: fit-content !important;\n    padding: 0 8px !important;\n  }\n\n  .Mui-selected {\n    color: #0074d9 !important;\n    background-color: #f2f7fb;\n  }\n\n  .MuiPaper-root {\n    border: none !important;\n  }\n\n  background: ", ";\n\n  & > header {\n    background-color: ", ";\n    padding-left: 16px;\n  }\n\n  & > header > .MuiTabs-root > .MuiTabs-fixed {\n    overflow: auto !important;\n  }\n"])), function (_a) {
   var $isTransparent = _a.$isTransparent;
   return $isTransparent ? 'transparent' : '#fff';
 }, function (_a) {
@@ -89636,36 +89214,18 @@ var TabNavigation = function TabNavigation(props) {
 };
 
 // ExpansionNavMenu
-var ExpansionMenuItemList = dt.ul.withConfig({
-  displayName: "styled-components__ExpansionMenuItemList",
-  componentId: "sc-169px4f-0"
-})(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  width: 100%;\n  padding: 0;\n"], ["\n  width: 100%;\n  padding: 0;\n"])));
-var ExpansionMenuItem = dt.li.withConfig({
-  displayName: "styled-components__ExpansionMenuItem",
-  componentId: "sc-169px4f-1"
-})(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"], ["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"
+var ExpansionMenuItemList = dt.ul(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  width: 100%;\n  padding: 0;\n"], ["\n  width: 100%;\n  padding: 0;\n"])));
+var ExpansionMenuItem = dt.li(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"], ["\n  & > a {\n    border-radius: 4px;\n    display: flex;\n    align-items: center;\n    width: 100%;\n    padding: 10px 14px;\n    font-size: 16px;\n    margin-block: 4px;\n    transition: all 0.3s ease;\n    font-family: 'Open Sans';\n    font-weight: 500;\n    color: #020210;\n    transition: 0.3s ease;\n\n    &:hover {\n      color: #06c68f;\n    }\n    &.active {\n      background-color: #06c68f;\n      color: white;\n    }\n  }\n"
 // NavigationBar
 ])));
 // NavigationBar
-var Container = dt.div.withConfig({
-  displayName: "styled-components__Container",
-  componentId: "sc-169px4f-2"
-})(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"], ["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"])), function (_a) {
+var Container = dt.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"], ["\n  width: ", ";\n  max-height: 80vh;\n  overflow-y: auto;\n"])), function (_a) {
   var $isOpened = _a.$isOpened;
   return $isOpened ? "240px" : "70px";
 });
-var StyledExpansionPanel = dt.div.withConfig({
-  displayName: "styled-components__StyledExpansionPanel",
-  componentId: "sc-169px4f-3"
-})(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"], ["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"])));
-var StyledExpansionPanelSummary = dt.div.withConfig({
-  displayName: "styled-components__StyledExpansionPanelSummary",
-  componentId: "sc-169px4f-4"
-})(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"], ["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"])));
-var StyledTypography = dt.div.withConfig({
-  displayName: "styled-components__StyledTypography",
-  componentId: "sc-169px4f-5"
-})(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"], ["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"])));
+var StyledExpansionPanel = dt.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"], ["\n  padding: 4px 8px;\n  display: flex;\n  width: 100%;\n  transition: all 0.3s ease;\n\n  & > a {\n    transition: all 0.3s ease;\n    color: #ababab;\n    width: 100%;\n\n    & > div {\n      transition: all 0.3s ease;\n\n      & svg path {\n        transition: all 0.3s ease;\n      }\n    }\n  }\n\n  & > a.active {\n    color: white;\n  }\n  & > a.active > div {\n    background-color: #eaf5f2;\n    color: #06c68f;\n    & svg path {\n      fill: #06c68f;\n    }\n  }\n"])));
+var StyledExpansionPanelSummary = dt.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"], ["\n  width: 100%;\n  transition: color 0.3s ease;\n  border-radius: 4px;\n  color: black;\n  padding: 10px 14px;\n\n  &:hover {\n    background-color: #eaf5f2;\n  }\n"])));
+var StyledTypography = dt.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"], ["\n  display: flex;\n  max-height: 40px;\n  width: 100%;\n  gap: 14px;\n  font-size: 16px;\n  font-family: 'Open Sans';\n  font-weight: 500;\n"])));
 var templateObject_1$1, templateObject_2$1, templateObject_3$1, templateObject_4, templateObject_5, templateObject_6;
 
 var ExpansionItem = function ExpansionItem(_a) {
@@ -94378,18 +93938,9 @@ var RadioButton = function RadioButton(_a) {
   });
 };
 
-var TipItem = dt.div.withConfig({
-  displayName: "styled-component__TipItem",
-  componentId: "sc-sgd7fw-0"
-})(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"])));
-var DrawerTipsContainer = dt.div.withConfig({
-  displayName: "styled-component__DrawerTipsContainer",
-  componentId: "sc-sgd7fw-1"
-})(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"])));
-dt.div.withConfig({
-  displayName: "styled-component__StyledRememberText",
-  componentId: "sc-sgd7fw-2"
-})(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  font-weight: 400 !important;\n"])));
+var TipItem = dt.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  font-weight: 400 !important;\n"])));
+var DrawerTipsContainer = dt.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n"])));
+dt.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  font-weight: 400 !important;\n"], ["\n  display: flex;\n  font-weight: 400 !important;\n"])));
 var styles = {
   svg: {
     width: '32px',
