@@ -1,7 +1,7 @@
 {
   "branches": ["main"],
   "debug": true,
-  "repositoryUrl": "https://github.com/bekatom/suada-components.git",
+  "repositoryUrl": "https://github.com/Suada-Learning/suada-components.git",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
@@ -34,7 +34,7 @@
     [
       "@semantic-release/npm",
       {
-        "npmPublish": true
+        "npmPublish": false
       }
     ],
     [

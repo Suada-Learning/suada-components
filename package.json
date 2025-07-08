@@ -1,7 +1,7 @@
 {
   "name": "suada-components",
   "private": false,
-  "version": "1.1.41",
+  "version": "1.2.1",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -155,7 +155,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bekatom/suada-components.git"
+    "url": "git+https://github.com/Suada-Learning/suada-components.git"
   },
   "keywords": [
     "react",
@@ -166,9 +166,9 @@
   "author": "bekatom",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bekatom/suada-components/issues"
+    "url": "https://github.com/Suada-Learning/suada-components/issues"
   },
-  "homepage": "https://github.com/bekatom/suada-components#readme",
+  "homepage": "https://github.com/Suada-Learning/suada-components#readme",
   "publishConfig": {
     "access": "public"
   }

@@ -13,5 +13,26 @@ export var StyledSubtitles = styled.div(templateObject_7 || (templateObject_7 = 
     var $controls = _a.$controls;
     return ($controls ? '60px' : '10px');
 });
+export var HLS_SUBTITLE_STYLES = "\n  /* Hide native HLS subtitles completely - comprehensive approach */\n  video::cue {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  video::-webkit-media-text-track-display {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  video::cue-region {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  video::-webkit-media-text-track-container {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  /* Target ReactPlayer specifically */\n  .react-player video::cue {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  .react-player video::-webkit-media-text-track-display {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  .react-player video::cue-region {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  .react-player video::-webkit-media-text-track-container {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  /* Additional selectors for different browsers */\n  video::-moz-media-text-track-display {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  video::-ms-media-text-track-display {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  /* Hide any subtitle overlays */\n  .react-player video + div[style*=\"position: absolute\"] {\n    display: none !important;\n  }\n  \n  /* Target HLS video player specifically */\n  .hls-video-player::cue {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  .hls-video-player::-webkit-media-text-track-display {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  .hls-video-player::-webkit-media-text-track-container {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n  \n  .hls-video-player::cue-region {\n    display: none !important;\n    visibility: hidden !important;\n    opacity: 0 !important;\n  }\n";
+export var injectHLSSubtitleStyles = function () {
+    var addSubtitleStyles = function () {
+        var existingStyle = document.getElementById('hls-subtitle-styles');
+        if (existingStyle) {
+            existingStyle.remove();
+        }
+        var style = document.createElement('style');
+        style.id = 'hls-subtitle-styles';
+        style.textContent = HLS_SUBTITLE_STYLES;
+        document.head.appendChild(style);
+    };
+    addSubtitleStyles();
+    // Return cleanup function
+    return function () {
+        var existingStyle = document.getElementById('hls-subtitle-styles');
+        if (existingStyle) {
+            existingStyle.remove();
+        }
+    };
+};
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;
 //# sourceMappingURL=Player.styles.js.map
