@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-TcbUwzVq.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var DailyMotion_1;
-var hasRequiredDailyMotion;
+var Vidyard_1;
+var hasRequiredVidyard;
 
-function requireDailyMotion () {
-	if (hasRequiredDailyMotion) return DailyMotion_1;
-	hasRequiredDailyMotion = 1;
+function requireVidyard () {
+	if (hasRequiredVidyard) return Vidyard_1;
+	hasRequiredVidyard = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,30 +54,28 @@ function requireDailyMotion () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var DailyMotion_exports = {};
-	__export(DailyMotion_exports, {
-	  default: () => DailyMotion
+	var Vidyard_exports = {};
+	__export(Vidyard_exports, {
+	  default: () => Vidyard
 	});
-	DailyMotion_1 = __toCommonJS(DailyMotion_exports);
+	Vidyard_1 = __toCommonJS(Vidyard_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://api.dmcdn.net/all.js";
-	const SDK_GLOBAL = "DM";
-	const SDK_GLOBAL_READY = "dmAsyncInit";
-	class DailyMotion extends import_react.Component {
+	const SDK_URL = "https://play.vidyard.com/embed/v4.js";
+	const SDK_GLOBAL = "VidyardV4";
+	const SDK_GLOBAL_READY = "onVidyardAPI";
+	class Vidyard extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "onDurationChange", () => {
-	      const duration = this.getDuration();
-	      this.props.onDuration(duration);
-	    });
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("setMuted", true);
+	      this.setVolume(0);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("setMuted", false);
+	      if (this.props.volume !== null) {
+	        this.setVolume(this.props.volume);
+	      }
 	    });
 	    __publicField(this, "ref", (container) => {
 	      this.container = container;
@@ -87,41 +85,34 @@ function requireDailyMotion () {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    const { controls, config, onError, playing } = this.props;
-	    const [, id] = url.match(import_patterns.MATCH_URL_DAILYMOTION);
+	    const { playing, config, onError, onDuration } = this.props;
+	    const id = url && url.match(import_patterns.MATCH_URL_VIDYARD)[1];
 	    if (this.player) {
-	      this.player.load(id, {
-	        start: (0, import_utils.parseStartTime)(url),
-	        autoplay: playing
-	      });
-	      return;
+	      this.stop();
 	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, (DM) => DM.player).then((DM) => {
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((Vidyard2) => {
 	      if (!this.container)
 	        return;
-	      const Player = DM.player;
-	      this.player = new Player(this.container, {
-	        width: "100%",
-	        height: "100%",
-	        video: id,
-	        params: {
-	          controls,
-	          autoplay: this.props.playing,
-	          mute: this.props.muted,
-	          start: (0, import_utils.parseStartTime)(url),
-	          origin: window.location.origin,
-	          ...config.params
-	        },
-	        events: {
-	          apiready: this.props.onReady,
-	          seeked: () => this.props.onSeek(this.player.currentTime),
-	          video_end: this.props.onEnded,
-	          durationchange: this.onDurationChange,
-	          pause: this.props.onPause,
-	          playing: this.props.onPlay,
-	          waiting: this.props.onBuffer,
-	          error: (event) => onError(event)
+	      Vidyard2.api.addReadyListener((data, player) => {
+	        if (this.player) {
+	          return;
 	        }
+	        this.player = player;
+	        this.player.on("ready", this.props.onReady);
+	        this.player.on("play", this.props.onPlay);
+	        this.player.on("pause", this.props.onPause);
+	        this.player.on("seek", this.props.onSeek);
+	        this.player.on("playerComplete", this.props.onEnded);
+	      }, id);
+	      Vidyard2.api.renderPlayer({
+	        uuid: id,
+	        container: this.container,
+	        autoplay: playing ? 1 : 0,
+	        ...config.options
+	      });
+	      Vidyard2.api.getPlayerMetadata(id).then((meta) => {
+	        this.duration = meta.length_in_seconds;
+	        onDuration(meta.length_in_seconds);
 	      });
 	    }, onError);
 	  }
@@ -132,9 +123,10 @@ function requireDailyMotion () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
+	    window.VidyardV4.api.destroyPlayer(this.player);
 	  }
-	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seek", seconds);
+	  seekTo(amount, keepPlaying = true) {
+	    this.callPlayer("seek", amount);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
@@ -142,14 +134,17 @@ function requireDailyMotion () {
 	  setVolume(fraction) {
 	    this.callPlayer("setVolume", fraction);
 	  }
+	  setPlaybackRate(rate) {
+	    this.callPlayer("setPlaybackSpeed", rate);
+	  }
 	  getDuration() {
-	    return this.player.duration || null;
+	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.player.currentTime;
+	    return this.callPlayer("currentTime");
 	  }
 	  getSecondsLoaded() {
-	    return this.player.bufferedTime;
+	    return null;
 	  }
 	  render() {
 	    const { display } = this.props;
@@ -161,18 +156,17 @@ function requireDailyMotion () {
 	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(DailyMotion, "displayName", "DailyMotion");
-	__publicField(DailyMotion, "canPlay", import_patterns.canPlay.dailymotion);
-	__publicField(DailyMotion, "loopOnEnded", true);
-	return DailyMotion_1;
+	__publicField(Vidyard, "displayName", "Vidyard");
+	__publicField(Vidyard, "canPlay", import_patterns.canPlay.vidyard);
+	return Vidyard_1;
 }
 
-var DailyMotionExports = /*@__PURE__*/ requireDailyMotion();
-var DailyMotion = /*@__PURE__*/getDefaultExportFromCjs(DailyMotionExports);
+var VidyardExports = /*@__PURE__*/ requireVidyard();
+var Vidyard = /*@__PURE__*/getDefaultExportFromCjs(VidyardExports);
 
-var DailyMotion$1 = /*#__PURE__*/_mergeNamespaces({
+var Vidyard$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: DailyMotion
-}, [DailyMotionExports]);
+  default: Vidyard
+}, [VidyardExports]);
 
-export { DailyMotion$1 as D };
+export { Vidyard$1 as V };

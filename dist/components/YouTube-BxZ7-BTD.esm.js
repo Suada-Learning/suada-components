@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-BN-pplrU.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,9 +59,9 @@ function requireYouTube () {
 	  default: () => YouTube
 	});
 	YouTube_1 = __toCommonJS(YouTube_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const SDK_URL = "https://www.youtube.com/iframe_api";
 	const SDK_GLOBAL = "YT";
 	const SDK_GLOBAL_READY = "onYouTubeIframeAPIReady";
@@ -250,11 +248,11 @@ function requireYouTube () {
 }
 
 var YouTubeExports = /*@__PURE__*/ requireYouTube();
-var YouTube = /*@__PURE__*/index.getDefaultExportFromCjs(YouTubeExports);
+var YouTube = /*@__PURE__*/getDefaultExportFromCjs(YouTubeExports);
 
 var YouTube$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: YouTube
 }, [YouTubeExports]);
 
-exports.YouTube = YouTube$1;
+export { YouTube$1 as Y };

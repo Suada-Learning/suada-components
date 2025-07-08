@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-BN-pplrU.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,9 +59,9 @@ function requireTwitch () {
 	  default: () => Twitch
 	});
 	Twitch_1 = __toCommonJS(Twitch_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const SDK_URL = "https://player.twitch.tv/js/embed/v1.js";
 	const SDK_GLOBAL = "Twitch";
 	const PLAYER_ID_PREFIX = "twitch-player-";
@@ -160,11 +158,11 @@ function requireTwitch () {
 }
 
 var TwitchExports = /*@__PURE__*/ requireTwitch();
-var Twitch = /*@__PURE__*/index.getDefaultExportFromCjs(TwitchExports);
+var Twitch = /*@__PURE__*/getDefaultExportFromCjs(TwitchExports);
 
 var Twitch$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: Twitch
 }, [TwitchExports]);
 
-exports.Twitch = Twitch$1;
+export { Twitch$1 as T };

@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-TcbUwzVq.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-DkSSJImO.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Facebook_1;
-var hasRequiredFacebook;
+var DailyMotion_1;
+var hasRequiredDailyMotion;
 
-function requireFacebook () {
-	if (hasRequiredFacebook) return Facebook_1;
-	hasRequiredFacebook = 1;
+function requireDailyMotion () {
+	if (hasRequiredDailyMotion) return DailyMotion_1;
+	hasRequiredDailyMotion = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,66 +54,76 @@ function requireFacebook () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Facebook_exports = {};
-	__export(Facebook_exports, {
-	  default: () => Facebook
+	var DailyMotion_exports = {};
+	__export(DailyMotion_exports, {
+	  default: () => DailyMotion
 	});
-	Facebook_1 = __toCommonJS(Facebook_exports);
+	DailyMotion_1 = __toCommonJS(DailyMotion_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://connect.facebook.net/en_US/sdk.js";
-	const SDK_GLOBAL = "FB";
-	const SDK_GLOBAL_READY = "fbAsyncInit";
-	const PLAYER_ID_PREFIX = "facebook-player-";
-	class Facebook extends import_react.Component {
+	const SDK_URL = "https://api.dmcdn.net/all.js";
+	const SDK_GLOBAL = "DM";
+	const SDK_GLOBAL_READY = "dmAsyncInit";
+	class DailyMotion extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
+	    __publicField(this, "onDurationChange", () => {
+	      const duration = this.getDuration();
+	      this.props.onDuration(duration);
+	    });
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
+	      this.callPlayer("setMuted", true);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
+	      this.callPlayer("setMuted", false);
+	    });
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url, isReady) {
-	    if (isReady) {
-	      (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => FB.XFBML.parse());
+	  load(url) {
+	    const { controls, config, onError, playing } = this.props;
+	    const [, id] = url.match(import_patterns.MATCH_URL_DAILYMOTION);
+	    if (this.player) {
+	      this.player.load(id, {
+	        start: (0, import_utils.parseStartTime)(url),
+	        autoplay: playing
+	      });
 	      return;
 	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => {
-	      FB.init({
-	        appId: this.props.config.appId,
-	        xfbml: true,
-	        version: this.props.config.version
-	      });
-	      FB.Event.subscribe("xfbml.render", (msg) => {
-	        this.props.onLoaded();
-	      });
-	      FB.Event.subscribe("xfbml.ready", (msg) => {
-	        if (msg.type === "video" && msg.id === this.playerID) {
-	          this.player = msg.instance;
-	          this.player.subscribe("startedPlaying", this.props.onPlay);
-	          this.player.subscribe("paused", this.props.onPause);
-	          this.player.subscribe("finishedPlaying", this.props.onEnded);
-	          this.player.subscribe("startedBuffering", this.props.onBuffer);
-	          this.player.subscribe("finishedBuffering", this.props.onBufferEnd);
-	          this.player.subscribe("error", this.props.onError);
-	          if (this.props.muted) {
-	            this.callPlayer("mute");
-	          } else {
-	            this.callPlayer("unmute");
-	          }
-	          this.props.onReady();
-	          document.getElementById(this.playerID).querySelector("iframe").style.visibility = "visible";
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, (DM) => DM.player).then((DM) => {
+	      if (!this.container)
+	        return;
+	      const Player = DM.player;
+	      this.player = new Player(this.container, {
+	        width: "100%",
+	        height: "100%",
+	        video: id,
+	        params: {
+	          controls,
+	          autoplay: this.props.playing,
+	          mute: this.props.muted,
+	          start: (0, import_utils.parseStartTime)(url),
+	          origin: window.location.origin,
+	          ...config.params
+	        },
+	        events: {
+	          apiready: this.props.onReady,
+	          seeked: () => this.props.onSeek(this.player.currentTime),
+	          video_end: this.props.onEnded,
+	          durationchange: this.onDurationChange,
+	          pause: this.props.onPause,
+	          playing: this.props.onPlay,
+	          waiting: this.props.onBuffer,
+	          error: (event) => onError(event)
 	        }
 	      });
-	    });
+	    }, onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -133,47 +143,36 @@ function requireFacebook () {
 	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.callPlayer("getDuration");
+	    return this.player.duration || null;
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("getCurrentPosition");
+	    return this.player.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return null;
+	    return this.player.bufferedTime;
 	  }
 	  render() {
-	    const { attributes } = this.props.config;
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      display
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement(
-	      "div",
-	      {
-	        style,
-	        id: this.playerID,
-	        className: "fb-video",
-	        "data-href": this.props.url,
-	        "data-autoplay": this.props.playing ? "true" : "false",
-	        "data-allowfullscreen": "true",
-	        "data-controls": this.props.controls ? "true" : "false",
-	        ...attributes
-	      }
-	    );
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(Facebook, "displayName", "Facebook");
-	__publicField(Facebook, "canPlay", import_patterns.canPlay.facebook);
-	__publicField(Facebook, "loopOnEnded", true);
-	return Facebook_1;
+	__publicField(DailyMotion, "displayName", "DailyMotion");
+	__publicField(DailyMotion, "canPlay", import_patterns.canPlay.dailymotion);
+	__publicField(DailyMotion, "loopOnEnded", true);
+	return DailyMotion_1;
 }
 
-var FacebookExports = /*@__PURE__*/ requireFacebook();
-var Facebook = /*@__PURE__*/getDefaultExportFromCjs(FacebookExports);
+var DailyMotionExports = /*@__PURE__*/ requireDailyMotion();
+var DailyMotion = /*@__PURE__*/getDefaultExportFromCjs(DailyMotionExports);
 
-var Facebook$1 = /*#__PURE__*/_mergeNamespaces({
+var DailyMotion$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Facebook
-}, [FacebookExports]);
+  default: DailyMotion
+}, [DailyMotionExports]);
 
-export { Facebook$1 as F };
+export { DailyMotion$1 as D };

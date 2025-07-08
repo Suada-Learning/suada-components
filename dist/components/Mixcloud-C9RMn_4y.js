@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-BN-pplrU.js');
+var index = require('./index-qTIAETxO.js');
 var React = require('react');
 
 function _mergeNamespaces(n, m) {
@@ -18,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Facebook_1;
-var hasRequiredFacebook;
+var Mixcloud_1;
+var hasRequiredMixcloud;
 
-function requireFacebook () {
-	if (hasRequiredFacebook) return Facebook_1;
-	hasRequiredFacebook = 1;
+function requireMixcloud () {
+	if (hasRequiredMixcloud) return Mixcloud_1;
+	hasRequiredMixcloud = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -56,66 +56,49 @@ function requireFacebook () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Facebook_exports = {};
-	__export(Facebook_exports, {
-	  default: () => Facebook
+	var Mixcloud_exports = {};
+	__export(Mixcloud_exports, {
+	  default: () => Mixcloud
 	});
-	Facebook_1 = __toCommonJS(Facebook_exports);
+	Mixcloud_1 = __toCommonJS(Mixcloud_exports);
 	var import_react = __toESM(React);
 	var import_utils = /*@__PURE__*/ index.requireUtils();
 	var import_patterns = /*@__PURE__*/ index.requirePatterns();
-	const SDK_URL = "https://connect.facebook.net/en_US/sdk.js";
-	const SDK_GLOBAL = "FB";
-	const SDK_GLOBAL_READY = "fbAsyncInit";
-	const PLAYER_ID_PREFIX = "facebook-player-";
-	class Facebook extends import_react.Component {
+	const SDK_URL = "https://widget.mixcloud.com/media/js/widgetApi.js";
+	const SDK_GLOBAL = "Mixcloud";
+	class Mixcloud extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
+	    __publicField(this, "duration", null);
+	    __publicField(this, "currentTime", null);
+	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
+	    });
+	    __publicField(this, "ref", (iframe) => {
+	      this.iframe = iframe;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url, isReady) {
-	    if (isReady) {
-	      (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => FB.XFBML.parse());
-	      return;
-	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((FB) => {
-	      FB.init({
-	        appId: this.props.config.appId,
-	        xfbml: true,
-	        version: this.props.config.version
+	  load(url) {
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Mixcloud2) => {
+	      this.player = Mixcloud2.PlayerWidget(this.iframe);
+	      this.player.ready.then(() => {
+	        this.player.events.play.on(this.props.onPlay);
+	        this.player.events.pause.on(this.props.onPause);
+	        this.player.events.ended.on(this.props.onEnded);
+	        this.player.events.error.on(this.props.error);
+	        this.player.events.progress.on((seconds, duration) => {
+	          this.currentTime = seconds;
+	          this.duration = duration;
+	        });
+	        this.props.onReady();
 	      });
-	      FB.Event.subscribe("xfbml.render", (msg) => {
-	        this.props.onLoaded();
-	      });
-	      FB.Event.subscribe("xfbml.ready", (msg) => {
-	        if (msg.type === "video" && msg.id === this.playerID) {
-	          this.player = msg.instance;
-	          this.player.subscribe("startedPlaying", this.props.onPlay);
-	          this.player.subscribe("paused", this.props.onPause);
-	          this.player.subscribe("finishedPlaying", this.props.onEnded);
-	          this.player.subscribe("startedBuffering", this.props.onBuffer);
-	          this.player.subscribe("finishedBuffering", this.props.onBufferEnd);
-	          this.player.subscribe("error", this.props.onError);
-	          if (this.props.muted) {
-	            this.callPlayer("mute");
-	          } else {
-	            this.callPlayer("unmute");
-	          }
-	          this.props.onReady();
-	          document.getElementById(this.playerID).querySelector("iframe").style.visibility = "visible";
-	        }
-	      });
-	    });
+	    }, this.props.onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -132,50 +115,52 @@ function requireFacebook () {
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.callPlayer("getDuration");
+	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("getCurrentPosition");
+	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
 	    return null;
 	  }
 	  render() {
-	    const { attributes } = this.props.config;
+	    const { url, config } = this.props;
+	    const id = url.match(import_patterns.MATCH_URL_MIXCLOUD)[1];
 	    const style = {
 	      width: "100%",
 	      height: "100%"
 	    };
+	    const query = (0, import_utils.queryString)({
+	      ...config.options,
+	      feed: `/${id}/`
+	    });
 	    return /* @__PURE__ */ import_react.default.createElement(
-	      "div",
+	      "iframe",
 	      {
+	        key: id,
+	        ref: this.ref,
 	        style,
-	        id: this.playerID,
-	        className: "fb-video",
-	        "data-href": this.props.url,
-	        "data-autoplay": this.props.playing ? "true" : "false",
-	        "data-allowfullscreen": "true",
-	        "data-controls": this.props.controls ? "true" : "false",
-	        ...attributes
+	        src: `https://www.mixcloud.com/widget/iframe/?${query}`,
+	        frameBorder: "0",
+	        allow: "autoplay"
 	      }
 	    );
 	  }
 	}
-	__publicField(Facebook, "displayName", "Facebook");
-	__publicField(Facebook, "canPlay", import_patterns.canPlay.facebook);
-	__publicField(Facebook, "loopOnEnded", true);
-	return Facebook_1;
+	__publicField(Mixcloud, "displayName", "Mixcloud");
+	__publicField(Mixcloud, "canPlay", import_patterns.canPlay.mixcloud);
+	__publicField(Mixcloud, "loopOnEnded", true);
+	return Mixcloud_1;
 }
 
-var FacebookExports = /*@__PURE__*/ requireFacebook();
-var Facebook = /*@__PURE__*/index.getDefaultExportFromCjs(FacebookExports);
+var MixcloudExports = /*@__PURE__*/ requireMixcloud();
+var Mixcloud = /*@__PURE__*/index.getDefaultExportFromCjs(MixcloudExports);
 
-var Facebook$1 = /*#__PURE__*/_mergeNamespaces({
+var Mixcloud$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Facebook
-}, [FacebookExports]);
+  default: Mixcloud
+}, [MixcloudExports]);
 
-exports.Facebook = Facebook$1;
+exports.Mixcloud = Mixcloud$1;
