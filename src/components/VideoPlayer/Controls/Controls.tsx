@@ -10,6 +10,7 @@ import {
   StyledControllerRight,
   StyledTimeTrack,
   StyledHeartIconContainer,
+  StyledDownloadIconContainer,
   StyledSubtitlesIconContainer,
   StyledFullscreenIconContainer,
   StyledVolumeIconContainer,
@@ -26,6 +27,7 @@ import {
   SubtitlesIcon,
   VolumeMuteIcon,
   VolumeUpIcon,
+  DownloadIcon,
 } from '../../../icons'
 
 import PlaybackSpeedMenu from '../PlaybackSpeedMenu'
@@ -59,7 +61,50 @@ const Controls: FC<ControlsProps> = ({
   isNextVideo,
   isPreviousVideo,
   showFavorite,
-}) => (
+  showDownload = false,
+  downloadUrl,
+  downloadFileName,
+  onDownload,
+}) => {
+  const handleDownloadClick = async (): Promise<void> => {
+    if (onDownload) {
+      onDownload()
+    } else if (downloadUrl) {
+      try {
+        // Fetch the video file to create a blob for download
+        const response = await fetch(downloadUrl)
+        if (!response.ok) throw new Error('Download failed')
+        
+        const blob = await response.blob()
+        const blobUrl = window.URL.createObjectURL(blob)
+        
+        // Create download link
+        const link = document.createElement('a')
+        link.href = blobUrl
+        link.download = downloadFileName || 'video-download'
+        link.style.display = 'none'
+        
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        
+        // Clean up blob URL
+        window.URL.revokeObjectURL(blobUrl)
+      } catch (error) {
+        console.error('Download failed:', error)
+        // Fallback to direct link method
+        const link = document.createElement('a')
+        link.href = downloadUrl
+        link.download = downloadFileName || 'video-download'
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+      }
+    }
+  }
+
+  return (
   <StyledControls>
     <StyledSlider
       type='range'
@@ -112,6 +157,12 @@ const Controls: FC<ControlsProps> = ({
         </StyledHeartIconContainer>
       )}
 
+      {showDownload && (
+        <StyledDownloadIconContainer>
+          <DownloadIcon onClick={handleDownloadClick} />
+        </StyledDownloadIconContainer>
+      )}
+
       <PlaybackSpeedMenu
         playbackSpeed={playbackRate}
         onPlaybackSpeedChange={(speed: number): void =>
@@ -136,6 +187,7 @@ const Controls: FC<ControlsProps> = ({
       </StyledFullscreenIconContainer>
     </StyledControllerRight>
   </StyledControls>
-)
+  )
+}
 
 export default Controls

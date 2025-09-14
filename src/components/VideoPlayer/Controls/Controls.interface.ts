@@ -31,4 +31,8 @@ export interface ControlsProps {
   isNextVideo?: boolean
   isPreviousVideo?: boolean
   showFavorite?: boolean
+  showDownload?: boolean
+  downloadUrl?: string
+  downloadFileName?: string
+  onDownload?: () => void
 }
