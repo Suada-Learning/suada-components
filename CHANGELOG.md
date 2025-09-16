@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/Suada-Learning/suada-components/compare/v1.2.1...v1.3.0) (2025-09-16)
+
+
+### Bug Fixes
+
+* builded library ([17cb8cb](https://github.com/Suada-Learning/suada-components/commit/17cb8cb2fb235a5e0629f320be32137f35e65838))
+* updated pagination params ([854a279](https://github.com/Suada-Learning/suada-components/commit/854a279f58ca1df75fc3b21c1545792aff538f05))
+
+
+### Features
+
+* add download functionality to video player controls ([92556aa](https://github.com/Suada-Learning/suada-components/commit/92556aaf3370fe9a167a0dbc4510f3fc98d30ad5))
+* using theme for styled-components ([32635dc](https://github.com/Suada-Learning/suada-components/commit/32635dca124e5703b19ca8619cc3c533390d871f))
+
 ## [1.2.1](https://github.com/Suada-Learning/suada-components/compare/v1.2.0...v1.2.1) (2025-06-24)
 
 
