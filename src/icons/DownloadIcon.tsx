@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { SvgProps } from './svgTypes.interface'
 
 export const DownloadIcon = forwardRef<SVGSVGElement, SvgProps>(
-  ({ className, onClick, ...props }, ref) => {
+  ({ className, onClick, fill = '#FFFFFF', ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -17,11 +17,11 @@ export const DownloadIcon = forwardRef<SVGSVGElement, SvgProps>(
       >
         <path
           d='M19.5 18V21H4.5V18H3V21C3 21.3978 3.15804 21.7794 3.43934 22.0607C3.72064 22.342 4.10218 22.5 4.5 22.5H19.5C19.8978 22.5 20.2794 22.342 20.5607 22.0607C20.842 21.7794 21 21.3978 21 21V18H19.5Z'
-          fill='#020210'
+          fill={fill}
         />
         <path
           d='M19.5 10.5L18.4425 9.4425L12.75 15.1275V1.5H11.25V15.1275L5.5575 9.4425L4.5 10.5L12 18L19.5 10.5Z'
-          fill='#020210'
+          fill={fill}
         />
       </svg>
     )

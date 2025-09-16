@@ -13,7 +13,7 @@ import {
 } from './Player.styles'
 import Controls from './Controls'
 import usePlayerControls from './usePlayerControls'
-import { useHLSSubtitles } from 'src/components/VideoPlayer/useHlsSubtitles'
+import { useHLSSubtitles } from './useHlsSubtitles'
 
 export const VideoPlayer = ({
   customStyles,
@@ -33,6 +33,10 @@ export const VideoPlayer = ({
   showFavorite,
   isFavorite = false,
   toggleFavorite = async (): Promise<void> => {},
+  showDownload,
+  downloadUrl,
+  downloadFileName,
+  onDownload,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const {
@@ -192,6 +196,10 @@ export const VideoPlayer = ({
           isNextVideo={isNextVideo}
           isPreviousVideo={isPreviousVideo}
           showFavorite={showFavorite}
+          showDownload={showDownload}
+          downloadUrl={downloadUrl}
+          downloadFileName={downloadFileName}
+          onDownload={onDownload}
         />
       </StyledControlsContainer>
     </StyledWrapper>
