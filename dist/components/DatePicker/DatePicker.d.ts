@@ -1,3 +1,3 @@
 import { ReactElement } from 'react';
 import { IDatePickerProps } from './datePicker.interface';
-export declare const DatePicker: ({ touched, error, errorMessage, value, onChange, }: IDatePickerProps) => ReactElement;
+export declare const DatePicker: ({ touched, error, errorMessage, value, onChange, minDate, maxDate, }: IDatePickerProps) => ReactElement;

@@ -173,6 +173,37 @@ export const StyledHeartIconContainer = styled.div`
   }
 `
 
+export const StyledDownloadIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  & > svg {
+    width: 24px !important;
+    height: 24px !important;
+    
+    @media screen and (max-width: 1500px) {
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 16px !important;
+      height: 16px !important;
+    }
+  }
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
+`
+
 export const StyledSubtitlesIconContainer = styled.div`
   display: flex;
   align-items: center;

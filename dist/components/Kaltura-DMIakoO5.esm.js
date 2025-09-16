@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-TcbUwzVq.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-SWFWGaD8.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Twitch_1;
-var hasRequiredTwitch;
+var Kaltura_1;
+var hasRequiredKaltura;
 
-function requireTwitch () {
-	if (hasRequiredTwitch) return Twitch_1;
-	hasRequiredTwitch = 1;
+function requireKaltura () {
+	if (hasRequiredKaltura) return Kaltura_1;
+	hasRequiredKaltura = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,67 +54,63 @@ function requireTwitch () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Twitch_exports = {};
-	__export(Twitch_exports, {
-	  default: () => Twitch
+	var Kaltura_exports = {};
+	__export(Kaltura_exports, {
+	  default: () => Kaltura
 	});
-	Twitch_1 = __toCommonJS(Twitch_exports);
+	Kaltura_1 = __toCommonJS(Kaltura_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://player.twitch.tv/js/embed/v1.js";
-	const SDK_GLOBAL = "Twitch";
-	const PLAYER_ID_PREFIX = "twitch-player-";
-	class Twitch extends import_react.Component {
+	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
+	const SDK_GLOBAL = "playerjs";
+	class Kaltura extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
+	    __publicField(this, "duration", null);
+	    __publicField(this, "currentTime", null);
+	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("setMuted", true);
+	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("setMuted", false);
+	      this.callPlayer("unmute");
+	    });
+	    __publicField(this, "ref", (iframe) => {
+	      this.iframe = iframe;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url, isReady) {
-	    const { playsinline, onError, config, controls } = this.props;
-	    const isChannel = import_patterns.MATCH_URL_TWITCH_CHANNEL.test(url);
-	    const id = isChannel ? url.match(import_patterns.MATCH_URL_TWITCH_CHANNEL)[1] : url.match(import_patterns.MATCH_URL_TWITCH_VIDEO)[1];
-	    if (isReady) {
-	      if (isChannel) {
-	        this.player.setChannel(id);
-	      } else {
-	        this.player.setVideo("v" + id);
-	      }
-	      return;
-	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Twitch2) => {
-	      this.player = new Twitch2.Player(this.playerID, {
-	        video: isChannel ? "" : id,
-	        channel: isChannel ? id : "",
-	        height: "100%",
-	        width: "100%",
-	        playsinline,
-	        autoplay: this.props.playing,
-	        muted: this.props.muted,
-	        // https://github.com/CookPete/react-player/issues/733#issuecomment-549085859
-	        controls: isChannel ? true : controls,
-	        time: (0, import_utils.parseStartTime)(url),
-	        ...config.options
+	  load(url) {
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
+	      if (!this.iframe)
+	        return;
+	      this.player = new playerjs.Player(this.iframe);
+	      this.player.on("ready", () => {
+	        setTimeout(() => {
+	          this.player.isReady = true;
+	          this.player.setLoop(this.props.loop);
+	          if (this.props.muted) {
+	            this.player.mute();
+	          }
+	          this.addListeners(this.player, this.props);
+	          this.props.onReady();
+	        }, 500);
 	      });
-	      const { READY, PLAYING, PAUSE, ENDED, ONLINE, OFFLINE, SEEK } = Twitch2.Player;
-	      this.player.addEventListener(READY, this.props.onReady);
-	      this.player.addEventListener(PLAYING, this.props.onPlay);
-	      this.player.addEventListener(PAUSE, this.props.onPause);
-	      this.player.addEventListener(ENDED, this.props.onEnded);
-	      this.player.addEventListener(SEEK, this.props.onSeek);
-	      this.player.addEventListener(ONLINE, this.props.onLoaded);
-	      this.player.addEventListener(OFFLINE, this.props.onLoaded);
-	    }, onError);
+	    }, this.props.onError);
+	  }
+	  addListeners(player, props) {
+	    player.on("play", props.onPlay);
+	    player.on("pause", props.onPause);
+	    player.on("ended", props.onEnded);
+	    player.on("error", props.onError);
+	    player.on("timeupdate", ({ duration, seconds }) => {
+	      this.duration = duration;
+	      this.currentTime = seconds;
+	    });
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -123,10 +119,9 @@ function requireTwitch () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
-	    this.callPlayer("pause");
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seek", seconds);
+	    this.callPlayer("setCurrentTime", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
@@ -134,35 +129,48 @@ function requireTwitch () {
 	  setVolume(fraction) {
 	    this.callPlayer("setVolume", fraction);
 	  }
+	  setLoop(loop) {
+	    this.callPlayer("setLoop", loop);
+	  }
 	  getDuration() {
-	    return this.callPlayer("getDuration");
+	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("getCurrentTime");
+	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return null;
+	    return this.secondsLoaded;
 	  }
 	  render() {
 	    const style = {
 	      width: "100%",
 	      height: "100%"
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement("div", { style, id: this.playerID });
+	    return /* @__PURE__ */ import_react.default.createElement(
+	      "iframe",
+	      {
+	        ref: this.ref,
+	        src: this.props.url,
+	        frameBorder: "0",
+	        scrolling: "no",
+	        style,
+	        allow: "encrypted-media; autoplay; fullscreen;",
+	        referrerPolicy: "no-referrer-when-downgrade"
+	      }
+	    );
 	  }
 	}
-	__publicField(Twitch, "displayName", "Twitch");
-	__publicField(Twitch, "canPlay", import_patterns.canPlay.twitch);
-	__publicField(Twitch, "loopOnEnded", true);
-	return Twitch_1;
+	__publicField(Kaltura, "displayName", "Kaltura");
+	__publicField(Kaltura, "canPlay", import_patterns.canPlay.kaltura);
+	return Kaltura_1;
 }
 
-var TwitchExports = /*@__PURE__*/ requireTwitch();
-var Twitch = /*@__PURE__*/getDefaultExportFromCjs(TwitchExports);
+var KalturaExports = /*@__PURE__*/ requireKaltura();
+var Kaltura = /*@__PURE__*/getDefaultExportFromCjs(KalturaExports);
 
-var Twitch$1 = /*#__PURE__*/_mergeNamespaces({
+var Kaltura$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Twitch
-}, [TwitchExports]);
+  default: Kaltura
+}, [KalturaExports]);
 
-export { Twitch$1 as T };
+export { Kaltura$1 as K };

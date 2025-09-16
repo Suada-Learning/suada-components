@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-BN-pplrU.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-SWFWGaD8.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -61,9 +59,9 @@ function requireFacebook () {
 	  default: () => Facebook
 	});
 	Facebook_1 = __toCommonJS(Facebook_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
 	const SDK_URL = "https://connect.facebook.net/en_US/sdk.js";
 	const SDK_GLOBAL = "FB";
 	const SDK_GLOBAL_READY = "fbAsyncInit";
@@ -171,11 +169,11 @@ function requireFacebook () {
 }
 
 var FacebookExports = /*@__PURE__*/ requireFacebook();
-var Facebook = /*@__PURE__*/index.getDefaultExportFromCjs(FacebookExports);
+var Facebook = /*@__PURE__*/getDefaultExportFromCjs(FacebookExports);
 
 var Facebook$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
   default: Facebook
 }, [FacebookExports]);
 
-exports.Facebook = Facebook$1;
+export { Facebook$1 as F };

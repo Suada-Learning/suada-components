@@ -5,7 +5,9 @@ export interface IDatePickerProps {
     label?: string;
     touched?: boolean;
     value?: Date | string | null;
-    onChange?: (date: Date | null) => void;
+    onChange?: (date: string | Date | null) => void;
     styles?: React.CSSProperties;
     format?: string;
+    minDate?: Date | string;
+    maxDate?: Date | string;
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-BN-pplrU.js');
+var index = require('./index-DeJmUcE4.js');
 var React = require('react');
 
 function _mergeNamespaces(n, m) {
@@ -18,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Vidyard_1;
-var hasRequiredVidyard;
+var Twitch_1;
+var hasRequiredTwitch;
 
-function requireVidyard () {
-	if (hasRequiredVidyard) return Vidyard_1;
-	hasRequiredVidyard = 1;
+function requireTwitch () {
+	if (hasRequiredTwitch) return Twitch_1;
+	hasRequiredTwitch = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -56,66 +56,66 @@ function requireVidyard () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Vidyard_exports = {};
-	__export(Vidyard_exports, {
-	  default: () => Vidyard
+	var Twitch_exports = {};
+	__export(Twitch_exports, {
+	  default: () => Twitch
 	});
-	Vidyard_1 = __toCommonJS(Vidyard_exports);
+	Twitch_1 = __toCommonJS(Twitch_exports);
 	var import_react = __toESM(React);
 	var import_utils = /*@__PURE__*/ index.requireUtils();
 	var import_patterns = /*@__PURE__*/ index.requirePatterns();
-	const SDK_URL = "https://play.vidyard.com/embed/v4.js";
-	const SDK_GLOBAL = "VidyardV4";
-	const SDK_GLOBAL_READY = "onVidyardAPI";
-	class Vidyard extends import_react.Component {
+	const SDK_URL = "https://player.twitch.tv/js/embed/v1.js";
+	const SDK_GLOBAL = "Twitch";
+	const PLAYER_ID_PREFIX = "twitch-player-";
+	class Twitch extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
+	    __publicField(this, "playerID", this.props.config.playerId || `${PLAYER_ID_PREFIX}${(0, import_utils.randomString)()}`);
 	    __publicField(this, "mute", () => {
-	      this.setVolume(0);
+	      this.callPlayer("setMuted", true);
 	    });
 	    __publicField(this, "unmute", () => {
-	      if (this.props.volume !== null) {
-	        this.setVolume(this.props.volume);
-	      }
-	    });
-	    __publicField(this, "ref", (container) => {
-	      this.container = container;
+	      this.callPlayer("setMuted", false);
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url) {
-	    const { playing, config, onError, onDuration } = this.props;
-	    const id = url && url.match(import_patterns.MATCH_URL_VIDYARD)[1];
-	    if (this.player) {
-	      this.stop();
+	  load(url, isReady) {
+	    const { playsinline, onError, config, controls } = this.props;
+	    const isChannel = import_patterns.MATCH_URL_TWITCH_CHANNEL.test(url);
+	    const id = isChannel ? url.match(import_patterns.MATCH_URL_TWITCH_CHANNEL)[1] : url.match(import_patterns.MATCH_URL_TWITCH_VIDEO)[1];
+	    if (isReady) {
+	      if (isChannel) {
+	        this.player.setChannel(id);
+	      } else {
+	        this.player.setVideo("v" + id);
+	      }
+	      return;
 	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((Vidyard2) => {
-	      if (!this.container)
-	        return;
-	      Vidyard2.api.addReadyListener((data, player) => {
-	        if (this.player) {
-	          return;
-	        }
-	        this.player = player;
-	        this.player.on("ready", this.props.onReady);
-	        this.player.on("play", this.props.onPlay);
-	        this.player.on("pause", this.props.onPause);
-	        this.player.on("seek", this.props.onSeek);
-	        this.player.on("playerComplete", this.props.onEnded);
-	      }, id);
-	      Vidyard2.api.renderPlayer({
-	        uuid: id,
-	        container: this.container,
-	        autoplay: playing ? 1 : 0,
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Twitch2) => {
+	      this.player = new Twitch2.Player(this.playerID, {
+	        video: isChannel ? "" : id,
+	        channel: isChannel ? id : "",
+	        height: "100%",
+	        width: "100%",
+	        playsinline,
+	        autoplay: this.props.playing,
+	        muted: this.props.muted,
+	        // https://github.com/CookPete/react-player/issues/733#issuecomment-549085859
+	        controls: isChannel ? true : controls,
+	        time: (0, import_utils.parseStartTime)(url),
 	        ...config.options
 	      });
-	      Vidyard2.api.getPlayerMetadata(id).then((meta) => {
-	        this.duration = meta.length_in_seconds;
-	        onDuration(meta.length_in_seconds);
-	      });
+	      const { READY, PLAYING, PAUSE, ENDED, ONLINE, OFFLINE, SEEK } = Twitch2.Player;
+	      this.player.addEventListener(READY, this.props.onReady);
+	      this.player.addEventListener(PLAYING, this.props.onPlay);
+	      this.player.addEventListener(PAUSE, this.props.onPause);
+	      this.player.addEventListener(ENDED, this.props.onEnded);
+	      this.player.addEventListener(SEEK, this.props.onSeek);
+	      this.player.addEventListener(ONLINE, this.props.onLoaded);
+	      this.player.addEventListener(OFFLINE, this.props.onLoaded);
 	    }, onError);
 	  }
 	  play() {
@@ -125,10 +125,10 @@ function requireVidyard () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
-	    window.VidyardV4.api.destroyPlayer(this.player);
+	    this.callPlayer("pause");
 	  }
-	  seekTo(amount, keepPlaying = true) {
-	    this.callPlayer("seek", amount);
+	  seekTo(seconds, keepPlaying = true) {
+	    this.callPlayer("seek", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
@@ -136,39 +136,35 @@ function requireVidyard () {
 	  setVolume(fraction) {
 	    this.callPlayer("setVolume", fraction);
 	  }
-	  setPlaybackRate(rate) {
-	    this.callPlayer("setPlaybackSpeed", rate);
-	  }
 	  getDuration() {
-	    return this.duration;
+	    return this.callPlayer("getDuration");
 	  }
 	  getCurrentTime() {
-	    return this.callPlayer("currentTime");
+	    return this.callPlayer("getCurrentTime");
 	  }
 	  getSecondsLoaded() {
 	    return null;
 	  }
 	  render() {
-	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%",
-	      display
+	      height: "100%"
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style, id: this.playerID });
 	  }
 	}
-	__publicField(Vidyard, "displayName", "Vidyard");
-	__publicField(Vidyard, "canPlay", import_patterns.canPlay.vidyard);
-	return Vidyard_1;
+	__publicField(Twitch, "displayName", "Twitch");
+	__publicField(Twitch, "canPlay", import_patterns.canPlay.twitch);
+	__publicField(Twitch, "loopOnEnded", true);
+	return Twitch_1;
 }
 
-var VidyardExports = /*@__PURE__*/ requireVidyard();
-var Vidyard = /*@__PURE__*/index.getDefaultExportFromCjs(VidyardExports);
+var TwitchExports = /*@__PURE__*/ requireTwitch();
+var Twitch = /*@__PURE__*/index.getDefaultExportFromCjs(TwitchExports);
 
-var Vidyard$1 = /*#__PURE__*/_mergeNamespaces({
+var Twitch$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Vidyard
-}, [VidyardExports]);
+  default: Twitch
+}, [TwitchExports]);
 
-exports.Vidyard = Vidyard$1;
+exports.Twitch = Twitch$1;

@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-TcbUwzVq.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-SWFWGaD8.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var SoundCloud_1;
-var hasRequiredSoundCloud;
+var DailyMotion_1;
+var hasRequiredDailyMotion;
 
-function requireSoundCloud () {
-	if (hasRequiredSoundCloud) return SoundCloud_1;
-	hasRequiredSoundCloud = 1;
+function requireDailyMotion () {
+	if (hasRequiredDailyMotion) return DailyMotion_1;
+	hasRequiredDailyMotion = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,70 +54,76 @@ function requireSoundCloud () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var SoundCloud_exports = {};
-	__export(SoundCloud_exports, {
-	  default: () => SoundCloud
+	var DailyMotion_exports = {};
+	__export(DailyMotion_exports, {
+	  default: () => DailyMotion
 	});
-	SoundCloud_1 = __toCommonJS(SoundCloud_exports);
+	DailyMotion_1 = __toCommonJS(DailyMotion_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://w.soundcloud.com/player/api.js";
-	const SDK_GLOBAL = "SC";
-	class SoundCloud extends import_react.Component {
+	const SDK_URL = "https://api.dmcdn.net/all.js";
+	const SDK_GLOBAL = "DM";
+	const SDK_GLOBAL_READY = "dmAsyncInit";
+	class DailyMotion extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "duration", null);
-	    __publicField(this, "currentTime", null);
-	    __publicField(this, "fractionLoaded", null);
+	    __publicField(this, "onDurationChange", () => {
+	      const duration = this.getDuration();
+	      this.props.onDuration(duration);
+	    });
 	    __publicField(this, "mute", () => {
-	      this.setVolume(0);
+	      this.callPlayer("setMuted", true);
 	    });
 	    __publicField(this, "unmute", () => {
-	      if (this.props.volume !== null) {
-	        this.setVolume(this.props.volume);
-	      }
+	      this.callPlayer("setMuted", false);
 	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
-	  load(url, isReady) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((SC) => {
-	      if (!this.iframe)
+	  load(url) {
+	    const { controls, config, onError, playing } = this.props;
+	    const [, id] = url.match(import_patterns.MATCH_URL_DAILYMOTION);
+	    if (this.player) {
+	      this.player.load(id, {
+	        start: (0, import_utils.parseStartTime)(url),
+	        autoplay: playing
+	      });
+	      return;
+	    }
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, (DM) => DM.player).then((DM) => {
+	      if (!this.container)
 	        return;
-	      const { PLAY, PLAY_PROGRESS, PAUSE, FINISH, ERROR } = SC.Widget.Events;
-	      if (!isReady) {
-	        this.player = SC.Widget(this.iframe);
-	        this.player.bind(PLAY, this.props.onPlay);
-	        this.player.bind(PAUSE, () => {
-	          const remaining = this.duration - this.currentTime;
-	          if (remaining < 0.05) {
-	            return;
-	          }
-	          this.props.onPause();
-	        });
-	        this.player.bind(PLAY_PROGRESS, (e) => {
-	          this.currentTime = e.currentPosition / 1e3;
-	          this.fractionLoaded = e.loadedProgress;
-	        });
-	        this.player.bind(FINISH, () => this.props.onEnded());
-	        this.player.bind(ERROR, (e) => this.props.onError(e));
-	      }
-	      this.player.load(url, {
-	        ...this.props.config.options,
-	        callback: () => {
-	          this.player.getDuration((duration) => {
-	            this.duration = duration / 1e3;
-	            this.props.onReady();
-	          });
+	      const Player = DM.player;
+	      this.player = new Player(this.container, {
+	        width: "100%",
+	        height: "100%",
+	        video: id,
+	        params: {
+	          controls,
+	          autoplay: this.props.playing,
+	          mute: this.props.muted,
+	          start: (0, import_utils.parseStartTime)(url),
+	          origin: window.location.origin,
+	          ...config.params
+	        },
+	        events: {
+	          apiready: this.props.onReady,
+	          seeked: () => this.props.onSeek(this.player.currentTime),
+	          video_end: this.props.onEnded,
+	          durationchange: this.onDurationChange,
+	          pause: this.props.onPause,
+	          playing: this.props.onPlay,
+	          waiting: this.props.onBuffer,
+	          error: (event) => onError(event)
 	        }
 	      });
-	    });
+	    }, onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -128,22 +134,22 @@ function requireSoundCloud () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seekTo", seconds * 1e3);
+	    this.callPlayer("seek", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction * 100);
+	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.duration;
+	    return this.player.duration || null;
 	  }
 	  getCurrentTime() {
-	    return this.currentTime;
+	    return this.player.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return this.fractionLoaded * this.duration;
+	    return this.player.bufferedTime;
 	  }
 	  render() {
 	    const { display } = this.props;
@@ -152,30 +158,21 @@ function requireSoundCloud () {
 	      height: "100%",
 	      display
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
-	      {
-	        ref: this.ref,
-	        src: `https://w.soundcloud.com/player/?url=${encodeURIComponent(this.props.url)}`,
-	        style,
-	        frameBorder: 0,
-	        allow: "autoplay"
-	      }
-	    );
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(SoundCloud, "displayName", "SoundCloud");
-	__publicField(SoundCloud, "canPlay", import_patterns.canPlay.soundcloud);
-	__publicField(SoundCloud, "loopOnEnded", true);
-	return SoundCloud_1;
+	__publicField(DailyMotion, "displayName", "DailyMotion");
+	__publicField(DailyMotion, "canPlay", import_patterns.canPlay.dailymotion);
+	__publicField(DailyMotion, "loopOnEnded", true);
+	return DailyMotion_1;
 }
 
-var SoundCloudExports = /*@__PURE__*/ requireSoundCloud();
-var SoundCloud = /*@__PURE__*/getDefaultExportFromCjs(SoundCloudExports);
+var DailyMotionExports = /*@__PURE__*/ requireDailyMotion();
+var DailyMotion = /*@__PURE__*/getDefaultExportFromCjs(DailyMotionExports);
 
-var SoundCloud$1 = /*#__PURE__*/_mergeNamespaces({
+var DailyMotion$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: SoundCloud
-}, [SoundCloudExports]);
+  default: DailyMotion
+}, [DailyMotionExports]);
 
-export { SoundCloud$1 as S };
+export { DailyMotion$1 as D };

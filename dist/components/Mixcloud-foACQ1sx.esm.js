@@ -1,7 +1,5 @@
-'use strict';
-
-var index = require('./index-BN-pplrU.js');
-var React = require('react');
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-SWFWGaD8.esm.js';
+import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
   m.forEach(function (e) {
@@ -18,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Kaltura_1;
-var hasRequiredKaltura;
+var Mixcloud_1;
+var hasRequiredMixcloud;
 
-function requireKaltura () {
-	if (hasRequiredKaltura) return Kaltura_1;
-	hasRequiredKaltura = 1;
+function requireMixcloud () {
+	if (hasRequiredMixcloud) return Mixcloud_1;
+	hasRequiredMixcloud = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -56,17 +54,17 @@ function requireKaltura () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Kaltura_exports = {};
-	__export(Kaltura_exports, {
-	  default: () => Kaltura
+	var Mixcloud_exports = {};
+	__export(Mixcloud_exports, {
+	  default: () => Mixcloud
 	});
-	Kaltura_1 = __toCommonJS(Kaltura_exports);
-	var import_react = __toESM(React);
-	var import_utils = /*@__PURE__*/ index.requireUtils();
-	var import_patterns = /*@__PURE__*/ index.requirePatterns();
-	const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
-	const SDK_GLOBAL = "playerjs";
-	class Kaltura extends import_react.Component {
+	Mixcloud_1 = __toCommonJS(Mixcloud_exports);
+	var import_react = __toESM(React__default);
+	var import_utils = /*@__PURE__*/ requireUtils();
+	var import_patterns = /*@__PURE__*/ requirePatterns();
+	const SDK_URL = "https://widget.mixcloud.com/media/js/widgetApi.js";
+	const SDK_GLOBAL = "Mixcloud";
+	class Mixcloud extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
@@ -74,10 +72,8 @@ function requireKaltura () {
 	    __publicField(this, "currentTime", null);
 	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("mute");
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("unmute");
 	    });
 	    __publicField(this, "ref", (iframe) => {
 	      this.iframe = iframe;
@@ -87,32 +83,20 @@ function requireKaltura () {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
-	      if (!this.iframe)
-	        return;
-	      this.player = new playerjs.Player(this.iframe);
-	      this.player.on("ready", () => {
-	        setTimeout(() => {
-	          this.player.isReady = true;
-	          this.player.setLoop(this.props.loop);
-	          if (this.props.muted) {
-	            this.player.mute();
-	          }
-	          this.addListeners(this.player, this.props);
-	          this.props.onReady();
-	        }, 500);
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Mixcloud2) => {
+	      this.player = Mixcloud2.PlayerWidget(this.iframe);
+	      this.player.ready.then(() => {
+	        this.player.events.play.on(this.props.onPlay);
+	        this.player.events.pause.on(this.props.onPause);
+	        this.player.events.ended.on(this.props.onEnded);
+	        this.player.events.error.on(this.props.error);
+	        this.player.events.progress.on((seconds, duration) => {
+	          this.currentTime = seconds;
+	          this.duration = duration;
+	        });
+	        this.props.onReady();
 	      });
 	    }, this.props.onError);
-	  }
-	  addListeners(player, props) {
-	    player.on("play", props.onPlay);
-	    player.on("pause", props.onPause);
-	    player.on("ended", props.onEnded);
-	    player.on("error", props.onError);
-	    player.on("timeupdate", ({ duration, seconds }) => {
-	      this.duration = duration;
-	      this.currentTime = seconds;
-	    });
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -123,16 +107,12 @@ function requireKaltura () {
 	  stop() {
 	  }
 	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("setCurrentTime", seconds);
+	    this.callPlayer("seek", seconds);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction);
-	  }
-	  setLoop(loop) {
-	    this.callPlayer("setLoop", loop);
 	  }
 	  getDuration() {
 	    return this.duration;
@@ -141,38 +121,44 @@ function requireKaltura () {
 	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return this.secondsLoaded;
+	    return null;
 	  }
 	  render() {
+	    const { url, config } = this.props;
+	    const id = url.match(import_patterns.MATCH_URL_MIXCLOUD)[1];
 	    const style = {
 	      width: "100%",
 	      height: "100%"
 	    };
+	    const query = (0, import_utils.queryString)({
+	      ...config.options,
+	      feed: `/${id}/`
+	    });
 	    return /* @__PURE__ */ import_react.default.createElement(
 	      "iframe",
 	      {
+	        key: id,
 	        ref: this.ref,
-	        src: this.props.url,
-	        frameBorder: "0",
-	        scrolling: "no",
 	        style,
-	        allow: "encrypted-media; autoplay; fullscreen;",
-	        referrerPolicy: "no-referrer-when-downgrade"
+	        src: `https://www.mixcloud.com/widget/iframe/?${query}`,
+	        frameBorder: "0",
+	        allow: "autoplay"
 	      }
 	    );
 	  }
 	}
-	__publicField(Kaltura, "displayName", "Kaltura");
-	__publicField(Kaltura, "canPlay", import_patterns.canPlay.kaltura);
-	return Kaltura_1;
+	__publicField(Mixcloud, "displayName", "Mixcloud");
+	__publicField(Mixcloud, "canPlay", import_patterns.canPlay.mixcloud);
+	__publicField(Mixcloud, "loopOnEnded", true);
+	return Mixcloud_1;
 }
 
-var KalturaExports = /*@__PURE__*/ requireKaltura();
-var Kaltura = /*@__PURE__*/index.getDefaultExportFromCjs(KalturaExports);
+var MixcloudExports = /*@__PURE__*/ requireMixcloud();
+var Mixcloud = /*@__PURE__*/getDefaultExportFromCjs(MixcloudExports);
 
-var Kaltura$1 = /*#__PURE__*/_mergeNamespaces({
+var Mixcloud$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Kaltura
-}, [KalturaExports]);
+  default: Mixcloud
+}, [MixcloudExports]);
 
-exports.Kaltura = Kaltura$1;
+export { Mixcloud$1 as M };

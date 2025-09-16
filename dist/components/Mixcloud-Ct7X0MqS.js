@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-BN-pplrU.js');
+var index = require('./index-DeJmUcE4.js');
 var React = require('react');
 
 function _mergeNamespaces(n, m) {
@@ -18,12 +18,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var DailyMotion_1;
-var hasRequiredDailyMotion;
+var Mixcloud_1;
+var hasRequiredMixcloud;
 
-function requireDailyMotion () {
-	if (hasRequiredDailyMotion) return DailyMotion_1;
-	hasRequiredDailyMotion = 1;
+function requireMixcloud () {
+	if (hasRequiredMixcloud) return Mixcloud_1;
+	hasRequiredMixcloud = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -56,76 +56,49 @@ function requireDailyMotion () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var DailyMotion_exports = {};
-	__export(DailyMotion_exports, {
-	  default: () => DailyMotion
+	var Mixcloud_exports = {};
+	__export(Mixcloud_exports, {
+	  default: () => Mixcloud
 	});
-	DailyMotion_1 = __toCommonJS(DailyMotion_exports);
+	Mixcloud_1 = __toCommonJS(Mixcloud_exports);
 	var import_react = __toESM(React);
 	var import_utils = /*@__PURE__*/ index.requireUtils();
 	var import_patterns = /*@__PURE__*/ index.requirePatterns();
-	const SDK_URL = "https://api.dmcdn.net/all.js";
-	const SDK_GLOBAL = "DM";
-	const SDK_GLOBAL_READY = "dmAsyncInit";
-	class DailyMotion extends import_react.Component {
+	const SDK_URL = "https://widget.mixcloud.com/media/js/widgetApi.js";
+	const SDK_GLOBAL = "Mixcloud";
+	class Mixcloud extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "onDurationChange", () => {
-	      const duration = this.getDuration();
-	      this.props.onDuration(duration);
-	    });
+	    __publicField(this, "duration", null);
+	    __publicField(this, "currentTime", null);
+	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
-	      this.callPlayer("setMuted", true);
 	    });
 	    __publicField(this, "unmute", () => {
-	      this.callPlayer("setMuted", false);
 	    });
-	    __publicField(this, "ref", (container) => {
-	      this.container = container;
+	    __publicField(this, "ref", (iframe) => {
+	      this.iframe = iframe;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    const { controls, config, onError, playing } = this.props;
-	    const [, id] = url.match(import_patterns.MATCH_URL_DAILYMOTION);
-	    if (this.player) {
-	      this.player.load(id, {
-	        start: (0, import_utils.parseStartTime)(url),
-	        autoplay: playing
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Mixcloud2) => {
+	      this.player = Mixcloud2.PlayerWidget(this.iframe);
+	      this.player.ready.then(() => {
+	        this.player.events.play.on(this.props.onPlay);
+	        this.player.events.pause.on(this.props.onPause);
+	        this.player.events.ended.on(this.props.onEnded);
+	        this.player.events.error.on(this.props.error);
+	        this.player.events.progress.on((seconds, duration) => {
+	          this.currentTime = seconds;
+	          this.duration = duration;
+	        });
+	        this.props.onReady();
 	      });
-	      return;
-	    }
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, (DM) => DM.player).then((DM) => {
-	      if (!this.container)
-	        return;
-	      const Player = DM.player;
-	      this.player = new Player(this.container, {
-	        width: "100%",
-	        height: "100%",
-	        video: id,
-	        params: {
-	          controls,
-	          autoplay: this.props.playing,
-	          mute: this.props.muted,
-	          start: (0, import_utils.parseStartTime)(url),
-	          origin: window.location.origin,
-	          ...config.params
-	        },
-	        events: {
-	          apiready: this.props.onReady,
-	          seeked: () => this.props.onSeek(this.player.currentTime),
-	          video_end: this.props.onEnded,
-	          durationchange: this.onDurationChange,
-	          pause: this.props.onPause,
-	          playing: this.props.onPlay,
-	          waiting: this.props.onBuffer,
-	          error: (event) => onError(event)
-	        }
-	      });
-	    }, onError);
+	    }, this.props.onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -142,39 +115,52 @@ function requireDailyMotion () {
 	    }
 	  }
 	  setVolume(fraction) {
-	    this.callPlayer("setVolume", fraction);
 	  }
 	  getDuration() {
-	    return this.player.duration || null;
+	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.player.currentTime;
+	    return this.currentTime;
 	  }
 	  getSecondsLoaded() {
-	    return this.player.bufferedTime;
+	    return null;
 	  }
 	  render() {
-	    const { display } = this.props;
+	    const { url, config } = this.props;
+	    const id = url.match(import_patterns.MATCH_URL_MIXCLOUD)[1];
 	    const style = {
 	      width: "100%",
-	      height: "100%",
-	      display
+	      height: "100%"
 	    };
-	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
+	    const query = (0, import_utils.queryString)({
+	      ...config.options,
+	      feed: `/${id}/`
+	    });
+	    return /* @__PURE__ */ import_react.default.createElement(
+	      "iframe",
+	      {
+	        key: id,
+	        ref: this.ref,
+	        style,
+	        src: `https://www.mixcloud.com/widget/iframe/?${query}`,
+	        frameBorder: "0",
+	        allow: "autoplay"
+	      }
+	    );
 	  }
 	}
-	__publicField(DailyMotion, "displayName", "DailyMotion");
-	__publicField(DailyMotion, "canPlay", import_patterns.canPlay.dailymotion);
-	__publicField(DailyMotion, "loopOnEnded", true);
-	return DailyMotion_1;
+	__publicField(Mixcloud, "displayName", "Mixcloud");
+	__publicField(Mixcloud, "canPlay", import_patterns.canPlay.mixcloud);
+	__publicField(Mixcloud, "loopOnEnded", true);
+	return Mixcloud_1;
 }
 
-var DailyMotionExports = /*@__PURE__*/ requireDailyMotion();
-var DailyMotion = /*@__PURE__*/index.getDefaultExportFromCjs(DailyMotionExports);
+var MixcloudExports = /*@__PURE__*/ requireMixcloud();
+var Mixcloud = /*@__PURE__*/index.getDefaultExportFromCjs(MixcloudExports);
 
-var DailyMotion$1 = /*#__PURE__*/_mergeNamespaces({
+var Mixcloud$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: DailyMotion
-}, [DailyMotionExports]);
+  default: Mixcloud
+}, [MixcloudExports]);
 
-exports.DailyMotion = DailyMotion$1;
+exports.Mixcloud = Mixcloud$1;

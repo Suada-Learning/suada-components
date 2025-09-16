@@ -5,6 +5,7 @@ export interface IPaginationV2Props {
   currentPage: number
   totalPages: number
   perPage?: number
+  themeColor?: string
   handleChange: (event: ChangeEvent<unknown>, value: number) => void
   handlePerPageChange?: (event: SelectChangeEvent<number>, child: ReactNode) => void
 }

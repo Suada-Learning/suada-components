@@ -1,5 +1,6 @@
 import { StylesConfig } from 'react-select';
 import { FormikTouched } from 'formik';
+import { ReactNode } from 'react';
 export interface IAsyncSelectOption {
     value: string;
     label: string;
@@ -52,6 +53,9 @@ export interface ISelectFieldProps {
     isClearable?: boolean;
     onFocus?: () => void;
     isDisabled?: boolean;
+    noOptionsMessage?: ((obj: {
+        inputValue: string;
+    }) => ReactNode) | undefined;
     isLoading?: boolean;
     label?: string;
     error?: boolean;

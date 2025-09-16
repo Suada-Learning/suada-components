@@ -16,7 +16,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { StyledDatePickerWrapper, classes } from './styled-components';
 import { DesktopDatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 export var DatePicker = function (_a) {
-    var touched = _a.touched, error = _a.error, errorMessage = _a.errorMessage, _b = _a.value, value = _b === void 0 ? null : _b, _c = _a.onChange, onChange = _c === void 0 ? function () { return undefined; } : _c;
+    var touched = _a.touched, error = _a.error, errorMessage = _a.errorMessage, _b = _a.value, value = _b === void 0 ? null : _b, _c = _a.onChange, onChange = _c === void 0 ? function () { return undefined; } : _c, minDate = _a.minDate, maxDate = _a.maxDate;
     var ref = useRef(null);
     return (_jsxs(StyledDatePickerWrapper, { className: "".concat(error && touched ? 'error' : ''), ref: ref, children: [_jsx(LocalizationProvider, { dateAdapter: AdapterDateFns, children: _jsx(DesktopDatePicker, { className: classes.datePicker, 
                     // label={label || 'Select'}
@@ -34,6 +34,6 @@ export var DatePicker = function (_a) {
                                     color: '#08C694',
                                 },
                             } }))); },
-                    }, minDate: new Date('1900-01-01'), maxDate: new Date() }) }), error && touched && (_jsx(Typography, { variant: 'caption', color: 'error', children: errorMessage }))] }));
+                    }, minDate: minDate || new Date('1900-01-01'), maxDate: maxDate || new Date() }) }), error && touched && (_jsx(Typography, { variant: 'caption', color: 'error', children: errorMessage }))] }));
 };
 //# sourceMappingURL=DatePicker.js.map

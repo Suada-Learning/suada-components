@@ -1,4 +1,4 @@
-import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-TcbUwzVq.esm.js';
+import { r as requireUtils, a as requirePatterns, g as getDefaultExportFromCjs } from './index-SWFWGaD8.esm.js';
 import React__default from 'react';
 
 function _mergeNamespaces(n, m) {
@@ -16,12 +16,12 @@ function _mergeNamespaces(n, m) {
   return Object.freeze(n);
 }
 
-var Mixcloud_1;
-var hasRequiredMixcloud;
+var Vidyard_1;
+var hasRequiredVidyard;
 
-function requireMixcloud () {
-	if (hasRequiredMixcloud) return Mixcloud_1;
-	hasRequiredMixcloud = 1;
+function requireVidyard () {
+	if (hasRequiredVidyard) return Vidyard_1;
+	hasRequiredVidyard = 1;
 	var __create = Object.create;
 	var __defProp = Object.defineProperty;
 	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -54,49 +54,67 @@ function requireMixcloud () {
 	  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 	  return value;
 	};
-	var Mixcloud_exports = {};
-	__export(Mixcloud_exports, {
-	  default: () => Mixcloud
+	var Vidyard_exports = {};
+	__export(Vidyard_exports, {
+	  default: () => Vidyard
 	});
-	Mixcloud_1 = __toCommonJS(Mixcloud_exports);
+	Vidyard_1 = __toCommonJS(Vidyard_exports);
 	var import_react = __toESM(React__default);
 	var import_utils = /*@__PURE__*/ requireUtils();
 	var import_patterns = /*@__PURE__*/ requirePatterns();
-	const SDK_URL = "https://widget.mixcloud.com/media/js/widgetApi.js";
-	const SDK_GLOBAL = "Mixcloud";
-	class Mixcloud extends import_react.Component {
+	const SDK_URL = "https://play.vidyard.com/embed/v4.js";
+	const SDK_GLOBAL = "VidyardV4";
+	const SDK_GLOBAL_READY = "onVidyardAPI";
+	class Vidyard extends import_react.Component {
 	  constructor() {
 	    super(...arguments);
 	    __publicField(this, "callPlayer", import_utils.callPlayer);
-	    __publicField(this, "duration", null);
-	    __publicField(this, "currentTime", null);
-	    __publicField(this, "secondsLoaded", null);
 	    __publicField(this, "mute", () => {
+	      this.setVolume(0);
 	    });
 	    __publicField(this, "unmute", () => {
+	      if (this.props.volume !== null) {
+	        this.setVolume(this.props.volume);
+	      }
 	    });
-	    __publicField(this, "ref", (iframe) => {
-	      this.iframe = iframe;
+	    __publicField(this, "ref", (container) => {
+	      this.container = container;
 	    });
 	  }
 	  componentDidMount() {
 	    this.props.onMount && this.props.onMount(this);
 	  }
 	  load(url) {
-	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Mixcloud2) => {
-	      this.player = Mixcloud2.PlayerWidget(this.iframe);
-	      this.player.ready.then(() => {
-	        this.player.events.play.on(this.props.onPlay);
-	        this.player.events.pause.on(this.props.onPause);
-	        this.player.events.ended.on(this.props.onEnded);
-	        this.player.events.error.on(this.props.error);
-	        this.player.events.progress.on((seconds, duration) => {
-	          this.currentTime = seconds;
-	          this.duration = duration;
-	        });
-	        this.props.onReady();
+	    const { playing, config, onError, onDuration } = this.props;
+	    const id = url && url.match(import_patterns.MATCH_URL_VIDYARD)[1];
+	    if (this.player) {
+	      this.stop();
+	    }
+	    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then((Vidyard2) => {
+	      if (!this.container)
+	        return;
+	      Vidyard2.api.addReadyListener((data, player) => {
+	        if (this.player) {
+	          return;
+	        }
+	        this.player = player;
+	        this.player.on("ready", this.props.onReady);
+	        this.player.on("play", this.props.onPlay);
+	        this.player.on("pause", this.props.onPause);
+	        this.player.on("seek", this.props.onSeek);
+	        this.player.on("playerComplete", this.props.onEnded);
+	      }, id);
+	      Vidyard2.api.renderPlayer({
+	        uuid: id,
+	        container: this.container,
+	        autoplay: playing ? 1 : 0,
+	        ...config.options
 	      });
-	    }, this.props.onError);
+	      Vidyard2.api.getPlayerMetadata(id).then((meta) => {
+	        this.duration = meta.length_in_seconds;
+	        onDuration(meta.length_in_seconds);
+	      });
+	    }, onError);
 	  }
 	  play() {
 	    this.callPlayer("play");
@@ -105,60 +123,50 @@ function requireMixcloud () {
 	    this.callPlayer("pause");
 	  }
 	  stop() {
+	    window.VidyardV4.api.destroyPlayer(this.player);
 	  }
-	  seekTo(seconds, keepPlaying = true) {
-	    this.callPlayer("seek", seconds);
+	  seekTo(amount, keepPlaying = true) {
+	    this.callPlayer("seek", amount);
 	    if (!keepPlaying) {
 	      this.pause();
 	    }
 	  }
 	  setVolume(fraction) {
+	    this.callPlayer("setVolume", fraction);
+	  }
+	  setPlaybackRate(rate) {
+	    this.callPlayer("setPlaybackSpeed", rate);
 	  }
 	  getDuration() {
 	    return this.duration;
 	  }
 	  getCurrentTime() {
-	    return this.currentTime;
+	    return this.callPlayer("currentTime");
 	  }
 	  getSecondsLoaded() {
 	    return null;
 	  }
 	  render() {
-	    const { url, config } = this.props;
-	    const id = url.match(import_patterns.MATCH_URL_MIXCLOUD)[1];
+	    const { display } = this.props;
 	    const style = {
 	      width: "100%",
-	      height: "100%"
+	      height: "100%",
+	      display
 	    };
-	    const query = (0, import_utils.queryString)({
-	      ...config.options,
-	      feed: `/${id}/`
-	    });
-	    return /* @__PURE__ */ import_react.default.createElement(
-	      "iframe",
-	      {
-	        key: id,
-	        ref: this.ref,
-	        style,
-	        src: `https://www.mixcloud.com/widget/iframe/?${query}`,
-	        frameBorder: "0",
-	        allow: "autoplay"
-	      }
-	    );
+	    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
 	  }
 	}
-	__publicField(Mixcloud, "displayName", "Mixcloud");
-	__publicField(Mixcloud, "canPlay", import_patterns.canPlay.mixcloud);
-	__publicField(Mixcloud, "loopOnEnded", true);
-	return Mixcloud_1;
+	__publicField(Vidyard, "displayName", "Vidyard");
+	__publicField(Vidyard, "canPlay", import_patterns.canPlay.vidyard);
+	return Vidyard_1;
 }
 
-var MixcloudExports = /*@__PURE__*/ requireMixcloud();
-var Mixcloud = /*@__PURE__*/getDefaultExportFromCjs(MixcloudExports);
+var VidyardExports = /*@__PURE__*/ requireVidyard();
+var Vidyard = /*@__PURE__*/getDefaultExportFromCjs(VidyardExports);
 
-var Mixcloud$1 = /*#__PURE__*/_mergeNamespaces({
+var Vidyard$1 = /*#__PURE__*/_mergeNamespaces({
   __proto__: null,
-  default: Mixcloud
-}, [MixcloudExports]);
+  default: Vidyard
+}, [VidyardExports]);
 
-export { Mixcloud$1 as M };
+export { Vidyard$1 as V };
