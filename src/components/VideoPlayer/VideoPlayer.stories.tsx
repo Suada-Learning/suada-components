@@ -71,6 +71,19 @@ const meta: Meta<typeof VideoPlayer> = {
       description: 'Is there a previous video available',
       defaultValue: true,
     },
+    showDownload: {
+      control: 'boolean',
+      description: 'Show download button',
+      defaultValue: false,
+    },
+    downloadUrl: {
+      control: 'text',
+      description: 'URL for downloading the video',
+    },
+    downloadFileName: {
+      control: 'text',
+      description: 'Filename for the downloaded video',
+    },
   },
 }
 
@@ -103,6 +116,10 @@ const PlayerWrapper = (args: VideoPlayerProps) => {
     return Promise.resolve()
   }
 
+  const handleDownload = () => {
+    console.log('Download requested for:', args.downloadFileName || 'video')
+  }
+
   // Provide all required props with defaults
   const allProps = {
     url: args.url || 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
@@ -122,6 +139,10 @@ const PlayerWrapper = (args: VideoPlayerProps) => {
     isFavorite: isFavorite,
     toggleFavorite: toggleFavorite,
     customStyles: args.customStyles || { borderRadius: '8px', overflow: 'hidden' },
+    showDownload: !!args.showDownload,
+    downloadUrl: args.downloadUrl,
+    downloadFileName: args.downloadFileName,
+    onDownload: args.showDownload ? handleDownload : undefined,
   }
 
   return <VideoPlayer {...allProps} />
@@ -176,5 +197,43 @@ export const NoControls: Story = {
     isNextVideo: false,
     isPreviousVideo: false,
     showFavorite: false,
+  },
+}
+
+// With Download
+export const WithDownload: Story = {
+  render: args => <PlayerWrapper {...args} />,
+  args: {
+    ...Default.args,
+    showDownload: true,
+    downloadUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+    downloadFileName: 'sample-video.mp4',
+  },
+}
+
+// Download Only
+export const DownloadOnly: Story = {
+  render: args => <PlayerWrapper {...args} />,
+  args: {
+    ...Default.args,
+    isNextVideo: false,
+    isPreviousVideo: false,
+    showFavorite: false,
+    showDownload: true,
+    downloadUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+    downloadFileName: 'lesson-video.mp4',
+  },
+}
+
+// All Features
+export const AllFeatures: Story = {
+  render: args => <PlayerWrapper {...args} />,
+  args: {
+    ...Default.args,
+    showDownload: true,
+    downloadUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+    downloadFileName: 'complete-lesson.mp4',
+    subtitle: 'https://example.com/subtitles.vtt',
+    isFavorite: true,
   },
 }

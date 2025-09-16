@@ -33,6 +33,10 @@ export interface PlayerProps {
   showFavorite?: boolean
   isFavorite?: boolean
   toggleFavorite?: () => Promise<void>
+  showDownload?: boolean
+  downloadUrl?: string
+  downloadFileName?: string
+  onDownload?: () => void
 }
 
 export interface UsePlayerControlsProps {
