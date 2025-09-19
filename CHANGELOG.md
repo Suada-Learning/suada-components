@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Suada-Learning/suada-components/compare/v1.3.0...v1.4.0) (2025-09-19)
+
+
+### Features
+
+* enhance video player controls with tooltips and style updates ([ed08c06](https://github.com/Suada-Learning/suada-components/commit/ed08c06611539c7e9b9739de9bf5822c3edad343))
+
 # [1.3.0](https://github.com/Suada-Learning/suada-components/compare/v1.2.1...v1.3.0) (2025-09-16)
 
 
