@@ -157,7 +157,7 @@ export const StyledControllerRight = styled.div`
 `
 
 export const StyledTimeTrack = styled.div`
-  color: var(--neutral-colors-light);
+  color: #FFFFFF;
   ${{ fontStyle: 'descriptor' }}
   text-align: right;
   white-space: nowrap;
@@ -167,9 +167,15 @@ export const StyledHeartIconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   & > svg > path {
-    fill: var(--neutral-colors-light);
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
   }
 `
 
@@ -208,6 +214,16 @@ export const StyledSubtitlesIconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
 `
 
 export const StyledFullscreenIconContainer = styled.div`
@@ -215,6 +231,15 @@ export const StyledFullscreenIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
 `
 
 export const StyledVolumeIconContainer = styled.div`
@@ -222,6 +247,15 @@ export const StyledVolumeIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
 `
 
 export const StyledPlayPauseIconContainer = styled.div`
@@ -229,4 +263,29 @@ export const StyledPlayPauseIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
+`
+
+export const StyledRewindIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
 `
