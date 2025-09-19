@@ -15,6 +15,7 @@ import {
   StyledVolumeIconContainer,
   StyledPlayPauseIconContainer,
   StyledDownloadIconContainer,
+  StyledRewindIconContainer,
 } from './Controls.styles'
 import {
   HeartIcon,
@@ -29,6 +30,7 @@ import {
   VolumeUpIcon,
   DownloadIcon,
 } from '../../../icons'
+import { CustomTooltip } from '../../Tooltip'
 
 import PlaybackSpeedMenu from '../PlaybackSpeedMenu'
 
@@ -116,15 +118,27 @@ const Controls: FC<ControlsProps> = ({
         onMouseUp={seekMouseUpHandler}
       />
       <StyledControllerLeft>
-        <StyledPlayPauseIconContainer onClick={playPauseHandler}>
-          {playing ? <PauseIcon /> : <PlayIcon />}
-        </StyledPlayPauseIconContainer>
-        <RewindIcon onClick={rewindHandler} />
-        <RewindIcon forward onClick={handleFastForward} />
+        <CustomTooltip title={playing ? 'Pause' : 'Play'}>
+          <StyledPlayPauseIconContainer onClick={playPauseHandler}>
+            {playing ? <PauseIcon /> : <PlayIcon />}
+          </StyledPlayPauseIconContainer>
+        </CustomTooltip>
+        <CustomTooltip title="Rewind 10 seconds">
+          <StyledRewindIconContainer>
+            <RewindIcon onClick={rewindHandler} />
+          </StyledRewindIconContainer>
+        </CustomTooltip>
+        <CustomTooltip title="Forward 10 seconds">
+          <StyledRewindIconContainer>
+            <RewindIcon forward onClick={handleFastForward} />
+          </StyledRewindIconContainer>
+        </CustomTooltip>
         <StyledVolumeWrapper>
-          <StyledVolumeIconContainer onClick={muteHandler}>
-            {muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}
-          </StyledVolumeIconContainer>
+          <CustomTooltip title={muted ? 'Unmute' : 'Mute'}>
+            <StyledVolumeIconContainer onClick={muteHandler}>
+              {muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}
+            </StyledVolumeIconContainer>
+          </CustomTooltip>
           <StyledVolumeSlider type='range' value={volume * 100} onChange={volumeChangeHandler} />
         </StyledVolumeWrapper>
         <StyledTimeTrack>
@@ -133,33 +147,41 @@ const Controls: FC<ControlsProps> = ({
       </StyledControllerLeft>
       <StyledControllerRight>
         {handleSkipBackward && (
-          <SkipIcon
-            onClick={(): void => {
-              if (!isPreviousVideo) return
-              handleSkipBackward()
-            }}
-            className={isPreviousVideo ? '' : 'skip-icon-disabled'}
-          />
+          <CustomTooltip title="Previous video">
+            <SkipIcon
+              onClick={(): void => {
+                if (!isPreviousVideo) return
+                handleSkipBackward()
+              }}
+              className={isPreviousVideo ? '' : 'skip-icon-disabled'}
+            />
+          </CustomTooltip>
         )}
         {handleSkipForward && (
-          <SkipIcon
-            forward
-            onClick={(): void => {
-              if (!isNextVideo) return
-              handleSkipForward()
-            }}
-            className={isNextVideo ? '' : 'skip-icon-disabled'}
-          />
+          <CustomTooltip title="Next video">
+            <SkipIcon
+              forward
+              onClick={(): void => {
+                if (!isNextVideo) return
+                handleSkipForward()
+              }}
+              className={isNextVideo ? '' : 'skip-icon-disabled'}
+            />
+          </CustomTooltip>
         )}
         {showFavorite && (
-          <StyledHeartIconContainer>
-            <HeartIcon active={isFavorite} onClick={toggleIsFavorite} />
-          </StyledHeartIconContainer>
+          <CustomTooltip title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}>
+            <StyledHeartIconContainer>
+              <HeartIcon active={isFavorite} onClick={toggleIsFavorite} />
+            </StyledHeartIconContainer>
+          </CustomTooltip>
         )}
         {showDownload && downloadUrl && (
-          <StyledDownloadIconContainer>
-            <DownloadIcon onClick={handleDownloadClick} />
-          </StyledDownloadIconContainer>
+          <CustomTooltip title="Download video">
+            <StyledDownloadIconContainer>
+              <DownloadIcon onClick={handleDownloadClick} />
+            </StyledDownloadIconContainer>
+          </CustomTooltip>
         )}
 
         <PlaybackSpeedMenu
@@ -177,13 +199,17 @@ const Controls: FC<ControlsProps> = ({
         />
 
         {subtitle && (
-          <StyledSubtitlesIconContainer>
-            <SubtitlesIcon active={isSubtitlesChecked} onClick={toggleSubtitlesCheck} />
-          </StyledSubtitlesIconContainer>
+          <CustomTooltip title={isSubtitlesChecked ? 'Hide subtitles' : 'Show subtitles'}>
+            <StyledSubtitlesIconContainer>
+              <SubtitlesIcon active={isSubtitlesChecked} onClick={toggleSubtitlesCheck} />
+            </StyledSubtitlesIconContainer>
+          </CustomTooltip>
         )}
-        <StyledFullscreenIconContainer onClick={handleFullScreen}>
-          {isFullscreen ? <MinimizeIcon /> : <MaximizeIcon />}
-        </StyledFullscreenIconContainer>
+        <CustomTooltip title={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}>
+          <StyledFullscreenIconContainer onClick={handleFullScreen}>
+            {isFullscreen ? <MinimizeIcon /> : <MaximizeIcon />}
+          </StyledFullscreenIconContainer>
+        </CustomTooltip>
       </StyledControllerRight>
     </StyledControls>
   )
