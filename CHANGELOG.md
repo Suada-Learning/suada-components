@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Suada-Learning/suada-components/compare/v1.4.0...v1.5.0) (2025-10-08)
+
+
+### Features
+
+* add uploaded file preview and enhance uploader styles ([da65e50](https://github.com/Suada-Learning/suada-components/commit/da65e50852891f6b56637013d5f60fefae39a481))
+
 # [1.4.0](https://github.com/Suada-Learning/suada-components/compare/v1.3.0...v1.4.0) (2025-09-19)
 
 
