@@ -157,29 +157,15 @@ export const Content = styled.div`
 export const Container = styled.div`
   width: 100%;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`
-
-export const ErrorText = styled.div`
-  font-size: 12px;
-  color: #d32f2f;
-  margin-left: 5px;
-  margin-top: -15px;
-`
-
-export const FlexContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  padding: 14px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  display: grid;
+  grid-template-columns: 86px auto;
   align-items: center;
-`
-
-export const ItemContainer = styled.div<{ width: string }>`
-  width: ${({ width }): string => width || '100%'};
   position: relative;
 `
+
+export const ItemContainer = styled.div``
 
 export const InputContainer = styled.div`
   width: 390px;
@@ -187,15 +173,16 @@ export const InputContainer = styled.div`
 
 export const CancelButton = styled.div<{ top?: string; right?: string }>`
   position: absolute;
-  right: ${({ right }): string => right || '-13px'};
-  top: ${({ top }): string => top || '5px'};
+  right: ${({ right }): string => right || '-12px'};
+  top: ${({ top }): string => top || '-12px'};
   cursor: pointer;
 `
 
 export const InputFileContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   /* input {
     opacity: 0;
     position: absolute;
@@ -231,36 +218,27 @@ export const Label = styled.div`
   color: rgba(0, 0, 0, 0.54);
 `
 
-export const ImagePlaceholder = styled.div<{ height?: number }>`
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-
+export const ImagePlaceholder = styled.div`
   img {
     position: relative;
-    border: 1px solid #08c694;
-    width: 100%;
-    height: ${({ height }): number => height || 60}px;
-    object-fit: cover;
+    width: 72px;
+    height: 48px;
+    border-radius: 4px;
+    padding: 4px;
     top: 2px;
   }
 `
 
 export const InputLabel = styled.label`
+  cursor: pointer;
+  color: #fff;
+  background: #06c68f;
+  font-size: 11px;
+  padding: 9px 6px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 5px 5px;
-  max-width: 150px;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #08c694;
-  color: #08c694;
-  font-size: 19px;
-  font-weight: 400;
-  border-radius: 4px;
-  width: 130px;
 `
 
 // UploaderButton
@@ -323,3 +301,18 @@ export const Title = styled.h2<{ $required?: boolean }>`
   `
       : ''}
 `
+
+export const ErrorText = styled.p`
+  font-size: 14px;
+  color: #d32f2f;
+  margin-top: 4px;
+`
+
+export const styles = {
+  thumbnail: {
+    width: '72px',
+    height: '48px',
+    borderRadius: '4px',
+    padding: '4px',
+  },
+}
