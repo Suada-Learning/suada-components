@@ -37,6 +37,7 @@ export const VideoPlayer = ({
   downloadUrl,
   downloadFileName,
   onDownload,
+  showPictureInPicture = true,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const {
@@ -44,6 +45,7 @@ export const VideoPlayer = ({
     playerContainerRef,
     playPauseHandler,
     handleFullScreen,
+    handlePictureInPicture,
     videoPlayerRef,
     playing,
     volume,
@@ -68,6 +70,7 @@ export const VideoPlayer = ({
     isSubtitlesChecked,
     toggleSubtitlesCheck,
     isFullscreen,
+    isPiPActive,
     isControlsActive,
     currentSubtitle,
     setCurrentSubtitle,
@@ -182,12 +185,14 @@ export const VideoPlayer = ({
           volumeChangeHandler={volumeChangeHandler}
           formatDuration={formatDuration}
           handleFullScreen={handleFullScreen}
+          handlePictureInPicture={handlePictureInPicture}
           playing={playing}
           isSubtitlesChecked={isSubtitlesChecked}
           toggleSubtitlesCheck={toggleSubtitlesCheck}
           isFavorite={isFavorite}
           toggleIsFavorite={toggleFavorite}
           isFullscreen={isFullscreen}
+          isPiPActive={isPiPActive}
           subtitle={
             !!subtitleUrl || videoPlayerRef.current?.getInternalPlayer()?.textTracks?.length > 0
           }
@@ -200,6 +205,7 @@ export const VideoPlayer = ({
           downloadUrl={downloadUrl}
           downloadFileName={downloadFileName}
           onDownload={onDownload}
+          showPictureInPicture={showPictureInPicture}
         />
       </StyledControlsContainer>
     </StyledWrapper>

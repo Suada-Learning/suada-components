@@ -37,6 +37,7 @@ export interface PlayerProps {
   downloadUrl?: string
   downloadFileName?: string
   onDownload?: () => void
+  showPictureInPicture?: boolean
 }
 
 export interface UsePlayerControlsProps {
@@ -68,6 +69,8 @@ export interface UsePlayerControlsState
   onPlayerStart: () => void
   controlRef: RefObject<HTMLDivElement>
   isFullscreen: boolean
+  isPiPActive: boolean
+  handlePictureInPicture: () => void
   isControlsActive: boolean
   currentSubtitle: string
   setCurrentSubtitle: Dispatch<SetStateAction<string>>
