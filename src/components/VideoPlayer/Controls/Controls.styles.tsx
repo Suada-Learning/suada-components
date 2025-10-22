@@ -7,9 +7,12 @@ export const StyledControls = styled.div`
   gap: 16px;
   width: 100%;
   border-radius: 0px 0px 8px 8px;
-  background: #565a62;
+  background: rgba(86, 90, 98, 0.6);
+  backdrop-filter: blur(4px);
   padding: 12px 16px;
   position: relative;
+  opacity: 0.8;
+
 
   svg {
     cursor: pointer;
@@ -140,12 +143,14 @@ export const StyledControllerLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  flex: 1;
 `
 
 export const StyledControllerRight = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 
   .skip-icon-disabled {
     cursor: default;
@@ -279,6 +284,7 @@ export const StyledRewindIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  
 
   & > svg > path {
     fill: #FFFFFF !important;
