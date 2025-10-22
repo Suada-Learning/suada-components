@@ -12,6 +12,7 @@ import {
   StyledHeartIconContainer,
   StyledSubtitlesIconContainer,
   StyledFullscreenIconContainer,
+  StyledPictureInPictureIconContainer,
   StyledVolumeIconContainer,
   StyledPlayPauseIconContainer,
   StyledDownloadIconContainer,
@@ -23,6 +24,7 @@ import {
   MinimizeIcon,
   PauseIcon,
   PlayIcon,
+  PictureInPictureIcon,
   RewindIcon,
   SkipIcon,
   SubtitlesIcon,
@@ -51,12 +53,14 @@ const Controls: FC<ControlsProps> = ({
   volumeChangeHandler,
   formatDuration,
   handleFullScreen,
+  handlePictureInPicture,
   playing,
   isSubtitlesChecked,
   toggleSubtitlesCheck,
   isFavorite,
   toggleIsFavorite,
   isFullscreen,
+  isPiPActive,
   subtitle,
   handleSkipBackward,
   handleSkipForward,
@@ -67,6 +71,7 @@ const Controls: FC<ControlsProps> = ({
   downloadUrl,
   downloadFileName,
   onDownload,
+  showPictureInPicture = true,
 }) => {
   const handleDownloadClick = async (): Promise<void> => {
     if (onDownload) {
@@ -207,6 +212,16 @@ const Controls: FC<ControlsProps> = ({
             <StyledSubtitlesIconContainer>
               <SubtitlesIcon active={isSubtitlesChecked} onClick={toggleSubtitlesCheck} />
             </StyledSubtitlesIconContainer>
+          </CustomTooltip>
+        )}
+        {showPictureInPicture && (
+          <CustomTooltip title={isPiPActive ? 'Exit picture-in-picture' : 'Enter picture-in-picture'}>
+            <StyledPictureInPictureIconContainer
+              className={isPiPActive ? 'pip-active' : ''}
+              onClick={handlePictureInPicture}
+            >
+              <PictureInPictureIcon />
+            </StyledPictureInPictureIconContainer>
           </CustomTooltip>
         )}
         <CustomTooltip title={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}>

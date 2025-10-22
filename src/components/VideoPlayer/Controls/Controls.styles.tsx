@@ -247,6 +247,26 @@ export const StyledFullscreenIconContainer = styled.div`
   }
 `
 
+export const StyledPictureInPictureIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  & > svg > path {
+    fill: #FFFFFF !important;
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: #08C694 !important;
+  }
+
+  &.pip-active > svg > path {
+    fill: #08C694 !important;
+  }
+`
+
 export const StyledVolumeIconContainer = styled.div`
   display: flex;
   align-items: center;

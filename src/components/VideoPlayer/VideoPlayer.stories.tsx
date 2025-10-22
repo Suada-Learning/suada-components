@@ -84,6 +84,11 @@ const meta: Meta<typeof VideoPlayer> = {
       control: 'text',
       description: 'Filename for the downloaded video',
     },
+    showPictureInPicture: {
+      control: 'boolean',
+      description: 'Show picture-in-picture button',
+      defaultValue: true,
+    },
   },
 }
 
@@ -143,6 +148,7 @@ const PlayerWrapper = (args: VideoPlayerProps) => {
     downloadUrl: args.downloadUrl,
     downloadFileName: args.downloadFileName,
     onDownload: args.showDownload ? handleDownload : undefined,
+    showPictureInPicture: args.showPictureInPicture !== false,
   }
 
   return <VideoPlayer {...allProps} />
@@ -235,5 +241,14 @@ export const AllFeatures: Story = {
     downloadFileName: 'complete-lesson.mp4',
     subtitle: 'https://example.com/subtitles.vtt',
     isFavorite: true,
+  },
+}
+
+// Without Picture-in-Picture
+export const WithoutPictureInPicture: Story = {
+  render: args => <PlayerWrapper {...args} />,
+  args: {
+    ...Default.args,
+    showPictureInPicture: false,
   },
 }
