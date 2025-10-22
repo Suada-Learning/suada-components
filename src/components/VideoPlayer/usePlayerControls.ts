@@ -37,6 +37,7 @@ function usePlayerControls({
   const [startPlayed, setStartPlayed] = useState<boolean>(false)
   const [videoState, setVideoState] = useState<VideoState>(defaultVideoState)
   const [isSubtitlesChecked, setIsSubtitlesChecked] = useState<boolean>(false)
+  const [isPiPActive, setIsPiPActive] = useState<boolean>(false)
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
   const [isControlsActive, setIsControlsActive] = useState<boolean>(false)
   const videoPlayerRef = useRef<ReactPlayer | null>(null)
@@ -76,10 +77,18 @@ function usePlayerControls({
       setIsFullscreen(!!document.fullscreenElement)
     }
 
+    const handlePiPChange = (): void => {
+      setIsPiPActive(!!document.pictureInPictureElement)
+    }
+
     document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('enterpictureinpicture', handlePiPChange)
+    document.addEventListener('leavepictureinpicture', handlePiPChange)
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('enterpictureinpicture', handlePiPChange)
+      document.removeEventListener('leavepictureinpicture', handlePiPChange)
     }
   }, [])
 
@@ -273,6 +282,25 @@ function usePlayerControls({
     }
   }
 
+  const handlePictureInPicture = (): void => {
+    const videoElement = videoPlayerRef.current?.getInternalPlayer()
+    
+    if (!videoElement || !(videoElement instanceof HTMLVideoElement)) {
+      return
+    }
+
+    if (!document.pictureInPictureEnabled) {
+      console.warn('Picture-in-Picture is not supported in this browser')
+      return
+    }
+
+    if (document.pictureInPictureElement) {
+      document.exitPictureInPicture().catch(console.error)
+    } else {
+      videoElement.requestPictureInPicture().catch(console.error)
+    }
+  }
+
   const handleKeyDown = useCallback(
     (event: Event | KeyboardEvent): void => {
       if ('code' in event) {
@@ -358,6 +386,7 @@ function usePlayerControls({
     playerContainerRef,
     playPauseHandler,
     handleFullScreen,
+    handlePictureInPicture,
     videoPlayerRef,
     volume,
     muted,
@@ -381,6 +410,7 @@ function usePlayerControls({
     isSubtitlesChecked,
     toggleSubtitlesCheck,
     isFullscreen,
+    isPiPActive,
     isControlsActive,
     currentSubtitle,
     setCurrentSubtitle,
