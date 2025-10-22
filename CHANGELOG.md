@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Suada-Learning/suada-components/compare/v1.6.0...v1.7.0) (2025-10-22)
+
+
+### Features
+
+* add picture-in-picture functionality to video player controls ([36463d8](https://github.com/Suada-Learning/suada-components/commit/36463d8052a77d5c9cc3e28b7b5cd7ff28fdcca7))
+
 # [1.6.0](https://github.com/Suada-Learning/suada-components/compare/v1.5.0...v1.6.0) (2025-10-22)
 
 
