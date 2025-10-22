@@ -104,6 +104,7 @@ export const StyledControlsContainer = styled.div`
   flex-direction: column;
   left: 0;
   bottom: 0;
+  right: 0;
   z-index: 2;
 `
 

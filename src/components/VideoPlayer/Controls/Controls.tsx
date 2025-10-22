@@ -148,6 +148,7 @@ const Controls: FC<ControlsProps> = ({
       <StyledControllerRight>
         {handleSkipBackward && (
           <CustomTooltip title="Previous video">
+            <StyledRewindIconContainer>
             <SkipIcon
               onClick={(): void => {
                 if (!isPreviousVideo) return
@@ -155,10 +156,12 @@ const Controls: FC<ControlsProps> = ({
               }}
               className={isPreviousVideo ? '' : 'skip-icon-disabled'}
             />
+          </StyledRewindIconContainer>
           </CustomTooltip>
         )}
         {handleSkipForward && (
           <CustomTooltip title="Next video">
+            <StyledRewindIconContainer>
             <SkipIcon
               forward
               onClick={(): void => {
@@ -167,6 +170,7 @@ const Controls: FC<ControlsProps> = ({
               }}
               className={isNextVideo ? '' : 'skip-icon-disabled'}
             />
+          </StyledRewindIconContainer>
           </CustomTooltip>
         )}
         {showFavorite && (
