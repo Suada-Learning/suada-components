@@ -128,13 +128,13 @@ const Controls: FC<ControlsProps> = ({
             {playing ? <PauseIcon /> : <PlayIcon />}
           </StyledPlayPauseIconContainer>
         </CustomTooltip>
-        <CustomTooltip title="Rewind 10 seconds">
-          <StyledRewindIconContainer>
+        <CustomTooltip title="Rewind 5 seconds">
+          <StyledRewindIconContainer className="rewind-control">
             <RewindIcon onClick={rewindHandler} />
           </StyledRewindIconContainer>
         </CustomTooltip>
         <CustomTooltip title="Forward 10 seconds">
-          <StyledRewindIconContainer>
+          <StyledRewindIconContainer className="forward-control">
             <RewindIcon forward onClick={handleFastForward} />
           </StyledRewindIconContainer>
         </CustomTooltip>
@@ -153,7 +153,7 @@ const Controls: FC<ControlsProps> = ({
       <StyledControllerRight>
         {handleSkipBackward && (
           <CustomTooltip title="Previous video">
-            <StyledRewindIconContainer>
+            <StyledRewindIconContainer className="skip-control">
             <SkipIcon
               onClick={(): void => {
                 if (!isPreviousVideo) return
@@ -166,7 +166,7 @@ const Controls: FC<ControlsProps> = ({
         )}
         {handleSkipForward && (
           <CustomTooltip title="Next video">
-            <StyledRewindIconContainer>
+            <StyledRewindIconContainer className="skip-control">
             <SkipIcon
               forward
               onClick={(): void => {
@@ -180,14 +180,14 @@ const Controls: FC<ControlsProps> = ({
         )}
         {showFavorite && (
           <CustomTooltip title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}>
-            <StyledHeartIconContainer>
+            <StyledHeartIconContainer className="favorite-control">
               <HeartIcon active={isFavorite} onClick={toggleIsFavorite} />
             </StyledHeartIconContainer>
           </CustomTooltip>
         )}
         {showDownload && downloadUrl && (
           <CustomTooltip title="Download video">
-            <StyledDownloadIconContainer>
+            <StyledDownloadIconContainer className="download-control">
               <DownloadIcon onClick={handleDownloadClick} />
             </StyledDownloadIconContainer>
           </CustomTooltip>
