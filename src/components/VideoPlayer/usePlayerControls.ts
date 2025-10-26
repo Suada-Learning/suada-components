@@ -11,6 +11,7 @@ import {
 import { SubtitleEntry, parseVTT } from './parseVtt'
 import { FormatSecondsToTimeString } from './timeConversion'
 import useEventListener from './useEventListener'
+import { pipManager } from './pipManager'
 
 let count = 0
 
@@ -83,6 +84,8 @@ function usePlayerControls({
 
     const handlePiPLeave = (): void => {
       setIsPiPActive(false)
+      // Also cleanup the PiP manager when PiP exits
+      pipManager.unregisterVideo()
     }
 
     document.addEventListener('fullscreenchange', handleFullscreenChange)
@@ -111,21 +114,34 @@ function usePlayerControls({
 
   useEffect(() => {
     setStartPlayed(false)
-  }, [url])
+    
+    // Check if there's an active PiP session and restore state
+    if (pipManager.isPiPActive()) {
+      const savedState = pipManager.getCurrentState()
+      if (savedState && savedState.url === url) {
+        setIsPiPActive(true)
+        // Restore video state from PiP manager
+        setVideoState(prev => ({
+          ...prev,
+          volume: savedState.volume,
+          playbackRate: savedState.playbackRate,
+          played: savedState.currentTime / (videoPlayerRef.current?.getDuration() || 1),
+        }))
+        setIsPlaying(savedState.isPlaying)
+      }
+    }
+  }, [url, setIsPlaying])
 
   // Cleanup effect to handle component unmounting while in PiP mode
   useEffect(() => {
-    const currentVideoPlayerRef = videoPlayerRef.current
-    
     return () => {
+      // Unregister from PiP manager when component unmounts
+      pipManager.unregisterVideo()
+      
       // Check if we're in PiP mode when component unmounts
       if (document.pictureInPictureElement) {
-        // Try to keep the video element alive by cloning it
-        const videoElement = currentVideoPlayerRef?.getInternalPlayer()
-        if (videoElement && videoElement instanceof HTMLVideoElement) {
-          // Create a warning for the user that PiP will exit
-          console.log('Component unmounting while in Picture-in-Picture mode')
-        }
+        // The PiP manager will handle keeping the video alive
+        console.log('Component unmounting while in Picture-in-Picture mode - PiP will persist')
       }
     }
   }, [])
@@ -298,9 +314,19 @@ function usePlayerControls({
     if (videoPlayerRef.current && !startPlayed) {
       videoPlayerRef.current.seekTo(startTime)
       setStartPlayed(true)
+      
+      // Register video with PiP manager when it's ready
+      const videoElement = videoPlayerRef.current.getInternalPlayer()
+      if (videoElement && videoElement instanceof HTMLVideoElement) {
+        // Restore state if there was a previous PiP session
+        const savedState = pipManager.getCurrentState()
+        if (savedState && savedState.url === url && pipManager.isPiPActive()) {
+          pipManager.restoreStateToVideo(videoElement)
+        }
+      }
     }
     setLoading(false)
-  }, [startTime, startPlayed, setLoading])
+  }, [startTime, startPlayed, setLoading, url])
 
   const handleFullScreen = (): void => {
     const playerContainer = playerContainerRef.current
@@ -329,21 +355,33 @@ function usePlayerControls({
     }
 
     if (document.pictureInPictureElement) {
-      document.exitPictureInPicture().catch(error => {
+      pipManager.exitPiP().catch(error => {
         console.error('Failed to exit picture-in-picture:', error)
       })
     } else {
+      // Register the video with the PiP manager
+      pipManager.registerVideo(videoElement, url, (state) => {
+        // Update local state when PiP video state changes
+        setVideoState(prev => ({
+          ...prev,
+          played: state.currentTime / duration,
+          volume: state.volume,
+          playbackRate: state.playbackRate,
+        }))
+        setIsPlaying(state.isPlaying)
+      })
+
       // Ensure the video is playing before entering PiP mode
       if (videoElement.paused && isPlaying) {
         videoElement.play().then(() => {
-          videoElement.requestPictureInPicture().catch(error => {
+          pipManager.enterPiP().catch(error => {
             console.error('Failed to enter picture-in-picture:', error)
           })
         }).catch(error => {
           console.error('Failed to play video before PiP:', error)
         })
       } else {
-        videoElement.requestPictureInPicture().catch(error => {
+        pipManager.enterPiP().catch(error => {
           console.error('Failed to enter picture-in-picture:', error)
         })
       }
