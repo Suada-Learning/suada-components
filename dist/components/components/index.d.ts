@@ -19,6 +19,8 @@ export { Badge } from './Badge';
 export { TooltipHeight } from './Tooltip';
 export { CustomTooltip } from './Tooltip';
 export { VideoPlayer } from './VideoPlayer';
+export { PiPProvider } from './VideoPlayer/PiPContext';
+export { usePiP } from './VideoPlayer/usePiP';
 export { SplashScreen } from './SplashScreen';
 export { AudioPlayer } from './AudioPlayer';
 export { ColumnNavigation } from './ColumnNavigation';
