@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Suada-Learning/suada-components/compare/v1.9.1...v1.10.0) (2025-10-26)
+
+
+### Features
+
+* refactor PiP handling to use context for improved state management ([2baf1ff](https://github.com/Suada-Learning/suada-components/commit/2baf1ffa75b82a007b7099f5a3415ea010bbcaf3))
+
 ## [1.9.1](https://github.com/Suada-Learning/suada-components/compare/v1.9.0...v1.9.1) (2025-10-26)
 
 
