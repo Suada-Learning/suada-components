@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Suada-Learning/suada-components/compare/v1.7.0...v1.8.0) (2025-10-26)
+
+
+### Features
+
+* enhance video player controls with responsive styles and improved Picture-in-Picture handling ([bb1281c](https://github.com/Suada-Learning/suada-components/commit/bb1281ce8149c44766a8a2272ec54984b8a900c1))
+
 # [1.7.0](https://github.com/Suada-Learning/suada-components/compare/v1.6.0...v1.7.0) (2025-10-22)
 
 
