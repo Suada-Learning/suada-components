@@ -13,18 +13,63 @@ export const StyledControls = styled.div`
   position: relative;
   opacity: 0.8;
 
+  /* Responsive padding adjustments */
+  @media screen and (max-width: 768px) {
+    padding: 8px 12px;
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 6px 8px;
+    gap: 8px;
+  }
 
   svg {
     cursor: pointer;
+    transition: transform 0.2s ease;
 
+    /* Desktop and large screens */
+    @media screen and (min-width: 1501px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Medium to large screens */
     @media screen and (max-width: 1500px) {
       width: 20px;
       height: 20px;
     }
 
+    /* Small to medium screens */
     @media screen and (max-width: 1000px) {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Tablet screens */
+    @media screen and (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Mobile screens */
+    @media screen and (max-width: 480px) {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Very small mobile screens */
+    @media screen and (max-width: 320px) {
       width: 16px;
       height: 16px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 
@@ -59,6 +104,11 @@ export const StyledSlider = styled.input<SliderProps>`
   transition: opacity 0.2s;
   cursor: pointer;
 
+  /* Enhanced mobile touch target */
+  @media (hover: none) and (pointer: coarse) {
+    height: 4px;
+  }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -67,6 +117,18 @@ export const StyledSlider = styled.input<SliderProps>`
     border-radius: 50%;
     background: var(--brand-colors-accent);
     cursor: pointer;
+
+    /* Larger touch target for mobile */
+    @media (hover: none) and (pointer: coarse) {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 480px) {
+      width: 14px;
+      height: 14px;
+    }
   }
 
   &::-moz-range-thumb {
@@ -76,6 +138,25 @@ export const StyledSlider = styled.input<SliderProps>`
     border-radius: 50%;
     background: var(--brand-colors-accent);
     cursor: pointer;
+    border: none;
+
+    /* Larger touch target for mobile */
+    @media (hover: none) and (pointer: coarse) {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 480px) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  /* Enhance visibility on focus for accessibility */
+  &:focus {
+    outline: 2px solid var(--brand-colors-accent);
+    outline-offset: 2px;
   }
 `
 
@@ -87,6 +168,15 @@ export const StyledVolumeWrapper = styled.div`
   justify-content: center;
   gap: 16px;
 
+  /* Responsive gap adjustments */
+  @media screen and (max-width: 768px) {
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    gap: 8px;
+  }
+
   & > svg {
     cursor: pointer;
   }
@@ -97,6 +187,20 @@ export const StyledVolumeWrapper = styled.div`
 
   &:hover > input {
     display: block;
+  }
+
+  /* Always show volume slider on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    & > input {
+      display: block;
+    }
+  }
+
+  /* Hide volume slider on very small screens */
+  @media screen and (max-width: 320px) {
+    & > input {
+      display: none !important;
+    }
   }
 `
 
@@ -119,6 +223,19 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
   justify-content: center;
   align-items: center;
 
+  /* Responsive width adjustments */
+  @media screen and (max-width: 768px) {
+    width: 80px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 60px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 50px;
+  }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -127,6 +244,12 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     border-radius: 50%;
     background: var(--neutral-colors-light);
     cursor: pointer;
+
+    /* Responsive thumb size */
+    @media screen and (max-width: 480px) {
+      width: 14px;
+      height: 14px;
+    }
   }
 
   &::-moz-range-thumb {
@@ -136,6 +259,13 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     border-radius: 50%;
     background: var(--neutral-colors-light);
     cursor: pointer;
+    border: none;
+
+    /* Responsive thumb size */
+    @media screen and (max-width: 480px) {
+      width: 14px;
+      height: 14px;
+    }
   }
 `
 
@@ -144,6 +274,27 @@ export const StyledControllerLeft = styled.div`
   align-items: center;
   gap: 16px;
   flex: 1;
+  
+  /* Responsive gap adjustments */
+  @media screen and (max-width: 768px) {
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    gap: 8px;
+  }
+
+  @media screen and (max-width: 320px) {
+    gap: 6px;
+  }
+
+  /* Hide rewind/forward controls on very small screens */
+  @media screen and (max-width: 480px) {
+    .rewind-control,
+    .forward-control {
+      display: none;
+    }
+  }
 `
 
 export const StyledControllerRight = styled.div`
@@ -151,6 +302,26 @@ export const StyledControllerRight = styled.div`
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
+
+  /* Responsive gap adjustments */
+  @media screen and (max-width: 768px) {
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    gap: 8px;
+    
+    /* Hide less essential controls on mobile */
+    .skip-control,
+    .favorite-control,
+    .download-control {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    gap: 6px;
+  }
 
   .skip-icon-disabled {
     cursor: default;
@@ -166,30 +337,68 @@ export const StyledTimeTrack = styled.div`
   ${{ fontStyle: 'descriptor' }}
   text-align: right;
   white-space: nowrap;
+  font-size: 14px;
+  
+  /* Responsive font size adjustments */
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `
 
-export const StyledHeartIconContainer = styled.div`
+// Base styles for icon containers
+const BaseIconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  min-width: 24px;
+  min-height: 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  /* Enhanced touch targets for mobile */
+  @media (hover: none) and (pointer: coarse) {
+    min-width: 32px;
+    min-height: 32px;
+  }
 
   & > svg > path {
     fill: #FFFFFF !important;
     transition: fill 0.2s ease;
   }
 
-  &:hover > svg > path {
-    fill: #08C694 !important;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    & > svg > path {
+      fill: #08C694 !important;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  /* Focus styles for accessibility */
+  &:focus-visible {
+    outline: 2px solid var(--brand-colors-accent);
+    outline-offset: 2px;
   }
 `
 
-export const StyledDownloadIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+export const StyledHeartIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles if needed */
+`
 
+export const StyledDownloadIconContainer = styled(BaseIconContainer)`
   & > svg {
     width: 24px !important;
     height: 24px !important;
@@ -203,115 +412,45 @@ export const StyledDownloadIconContainer = styled.div`
       width: 16px !important;
       height: 16px !important;
     }
-  }
 
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
+    @media screen and (max-width: 768px) {
+      width: 20px !important;
+      height: 20px !important;
+    }
 
-  &:hover > svg > path {
-    fill: #08C694 !important;
-  }
-`
-
-export const StyledSubtitlesIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
-
-  &:hover > svg > path {
-    fill: #08C694 !important;
+    @media screen and (max-width: 480px) {
+      width: 18px !important;
+      height: 18px !important;
+    }
   }
 `
 
-export const StyledFullscreenIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+export const StyledSubtitlesIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles if needed */
+`
 
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
+export const StyledFullscreenIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles if needed */
+`
 
-  &:hover > svg > path {
-    fill: #08C694 !important;
+export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
+  &.pip-active {
+    background-color: rgba(8, 198, 148, 0.2);
+    
+    & > svg > path {
+      fill: #08C694 !important;
+    }
   }
 `
 
-export const StyledPictureInPictureIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
-
-  &:hover > svg > path {
-    fill: #08C694 !important;
-  }
-
-  &.pip-active > svg > path {
-    fill: #08C694 !important;
-  }
+export const StyledVolumeIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles if needed */
 `
 
-export const StyledVolumeIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
-
-  &:hover > svg > path {
-    fill: #08C694 !important;
-  }
+export const StyledPlayPauseIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles if needed */
 `
 
-export const StyledPlayPauseIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
-
-  &:hover > svg > path {
-    fill: #08C694 !important;
-  }
-`
-
-export const StyledRewindIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  
-
-  & > svg > path {
-    fill: #FFFFFF !important;
-    transition: fill 0.2s ease;
-  }
-
-  &:hover > svg > path {
-    fill: #08C694 !important;
-  }
+export const StyledRewindIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles if needed */
 `

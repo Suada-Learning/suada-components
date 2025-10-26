@@ -77,24 +77,58 @@ function usePlayerControls({
       setIsFullscreen(!!document.fullscreenElement)
     }
 
-    const handlePiPChange = (): void => {
-      setIsPiPActive(!!document.pictureInPictureElement)
+    const handlePiPEnter = (): void => {
+      setIsPiPActive(true)
+    }
+
+    const handlePiPLeave = (): void => {
+      setIsPiPActive(false)
     }
 
     document.addEventListener('fullscreenchange', handleFullscreenChange)
-    document.addEventListener('enterpictureinpicture', handlePiPChange)
-    document.addEventListener('leavepictureinpicture', handlePiPChange)
+    document.addEventListener('enterpictureinpicture', handlePiPEnter)
+    document.addEventListener('leavepictureinpicture', handlePiPLeave)
+
+    // Add event listeners to the video element when it's available
+    const videoElement = videoPlayerRef.current?.getInternalPlayer()
+    if (videoElement && videoElement instanceof HTMLVideoElement) {
+      videoElement.addEventListener('enterpictureinpicture', handlePiPEnter)
+      videoElement.addEventListener('leavepictureinpicture', handlePiPLeave)
+    }
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
-      document.removeEventListener('enterpictureinpicture', handlePiPChange)
-      document.removeEventListener('leavepictureinpicture', handlePiPChange)
+      document.removeEventListener('enterpictureinpicture', handlePiPEnter)
+      document.removeEventListener('leavepictureinpicture', handlePiPLeave)
+      
+      // Clean up video element listeners using the captured reference
+      if (videoElement && videoElement instanceof HTMLVideoElement) {
+        videoElement.removeEventListener('enterpictureinpicture', handlePiPEnter)
+        videoElement.removeEventListener('leavepictureinpicture', handlePiPLeave)
+      }
     }
-  }, [])
+  }, [url]) // Re-run when URL changes to ensure proper cleanup and setup
 
   useEffect(() => {
     setStartPlayed(false)
   }, [url])
+
+  // Cleanup effect to handle component unmounting while in PiP mode
+  useEffect(() => {
+    const currentVideoPlayerRef = videoPlayerRef.current
+    
+    return () => {
+      // Check if we're in PiP mode when component unmounts
+      if (document.pictureInPictureElement) {
+        // Try to keep the video element alive by cloning it
+        const videoElement = currentVideoPlayerRef?.getInternalPlayer()
+        if (videoElement && videoElement instanceof HTMLVideoElement) {
+          // Create a warning for the user that PiP will exit
+          console.log('Component unmounting while in Picture-in-Picture mode')
+        }
+      }
+    }
+  }, [])
 
   const playPauseHandler = useCallback((): void => {
     setIsPlaying(prev => !prev)
@@ -295,9 +329,24 @@ function usePlayerControls({
     }
 
     if (document.pictureInPictureElement) {
-      document.exitPictureInPicture().catch(console.error)
+      document.exitPictureInPicture().catch(error => {
+        console.error('Failed to exit picture-in-picture:', error)
+      })
     } else {
-      videoElement.requestPictureInPicture().catch(console.error)
+      // Ensure the video is playing before entering PiP mode
+      if (videoElement.paused && isPlaying) {
+        videoElement.play().then(() => {
+          videoElement.requestPictureInPicture().catch(error => {
+            console.error('Failed to enter picture-in-picture:', error)
+          })
+        }).catch(error => {
+          console.error('Failed to play video before PiP:', error)
+        })
+      } else {
+        videoElement.requestPictureInPicture().catch(error => {
+          console.error('Failed to enter picture-in-picture:', error)
+        })
+      }
     }
   }
 
