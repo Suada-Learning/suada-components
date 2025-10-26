@@ -1,1 +1,0 @@
-{"version":3,"file":"Presentation.js","sourceRoot":"","sources":["../../../src/components/PresentationIcon/Presentation.tsx"],"names":[],"mappings":";AACA,OAAO,OAAO,MAAM,gBAAgB,CAAA;AACpC,OAAO,EAAE,cAAc,EAAE,MAAM,qBAAqB,CAAA;AAEpD,IAAM,YAAY,GAAG;IACnB,OAAO,CACL,KAAC,cAAc,cACb,cAAK,GAAG,EAAE,OAAO,EAAE,GAAG,EAAC,UAAU,GAAG,GACrB,CAClB,CAAA;AACH,CAAC,CAAA;AAED,eAAe,YAAY,CAAA"}
