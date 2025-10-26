@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/Suada-Learning/suada-components/compare/v1.9.0...v1.9.1) (2025-10-26)
+
+
+### Bug Fixes
+
+* pip functionality in videoPlayer ([c89e31e](https://github.com/Suada-Learning/suada-components/commit/c89e31ea88a1d1a340a39ca1c1a91da08eb98036))
+
 # [1.9.0](https://github.com/Suada-Learning/suada-components/compare/v1.8.0...v1.9.0) (2025-10-26)
 
 
