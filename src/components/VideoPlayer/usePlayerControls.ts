@@ -11,6 +11,7 @@ import {
 import { SubtitleEntry, parseVTT } from './parseVtt'
 import { FormatSecondsToTimeString } from './timeConversion'
 import useEventListener from './useEventListener'
+import { usePiP } from './usePiP'
 
 let count = 0
 
@@ -37,7 +38,6 @@ function usePlayerControls({
   const [startPlayed, setStartPlayed] = useState<boolean>(false)
   const [videoState, setVideoState] = useState<VideoState>(defaultVideoState)
   const [isSubtitlesChecked, setIsSubtitlesChecked] = useState<boolean>(false)
-  const [isPiPActive, setIsPiPActive] = useState<boolean>(false)
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
   const [isControlsActive, setIsControlsActive] = useState<boolean>(false)
   const videoPlayerRef = useRef<ReactPlayer | null>(null)
@@ -48,6 +48,9 @@ function usePlayerControls({
   const lastSubtitleIndexRef = useRef<number | null>(null)
   const lastPlaybackTimeRef = useRef<number>(0)
   const lastCallTimeRef = useRef(Date.now())
+
+  // Use PiP context instead of local state
+  const { isPiPActive, enterPiP, exitPiP, registerVideoElement, unregisterVideoElement } = usePiP()
 
   const { muted, volume, prevVolume, playbackRate, played, seeking } = videoState
 
@@ -78,11 +81,21 @@ function usePlayerControls({
     }
 
     const handlePiPEnter = (): void => {
-      setIsPiPActive(true)
+      // Use context method to update global PiP state
+      const videoElement = videoPlayerRef.current?.getInternalPlayer()
+      if (videoElement && videoElement instanceof HTMLVideoElement) {
+        enterPiP(videoElement, {
+          url,
+          currentTime: videoElement.currentTime,
+          isPlaying,
+          volume: videoState.volume,
+          muted: videoState.muted,
+        })
+      }
     }
 
     const handlePiPLeave = (): void => {
-      setIsPiPActive(false)
+      exitPiP()
     }
 
     document.addEventListener('fullscreenchange', handleFullscreenChange)
@@ -94,6 +107,9 @@ function usePlayerControls({
     if (videoElement && videoElement instanceof HTMLVideoElement) {
       videoElement.addEventListener('enterpictureinpicture', handlePiPEnter)
       videoElement.addEventListener('leavepictureinpicture', handlePiPLeave)
+      
+      // Register video element with PiP context
+      registerVideoElement(videoElement)
     }
 
     return () => {
@@ -106,8 +122,11 @@ function usePlayerControls({
         videoElement.removeEventListener('enterpictureinpicture', handlePiPEnter)
         videoElement.removeEventListener('leavepictureinpicture', handlePiPLeave)
       }
+      
+      // Unregister video element from PiP context
+      unregisterVideoElement()
     }
-  }, [url]) // Re-run when URL changes to ensure proper cleanup and setup
+  }, [url, enterPiP, exitPiP, registerVideoElement, unregisterVideoElement, isPlaying, videoState.volume, videoState.muted]) // Re-run when URL changes to ensure proper cleanup and setup
 
   useEffect(() => {
     setStartPlayed(false)
@@ -328,25 +347,20 @@ function usePlayerControls({
       return
     }
 
-    if (document.pictureInPictureElement) {
-      document.exitPictureInPicture().catch(error => {
-        console.error('Failed to exit picture-in-picture:', error)
-      })
+    if (isPiPActive) {
+      // Exit PiP using context method
+      exitPiP()
     } else {
-      // Ensure the video is playing before entering PiP mode
-      if (videoElement.paused && isPlaying) {
-        videoElement.play().then(() => {
-          videoElement.requestPictureInPicture().catch(error => {
-            console.error('Failed to enter picture-in-picture:', error)
-          })
-        }).catch(error => {
-          console.error('Failed to play video before PiP:', error)
-        })
-      } else {
-        videoElement.requestPictureInPicture().catch(error => {
-          console.error('Failed to enter picture-in-picture:', error)
-        })
+      // Enter PiP using context method
+      const pipVideoState = {
+        url,
+        currentTime: videoElement.currentTime,
+        isPlaying,
+        volume: videoState.volume,
+        muted: videoState.muted,
       }
+      
+      enterPiP(videoElement, pipVideoState)
     }
   }
 
