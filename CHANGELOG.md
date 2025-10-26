@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Suada-Learning/suada-components/compare/v1.8.0...v1.9.0) (2025-10-26)
+
+
+### Features
+
+* integrate Picture-in-Picture manager for enhanced video playback control ([b4b8120](https://github.com/Suada-Learning/suada-components/commit/b4b812056caa46bb71fc0004877526eed6bad5ee))
+
 # [1.8.0](https://github.com/Suada-Learning/suada-components/compare/v1.7.0...v1.8.0) (2025-10-26)
 
 
