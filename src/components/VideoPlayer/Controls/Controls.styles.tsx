@@ -91,11 +91,11 @@ export const StyledSlider = styled.input<SliderProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${({ value }): string =>
+  background: ${({ value, theme }): string =>
     `linear-gradient(
     to right,
-    var(--brand-colors-accent) 0%,
-    var(--brand-colors-accent) ${value}%,
+    ${theme?.colors?.primary?.main || 'var(--brand-colors-accent)'} 0%,
+    ${theme?.colors?.primary?.main || 'var(--brand-colors-accent)'} ${value}%,
     var(--level-dark-200) ${value}%,
     var(--level-dark-200) 100%
   )`};
@@ -115,7 +115,7 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--brand-colors-accent);
+    background: ${({ theme }): string => theme?.colors?.primary?.main || 'var(--brand-colors-accent)'};
     cursor: pointer;
 
     /* Larger touch target for mobile */
@@ -136,7 +136,7 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--brand-colors-accent);
+    background: ${({ theme }): string => theme?.colors?.primary?.main || 'var(--brand-colors-accent)'};
     cursor: pointer;
     border: none;
 
@@ -208,11 +208,11 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
   width: 100px;
   height: 4px;
   border-radius: 5px;
-  background: ${({ value }): string =>
+  background: ${({ value, theme }): string =>
     `linear-gradient(
     to right,
-    var(--neutral-colors-light) 0%,
-    var(--neutral-colors-light) ${value}%,
+    ${theme?.colors?.primary?.main || 'var(--neutral-colors-light)'} 0%,
+    ${theme?.colors?.primary?.main || 'var(--neutral-colors-light)'} ${value}%,
     var(--level-grey-500) ${value}%,
     var(--level-grey-500) 100%
   )`};
@@ -242,7 +242,7 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--neutral-colors-light);
+    background: ${({ theme }): string => theme?.colors?.primary?.main || 'var(--neutral-colors-light)'};
     cursor: pointer;
 
     /* Responsive thumb size */
@@ -257,7 +257,7 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--neutral-colors-light);
+    background: ${({ theme }): string => theme?.colors?.primary?.main || 'var(--neutral-colors-light)'};
     cursor: pointer;
     border: none;
 
@@ -379,7 +379,7 @@ const BaseIconContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     
     & > svg > path {
-      fill: #08C694 !important;
+      fill: ${({ theme }): string => theme?.colors?.primary?.main || '#08C694'} !important;
     }
   }
 
