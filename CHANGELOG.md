@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/Suada-Learning/suada-components/compare/v1.11.2...v1.11.3) (2025-11-19)
+
+
+### Bug Fixes
+
+* update package version to 1.11.4 and reorganize dependencies for improved structure and compatibility ([f58567e](https://github.com/Suada-Learning/suada-components/commit/f58567e3b9083bd28abf460692f07de043a20543))
+
 ## [1.2.1](https://github.com/Suada-Learning/suada-components/compare/v1.2.0...v1.2.1) (2025-06-24)
 
 
