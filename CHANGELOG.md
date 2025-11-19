@@ -1,3 +1,16 @@
+# [1.11.0](https://github.com/Suada-Learning/suada-components/compare/v1.10.0...v1.11.0) (2025-11-19)
+
+
+### Bug Fixes
+
+* enhance theme color properties for better fallback and structure ([0cd9d29](https://github.com/Suada-Learning/suada-components/commit/0cd9d2926f62da53cc941633b0e988b879c83e7a))
+* make color properties optional in theme interfaces for better flexibility ([51677be](https://github.com/Suada-Learning/suada-components/commit/51677befe938cbc16d88a011476d6ebc84ee3a96))
+
+
+### Features
+
+* update slider styles to utilize theme colors for improved customization ([cc989ef](https://github.com/Suada-Learning/suada-components/commit/cc989efb161ca93bac2f83e5005b32075b87383c))
+
 # [1.10.0](https://github.com/Suada-Learning/suada-components/compare/v1.9.1...v1.10.0) (2025-10-26)
 
 
