@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/Suada-Learning/suada-components/compare/v1.11.1...v1.11.2) (2025-11-19)
+
+
+### Bug Fixes
+
+* update package version and dependencies for compatibility; enhance control styles for theme integration ([cba247a](https://github.com/Suada-Learning/suada-components/commit/cba247a1ef9d3bc95ed7effc47094ae82ea5bab9))
+
 ## [1.11.1](https://github.com/Suada-Learning/suada-components/compare/v1.11.0...v1.11.1) (2025-11-19)
 
 
