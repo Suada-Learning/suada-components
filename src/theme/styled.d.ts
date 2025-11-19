@@ -3,7 +3,7 @@ import type { IThemeColors } from './interfaces'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: IThemeColors
+    colors?: Partial<IThemeColors>
     mode?: 'light' | 'dark'
   }
 }
