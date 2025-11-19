@@ -26,7 +26,7 @@ export const StyledControls = styled.div`
 
   svg {
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, fill 0.2s ease;
 
     /* Desktop and large screens */
     @media screen and (min-width: 1501px) {
@@ -66,6 +66,19 @@ export const StyledControls = styled.div`
 
     &:hover {
       transform: scale(1.1);
+      
+      path {
+        fill: ${({ theme }): string => {
+          // Handle different theme structures
+          if (theme?.colors?.primary?.main) {
+            return theme.colors.primary.main;
+          }
+          if (typeof theme?.colors?.primary === 'string') {
+            return theme.colors.primary;
+          }
+          return 'var(--brand-colors-accent)';
+        }};
+      }
     }
 
     &:active {
