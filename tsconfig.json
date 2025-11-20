@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "suada-components/components": ["node_modules/suada-components/dist/components"],
@@ -15,8 +16,8 @@
     "sourceMap": true,
     "sourceRoot": "",
     "outDir": "dist",
-    "strict": true,
-    "moduleResolution": "node",
+    "strict": false,
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

@@ -33,7 +33,7 @@ export const StyledControls = styled.div`
 
   svg {
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, fill 0.2s ease;
 
     /* Desktop and large screens */
     @media screen and (min-width: 1501px) {
@@ -73,6 +73,19 @@ export const StyledControls = styled.div`
 
     &:hover {
       transform: scale(1.1);
+      
+      path {
+        fill: ${({ theme }): string => {
+          // Handle different theme structures
+          if (theme?.colors?.primary?.main) {
+            return theme.colors.primary.main;
+          }
+          if (typeof theme?.colors?.primary === 'string') {
+            return theme.colors.primary;
+          }
+          return 'var(--brand-colors-accent)';
+        }};
+      }
     }
 
     &:active {
@@ -98,14 +111,23 @@ export const StyledSlider = styled.input<SliderProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${({ value }): string =>
-    `linear-gradient(
-    to right,
-    var(--brand-colors-accent) 0%,
-    var(--brand-colors-accent) ${value}%,
-    var(--level-dark-200) ${value}%,
-    var(--level-dark-200) 100%
-  )`};
+  background: ${({ value, theme }): string => {
+    // Handle different theme structures
+    let primaryColor = 'var(--brand-colors-accent)';
+    if (theme?.colors?.primary?.main) {
+      primaryColor = theme.colors.primary.main;
+    } else if (typeof theme?.colors?.primary === 'string') {
+      primaryColor = theme.colors.primary;
+    }
+    
+    return `linear-gradient(
+      to right,
+      ${primaryColor} 0%,
+      ${primaryColor} ${value}%,
+      var(--level-dark-200) ${value}%,
+      var(--level-dark-200) 100%
+    )`;
+  }};
   outline: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
@@ -122,7 +144,7 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--brand-colors-accent);
+    background: ${({ theme }): string => theme?.colors?.primary?.main || 'var(--brand-colors-accent)'};
     cursor: pointer;
 
     /* Larger touch target for mobile */
@@ -143,7 +165,16 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--brand-colors-accent);
+    background: ${({ theme }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary?.main) {
+        return theme.colors.primary.main;
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary;
+      }
+      return 'var(--brand-colors-accent)';
+    }};
     cursor: pointer;
     border: none;
 
@@ -215,14 +246,23 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
   width: 100px;
   height: 4px;
   border-radius: 5px;
-  background: ${({ value }): string =>
-    `linear-gradient(
-    to right,
-    var(--neutral-colors-light) 0%,
-    var(--neutral-colors-light) ${value}%,
-    var(--level-grey-500) ${value}%,
-    var(--level-grey-500) 100%
-  )`};
+  background: ${({ value, theme }): string => {
+    // Handle different theme structures
+    let primaryColor = 'var(--neutral-colors-light)';
+    if (theme?.colors?.primary?.main) {
+      primaryColor = theme.colors.primary.main;
+    } else if (typeof theme?.colors?.primary === 'string') {
+      primaryColor = theme.colors.primary;
+    }
+    
+    return `linear-gradient(
+      to right,
+      ${primaryColor} 0%,
+      ${primaryColor} ${value}%,
+      var(--level-grey-500) ${value}%,
+      var(--level-grey-500) 100%
+    )`;
+  }};
   outline: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
@@ -249,7 +289,16 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--neutral-colors-light);
+    background: ${({ theme }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary?.main) {
+        return theme.colors.primary.main;
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary;
+      }
+      return 'var(--neutral-colors-light)';
+    }};
     cursor: pointer;
 
     /* Responsive thumb size */
@@ -264,7 +313,16 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--neutral-colors-light);
+    background: ${({ theme }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary?.main) {
+        return theme.colors.primary.main;
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary;
+      }
+      return 'var(--neutral-colors-light)';
+    }};
     cursor: pointer;
     border: none;
 
