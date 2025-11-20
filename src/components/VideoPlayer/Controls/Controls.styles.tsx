@@ -1,11 +1,4 @@
 import styled from 'styled-components'
-import { IThemeColors } from '../../../theme/interfaces'
-
-interface StyledProps {
-  theme?: {
-    colors?: IThemeColors
-  }
-}
 
 export const StyledControls = styled.div`
   display: flex;
@@ -444,7 +437,7 @@ const BaseIconContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     
     & > svg > path {
-      fill: ${(props: StyledProps) => 
+      fill: ${(props: any) => 
         props.theme?.colors?.primary?.main || '#08C694'} !important;
     }
   }
@@ -504,7 +497,7 @@ export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
     background-color: rgba(8, 198, 148, 0.2);
     
     & > svg > path {
-      fill: ${(props: StyledProps) => 
+      fill: ${(props: any) => 
         props.theme?.colors?.primary?.main || '#08C694'} !important;
     }
   }
