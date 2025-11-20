@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/Suada-Learning/suada-components/compare/v1.13.0...v1.13.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* update fill color fallback for SVG icons in video player controls ([46feb12](https://github.com/Suada-Learning/suada-components/commit/46feb121bda16685a27c04676329fd4f060dae37))
+
 # [1.13.0](https://github.com/Suada-Learning/suada-components/compare/v1.12.0...v1.13.0) (2025-11-20)
 
 
