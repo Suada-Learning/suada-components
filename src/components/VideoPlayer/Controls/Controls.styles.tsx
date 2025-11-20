@@ -437,8 +437,8 @@ const BaseIconContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     
     & > svg > path {
-      fill: ${(props: any) => 
-        props.theme?.colors?.primary?.main || '#08C694'} !important;
+      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } } } }) => 
+        theme?.colors?.primary?.main || 'var(--video-player-primary-color, #08C694)'} !important;
     }
   }
 
@@ -497,8 +497,8 @@ export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
     background-color: rgba(8, 198, 148, 0.2);
     
     & > svg > path {
-      fill: ${(props: any) => 
-        props.theme?.colors?.primary?.main || '#08C694'} !important;
+      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } } } }) => 
+        theme?.colors?.primary?.main || 'var(--video-player-primary-color, #08C694)'} !important;
     }
   }
 `
