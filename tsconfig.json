@@ -29,6 +29,7 @@
   },
   "include": [
     "src",
+    "src/types/global.d.ts",
     "src/theme/interfaces.ts",
     "src/theme/Theme.ts",
     "src/theme/ThemeProvider.tsx"
