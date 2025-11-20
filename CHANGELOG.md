@@ -1,72 +1,9 @@
-# [1.10.0](https://github.com/Suada-Learning/suada-components/compare/v1.9.1...v1.10.0) (2025-10-26)
-
-
-### Features
-
-* refactor PiP handling to use context for improved state management ([2baf1ff](https://github.com/Suada-Learning/suada-components/commit/2baf1ffa75b82a007b7099f5a3415ea010bbcaf3))
-
-## [1.9.1](https://github.com/Suada-Learning/suada-components/compare/v1.9.0...v1.9.1) (2025-10-26)
+## [1.11.3](https://github.com/Suada-Learning/suada-components/compare/v1.11.2...v1.11.3) (2025-11-19)
 
 
 ### Bug Fixes
 
-* pip functionality in videoPlayer ([c89e31e](https://github.com/Suada-Learning/suada-components/commit/c89e31ea88a1d1a340a39ca1c1a91da08eb98036))
-
-# [1.9.0](https://github.com/Suada-Learning/suada-components/compare/v1.8.0...v1.9.0) (2025-10-26)
-
-
-### Features
-
-* integrate Picture-in-Picture manager for enhanced video playback control ([b4b8120](https://github.com/Suada-Learning/suada-components/commit/b4b812056caa46bb71fc0004877526eed6bad5ee))
-
-# [1.8.0](https://github.com/Suada-Learning/suada-components/compare/v1.7.0...v1.8.0) (2025-10-26)
-
-
-### Features
-
-* enhance video player controls with responsive styles and improved Picture-in-Picture handling ([bb1281c](https://github.com/Suada-Learning/suada-components/commit/bb1281ce8149c44766a8a2272ec54984b8a900c1))
-
-# [1.7.0](https://github.com/Suada-Learning/suada-components/compare/v1.6.0...v1.7.0) (2025-10-22)
-
-
-### Features
-
-* add picture-in-picture functionality to video player controls ([36463d8](https://github.com/Suada-Learning/suada-components/commit/36463d8052a77d5c9cc3e28b7b5cd7ff28fdcca7))
-
-# [1.6.0](https://github.com/Suada-Learning/suada-components/compare/v1.5.0...v1.6.0) (2025-10-22)
-
-
-### Features
-
-* enhance video player controls with improved styling and structure ([5826ad2](https://github.com/Suada-Learning/suada-components/commit/5826ad2de1204067529dabb5571c9fc627504327))
-
-# [1.5.0](https://github.com/Suada-Learning/suada-components/compare/v1.4.0...v1.5.0) (2025-10-08)
-
-
-### Features
-
-* add uploaded file preview and enhance uploader styles ([da65e50](https://github.com/Suada-Learning/suada-components/commit/da65e50852891f6b56637013d5f60fefae39a481))
-
-# [1.4.0](https://github.com/Suada-Learning/suada-components/compare/v1.3.0...v1.4.0) (2025-09-19)
-
-
-### Features
-
-* enhance video player controls with tooltips and style updates ([ed08c06](https://github.com/Suada-Learning/suada-components/commit/ed08c06611539c7e9b9739de9bf5822c3edad343))
-
-# [1.3.0](https://github.com/Suada-Learning/suada-components/compare/v1.2.1...v1.3.0) (2025-09-16)
-
-
-### Bug Fixes
-
-* builded library ([17cb8cb](https://github.com/Suada-Learning/suada-components/commit/17cb8cb2fb235a5e0629f320be32137f35e65838))
-* updated pagination params ([854a279](https://github.com/Suada-Learning/suada-components/commit/854a279f58ca1df75fc3b21c1545792aff538f05))
-
-
-### Features
-
-* add download functionality to video player controls ([92556aa](https://github.com/Suada-Learning/suada-components/commit/92556aaf3370fe9a167a0dbc4510f3fc98d30ad5))
-* using theme for styled-components ([32635dc](https://github.com/Suada-Learning/suada-components/commit/32635dca124e5703b19ca8619cc3c533390d871f))
+* update package version to 1.11.4 and reorganize dependencies for improved structure and compatibility ([f58567e](https://github.com/Suada-Learning/suada-components/commit/f58567e3b9083bd28abf460692f07de043a20543))
 
 ## [1.2.1](https://github.com/Suada-Learning/suada-components/compare/v1.2.0...v1.2.1) (2025-06-24)
 

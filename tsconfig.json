@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "suada-components/components": ["node_modules/suada-components/dist/components"],
       "suada-components/icons": ["node_modules/suada-components/dist/icons"]
     },
-    "target": "es5",
+    "target": "es2015",
+    "lib": ["dom", "es2015", "es2017"],
     "module": "esnext",
     "jsx": "react-jsx",
     "declaration": true,
@@ -14,8 +16,8 @@
     "sourceMap": true,
     "sourceRoot": "",
     "outDir": "dist",
-    "strict": true,
-    "moduleResolution": "node",
+    "strict": false,
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
