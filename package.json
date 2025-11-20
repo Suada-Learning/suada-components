@@ -36,7 +36,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "dev": "vite",
-    "build": "rollup -c && tsc && node copy-files.js",
+    "build": "rollup -c && tsc -p tsconfig.app.json && node copy-files.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

@@ -6,8 +6,8 @@
       "suada-components/components": ["node_modules/suada-components/dist/components"],
       "suada-components/icons": ["node_modules/suada-components/dist/icons"]
     },
-    "target": "es2015",
-    "lib": ["dom", "es2015", "es2017"],
+    "target": "ES2018",
+    "lib": ["ES2018", "DOM", "DOM.Iterable"],
     "module": "esnext",
     "jsx": "react-jsx",
     "declaration": true,
@@ -22,7 +22,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "@storybook/react"]
+    "types": ["vite/client", "@storybook/react"],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false
   },
   "include": [
     "src",
