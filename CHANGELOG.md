@@ -1,3 +1,16 @@
+# [1.12.0](https://github.com/Suada-Learning/suada-components/compare/v1.11.3...v1.12.0) (2025-11-20)
+
+
+### Bug Fixes
+
+* update dependencies for improved compatibility and performance; adjust TypeScript configuration ([c8394a9](https://github.com/Suada-Learning/suada-components/commit/c8394a9a61e333f67836a3566f7e5251e711617d))
+* update TypeScript configurations for improved compatibility and build process ([5083035](https://github.com/Suada-Learning/suada-components/commit/508303528974383f52d8316d97cf380078563bf7))
+
+
+### Features
+
+* add theme-aware hover colors for VideoPlayer controls ([d3dc900](https://github.com/Suada-Learning/suada-components/commit/d3dc900656e60a43a17b2e0eef749c2803055682)), closes [#08C694](https://github.com/Suada-Learning/suada-components/issues/08C694)
+
 ## [1.11.3](https://github.com/Suada-Learning/suada-components/compare/v1.11.2...v1.11.3) (2025-11-19)
 
 
