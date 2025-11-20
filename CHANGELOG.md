@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Suada-Learning/suada-components/compare/v1.12.0...v1.13.0) (2025-11-20)
+
+
+### Features
+
+* add type declarations for react-country-flag and update TypeScript configurations ([943c086](https://github.com/Suada-Learning/suada-components/commit/943c086fa816430134ec617400eea4d6f04949f4))
+
 # [1.12.0](https://github.com/Suada-Learning/suada-components/compare/v1.11.3...v1.12.0) (2025-11-20)
 
 
