@@ -71,7 +71,7 @@ export const StyledControls = styled.div`
         fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
           // Handle different theme structures
           if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-            return theme.colors.primary.main; // suada-components structure
+            return theme.colors.primary.main || '#08C694'; // suada-components structure
           }
           if (typeof theme?.colors?.primary === 'string') {
             return theme.colors.primary; // suada-students structure
@@ -108,7 +108,7 @@ export const StyledSlider = styled.input<SliderProps>`
     // Handle different theme structures
     let primaryColor = 'var(--brand-colors-accent)';
     if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-      primaryColor = theme.colors.primary.main; // suada-components structure
+      primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
     } else if (typeof theme?.colors?.primary === 'string') {
       primaryColor = theme.colors.primary; // suada-students structure
     }
@@ -140,7 +140,7 @@ export const StyledSlider = styled.input<SliderProps>`
     background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
       if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main; // suada-components structure
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
         return theme.colors.primary; // suada-students structure
@@ -170,7 +170,7 @@ export const StyledSlider = styled.input<SliderProps>`
     background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
       if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main; // suada-components structure
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
         return theme.colors.primary; // suada-students structure
@@ -252,7 +252,7 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     // Handle different theme structures
     let primaryColor = 'var(--neutral-colors-light)';
     if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-      primaryColor = theme.colors.primary.main; // suada-components structure
+      primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
     } else if (typeof theme?.colors?.primary === 'string') {
       primaryColor = theme.colors.primary; // suada-students structure
     }
@@ -294,7 +294,7 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
       if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main; // suada-components structure
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
         return theme.colors.primary; // suada-students structure
@@ -318,7 +318,7 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
       if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main; // suada-components structure
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
         return theme.colors.primary; // suada-students structure
@@ -449,7 +449,7 @@ const BaseIconContainer = styled.div`
       fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
         // Handle different theme structures
         if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-          return theme.colors.primary.main; // suada-components structure
+          return theme.colors.primary.main || '#08C694'; // suada-components structure
         }
         if (typeof theme?.colors?.primary === 'string') {
           return theme.colors.primary; // suada-students structure
@@ -513,9 +513,9 @@ export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
   &.pip-active {
     background-color: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
       // Handle different theme structures for background color (with opacity)
-      let primaryColor;
+      let primaryColor: string;
       if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        primaryColor = theme.colors.primary.main; // suada-components structure
+        primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
       } else if (typeof theme?.colors?.primary === 'string') {
         primaryColor = theme.colors.primary; // suada-students structure
       } else {
@@ -534,7 +534,7 @@ export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
       fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
         // Handle different theme structures
         if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-          return theme.colors.primary.main; // suada-components structure
+          return theme.colors.primary.main || '#08C694'; // suada-components structure
         }
         if (typeof theme?.colors?.primary === 'string') {
           return theme.colors.primary; // suada-students structure
