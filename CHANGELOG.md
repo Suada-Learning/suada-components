@@ -1,3 +1,11 @@
+## [1.13.2](https://github.com/Suada-Learning/suada-components/compare/v1.13.1...v1.13.2) (2025-11-24)
+
+
+### Bug Fixes
+
+* add fallback color for primary theme in styled components ([ef82a98](https://github.com/Suada-Learning/suada-components/commit/ef82a98a1aae4368bf488d2cd949aa76d9b0600d))
+* update default fill color for checkbox icons to 'currentColor' ([9d7429e](https://github.com/Suada-Learning/suada-components/commit/9d7429e61d6dee3bdeb3238050718a973fb3bf80))
+
 ## [1.13.1](https://github.com/Suada-Learning/suada-components/compare/v1.13.0...v1.13.1) (2025-11-20)
 
 
