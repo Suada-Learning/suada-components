@@ -68,16 +68,16 @@ export const StyledControls = styled.div`
       transform: scale(1.1);
       
       path {
-        fill: ${({ theme }): string => {
+        fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
           // Handle different theme structures
-          if (theme?.colors?.primary?.main) {
-            return theme.colors.primary.main;
+          if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+            return theme.colors.primary.main; // suada-components structure
           }
           if (typeof theme?.colors?.primary === 'string') {
-            return theme.colors.primary;
+            return theme.colors.primary; // suada-students structure
           }
-          return 'var(--brand-colors-accent)';
-        }};
+          return 'var(--brand-colors-accent, #08C694)'; // fallback
+        }} !important;
       }
     }
 
@@ -104,13 +104,13 @@ export const StyledSlider = styled.input<SliderProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${({ value, theme }): string => {
+  background: ${({ value, theme }: { value: number; theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
     // Handle different theme structures
     let primaryColor = 'var(--brand-colors-accent)';
-    if (theme?.colors?.primary?.main) {
-      primaryColor = theme.colors.primary.main;
+    if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+      primaryColor = theme.colors.primary.main; // suada-components structure
     } else if (typeof theme?.colors?.primary === 'string') {
-      primaryColor = theme.colors.primary;
+      primaryColor = theme.colors.primary; // suada-students structure
     }
     
     return `linear-gradient(
@@ -137,7 +137,16 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }): string => theme?.colors?.primary?.main || 'var(--brand-colors-accent)'};
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main; // suada-components structure
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary; // suada-students structure
+      }
+      return 'var(--brand-colors-accent)'; // fallback
+    }};
     cursor: pointer;
 
     /* Larger touch target for mobile */
@@ -158,15 +167,15 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }): string => {
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary?.main) {
-        return theme.colors.primary.main;
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary;
+        return theme.colors.primary; // suada-students structure
       }
-      return 'var(--brand-colors-accent)';
+      return 'var(--brand-colors-accent)'; // fallback
     }};
     cursor: pointer;
     border: none;
@@ -239,13 +248,13 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
   width: 100px;
   height: 4px;
   border-radius: 5px;
-  background: ${({ value, theme }): string => {
+  background: ${({ value, theme }: { value: number; theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
     // Handle different theme structures
     let primaryColor = 'var(--neutral-colors-light)';
-    if (theme?.colors?.primary?.main) {
-      primaryColor = theme.colors.primary.main;
+    if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+      primaryColor = theme.colors.primary.main; // suada-components structure
     } else if (typeof theme?.colors?.primary === 'string') {
-      primaryColor = theme.colors.primary;
+      primaryColor = theme.colors.primary; // suada-students structure
     }
     
     return `linear-gradient(
@@ -282,15 +291,15 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }): string => {
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary?.main) {
-        return theme.colors.primary.main;
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary;
+        return theme.colors.primary; // suada-students structure
       }
-      return 'var(--neutral-colors-light)';
+      return 'var(--neutral-colors-light)'; // fallback
     }};
     cursor: pointer;
 
@@ -306,15 +315,15 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }): string => {
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary?.main) {
-        return theme.colors.primary.main;
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main; // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary;
+        return theme.colors.primary; // suada-students structure
       }
-      return 'var(--neutral-colors-light)';
+      return 'var(--neutral-colors-light)'; // fallback
     }};
     cursor: pointer;
     border: none;
@@ -437,8 +446,16 @@ const BaseIconContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     
     & > svg > path {
-      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } } } }) => 
-        theme?.colors?.primary?.main || 'var(--video-player-primary-color, #08C694)'} !important;
+      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+        // Handle different theme structures
+        if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+          return theme.colors.primary.main; // suada-components structure
+        }
+        if (typeof theme?.colors?.primary === 'string') {
+          return theme.colors.primary; // suada-students structure
+        }
+        return 'var(--video-player-primary-color, #08C694)'; // fallback
+      }} !important;
     }
   }
 
@@ -494,11 +511,36 @@ export const StyledFullscreenIconContainer = styled(BaseIconContainer)`
 
 export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
   &.pip-active {
-    background-color: rgba(8, 198, 148, 0.2);
+    background-color: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+      // Handle different theme structures for background color (with opacity)
+      let primaryColor;
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        primaryColor = theme.colors.primary.main; // suada-components structure
+      } else if (typeof theme?.colors?.primary === 'string') {
+        primaryColor = theme.colors.primary; // suada-students structure
+      } else {
+        primaryColor = '#08C694'; // fallback
+      }
+      
+      // Convert hex to rgba with opacity
+      const hex = primaryColor.replace('#', '');
+      const r = parseInt(hex.substr(0, 2), 16);
+      const g = parseInt(hex.substr(2, 2), 16);
+      const b = parseInt(hex.substr(4, 2), 16);
+      return `rgba(${r}, ${g}, ${b}, 0.2)`;
+    }};
     
     & > svg > path {
-      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } } } }) => 
-        theme?.colors?.primary?.main || 'var(--video-player-primary-color, #08C694)'} !important;
+      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+        // Handle different theme structures
+        if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+          return theme.colors.primary.main; // suada-components structure
+        }
+        if (typeof theme?.colors?.primary === 'string') {
+          return theme.colors.primary; // suada-students structure
+        }
+        return 'var(--video-player-primary-color, #08C694)'; // fallback
+      }} !important;
     }
   }
 `
