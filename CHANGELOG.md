@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/Suada-Learning/suada-components/compare/v1.13.2...v1.13.3) (2025-12-16)
+
+
+### Bug Fixes
+
+* provide default PiP context when PiPProvider is not available ([5849171](https://github.com/Suada-Learning/suada-components/commit/58491713d2b12529fb2e9210db46023b41e706be))
+
 ## [1.13.2](https://github.com/Suada-Learning/suada-components/compare/v1.13.1...v1.13.2) (2025-11-24)
 
 
