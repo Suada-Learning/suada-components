@@ -38,4 +38,5 @@ export interface ControlsProps {
   downloadFileName?: string
   onDownload?: () => void
   showPictureInPicture?: boolean
+  onAddNote?: () => void
 }

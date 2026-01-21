@@ -556,3 +556,7 @@ export const StyledPlayPauseIconContainer = styled(BaseIconContainer)`
 export const StyledRewindIconContainer = styled(BaseIconContainer)`
   /* Additional specific styles if needed */
 `
+
+export const StyledNotesIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles for notes icon */
+`

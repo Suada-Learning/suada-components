@@ -15,6 +15,21 @@ export interface VideoState {
 type HandleNextVideo = () => void
 type HandlePreviousVideo = () => void
 
+export interface Note {
+  id: string
+  title: string
+  moment: number
+  description?: string
+  thumbnail?: string
+}
+
+export interface NoteMarker {
+  id: string
+  title: string
+  moment: number
+  position: number
+}
+
 export interface PlayerProps {
   customStyles?: React.CSSProperties
   startTime?: number
@@ -38,6 +53,20 @@ export interface PlayerProps {
   downloadFileName?: string
   onDownload?: () => void
   showPictureInPicture?: boolean
+  // Notes functionality props
+  notes?: Note[]
+  videoDuration?: number
+  onNoteClick?: (note: Note) => void
+  courseId?: string
+  moduleId?: string
+  lessonId?: string
+  // Note editing props (optional - for external control)
+  editingNote?: Note | null
+  onNoteEdit?: (note: Note) => void
+  onNoteSave?: (noteId: string, title: string, content: string) => Promise<void>
+  onNoteDelete?: (noteId: string) => Promise<void>
+  onNoteCancelEdit?: () => void
+  onAddNote?: () => void
 }
 
 export interface UsePlayerControlsProps {
