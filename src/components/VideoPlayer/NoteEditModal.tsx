@@ -27,23 +27,25 @@ const StyledModalTitle = styled.h3`
   font-size: 16px;
   font-weight: 600;
   margin: 0;
-  color: #1a202c;
+  color: #0f172a;
 `
 
 const StyledTimestamp = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
-  color: #718096;
+  font-size: 11px;
+  color: #475569;
   font-weight: 500;
-  background: #f7fafc;
-  padding: 4px 8px;
-  border-radius: 4px;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 5px;
   
   svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
+    color: #10b981;
+    flex-shrink: 0;
   }
 `
 
@@ -52,16 +54,20 @@ const StyledCloseButton = styled.button`
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #718096;
-  padding: 0;
+  color: #64748b;
+  padding: 4px;
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  line-height: 1;
 
   &:hover {
-    color: #2d3748;
+    background: #f1f5f9;
+    color: #334155;
   }
 `
 
@@ -76,31 +82,51 @@ const StyledModalContent = styled.div`
 const StyledInput = styled.input`
   width: 100%;
   padding: 8px 12px;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   font-size: 14px;
+  color: #0f172a;
   outline: none;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
 
   &:focus {
-    border-color: #3182ce;
-    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+    background: white;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+
+  &::placeholder {
+    color: #94a3b8;
   }
 `
 
 const StyledTextarea = styled.textarea`
   width: 100%;
   padding: 8px 12px;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   font-size: 14px;
+  color: #0f172a;
   outline: none;
   resize: vertical;
   min-height: 80px;
   flex: 1;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.5;
+  transition: all 0.15s ease;
 
   &:focus {
-    border-color: #3182ce;
-    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+    background: white;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+
+  &::placeholder {
+    color: #94a3b8;
   }
 `
 
@@ -116,40 +142,67 @@ const StyledModalFooter = styled.div`
 const StyledButton = styled.button<{ $variant?: 'primary' | 'danger' | 'secondary' }>`
   padding: 8px 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: fit-content;
 
   ${(props) => {
     switch (props.$variant) {
       case 'primary':
         return `
-          background-color: #3182ce;
+          background: #10b981;
           color: white;
-          &:hover { background-color: #2c5aa0; }
+          &:hover:not(:disabled) { 
+            background: #059669;
+            transform: translateY(-1px);
+          }
+          &:active:not(:disabled) {
+            background: #047857;
+            transform: translateY(0);
+          }
         `
       case 'danger':
         return `
-          background-color: #e53e3e;
-          color: white;
-          &:hover { background-color: #c53030; }
+          background: transparent;
+          color: #dc2626;
+          &:hover:not(:disabled) { 
+            background: #fef2f2;
+          }
+          &:active:not(:disabled) {
+            background: #fee2e2;
+          }
         `
       default:
         return `
-          background-color: #f7fafc;
-          color: #2d3748;
-          border: 1px solid #e2e8f0;
-          &:hover { background-color: #edf2f7; }
+          background: #f1f5f9;
+          color: #334155;
+          &:hover:not(:disabled) { 
+            background: #e2e8f0;
+            transform: translateY(-1px);
+          }
+          &:active:not(:disabled) {
+            background: #cbd5e1;
+            transform: translateY(0);
+          }
         `
     }
   }}
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `
 
 const StyledButtonGroup = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 12px;
 `
 
 interface NoteEditModalProps {
