@@ -1,6 +1,7 @@
 import { ReactElement } from 'react'
 import styled from 'styled-components'
 import { Note } from './Player.interface'
+import { FormatSecondsToTimeString } from './timeConversion'
 
 const StyledModalHeader = styled.div`
   padding: 16px 20px 0;
@@ -16,6 +17,15 @@ const StyledModalTitle = styled.h3`
   font-weight: 600;
   margin: 0;
   color: #1a202c;
+`
+
+const StyledTimestamp = styled.div`
+  font-size: 12px;
+  color: #718096;
+  font-weight: 500;
+  background: #f7fafc;
+  padding: 4px 8px;
+  border-radius: 4px;
 `
 
 const StyledCloseButton = styled.button`
@@ -135,9 +145,11 @@ interface NoteEditModalProps {
   onCancel: () => void
   onDelete: () => void
   onSave: () => void
+  isNewNote?: boolean
 }
 
 const NoteEditModal = ({
+  note,
   editingTitle,
   editingContent,
   onTitleChange,
@@ -145,11 +157,19 @@ const NoteEditModal = ({
   onCancel,
   onDelete,
   onSave,
+  isNewNote = false,
 }: NoteEditModalProps): ReactElement => {
+  const isEmptyNote = !note.id || note.id.startsWith('note_')
+  const modalTitle = isEmptyNote ? 'Add Note' : 'Edit Note'
+  const timestamp = FormatSecondsToTimeString(note.moment)
+
   return (
     <>
       <StyledModalHeader>
-        <StyledModalTitle>Edit Note</StyledModalTitle>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <StyledModalTitle>{modalTitle}</StyledModalTitle>
+          <StyledTimestamp>at {timestamp}</StyledTimestamp>
+        </div>
         <StyledCloseButton onClick={onCancel}>×</StyledCloseButton>
       </StyledModalHeader>
 
@@ -168,13 +188,15 @@ const NoteEditModal = ({
       </StyledModalContent>
 
       <StyledModalFooter>
-        <StyledButton onClick={onDelete} $variant="danger">
-          Delete
-        </StyledButton>
-        <StyledButtonGroup>
+        {!isEmptyNote && (
+          <StyledButton onClick={onDelete} $variant="danger">
+            Delete
+          </StyledButton>
+        )}
+        <StyledButtonGroup style={{ marginLeft: isEmptyNote ? 'auto' : 'initial' }}>
           <StyledButton onClick={onCancel}>Cancel</StyledButton>
           <StyledButton onClick={onSave} $variant="primary">
-            Save
+            {isEmptyNote ? 'Add Note' : 'Save'}
           </StyledButton>
         </StyledButtonGroup>
       </StyledModalFooter>
