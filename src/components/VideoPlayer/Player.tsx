@@ -54,9 +54,7 @@ export const VideoPlayer = ({
   notes,
   videoDuration,
   onNoteClick,
-  courseId,
-  moduleId,
-  lessonId,
+ 
   editingNote,
   onNoteEdit,
   onNoteSave,
@@ -80,10 +78,8 @@ export const VideoPlayer = ({
   // Use external editing state if provided, otherwise use internal state
   const currentEditingNote = editingNote !== undefined ? editingNote : internalEditingNote
   
-  const actionId = lessonId || moduleId || courseId || ''
   const {
     mouseMoveHandler,
-    playerContainerRef,
     playPauseHandler,
     handleFullScreen,
     handlePictureInPicture,
@@ -135,9 +131,9 @@ export const VideoPlayer = ({
       const currentTime = videoPlayerRef.current?.getCurrentTime() || 0
       const newNote: Note = {
         id: `note_${Date.now()}`,
-        timeInSeconds: currentTime,
+        moment: currentTime,
         title: '',
-        content: '',
+        description: '',
       }
       setInternalEditingNote(newNote)
       setEditingTitle('')
