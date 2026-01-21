@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/Suada-Learning/suada-components/compare/v1.13.4...v1.14.0) (2026-01-21)
+
+
+### Bug Fixes
+
+* export VideoPlayerNote type from VideoPlayer interface ([bfb2163](https://github.com/Suada-Learning/suada-components/commit/bfb21634b2582fcb0996cd2c7f4557588bc7d0cd))
+
+
+### Features
+
+* export types Note, NoteMarker, and PlayerProps from VideoPlayer ([e5b44f2](https://github.com/Suada-Learning/suada-components/commit/e5b44f21192d7a10ffe3e600815d9f6cca12c70a))
+
 ## [1.13.4](https://github.com/Suada-Learning/suada-components/compare/v1.13.3...v1.13.4) (2026-01-21)
 
 
