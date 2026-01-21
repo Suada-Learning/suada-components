@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/Suada-Learning/suada-components/compare/v1.14.2...v1.14.3) (2026-01-21)
+
+
+### Bug Fixes
+
+* add TimeIcon component and integrate it into NoteEditModal for timestamp display ([78ea2e3](https://github.com/Suada-Learning/suada-components/commit/78ea2e3d3fefc6231e9a91d7b115fcd6bb504d53))
+
 ## [1.14.2](https://github.com/Suada-Learning/suada-components/compare/v1.14.1...v1.14.2) (2026-01-21)
 
 
