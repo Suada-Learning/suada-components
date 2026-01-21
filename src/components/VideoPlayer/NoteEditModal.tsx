@@ -2,14 +2,25 @@ import { ReactElement } from 'react'
 import styled from 'styled-components'
 import { Note } from './Player.interface'
 import { FormatSecondsToTimeString } from './timeConversion'
+import { TimeIcon, TrashCanRed } from '../../icons'
 
 const StyledModalHeader = styled.div`
   padding: 16px 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 16px;
+`
+
+const StyledModalHeaderTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+`
+
+const StyledNoteHeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
 `
 
 const StyledModalTitle = styled.h3`
@@ -20,12 +31,20 @@ const StyledModalTitle = styled.h3`
 `
 
 const StyledTimestamp = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 12px;
   color: #718096;
   font-weight: 500;
   background: #f7fafc;
   padding: 4px 8px;
   border-radius: 4px;
+  
+  svg {
+    width: 14px;
+    height: 14px;
+  }
 `
 
 const StyledCloseButton = styled.button`
@@ -166,11 +185,16 @@ const NoteEditModal = ({
   return (
     <>
       <StyledModalHeader>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <StyledModalHeaderTop>
           <StyledModalTitle>{modalTitle}</StyledModalTitle>
-          <StyledTimestamp>at {timestamp}</StyledTimestamp>
-        </div>
-        <StyledCloseButton onClick={onCancel}>×</StyledCloseButton>
+          <StyledNoteHeaderContainer>
+            <StyledTimestamp>
+              <TimeIcon />
+              <span>at {timestamp}</span>
+            </StyledTimestamp>
+            <StyledCloseButton onClick={onCancel}>×</StyledCloseButton>
+          </StyledNoteHeaderContainer>
+        </StyledModalHeaderTop>
       </StyledModalHeader>
 
       <StyledModalContent>
@@ -190,6 +214,7 @@ const NoteEditModal = ({
       <StyledModalFooter>
         {!isEmptyNote && (
           <StyledButton onClick={onDelete} $variant="danger">
+            <TrashCanRed style={{ width: '16px', height: '16px', marginRight: '6px' }} />
             Delete
           </StyledButton>
         )}
