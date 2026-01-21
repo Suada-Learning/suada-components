@@ -1,3 +1,45 @@
+## [1.13.3](https://github.com/Suada-Learning/suada-components/compare/v1.13.2...v1.13.3) (2025-12-16)
+
+
+### Bug Fixes
+
+* provide default PiP context when PiPProvider is not available ([5849171](https://github.com/Suada-Learning/suada-components/commit/58491713d2b12529fb2e9210db46023b41e706be))
+
+## [1.13.2](https://github.com/Suada-Learning/suada-components/compare/v1.13.1...v1.13.2) (2025-11-24)
+
+
+### Bug Fixes
+
+* add fallback color for primary theme in styled components ([ef82a98](https://github.com/Suada-Learning/suada-components/commit/ef82a98a1aae4368bf488d2cd949aa76d9b0600d))
+* update default fill color for checkbox icons to 'currentColor' ([9d7429e](https://github.com/Suada-Learning/suada-components/commit/9d7429e61d6dee3bdeb3238050718a973fb3bf80))
+
+## [1.13.1](https://github.com/Suada-Learning/suada-components/compare/v1.13.0...v1.13.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* update fill color fallback for SVG icons in video player controls ([46feb12](https://github.com/Suada-Learning/suada-components/commit/46feb121bda16685a27c04676329fd4f060dae37))
+
+# [1.13.0](https://github.com/Suada-Learning/suada-components/compare/v1.12.0...v1.13.0) (2025-11-20)
+
+
+### Features
+
+* add type declarations for react-country-flag and update TypeScript configurations ([943c086](https://github.com/Suada-Learning/suada-components/commit/943c086fa816430134ec617400eea4d6f04949f4))
+
+# [1.12.0](https://github.com/Suada-Learning/suada-components/compare/v1.11.3...v1.12.0) (2025-11-20)
+
+
+### Bug Fixes
+
+* update dependencies for improved compatibility and performance; adjust TypeScript configuration ([c8394a9](https://github.com/Suada-Learning/suada-components/commit/c8394a9a61e333f67836a3566f7e5251e711617d))
+* update TypeScript configurations for improved compatibility and build process ([5083035](https://github.com/Suada-Learning/suada-components/commit/508303528974383f52d8316d97cf380078563bf7))
+
+
+### Features
+
+* add theme-aware hover colors for VideoPlayer controls ([d3dc900](https://github.com/Suada-Learning/suada-components/commit/d3dc900656e60a43a17b2e0eef749c2803055682)), closes [#08C694](https://github.com/Suada-Learning/suada-components/issues/08C694)
+
 ## [1.11.3](https://github.com/Suada-Learning/suada-components/compare/v1.11.2...v1.11.3) (2025-11-19)
 
 
