@@ -124,10 +124,14 @@ export const VideoPlayer = ({
 
   // Handle adding new notes
   const handleAddNote = useCallback(() => {
+    // Stop the video when adding a note
+    setIsPlaying(false)
+    
     if (onAddNote) {
+      // If external handler is provided, use it (e.g., Notes tab modal)
       onAddNote()
     } else {
-      // Create a new note at current time if no external handler
+      // Only create internal modal if no external handler
       const currentTime = videoPlayerRef.current?.getCurrentTime() || 0
       const newNote: Note = {
         id: `note_${Date.now()}`,
@@ -139,7 +143,7 @@ export const VideoPlayer = ({
       setEditingTitle('')
       setEditingContent('')
     }
-  }, [onAddNote])
+  }, [onAddNote, setIsPlaying])
 
   const { setupHLSSubtitleTracking } = useHLSSubtitles({
     videoPlayerRef,
@@ -213,6 +217,14 @@ export const VideoPlayer = ({
     handleCancelEdit()
   }
 
+  // Sync editing state when external editing note changes
+  useEffect(() => {
+    if (editingNote) {
+      setEditingTitle(editingNote.title)
+      setEditingContent(editingNote.description || '')
+    }
+  }, [editingNote])
+
   const renderNoteEditModal = (): ReactElement | null => {
     if (!currentEditingNote) return null
 
@@ -237,8 +249,8 @@ export const VideoPlayer = ({
           note={currentEditingNote}
           notePosition={notePosition}
           alignment={modalAlignment}
-          editingTitle={editingNote ? (currentEditingNote.title) : editingTitle}
-          editingContent={editingNote ? (currentEditingNote.description || '') : editingContent}
+          editingTitle={editingTitle}
+          editingContent={editingContent}
           onTitleChange={(e): void => setEditingTitle(e.target.value)}
           onContentChange={(e): void => setEditingContent(e.target.value)}
           onCancel={handleCancelEdit}
