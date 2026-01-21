@@ -1,3 +1,10 @@
+## [1.14.5](https://github.com/Suada-Learning/suada-components/compare/v1.14.4...v1.14.5) (2026-01-21)
+
+
+### Bug Fixes
+
+* add translation fallback for normal playback speed label ([bdb9f61](https://github.com/Suada-Learning/suada-components/commit/bdb9f61d5a9c7d0b13f44d7e1c3455b8c915b68e))
+
 ## [1.14.4](https://github.com/Suada-Learning/suada-components/compare/v1.14.3...v1.14.4) (2026-01-21)
 
 
