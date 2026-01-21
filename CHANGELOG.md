@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/Suada-Learning/suada-components/compare/v1.13.3...v1.13.4) (2026-01-21)
+
+
+### Bug Fixes
+
+* remove unnecessary rollup-win32-x64-msvc dependency from package.json ([01037ed](https://github.com/Suada-Learning/suada-components/commit/01037ed1d006532a05f72f131034e30f45a9397d))
+
 ## [1.13.3](https://github.com/Suada-Learning/suada-components/compare/v1.13.2...v1.13.3) (2025-12-16)
 
 
