@@ -14,6 +14,7 @@ import { MeterIcon, VideoCheckmarkIcon } from '../../icons'
 const getTranslationFallback = (key: string): string => {
   const translations: Record<string, string> = {
     'general.playback_speed': 'Playback Speed',
+    "general.normal": "Normal",
     'playback_speed.2x': '2x',
     'playback_speed.1_75x': '1.75x',
     'playback_speed.1_5x': '1.5x',
