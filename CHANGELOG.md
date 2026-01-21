@@ -1,3 +1,10 @@
+## [1.14.4](https://github.com/Suada-Learning/suada-components/compare/v1.14.3...v1.14.4) (2026-01-21)
+
+
+### Bug Fixes
+
+* update styles in NoteEditModal for improved UI consistency and readability ([2aaf7b4](https://github.com/Suada-Learning/suada-components/commit/2aaf7b43937c05253fd9dac426055baa76049713))
+
 ## [1.14.3](https://github.com/Suada-Learning/suada-components/compare/v1.14.2...v1.14.3) (2026-01-21)
 
 
