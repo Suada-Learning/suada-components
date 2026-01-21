@@ -9,7 +9,21 @@ import {
 } from './PlaybackSpeedMenu.styles'
 import useMenuToggle from './useMenuToggle'
 import { MeterIcon, VideoCheckmarkIcon } from '../../icons'
-import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
+
+// Translation fallbacks for playback speed labels
+const getTranslationFallback = (key: string): string => {
+  const translations: Record<string, string> = {
+    'general.playback_speed': 'Playback Speed',
+    'playback_speed.2x': '2x',
+    'playback_speed.1_75x': '1.75x',
+    'playback_speed.1_5x': '1.5x',
+    'playback_speed.1_25x': '1.25x',
+    'playback_speed.1x': '1x',
+    'playback_speed.0_75x': '0.75x',
+    'playback_speed.0_5x': '0.5x',
+  }
+  return translations[key] || key
+}
 
 const PlaybackSpeedMenu: FC<PlaybackSpeedMenuProps> = ({
   playbackSpeed,
@@ -20,7 +34,6 @@ const PlaybackSpeedMenu: FC<PlaybackSpeedMenuProps> = ({
   customMenuStyles,
 }) => {
   const { menuRef, isVisible: isMenuActive, menuPosition, toggleMenu } = useMenuToggle()
-  const { t } = useTranslation()
 
   return (
     <StyledPlaybackMenuWrapper
@@ -32,7 +45,7 @@ const PlaybackSpeedMenu: FC<PlaybackSpeedMenuProps> = ({
 
       {isMenuActive && (
         <StyledPlaybackMenu $position={menuPosition} style={customMenuStyles}>
-          <h2>{t('general.playback_speed')}</h2>
+          <h2>{getTranslationFallback('general.playback_speed')}</h2>
           {PLAYBACK_SPEED_LIST.map(({ label, value }, index) => (
             <StyledPlaybackSpeedItem
               key={index}
@@ -41,7 +54,7 @@ const PlaybackSpeedMenu: FC<PlaybackSpeedMenuProps> = ({
                 toggleMenu()
               }}
             >
-              {t(label)}
+              {getTranslationFallback(label)}
               {value === playbackSpeed && <VideoCheckmarkIcon />}
             </StyledPlaybackSpeedItem>
           ))}
