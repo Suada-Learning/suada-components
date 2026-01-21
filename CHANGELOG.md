@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/Suada-Learning/suada-components/compare/v1.14.1...v1.14.2) (2026-01-21)
+
+
+### Bug Fixes
+
+* enhance NoteEditModal with timestamp display and improve note handling in VideoPlayer ([d3dbb51](https://github.com/Suada-Learning/suada-components/commit/d3dbb51e3f8bb22c760236ab4dc94bcb87eeb411))
+
 ## [1.14.1](https://github.com/Suada-Learning/suada-components/compare/v1.14.0...v1.14.1) (2026-01-21)
 
 
