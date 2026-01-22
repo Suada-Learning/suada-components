@@ -236,7 +236,7 @@ export const InputLabel = styled.label`
     const primaryColor = theme?.colors?.primary
     if (typeof primaryColor === 'string') return primaryColor
     if (primaryColor?.main) return primaryColor.main
-    return '#06c68f'
+    return 'var(--primary-color, #06c68f)'
   }};
   font-size: 11px;
   padding: 9px 6px;
@@ -255,7 +255,7 @@ export const ButtonInputLabel = styled.label`
     const primaryColor = theme?.colors?.primary
     if (typeof primaryColor === 'string') return primaryColor
     if (primaryColor?.main) return primaryColor.main
-    return '#06c68f'
+    return 'var(--primary-color, #06c68f)'
   }};
   font-size: 11px;
   padding: 4px 6px;
