@@ -1,3 +1,10 @@
+## [1.14.7](https://github.com/Suada-Learning/suada-components/compare/v1.14.6...v1.14.7) (2026-01-22)
+
+
+### Bug Fixes
+
+* add change detection for note editing to enable/disable save button ([decddbb](https://github.com/Suada-Learning/suada-components/commit/decddbb5dc337adb3417cbce6f0526eeac0a779a))
+
 ## [1.14.6](https://github.com/Suada-Learning/suada-components/compare/v1.14.5...v1.14.6) (2026-01-22)
 
 
