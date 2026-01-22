@@ -1,3 +1,10 @@
+## [1.14.6](https://github.com/Suada-Learning/suada-components/compare/v1.14.5...v1.14.6) (2026-01-22)
+
+
+### Bug Fixes
+
+* add null checks for notes in VideoPlayer to prevent rendering issues ([b62630c](https://github.com/Suada-Learning/suada-components/commit/b62630cd698f16362a0c8e251f40ccb9c729f0fe))
+
 ## [1.14.5](https://github.com/Suada-Learning/suada-components/compare/v1.14.4...v1.14.5) (2026-01-21)
 
 
