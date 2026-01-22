@@ -1,3 +1,10 @@
+## [1.14.9](https://github.com/Suada-Learning/suada-components/compare/v1.14.8...v1.14.9) (2026-01-22)
+
+
+### Bug Fixes
+
+* update InputLabel and ButtonInputLabel to use CSS variables for primary color ([c34fd59](https://github.com/Suada-Learning/suada-components/commit/c34fd59cb1e860985d98034a42429756c9a6cfee))
+
 ## [1.14.8](https://github.com/Suada-Learning/suada-components/compare/v1.14.7...v1.14.8) (2026-01-22)
 
 
