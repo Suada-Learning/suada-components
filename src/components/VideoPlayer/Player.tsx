@@ -226,7 +226,7 @@ export const VideoPlayer = ({
   }, [editingNote])
 
   const renderNoteEditModal = (): ReactElement | null => {
-    if (!currentEditingNote) return null
+    if (!notes || !currentEditingNote) return null
 
     const noteMarker = noteMarkers?.find(marker => marker.id === currentEditingNote.id)
     const notePosition = noteMarker?.position || 0
@@ -269,7 +269,7 @@ export const VideoPlayer = ({
   }
 
   const renderNotesOverlay = (): ReactElement | null => {
-    if (!noteMarkers || noteMarkers.length === 0) return null
+    if (!notes || !noteMarkers || noteMarkers.length === 0) return null
 
     const shouldShowControls = areControlsVisible || isFullscreen
     const cssClass = shouldShowControls ? 'controls-visible' : ''
@@ -542,7 +542,7 @@ export const VideoPlayer = ({
           downloadFileName={downloadFileName}
           onDownload={onDownload}
           showPictureInPicture={showPictureInPicture}
-          onAddNote={handleAddNote}
+          onAddNote={notes ? handleAddNote : undefined}
         />
       </StyledControlsContainer>
 
