@@ -232,7 +232,12 @@ export const ImagePlaceholder = styled.div`
 export const InputLabel = styled.label`
   cursor: pointer;
   color: #fff;
-  background: #06c68f;
+  background: ${({ theme }): string => {
+    const primaryColor = theme?.colors?.primary
+    if (typeof primaryColor === 'string') return primaryColor
+    if (primaryColor?.main) return primaryColor.main
+    return '#06c68f'
+  }};
   font-size: 11px;
   padding: 9px 6px;
   border-radius: 4px;
@@ -246,7 +251,12 @@ export const InputLabel = styled.label`
 export const ButtonInputLabel = styled.label`
   cursor: pointer;
   color: #fff;
-  background: #06c68f;
+  background: ${({ theme }): string => {
+    const primaryColor = theme?.colors?.primary
+    if (typeof primaryColor === 'string') return primaryColor
+    if (primaryColor?.main) return primaryColor.main
+    return '#06c68f'
+  }};
   font-size: 11px;
   padding: 4px 6px;
   border-radius: 4px;
