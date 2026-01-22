@@ -1,3 +1,10 @@
+## [1.14.8](https://github.com/Suada-Learning/suada-components/compare/v1.14.7...v1.14.8) (2026-01-22)
+
+
+### Bug Fixes
+
+* update InputLabel and ButtonInputLabel backgrounds to use theme colors ([2a6f312](https://github.com/Suada-Learning/suada-components/commit/2a6f31239ba4f6ca03e651eaf6fe7523fed8809a))
+
 ## [1.14.7](https://github.com/Suada-Learning/suada-components/compare/v1.14.6...v1.14.7) (2026-01-22)
 
 
