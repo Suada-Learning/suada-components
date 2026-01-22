@@ -229,11 +229,15 @@ const NoteEditModal = ({
   onCancel,
   onDelete,
   onSave,
-  isNewNote = false,
 }: NoteEditModalProps): ReactElement => {
   const isEmptyNote = !note.id || note.id.startsWith('note_')
   const modalTitle = isEmptyNote ? 'Add Note' : 'Edit Note'
   const timestamp = FormatSecondsToTimeString(note.moment)
+
+  // Check if there are changes for existing notes
+  const hasChanges = isEmptyNote 
+    ? (editingTitle.trim() || editingContent.trim()) // For new notes, require at least some content
+    : (editingTitle !== note.title || editingContent !== (note.description || '')) // For existing notes, check if anything changed
 
   return (
     <>
@@ -273,7 +277,7 @@ const NoteEditModal = ({
         )}
         <StyledButtonGroup style={{ marginLeft: isEmptyNote ? 'auto' : 'initial' }}>
           <StyledButton onClick={onCancel}>Cancel</StyledButton>
-          <StyledButton onClick={onSave} $variant="primary">
+          <StyledButton onClick={onSave} $variant="primary" disabled={!hasChanges}>
             {isEmptyNote ? 'Add Note' : 'Save'}
           </StyledButton>
         </StyledButtonGroup>
