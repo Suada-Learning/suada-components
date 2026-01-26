@@ -225,8 +225,7 @@ export const StyledSlider = styled.input<SliderProps>`
 
   /* Enhance visibility on focus for accessibility */
   &:focus {
-    outline: 2px solid var(--brand-colors-accent);
-    outline-offset: 2px;
+    outline: none;
   }
 `
 
@@ -495,8 +494,8 @@ const BaseIconContainer = styled.div`
 
   /* Focus styles for accessibility */
   &:focus-visible {
-    outline: 2px solid var(--brand-colors-accent);
-    outline-offset: 2px;
+    outline: none:
+
   }
 `
 
