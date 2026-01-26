@@ -322,6 +322,8 @@ export const VideoPlayer = ({
                 transform: 'translateX(-50%)',
                 width: isFullscreen ? 12 : undefined,
                 height: isFullscreen ? 12 : undefined,
+                outline: 'none',
+                border: 'none',
               }}
             >
               {hoveredNote?.id === note.id && (
