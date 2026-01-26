@@ -1,3 +1,10 @@
+## [1.14.20](https://github.com/Suada-Learning/suada-components/compare/v1.14.19...v1.14.20) (2026-01-26)
+
+
+### Bug Fixes
+
+* add margin-bottom to NoteEditModal styles ([e5d6fff](https://github.com/Suada-Learning/suada-components/commit/e5d6fff858d8494a0c2d6c9c2f33d37d924016df))
+
 ## [1.14.19](https://github.com/Suada-Learning/suada-components/compare/v1.14.18...v1.14.19) (2026-01-26)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "suada-components",
   "private": false,
-  "version": "1.14.19",
+  "version": "1.14.20",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
