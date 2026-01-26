@@ -1,3 +1,10 @@
+## [1.14.15](https://github.com/Suada-Learning/suada-components/compare/v1.14.14...v1.14.15) (2026-01-26)
+
+
+### Bug Fixes
+
+* disable vertical resizing of StyledTextarea for better layout control ([e4f11cf](https://github.com/Suada-Learning/suada-components/commit/e4f11cfe0353e2d970410f471b545bc919800df5))
+
 ## [1.14.14](https://github.com/Suada-Learning/suada-components/compare/v1.14.13...v1.14.14) (2026-01-26)
 
 
