@@ -1,3 +1,10 @@
+## [1.14.13](https://github.com/Suada-Learning/suada-components/compare/v1.14.12...v1.14.13) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove outline from StyledSlider and BaseIconContainer for improved accessibility ([420e4f2](https://github.com/Suada-Learning/suada-components/commit/420e4f21a75115d06364ca4b878bbff896d0177d))
+
 ## [1.14.12](https://github.com/Suada-Learning/suada-components/compare/v1.14.11...v1.14.12) (2026-01-26)
 
 
