@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import CancelIcon from '@mui/icons-material/Cancel'
 
 export const FileUploaderContainer = styled.div`
   position: relative;
@@ -316,6 +317,15 @@ export const ErrorText = styled.p`
   font-size: 14px;
   color: #d32f2f;
   margin-top: 4px;
+`
+
+export const StyledCancelIcon = styled(CancelIcon)`
+  color: ${({ theme }): string => {
+    const primaryColor = theme?.colors?.primary
+    if (typeof primaryColor === 'string') return primaryColor
+    if (primaryColor?.main) return primaryColor.main
+    return 'var(--primary-color, #06c68f)'
+  }};
 `
 
 export const styles = {

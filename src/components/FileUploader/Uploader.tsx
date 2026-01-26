@@ -1,7 +1,5 @@
 import React, { ReactElement, useState } from 'react'
-import { useTheme } from 'styled-components'
 import CircularProgress from '@mui/material/CircularProgress'
-import CancelIcon from '@mui/icons-material/Cancel'
 import {
   Container,
   ItemContainer,
@@ -12,6 +10,7 @@ import {
   InputLabel,
   ErrorText,
   Title,
+  StyledCancelIcon,
   styles,
 } from './styled-components'
 import { IUploaderProps } from './uploader.interface'
@@ -71,14 +70,6 @@ export const Uploader = ({
   required = false,
 }: IUploaderProps): ReactElement => {
   const { t } = useTranslation()
-  const theme = useTheme()
-  
-  const getPrimaryColor = (): string => {
-    const primaryColor = theme?.colors?.primary
-    if (typeof primaryColor === 'string') return primaryColor
-    if (primaryColor?.main) return primaryColor.main
-    return '#06c68f'
-  }
   
   const filePreview = (): ReactElement => {
     // pdf is in file type too so we need to check for pdf explicitly
@@ -170,7 +161,7 @@ export const Uploader = ({
               }
             }}
           >
-            <CancelIcon style={{ color: getPrimaryColor() }} />
+            <StyledCancelIcon />
           </CancelButton>
         )}
       </Container>
