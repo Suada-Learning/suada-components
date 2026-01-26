@@ -1,3 +1,10 @@
+## [1.14.17](https://github.com/Suada-Learning/suada-components/compare/v1.14.16...v1.14.17) (2026-01-26)
+
+
+### Bug Fixes
+
+* update fallback primary color to a static value for consistency ([ddbbb3e](https://github.com/Suada-Learning/suada-components/commit/ddbbb3ee37f28513c3ef1f0bc9489f0a7e426704))
+
 ## [1.14.16](https://github.com/Suada-Learning/suada-components/compare/v1.14.15...v1.14.16) (2026-01-26)
 
 
