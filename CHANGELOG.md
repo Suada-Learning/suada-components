@@ -1,3 +1,10 @@
+## [1.14.12](https://github.com/Suada-Learning/suada-components/compare/v1.14.11...v1.14.12) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove border and outline from StyledSlider track for improved styling ([531745a](https://github.com/Suada-Learning/suada-components/commit/531745ad48e9c677c43d6cd8bcbcdd0fd18217e1))
+
 ## [1.14.11](https://github.com/Suada-Learning/suada-components/compare/v1.14.10...v1.14.11) (2026-01-26)
 
 
