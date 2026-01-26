@@ -142,6 +142,20 @@ export const StyledSlider = styled.input<SliderProps>`
   @media (hover: none) and (pointer: coarse) {
     height: 4px;
   }
+ &::-webkit-slider-runnable-track {
+    border: none;
+    outline: none;
+  }
+
+  &::-moz-range-track {
+    border: none;
+    outline: none;
+  }
+
+  &::-ms-track {
+    border: none;
+    outline: none;
+  }
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
