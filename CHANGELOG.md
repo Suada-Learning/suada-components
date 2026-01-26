@@ -1,3 +1,10 @@
+## [1.14.10](https://github.com/Suada-Learning/suada-components/compare/v1.14.9...v1.14.10) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove outline and border from note hover styles in VideoPlayer ([cbc4500](https://github.com/Suada-Learning/suada-components/commit/cbc450072e62784d4aeca958c9bfa1cb79465992))
+
 ## [1.14.9](https://github.com/Suada-Learning/suada-components/compare/v1.14.8...v1.14.9) (2026-01-22)
 
 
