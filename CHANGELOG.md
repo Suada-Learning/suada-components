@@ -1,3 +1,10 @@
+## [1.14.19](https://github.com/Suada-Learning/suada-components/compare/v1.14.18...v1.14.19) (2026-01-26)
+
+
+### Bug Fixes
+
+* adjust padding for StyledTextarea for consistent spacing ([7075fd7](https://github.com/Suada-Learning/suada-components/commit/7075fd7fda763c0a33c2cdfb6f296aeb0b015f04))
+
 ## [1.14.18](https://github.com/Suada-Learning/suada-components/compare/v1.14.17...v1.14.18) (2026-01-26)
 
 
