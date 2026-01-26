@@ -1,3 +1,10 @@
+## [1.14.18](https://github.com/Suada-Learning/suada-components/compare/v1.14.17...v1.14.18) (2026-01-26)
+
+
+### Bug Fixes
+
+* replace CancelIcon with styled version for dynamic color support ([6a185e9](https://github.com/Suada-Learning/suada-components/commit/6a185e9bf46deae5b561dd322709c6d54f992592))
+
 ## [1.14.17](https://github.com/Suada-Learning/suada-components/compare/v1.14.16...v1.14.17) (2026-01-26)
 
 
