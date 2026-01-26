@@ -1,3 +1,10 @@
+## [1.14.14](https://github.com/Suada-Learning/suada-components/compare/v1.14.13...v1.14.14) (2026-01-26)
+
+
+### Bug Fixes
+
+* update note modal positioning based on timestamp for improved accuracy ([17ddaa6](https://github.com/Suada-Learning/suada-components/commit/17ddaa6166e266970d0848e24a28612ed770eea3))
+
 ## [1.14.13](https://github.com/Suada-Learning/suada-components/compare/v1.14.12...v1.14.13) (2026-01-26)
 
 
