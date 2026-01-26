@@ -1,3 +1,10 @@
+## [1.14.16](https://github.com/Suada-Learning/suada-components/compare/v1.14.15...v1.14.16) (2026-01-26)
+
+
+### Bug Fixes
+
+* update CancelIcon color to use dynamic primary color from theme ([6a62adc](https://github.com/Suada-Learning/suada-components/commit/6a62adcb82624bd3a4a1588f2202b139633581cc))
+
 ## [1.14.15](https://github.com/Suada-Learning/suada-components/compare/v1.14.14...v1.14.15) (2026-01-26)
 
 
