@@ -122,9 +122,21 @@ export const StyledSlider = styled.input<SliderProps>`
     )`;
   }};
   outline: none;
+  border: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 
   /* Enhanced mobile touch target */
   @media (hover: none) and (pointer: coarse) {
@@ -148,6 +160,8 @@ export const StyledSlider = styled.input<SliderProps>`
       return 'var(--brand-colors-accent)'; // fallback
     }};
     cursor: pointer;
+    outline: none;
+    border: none;
 
     /* Larger touch target for mobile */
     @media (hover: none) and (pointer: coarse) {
@@ -178,6 +192,8 @@ export const StyledSlider = styled.input<SliderProps>`
       return 'var(--brand-colors-accent)'; // fallback
     }};
     cursor: pointer;
+    outline: none;
+    border: none;
     border: none;
 
     /* Larger touch target for mobile */
