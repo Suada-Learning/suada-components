@@ -415,6 +415,7 @@ export const StyledNoteModal = styled.div<{
     const modalWidth = 320
     const margin = 20
 
+    // Position modal based on the timestamp position on progress bar
     if (alignment === 'left') {
       return `
         left: ${margin}px;
@@ -428,8 +429,9 @@ export const StyledNoteModal = styled.div<{
         &::before { right: calc(${100 - position}% - ${margin}px); }
       `
     } else {
+      // Center the modal horizontally relative to timestamp position
       return `
-        left: 50%;
+        left: ${position}%;
         transform: translateX(-50%);
         &::after { left: 50%; }
         &::before { left: 50%; }

@@ -228,26 +228,28 @@ export const VideoPlayer = ({
   const renderNoteEditModal = (): ReactElement | null => {
     if (!notes || !currentEditingNote) return null
 
-    const noteMarker = noteMarkers?.find(marker => marker.id === currentEditingNote.id)
-    const notePosition = noteMarker?.position || 0
+    // Calculate position based on note's timestamp relative to video duration
+    const noteTimePosition = videoDuration && videoDuration > 0 
+      ? (currentEditingNote.moment / videoDuration) * 100
+      : 50 // Default to center if no duration
 
     let modalAlignment: 'left' | 'center' | 'right' = 'center'
-    if (notePosition < 25) {
+    if (noteTimePosition < 25) {
       modalAlignment = 'left'
-    } else if (notePosition > 75) {
+    } else if (noteTimePosition > 75) {
       modalAlignment = 'right'
     }
 
     const modalJSX = (
       <StyledNoteModal
         $isFullscreen={isFullscreen}
-        $position={notePosition}
+        $position={noteTimePosition}
         $alignment={modalAlignment}
       >
         <NoteEditModal
           isFullscreen={isFullscreen}
           note={currentEditingNote}
-          notePosition={notePosition}
+          notePosition={noteTimePosition}
           alignment={modalAlignment}
           editingTitle={editingTitle}
           editingContent={editingContent}
