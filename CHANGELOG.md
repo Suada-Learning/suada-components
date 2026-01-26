@@ -1,3 +1,10 @@
+## [1.14.11](https://github.com/Suada-Learning/suada-components/compare/v1.14.10...v1.14.11) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove outline and border from StyledSlider for improved focus and touch interaction ([dae693e](https://github.com/Suada-Learning/suada-components/commit/dae693ef0e9980a3deeec265bdccd34c374480f5))
+
 ## [1.14.10](https://github.com/Suada-Learning/suada-components/compare/v1.14.9...v1.14.10) (2026-01-26)
 
 
