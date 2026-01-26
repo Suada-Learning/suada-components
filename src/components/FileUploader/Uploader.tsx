@@ -77,7 +77,7 @@ export const Uploader = ({
     const primaryColor = theme?.colors?.primary
     if (typeof primaryColor === 'string') return primaryColor
     if (primaryColor?.main) return primaryColor.main
-    return 'var(--primary-color, #06c68f)'
+    return '#06c68f'
   }
   
   const filePreview = (): ReactElement => {
