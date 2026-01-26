@@ -111,7 +111,7 @@ const StyledTextarea = styled.textarea`
   font-size: 14px;
   color: #0f172a;
   outline: none;
-  resize: vertical;
+  resize: none;
   min-height: 80px;
   flex: 1;
   box-sizing: border-box;
