@@ -118,6 +118,7 @@ const StyledTextarea = styled.textarea`
   font-family: inherit;
   line-height: 1.5;
   transition: all 0.15s ease;
+  margin-bottom: 12px;
 
   &:focus {
     background: white;
