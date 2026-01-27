@@ -54,7 +54,7 @@ export const VideoPlayer = ({
   notes,
   videoDuration,
   onNoteClick,
- 
+
   editingNote,
   onNoteEdit,
   onNoteSave,
@@ -77,7 +77,7 @@ export const VideoPlayer = ({
 
   // Use external editing state if provided, otherwise use internal state
   const currentEditingNote = editingNote !== undefined ? editingNote : internalEditingNote
-  
+
   const {
     mouseMoveHandler,
     playPauseHandler,
@@ -126,7 +126,7 @@ export const VideoPlayer = ({
   const handleAddNote = useCallback(() => {
     // Stop the video when adding a note
     setIsPlaying(false)
-    
+
     if (onAddNote) {
       // If external handler is provided, use it (e.g., Notes tab modal)
       onAddNote()
@@ -229,9 +229,8 @@ export const VideoPlayer = ({
     if (!notes || !currentEditingNote) return null
 
     // Calculate position based on note's timestamp relative to video duration
-    const noteTimePosition = videoDuration && videoDuration > 0 
-      ? (currentEditingNote.moment / videoDuration) * 100
-      : 50 // Default to center if no duration
+    const noteTimePosition =
+      videoDuration && videoDuration > 0 ? (currentEditingNote.moment / videoDuration) * 100 : 50 // Default to center if no duration
 
     let modalAlignment: 'left' | 'center' | 'right' = 'center'
     if (noteTimePosition < 25) {
@@ -488,7 +487,7 @@ export const VideoPlayer = ({
           config={{
             file: {
               hlsOptions: {
-                autoStartLoad: true,
+                autoStartLoad: false,
                 renderTextTracksNatively: true,
               },
             },
