@@ -1,3 +1,10 @@
+## [1.14.21](https://github.com/Suada-Learning/suada-components/compare/v1.14.20...v1.14.21) (2026-01-27)
+
+
+### Bug Fixes
+
+* videoPlayer auto fetch disabled ([e4cbe5a](https://github.com/Suada-Learning/suada-components/commit/e4cbe5afc83558fceca4a69e7983fbad116259ec))
+
 ## [1.14.20](https://github.com/Suada-Learning/suada-components/compare/v1.14.19...v1.14.20) (2026-01-26)
 
 
