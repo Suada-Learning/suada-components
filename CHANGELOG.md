@@ -1,3 +1,10 @@
+## [1.14.23](https://github.com/Suada-Learning/suada-components/compare/v1.14.22...v1.14.23) (2026-01-28)
+
+
+### Bug Fixes
+
+* remove pulse animation and background from StyledNoteMarker for cleaner design ([f359e82](https://github.com/Suada-Learning/suada-components/commit/f359e82f59c8092edefe4d2faf8365b7a8ba1d7c))
+
 ## [1.14.22](https://github.com/Suada-Learning/suada-components/compare/v1.14.21...v1.14.22) (2026-01-28)
 
 
