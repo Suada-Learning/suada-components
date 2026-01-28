@@ -251,8 +251,8 @@ export const injectHLSSubtitleStyles = (): (() => void) => {
 export const StyledNoteMarkersOverlay = styled.div<{ $isFullscreen?: boolean }>`
   position: absolute;
   bottom: 45px;
-  left: 80px;
-  right: 80px;
+  left: 5px;
+  right: 5px;
   height: 6px;
   z-index: ${(props): number => (props.$isFullscreen ? 2147483646 : 15)};
   opacity: 0;
@@ -264,8 +264,8 @@ export const StyledNoteMarkersOverlay = styled.div<{ $isFullscreen?: boolean }>`
     props.$isFullscreen
       ? `
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 5px;
+    right: 5px;
     bottom: 42px;
     top: auto;
     height: 6px;
@@ -290,27 +290,12 @@ export const StyledNoteMarkersOverlay = styled.div<{ $isFullscreen?: boolean }>`
   }
 `
 
-const noteMarkerPulse = keyframes`
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.4;
-  }
-`
-
 export const StyledNoteMarker = styled.div<{ $position: number; $isFullscreen?: boolean }>`
   position: absolute;
   ${(props): string =>
     props.$isFullscreen
       ? `top: auto; bottom: 0; transform: translateX(-50%);`
-      : `bottom: -2px; transform: translateX(-50%);`}
+      : `bottom: -3px; transform: translateX(-50%);`}
   left: 0;
   right: 0;
   bottom: -3px;
@@ -400,7 +385,6 @@ export const StyledNoteModal = styled.div<{
   ${(props): string => {
     const position = props.$position || 50
     const alignment = props.$alignment || 'center'
-    const modalWidth = 320
     const margin = 20
 
     // Position modal based on the timestamp position on progress bar
