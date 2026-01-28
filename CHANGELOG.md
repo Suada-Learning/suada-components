@@ -1,3 +1,10 @@
+## [1.14.24](https://github.com/Suada-Learning/suada-components/compare/v1.14.23...v1.14.24) (2026-01-28)
+
+
+### Bug Fixes
+
+* enable autoStartLoad for HLS options in VideoPlayer ([f76023f](https://github.com/Suada-Learning/suada-components/commit/f76023fd2867ada6ad744a0d2febfd62d549bea7))
+
 ## [1.14.23](https://github.com/Suada-Learning/suada-components/compare/v1.14.22...v1.14.23) (2026-01-28)
 
 
