@@ -311,7 +311,9 @@ export const StyledNoteMarker = styled.div<{ $position: number; $isFullscreen?: 
     props.$isFullscreen
       ? `top: auto; bottom: 0; transform: translateX(-50%);`
       : `bottom: -2px; transform: translateX(-50%);`}
-  left: ${(props): string => `${props.$position}%`};
+  left: 0;
+  right: 0;
+  bottom: -3px;
   width: ${(props): string => (props.$isFullscreen ? '12px' : '10px')};
   height: ${(props): string => (props.$isFullscreen ? '12px' : '10px')};
   background-color: #ffd700;
@@ -334,7 +336,8 @@ export const StyledNoteMarker = styled.div<{ $position: number; $isFullscreen?: 
     content: '';
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
