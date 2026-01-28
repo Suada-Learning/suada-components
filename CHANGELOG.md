@@ -1,3 +1,10 @@
+## [1.14.22](https://github.com/Suada-Learning/suada-components/compare/v1.14.21...v1.14.22) (2026-01-28)
+
+
+### Bug Fixes
+
+* adjust StyledNoteMarker positioning for better alignment ([1e1204c](https://github.com/Suada-Learning/suada-components/commit/1e1204c493f73b26fd2a3c5f2ad0413e555f193e))
+
 ## [1.14.21](https://github.com/Suada-Learning/suada-components/compare/v1.14.20...v1.14.21) (2026-01-27)
 
 
