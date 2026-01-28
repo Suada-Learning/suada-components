@@ -487,7 +487,7 @@ export const VideoPlayer = ({
           config={{
             file: {
               hlsOptions: {
-                autoStartLoad: false,
+                autoStartLoad: true,
                 renderTextTracksNatively: true,
               },
             },
