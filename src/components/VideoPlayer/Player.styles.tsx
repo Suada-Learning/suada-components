@@ -331,21 +331,6 @@ export const StyledNoteMarker = styled.div<{ $position: number; $isFullscreen?: 
     background-color: #ffed4e;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #ffd700;
-    transform: translate(-50%, -50%);
-    opacity: 0.4;
-    animation: ${noteMarkerPulse} 3s infinite;
-  }
 `
 
 export const StyledNoteTooltip = styled.div`
