@@ -1,3 +1,10 @@
+## [1.14.25](https://github.com/Suada-Learning/suada-components/compare/v1.14.24...v1.14.25) (2026-01-28)
+
+
+### Bug Fixes
+
+* adjust positioning of note markers in fullscreen mode ([bf7496c](https://github.com/Suada-Learning/suada-components/commit/bf7496c7004c0f1dc97c485d93bc0ab1bb8527d7))
+
 ## [1.14.24](https://github.com/Suada-Learning/suada-components/compare/v1.14.23...v1.14.24) (2026-01-28)
 
 
