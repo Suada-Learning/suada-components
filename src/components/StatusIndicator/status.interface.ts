@@ -6,6 +6,7 @@ export enum GridStatusEnums {
   UNPUBLISHED = 'UNPUBLISHED',
   PUBLISHED = 'PUBLISHED',
   APPROVED = 'APPROVED',
+  TRY_AGAIN = 'TRY AGAIN',
   DECLINED = 'DECLINED',
 }
 
