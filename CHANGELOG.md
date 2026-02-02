@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/Suada-Learning/suada-components/compare/v1.15.0...v1.15.1) (2026-02-02)
+
+
+### Bug Fixes
+
+* include TRY_AGAIN status in color mapping for StatusWrapper ([6aa904b](https://github.com/Suada-Learning/suada-components/commit/6aa904bcaf86c2a468d400e88c074df5b45a06e4))
+
 # [1.15.0](https://github.com/Suada-Learning/suada-components/compare/v1.14.25...v1.15.0) (2026-01-29)
 
 
