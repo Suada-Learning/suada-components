@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/Suada-Learning/suada-components/compare/v1.14.25...v1.15.0) (2026-01-29)
+
+
+### Features
+
+* add TRY_AGAIN status to GridStatusEnums and update styling ([1ee3cff](https://github.com/Suada-Learning/suada-components/commit/1ee3cff2ba486d646e23ce176a9c14a97921b346))
+
 ## [1.14.25](https://github.com/Suada-Learning/suada-components/compare/v1.14.24...v1.14.25) (2026-01-28)
 
 
