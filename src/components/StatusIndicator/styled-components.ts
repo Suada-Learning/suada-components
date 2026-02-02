@@ -48,6 +48,7 @@ export const StatusWrapper = styled.div<IStatusWrapperProps>`
       case GridStatusEnums.APPROVED:
         return '#00905E'
       case GridStatusEnums.DECLINED:
+      case GridStatusEnums.TRY_AGAIN:
         return '#EA382A'
       case GridStatusEnums.PUBLISHED:
         return '#00905E'
