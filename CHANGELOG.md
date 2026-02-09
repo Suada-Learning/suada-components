@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/Suada-Learning/suada-components/compare/v1.15.1...v1.15.2) (2026-02-09)
+
+
+### Bug Fixes
+
+* replace containerRef with playerContainerRef in VideoPlayer component ([a8f9725](https://github.com/Suada-Learning/suada-components/commit/a8f9725022f4cb95165a30d71e5dc08f854f6fff))
+
 ## [1.15.1](https://github.com/Suada-Learning/suada-components/compare/v1.15.0...v1.15.1) (2026-02-02)
 
 
