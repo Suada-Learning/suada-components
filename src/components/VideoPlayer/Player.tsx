@@ -63,7 +63,6 @@ export const VideoPlayer = ({
   onAddNote,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
   const observerRef = useRef<MutationObserver | null>(null)
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -80,6 +79,7 @@ export const VideoPlayer = ({
 
   const {
     mouseMoveHandler,
+    playerContainerRef,
     playPauseHandler,
     handleFullScreen,
     handlePictureInPicture,
@@ -367,9 +367,9 @@ export const VideoPlayer = ({
 
   // Observe the video player controls visibility
   useEffect(() => {
-    if (!containerRef.current) return
+    if (!playerContainerRef.current) return
 
-    const container = containerRef.current
+    const container = playerContainerRef.current
 
     const checkControlsVisibility = (): void => {
       // Look for the controls element using various selectors
@@ -447,7 +447,7 @@ export const VideoPlayer = ({
 
   return (
     <StyledWrapper
-      ref={containerRef}
+      ref={playerContainerRef}
       tabIndex={0}
       onMouseMove={mouseMoveHandler}
       style={customStyles}
