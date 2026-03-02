@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/Suada-Learning/suada-components/compare/v1.15.3...v1.16.0) (2026-03-02)
+
+
+### Features
+
+* add Picture-in-Picture state management in VideoPlayer component ([8c8eb49](https://github.com/Suada-Learning/suada-components/commit/8c8eb4988935aaac84dfcc38a08760f0fc35c5c1))
+
 ## [1.15.3](https://github.com/Suada-Learning/suada-components/compare/v1.15.2...v1.15.3) (2026-03-02)
 
 ## [1.15.2](https://github.com/Suada-Learning/suada-components/compare/v1.15.1...v1.15.2) (2026-02-09)
