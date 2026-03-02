@@ -63,13 +63,10 @@ export const VideoPlayer = ({
   onAddNote,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const observerRef = useRef<MutationObserver | null>(null)
   const overlayRef = useRef<HTMLDivElement | null>(null)
-  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Notes state
   const [hoveredNote, setHoveredNote] = useState<Note | null>(null)
-  const [areControlsVisible, setAreControlsVisible] = useState<boolean>(false)
   const [internalEditingNote, setInternalEditingNote] = useState<Note | null>(null)
   const [editingTitle, setEditingTitle] = useState<string>('')
   const [editingContent, setEditingContent] = useState<string>('')
@@ -272,7 +269,7 @@ export const VideoPlayer = ({
   const renderNotesOverlay = (): ReactElement | null => {
     if (!notes || !noteMarkers || noteMarkers.length === 0) return null
 
-    const shouldShowControls = areControlsVisible || isFullscreen
+    const shouldShowControls = isControlsActive || isFullscreen
     const cssClass = shouldShowControls ? 'controls-visible' : ''
 
     // Use absolute positioning relative to fullscreen element
@@ -348,87 +345,6 @@ export const VideoPlayer = ({
 
     return overlayJSX
   }
-
-  // Track controls visibility for notes (when not in fullscreen mode)
-  useEffect(() => {
-    const handleControlsToggle = (): void => {
-      // Show notes initially when controls become visible (non-fullscreen mode)
-      if (!isFullscreen) {
-        // Clear any existing hide timeout
-        if (hideTimeoutRef.current) {
-          clearTimeout(hideTimeoutRef.current)
-          hideTimeoutRef.current = null
-        }
-      }
-    }
-
-    handleControlsToggle()
-  }, [areControlsVisible, isFullscreen])
-
-  // Observe the video player controls visibility
-  useEffect(() => {
-    if (!playerContainerRef.current) return
-
-    const container = playerContainerRef.current
-
-    const checkControlsVisibility = (): void => {
-      // Look for the controls element using various selectors
-      const controlsSelectors = [
-        '[class*="StyledControlsContainer"]',
-        '[class*="Controls"]',
-        '[class*="controls"]',
-        'div[style*="visibility"]',
-      ]
-
-      let controlsElement: Element | null = null
-      for (const selector of controlsSelectors) {
-        controlsElement = container.querySelector(selector)
-        if (controlsElement) break
-      }
-
-      if (controlsElement) {
-        const style = window.getComputedStyle(controlsElement)
-        const isVisible = style.visibility === 'visible'
-        setAreControlsVisible(isVisible)
-      }
-    }
-
-    // Create MutationObserver to watch for style changes
-    observerRef.current = new MutationObserver(() => {
-      checkControlsVisibility()
-    })
-
-    // Observe the entire container for style changes
-    observerRef.current.observe(container, {
-      attributes: true,
-      subtree: true,
-      attributeFilter: ['style', 'class'],
-    })
-
-    // Also listen for mouse events to trigger checks
-    const handleMouseMove = (): void => {
-      setAreControlsVisible(true)
-      checkControlsVisibility()
-    }
-
-    const handleMouseLeave = (): void => {
-      setTimeout(checkControlsVisibility, CONTROLS_CHECK_DELAY)
-    }
-
-    container.addEventListener('mousemove', handleMouseMove)
-    container.addEventListener('mouseleave', handleMouseLeave)
-
-    // Initial check
-    setTimeout(checkControlsVisibility, CONTROLS_CHECK_DELAY)
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect()
-      }
-      container.removeEventListener('mousemove', handleMouseMove)
-      container.removeEventListener('mouseleave', handleMouseLeave)
-    }
-  }, [])
 
   useEffect(() => {
     const cleanup = injectHLSSubtitleStyles()
