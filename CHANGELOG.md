@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/Suada-Learning/suada-components/compare/v1.16.0...v1.16.1) (2026-03-02)
+
+
+### Bug Fixes
+
+* add syncPiPState method to manage Picture-in-Picture state consistency ([8ccfe15](https://github.com/Suada-Learning/suada-components/commit/8ccfe15a59b0d18146b02918244d664e77639f0a))
+
 # [1.16.0](https://github.com/Suada-Learning/suada-components/compare/v1.15.3...v1.16.0) (2026-03-02)
 
 
