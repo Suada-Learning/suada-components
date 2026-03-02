@@ -13,7 +13,7 @@ export const PiPProvider: React.FC<PiPProviderProps> = ({ children }) => {
   const videoElementRef = useRef<HTMLVideoElement | null>(null)
 
   const updateVideoState = useCallback((state: Partial<PiPVideoState>) => {
-    setPipVideoState(prev => prev ? { ...prev, ...state } : null)
+    setPipVideoState(prev => (prev ? { ...prev, ...state } : null))
   }, [])
 
   const registerVideoElement = useCallback((element: HTMLVideoElement) => {
@@ -24,39 +24,46 @@ export const PiPProvider: React.FC<PiPProviderProps> = ({ children }) => {
     videoElementRef.current = null
   }, [])
 
-  const enterPiP = useCallback(async (videoElement: HTMLVideoElement, videoState: PiPVideoState): Promise<boolean> => {
-    if (!document.pictureInPictureEnabled) {
-      console.warn('Picture-in-Picture is not supported in this browser')
-      return false
-    }
-
-    if (document.pictureInPictureElement) {
-      console.warn('Another video is already in Picture-in-Picture mode')
-      return false
-    }
-
-    try {
-      // Store video state
-      setPipVideoState(videoState)
-      videoElementRef.current = videoElement
-
-      // Ensure video is playing before entering PiP
-      if (videoElement.paused && videoState.isPlaying) {
-        await videoElement.play()
+  const enterPiP = useCallback(
+    async (videoElement: HTMLVideoElement, videoState: PiPVideoState): Promise<boolean> => {
+      if (!document.pictureInPictureEnabled) {
+        console.warn('Picture-in-Picture is not supported in this browser')
+        return false
       }
 
-      await videoElement.requestPictureInPicture()
-      return true
-    } catch (error) {
-      console.error('Failed to enter picture-in-picture:', error)
-      return false
-    }
-  }, [])
+      if (document.pictureInPictureElement) {
+        console.warn('Another video is already in Picture-in-Picture mode')
+        return false
+      }
+
+      try {
+        // Store video state
+        setPipVideoState(videoState)
+        videoElementRef.current = videoElement
+
+        // Ensure video is playing before entering PiP
+        if (videoElement.paused && videoState.isPlaying) {
+          await videoElement.play()
+        }
+
+        await videoElement.requestPictureInPicture()
+        return true
+      } catch (error) {
+        console.error('Failed to enter picture-in-picture:', error)
+        return false
+      }
+    },
+    [],
+  )
 
   const exitPiP = useCallback(async (): Promise<boolean> => {
     try {
       if (document.pictureInPictureElement) {
         await document.exitPictureInPicture()
+      } else {
+        // If there's no actual PiP element but context thinks it's active, reset state
+        setIsPiPActive(false)
+        setPipVideoState(null)
       }
       return true
     } catch (error) {
@@ -64,6 +71,16 @@ export const PiPProvider: React.FC<PiPProviderProps> = ({ children }) => {
       return false
     }
   }, [])
+
+  const syncPiPState = useCallback(() => {
+    const actualPiPActive = !!document.pictureInPictureElement
+    if (isPiPActive !== actualPiPActive) {
+      setIsPiPActive(actualPiPActive)
+      if (!actualPiPActive) {
+        setPipVideoState(null)
+      }
+    }
+  }, [isPiPActive])
 
   // Listen for PiP events
   useEffect(() => {
@@ -94,6 +111,7 @@ export const PiPProvider: React.FC<PiPProviderProps> = ({ children }) => {
     updateVideoState,
     registerVideoElement,
     unregisterVideoElement,
+    syncPiPState,
   }
 
   return <PiPContext.Provider value={value}>{children}</PiPContext.Provider>

@@ -75,7 +75,7 @@ export const VideoPlayer = ({
   const currentEditingNote = editingNote !== undefined ? editingNote : internalEditingNote
 
   // Get PiP context for state initialization
-  const { isPiPActive: contextIsPiPActive, exitPiP } = usePiP()
+  const { syncPiPState } = usePiP()
 
   const {
     mouseMoveHandler,
@@ -124,13 +124,9 @@ export const VideoPlayer = ({
 
   // Initialize PiP state on component mount/URL change
   useEffect(() => {
-    // Check if the context thinks PiP is active but no element is actually in PiP
-    if (contextIsPiPActive && !document.pictureInPictureElement) {
-      // Reset the PiP state because there's no actual PiP video
-      console.log('Resetting PiP state - context out of sync with actual PiP state')
-      exitPiP()
-    }
-  }, [url, contextIsPiPActive, exitPiP]) // Run when URL changes or component mounts
+    // Sync PiP state with actual browser state on mount and URL changes
+    syncPiPState()
+  }, [url, syncPiPState]) // Run when URL changes or component mounts
 
   // Handle adding new notes
   const handleAddNote = useCallback(() => {

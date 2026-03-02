@@ -23,6 +23,9 @@ const defaultPiPContext: PiPContextType = {
   unregisterVideoElement: () => {
     // No-op when provider is not available
   },
+  syncPiPState: () => {
+    // No-op when provider is not available
+  },
 }
 
 export const usePiP = (): PiPContextType => {
