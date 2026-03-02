@@ -22,8 +22,8 @@ import usePlayerControls from './usePlayerControls'
 import { useHLSSubtitles } from './useHlsSubtitles'
 import { FormatSecondsToTimeString } from './timeConversion'
 import NoteEditModal from './NoteEditModal'
+import { usePiP } from './usePiP'
 
-const CONTROLS_CHECK_DELAY = 100
 const MAX_FULLSCREEN_Z_INDEX = 2147483646
 const MAX_FULLSCREEN_MARKER_Z_INDEX = 2147483647
 
@@ -74,6 +74,9 @@ export const VideoPlayer = ({
   // Use external editing state if provided, otherwise use internal state
   const currentEditingNote = editingNote !== undefined ? editingNote : internalEditingNote
 
+  // Get PiP context for state initialization
+  const { isPiPActive: contextIsPiPActive, exitPiP } = usePiP()
+
   const {
     mouseMoveHandler,
     playerContainerRef,
@@ -118,6 +121,16 @@ export const VideoPlayer = ({
     setIsPlaying,
     shouldPlayerBeFocusedOnSpaceClick,
   })
+
+  // Initialize PiP state on component mount/URL change
+  useEffect(() => {
+    // Check if the context thinks PiP is active but no element is actually in PiP
+    if (contextIsPiPActive && !document.pictureInPictureElement) {
+      // Reset the PiP state because there's no actual PiP video
+      console.log('Resetting PiP state - context out of sync with actual PiP state')
+      exitPiP()
+    }
+  }, [url, contextIsPiPActive, exitPiP]) // Run when URL changes or component mounts
 
   // Handle adding new notes
   const handleAddNote = useCallback(() => {
