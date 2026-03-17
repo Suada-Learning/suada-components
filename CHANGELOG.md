@@ -1,3 +1,10 @@
+## [1.16.2](https://github.com/Suada-Learning/suada-components/compare/v1.16.1...v1.16.2) (2026-03-17)
+
+
+### Bug Fixes
+
+* update default volume and clean up event listeners in usePlayerControls ([5e021c7](https://github.com/Suada-Learning/suada-components/commit/5e021c7757d15dea0463d6ea10389a89fea741d1))
+
 ## [1.16.1](https://github.com/Suada-Learning/suada-components/compare/v1.16.0...v1.16.1) (2026-03-02)
 
 
