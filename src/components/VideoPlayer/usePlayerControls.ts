@@ -17,7 +17,7 @@ let count = 0
 
 const defaultVideoState: VideoState = {
   muted: false,
-  volume: 0.3,
+  volume: 1,
   prevVolume: 0.3,
   playbackRate: 1.0,
   played: 0.0,
@@ -107,7 +107,7 @@ function usePlayerControls({
     if (videoElement && videoElement instanceof HTMLVideoElement) {
       videoElement.addEventListener('enterpictureinpicture', handlePiPEnter)
       videoElement.addEventListener('leavepictureinpicture', handlePiPLeave)
-      
+
       // Register video element with PiP context
       registerVideoElement(videoElement)
     }
@@ -116,17 +116,26 @@ function usePlayerControls({
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
       document.removeEventListener('enterpictureinpicture', handlePiPEnter)
       document.removeEventListener('leavepictureinpicture', handlePiPLeave)
-      
+
       // Clean up video element listeners using the captured reference
       if (videoElement && videoElement instanceof HTMLVideoElement) {
         videoElement.removeEventListener('enterpictureinpicture', handlePiPEnter)
         videoElement.removeEventListener('leavepictureinpicture', handlePiPLeave)
       }
-      
+
       // Unregister video element from PiP context
       unregisterVideoElement()
     }
-  }, [url, enterPiP, exitPiP, registerVideoElement, unregisterVideoElement, isPlaying, videoState.volume, videoState.muted]) // Re-run when URL changes to ensure proper cleanup and setup
+  }, [
+    url,
+    enterPiP,
+    exitPiP,
+    registerVideoElement,
+    unregisterVideoElement,
+    isPlaying,
+    videoState.volume,
+    videoState.muted,
+  ]) // Re-run when URL changes to ensure proper cleanup and setup
 
   useEffect(() => {
     setStartPlayed(false)
@@ -135,7 +144,7 @@ function usePlayerControls({
   // Cleanup effect to handle component unmounting while in PiP mode
   useEffect(() => {
     const currentVideoPlayerRef = videoPlayerRef.current
-    
+
     return () => {
       // Check if we're in PiP mode when component unmounts
       if (document.pictureInPictureElement) {
@@ -337,7 +346,7 @@ function usePlayerControls({
 
   const handlePictureInPicture = (): void => {
     const videoElement = videoPlayerRef.current?.getInternalPlayer()
-    
+
     if (!videoElement || !(videoElement instanceof HTMLVideoElement)) {
       return
     }
@@ -359,7 +368,7 @@ function usePlayerControls({
         volume: videoState.volume,
         muted: videoState.muted,
       }
-      
+
       enterPiP(videoElement, pipVideoState)
     }
   }
