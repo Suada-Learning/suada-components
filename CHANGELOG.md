@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/Suada-Learning/suada-components/compare/v1.18.0...v1.18.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* removed extra step from npm release workflow ([3f8603e](https://github.com/Suada-Learning/suada-components/commit/3f8603e493fef51c97652d2b67c94ca10e23cdc6))
+
 # [1.18.0](https://github.com/Suada-Learning/suada-components/compare/v1.17.0...v1.18.0) (2026-03-17)
 
 
