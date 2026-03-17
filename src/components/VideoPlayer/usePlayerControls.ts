@@ -15,6 +15,7 @@ import { usePiP } from './usePiP'
 
 let count = 0
 
+// Default video state to ensure all properties are initialized
 const defaultVideoState: VideoState = {
   muted: false,
   volume: 1,
