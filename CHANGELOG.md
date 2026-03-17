@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/Suada-Learning/suada-components/compare/v1.17.0...v1.18.0) (2026-03-17)
+
+
+### Features
+
+* add npm authentication verification step before publishing ([f3264f4](https://github.com/Suada-Learning/suada-components/commit/f3264f48ad35a818f3d9db5d0d07a49857c53b8f))
+
 # [1.17.0](https://github.com/Suada-Learning/suada-components/compare/v1.16.2...v1.17.0) (2026-03-17)
 
 
