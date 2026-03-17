@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/Suada-Learning/suada-components/compare/v1.16.2...v1.17.0) (2026-03-17)
+
+
+### Features
+
+* add comment to clarify default video state initialization ([5b28549](https://github.com/Suada-Learning/suada-components/commit/5b28549e6a2f8f2bd0e976eb2511912644fb35b4))
+
 ## [1.16.2](https://github.com/Suada-Learning/suada-components/compare/v1.16.1...v1.16.2) (2026-03-17)
 
 
