@@ -12,20 +12,42 @@ Shared React UI component library consumed by `suada-students`, `suada-admin`, a
 
 ## Working Style (read first)
 
-When you make any code change in this project, end your response with a **Change Card** block in this exact shape so the user can copy/paste each piece:
+When you make any code change in this project, end your response with a **Change Card** so the user can copy/paste each piece. The card has four separate copy blocks — branch, commit, Trello title, Trello description — each in its own fenced block at zero indent (so Trello's markdown parser renders the description correctly instead of treating leading whitespace as a code block):
+
+**Branch**
 
 ```
-Branch:  <type>/<base>.<short-kebab-summary>
-Commit:  <type>: <imperative subject, ≤50 chars total (incl. prefix)>
-         <body — omit unless WHY is non-obvious; max 1–2 lines>
+<type>/<base>.<short-kebab-summary>
+```
 
-Trello:  Title — <human readable title>
-         Description —
-         **What**: <1-line summary of the change>
-         **Why**: <reason / linked ticket / user-facing motivation>
-         **Files touched**: <comma-separated key paths>
-         **How to test**: <2–4 bullet steps>
-         **Risk / regressions**: <areas to re-check, or "none expected">
+**Commit**
+
+```
+<type>: <imperative subject, ≤50 chars total (incl. prefix)>
+
+<body — omit unless WHY is non-obvious; max 1–2 lines>
+```
+
+**Trello title**
+
+```
+<human readable title>
+```
+
+**Trello description**
+
+```markdown
+**What**: <1-line summary of the change>
+
+**Why**: <reason / linked ticket / user-facing motivation>
+
+**Files touched**: <comma-separated key paths>
+
+**How to test**:
+- <step>
+- <step>
+
+**Risk / regressions**: <areas to re-check, or "none expected">
 ```
 
 Rules:

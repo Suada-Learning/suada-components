@@ -4,20 +4,42 @@ description: Print a Change Card (branch + commit + Trello description) for the 
 
 Look at the current uncommitted diff (`git status` + `git diff` for unstaged, `git diff --cached` for staged). If there are no local changes, look at the commits on the current branch that are ahead of the upstream.
 
-Then print **only** a Change Card in the project's required format:
+Then print **only** a Change Card in the project's required format. Each piece is its own fenced code block at zero indent so the user can copy any one independently, and the Trello description pastes into Trello as proper markdown (not as an indented code block):
+
+**Branch**
 
 ```
-Branch:  <type>/<base>.<short-kebab-summary>
-Commit:  <type>: <imperative subject, ≤50 chars total (incl. prefix)>
-         <body — omit unless WHY is non-obvious; max 1–2 lines>
+<type>/<base>.<short-kebab-summary>
+```
 
-Trello:  Title — <human readable title>
-         Description —
-         **What**: <1-line summary>
-         **Why**: <reason / linked ticket / motivation>
-         **Files touched**: <comma-separated key paths>
-         **How to test**: <2–4 bullet steps>
-         **Risk / regressions**: <breaking-change flag if API surface changes — this is a published library>
+**Commit**
+
+```
+<type>: <imperative subject, ≤50 chars total (incl. prefix)>
+
+<body — omit unless WHY is non-obvious; max 1–2 lines>
+```
+
+**Trello title**
+
+```
+<human readable title>
+```
+
+**Trello description**
+
+```markdown
+**What**: <1-line summary>
+
+**Why**: <reason / linked ticket / motivation>
+
+**Files touched**: <comma-separated key paths>
+
+**How to test**:
+- <step>
+- <step>
+
+**Risk / regressions**: <breaking-change flag if API surface changes — this is a published library>
 ```
 
 Rules:
