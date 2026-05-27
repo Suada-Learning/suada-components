@@ -10,51 +10,9 @@ Shared React UI component library consumed by `suada-students`, `suada-admin`, a
 - **License**: MIT
 - **Repository**: github.com/Suada-Learning/suada-components
 
-## Working Style (read first)
+## Commit Cards (on request only)
 
-When you make any code change in this project, end your response with a **Change Card** so the user can copy/paste each piece. The card has four separate copy blocks — branch, commit, Trello title, Trello description — each in its own fenced block at zero indent (so Trello's markdown parser renders the description correctly instead of treating leading whitespace as a code block):
-
-**Branch**
-
-```
-<type>/<base>.<short-kebab-summary>
-```
-
-**Commit**
-
-```
-<type>: <imperative subject, ≤50 chars total (incl. prefix)>
-
-<body — omit unless WHY is non-obvious; max 1–2 lines>
-```
-
-**Trello title**
-
-```
-<human readable title>
-```
-
-**Trello description**
-
-```markdown
-**What**: <1-line summary of the change>
-
-**Why**: <reason / linked ticket / user-facing motivation>
-
-**Files touched**: <comma-separated key paths>
-
-**How to test**:
-- <step>
-- <step>
-
-**Risk / regressions**: <areas to re-check, or "none expected">
-```
-
-Rules:
-- Branch convention: `<type>/<base>.<short-kebab-summary>`. `<type>` matches conventional-commits. `<base>` is a **single letter for the branch this PR will merge into**: `d` = dev, `m` = main/master, `s` = staging. Default to `d.`. Example: `feat/d.video-player-controls`.
-- Commit message follows `@commitlint/config-conventional`.
-- This library is consumed by multiple downstream apps — flag any breaking change in the Trello `**Risk / regressions**` line and bump the major version (`yarn version:major`).
-- **Do not run `git checkout`, `git commit`, `git push`, `npm publish`, `yarn version:*`, or hit any Trello API** unless explicitly asked.
+Do **not** auto-emit a Commit Card at the end of every response. Only print one when the user explicitly asks (e.g. "give me a branch name", "what should I commit this as", "draft the Trello card") — at that point run the `/commit-card` slash command or invoke the `commit-card` / `suada-commit-card` skill, which prints the four-block branch / commit / Trello-title / Trello-description format. This library is consumed by multiple downstream apps — when you do print a card, flag any breaking change in the Trello `**Risk / regressions**` line. Print-only: never run `git checkout`, `git commit`, `git push`, `npm publish`, `yarn version:*`, or hit any Trello API unless explicitly asked.
 
 ## Comment Style (strict)
 
