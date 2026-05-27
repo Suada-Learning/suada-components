@@ -1,10 +1,10 @@
 ---
-description: Print a Change Card (branch + commit + Trello description) for the changes on the current branch or in the current diff.
+description: Print a Commit Card (branch + commit + Trello description) for the changes on the current branch or in the current diff.
 ---
 
 Look at the current uncommitted diff (`git status` + `git diff` for unstaged, `git diff --cached` for staged). If there are no local changes, look at the commits on the current branch that are ahead of the upstream.
 
-Then print **only** a Change Card in the project's required format. Each piece is its own fenced code block at zero indent so the user can copy any one independently, and the Trello description pastes into Trello as proper markdown (not as an indented code block):
+Then print **only** a Commit Card in the project's required format. Each piece is its own fenced code block at zero indent so the user can copy any one independently, and the Trello description pastes into Trello as proper markdown (not as an indented code block):
 
 **Branch**
 
