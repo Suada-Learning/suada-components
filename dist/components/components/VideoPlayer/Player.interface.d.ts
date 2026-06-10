@@ -30,6 +30,11 @@ export interface PlayerProps {
     showFavorite?: boolean;
     isFavorite?: boolean;
     toggleFavorite?: () => Promise<void>;
+    showDownload?: boolean;
+    downloadUrl?: string;
+    downloadFileName?: string;
+    onDownload?: () => void;
+    showPictureInPicture?: boolean;
 }
 export interface UsePlayerControlsProps {
     startTime?: number;
@@ -47,6 +52,12 @@ export interface ProgressState {
     loaded: number;
     loadedSeconds: number;
 }
+export type KeyboardIndicatorType = 'volume-up' | 'volume-down' | 'seek-backward' | 'seek-forward';
+export interface KeyboardIndicatorState {
+    type: KeyboardIndicatorType;
+    volume?: number;
+    position: 'center' | 'left' | 'right';
+}
 export interface UsePlayerControlsState extends Omit<ControlsProps, 'isFavorite' | 'toggleIsFavorite'> {
     mouseMoveHandler: () => void;
     playerContainerRef: RefObject<HTMLDivElement>;
@@ -57,8 +68,11 @@ export interface UsePlayerControlsState extends Omit<ControlsProps, 'isFavorite'
     onPlayerStart: () => void;
     controlRef: RefObject<HTMLDivElement>;
     isFullscreen: boolean;
+    isPiPActive: boolean;
+    handlePictureInPicture: () => void;
     isControlsActive: boolean;
     currentSubtitle: string;
     setCurrentSubtitle: Dispatch<SetStateAction<string>>;
+    keyboardIndicator: KeyboardIndicatorState | null;
 }
 export {};

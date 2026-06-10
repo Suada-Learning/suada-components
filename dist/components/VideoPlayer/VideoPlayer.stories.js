@@ -112,6 +112,24 @@ var meta = {
             description: 'Is there a previous video available',
             defaultValue: true,
         },
+        showDownload: {
+            control: 'boolean',
+            description: 'Show download button',
+            defaultValue: false,
+        },
+        downloadUrl: {
+            control: 'text',
+            description: 'URL for downloading the video',
+        },
+        downloadFileName: {
+            control: 'text',
+            description: 'Filename for the downloaded video',
+        },
+        showPictureInPicture: {
+            control: 'boolean',
+            description: 'Show picture-in-picture button',
+            defaultValue: true,
+        },
     },
 };
 export default meta;
@@ -137,6 +155,9 @@ var PlayerWrapper = function (args) {
             return [2 /*return*/, Promise.resolve()];
         });
     }); };
+    var handleDownload = function () {
+        console.log('Download requested for:', args.downloadFileName || 'video');
+    };
     // Provide all required props with defaults
     var allProps = {
         url: args.url || 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
@@ -156,6 +177,11 @@ var PlayerWrapper = function (args) {
         isFavorite: isFavorite,
         toggleFavorite: toggleFavorite,
         customStyles: args.customStyles || { borderRadius: '8px', overflow: 'hidden' },
+        showDownload: !!args.showDownload,
+        downloadUrl: args.downloadUrl,
+        downloadFileName: args.downloadFileName,
+        onDownload: args.showDownload ? handleDownload : undefined,
+        showPictureInPicture: args.showPictureInPicture !== false,
     };
     return _jsx(VideoPlayer, __assign({}, allProps));
 };
@@ -191,5 +217,25 @@ export var Favorited = {
 export var NoControls = {
     render: function (args) { return _jsx(PlayerWrapper, __assign({}, args)); },
     args: __assign(__assign({}, Default.args), { isNextVideo: false, isPreviousVideo: false, showFavorite: false }),
+};
+// With Download
+export var WithDownload = {
+    render: function (args) { return _jsx(PlayerWrapper, __assign({}, args)); },
+    args: __assign(__assign({}, Default.args), { showDownload: true, downloadUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', downloadFileName: 'sample-video.mp4' }),
+};
+// Download Only
+export var DownloadOnly = {
+    render: function (args) { return _jsx(PlayerWrapper, __assign({}, args)); },
+    args: __assign(__assign({}, Default.args), { isNextVideo: false, isPreviousVideo: false, showFavorite: false, showDownload: true, downloadUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', downloadFileName: 'lesson-video.mp4' }),
+};
+// All Features
+export var AllFeatures = {
+    render: function (args) { return _jsx(PlayerWrapper, __assign({}, args)); },
+    args: __assign(__assign({}, Default.args), { showDownload: true, downloadUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', downloadFileName: 'complete-lesson.mp4', subtitle: 'https://example.com/subtitles.vtt', isFavorite: true }),
+};
+// Without Picture-in-Picture
+export var WithoutPictureInPicture = {
+    render: function (args) { return _jsx(PlayerWrapper, __assign({}, args)); },
+    args: __assign(__assign({}, Default.args), { showPictureInPicture: false }),
 };
 //# sourceMappingURL=VideoPlayer.stories.js.map

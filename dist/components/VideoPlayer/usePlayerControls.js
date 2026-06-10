@@ -65,16 +65,19 @@ function usePlayerControls(_a) {
     var _c = useState(false), startPlayed = _c[0], setStartPlayed = _c[1];
     var _d = useState(defaultVideoState), videoState = _d[0], setVideoState = _d[1];
     var _e = useState(false), isSubtitlesChecked = _e[0], setIsSubtitlesChecked = _e[1];
-    var _f = useState(false), isFullscreen = _f[0], setIsFullscreen = _f[1];
-    var _g = useState(false), isControlsActive = _g[0], setIsControlsActive = _g[1];
+    var _f = useState(false), isPiPActive = _f[0], setIsPiPActive = _f[1];
+    var _g = useState(false), isFullscreen = _g[0], setIsFullscreen = _g[1];
+    var _h = useState(false), isControlsActive = _h[0], setIsControlsActive = _h[1];
     var videoPlayerRef = useRef(null);
     var controlRef = useRef(null);
     var playerContainerRef = useRef(null);
-    var _h = useState([]), subtitles = _h[0], setSubtitles = _h[1];
-    var _j = useState(''), currentSubtitle = _j[0], setCurrentSubtitle = _j[1];
+    var _j = useState([]), subtitles = _j[0], setSubtitles = _j[1];
+    var _k = useState(''), currentSubtitle = _k[0], setCurrentSubtitle = _k[1];
+    var _l = useState(null), keyboardIndicator = _l[0], setKeyboardIndicator = _l[1];
     var lastSubtitleIndexRef = useRef(null);
     var lastPlaybackTimeRef = useRef(0);
     var lastCallTimeRef = useRef(Date.now());
+    var keyboardIndicatorTimeoutRef = useRef(null);
     var muted = videoState.muted, volume = videoState.volume, prevVolume = videoState.prevVolume, playbackRate = videoState.playbackRate, played = videoState.played, seeking = videoState.seeking;
     var currentTime = videoPlayerRef.current ? videoPlayerRef.current.getCurrentTime() : 0;
     var duration = videoPlayerRef.current ? videoPlayerRef.current.getDuration() : 0;
@@ -95,17 +98,69 @@ function usePlayerControls(_a) {
         }
     }, [subtitleUrl]);
     useEffect(function () {
+        var _a;
         var handleFullscreenChange = function () {
             setIsFullscreen(!!document.fullscreenElement);
         };
+        var handlePiPEnter = function () {
+            setIsPiPActive(true);
+        };
+        var handlePiPLeave = function () {
+            setIsPiPActive(false);
+        };
         document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('enterpictureinpicture', handlePiPEnter);
+        document.addEventListener('leavepictureinpicture', handlePiPLeave);
+        // Add event listeners to the video element when it's available
+        var videoElement = (_a = videoPlayerRef.current) === null || _a === void 0 ? void 0 : _a.getInternalPlayer();
+        if (videoElement && videoElement instanceof HTMLVideoElement) {
+            videoElement.addEventListener('enterpictureinpicture', handlePiPEnter);
+            videoElement.addEventListener('leavepictureinpicture', handlePiPLeave);
+        }
         return function () {
             document.removeEventListener('fullscreenchange', handleFullscreenChange);
+            document.removeEventListener('enterpictureinpicture', handlePiPEnter);
+            document.removeEventListener('leavepictureinpicture', handlePiPLeave);
+            // Clean up video element listeners using the captured reference
+            if (videoElement && videoElement instanceof HTMLVideoElement) {
+                videoElement.removeEventListener('enterpictureinpicture', handlePiPEnter);
+                videoElement.removeEventListener('leavepictureinpicture', handlePiPLeave);
+            }
         };
-    }, []);
+    }, [url]); // Re-run when URL changes to ensure proper cleanup and setup
     useEffect(function () {
         setStartPlayed(false);
     }, [url]);
+    useEffect(function () {
+        var _a;
+        var activeElement = document.activeElement;
+        var isEditableTarget = activeElement instanceof HTMLInputElement ||
+            activeElement instanceof HTMLTextAreaElement ||
+            (activeElement instanceof HTMLElement && activeElement.isContentEditable);
+        if (!isEditableTarget) {
+            (_a = playerContainerRef.current) === null || _a === void 0 ? void 0 : _a.focus({ preventScroll: true });
+        }
+    }, [url]);
+    useEffect(function () { return function () {
+        if (keyboardIndicatorTimeoutRef.current) {
+            window.clearTimeout(keyboardIndicatorTimeoutRef.current);
+        }
+    }; }, []);
+    // Cleanup effect to handle component unmounting while in PiP mode
+    useEffect(function () {
+        var currentVideoPlayerRef = videoPlayerRef.current;
+        return function () {
+            // Check if we're in PiP mode when component unmounts
+            if (document.pictureInPictureElement) {
+                // Try to keep the video element alive by cloning it
+                var videoElement = currentVideoPlayerRef === null || currentVideoPlayerRef === void 0 ? void 0 : currentVideoPlayerRef.getInternalPlayer();
+                if (videoElement && videoElement instanceof HTMLVideoElement) {
+                    // Create a warning for the user that PiP will exit
+                    console.log('Component unmounting while in Picture-in-Picture mode');
+                }
+            }
+        };
+    }, []);
     var playPauseHandler = useCallback(function () {
         setIsPlaying(function (prev) { return !prev; });
     }, [setIsPlaying]);
@@ -252,21 +307,84 @@ function usePlayerControls(_a) {
             playerContainer.requestFullscreen().catch(console.error);
         }
     };
+    var handlePictureInPicture = function () {
+        var _a;
+        var videoElement = (_a = videoPlayerRef.current) === null || _a === void 0 ? void 0 : _a.getInternalPlayer();
+        if (!videoElement || !(videoElement instanceof HTMLVideoElement)) {
+            return;
+        }
+        if (!document.pictureInPictureEnabled) {
+            console.warn('Picture-in-Picture is not supported in this browser');
+            return;
+        }
+        if (document.pictureInPictureElement) {
+            document.exitPictureInPicture().catch(function (error) {
+                console.error('Failed to exit picture-in-picture:', error);
+            });
+        }
+        else {
+            // Ensure the video is playing before entering PiP mode
+            if (videoElement.paused && isPlaying) {
+                videoElement.play().then(function () {
+                    videoElement.requestPictureInPicture().catch(function (error) {
+                        console.error('Failed to enter picture-in-picture:', error);
+                    });
+                }).catch(function (error) {
+                    console.error('Failed to play video before PiP:', error);
+                });
+            }
+            else {
+                videoElement.requestPictureInPicture().catch(function (error) {
+                    console.error('Failed to enter picture-in-picture:', error);
+                });
+            }
+        }
+    };
+    var showKeyboardIndicator = useCallback(function (indicator) {
+        setKeyboardIndicator(indicator);
+        if (keyboardIndicatorTimeoutRef.current) {
+            window.clearTimeout(keyboardIndicatorTimeoutRef.current);
+        }
+        keyboardIndicatorTimeoutRef.current = window.setTimeout(function () {
+            setKeyboardIndicator(null);
+        }, 900);
+    }, []);
     var handleKeyDown = useCallback(function (event) {
         if ('code' in event) {
             switch (event.code) {
                 case 'ArrowLeft':
                     event.preventDefault();
-                    rewindHandler();
+                    if (videoPlayerRef.current) {
+                        var current = videoPlayerRef.current.getCurrentTime();
+                        videoPlayerRef.current.seekTo(Math.max(current - 15, 0));
+                    }
+                    showKeyboardIndicator({
+                        type: 'seek-backward',
+                        position: 'left',
+                    });
                     break;
                 case 'ArrowRight':
                     event.preventDefault();
-                    handleFastForward();
+                    if (videoPlayerRef.current) {
+                        var current = videoPlayerRef.current.getCurrentTime();
+                        var duration_1 = videoPlayerRef.current.getDuration();
+                        var nextTime = current + 15;
+                        videoPlayerRef.current.seekTo(duration_1 ? Math.min(nextTime, duration_1) : nextTime);
+                    }
+                    showKeyboardIndicator({
+                        type: 'seek-forward',
+                        position: 'right',
+                    });
                     break;
                 case 'ArrowUp':
                     event.preventDefault();
                     setVideoState(function (prev) {
                         var newVolume = Math.min(prev.volume + 0.1, 1);
+                        showKeyboardIndicator({
+                            type: 'volume-up',
+                            position: 'center',
+                            volume: newVolume,
+                        });
                         return __assign(__assign({}, prev), { volume: newVolume, muted: newVolume === 0, prevVolume: newVolume === 0 ? 0.1 : newVolume });
                     });
                     break;
@@ -274,12 +392,17 @@ function usePlayerControls(_a) {
                     event.preventDefault();
                     setVideoState(function (prev) {
                         var newVolume = Math.max(prev.volume - 0.1, 0);
+                        showKeyboardIndicator({
+                            type: 'volume-down',
+                            position: 'center',
+                            volume: newVolume,
+                        });
                         return __assign(__assign({}, prev), { volume: newVolume, muted: newVolume === 0, prevVolume: newVolume === 0 ? 0.1 : newVolume });
                     });
                     break;
             }
         }
-    }, [rewindHandler, handleFastForward, setVideoState]);
+    }, [setVideoState, showKeyboardIndicator]);
     var handleSpaceKeyDown = useCallback(function (event) {
         if ('code' in event) {
             switch (event.code) {
@@ -308,6 +431,7 @@ function usePlayerControls(_a) {
         playerContainerRef: playerContainerRef,
         playPauseHandler: playPauseHandler,
         handleFullScreen: handleFullScreen,
+        handlePictureInPicture: handlePictureInPicture,
         videoPlayerRef: videoPlayerRef,
         volume: volume,
         muted: muted,
@@ -331,9 +455,11 @@ function usePlayerControls(_a) {
         isSubtitlesChecked: isSubtitlesChecked,
         toggleSubtitlesCheck: toggleSubtitlesCheck,
         isFullscreen: isFullscreen,
+        isPiPActive: isPiPActive,
         isControlsActive: isControlsActive,
         currentSubtitle: currentSubtitle,
         setCurrentSubtitle: setCurrentSubtitle,
+        keyboardIndicator: keyboardIndicator,
         playing: isPlaying,
     };
 }

@@ -128,6 +128,69 @@ export const StyledSubtitles = styled.div<{ $controls: boolean }>`
   width: fit-content;
 `
 
+export const StyledKeyboardIndicatorContainer = styled.div<{
+  $position: 'center' | 'left' | 'right'
+}>`
+  position: absolute;
+  ${({ $position }): string => {
+    if ($position === 'center') {
+      return `
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      `
+    }
+
+    if ($position === 'left') {
+      return `
+        top: 50%;
+        left: 24px;
+        transform: translateY(-50%);
+      `
+    }
+
+    return `
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+    `
+  }}
+  z-index: 110;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  min-height: 72px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(2, 2, 16, 0.62);
+  color: #fff;
+  backdrop-filter: blur(4px);
+`
+
+export const StyledKeyboardSeekContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+`
+
+export const StyledKeyboardVolumeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+`
+
+export const StyledKeyboardVolumeLabel = styled.span`
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+`
+
 export const HLS_SUBTITLE_STYLES = `
   /* Hide native HLS subtitles completely - comprehensive approach */
   video::cue {

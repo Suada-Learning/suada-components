@@ -17,16 +17,23 @@ export interface ControlsProps {
     volumeChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
     formatDuration: string;
     handleFullScreen: () => void;
+    handlePictureInPicture: () => void;
     playing: boolean;
     isSubtitlesChecked: boolean;
     toggleSubtitlesCheck: () => void;
     isFavorite: boolean;
     toggleIsFavorite: () => Promise<void>;
     isFullscreen: boolean;
+    isPiPActive: boolean;
     subtitle?: boolean;
     handleSkipBackward?: () => void;
     handleSkipForward?: () => void;
     isNextVideo?: boolean;
     isPreviousVideo?: boolean;
     showFavorite?: boolean;
+    showDownload?: boolean;
+    downloadUrl?: string;
+    downloadFileName?: string;
+    onDownload?: () => void;
+    showPictureInPicture?: boolean;
 }

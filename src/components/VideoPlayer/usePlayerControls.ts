@@ -6,6 +6,7 @@ import {
   ProgressState,
   UsePlayerControlsState,
   VideoState,
+  KeyboardIndicatorState,
 } from './Player.interface'
 
 import { SubtitleEntry, parseVTT } from './parseVtt'
@@ -45,9 +46,11 @@ function usePlayerControls({
   const playerContainerRef = useRef<HTMLDivElement | null>(null)
   const [subtitles, setSubtitles] = useState<SubtitleEntry[]>([])
   const [currentSubtitle, setCurrentSubtitle] = useState<string>('')
+  const [keyboardIndicator, setKeyboardIndicator] = useState<KeyboardIndicatorState | null>(null)
   const lastSubtitleIndexRef = useRef<number | null>(null)
   const lastPlaybackTimeRef = useRef<number>(0)
   const lastCallTimeRef = useRef(Date.now())
+  const keyboardIndicatorTimeoutRef = useRef<number | null>(null)
 
   const { muted, volume, prevVolume, playbackRate, played, seeking } = videoState
 
@@ -112,6 +115,27 @@ function usePlayerControls({
   useEffect(() => {
     setStartPlayed(false)
   }, [url])
+
+  useEffect(() => {
+    const activeElement = document.activeElement
+    const isEditableTarget =
+      activeElement instanceof HTMLInputElement ||
+      activeElement instanceof HTMLTextAreaElement ||
+      (activeElement instanceof HTMLElement && activeElement.isContentEditable)
+
+    if (!isEditableTarget) {
+      playerContainerRef.current?.focus({ preventScroll: true })
+    }
+  }, [url])
+
+  useEffect(
+    () => () => {
+      if (keyboardIndicatorTimeoutRef.current) {
+        window.clearTimeout(keyboardIndicatorTimeoutRef.current)
+      }
+    },
+    [],
+  )
 
   // Cleanup effect to handle component unmounting while in PiP mode
   useEffect(() => {
@@ -350,22 +374,56 @@ function usePlayerControls({
     }
   }
 
+  const showKeyboardIndicator = useCallback((indicator: KeyboardIndicatorState): void => {
+    setKeyboardIndicator(indicator)
+
+    if (keyboardIndicatorTimeoutRef.current) {
+      window.clearTimeout(keyboardIndicatorTimeoutRef.current)
+    }
+
+    keyboardIndicatorTimeoutRef.current = window.setTimeout(() => {
+      setKeyboardIndicator(null)
+    }, 900)
+  }, [])
+
   const handleKeyDown = useCallback(
     (event: Event | KeyboardEvent): void => {
       if ('code' in event) {
         switch (event.code) {
           case 'ArrowLeft':
             event.preventDefault()
-            rewindHandler()
+            if (videoPlayerRef.current) {
+              const current = videoPlayerRef.current.getCurrentTime()
+              videoPlayerRef.current.seekTo(Math.max(current - 15, 0))
+            }
+            showKeyboardIndicator({
+              type: 'seek-backward',
+              position: 'left',
+            })
             break
           case 'ArrowRight':
             event.preventDefault()
-            handleFastForward()
+            if (videoPlayerRef.current) {
+              const current = videoPlayerRef.current.getCurrentTime()
+              const duration = videoPlayerRef.current.getDuration()
+              const nextTime = current + 15
+              videoPlayerRef.current.seekTo(duration ? Math.min(nextTime, duration) : nextTime)
+            }
+            showKeyboardIndicator({
+              type: 'seek-forward',
+              position: 'right',
+            })
             break
           case 'ArrowUp':
             event.preventDefault()
             setVideoState(prev => {
               const newVolume = Math.min(prev.volume + 0.1, 1)
+              showKeyboardIndicator({
+                type: 'volume-up',
+                position: 'center',
+                volume: newVolume,
+              })
+
               return {
                 ...prev,
                 volume: newVolume,
@@ -378,6 +436,12 @@ function usePlayerControls({
             event.preventDefault()
             setVideoState(prev => {
               const newVolume = Math.max(prev.volume - 0.1, 0)
+              showKeyboardIndicator({
+                type: 'volume-down',
+                position: 'center',
+                volume: newVolume,
+              })
+
               return {
                 ...prev,
                 volume: newVolume,
@@ -389,7 +453,7 @@ function usePlayerControls({
         }
       }
     },
-    [rewindHandler, handleFastForward, setVideoState],
+    [setVideoState, showKeyboardIndicator],
   )
 
   const handleSpaceKeyDown = useCallback(
@@ -463,6 +527,7 @@ function usePlayerControls({
     isControlsActive,
     currentSubtitle,
     setCurrentSubtitle,
+    keyboardIndicator,
     playing: isPlaying,
   }
 }

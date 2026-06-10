@@ -29,7 +29,21 @@ export var Default = {
         type: FileTypes.IMAGE,
         label: 'Upload File',
         disabled: false,
-        loading: 0,
+        showFullPreview: true,
+    },
+};
+export var Uploaded = {
+    args: {
+        type: FileTypes.IMAGE,
+        label: 'Upload File',
+        uploadedFile: {
+            id: '1',
+            name: 'image.png',
+            type: FileTypes.IMAGE,
+            size: 1024,
+        },
+        inputValue: 'image.png',
+        disabled: false,
         showFullPreview: true,
     },
 };

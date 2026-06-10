@@ -8,3 +8,7 @@ export declare const WithSubtitles: Story;
 export declare const Playing: Story;
 export declare const Favorited: Story;
 export declare const NoControls: Story;
+export declare const WithDownload: Story;
+export declare const DownloadOnly: Story;
+export declare const AllFeatures: Story;
+export declare const WithoutPictureInPicture: Story;

@@ -2703,7 +2703,9 @@ DocumentAttachment.displayName = 'DocumentAttachment';
 var DownloadIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
-    props = __rest(_a, ["className", "onClick"]);
+    _b = _a.fill,
+    fill = _b === void 0 ? '#FFFFFF' : _b,
+    props = __rest(_a, ["className", "onClick", "fill"]);
   return jsxRuntimeExports.jsxs("svg", __assign({
     ref: ref,
     width: '24',
@@ -2716,10 +2718,10 @@ var DownloadIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   }, props, {
     children: [jsxRuntimeExports.jsx("path", {
       d: 'M19.5 18V21H4.5V18H3V21C3 21.3978 3.15804 21.7794 3.43934 22.0607C3.72064 22.342 4.10218 22.5 4.5 22.5H19.5C19.8978 22.5 20.2794 22.342 20.5607 22.0607C20.842 21.7794 21 21.3978 21 21V18H19.5Z',
-      fill: '#020210'
+      fill: fill
     }), jsxRuntimeExports.jsx("path", {
       d: 'M19.5 10.5L18.4425 9.4425L12.75 15.1275V1.5H11.25V15.1275L5.5575 9.4425L4.5 10.5L12 18L19.5 10.5Z',
-      fill: '#020210'
+      fill: fill
     })]
   }));
 });
@@ -5606,6 +5608,26 @@ var OndemandVideoIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
 });
 OndemandVideoIcon.displayName = 'OndemandVideoIcon';
 
+var PictureInPictureIcon = function PictureInPictureIcon(_a) {
+  var className = _a.className,
+    onClick = _a.onClick,
+    props = __rest(_a, ["className", "onClick"]);
+  return jsxRuntimeExports.jsx("svg", __assign({
+    width: '24',
+    height: '24',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    xmlns: 'http://www.w3.org/2000/svg',
+    className: className,
+    onClick: onClick
+  }, props, {
+    children: jsxRuntimeExports.jsx("path", {
+      d: 'M19 7H22V17C22 18.1 21.1 19 20 19H4C2.9 19 2 18.1 2 17V7C2 5.9 2.9 5 4 5H17V7H4V17H13V15H20V7H19ZM15 13H22V7H15V13Z',
+      fill: 'white'
+    })
+  }));
+};
+
 var PublishIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
   var className = _a.className,
     onClick = _a.onClick,
@@ -5774,7 +5796,7 @@ var VolumeUpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
     _b = _a.fill,
     fill = _b === void 0 ? '#68707A' : _b,
     props = __rest(_a, ["className", "onClick", "fill"]);
-  return jsxRuntimeExports.jsxs("svg", __assign({
+  return jsxRuntimeExports.jsx("svg", __assign({
     ref: ref,
     width: '24',
     height: '24',
@@ -5784,13 +5806,10 @@ var VolumeUpIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
     className: className,
     onClick: onClick
   }, props, {
-    children: [jsxRuntimeExports.jsx("path", {
-      d: 'M0 0h24v24H0V0z',
-      fill: 'none'
-    }), jsxRuntimeExports.jsx("path", {
+    children: jsxRuntimeExports.jsx("path", {
       d: 'M3 9v6h4l5 5V4L7 9H3zm7-.17v6.34L7.83 13H5v-2h2.83L10 8.83zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z',
       fill: fill
-    })]
+    })
   }));
 });
 VolumeUpIcon.displayName = 'VolumeUpIcon';
@@ -5958,4 +5977,4 @@ var SchoolIcon = /*#__PURE__*/forwardRef(function (_a, ref) {
 });
 SchoolIcon.displayName = 'SchoolIcon';
 
-export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, Analytics, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckBoxOutlineBlankIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, ChevronRightIcon, Circle, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, Company, ContactSupportOutlinedIcon, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DeleteIconRounded, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridView, Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, HeartIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Learning, Library, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MaximizeIcon, MeterIcon, MinimizeIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, PauseIcon, PermMediaIcon, Person, PhoneIphoneIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlayIcon, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, RewindIcon, SchoolIcon, SchoolOutlinedIcon, Search, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, SkipIcon, StarsRoundedIcon, SubtitlesIcon, SwitchCompany, Timeline, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, UsersIcon, VideoCallIcon, VideoCheckmarkIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeMuteIcon, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
+export { ActivityIcon, AddAlt, AddCircleIcon, AddIcon, AddStudent, Analytics, AnalyticsIcon, ArchiveIcon, ArrowDropDownIcon, ArrowDropUpIcon, AssignTutor, BackspaceRoundedIcon, BackupIcon, Book, BookWithBookmark, BusinessIcon, CancelIcon, CaretDown, Check, CheckBoxIcon, CheckBoxOutlineBlankIcon, CheckCircleIcon, CheckCircleOutlineOutlinedIcon, CheckCircleOutlineRoundedIcon, CheckedIcon, Checkmark, CheckmarkOutline, CheckmarkOutlineAction, ChevronRightIcon, Circle, CircleNotificationsIcon, Close, CloseIcon, CloseOutline, CloseOutlineAction, ClosedCaptionIcon, CloudDownloadIcon, Coach, Company, ContactSupportOutlinedIcon, DarkAddAlt, DarkAiAssistent, DarkCloseOutline, DarkTrashCan, DashboardIcon, DefaultAvatar, Delete, DeleteForeverRoundedIcon, DeleteIcon, DeleteIconRounded, DocumentAttachment, Download, DownloadIcon, DragIndicatorIcon, Edit, EditIcon, EditRounded, EditUsers, Education, EducationDefault, EmailIcon, ErrorOutlineIcon, ErrorOutlineRoundedIcon, EventIcon, ExpandMoreIcon, FeaturedPlayListIcon, FiberManualRecordIcon, FileCopyIcon, FileUploadOutlinedIcon, FilterIcon, GetAppIcon, GrayDownload, GrayPlayIcon, GridView, Group, GroupDefault, GroupOutlined, GroupsOutlined, HeadsetIcon, HeartIcon, Help, HelpIcon, HighlightOffRoundedIcon, HorizontalView, HourglassEmptyIcon, ImageIcon, Information, InsertDriveFileIcon, KeyboardBackspaceIcon, Learning, Library, LocationCityIcon, LocationOnIcon, LockIcon, Locked, Logout, MarkunreadMailboxIcon, MaximizeIcon, MeterIcon, MinimizeIcon, MoreHorizIcon, MoreVertRoundedIcon, MyProfile, NewFilter, Notification, NotificationsOutlined, OndemandVideoIcon, PauseIcon, PermMediaIcon, Person, PhoneIphoneIcon, PictureInPictureIcon, PlayButton, PlayCircleOutlineIcon, PlayGrayButton, PlayIcon, PlaylistAddIcon, PlaylistPlayIcon, PresentationScreen, Profile, PublicIcon, PublishIcon, RecordVoiceOverOutlined, RedDeleteIcon, RemoveAlt, RemoveAltDisable, RemoveCircleIcon, RemoveFilter, ReportProblemIcon, Reset, RewindIcon, SchoolIcon, SchoolOutlinedIcon, Search, SearchRounded, Send, SendAlt, SettingsApplicationsIcon, SettingsOutlinedIcon, SkipIcon, StarsRoundedIcon, SubtitlesIcon, SwitchCompany, Timeline, TrashCan, TrashCanAction, TrashCanRed, TrendingUpOutlinedIcon, UnfillPlay, Unlock, Unlocked, UserActivity, UserSpeaker, UsersIcon, VideoCallIcon, VideoCheckmarkIcon, ViewCompactIcon, ViewListIcon, Visibility, VisibilityOff, VolumeMuteIcon, VolumeUpIcon, WhiteAiAssistant, WorkOutlineOutlinedIcon, ZoomInIcon };
