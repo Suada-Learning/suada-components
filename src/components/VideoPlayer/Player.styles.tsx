@@ -111,7 +111,7 @@ export const StyledControlsContainer = styled.div`
 export const StyledSubtitles = styled.div<{ $controls: boolean }>`
   background-color: rgba(2, 2, 16, 0.32);
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
