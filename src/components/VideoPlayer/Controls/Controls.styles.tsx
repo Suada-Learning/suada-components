@@ -75,7 +75,7 @@ export const StyledControls = styled.div`
 
   & > p {
     color: var(--neutral-colors-light);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     ${{ fontStyle: 'descriptor' }}
   }
 `
