@@ -87,6 +87,18 @@ export interface ProgressState {
   loadedSeconds: number
 }
 
+export type KeyboardIndicatorType =
+  | 'volume-up'
+  | 'volume-down'
+  | 'seek-backward'
+  | 'seek-forward'
+
+export interface KeyboardIndicatorState {
+  type: KeyboardIndicatorType
+  volume?: number
+  position: 'center' | 'left' | 'right'
+}
+
 export interface UsePlayerControlsState
   extends Omit<ControlsProps, 'isFavorite' | 'toggleIsFavorite'> {
   mouseMoveHandler: () => void
@@ -103,4 +115,5 @@ export interface UsePlayerControlsState
   isControlsActive: boolean
   currentSubtitle: string
   setCurrentSubtitle: Dispatch<SetStateAction<string>>
+  keyboardIndicator: KeyboardIndicatorState | null
 }
