@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/Suada-Learning/suada-components/compare/v1.18.1...v1.19.0) (2026-06-16)
+
+
+### Features
+
+* implement keyboard indicators for volume and seek controls ([26de6d6](https://github.com/Suada-Learning/suada-components/commit/26de6d62d461d88b793b745afca220dfab6365bb))
+
 ## [1.18.1](https://github.com/Suada-Learning/suada-components/compare/v1.18.0...v1.18.1) (2026-03-17)
 
 
