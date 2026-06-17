@@ -39,27 +39,45 @@ const VolumeIndicatorIcon = ({
   isVolumeDown: boolean
 }): ReactElement => {
   const percent = Math.round(volume * 100)
-  const waveOpacity = percent === 0 ? 0.18 : 1
+  const isMuted = percent === 0
+  const isLow = percent > 0 && percent <= 30
+  const isMedium = percent > 30 && percent <= 70
+  const isHigh = percent > 70
 
   return (
     <svg width='44' height='44' viewBox='0 0 24 24' fill='none' aria-hidden>
       <path d='M3 9V15H7L12 20V4L7 9H3Z' fill='white' />
-      <path
-        d='M16.5 12C16.5 10.62 15.7 9.42 14.55 8.85V15.15C15.7 14.58 16.5 13.38 16.5 12Z'
-        fill='white'
-        style={{ opacity: waveOpacity }}
-      />
-      <path
-        d='M14.5 3.23V5.29C17.39 6.15 19.5 8.83 19.5 12C19.5 15.17 17.39 17.85 14.5 18.71V20.77C18.51 19.86 21.5 16.28 21.5 12C21.5 7.72 18.51 4.14 14.5 3.23Z'
-        fill='white'
-        style={{ opacity: waveOpacity }}
-      />
+      {isMuted && (
+        <path d='M14 9L20 15M20 9L14 15' stroke='white' strokeWidth='2' strokeLinecap='round' />
+      )}
+      {(isLow || isMedium || isHigh) && (
+        <path
+          d='M15.8 12C15.8 11.08 15.27 10.28 14.5 9.9V14.1C15.27 13.72 15.8 12.92 15.8 12Z'
+          fill='white'
+        />
+      )}
+      {(isMedium || isHigh) && (
+        <path
+          d='M17.8 12C17.8 10.23 16.78 8.7 15.3 7.98V9.6C16.1 10.14 16.6 11.02 16.6 12C16.6 12.98 16.1 13.86 15.3 14.4V16.02C16.78 15.3 17.8 13.77 17.8 12Z'
+          fill='white'
+        />
+      )}
+      {isHigh && (
+        <path
+          d='M14.6 5.4V7.05C16.97 7.83 18.7 9.72 18.7 12C18.7 14.28 16.97 16.17 14.6 16.95V18.6C17.86 17.79 20.2 15.18 20.2 12C20.2 8.82 17.86 6.21 14.6 5.4Z'
+          fill='white'
+        />
+      )}
       {isVolumeDown ? (
-        <path d='M7 12H17' stroke='white' strokeWidth='2' strokeLinecap='round' />
+        <>
+          <path d='M9 12H15' stroke='white' strokeWidth='2' strokeLinecap='round' />
+          <path d='M17.6 9.4L20 12L17.6 14.6' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
+        </>
       ) : (
         <>
-          <path d='M7 12H17' stroke='white' strokeWidth='2' strokeLinecap='round' />
-          <path d='M12 7V17' stroke='white' strokeWidth='2' strokeLinecap='round' />
+          <path d='M9 12H15' stroke='white' strokeWidth='2' strokeLinecap='round' />
+          <path d='M12 9V15' stroke='white' strokeWidth='2' strokeLinecap='round' />
+          <path d='M17.6 14.6L20 12L17.6 9.4' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
         </>
       )}
     </svg>
