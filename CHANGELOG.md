@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/Suada-Learning/suada-components/compare/v1.19.0...v1.20.0) (2026-06-19)
+
+
+### Features
+
+* enhance volume indicator with detailed states and visual feedback ([a1463a6](https://github.com/Suada-Learning/suada-components/commit/a1463a6b276e58af50b1e9cb326a967acece216b))
+
 # [1.19.0](https://github.com/Suada-Learning/suada-components/compare/v1.18.1...v1.19.0) (2026-06-16)
 
 
