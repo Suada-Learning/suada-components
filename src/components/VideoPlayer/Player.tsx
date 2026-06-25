@@ -68,16 +68,14 @@ const VolumeIndicatorIcon = ({
           fill='white'
         />
       )}
+
+      <circle cx='19' cy='5' r='4' fill='rgba(255, 255, 255, 0.18)' />
       {isVolumeDown ? (
-        <>
-          <path d='M9 12H15' stroke='white' strokeWidth='2' strokeLinecap='round' />
-          <path d='M17.6 9.4L20 12L17.6 14.6' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
-        </>
+        <path d='M17.2 5H20.8' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
       ) : (
         <>
-          <path d='M9 12H15' stroke='white' strokeWidth='2' strokeLinecap='round' />
-          <path d='M12 9V15' stroke='white' strokeWidth='2' strokeLinecap='round' />
-          <path d='M17.6 14.6L20 12L17.6 9.4' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
+          <path d='M17.2 5H20.8' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
+          <path d='M19 3.2V6.8' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
         </>
       )}
     </svg>
