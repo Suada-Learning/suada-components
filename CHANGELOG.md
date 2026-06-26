@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/Suada-Learning/suada-components/compare/v1.20.0...v1.20.1) (2026-06-26)
+
+
+### Bug Fixes
+
+* update volume indicator icon for improved visual clarity ([0045031](https://github.com/Suada-Learning/suada-components/commit/0045031b1247e92a29471a89b94d445911e73870))
+
 # [1.20.0](https://github.com/Suada-Learning/suada-components/compare/v1.19.0...v1.20.0) (2026-06-19)
 
 
