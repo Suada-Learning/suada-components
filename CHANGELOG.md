@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/Suada-Learning/suada-components/compare/v1.20.1...v1.21.0) (2026-06-29)
+
+
+### Features
+
+* add error handling callback to PlayerProps for playback errors ([c4918f5](https://github.com/Suada-Learning/suada-components/commit/c4918f5d703ba0d55a8d65ca2d86f5cdb83df430))
+
 ## [1.20.1](https://github.com/Suada-Learning/suada-components/compare/v1.20.0...v1.20.1) (2026-06-26)
 
 
