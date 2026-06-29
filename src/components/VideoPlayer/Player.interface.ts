@@ -67,6 +67,8 @@ export interface PlayerProps {
   onNoteDelete?: (noteId: string) => Promise<void>
   onNoteCancelEdit?: () => void
   onAddNote?: () => void
+  // Error handling - surfaces playback errors (e.g. CORS / network / HLS failures)
+  onError?: (error: unknown, data?: unknown, hlsInstance?: unknown, hlsGlobal?: unknown) => void
 }
 
 export interface UsePlayerControlsProps {

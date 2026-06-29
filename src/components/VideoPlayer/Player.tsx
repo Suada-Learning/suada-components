@@ -160,6 +160,7 @@ export const VideoPlayer = ({
   onNoteDelete,
   onNoteCancelEdit,
   onAddNote,
+  onError,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const overlayRef = useRef<HTMLDivElement | null>(null)
@@ -499,6 +500,7 @@ export const VideoPlayer = ({
           onBuffer={bufferStartHandler}
           onBufferEnd={bufferEndHandler}
           onReady={handlePlayerReady}
+          onError={onError}
           onPlay={(): void => setIsPlaying(true)}
           onPause={(): void => setIsPlaying(false)}
           onEnded={(): void => {
