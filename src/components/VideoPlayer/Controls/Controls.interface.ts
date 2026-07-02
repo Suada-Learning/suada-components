@@ -1,6 +1,7 @@
 import { ChangeEvent, MouseEvent } from 'react'
 
 import { VideoState } from '../Player.interface'
+import { QualityLevelOption } from '../QualityMenu.interface'
 
 export interface ControlsProps {
   setVideoState: (value: (prev: VideoState) => VideoState) => void
@@ -38,4 +39,7 @@ export interface ControlsProps {
   downloadFileName?: string
   onDownload?: () => void
   showPictureInPicture?: boolean
+  qualityLevels: QualityLevelOption[]
+  selectedQuality: number
+  onQualityChange: (level: number) => void
 }
