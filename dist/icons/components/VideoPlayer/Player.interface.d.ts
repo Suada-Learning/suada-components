@@ -30,6 +30,11 @@ export interface PlayerProps {
     showFavorite?: boolean;
     isFavorite?: boolean;
     toggleFavorite?: () => Promise<void>;
+    showDownload?: boolean;
+    downloadUrl?: string;
+    downloadFileName?: string;
+    onDownload?: () => void;
+    showPictureInPicture?: boolean;
 }
 export interface UsePlayerControlsProps {
     startTime?: number;
@@ -57,6 +62,8 @@ export interface UsePlayerControlsState extends Omit<ControlsProps, 'isFavorite'
     onPlayerStart: () => void;
     controlRef: RefObject<HTMLDivElement>;
     isFullscreen: boolean;
+    isPiPActive: boolean;
+    handlePictureInPicture: () => void;
     isControlsActive: boolean;
     currentSubtitle: string;
     setCurrentSubtitle: Dispatch<SetStateAction<string>>;

@@ -1,6 +1,5 @@
 import React, { ReactElement, useState } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
-import CancelIcon from '@mui/icons-material/Cancel'
 import {
   Container,
   ItemContainer,
@@ -11,6 +10,7 @@ import {
   InputLabel,
   ErrorText,
   Title,
+  StyledCancelIcon,
   styles,
 } from './styled-components'
 import { IUploaderProps } from './uploader.interface'
@@ -161,7 +161,7 @@ export const Uploader = ({
               }
             }}
           >
-            <CancelIcon style={{ color: '#06C68F' }} />
+            <StyledCancelIcon />
           </CancelButton>
         )}
       </Container>

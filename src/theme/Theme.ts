@@ -109,46 +109,46 @@ export const createCustomTheme = (customColors?: Partial<IThemeColors>): Theme =
     palette: {
       primary: {
         main: colors.primary.main,
-        light: colors.primary[300],
-        dark: colors.primary[700],
+        light: colors.primary[300] || colors.primary.main,
+        dark: colors.primary[700] || colors.primary.main,
         contrastText: '#ffffff',
       },
       secondary: {
-        main: colors.secondary.main,
-        light: colors.secondary[300],
-        dark: colors.secondary[700],
+        main: colors.secondary?.main || colors.primary.main,
+        light: colors.secondary?.[300] || colors.secondary?.main || colors.primary.main,
+        dark: colors.secondary?.[700] || colors.secondary?.main || colors.primary.main,
         contrastText: '#ffffff',
       },
       error: {
-        main: colors.system.error.main,
-        light: colors.system.error[300],
-        dark: colors.system.error[700],
+        main: colors.system?.error?.main || '#ff0000',
+        light: colors.system?.error?.[300] || colors.system?.error?.main || '#ff0000',
+        dark: colors.system?.error?.[700] || colors.system?.error?.main || '#ff0000',
       },
       warning: {
-        main: colors.system.warning.main,
-        light: colors.system.warning[300],
-        dark: colors.system.warning[700],
+        main: colors.system?.warning?.main || '#ff8800',
+        light: colors.system?.warning?.[300] || colors.system?.warning?.main || '#ff8800',
+        dark: colors.system?.warning?.[700] || colors.system?.warning?.main || '#ff8800',
       },
       success: {
-        main: colors.system.success.main,
-        light: colors.system.success[300],
-        dark: colors.system.success[700],
+        main: colors.system?.success?.main || '#00ff00',
+        light: colors.system?.success?.[300] || colors.system?.success?.main || '#00ff00',
+        dark: colors.system?.success?.[700] || colors.system?.success?.main || '#00ff00',
       },
       info: {
-        main: colors.system.info.main,
-        light: colors.system.info[300],
-        dark: colors.system.info[700],
+        main: colors.system?.info?.main || '#0066ff',
+        light: colors.system?.info?.[300] || colors.system?.info?.main || '#0066ff',
+        dark: colors.system?.info?.[700] || colors.system?.info?.main || '#0066ff',
       },
       grey: {
-        100: colors.neutral[100],
-        200: colors.neutral[200],
-        300: colors.neutral[300],
-        400: colors.neutral[400],
-        500: colors.neutral[500],
-        600: colors.neutral[600],
-        700: colors.neutral[700],
-        800: colors.neutral[800],
-        900: colors.neutral[900],
+        100: colors.neutral?.[100] || '#f5f5f5',
+        200: colors.neutral?.[200] || '#eeeeee',
+        300: colors.neutral?.[300] || '#e0e0e0',
+        400: colors.neutral?.[400] || '#bdbdbd',
+        500: colors.neutral?.[500] || '#9e9e9e',
+        600: colors.neutral?.[600] || '#757575',
+        700: colors.neutral?.[700] || '#616161',
+        800: colors.neutral?.[800] || '#424242',
+        900: colors.neutral?.[900] || '#212121',
       },
     },
   })
@@ -158,7 +158,7 @@ export const themes = {
   light: {
     colors: {
       primary: { main: '#08C694', 700: '#12A37A' },
-      neutral: { 100: '#FFFFFF', 400: '#B3B3B8', 900: '#020210' },
+      neutral: { main: '#B3B3B8', 100: '#FFFFFF', 400: '#B3B3B8', 900: '#020210' },
       system: {
         success: { main: '#00905E', 700: '#12A37A', 300: '#72C4AC' },
         error: { main: '#EA382A', 700: '#C7493D', 300: '#E5908A' },
@@ -168,7 +168,7 @@ export const themes = {
   dark: {
     colors: {
       primary: { main: '#065F46', 700: '#047857' },
-      neutral: { 100: '#E5E5E5', 400: '#6B7280', 900: '#1F2937' },
+      neutral: { main: '#6B7280', 100: '#E5E5E5', 400: '#6B7280', 900: '#1F2937' },
       system: {
         success: { main: '#047857', 700: '#065F46', 300: '#A7F3D0' },
         error: { main: '#DC2626', 700: '#B91C1C', 300: '#FCA5A5' },

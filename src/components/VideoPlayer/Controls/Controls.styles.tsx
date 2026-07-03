@@ -26,7 +26,7 @@ export const StyledControls = styled.div`
 
   svg {
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, fill 0.2s ease;
 
     /* Desktop and large screens */
     @media screen and (min-width: 1501px) {
@@ -66,6 +66,19 @@ export const StyledControls = styled.div`
 
     &:hover {
       transform: scale(1.1);
+      
+      path {
+        fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+          // Handle different theme structures
+          if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+            return theme.colors.primary.main || '#08C694'; // suada-components structure
+          }
+          if (typeof theme?.colors?.primary === 'string') {
+            return theme.colors.primary; // suada-students structure
+          }
+          return 'var(--brand-colors-accent, #08C694)'; // fallback
+        }} !important;
+      }
     }
 
     &:active {
@@ -91,22 +104,57 @@ export const StyledSlider = styled.input<SliderProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${({ value }): string =>
-    `linear-gradient(
-    to right,
-    var(--brand-colors-accent) 0%,
-    var(--brand-colors-accent) ${value}%,
-    var(--level-dark-200) ${value}%,
-    var(--level-dark-200) 100%
-  )`};
+  background: ${({ value, theme }: { value: number; theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+    // Handle different theme structures
+    let primaryColor = 'var(--brand-colors-accent)';
+    if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+      primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
+    } else if (typeof theme?.colors?.primary === 'string') {
+      primaryColor = theme.colors.primary; // suada-students structure
+    }
+    
+    return `linear-gradient(
+      to right,
+      ${primaryColor} 0%,
+      ${primaryColor} ${value}%,
+      var(--level-dark-200) ${value}%,
+      var(--level-dark-200) 100%
+    )`;
+  }};
   outline: none;
+  border: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 
   /* Enhanced mobile touch target */
   @media (hover: none) and (pointer: coarse) {
     height: 4px;
+  }
+ &::-webkit-slider-runnable-track {
+    border: none;
+    outline: none;
+  }
+
+  &::-moz-range-track {
+    border: none;
+    outline: none;
+  }
+
+  &::-ms-track {
+    border: none;
+    outline: none;
   }
 
   &::-webkit-slider-thumb {
@@ -115,8 +163,19 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--brand-colors-accent);
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary; // suada-students structure
+      }
+      return 'var(--brand-colors-accent)'; // fallback
+    }};
     cursor: pointer;
+    outline: none;
+    border: none;
 
     /* Larger touch target for mobile */
     @media (hover: none) and (pointer: coarse) {
@@ -136,8 +195,19 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--brand-colors-accent);
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary; // suada-students structure
+      }
+      return 'var(--brand-colors-accent)'; // fallback
+    }};
     cursor: pointer;
+    outline: none;
+    border: none;
     border: none;
 
     /* Larger touch target for mobile */
@@ -155,8 +225,7 @@ export const StyledSlider = styled.input<SliderProps>`
 
   /* Enhance visibility on focus for accessibility */
   &:focus {
-    outline: 2px solid var(--brand-colors-accent);
-    outline-offset: 2px;
+    outline: none;
   }
 `
 
@@ -208,14 +277,23 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
   width: 100px;
   height: 4px;
   border-radius: 5px;
-  background: ${({ value }): string =>
-    `linear-gradient(
-    to right,
-    var(--neutral-colors-light) 0%,
-    var(--neutral-colors-light) ${value}%,
-    var(--level-grey-500) ${value}%,
-    var(--level-grey-500) 100%
-  )`};
+  background: ${({ value, theme }: { value: number; theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+    // Handle different theme structures
+    let primaryColor = 'var(--neutral-colors-light)';
+    if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+      primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
+    } else if (typeof theme?.colors?.primary === 'string') {
+      primaryColor = theme.colors.primary; // suada-students structure
+    }
+    
+    return `linear-gradient(
+      to right,
+      ${primaryColor} 0%,
+      ${primaryColor} ${value}%,
+      var(--level-grey-500) ${value}%,
+      var(--level-grey-500) 100%
+    )`;
+  }};
   outline: none;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
@@ -242,7 +320,16 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--neutral-colors-light);
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary; // suada-students structure
+      }
+      return 'var(--neutral-colors-light)'; // fallback
+    }};
     cursor: pointer;
 
     /* Responsive thumb size */
@@ -257,7 +344,16 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--neutral-colors-light);
+    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+      // Handle different theme structures
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      }
+      if (typeof theme?.colors?.primary === 'string') {
+        return theme.colors.primary; // suada-students structure
+      }
+      return 'var(--neutral-colors-light)'; // fallback
+    }};
     cursor: pointer;
     border: none;
 
@@ -379,7 +475,16 @@ const BaseIconContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     
     & > svg > path {
-      fill: #08C694 !important;
+      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+        // Handle different theme structures
+        if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+          return theme.colors.primary.main || '#08C694'; // suada-components structure
+        }
+        if (typeof theme?.colors?.primary === 'string') {
+          return theme.colors.primary; // suada-students structure
+        }
+        return 'var(--video-player-primary-color, #08C694)'; // fallback
+      }} !important;
     }
   }
 
@@ -389,8 +494,8 @@ const BaseIconContainer = styled.div`
 
   /* Focus styles for accessibility */
   &:focus-visible {
-    outline: 2px solid var(--brand-colors-accent);
-    outline-offset: 2px;
+    outline: none:
+
   }
 `
 
@@ -435,10 +540,36 @@ export const StyledFullscreenIconContainer = styled(BaseIconContainer)`
 
 export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
   &.pip-active {
-    background-color: rgba(8, 198, 148, 0.2);
+    background-color: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+      // Handle different theme structures for background color (with opacity)
+      let primaryColor: string;
+      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+        primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
+      } else if (typeof theme?.colors?.primary === 'string') {
+        primaryColor = theme.colors.primary; // suada-students structure
+      } else {
+        primaryColor = '#08C694'; // fallback
+      }
+      
+      // Convert hex to rgba with opacity
+      const hex = primaryColor.replace('#', '');
+      const r = parseInt(hex.substr(0, 2), 16);
+      const g = parseInt(hex.substr(2, 2), 16);
+      const b = parseInt(hex.substr(4, 2), 16);
+      return `rgba(${r}, ${g}, ${b}, 0.2)`;
+    }};
     
     & > svg > path {
-      fill: #08C694 !important;
+      fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+        // Handle different theme structures
+        if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
+          return theme.colors.primary.main || '#08C694'; // suada-components structure
+        }
+        if (typeof theme?.colors?.primary === 'string') {
+          return theme.colors.primary; // suada-students structure
+        }
+        return 'var(--video-player-primary-color, #08C694)'; // fallback
+      }} !important;
     }
   }
 `
@@ -453,4 +584,8 @@ export const StyledPlayPauseIconContainer = styled(BaseIconContainer)`
 
 export const StyledRewindIconContainer = styled(BaseIconContainer)`
   /* Additional specific styles if needed */
+`
+
+export const StyledNotesIconContainer = styled(BaseIconContainer)`
+  /* Additional specific styles for notes icon */
 `

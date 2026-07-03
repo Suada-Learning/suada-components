@@ -128,6 +128,69 @@ export const StyledSubtitles = styled.div<{ $controls: boolean }>`
   width: fit-content;
 `
 
+export const StyledKeyboardIndicatorContainer = styled.div<{
+  $position: 'center' | 'left' | 'right'
+}>`
+  position: absolute;
+  ${({ $position }): string => {
+    if ($position === 'center') {
+      return `
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      `
+    }
+
+    if ($position === 'left') {
+      return `
+        top: 50%;
+        left: 24px;
+        transform: translateY(-50%);
+      `
+    }
+
+    return `
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+    `
+  }}
+  z-index: 110;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  min-height: 72px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(2, 2, 16, 0.62);
+  color: #fff;
+  backdrop-filter: blur(4px);
+`
+
+export const StyledKeyboardSeekContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+`
+
+export const StyledKeyboardVolumeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+`
+
+export const StyledKeyboardVolumeLabel = styled.span`
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+`
+
 export const HLS_SUBTITLE_STYLES = `
   /* Hide native HLS subtitles completely - comprehensive approach */
   video::cue {
@@ -246,3 +309,188 @@ export const injectHLSSubtitleStyles = (): (() => void) => {
     }
   }
 }
+
+// Notes functionality styles
+export const StyledNoteMarkersOverlay = styled.div<{ $isFullscreen?: boolean }>`
+  position: absolute;
+  bottom: 45px;
+  left: 5px;
+  right: 5px;
+  height: 6px;
+  z-index: ${(props): number => (props.$isFullscreen ? 2147483646 : 15)};
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  overflow: visible;
+
+  ${(props): string =>
+    props.$isFullscreen
+      ? `
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 42px;
+    top: auto;
+    height: 6px;
+    z-index: 2147483646;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+  `
+      : ''}
+
+  ${(props): string =>
+    !props.$isFullscreen
+      ? `
+    ${StyledWrapper}:hover & {
+      opacity: 1 !important;
+    }
+  `
+      : ''}
+
+  &.controls-visible {
+    opacity: 1 !important;
+  }
+`
+
+export const StyledNoteMarker = styled.div<{ $position: number; $isFullscreen?: boolean }>`
+  position: absolute;
+  ${(props): string =>
+    props.$isFullscreen
+      ? `top: auto; bottom: 0; transform: translateX(-50%);`
+      : `bottom: -3px; transform: translateX(-50%);`}
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  width: ${(props): string => (props.$isFullscreen ? '12px' : '10px')};
+  height: ${(props): string => (props.$isFullscreen ? '12px' : '10px')};
+  background-color: #ffd700;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  border: 2px solid #fff;
+  box-shadow: ${(props): string =>
+    props.$isFullscreen ? '0 2px 4px rgba(0, 0, 0, 0.4)' : '0 2px 4px rgba(0, 0, 0, 0.3)'};
+  transition: all 0.2s ease;
+  z-index: ${(props): number => (props.$isFullscreen ? 2147483647 : 20)};
+
+  &:hover {
+    transform: translateX(-50%) scale(1.2);
+    background-color: #ffed4e;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  }
+`
+
+export const StyledNoteTooltip = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2147483647;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+  }
+`
+
+export const StyledNoteTime = styled.div`
+  font-size: 10px;
+  opacity: 0.8;
+  margin-top: 2px;
+`
+
+export const StyledModalOverlay = styled.div<{ $isFullscreen?: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: ${(props): number => (props.$isFullscreen ? 2147483646 : 999)};
+  pointer-events: none;
+`
+
+export const StyledNoteModal = styled.div<{
+  $isFullscreen?: boolean
+  $position?: number
+  $alignment?: 'left' | 'center' | 'right'
+}>`
+  position: absolute;
+  bottom: 70px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e8f0;
+  z-index: ${(props): number => (props.$isFullscreen ? 2147483647 : 1000)};
+  width: 320px;
+  height: 270px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+
+  ${(props): string => {
+    const position = props.$position || 50
+    const alignment = props.$alignment || 'center'
+    const margin = 20
+
+    // Position modal based on the timestamp position on progress bar
+    if (alignment === 'left') {
+      return `
+        left: ${margin}px;
+        &::after { left: calc(${position}% - ${margin}px); }
+        &::before { left: calc(${position}% - ${margin}px); }
+      `
+    } else if (alignment === 'right') {
+      return `
+        right: ${margin}px;
+        &::after { right: calc(${100 - position}% - ${margin}px); }
+        &::before { right: calc(${100 - position}% - ${margin}px); }
+      `
+    } else {
+      // Center the modal horizontally relative to timestamp position
+      return `
+        left: ${position}%;
+        transform: translateX(-50%);
+        &::after { left: 50%; }
+        &::before { left: 50%; }
+      `
+    }
+  }}
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+  }
+
+  &::after {
+    border-top-color: white;
+    z-index: 2;
+  }
+
+  &::before {
+    border-top-color: #e2e8f0;
+    z-index: 1;
+    margin-top: 1px;
+  }
+`

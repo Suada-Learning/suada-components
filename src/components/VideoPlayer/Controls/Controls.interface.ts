@@ -42,4 +42,5 @@ export interface ControlsProps {
   qualityLevels: QualityLevelOption[]
   selectedQuality: number
   onQualityChange: (level: number) => void
+  onAddNote?: () => void
 }

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { SvgProps } from './svgTypes.interface'
 
 export const CheckBoxIcon = forwardRef<SVGSVGElement, SvgProps>(
-  ({ className, onClick, fill = '#68707A', ...props }, ref) => {
+  ({ className, onClick, fill = 'currentColor', ...props }, ref) => {
     return (
       <svg
         ref={ref}

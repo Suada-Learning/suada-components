@@ -1,3 +1,339 @@
+# [1.21.0](https://github.com/Suada-Learning/suada-components/compare/v1.20.1...v1.21.0) (2026-06-29)
+
+
+### Features
+
+* add error handling callback to PlayerProps for playback errors ([c4918f5](https://github.com/Suada-Learning/suada-components/commit/c4918f5d703ba0d55a8d65ca2d86f5cdb83df430))
+
+## [1.20.1](https://github.com/Suada-Learning/suada-components/compare/v1.20.0...v1.20.1) (2026-06-26)
+
+
+### Bug Fixes
+
+* update volume indicator icon for improved visual clarity ([0045031](https://github.com/Suada-Learning/suada-components/commit/0045031b1247e92a29471a89b94d445911e73870))
+
+# [1.20.0](https://github.com/Suada-Learning/suada-components/compare/v1.19.0...v1.20.0) (2026-06-19)
+
+
+### Features
+
+* enhance volume indicator with detailed states and visual feedback ([a1463a6](https://github.com/Suada-Learning/suada-components/commit/a1463a6b276e58af50b1e9cb326a967acece216b))
+
+# [1.19.0](https://github.com/Suada-Learning/suada-components/compare/v1.18.1...v1.19.0) (2026-06-16)
+
+
+### Features
+
+* implement keyboard indicators for volume and seek controls ([26de6d6](https://github.com/Suada-Learning/suada-components/commit/26de6d62d461d88b793b745afca220dfab6365bb))
+
+## [1.18.1](https://github.com/Suada-Learning/suada-components/compare/v1.18.0...v1.18.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* removed extra step from npm release workflow ([3f8603e](https://github.com/Suada-Learning/suada-components/commit/3f8603e493fef51c97652d2b67c94ca10e23cdc6))
+
+# [1.18.0](https://github.com/Suada-Learning/suada-components/compare/v1.17.0...v1.18.0) (2026-03-17)
+
+
+### Features
+
+* add npm authentication verification step before publishing ([f3264f4](https://github.com/Suada-Learning/suada-components/commit/f3264f48ad35a818f3d9db5d0d07a49857c53b8f))
+
+# [1.17.0](https://github.com/Suada-Learning/suada-components/compare/v1.16.2...v1.17.0) (2026-03-17)
+
+
+### Features
+
+* add comment to clarify default video state initialization ([5b28549](https://github.com/Suada-Learning/suada-components/commit/5b28549e6a2f8f2bd0e976eb2511912644fb35b4))
+
+## [1.16.2](https://github.com/Suada-Learning/suada-components/compare/v1.16.1...v1.16.2) (2026-03-17)
+
+
+### Bug Fixes
+
+* update default volume and clean up event listeners in usePlayerControls ([5e021c7](https://github.com/Suada-Learning/suada-components/commit/5e021c7757d15dea0463d6ea10389a89fea741d1))
+
+## [1.16.1](https://github.com/Suada-Learning/suada-components/compare/v1.16.0...v1.16.1) (2026-03-02)
+
+
+### Bug Fixes
+
+* add syncPiPState method to manage Picture-in-Picture state consistency ([8ccfe15](https://github.com/Suada-Learning/suada-components/commit/8ccfe15a59b0d18146b02918244d664e77639f0a))
+
+# [1.16.0](https://github.com/Suada-Learning/suada-components/compare/v1.15.3...v1.16.0) (2026-03-02)
+
+
+### Features
+
+* add Picture-in-Picture state management in VideoPlayer component ([8c8eb49](https://github.com/Suada-Learning/suada-components/commit/8c8eb4988935aaac84dfcc38a08760f0fc35c5c1))
+
+## [1.15.3](https://github.com/Suada-Learning/suada-components/compare/v1.15.2...v1.15.3) (2026-03-02)
+
+## [1.15.2](https://github.com/Suada-Learning/suada-components/compare/v1.15.1...v1.15.2) (2026-02-09)
+
+
+### Bug Fixes
+
+* replace containerRef with playerContainerRef in VideoPlayer component ([a8f9725](https://github.com/Suada-Learning/suada-components/commit/a8f9725022f4cb95165a30d71e5dc08f854f6fff))
+
+## [1.15.1](https://github.com/Suada-Learning/suada-components/compare/v1.15.0...v1.15.1) (2026-02-02)
+
+
+### Bug Fixes
+
+* include TRY_AGAIN status in color mapping for StatusWrapper ([6aa904b](https://github.com/Suada-Learning/suada-components/commit/6aa904bcaf86c2a468d400e88c074df5b45a06e4))
+
+# [1.15.0](https://github.com/Suada-Learning/suada-components/compare/v1.14.25...v1.15.0) (2026-01-29)
+
+
+### Features
+
+* add TRY_AGAIN status to GridStatusEnums and update styling ([1ee3cff](https://github.com/Suada-Learning/suada-components/commit/1ee3cff2ba486d646e23ce176a9c14a97921b346))
+
+## [1.14.25](https://github.com/Suada-Learning/suada-components/compare/v1.14.24...v1.14.25) (2026-01-28)
+
+
+### Bug Fixes
+
+* adjust positioning of note markers in fullscreen mode ([bf7496c](https://github.com/Suada-Learning/suada-components/commit/bf7496c7004c0f1dc97c485d93bc0ab1bb8527d7))
+
+## [1.14.24](https://github.com/Suada-Learning/suada-components/compare/v1.14.23...v1.14.24) (2026-01-28)
+
+
+### Bug Fixes
+
+* enable autoStartLoad for HLS options in VideoPlayer ([f76023f](https://github.com/Suada-Learning/suada-components/commit/f76023fd2867ada6ad744a0d2febfd62d549bea7))
+
+## [1.14.23](https://github.com/Suada-Learning/suada-components/compare/v1.14.22...v1.14.23) (2026-01-28)
+
+
+### Bug Fixes
+
+* remove pulse animation and background from StyledNoteMarker for cleaner design ([f359e82](https://github.com/Suada-Learning/suada-components/commit/f359e82f59c8092edefe4d2faf8365b7a8ba1d7c))
+
+## [1.14.22](https://github.com/Suada-Learning/suada-components/compare/v1.14.21...v1.14.22) (2026-01-28)
+
+
+### Bug Fixes
+
+* adjust StyledNoteMarker positioning for better alignment ([1e1204c](https://github.com/Suada-Learning/suada-components/commit/1e1204c493f73b26fd2a3c5f2ad0413e555f193e))
+
+## [1.14.21](https://github.com/Suada-Learning/suada-components/compare/v1.14.20...v1.14.21) (2026-01-27)
+
+
+### Bug Fixes
+
+* videoPlayer auto fetch disabled ([e4cbe5a](https://github.com/Suada-Learning/suada-components/commit/e4cbe5afc83558fceca4a69e7983fbad116259ec))
+
+## [1.14.20](https://github.com/Suada-Learning/suada-components/compare/v1.14.19...v1.14.20) (2026-01-26)
+
+
+### Bug Fixes
+
+* add margin-bottom to NoteEditModal styles ([e5d6fff](https://github.com/Suada-Learning/suada-components/commit/e5d6fff858d8494a0c2d6c9c2f33d37d924016df))
+
+## [1.14.19](https://github.com/Suada-Learning/suada-components/compare/v1.14.18...v1.14.19) (2026-01-26)
+
+
+### Bug Fixes
+
+* adjust padding for StyledTextarea for consistent spacing ([7075fd7](https://github.com/Suada-Learning/suada-components/commit/7075fd7fda763c0a33c2cdfb6f296aeb0b015f04))
+
+## [1.14.18](https://github.com/Suada-Learning/suada-components/compare/v1.14.17...v1.14.18) (2026-01-26)
+
+
+### Bug Fixes
+
+* replace CancelIcon with styled version for dynamic color support ([6a185e9](https://github.com/Suada-Learning/suada-components/commit/6a185e9bf46deae5b561dd322709c6d54f992592))
+
+## [1.14.17](https://github.com/Suada-Learning/suada-components/compare/v1.14.16...v1.14.17) (2026-01-26)
+
+
+### Bug Fixes
+
+* update fallback primary color to a static value for consistency ([ddbbb3e](https://github.com/Suada-Learning/suada-components/commit/ddbbb3ee37f28513c3ef1f0bc9489f0a7e426704))
+
+## [1.14.16](https://github.com/Suada-Learning/suada-components/compare/v1.14.15...v1.14.16) (2026-01-26)
+
+
+### Bug Fixes
+
+* update CancelIcon color to use dynamic primary color from theme ([6a62adc](https://github.com/Suada-Learning/suada-components/commit/6a62adcb82624bd3a4a1588f2202b139633581cc))
+
+## [1.14.15](https://github.com/Suada-Learning/suada-components/compare/v1.14.14...v1.14.15) (2026-01-26)
+
+
+### Bug Fixes
+
+* disable vertical resizing of StyledTextarea for better layout control ([e4f11cf](https://github.com/Suada-Learning/suada-components/commit/e4f11cfe0353e2d970410f471b545bc919800df5))
+
+## [1.14.14](https://github.com/Suada-Learning/suada-components/compare/v1.14.13...v1.14.14) (2026-01-26)
+
+
+### Bug Fixes
+
+* update note modal positioning based on timestamp for improved accuracy ([17ddaa6](https://github.com/Suada-Learning/suada-components/commit/17ddaa6166e266970d0848e24a28612ed770eea3))
+
+## [1.14.13](https://github.com/Suada-Learning/suada-components/compare/v1.14.12...v1.14.13) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove outline from StyledSlider and BaseIconContainer for improved accessibility ([420e4f2](https://github.com/Suada-Learning/suada-components/commit/420e4f21a75115d06364ca4b878bbff896d0177d))
+
+## [1.14.12](https://github.com/Suada-Learning/suada-components/compare/v1.14.11...v1.14.12) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove border and outline from StyledSlider track for improved styling ([531745a](https://github.com/Suada-Learning/suada-components/commit/531745ad48e9c677c43d6cd8bcbcdd0fd18217e1))
+
+## [1.14.11](https://github.com/Suada-Learning/suada-components/compare/v1.14.10...v1.14.11) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove outline and border from StyledSlider for improved focus and touch interaction ([dae693e](https://github.com/Suada-Learning/suada-components/commit/dae693ef0e9980a3deeec265bdccd34c374480f5))
+
+## [1.14.10](https://github.com/Suada-Learning/suada-components/compare/v1.14.9...v1.14.10) (2026-01-26)
+
+
+### Bug Fixes
+
+* remove outline and border from note hover styles in VideoPlayer ([cbc4500](https://github.com/Suada-Learning/suada-components/commit/cbc450072e62784d4aeca958c9bfa1cb79465992))
+
+## [1.14.9](https://github.com/Suada-Learning/suada-components/compare/v1.14.8...v1.14.9) (2026-01-22)
+
+
+### Bug Fixes
+
+* update InputLabel and ButtonInputLabel to use CSS variables for primary color ([c34fd59](https://github.com/Suada-Learning/suada-components/commit/c34fd59cb1e860985d98034a42429756c9a6cfee))
+
+## [1.14.8](https://github.com/Suada-Learning/suada-components/compare/v1.14.7...v1.14.8) (2026-01-22)
+
+
+### Bug Fixes
+
+* update InputLabel and ButtonInputLabel backgrounds to use theme colors ([2a6f312](https://github.com/Suada-Learning/suada-components/commit/2a6f31239ba4f6ca03e651eaf6fe7523fed8809a))
+
+## [1.14.7](https://github.com/Suada-Learning/suada-components/compare/v1.14.6...v1.14.7) (2026-01-22)
+
+
+### Bug Fixes
+
+* add change detection for note editing to enable/disable save button ([decddbb](https://github.com/Suada-Learning/suada-components/commit/decddbb5dc337adb3417cbce6f0526eeac0a779a))
+
+## [1.14.6](https://github.com/Suada-Learning/suada-components/compare/v1.14.5...v1.14.6) (2026-01-22)
+
+
+### Bug Fixes
+
+* add null checks for notes in VideoPlayer to prevent rendering issues ([b62630c](https://github.com/Suada-Learning/suada-components/commit/b62630cd698f16362a0c8e251f40ccb9c729f0fe))
+
+## [1.14.5](https://github.com/Suada-Learning/suada-components/compare/v1.14.4...v1.14.5) (2026-01-21)
+
+
+### Bug Fixes
+
+* add translation fallback for normal playback speed label ([bdb9f61](https://github.com/Suada-Learning/suada-components/commit/bdb9f61d5a9c7d0b13f44d7e1c3455b8c915b68e))
+
+## [1.14.4](https://github.com/Suada-Learning/suada-components/compare/v1.14.3...v1.14.4) (2026-01-21)
+
+
+### Bug Fixes
+
+* update styles in NoteEditModal for improved UI consistency and readability ([2aaf7b4](https://github.com/Suada-Learning/suada-components/commit/2aaf7b43937c05253fd9dac426055baa76049713))
+
+## [1.14.3](https://github.com/Suada-Learning/suada-components/compare/v1.14.2...v1.14.3) (2026-01-21)
+
+
+### Bug Fixes
+
+* add TimeIcon component and integrate it into NoteEditModal for timestamp display ([78ea2e3](https://github.com/Suada-Learning/suada-components/commit/78ea2e3d3fefc6231e9a91d7b115fcd6bb504d53))
+
+## [1.14.2](https://github.com/Suada-Learning/suada-components/compare/v1.14.1...v1.14.2) (2026-01-21)
+
+
+### Bug Fixes
+
+* enhance NoteEditModal with timestamp display and improve note handling in VideoPlayer ([d3dbb51](https://github.com/Suada-Learning/suada-components/commit/d3dbb51e3f8bb22c760236ab4dc94bcb87eeb411))
+
+## [1.14.1](https://github.com/Suada-Learning/suada-components/compare/v1.14.0...v1.14.1) (2026-01-21)
+
+
+### Bug Fixes
+
+* replace translation provider with fallback function for playback speed labels ([83a3304](https://github.com/Suada-Learning/suada-components/commit/83a3304a3984ae1e7ee2abc3a79de13b793d7894))
+
+# [1.14.0](https://github.com/Suada-Learning/suada-components/compare/v1.13.4...v1.14.0) (2026-01-21)
+
+
+### Bug Fixes
+
+* export VideoPlayerNote type from VideoPlayer interface ([bfb2163](https://github.com/Suada-Learning/suada-components/commit/bfb21634b2582fcb0996cd2c7f4557588bc7d0cd))
+
+
+### Features
+
+* export types Note, NoteMarker, and PlayerProps from VideoPlayer ([e5b44f2](https://github.com/Suada-Learning/suada-components/commit/e5b44f21192d7a10ffe3e600815d9f6cca12c70a))
+
+## [1.13.4](https://github.com/Suada-Learning/suada-components/compare/v1.13.3...v1.13.4) (2026-01-21)
+
+
+### Bug Fixes
+
+* remove unnecessary rollup-win32-x64-msvc dependency from package.json ([01037ed](https://github.com/Suada-Learning/suada-components/commit/01037ed1d006532a05f72f131034e30f45a9397d))
+
+## [1.13.3](https://github.com/Suada-Learning/suada-components/compare/v1.13.2...v1.13.3) (2025-12-16)
+
+
+### Bug Fixes
+
+* provide default PiP context when PiPProvider is not available ([5849171](https://github.com/Suada-Learning/suada-components/commit/58491713d2b12529fb2e9210db46023b41e706be))
+
+## [1.13.2](https://github.com/Suada-Learning/suada-components/compare/v1.13.1...v1.13.2) (2025-11-24)
+
+
+### Bug Fixes
+
+* add fallback color for primary theme in styled components ([ef82a98](https://github.com/Suada-Learning/suada-components/commit/ef82a98a1aae4368bf488d2cd949aa76d9b0600d))
+* update default fill color for checkbox icons to 'currentColor' ([9d7429e](https://github.com/Suada-Learning/suada-components/commit/9d7429e61d6dee3bdeb3238050718a973fb3bf80))
+
+## [1.13.1](https://github.com/Suada-Learning/suada-components/compare/v1.13.0...v1.13.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* update fill color fallback for SVG icons in video player controls ([46feb12](https://github.com/Suada-Learning/suada-components/commit/46feb121bda16685a27c04676329fd4f060dae37))
+
+# [1.13.0](https://github.com/Suada-Learning/suada-components/compare/v1.12.0...v1.13.0) (2025-11-20)
+
+
+### Features
+
+* add type declarations for react-country-flag and update TypeScript configurations ([943c086](https://github.com/Suada-Learning/suada-components/commit/943c086fa816430134ec617400eea4d6f04949f4))
+
+# [1.12.0](https://github.com/Suada-Learning/suada-components/compare/v1.11.3...v1.12.0) (2025-11-20)
+
+
+### Bug Fixes
+
+* update dependencies for improved compatibility and performance; adjust TypeScript configuration ([c8394a9](https://github.com/Suada-Learning/suada-components/commit/c8394a9a61e333f67836a3566f7e5251e711617d))
+* update TypeScript configurations for improved compatibility and build process ([5083035](https://github.com/Suada-Learning/suada-components/commit/508303528974383f52d8316d97cf380078563bf7))
+
+
+### Features
+
+* add theme-aware hover colors for VideoPlayer controls ([d3dc900](https://github.com/Suada-Learning/suada-components/commit/d3dc900656e60a43a17b2e0eef749c2803055682)), closes [#08C694](https://github.com/Suada-Learning/suada-components/issues/08C694)
+
+## [1.11.3](https://github.com/Suada-Learning/suada-components/compare/v1.11.2...v1.11.3) (2025-11-19)
+
+
+### Bug Fixes
+
+* update package version to 1.11.4 and reorganize dependencies for improved structure and compatibility ([f58567e](https://github.com/Suada-Learning/suada-components/commit/f58567e3b9083bd28abf460692f07de043a20543))
+
 ## [1.2.1](https://github.com/Suada-Learning/suada-components/compare/v1.2.0...v1.2.1) (2025-06-24)
 
 

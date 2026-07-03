@@ -17,6 +17,7 @@ import {
   StyledPlayPauseIconContainer,
   StyledDownloadIconContainer,
   StyledRewindIconContainer,
+  StyledNotesIconContainer,
 } from './Controls.styles'
 import {
   HeartIcon,
@@ -31,6 +32,7 @@ import {
   VolumeMuteIcon,
   VolumeUpIcon,
   DownloadIcon,
+  NotesIcon,
 } from '../../../icons'
 import { CustomTooltip } from '../../Tooltip'
 
@@ -76,6 +78,7 @@ const Controls: FC<ControlsProps> = ({
   qualityLevels,
   selectedQuality,
   onQualityChange,
+  onAddNote,
 }) => {
   const handleDownloadClick = async (): Promise<void> => {
     if (onDownload) {
@@ -224,6 +227,13 @@ const Controls: FC<ControlsProps> = ({
           }}
         />
 
+        {onAddNote && (
+          <CustomTooltip title="Add note">
+            <StyledNotesIconContainer>
+              <NotesIcon onClick={onAddNote} />
+            </StyledNotesIconContainer>
+          </CustomTooltip>
+        )}
         {subtitle && (
           <CustomTooltip title={isSubtitlesChecked ? 'Hide subtitles' : 'Show subtitles'}>
             <StyledSubtitlesIconContainer>

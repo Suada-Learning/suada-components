@@ -1,7 +1,8 @@
-import { ReactElement, useEffect, useRef, useState } from 'react'
+import { ReactElement, useEffect, useRef, useState, useMemo, useCallback } from 'react'
 import ReactPlayer from 'react-player'
+import { createPortal } from 'react-dom'
 
-import { PlayerProps } from './Player.interface'
+import { PlayerProps, Note, NoteMarker, KeyboardIndicatorState } from './Player.interface'
 import {
   StyledWrapper,
   StyledPlayerLoader,
@@ -10,12 +11,24 @@ import {
   StyledLoader,
   StyledSubtitles,
   injectHLSSubtitleStyles,
+  StyledNoteMarkersOverlay,
+  StyledNoteMarker,
+  StyledNoteTooltip,
+  StyledNoteTime,
+  StyledNoteModal,
+  StyledKeyboardIndicatorContainer,
+  StyledKeyboardSeekContainer,
+  StyledKeyboardVolumeContainer,
+  StyledKeyboardVolumeLabel,
 } from './Player.styles'
 import Controls from './Controls'
 import { AUTO_QUALITY_LEVEL, QualityLevelOption } from './QualityMenu.interface'
 import usePlayerControls from './usePlayerControls'
 import { useHLSSubtitles } from './useHlsSubtitles'
 import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
+import { FormatSecondsToTimeString } from './timeConversion'
+import NoteEditModal from './NoteEditModal'
+import { usePiP } from './usePiP'
 
 type HlsLike = { levels?: { height: number }[]; currentLevel: number }
 
@@ -35,6 +48,104 @@ const buildQualityOptions = (
     .map(([height, index]) => ({ label: `${height}p`, value: index }))
 
   return [{ label: autoLabel, value: AUTO_QUALITY_LEVEL }, ...resolutions]
+}
+
+const MAX_FULLSCREEN_Z_INDEX = 2147483646
+const MAX_FULLSCREEN_MARKER_Z_INDEX = 2147483647
+
+const VolumeIndicatorIcon = ({
+  volume = 0,
+  isVolumeDown,
+}: {
+  volume?: number
+  isVolumeDown: boolean
+}): ReactElement => {
+  const percent = Math.round(volume * 100)
+  const isMuted = percent === 0
+  const isLow = percent > 0 && percent <= 30
+  const isMedium = percent > 30 && percent <= 70
+  const isHigh = percent > 70
+
+  return (
+    <svg width='44' height='44' viewBox='0 0 24 24' fill='none' aria-hidden>
+      <path d='M3 9V15H7L12 20V4L7 9H3Z' fill='white' />
+      {isMuted && (
+        <path d='M14 9L20 15M20 9L14 15' stroke='white' strokeWidth='2' strokeLinecap='round' />
+      )}
+      {(isLow || isMedium || isHigh) && (
+        <path
+          d='M15.8 12C15.8 11.08 15.27 10.28 14.5 9.9V14.1C15.27 13.72 15.8 12.92 15.8 12Z'
+          fill='white'
+        />
+      )}
+      {(isMedium || isHigh) && (
+        <path
+          d='M17.8 12C17.8 10.23 16.78 8.7 15.3 7.98V9.6C16.1 10.14 16.6 11.02 16.6 12C16.6 12.98 16.1 13.86 15.3 14.4V16.02C16.78 15.3 17.8 13.77 17.8 12Z'
+          fill='white'
+        />
+      )}
+      {isHigh && (
+        <path
+          d='M14.6 5.4V7.05C16.97 7.83 18.7 9.72 18.7 12C18.7 14.28 16.97 16.17 14.6 16.95V18.6C17.86 17.79 20.2 15.18 20.2 12C20.2 8.82 17.86 6.21 14.6 5.4Z'
+          fill='white'
+        />
+      )}
+
+      <circle cx='19' cy='5' r='4' fill='rgba(255, 255, 255, 0.18)' />
+      {isVolumeDown ? (
+        <path d='M17.2 5H20.8' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
+      ) : (
+        <>
+          <path d='M17.2 5H20.8' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
+          <path d='M19 3.2V6.8' stroke='white' strokeWidth='1.6' strokeLinecap='round' />
+        </>
+      )}
+    </svg>
+  )
+}
+
+const KeyboardIndicator = ({
+  indicator,
+}: {
+  indicator: KeyboardIndicatorState | null
+}): ReactElement | null => {
+  if (!indicator) return null
+
+  return (
+    <StyledKeyboardIndicatorContainer $position={indicator.position}>
+      {(indicator.type === 'volume-up' || indicator.type === 'volume-down') && (
+        <StyledKeyboardVolumeContainer>
+          <VolumeIndicatorIcon
+            volume={indicator.volume}
+            isVolumeDown={indicator.type === 'volume-down'}
+          />
+          <StyledKeyboardVolumeLabel>
+            {Math.round((indicator.volume ?? 0) * 100)}%
+          </StyledKeyboardVolumeLabel>
+        </StyledKeyboardVolumeContainer>
+      )}
+
+      {indicator.type === 'seek-backward' && (
+        <StyledKeyboardSeekContainer>
+          <svg width='34' height='34' viewBox='0 0 24 24' fill='white' aria-hidden>
+            <path d='M15.7 6.3A1 1 0 0 1 17 7.9L12.9 12L17 16.1A1 1 0 1 1 15.6 17.5L10.8 12.7A1 1 0 0 1 10.8 11.3L15.7 6.3Z' />
+            <path d='M11.4 6.3A1 1 0 0 1 12.8 7.7L8.5 12L12.8 16.3A1 1 0 0 1 11.4 17.7L6.4 12.7A1 1 0 0 1 6.4 11.3L11.4 6.3Z' />
+          </svg>
+          <span>-15s</span>
+        </StyledKeyboardSeekContainer>
+      )}
+
+      {indicator.type === 'seek-forward' && (
+        <StyledKeyboardSeekContainer>
+          <span>+15s</span>
+          <svg width='34' height='34' viewBox='0 0 24 24' fill='white' aria-hidden>
+            <path d='M8.3 6.3A1 1 0 0 0 7 7.9L11.1 12L7 16.1A1 1 0 1 0 8.4 17.5L13.2 12.7A1 1 0 0 0 13.2 11.3L8.3 6.3Z' />
+            <path d='M12.6 6.3A1 1 0 0 0 11.2 7.7L15.5 12L11.2 16.3A1 1 0 0 0 12.6 17.7L17.6 12.7A1 1 0 0 0 17.6 11.3L12.6 6.3Z' />
+          </svg>
+        </StyledKeyboardSeekContainer>
+      )}
+    </StyledKeyboardIndicatorContainer>
+  )
 }
 
 export const VideoPlayer = ({
@@ -60,11 +171,37 @@ export const VideoPlayer = ({
   downloadFileName,
   onDownload,
   showPictureInPicture = true,
+  // Notes functionality
+  notes,
+  videoDuration,
+  onNoteClick,
+
+  editingNote,
+  onNoteEdit,
+  onNoteSave,
+  onNoteDelete,
+  onNoteCancelEdit,
+  onAddNote,
+  onError,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const { t } = useTranslation()
   const [qualityLevels, setQualityLevels] = useState<QualityLevelOption[]>([])
   const [selectedQuality, setSelectedQuality] = useState<number>(AUTO_QUALITY_LEVEL)
+  const overlayRef = useRef<HTMLDivElement | null>(null)
+
+  // Notes state
+  const [hoveredNote, setHoveredNote] = useState<Note | null>(null)
+  const [internalEditingNote, setInternalEditingNote] = useState<Note | null>(null)
+  const [editingTitle, setEditingTitle] = useState<string>('')
+  const [editingContent, setEditingContent] = useState<string>('')
+
+  // Use external editing state if provided, otherwise use internal state
+  const currentEditingNote = editingNote !== undefined ? editingNote : internalEditingNote
+
+  // Get PiP context for state initialization
+  const { syncPiPState } = usePiP()
+
   const {
     mouseMoveHandler,
     playerContainerRef,
@@ -99,6 +236,7 @@ export const VideoPlayer = ({
     isControlsActive,
     currentSubtitle,
     setCurrentSubtitle,
+    keyboardIndicator,
   } = usePlayerControls({
     startTime,
     setLoading,
@@ -110,11 +248,238 @@ export const VideoPlayer = ({
     shouldPlayerBeFocusedOnSpaceClick,
   })
 
+  // Initialize PiP state on component mount/URL change
+  useEffect(() => {
+    // Sync PiP state with actual browser state on mount and URL changes
+    syncPiPState()
+  }, [url, syncPiPState]) // Run when URL changes or component mounts
+
+  // Handle adding new notes
+  const handleAddNote = useCallback(() => {
+    // Stop the video when adding a note
+    setIsPlaying(false)
+
+    if (onAddNote) {
+      // If external handler is provided, use it (e.g., Notes tab modal)
+      onAddNote()
+    } else {
+      // Only create internal modal if no external handler
+      const currentTime = videoPlayerRef.current?.getCurrentTime() || 0
+      const newNote: Note = {
+        id: `note_${Date.now()}`,
+        moment: currentTime,
+        title: '',
+        description: '',
+      }
+      setInternalEditingNote(newNote)
+      setEditingTitle('')
+      setEditingContent('')
+    }
+  }, [onAddNote, setIsPlaying])
+
   const { setupHLSSubtitleTracking } = useHLSSubtitles({
     videoPlayerRef,
     isSubtitlesChecked,
     setCurrentSubtitle,
   })
+
+  // Notes functionality
+  const noteMarkers = useMemo((): NoteMarker[] | undefined => {
+    if (!videoDuration || videoDuration === 0 || !notes) return []
+
+    const markers = notes?.map(note => ({
+      id: note.id,
+      title: note.title,
+      moment: note.moment,
+      position: (note.moment / videoDuration) * 100,
+    }))
+    return markers
+  }, [notes, videoDuration])
+
+  const handleNoteClick = useCallback(
+    (note: Note) => {
+      if (onNoteEdit) {
+        onNoteEdit(note)
+      } else {
+        setInternalEditingNote(note)
+        setEditingTitle(note.title)
+        setEditingContent(note.description || '')
+      }
+      if (onNoteClick) {
+        onNoteClick(note)
+      }
+    },
+    [onNoteClick, onNoteEdit],
+  )
+
+  const handleSaveNote = async (): Promise<void> => {
+    if (!currentEditingNote) return
+
+    if (onNoteSave) {
+      await onNoteSave(currentEditingNote.id, editingTitle.trim(), editingContent.trim())
+    }
+
+    // Clear editing state
+    if (onNoteCancelEdit) {
+      onNoteCancelEdit()
+    } else {
+      setInternalEditingNote(null)
+      setEditingTitle('')
+      setEditingContent('')
+    }
+  }
+
+  const handleCancelEdit = (): void => {
+    if (onNoteCancelEdit) {
+      onNoteCancelEdit()
+    } else {
+      setInternalEditingNote(null)
+      setEditingTitle('')
+      setEditingContent('')
+    }
+  }
+
+  const handleDeleteNote = async (): Promise<void> => {
+    if (!currentEditingNote) return
+
+    if (onNoteDelete) {
+      await onNoteDelete(currentEditingNote.id)
+    }
+
+    handleCancelEdit()
+  }
+
+  // Sync editing state when external editing note changes
+  useEffect(() => {
+    if (editingNote) {
+      setEditingTitle(editingNote.title)
+      setEditingContent(editingNote.description || '')
+    }
+  }, [editingNote])
+
+  const renderNoteEditModal = (): ReactElement | null => {
+    if (!notes || !currentEditingNote) return null
+
+    // Calculate position based on note's timestamp relative to video duration
+    const noteTimePosition =
+      videoDuration && videoDuration > 0 ? (currentEditingNote.moment / videoDuration) * 100 : 50 // Default to center if no duration
+
+    let modalAlignment: 'left' | 'center' | 'right' = 'center'
+    if (noteTimePosition < 25) {
+      modalAlignment = 'left'
+    } else if (noteTimePosition > 75) {
+      modalAlignment = 'right'
+    }
+
+    const modalJSX = (
+      <StyledNoteModal
+        $isFullscreen={isFullscreen}
+        $position={noteTimePosition}
+        $alignment={modalAlignment}
+      >
+        <NoteEditModal
+          isFullscreen={isFullscreen}
+          note={currentEditingNote}
+          notePosition={noteTimePosition}
+          alignment={modalAlignment}
+          editingTitle={editingTitle}
+          editingContent={editingContent}
+          onTitleChange={(e): void => setEditingTitle(e.target.value)}
+          onContentChange={(e): void => setEditingContent(e.target.value)}
+          onCancel={handleCancelEdit}
+          onDelete={handleDeleteNote}
+          onSave={handleSaveNote}
+        />
+      </StyledNoteModal>
+    )
+
+    // In fullscreen, render the modal inside the fullscreen element
+    if (isFullscreen && document.fullscreenElement) {
+      return createPortal(modalJSX, document.fullscreenElement)
+    }
+
+    return modalJSX
+  }
+
+  const renderNotesOverlay = (): ReactElement | null => {
+    if (!notes || !noteMarkers || noteMarkers.length === 0) return null
+
+    const shouldShowControls = isControlsActive || isFullscreen
+    const cssClass = shouldShowControls ? 'controls-visible' : ''
+
+    // Use absolute positioning relative to fullscreen element
+    const fullscreenStyle = {
+      position: 'absolute' as const,
+      left: 0,
+      right: 0,
+      bottom: 42,
+      top: 'auto' as const,
+      height: 6,
+      zIndex: MAX_FULLSCREEN_Z_INDEX,
+      width: '100%',
+    }
+
+    const overlayJSX = (
+      <StyledNoteMarkersOverlay
+        ref={overlayRef}
+        className={cssClass}
+        $isFullscreen={isFullscreen}
+        style={{
+          opacity: shouldShowControls ? 1 : 0,
+          visibility: shouldShowControls ? 'visible' : 'hidden',
+          // Force fullscreen positioning to override any CSS conflicts
+          ...(isFullscreen ? fullscreenStyle : {}),
+        }}
+      >
+        {noteMarkers.map(marker => {
+          const note = notes?.find(n => n.id === marker.id)
+          if (!note) return null
+
+          return (
+            <StyledNoteMarker
+              key={marker.id}
+              $position={marker.position}
+              $isFullscreen={isFullscreen}
+              onMouseEnter={(): void => setHoveredNote(note)}
+              onMouseLeave={(): void => setHoveredNote(null)}
+              onClick={(): void => handleNoteClick(note)}
+              title={note.title}
+              style={{
+                opacity: 1,
+                visibility: 'visible',
+                backgroundColor: '#ffd700',
+                zIndex: isFullscreen ? MAX_FULLSCREEN_MARKER_Z_INDEX : 20,
+                position: 'absolute',
+                left: `${marker.position}%`,
+                bottom: isFullscreen ? 0 : undefined,
+                transform: 'translateX(-50%)',
+                width: isFullscreen ? 12 : undefined,
+                height: isFullscreen ? 12 : undefined,
+                outline: 'none',
+                border: 'none',
+              }}
+            >
+              {hoveredNote?.id === note.id && (
+                <StyledNoteTooltip>
+                  <div>
+                    {note.title.length > 25 ? `${note.title.substring(0, 25)}...` : note.title}
+                  </div>
+                  <StyledNoteTime>{FormatSecondsToTimeString(note.moment)}</StyledNoteTime>
+                </StyledNoteTooltip>
+              )}
+            </StyledNoteMarker>
+          )
+        })}
+      </StyledNoteMarkersOverlay>
+    )
+
+    // Render inside the actual fullscreen element subtree so it's visible
+    if (isFullscreen && document.fullscreenElement) {
+      return createPortal(overlayJSX, document.fullscreenElement)
+    }
+
+    return overlayJSX
+  }
 
   useEffect(() => {
     const cleanup = injectHLSSubtitleStyles()
@@ -144,11 +509,17 @@ export const VideoPlayer = ({
     setSelectedQuality(level)
   }
 
+  const handleWrapperInteraction = (): void => {
+    playerContainerRef.current?.focus({ preventScroll: true })
+  }
+
   return (
     <StyledWrapper
+      ref={playerContainerRef}
       tabIndex={0}
       onMouseMove={mouseMoveHandler}
-      ref={playerContainerRef}
+      onMouseDown={handleWrapperInteraction}
+      onTouchStart={handleWrapperInteraction}
       style={customStyles}
       onClick={(e): void => e.stopPropagation()}
     >
@@ -167,6 +538,7 @@ export const VideoPlayer = ({
           onBuffer={bufferStartHandler}
           onBufferEnd={bufferEndHandler}
           onReady={handlePlayerReady}
+          onError={onError}
           onPlay={(): void => setIsPlaying(true)}
           onPause={(): void => setIsPlaying(false)}
           onEnded={(): void => {
@@ -205,6 +577,8 @@ export const VideoPlayer = ({
         {isSubtitlesChecked && currentSubtitle && (
           <StyledSubtitles $controls={isControlsActive}>{currentSubtitle}</StyledSubtitles>
         )}
+
+        <KeyboardIndicator indicator={keyboardIndicator} />
       </StyledVideoPlayerWrapper>
 
       <StyledControlsContainer ref={controlRef}>
@@ -249,8 +623,13 @@ export const VideoPlayer = ({
           qualityLevels={qualityLevels}
           selectedQuality={selectedQuality}
           onQualityChange={handleQualityChange}
+          onAddNote={notes ? handleAddNote : undefined}
         />
       </StyledControlsContainer>
+
+      {/* Notes functionality */}
+      {renderNotesOverlay()}
+      {renderNoteEditModal()}
     </StyledWrapper>
   )
 }
