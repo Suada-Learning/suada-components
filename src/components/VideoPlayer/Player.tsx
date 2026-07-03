@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef } from 'react'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player'
 
 import { PlayerProps } from './Player.interface'
@@ -12,8 +12,30 @@ import {
   injectHLSSubtitleStyles,
 } from './Player.styles'
 import Controls from './Controls'
+import { AUTO_QUALITY_LEVEL, QualityLevelOption } from './QualityMenu.interface'
 import usePlayerControls from './usePlayerControls'
 import { useHLSSubtitles } from './useHlsSubtitles'
+import { useTranslation } from '../Providers/TranslationProvider/TranslationProvider'
+
+type HlsLike = { levels?: { height: number }[]; currentLevel: number }
+
+const buildQualityOptions = (
+  levels: { height: number }[],
+  autoLabel: string,
+): QualityLevelOption[] => {
+  const firstIndexByHeight = new Map<number, number>()
+  levels.forEach((level, index) => {
+    if (level.height && !firstIndexByHeight.has(level.height)) {
+      firstIndexByHeight.set(level.height, index)
+    }
+  })
+
+  const resolutions = Array.from(firstIndexByHeight.entries())
+    .sort(([a], [b]) => b - a)
+    .map(([height, index]) => ({ label: `${height}p`, value: index }))
+
+  return [{ label: autoLabel, value: AUTO_QUALITY_LEVEL }, ...resolutions]
+}
 
 export const VideoPlayer = ({
   customStyles,
@@ -40,6 +62,9 @@ export const VideoPlayer = ({
   showPictureInPicture = true,
 }: PlayerProps): ReactElement => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const { t } = useTranslation()
+  const [qualityLevels, setQualityLevels] = useState<QualityLevelOption[]>([])
+  const [selectedQuality, setSelectedQuality] = useState<number>(AUTO_QUALITY_LEVEL)
   const {
     mouseMoveHandler,
     playerContainerRef,
@@ -104,6 +129,19 @@ export const VideoPlayer = ({
     if (videoElement && videoElement instanceof HTMLVideoElement) {
       videoRef.current = videoElement
     }
+
+    const hls = videoPlayerRef.current?.getInternalPlayer('hls') as HlsLike | undefined
+    setQualityLevels(
+      hls?.levels?.length ? buildQualityOptions(hls.levels, t('general.quality_auto')) : [],
+    )
+    setSelectedQuality(AUTO_QUALITY_LEVEL)
+  }
+
+  // -1 restores adaptive (ABR) selection, still capped to player size.
+  const handleQualityChange = (level: number): void => {
+    const hls = videoPlayerRef.current?.getInternalPlayer('hls') as HlsLike | undefined
+    if (hls) hls.currentLevel = level
+    setSelectedQuality(level)
   }
 
   return (
@@ -150,6 +188,8 @@ export const VideoPlayer = ({
               hlsOptions: {
                 autoStartLoad: true,
                 renderTextTracksNatively: true,
+                capLevelToPlayerSize: true,
+                capLevelOnFPSDrop: true,
               },
             },
           }}
@@ -206,6 +246,9 @@ export const VideoPlayer = ({
           downloadFileName={downloadFileName}
           onDownload={onDownload}
           showPictureInPicture={showPictureInPicture}
+          qualityLevels={qualityLevels}
+          selectedQuality={selectedQuality}
+          onQualityChange={handleQualityChange}
         />
       </StyledControlsContainer>
     </StyledWrapper>
