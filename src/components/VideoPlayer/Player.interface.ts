@@ -102,7 +102,10 @@ export interface KeyboardIndicatorState {
 }
 
 export interface UsePlayerControlsState
-  extends Omit<ControlsProps, 'isFavorite' | 'toggleIsFavorite'> {
+  extends Omit<
+    ControlsProps,
+    'isFavorite' | 'toggleIsFavorite' | 'qualityLevels' | 'selectedQuality' | 'onQualityChange'
+  > {
   mouseMoveHandler: () => void
   playerContainerRef: RefObject<HTMLDivElement>
   videoPlayerRef: RefObject<ReactPlayer>

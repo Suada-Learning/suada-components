@@ -37,6 +37,7 @@ import {
 import { CustomTooltip } from '../../Tooltip'
 
 import PlaybackSpeedMenu from '../PlaybackSpeedMenu'
+import QualityMenu from '../QualityMenu'
 
 const Controls: FC<ControlsProps> = ({
   setVideoState,
@@ -74,6 +75,9 @@ const Controls: FC<ControlsProps> = ({
   downloadFileName,
   onDownload,
   showPictureInPicture = true,
+  qualityLevels,
+  selectedQuality,
+  onQualityChange,
   onAddNote,
 }) => {
   const handleDownloadClick = async (): Promise<void> => {
@@ -201,6 +205,19 @@ const Controls: FC<ControlsProps> = ({
           onPlaybackSpeedChange={(speed: number): void =>
             setVideoState(prev => ({ ...prev, playbackRate: speed }))
           }
+          customMenuWrapperStyles={{
+            position: 'unset',
+          }}
+          customMenuStyles={{
+            right: '8px',
+            left: 'auto',
+          }}
+        />
+
+        <QualityMenu
+          levels={qualityLevels}
+          selectedLevel={selectedQuality}
+          onLevelChange={onQualityChange}
           customMenuWrapperStyles={{
             position: 'unset',
           }}
