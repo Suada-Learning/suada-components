@@ -1,3 +1,16 @@
+# [1.22.0](https://github.com/Suada-Learning/suada-components/compare/v1.21.0...v1.22.0) (2026-07-03)
+
+
+### Bug Fixes
+
+* switch video player font-family to inter ([4c98381](https://github.com/Suada-Learning/suada-components/commit/4c98381cfb82411177b60ffba31650f10bca4460))
+* update job title translation to 'Job Role' ([37f1ce0](https://github.com/Suada-Learning/suada-components/commit/37f1ce0030ed54514365cfed8132d2b49fb5cde6))
+
+
+### Features
+
+* add video quality picker and cap hls to player size ([37110c9](https://github.com/Suada-Learning/suada-components/commit/37110c96280267f2c31cdbff6f54063c27cc1b17))
+
 # [1.21.0](https://github.com/Suada-Learning/suada-components/compare/v1.20.1...v1.21.0) (2026-06-29)
 
 
