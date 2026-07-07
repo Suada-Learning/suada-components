@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/Suada-Learning/suada-components/compare/v1.22.0...v1.23.0) (2026-07-07)
+
+
+### Features
+
+* implement error recovery for HLS playback in VideoPlayer ([66ab82a](https://github.com/Suada-Learning/suada-components/commit/66ab82a7804368fce153b1a5f92929d5ea446db4))
+
 # [1.22.0](https://github.com/Suada-Learning/suada-components/compare/v1.21.0...v1.22.0) (2026-07-03)
 
 
