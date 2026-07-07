@@ -32,6 +32,15 @@ import { usePiP } from './usePiP'
 
 type HlsLike = { levels?: { height: number }[]; currentLevel: number }
 
+type HlsRecoverable = {
+  recoverMediaError: () => void
+  swapAudioCodec: () => void
+  startLoad: () => void
+}
+
+const MAX_RECOVERY_ATTEMPTS = 2
+const RECOVERY_RESET_MS = 15000
+
 const buildQualityOptions = (
   levels: { height: number }[],
   autoLabel: string,
@@ -502,6 +511,43 @@ export const VideoPlayer = ({
     setSelectedQuality(AUTO_QUALITY_LEVEL)
   }
 
+  const recoveryAttempts = useRef({ media: 0, network: 0, lastAt: 0 })
+
+  const handlePlayerError = (
+    error: unknown,
+    data?: unknown,
+    hlsInstance?: unknown,
+    hlsGlobal?: unknown,
+  ): void => {
+    const hlsData = data as { type?: string; fatal?: boolean } | undefined
+    const hls = hlsInstance as HlsRecoverable | undefined
+
+    if (hlsData?.fatal && hls) {
+      const attempts = recoveryAttempts.current
+      // A quiet window means a new error episode — grant fresh attempts.
+      if (Date.now() - attempts.lastAt > RECOVERY_RESET_MS) {
+        attempts.media = 0
+        attempts.network = 0
+      }
+      attempts.lastAt = Date.now()
+
+      if (hlsData.type === 'mediaError' && attempts.media < MAX_RECOVERY_ATTEMPTS) {
+        attempts.media += 1
+        // Second attempt per hls.js docs: swap codec before recovering again.
+        if (attempts.media === MAX_RECOVERY_ATTEMPTS) hls.swapAudioCodec()
+        hls.recoverMediaError()
+        return
+      }
+      if (hlsData.type === 'networkError' && attempts.network < MAX_RECOVERY_ATTEMPTS) {
+        attempts.network += 1
+        hls.startLoad()
+        return
+      }
+    }
+
+    onError?.(error, data, hlsInstance, hlsGlobal)
+  }
+
   // -1 restores adaptive (ABR) selection, still capped to player size.
   const handleQualityChange = (level: number): void => {
     const hls = videoPlayerRef.current?.getInternalPlayer('hls') as HlsLike | undefined
@@ -538,7 +584,7 @@ export const VideoPlayer = ({
           onBuffer={bufferStartHandler}
           onBufferEnd={bufferEndHandler}
           onReady={handlePlayerReady}
-          onError={onError}
+          onError={handlePlayerError}
           onPlay={(): void => setIsPlaying(true)}
           onPause={(): void => setIsPlaying(false)}
           onEnded={(): void => {
@@ -562,6 +608,11 @@ export const VideoPlayer = ({
                 renderTextTracksNatively: true,
                 capLevelToPlayerSize: true,
                 capLevelOnFPSDrop: true,
+                // Bound buffers: the VOD default back buffer is Infinity, which
+                // drives bufferAppendError on long lessons on low-memory devices.
+                backBufferLength: 90,
+                maxBufferLength: 30,
+                maxBufferSize: 60 * 1000 * 1000,
               },
             },
           }}
