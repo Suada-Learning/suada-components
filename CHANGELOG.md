@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/Suada-Learning/suada-components/compare/v1.23.0...v1.23.1) (2026-07-15)
+
+
+### Bug Fixes
+
+* stop settings icon filling as square on hover ([1418d27](https://github.com/Suada-Learning/suada-components/commit/1418d2780844b186d57d94bb8ac92c1e08be6738))
+
 # [1.23.0](https://github.com/Suada-Learning/suada-components/compare/v1.22.0...v1.23.0) (2026-07-07)
 
 
