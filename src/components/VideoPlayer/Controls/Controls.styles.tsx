@@ -450,7 +450,12 @@ export const StyledTimeTrack = styled.div`
 `
 
 // Base styles for icon containers
-const BaseIconContainer = styled.div`
+const BaseIconContainer = styled.button.attrs({ type: 'button' })`
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,10 +497,13 @@ const BaseIconContainer = styled.div`
     transform: scale(0.95);
   }
 
-  /* Focus styles for accessibility */
   &:focus-visible {
-    outline: none:
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
+  }
 
+  &:disabled {
+    cursor: default;
   }
 `
 
