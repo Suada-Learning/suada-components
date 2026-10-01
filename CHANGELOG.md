@@ -1,3 +1,10 @@
+## [1.23.2](https://github.com/Suada-Learning/suada-components/compare/v1.23.1...v1.23.2) (2026-10-01)
+
+
+### Bug Fixes
+
+* make video player controls real buttons ([fb58d4b](https://github.com/Suada-Learning/suada-components/commit/fb58d4b6e632510fd7b4a97a1a34982fca6c6f76))
+
 ## [1.23.1](https://github.com/Suada-Learning/suada-components/compare/v1.23.0...v1.23.1) (2026-07-15)
 
 
