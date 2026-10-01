@@ -122,6 +122,7 @@ const Controls: FC<ControlsProps> = ({
     <StyledControls>
       <StyledSlider
         type='range'
+        aria-label='Seek'
         min={0}
         max={100}
         value={played * 100}
@@ -136,13 +137,13 @@ const Controls: FC<ControlsProps> = ({
           </StyledPlayPauseIconContainer>
         </CustomTooltip>
         <CustomTooltip title="Rewind 5 seconds">
-          <StyledRewindIconContainer className="rewind-control">
-            <RewindIcon onClick={rewindHandler} />
+          <StyledRewindIconContainer className="rewind-control" onClick={rewindHandler}>
+            <RewindIcon />
           </StyledRewindIconContainer>
         </CustomTooltip>
         <CustomTooltip title="Forward 10 seconds">
-          <StyledRewindIconContainer className="forward-control">
-            <RewindIcon forward onClick={handleFastForward} />
+          <StyledRewindIconContainer className="forward-control" onClick={handleFastForward}>
+            <RewindIcon forward />
           </StyledRewindIconContainer>
         </CustomTooltip>
         <StyledVolumeWrapper>
@@ -151,7 +152,12 @@ const Controls: FC<ControlsProps> = ({
               {muted ? <VolumeMuteIcon /> : <VolumeUpIcon />}
             </StyledVolumeIconContainer>
           </CustomTooltip>
-          <StyledVolumeSlider type='range' value={volume * 100} onChange={volumeChangeHandler} />
+          <StyledVolumeSlider
+            type='range'
+            aria-label='Volume'
+            value={volume * 100}
+            onChange={volumeChangeHandler}
+          />
         </StyledVolumeWrapper>
         <StyledTimeTrack>
           {formatCurrentTime} /{formatDuration}
@@ -160,42 +166,41 @@ const Controls: FC<ControlsProps> = ({
       <StyledControllerRight>
         {handleSkipBackward && (
           <CustomTooltip title="Previous video">
-            <StyledRewindIconContainer className="skip-control">
-            <SkipIcon
-              onClick={(): void => {
-                if (!isPreviousVideo) return
-                handleSkipBackward()
-              }}
-              className={isPreviousVideo ? '' : 'skip-icon-disabled'}
-            />
-          </StyledRewindIconContainer>
+            <StyledRewindIconContainer
+              className="skip-control"
+              onClick={handleSkipBackward}
+              disabled={!isPreviousVideo}
+            >
+              <SkipIcon className={isPreviousVideo ? '' : 'skip-icon-disabled'} />
+            </StyledRewindIconContainer>
           </CustomTooltip>
         )}
         {handleSkipForward && (
           <CustomTooltip title="Next video">
-            <StyledRewindIconContainer className="skip-control">
-            <SkipIcon
-              forward
-              onClick={(): void => {
-                if (!isNextVideo) return
-                handleSkipForward()
-              }}
-              className={isNextVideo ? '' : 'skip-icon-disabled'}
-            />
-          </StyledRewindIconContainer>
+            <StyledRewindIconContainer
+              className="skip-control"
+              onClick={handleSkipForward}
+              disabled={!isNextVideo}
+            >
+              <SkipIcon forward className={isNextVideo ? '' : 'skip-icon-disabled'} />
+            </StyledRewindIconContainer>
           </CustomTooltip>
         )}
         {showFavorite && (
           <CustomTooltip title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}>
-            <StyledHeartIconContainer className="favorite-control">
-              <HeartIcon active={isFavorite} onClick={toggleIsFavorite} />
+            <StyledHeartIconContainer
+              className="favorite-control"
+              onClick={toggleIsFavorite}
+              aria-pressed={isFavorite}
+            >
+              <HeartIcon active={isFavorite} />
             </StyledHeartIconContainer>
           </CustomTooltip>
         )}
         {showDownload && downloadUrl && (
           <CustomTooltip title="Download video">
-            <StyledDownloadIconContainer className="download-control">
-              <DownloadIcon onClick={handleDownloadClick} />
+            <StyledDownloadIconContainer className="download-control" onClick={handleDownloadClick}>
+              <DownloadIcon />
             </StyledDownloadIconContainer>
           </CustomTooltip>
         )}
@@ -229,15 +234,18 @@ const Controls: FC<ControlsProps> = ({
 
         {onAddNote && (
           <CustomTooltip title="Add note">
-            <StyledNotesIconContainer>
-              <NotesIcon onClick={onAddNote} />
+            <StyledNotesIconContainer onClick={onAddNote}>
+              <NotesIcon />
             </StyledNotesIconContainer>
           </CustomTooltip>
         )}
         {subtitle && (
           <CustomTooltip title={isSubtitlesChecked ? 'Hide subtitles' : 'Show subtitles'}>
-            <StyledSubtitlesIconContainer>
-              <SubtitlesIcon active={isSubtitlesChecked} onClick={toggleSubtitlesCheck} />
+            <StyledSubtitlesIconContainer
+              onClick={toggleSubtitlesCheck}
+              aria-pressed={isSubtitlesChecked}
+            >
+              <SubtitlesIcon active={isSubtitlesChecked} />
             </StyledSubtitlesIconContainer>
           </CustomTooltip>
         )}
