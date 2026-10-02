@@ -5,6 +5,7 @@ import {
   StyledQualityMenuWrapper,
   StyledQualityMenu,
   StyledQualityItem,
+  StyledMenuTrigger,
 } from './QualityMenu.styles'
 import useMenuToggle from './useMenuToggle'
 import { SettingsOutlinedIcon, VideoCheckmarkIcon } from '../../icons'
@@ -31,14 +32,23 @@ const QualityMenu: FC<QualityMenuProps> = ({
       className={menuWrapperClassName}
       style={customMenuWrapperStyles}
     >
-      <SettingsOutlinedIcon className={labelIconClassName} onClick={toggleMenu} fill='#ffffff' />
+      <StyledMenuTrigger
+        aria-label={t('general.quality')}
+        aria-haspopup='menu'
+        aria-expanded={isMenuActive}
+        onClick={toggleMenu}
+      >
+        <SettingsOutlinedIcon className={labelIconClassName} fill='#ffffff' />
+      </StyledMenuTrigger>
 
       {isMenuActive && (
-        <StyledQualityMenu $position={menuPosition} style={customMenuStyles}>
+        <StyledQualityMenu role='menu' $position={menuPosition} style={customMenuStyles}>
           <h2>{t('general.quality')}</h2>
           {levels.map(({ label, value }) => (
             <StyledQualityItem
               key={value}
+              role='menuitemradio'
+              aria-checked={value === selectedLevel}
               onClick={(): void => {
                 onLevelChange(value)
                 toggleMenu()

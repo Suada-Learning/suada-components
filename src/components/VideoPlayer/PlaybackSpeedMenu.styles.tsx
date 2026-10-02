@@ -64,7 +64,13 @@ export const StyledPlaybackMenu = styled.div<StyledPlaybackMenuProps>`
   }
 `
 
-export const StyledPlaybackSpeedItem = styled.p`
+export const StyledPlaybackSpeedItem = styled.button.attrs({ type: 'button' })`
+  border: none;
+  background: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
   ${{ fontStyle: 'labelM' }}
   font-weight: 400;
   color: #020210;
@@ -77,5 +83,21 @@ export const StyledPlaybackSpeedItem = styled.p`
 
   @media screen and (max-width: 1500px) {
     ${{ fontStyle: 'bodyS' }}
+  }
+`
+
+export const StyledMenuTrigger = styled.button.attrs({ type: 'button' })`
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: inherit;
+
+  &:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
   }
 `

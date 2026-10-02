@@ -6,6 +6,7 @@ import {
   StyledPlaybackMenuWrapper,
   StyledPlaybackMenu,
   StyledPlaybackSpeedItem,
+  StyledMenuTrigger,
 } from './PlaybackSpeedMenu.styles'
 import useMenuToggle from './useMenuToggle'
 import { MeterIcon, VideoCheckmarkIcon } from '../../icons'
@@ -42,14 +43,23 @@ const PlaybackSpeedMenu: FC<PlaybackSpeedMenuProps> = ({
       className={menuWrapperClassName}
       style={customMenuWrapperStyles}
     >
-      <MeterIcon className={labelIconClassName} onClick={toggleMenu} />
+      <StyledMenuTrigger
+        aria-label={getTranslationFallback('general.playback_speed')}
+        aria-haspopup='menu'
+        aria-expanded={isMenuActive}
+        onClick={toggleMenu}
+      >
+        <MeterIcon className={labelIconClassName} />
+      </StyledMenuTrigger>
 
       {isMenuActive && (
-        <StyledPlaybackMenu $position={menuPosition} style={customMenuStyles}>
+        <StyledPlaybackMenu role='menu' $position={menuPosition} style={customMenuStyles}>
           <h2>{getTranslationFallback('general.playback_speed')}</h2>
           {PLAYBACK_SPEED_LIST.map(({ label, value }, index) => (
             <StyledPlaybackSpeedItem
               key={index}
+              role='menuitemradio'
+              aria-checked={value === playbackSpeed}
               onClick={(): void => {
                 onPlaybackSpeedChange(value)
                 toggleMenu()
