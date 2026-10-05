@@ -1,5 +1,8 @@
 # Suada Components
 
+> Team rules (workflow, safety, naming, PR and Trello format) and the shared commands come from the `suada`
+> Claude Code plugin, repo `Suada-Learning/suada-claude`; change shared rules there. This file covers this repo only.
+
 ## Project Overview
 
 Shared React UI component library consumed by `suada-students`, `suada-admin`, and other Suada front-ends. Built as an npm package with TypeScript, MUI, and styled-components. Bundled with Rollup, dev-previewed with Vite, documented with Storybook.
@@ -9,17 +12,6 @@ Shared React UI component library consumed by `suada-students`, `suada-admin`, a
 - **Type**: ESM (`"type": "module"`)
 - **License**: MIT
 - **Repository**: github.com/Suada-Learning/suada-components
-
-## Commit Cards (on request only)
-
-Do **not** auto-emit a Commit Card at the end of every response. Only print one when the user explicitly asks (e.g. "give me a branch name", "what should I commit this as", "draft the Trello card") — at that point run the `/commit-card` slash command or invoke the `commit-card` / `suada-commit-card` skill, which prints the four-block branch / commit / Trello-title / Trello-description format. This library is consumed by multiple downstream apps — when you do print a card, flag any breaking change in the Trello `**Risk / regressions**` line. Print-only: never run `git checkout`, `git commit`, `git push`, `npm publish`, `yarn version:*`, or hit any Trello API unless explicitly asked.
-
-## Comment Style (strict)
-
-- **Keep code comments short.** One line max in the common case. Never multi-paragraph blocks above components, styled-components, or hooks.
-- **Only comment the WHY, not the WHAT.** Skip comments that just restate the code.
-- **Never leave "removed" / "deleted" / "previously had" / "was X, now Y" breadcrumbs.** Delete code cleanly. Git history is the source of truth.
-- **Do not narrate refactors in comments.** No `// moved from`, `// renamed from`, `// refactored to use`.
 
 ## Tech Stack
 
