@@ -30,3 +30,7 @@ export const PLAYBACK_SPEED_LIST: PlaybackSpeedItem[] = [
     value: 0.5,
   },
 ]
+
+// Seconds the rewind/forward controls and the arrow-key shortcuts jump by.
+// Kept in one place so the icons, tooltips and seek handlers stay in sync.
+export const SEEK_INTERVAL_SECONDS = 15
