@@ -32,5 +32,7 @@ export const PLAYBACK_SPEED_LIST: PlaybackSpeedItem[] = [
 ]
 
 // Seconds the rewind/forward controls and the arrow-key shortcuts jump by.
-// Kept in one place so the icons, tooltips and seek handlers stay in sync.
+// Drives the tooltips, both seek handlers and the on-screen seek indicator.
+// RewindIcon draws "15" as fixed glyph paths, so changing this also means
+// redrawing src/icons/Rewind.tsx.
 export const SEEK_INTERVAL_SECONDS = 15
