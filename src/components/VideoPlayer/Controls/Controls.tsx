@@ -36,6 +36,7 @@ import {
 } from '../../../icons'
 import { CustomTooltip } from '../../Tooltip'
 
+import { SEEK_INTERVAL_SECONDS } from '../constants'
 import PlaybackSpeedMenu from '../PlaybackSpeedMenu'
 import QualityMenu from '../QualityMenu'
 
@@ -136,12 +137,12 @@ const Controls: FC<ControlsProps> = ({
             {playing ? <PauseIcon /> : <PlayIcon />}
           </StyledPlayPauseIconContainer>
         </CustomTooltip>
-        <CustomTooltip title="Rewind 5 seconds">
+        <CustomTooltip title={`Rewind ${SEEK_INTERVAL_SECONDS} seconds`}>
           <StyledRewindIconContainer className="rewind-control" onClick={rewindHandler}>
             <RewindIcon />
           </StyledRewindIconContainer>
         </CustomTooltip>
-        <CustomTooltip title="Forward 10 seconds">
+        <CustomTooltip title={`Forward ${SEEK_INTERVAL_SECONDS} seconds`}>
           <StyledRewindIconContainer className="forward-control" onClick={handleFastForward}>
             <RewindIcon forward />
           </StyledRewindIconContainer>
