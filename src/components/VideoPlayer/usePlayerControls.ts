@@ -9,6 +9,7 @@ import {
   KeyboardIndicatorState,
 } from './Player.interface'
 
+import { SEEK_INTERVAL_SECONDS } from './constants'
 import { SubtitleEntry, parseVTT } from './parseVtt'
 import { FormatSecondsToTimeString } from './timeConversion'
 import useEventListener from './useEventListener'
@@ -189,13 +190,17 @@ function usePlayerControls({
 
   const rewindHandler = useCallback((): void => {
     if (videoPlayerRef.current) {
-      videoPlayerRef.current.seekTo(videoPlayerRef.current.getCurrentTime() - 5)
+      const current = videoPlayerRef.current.getCurrentTime()
+      videoPlayerRef.current.seekTo(Math.max(current - SEEK_INTERVAL_SECONDS, 0))
     }
   }, [videoPlayerRef])
 
   const handleFastForward = useCallback((): void => {
     if (videoPlayerRef.current) {
-      videoPlayerRef.current.seekTo(videoPlayerRef.current.getCurrentTime() + 10)
+      const current = videoPlayerRef.current.getCurrentTime()
+      const duration = videoPlayerRef.current.getDuration()
+      const nextTime = current + SEEK_INTERVAL_SECONDS
+      videoPlayerRef.current.seekTo(duration ? Math.min(nextTime, duration) : nextTime)
     }
   }, [videoPlayerRef])
 
@@ -418,7 +423,7 @@ function usePlayerControls({
             event.preventDefault()
             if (videoPlayerRef.current) {
               const current = videoPlayerRef.current.getCurrentTime()
-              videoPlayerRef.current.seekTo(Math.max(current - 15, 0))
+              videoPlayerRef.current.seekTo(Math.max(current - SEEK_INTERVAL_SECONDS, 0))
             }
             showKeyboardIndicator({
               type: 'seek-backward',
@@ -430,7 +435,7 @@ function usePlayerControls({
             if (videoPlayerRef.current) {
               const current = videoPlayerRef.current.getCurrentTime()
               const duration = videoPlayerRef.current.getDuration()
-              const nextTime = current + 15
+              const nextTime = current + SEEK_INTERVAL_SECONDS
               videoPlayerRef.current.seekTo(duration ? Math.min(nextTime, duration) : nextTime)
             }
             showKeyboardIndicator({

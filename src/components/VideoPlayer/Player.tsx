@@ -22,6 +22,7 @@ import {
   StyledKeyboardVolumeLabel,
 } from './Player.styles'
 import Controls from './Controls'
+import { SEEK_INTERVAL_SECONDS } from './constants'
 import { AUTO_QUALITY_LEVEL, QualityLevelOption } from './QualityMenu.interface'
 import usePlayerControls from './usePlayerControls'
 import { useHLSSubtitles } from './useHlsSubtitles'
@@ -131,13 +132,13 @@ const KeyboardIndicator = ({
             <path d='M15.7 6.3A1 1 0 0 1 17 7.9L12.9 12L17 16.1A1 1 0 1 1 15.6 17.5L10.8 12.7A1 1 0 0 1 10.8 11.3L15.7 6.3Z' />
             <path d='M11.4 6.3A1 1 0 0 1 12.8 7.7L8.5 12L12.8 16.3A1 1 0 0 1 11.4 17.7L6.4 12.7A1 1 0 0 1 6.4 11.3L11.4 6.3Z' />
           </svg>
-          <span>-15s</span>
+          <span>-{SEEK_INTERVAL_SECONDS}s</span>
         </StyledKeyboardSeekContainer>
       )}
 
       {indicator.type === 'seek-forward' && (
         <StyledKeyboardSeekContainer>
-          <span>+15s</span>
+          <span>+{SEEK_INTERVAL_SECONDS}s</span>
           <svg width='34' height='34' viewBox='0 0 24 24' fill='white' aria-hidden>
             <path d='M8.3 6.3A1 1 0 0 0 7 7.9L11.1 12L7 16.1A1 1 0 1 0 8.4 17.5L13.2 12.7A1 1 0 0 0 13.2 11.3L8.3 6.3Z' />
             <path d='M12.6 6.3A1 1 0 0 0 11.2 7.7L15.5 12L11.2 16.3A1 1 0 0 0 12.6 17.7L17.6 12.7A1 1 0 0 0 17.6 11.3L12.6 6.3Z' />

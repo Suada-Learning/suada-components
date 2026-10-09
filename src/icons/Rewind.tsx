@@ -6,6 +6,9 @@ export interface SvgProps extends SVGProps<SVGSVGElement> {
   forward?: boolean
 }
 
+// The digits in this icon are fixed glyph paths reading "15", matching
+// SEEK_INTERVAL_SECONDS in components/VideoPlayer/constants. Redraw them if
+// that value changes.
 export const RewindIcon: React.FC<SvgProps> = ({ className, onClick, forward, ...props }) => {
   return (
     <svg
