@@ -1,3 +1,10 @@
+## [1.23.5](https://github.com/Suada-Learning/suada-components/compare/v1.23.4...v1.23.5) (2026-10-09)
+
+
+### Bug Fixes
+
+* align video rewind/forward controls to a 15s seek interval ([ef5dc02](https://github.com/Suada-Learning/suada-components/commit/ef5dc028209f7e02654a455caa69734b097c39e6))
+
 ## [1.23.4](https://github.com/Suada-Learning/suada-components/compare/v1.23.3...v1.23.4) (2026-10-02)
 
 
