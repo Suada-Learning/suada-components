@@ -208,8 +208,13 @@ function usePlayerControls({
     async (state: ProgressState): Promise<void> => {
       if (count > 2) {
         if (controlRef.current) {
-          controlRef.current.style.visibility = 'hidden'
-          setIsControlsActive(false)
+          // Hiding a focused control would drop keyboard focus to the page body
+          if (controlRef.current.contains(document.activeElement)) {
+            count = 0
+          } else {
+            controlRef.current.style.visibility = 'hidden'
+            setIsControlsActive(false)
+          }
         }
       } else if (
         controlRef.current &&
