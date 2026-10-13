@@ -548,6 +548,7 @@ function usePlayerControls({
     handleFastForward,
     formatCurrentTime,
     played,
+    duration,
     onSeekMouseDownHandler,
     seekHandler,
     seekMouseUpHandler,

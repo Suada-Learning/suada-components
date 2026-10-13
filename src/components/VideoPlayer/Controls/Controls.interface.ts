@@ -11,6 +11,7 @@ export interface ControlsProps {
   handleFastForward: () => void
   formatCurrentTime: string
   played: number
+  duration: number
   onSeekMouseDownHandler: (e: MouseEvent<HTMLInputElement>) => void
   seekHandler: (event: ChangeEvent<HTMLInputElement>) => void
   seekMouseUpHandler: (event: MouseEvent<HTMLInputElement>) => void

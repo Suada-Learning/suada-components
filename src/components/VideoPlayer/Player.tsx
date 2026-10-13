@@ -233,6 +233,7 @@ export const VideoPlayer = ({
     handleFastForward,
     formatCurrentTime,
     played,
+    duration,
     onSeekMouseDownHandler,
     seekHandler,
     seekMouseUpHandler,
@@ -643,6 +644,7 @@ export const VideoPlayer = ({
           handleFastForward={handleFastForward}
           formatCurrentTime={formatCurrentTime}
           played={played}
+          duration={duration}
           onSeekMouseDownHandler={onSeekMouseDownHandler}
           seekHandler={seekHandler}
           seekMouseUpHandler={seekMouseUpHandler}
