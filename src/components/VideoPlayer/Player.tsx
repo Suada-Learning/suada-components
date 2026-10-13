@@ -519,6 +519,7 @@ export const VideoPlayer = ({
       ref={playerContainerRef}
       tabIndex={0}
       onMouseMove={mouseMoveHandler}
+      onFocus={mouseMoveHandler}
       onMouseDown={handleWrapperInteraction}
       onTouchStart={handleWrapperInteraction}
       style={customStyles}
