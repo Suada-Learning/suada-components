@@ -1,3 +1,10 @@
+## [1.23.7](https://github.com/Suada-Learning/suada-components/compare/v1.23.6...v1.23.7) (2026-10-13)
+
+
+### Bug Fixes
+
+* announce seek slider position as time via aria-valuetext ([1b8c51f](https://github.com/Suada-Learning/suada-components/commit/1b8c51fdd7a1a28c3ab896e2730891bb81c5cd23))
+
 ## [1.23.6](https://github.com/Suada-Learning/suada-components/compare/v1.23.5...v1.23.6) (2026-10-13)
 
 
