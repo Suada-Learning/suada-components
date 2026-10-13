@@ -1,3 +1,10 @@
+## [1.23.6](https://github.com/Suada-Learning/suada-components/compare/v1.23.5...v1.23.6) (2026-10-13)
+
+
+### Bug Fixes
+
+* **videoplayer:** keep auto-hiding controls visible while they hold keyboard focus ([2d6a541](https://github.com/Suada-Learning/suada-components/commit/2d6a541c01c19a24118938e8fa8f7e45b3567f07))
+
 ## [1.23.5](https://github.com/Suada-Learning/suada-components/compare/v1.23.4...v1.23.5) (2026-10-09)
 
 
