@@ -37,6 +37,7 @@ import {
 import { CustomTooltip } from '../../Tooltip'
 
 import { SEEK_INTERVAL_SECONDS } from '../constants'
+import { FormatSecondsToTimeString } from '../timeConversion'
 import PlaybackSpeedMenu from '../PlaybackSpeedMenu'
 import QualityMenu from '../QualityMenu'
 
@@ -48,6 +49,7 @@ const Controls: FC<ControlsProps> = ({
   handleFastForward,
   formatCurrentTime,
   played,
+  duration,
   onSeekMouseDownHandler,
   seekHandler,
   seekMouseUpHandler,
@@ -127,6 +129,7 @@ const Controls: FC<ControlsProps> = ({
         min={0}
         max={100}
         value={played * 100}
+        aria-valuetext={`${FormatSecondsToTimeString(played * duration)} of ${formatDuration}`}
         onMouseDown={onSeekMouseDownHandler}
         onChange={seekHandler}
         onMouseUp={seekMouseUpHandler}
