@@ -113,7 +113,10 @@ export const StyledTextArea = styled.textarea`
   }
 `
 
-export const StyledLabel = styled.p<{ $required?: boolean }>`
+/* A real <label>: as a <p> the visible text sat beside the control without naming it. Block,
+   because a label is inline by default and this used to be a paragraph. */
+export const StyledLabel = styled.label<{ $required?: boolean }>`
+  display: block;
   font-size: 16px;
   font-weight: 550;
   padding-top: 0px;
