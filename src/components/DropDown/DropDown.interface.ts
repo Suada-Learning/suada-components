@@ -65,6 +65,10 @@ export interface ISelectFieldProps {
   noOptionsMessage?: ((obj: { inputValue: string }) => ReactNode) | undefined
   isLoading?: boolean
   label?: string
+  /* Names the control when there is no visible `label` — a placeholder does not name anything. */
+  ariaLabel?: string
+  /* Overrides the generated id on react-select's input, for a caller that owns its own label. */
+  inputId?: string
   error?: boolean
   touched?: boolean | FormikTouched<any> | FormikTouched<any>[] | undefined
   errorMessage?: any
