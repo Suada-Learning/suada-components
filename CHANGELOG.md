@@ -1,3 +1,10 @@
+## [1.23.8](https://github.com/Suada-Learning/suada-components/compare/v1.23.7...v1.23.8) (2026-10-22)
+
+
+### Bug Fixes
+
+* name the DropDown control for screen readers ([2cd64f3](https://github.com/Suada-Learning/suada-components/commit/2cd64f383c9037ba0f0bb3fcf6b24cdb37b07e80))
+
 ## [1.23.7](https://github.com/Suada-Learning/suada-components/compare/v1.23.6...v1.23.7) (2026-10-13)
 
 
