@@ -1,6 +1,6 @@
 import React from 'react';
 import { PiPContextType } from './PiPContext.types';
-export declare const PiPContext: React.Context<PiPContextType | undefined>;
+export declare const PiPContext: React.Context<PiPContextType>;
 interface PiPProviderProps {
     children: React.ReactNode;
 }

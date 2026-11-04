@@ -2,7 +2,6 @@ import React, { ReactElement, useState } from 'react'
 
 import { ExpansionMenuItem, ExpansionMenuItemList } from './styled-components'
 import { NavLink } from 'react-router-dom'
-import { makeStyles } from '@mui/styles'
 
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material'
 
@@ -82,24 +81,13 @@ const Typo = styled(Typography)(() => ({
   fontWeight: '500',
 }))
 
-const useStyles = makeStyles(() => ({
-  root: {
-    marginLeft: 15,
-  },
-  navlink: {
-    '&:hover': {
-      backgroundColor: '#EAF5F2',
-    },
-  },
-  closed: {
-    visibility: 'hidden',
-  },
+const NavLabel = styled('span')(() => ({
+  marginLeft: 15,
 }))
 
 const ExpansionNavMenu = (props: IExpansionItemProps): ReactElement => {
   const { t } = useTranslation()
   const [expanded, setExpanded] = useState('')
-  const classes = useStyles()
 
   return (
     <>
@@ -117,9 +105,7 @@ const ExpansionNavMenu = (props: IExpansionItemProps): ReactElement => {
           >
             <Typo>
               {props.item.icon}
-              {props.isOpened && (
-                <span className={classes.root}>{t(`navigation.${props.item.title}`)}</span>
-              )}
+              {props.isOpened && <NavLabel>{t(`navigation.${props.item.title}`)}</NavLabel>}
             </Typo>
           </ExpansionPanelSummaryCustom>
           <ExpansionPanelDetailsCustom>
@@ -131,9 +117,7 @@ const ExpansionNavMenu = (props: IExpansionItemProps): ReactElement => {
                       <ExpansionMenuItem $isOpened={props.isOpened as boolean} key={index}>
                         <NavLink to={i.path || ''}>
                           {i.icon}
-                          {props.isOpened && (
-                            <span className={classes.root}>{t(`navigation.${i.title}`)}</span>
-                          )}
+                          {props.isOpened && <NavLabel>{t(`navigation.${i.title}`)}</NavLabel>}
                         </NavLink>
                       </ExpansionMenuItem>
                     )}

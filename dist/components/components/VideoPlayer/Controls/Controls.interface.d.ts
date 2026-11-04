@@ -1,5 +1,6 @@
 import { ChangeEvent, MouseEvent } from 'react';
 import { VideoState } from '../Player.interface';
+import { QualityLevelOption } from '../QualityMenu.interface';
 export interface ControlsProps {
     setVideoState: (value: (prev: VideoState) => VideoState) => void;
     playbackRate: number;
@@ -8,6 +9,7 @@ export interface ControlsProps {
     handleFastForward: () => void;
     formatCurrentTime: string;
     played: number;
+    duration: number;
     onSeekMouseDownHandler: (e: MouseEvent<HTMLInputElement>) => void;
     seekHandler: (event: ChangeEvent<HTMLInputElement>) => void;
     seekMouseUpHandler: (event: MouseEvent<HTMLInputElement>) => void;
@@ -36,4 +38,8 @@ export interface ControlsProps {
     downloadFileName?: string;
     onDownload?: () => void;
     showPictureInPicture?: boolean;
+    qualityLevels: QualityLevelOption[];
+    selectedQuality: number;
+    onQualityChange: (level: number) => void;
+    onAddNote?: () => void;
 }
