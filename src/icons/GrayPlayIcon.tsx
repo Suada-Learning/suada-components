@@ -30,7 +30,6 @@ export const GrayPlayIcon = forwardRef<SVGSVGElement, SvgProps>(
           fontFamily='none'
           fontWeight='none'
           fontSize='none'
-          textAnchor='none'
           style={{ mixBlendMode: 'normal' }}
         >
           <g transform='translate(-8,-0.00053) scale(10.66667,10.66667)'>

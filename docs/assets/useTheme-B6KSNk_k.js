@@ -1,0 +1,1 @@
+import{r}from"./index-LpBWhHPZ.js";import{T as n}from"./emotion-react.browser.esm-D9ztm9Ef.js";import{a as o}from"./createTheme-BJjsgvJc.js";function s(e){return Object.keys(e).length===0}function m(e=null){const t=r.useContext(n);return!t||s(t)?e:t}const u=o();function h(e=u){return m(e)}export{m as a,h as u};

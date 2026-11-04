@@ -58,6 +58,8 @@ export interface ISelectFieldProps {
     }) => ReactNode) | undefined;
     isLoading?: boolean;
     label?: string;
+    ariaLabel?: string;
+    inputId?: string;
     error?: boolean;
     touched?: boolean | FormikTouched<any> | FormikTouched<any>[] | undefined;
     errorMessage?: any;

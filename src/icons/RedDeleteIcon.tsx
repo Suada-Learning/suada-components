@@ -27,7 +27,6 @@ export const RedDeleteIcon = forwardRef<SVGSVGElement, SvgProps>(
           fontFamily='none'
           fontWeight='none'
           fontSize='none'
-          textAnchor='none'
           style={{ mixBlendMode: 'normal' }}
         >
           <g transform='scale(12.8,12.8)'>
