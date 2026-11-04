@@ -50,15 +50,15 @@ function _objectWithoutPropertiesLoose(r, e) {
   }
   return t;
 }
-function _toPrimitive(t, r) {
+function _toPrimitive(t, e) {
   if ("object" != typeof t || !t) return t;
-  var e = t[Symbol.toPrimitive];
-  if (void 0 !== e) {
-    var i = e.call(t, r);
+  var r;
+  if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) {
+    var i = r.call(t, e);
     if ("object" != typeof i) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return ("string" === r ? String : Number)(t);
+  return ("string" === e ? String : Number)(t);
 }
 function _toPropertyKey(t) {
   var i = _toPrimitive(t, "string");
@@ -1086,7 +1086,6 @@ var CloseOutlineAction = /*#__PURE__*/forwardRef(function (_ref, ref) {
       fontFamily: 'none',
       fontWeight: 'none',
       fontSize: 'none',
-      textAnchor: 'none',
       style: {
         mixBlendMode: 'normal'
       },
@@ -2040,7 +2039,6 @@ var GrayPlayIcon = /*#__PURE__*/forwardRef(function (_ref, ref) {
       fontFamily: 'none',
       fontWeight: 'none',
       fontSize: 'none',
-      textAnchor: 'none',
       style: {
         mixBlendMode: 'normal'
       },
@@ -2612,7 +2610,6 @@ var RedDeleteIcon = /*#__PURE__*/forwardRef(function (_ref, ref) {
       fontFamily: 'none',
       fontWeight: 'none',
       fontSize: 'none',
-      textAnchor: 'none',
       style: {
         mixBlendMode: 'normal'
       },

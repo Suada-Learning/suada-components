@@ -27,7 +27,6 @@ export const CloseOutlineAction = forwardRef<SVGSVGElement, SvgProps>(
           fontFamily='none'
           fontWeight='none'
           fontSize='none'
-          textAnchor='none'
           style={{ mixBlendMode: 'normal' }}
         >
           <g transform='scale(6.4,6.4)'>
