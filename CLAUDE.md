@@ -21,8 +21,8 @@ Shared React UI component library consumed by `suada-students`, `suada-admin`, a
 - **CSS**: Emotion 11, styled-components 6.1, SASS 1.83
 - **Forms**: Formik 2.4
 - **i18n**: i18next 24 + react-i18next 15
-- **Date**: date-fns 2.30, moment 2.30
-- **Media**: react-player 2.16, video-react 0.16, hls.js 1.5
+- **Date**: moment 2.30
+- **Media**: react-player 2.16, hls.js 1.5
 - **Storybook**: 8.5
 
 ## Directory Structure

@@ -1,8 +1,12 @@
 'use strict';
 
-var index = require('./index-C1UpvSfu.js');
+var index = require('./index-CV_ZFSBa.js');
+require('react/jsx-runtime');
 require('react');
+require('react-transition-group');
 require('react-dom');
+require('react-country-flag');
+require('react-router-dom');
 
 
 

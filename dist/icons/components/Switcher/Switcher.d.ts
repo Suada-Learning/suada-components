@@ -1,1 +1,2 @@
-export default function SwitchesGroup(): import("react/jsx-runtime").JSX.Element;
+import React from 'react';
+export default function SwitchesGroup(): React.JSX.Element;

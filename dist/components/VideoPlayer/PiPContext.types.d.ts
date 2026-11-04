@@ -13,4 +13,5 @@ export interface PiPContextType {
     updateVideoState: (state: Partial<PiPVideoState>) => void;
     registerVideoElement: (element: HTMLVideoElement) => void;
     unregisterVideoElement: () => void;
+    syncPiPState: () => void;
 }

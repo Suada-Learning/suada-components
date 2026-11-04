@@ -9,6 +9,7 @@ export declare const themes: {
                 700: string;
             };
             neutral: {
+                main: string;
                 100: string;
                 400: string;
                 900: string;
@@ -34,6 +35,7 @@ export declare const themes: {
                 700: string;
             };
             neutral: {
+                main: string;
                 100: string;
                 400: string;
                 900: string;
