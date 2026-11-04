@@ -2,9 +2,8 @@ import { Preview } from '@storybook/react'
 import { themes } from '../src/theme/Theme'
 import { withProviders } from './withProviders'
 
-export const decorators = [withProviders]
-
 const preview: Preview = {
+  decorators: [withProviders],
   globalTypes: {
     theme: {
       name: 'Theme',
