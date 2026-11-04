@@ -1,3 +1,16 @@
+# [1.24.0](https://github.com/Suada-Learning/suada-components/compare/v1.23.8...v1.24.0) (2026-11-04)
+
+
+### Bug Fixes
+
+* patch storybook advisories and remove stale leftovers ([9bde47a](https://github.com/Suada-Learning/suada-components/commit/9bde47ac8b5b95da0b6e29c7bf00adc1c0ebfe4f))
+* restore date-fns, required at runtime by the mui date adapter ([393dde7](https://github.com/Suada-Learning/suada-components/commit/393dde7c95c0e8e1380f3b339983ed51fdc5a4a7))
+
+
+### Features
+
+* implement error recovery for HLS playback in VideoPlayer ([8030957](https://github.com/Suada-Learning/suada-components/commit/80309574f95a962d7025bb9222a5064fff7df0c0))
+
 ## [1.23.8](https://github.com/Suada-Learning/suada-components/compare/v1.23.7...v1.23.8) (2026-10-22)
 
 
