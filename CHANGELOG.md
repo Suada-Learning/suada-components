@@ -1,3 +1,5 @@
+# [1.25.0](https://github.com/Suada-Learning/suada-components/compare/v1.24.0...v1.25.0) (2026-11-05)
+
 # [1.24.0](https://github.com/Suada-Learning/suada-components/compare/v1.23.8...v1.24.0) (2026-11-04)
 
 
