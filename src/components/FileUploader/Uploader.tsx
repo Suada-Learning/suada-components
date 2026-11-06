@@ -41,7 +41,9 @@ interface IUploaderLoadingProps {
 
 const Loading = ({ type, loading }: IUploaderLoadingProps): ReactElement | undefined => {
   if (['video', 'audio'].includes(type as string)) {
-    return <div style={{ marginLeft: '19px', marginTop: '2px' }}>{Math.round(loading as number)} %</div>
+    return (
+      <div style={{ marginLeft: '19px', marginTop: '2px' }}>{Math.round(loading as number)} %</div>
+    )
   }
 
   return (
@@ -70,13 +72,28 @@ export const Uploader = ({
   required = false,
 }: IUploaderProps): ReactElement => {
   const { t } = useTranslation()
-  
+
   const filePreview = (): ReactElement => {
     // pdf is in file type too so we need to check for pdf explicitly
     if (uploadedFile?.link?.split('.').pop() === 'pdf') {
       return (
         <ImagePlaceholder>
-          <div style={{ fontSize: '10px', textAlign: 'center', padding: '4px', width: '72px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5', borderRadius: '4px' }}>PDF</div>
+          <div
+            style={{
+              fontSize: '10px',
+              textAlign: 'center',
+              padding: '4px',
+              width: '72px',
+              height: '48px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#f5f5f5',
+              borderRadius: '4px',
+            }}
+          >
+            PDF
+          </div>
         </ImagePlaceholder>
       )
     }
@@ -90,25 +107,85 @@ export const Uploader = ({
       case 'file':
         return (
           <ImagePlaceholder>
-            <div style={{ fontSize: '10px', textAlign: 'center', padding: '4px', width: '72px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5', borderRadius: '4px' }}>FILE</div>
+            <div
+              style={{
+                fontSize: '10px',
+                textAlign: 'center',
+                padding: '4px',
+                width: '72px',
+                height: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#f5f5f5',
+                borderRadius: '4px',
+              }}
+            >
+              FILE
+            </div>
           </ImagePlaceholder>
         )
       case 'video':
         return (
           <div style={{ marginTop: '3px' }}>
-            <div style={{ fontSize: '10px', textAlign: 'center', padding: '4px', width: '72px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5', borderRadius: '4px' }}>VIDEO</div>
+            <div
+              style={{
+                fontSize: '10px',
+                textAlign: 'center',
+                padding: '4px',
+                width: '72px',
+                height: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#f5f5f5',
+                borderRadius: '4px',
+              }}
+            >
+              VIDEO
+            </div>
           </div>
         )
       case 'audio':
         return (
           <div style={{ marginTop: '3px' }}>
-            <div style={{ fontSize: '10px', textAlign: 'center', padding: '4px', width: '72px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5', borderRadius: '4px' }}>AUDIO</div>
+            <div
+              style={{
+                fontSize: '10px',
+                textAlign: 'center',
+                padding: '4px',
+                width: '72px',
+                height: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#f5f5f5',
+                borderRadius: '4px',
+              }}
+            >
+              AUDIO
+            </div>
           </div>
         )
       default:
         return (
           <ImagePlaceholder>
-            <div style={{ fontSize: '10px', textAlign: 'center', padding: '4px', width: '72px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5', borderRadius: '4px' }}>FILE</div>
+            <div
+              style={{
+                fontSize: '10px',
+                textAlign: 'center',
+                padding: '4px',
+                width: '72px',
+                height: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#f5f5f5',
+                borderRadius: '4px',
+              }}
+            >
+              FILE
+            </div>
           </ImagePlaceholder>
         )
     }
@@ -141,7 +218,11 @@ export const Uploader = ({
 
         <ItemContainer>
           <Input
-            label={inputValue ? '' : `${t('form_fields.file_name') || 'File name'} ${fileExtension || ''}`}
+            label={
+              inputValue
+                ? ''
+                : `${t('form_fields.file_name') || 'File name'} ${fileExtension || ''}`
+            }
             name='file'
             size='small'
             type='text'

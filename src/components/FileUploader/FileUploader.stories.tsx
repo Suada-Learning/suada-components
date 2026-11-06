@@ -40,7 +40,7 @@ export const Default: StoryObj<typeof Uploader> = {
 }
 export const Uploaded = {
   args: {
-    type: FileTypes.IMAGE,  
+    type: FileTypes.IMAGE,
     label: 'Upload File',
     uploadedFile: {
       id: '1',

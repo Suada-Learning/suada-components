@@ -25,13 +25,7 @@ export type HtmlButtonType = 'submit' | 'reset' | 'button'
 
 export type ButtonSize = 'small' | 'large'
 export type ButtonType =
-  | 'primary'
-  | 'secondary'
-  | 'ghost'
-  | 'negative'
-  | 'positive'
-  | 'dark'
-  | 'text'
+  'primary' | 'secondary' | 'ghost' | 'negative' | 'positive' | 'dark' | 'text'
 
 export interface ButtonState {
   type: ButtonType
