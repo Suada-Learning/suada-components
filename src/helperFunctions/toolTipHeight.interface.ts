@@ -1,4 +1,4 @@
 export interface IProps {
-  text?: string;
-  lines?: number;
+  text?: string
+  lines?: number
 }

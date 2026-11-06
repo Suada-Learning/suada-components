@@ -89,11 +89,7 @@ export interface ProgressState {
   loadedSeconds: number
 }
 
-export type KeyboardIndicatorType =
-  | 'volume-up'
-  | 'volume-down'
-  | 'seek-backward'
-  | 'seek-forward'
+export type KeyboardIndicatorType = 'volume-up' | 'volume-down' | 'seek-backward' | 'seek-forward'
 
 export interface KeyboardIndicatorState {
   type: KeyboardIndicatorType
@@ -101,11 +97,10 @@ export interface KeyboardIndicatorState {
   position: 'center' | 'left' | 'right'
 }
 
-export interface UsePlayerControlsState
-  extends Omit<
-    ControlsProps,
-    'isFavorite' | 'toggleIsFavorite' | 'qualityLevels' | 'selectedQuality' | 'onQualityChange'
-  > {
+export interface UsePlayerControlsState extends Omit<
+  ControlsProps,
+  'isFavorite' | 'toggleIsFavorite' | 'qualityLevels' | 'selectedQuality' | 'onQualityChange'
+> {
   mouseMoveHandler: () => void
   playerContainerRef: RefObject<HTMLDivElement>
   videoPlayerRef: RefObject<ReactPlayer>

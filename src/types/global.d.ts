@@ -10,7 +10,7 @@ declare module 'react-country-flag' {
     cdnSuffix?: string
     className?: string
   }
-  
+
   const CountryFlag: React.FC<CountryFlagProps>
   export default CountryFlag
 }

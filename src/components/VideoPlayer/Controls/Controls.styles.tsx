@@ -26,7 +26,9 @@ export const StyledControls = styled.div`
 
   svg {
     cursor: pointer;
-    transition: transform 0.2s ease, fill 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      fill 0.2s ease;
 
     /* Desktop and large screens */
     @media screen and (min-width: 1501px) {
@@ -66,17 +68,21 @@ export const StyledControls = styled.div`
 
     &:hover {
       transform: scale(1.1);
-      
+
       path {
         fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
           // Handle different theme structures
-          if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-            return theme.colors.primary.main || '#08C694'; // suada-components structure
+          if (
+            theme?.colors?.primary &&
+            typeof theme.colors.primary === 'object' &&
+            'main' in theme.colors.primary
+          ) {
+            return theme.colors.primary.main || '#08C694' // suada-components structure
           }
           if (typeof theme?.colors?.primary === 'string') {
-            return theme.colors.primary; // suada-students structure
+            return theme.colors.primary // suada-students structure
           }
-          return 'var(--brand-colors-accent, #08C694)'; // fallback
+          return 'var(--brand-colors-accent, #08C694)' // fallback
         }} !important;
       }
     }
@@ -88,7 +94,13 @@ export const StyledControls = styled.div`
 
   & > p {
     color: var(--neutral-colors-light);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:
+      'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
     ${{ fontStyle: 'descriptor' }}
   }
 `
@@ -104,22 +116,32 @@ export const StyledSlider = styled.input<SliderProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${({ value, theme }: { value: number; theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+  background: ${({
+    value,
+    theme,
+  }: {
+    value: number
+    theme?: { colors?: { primary?: { main?: string } | string } }
+  }): string => {
     // Handle different theme structures
-    let primaryColor = 'var(--brand-colors-accent)';
-    if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-      primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
+    let primaryColor = 'var(--brand-colors-accent)'
+    if (
+      theme?.colors?.primary &&
+      typeof theme.colors.primary === 'object' &&
+      'main' in theme.colors.primary
+    ) {
+      primaryColor = theme.colors.primary.main || '#08C694' // suada-components structure
     } else if (typeof theme?.colors?.primary === 'string') {
-      primaryColor = theme.colors.primary; // suada-students structure
+      primaryColor = theme.colors.primary // suada-students structure
     }
-    
+
     return `linear-gradient(
       to right,
       ${primaryColor} 0%,
       ${primaryColor} ${value}%,
       var(--level-dark-200) ${value}%,
       var(--level-dark-200) 100%
-    )`;
+    )`
   }};
   outline: none;
   border: none;
@@ -142,7 +164,7 @@ export const StyledSlider = styled.input<SliderProps>`
   @media (hover: none) and (pointer: coarse) {
     height: 4px;
   }
- &::-webkit-slider-runnable-track {
+  &::-webkit-slider-runnable-track {
     border: none;
     outline: none;
   }
@@ -163,15 +185,23 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+    background: ${({
+      theme,
+    }: {
+      theme?: { colors?: { primary?: { main?: string } | string } }
+    }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      if (
+        theme?.colors?.primary &&
+        typeof theme.colors.primary === 'object' &&
+        'main' in theme.colors.primary
+      ) {
+        return theme.colors.primary.main || '#08C694' // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary; // suada-students structure
+        return theme.colors.primary // suada-students structure
       }
-      return 'var(--brand-colors-accent)'; // fallback
+      return 'var(--brand-colors-accent)' // fallback
     }};
     cursor: pointer;
     outline: none;
@@ -195,15 +225,23 @@ export const StyledSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+    background: ${({
+      theme,
+    }: {
+      theme?: { colors?: { primary?: { main?: string } | string } }
+    }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      if (
+        theme?.colors?.primary &&
+        typeof theme.colors.primary === 'object' &&
+        'main' in theme.colors.primary
+      ) {
+        return theme.colors.primary.main || '#08C694' // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary; // suada-students structure
+        return theme.colors.primary // suada-students structure
       }
-      return 'var(--brand-colors-accent)'; // fallback
+      return 'var(--brand-colors-accent)' // fallback
     }};
     cursor: pointer;
     outline: none;
@@ -277,22 +315,32 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
   width: 100px;
   height: 4px;
   border-radius: 5px;
-  background: ${({ value, theme }: { value: number; theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+  background: ${({
+    value,
+    theme,
+  }: {
+    value: number
+    theme?: { colors?: { primary?: { main?: string } | string } }
+  }): string => {
     // Handle different theme structures
-    let primaryColor = 'var(--neutral-colors-light)';
-    if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-      primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
+    let primaryColor = 'var(--neutral-colors-light)'
+    if (
+      theme?.colors?.primary &&
+      typeof theme.colors.primary === 'object' &&
+      'main' in theme.colors.primary
+    ) {
+      primaryColor = theme.colors.primary.main || '#08C694' // suada-components structure
     } else if (typeof theme?.colors?.primary === 'string') {
-      primaryColor = theme.colors.primary; // suada-students structure
+      primaryColor = theme.colors.primary // suada-students structure
     }
-    
+
     return `linear-gradient(
       to right,
       ${primaryColor} 0%,
       ${primaryColor} ${value}%,
       var(--level-grey-500) ${value}%,
       var(--level-grey-500) 100%
-    )`;
+    )`
   }};
   outline: none;
   -webkit-transition: 0.2s;
@@ -320,15 +368,23 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+    background: ${({
+      theme,
+    }: {
+      theme?: { colors?: { primary?: { main?: string } | string } }
+    }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      if (
+        theme?.colors?.primary &&
+        typeof theme.colors.primary === 'object' &&
+        'main' in theme.colors.primary
+      ) {
+        return theme.colors.primary.main || '#08C694' // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary; // suada-students structure
+        return theme.colors.primary // suada-students structure
       }
-      return 'var(--neutral-colors-light)'; // fallback
+      return 'var(--neutral-colors-light)' // fallback
     }};
     cursor: pointer;
 
@@ -344,15 +400,23 @@ export const StyledVolumeSlider = styled.input<SliderProps>`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }): string => {
+    background: ${({
+      theme,
+    }: {
+      theme?: { colors?: { primary?: { main?: string } | string } }
+    }): string => {
       // Handle different theme structures
-      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        return theme.colors.primary.main || '#08C694'; // suada-components structure
+      if (
+        theme?.colors?.primary &&
+        typeof theme.colors.primary === 'object' &&
+        'main' in theme.colors.primary
+      ) {
+        return theme.colors.primary.main || '#08C694' // suada-components structure
       }
       if (typeof theme?.colors?.primary === 'string') {
-        return theme.colors.primary; // suada-students structure
+        return theme.colors.primary // suada-students structure
       }
-      return 'var(--neutral-colors-light)'; // fallback
+      return 'var(--neutral-colors-light)' // fallback
     }};
     cursor: pointer;
     border: none;
@@ -370,7 +434,7 @@ export const StyledControllerLeft = styled.div`
   align-items: center;
   gap: 16px;
   flex: 1;
-  
+
   /* Responsive gap adjustments */
   @media screen and (max-width: 768px) {
     gap: 12px;
@@ -406,7 +470,7 @@ export const StyledControllerRight = styled.div`
 
   @media screen and (max-width: 480px) {
     gap: 8px;
-    
+
     /* Hide less essential controls on mobile */
     .skip-control,
     .favorite-control,
@@ -429,12 +493,12 @@ export const StyledControllerRight = styled.div`
 `
 
 export const StyledTimeTrack = styled.div`
-  color: #FFFFFF;
+  color: #ffffff;
   ${{ fontStyle: 'descriptor' }}
   text-align: right;
   white-space: nowrap;
   font-size: 14px;
-  
+
   /* Responsive font size adjustments */
   @media screen and (max-width: 768px) {
     font-size: 12px;
@@ -463,7 +527,9 @@ const BaseIconContainer = styled.button.attrs({ type: 'button' })`
   min-width: 24px;
   min-height: 24px;
   border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
 
   /* Enhanced touch targets for mobile */
   @media (hover: none) and (pointer: coarse) {
@@ -472,23 +538,27 @@ const BaseIconContainer = styled.button.attrs({ type: 'button' })`
   }
 
   & > svg > path {
-    fill: #FFFFFF !important;
+    fill: #ffffff !important;
     transition: fill 0.2s ease;
   }
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    
+
     & > svg > path {
       fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
         // Handle different theme structures
-        if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-          return theme.colors.primary.main || '#08C694'; // suada-components structure
+        if (
+          theme?.colors?.primary &&
+          typeof theme.colors.primary === 'object' &&
+          'main' in theme.colors.primary
+        ) {
+          return theme.colors.primary.main || '#08C694' // suada-components structure
         }
         if (typeof theme?.colors?.primary === 'string') {
-          return theme.colors.primary; // suada-students structure
+          return theme.colors.primary // suada-students structure
         }
-        return 'var(--video-player-primary-color, #08C694)'; // fallback
+        return 'var(--video-player-primary-color, #08C694)' // fallback
       }} !important;
     }
   }
@@ -498,7 +568,7 @@ const BaseIconContainer = styled.button.attrs({ type: 'button' })`
   }
 
   &:focus-visible {
-    outline: 2px solid #FFFFFF;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 
@@ -515,7 +585,7 @@ export const StyledDownloadIconContainer = styled(BaseIconContainer)`
   & > svg {
     width: 24px !important;
     height: 24px !important;
-    
+
     @media screen and (max-width: 1500px) {
       width: 20px !important;
       height: 20px !important;
@@ -548,35 +618,47 @@ export const StyledFullscreenIconContainer = styled(BaseIconContainer)`
 
 export const StyledPictureInPictureIconContainer = styled(BaseIconContainer)`
   &.pip-active {
-    background-color: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
+    background-color: ${({
+      theme,
+    }: {
+      theme?: { colors?: { primary?: { main?: string } | string } }
+    }) => {
       // Handle different theme structures for background color (with opacity)
-      let primaryColor: string;
-      if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-        primaryColor = theme.colors.primary.main || '#08C694'; // suada-components structure
+      let primaryColor: string
+      if (
+        theme?.colors?.primary &&
+        typeof theme.colors.primary === 'object' &&
+        'main' in theme.colors.primary
+      ) {
+        primaryColor = theme.colors.primary.main || '#08C694' // suada-components structure
       } else if (typeof theme?.colors?.primary === 'string') {
-        primaryColor = theme.colors.primary; // suada-students structure
+        primaryColor = theme.colors.primary // suada-students structure
       } else {
-        primaryColor = '#08C694'; // fallback
+        primaryColor = '#08C694' // fallback
       }
-      
+
       // Convert hex to rgba with opacity
-      const hex = primaryColor.replace('#', '');
-      const r = parseInt(hex.substr(0, 2), 16);
-      const g = parseInt(hex.substr(2, 2), 16);
-      const b = parseInt(hex.substr(4, 2), 16);
-      return `rgba(${r}, ${g}, ${b}, 0.2)`;
+      const hex = primaryColor.replace('#', '')
+      const r = parseInt(hex.substr(0, 2), 16)
+      const g = parseInt(hex.substr(2, 2), 16)
+      const b = parseInt(hex.substr(4, 2), 16)
+      return `rgba(${r}, ${g}, ${b}, 0.2)`
     }};
-    
+
     & > svg > path {
       fill: ${({ theme }: { theme?: { colors?: { primary?: { main?: string } | string } } }) => {
         // Handle different theme structures
-        if (theme?.colors?.primary && typeof theme.colors.primary === 'object' && 'main' in theme.colors.primary) {
-          return theme.colors.primary.main || '#08C694'; // suada-components structure
+        if (
+          theme?.colors?.primary &&
+          typeof theme.colors.primary === 'object' &&
+          'main' in theme.colors.primary
+        ) {
+          return theme.colors.primary.main || '#08C694' // suada-components structure
         }
         if (typeof theme?.colors?.primary === 'string') {
-          return theme.colors.primary; // suada-students structure
+          return theme.colors.primary // suada-students structure
         }
-        return 'var(--video-player-primary-color, #08C694)'; // fallback
+        return 'var(--video-player-primary-color, #08C694)' // fallback
       }} !important;
     }
   }

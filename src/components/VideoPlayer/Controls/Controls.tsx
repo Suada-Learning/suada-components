@@ -91,20 +91,20 @@ const Controls: FC<ControlsProps> = ({
         // Fetch the video file to create a blob for download
         const response = await fetch(downloadUrl)
         if (!response.ok) throw new Error('Download failed')
-        
+
         const blob = await response.blob()
         const blobUrl = window.URL.createObjectURL(blob)
-        
+
         // Create download link
         const link = document.createElement('a')
         link.href = blobUrl
         link.download = downloadFileName || 'video-download'
         link.style.display = 'none'
-        
+
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        
+
         // Clean up blob URL
         window.URL.revokeObjectURL(blobUrl)
       } catch (error) {
@@ -141,12 +141,12 @@ const Controls: FC<ControlsProps> = ({
           </StyledPlayPauseIconContainer>
         </CustomTooltip>
         <CustomTooltip title={`Rewind ${SEEK_INTERVAL_SECONDS} seconds`}>
-          <StyledRewindIconContainer className="rewind-control" onClick={rewindHandler}>
+          <StyledRewindIconContainer className='rewind-control' onClick={rewindHandler}>
             <RewindIcon />
           </StyledRewindIconContainer>
         </CustomTooltip>
         <CustomTooltip title={`Forward ${SEEK_INTERVAL_SECONDS} seconds`}>
-          <StyledRewindIconContainer className="forward-control" onClick={handleFastForward}>
+          <StyledRewindIconContainer className='forward-control' onClick={handleFastForward}>
             <RewindIcon forward />
           </StyledRewindIconContainer>
         </CustomTooltip>
@@ -169,9 +169,9 @@ const Controls: FC<ControlsProps> = ({
       </StyledControllerLeft>
       <StyledControllerRight>
         {handleSkipBackward && (
-          <CustomTooltip title="Previous video">
+          <CustomTooltip title='Previous video'>
             <StyledRewindIconContainer
-              className="skip-control"
+              className='skip-control'
               onClick={handleSkipBackward}
               disabled={!isPreviousVideo}
             >
@@ -180,9 +180,9 @@ const Controls: FC<ControlsProps> = ({
           </CustomTooltip>
         )}
         {handleSkipForward && (
-          <CustomTooltip title="Next video">
+          <CustomTooltip title='Next video'>
             <StyledRewindIconContainer
-              className="skip-control"
+              className='skip-control'
               onClick={handleSkipForward}
               disabled={!isNextVideo}
             >
@@ -193,7 +193,7 @@ const Controls: FC<ControlsProps> = ({
         {showFavorite && (
           <CustomTooltip title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}>
             <StyledHeartIconContainer
-              className="favorite-control"
+              className='favorite-control'
               onClick={toggleIsFavorite}
               aria-pressed={isFavorite}
             >
@@ -202,8 +202,8 @@ const Controls: FC<ControlsProps> = ({
           </CustomTooltip>
         )}
         {showDownload && downloadUrl && (
-          <CustomTooltip title="Download video">
-            <StyledDownloadIconContainer className="download-control" onClick={handleDownloadClick}>
+          <CustomTooltip title='Download video'>
+            <StyledDownloadIconContainer className='download-control' onClick={handleDownloadClick}>
               <DownloadIcon />
             </StyledDownloadIconContainer>
           </CustomTooltip>
@@ -237,7 +237,7 @@ const Controls: FC<ControlsProps> = ({
         />
 
         {onAddNote && (
-          <CustomTooltip title="Add note">
+          <CustomTooltip title='Add note'>
             <StyledNotesIconContainer onClick={onAddNote}>
               <NotesIcon />
             </StyledNotesIconContainer>
@@ -254,7 +254,9 @@ const Controls: FC<ControlsProps> = ({
           </CustomTooltip>
         )}
         {showPictureInPicture && (
-          <CustomTooltip title={isPiPActive ? 'Exit picture-in-picture' : 'Enter picture-in-picture'}>
+          <CustomTooltip
+            title={isPiPActive ? 'Exit picture-in-picture' : 'Enter picture-in-picture'}
+          >
             <StyledPictureInPictureIconContainer
               className={isPiPActive ? 'pip-active' : ''}
               onClick={handlePictureInPicture}
