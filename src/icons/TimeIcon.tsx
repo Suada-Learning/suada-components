@@ -15,13 +15,7 @@ export const TimeIcon = forwardRef<SVGSVGElement, SvgProps>(
         onClick={onClick}
         {...props}
       >
-        <circle
-          cx='12'
-          cy='12'
-          r='10'
-          stroke={fill}
-          strokeWidth='1.5'
-        />
+        <circle cx='12' cy='12' r='10' stroke={fill} strokeWidth='1.5' />
         <path
           d='M12 6v6l4 2'
           stroke={fill}

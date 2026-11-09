@@ -97,7 +97,7 @@ export const StyledMenuTrigger = styled.button.attrs({ type: 'button' })`
   color: inherit;
 
   &:focus-visible {
-    outline: 2px solid #FFFFFF;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 `

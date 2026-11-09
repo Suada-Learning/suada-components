@@ -1,29 +1,28 @@
-import React, { useRef, useEffect, useState } from "react";
-import Tooltip from "@mui/material/Tooltip";
-import { IProps } from "./toolTipHeight.interface";
+import React, { useRef, useEffect, useState } from 'react'
+import Tooltip from '@mui/material/Tooltip'
+import { IProps } from './toolTipHeight.interface'
 
 const TooltipHeight: React.FC<IProps> = ({ text, lines }) => {
-  const textElementRef = useRef<HTMLDivElement>(null);
-  const [isOverflowing, setIsOverflowing] = useState(false);
+  const textElementRef = useRef<HTMLDivElement>(null)
+  const [isOverflowing, setIsOverflowing] = useState(false)
 
   useEffect(() => {
     const isOverflow = textElementRef.current
-      ? textElementRef.current.scrollHeight >
-        textElementRef.current.clientHeight
-      : false;
-    setIsOverflowing(isOverflow);
-  }, [text]);
+      ? textElementRef.current.scrollHeight > textElementRef.current.clientHeight
+      : false
+    setIsOverflowing(isOverflow)
+  }, [text])
 
   return isOverflowing ? (
     <Tooltip title={text}>
       <div
         ref={textElementRef}
         style={{
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          display: "-webkit-box",
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          display: '-webkit-box',
           WebkitLineClamp: lines,
-          WebkitBoxOrient: "vertical",
+          WebkitBoxOrient: 'vertical',
         }}
       >
         {text}
@@ -33,16 +32,16 @@ const TooltipHeight: React.FC<IProps> = ({ text, lines }) => {
     <div
       ref={textElementRef}
       style={{
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        display: "-webkit-box",
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
         WebkitLineClamp: lines,
-        WebkitBoxOrient: "vertical",
+        WebkitBoxOrient: 'vertical',
       }}
     >
       {text}
     </div>
-  );
-};
+  )
+}
 
-export default TooltipHeight;
+export default TooltipHeight

@@ -40,7 +40,7 @@ const StyledTimestamp = styled.div`
   background: #f1f5f9;
   padding: 3px 8px;
   border-radius: 5px;
-  
+
   svg {
     width: 12px;
     height: 12px;
@@ -153,7 +153,7 @@ const StyledButton = styled.button<{ $variant?: 'primary' | 'danger' | 'secondar
   gap: 6px;
   min-width: fit-content;
 
-  ${(props) => {
+  ${props => {
     switch (props.$variant) {
       case 'primary':
         return `
@@ -236,9 +236,9 @@ const NoteEditModal = ({
   const timestamp = FormatSecondsToTimeString(note.moment)
 
   // Check if there are changes for existing notes
-  const hasChanges = isEmptyNote 
-    ? (editingTitle.trim() || editingContent.trim()) // For new notes, require at least some content
-    : (editingTitle !== note.title || editingContent !== (note.description || '')) // For existing notes, check if anything changed
+  const hasChanges = isEmptyNote
+    ? editingTitle.trim() || editingContent.trim() // For new notes, require at least some content
+    : editingTitle !== note.title || editingContent !== (note.description || '') // For existing notes, check if anything changed
 
   return (
     <>
@@ -257,13 +257,13 @@ const NoteEditModal = ({
 
       <StyledModalContent>
         <StyledInput
-          type="text"
-          placeholder="Note title..."
+          type='text'
+          placeholder='Note title...'
           value={editingTitle}
           onChange={onTitleChange}
         />
         <StyledTextarea
-          placeholder="Add your note content..."
+          placeholder='Add your note content...'
           value={editingContent}
           onChange={onContentChange}
         />
@@ -271,14 +271,14 @@ const NoteEditModal = ({
 
       <StyledModalFooter>
         {!isEmptyNote && (
-          <StyledButton onClick={onDelete} $variant="danger">
+          <StyledButton onClick={onDelete} $variant='danger'>
             <TrashCanRed style={{ width: '16px', height: '16px', marginRight: '6px' }} />
             Delete
           </StyledButton>
         )}
         <StyledButtonGroup style={{ marginLeft: isEmptyNote ? 'auto' : 'initial' }}>
           <StyledButton onClick={onCancel}>Cancel</StyledButton>
-          <StyledButton onClick={onSave} $variant="primary" disabled={!hasChanges}>
+          <StyledButton onClick={onSave} $variant='primary' disabled={!hasChanges}>
             {isEmptyNote ? 'Add Note' : 'Save'}
           </StyledButton>
         </StyledButtonGroup>

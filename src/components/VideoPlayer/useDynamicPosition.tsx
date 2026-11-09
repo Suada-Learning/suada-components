@@ -46,10 +46,10 @@ const useDynamicPosition: UseDynamicPositionHookFnType = (isActive, ref, offset 
         fitsAbove && !fitsBelow // If it fits above but not below
           ? DropdownVerticalPositionEnum.Top
           : !fitsAbove && fitsBelow // If it doesn't fit above but does below
-          ? DropdownVerticalPositionEnum.Bottom
-          : viewportHeight - elementBottom > elementTop // If it fits both ways, prefer the one with more space
-          ? DropdownVerticalPositionEnum.Bottom
-          : DropdownVerticalPositionEnum.Top
+            ? DropdownVerticalPositionEnum.Bottom
+            : viewportHeight - elementBottom > elementTop // If it fits both ways, prefer the one with more space
+              ? DropdownVerticalPositionEnum.Bottom
+              : DropdownVerticalPositionEnum.Top
 
       // Horizontal Position
       const elementRight = rect.right
