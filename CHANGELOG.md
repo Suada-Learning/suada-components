@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/Suada-Learning/suada-components/compare/v1.26.0...v1.26.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **video-player:** fullscreen fallback for iOS Safari ([fde5b00](https://github.com/Suada-Learning/suada-components/commit/fde5b00ed378ab05849ec10dbe162d75fd6020d7))
+
 # [1.26.0](https://github.com/Suada-Learning/suada-components/compare/v1.25.0...v1.26.0) (2026-11-06)
 
 # [1.25.0](https://github.com/Suada-Learning/suada-components/compare/v1.24.0...v1.25.0) (2026-11-05)
