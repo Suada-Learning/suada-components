@@ -255,92 +255,92 @@ export const WithoutPictureInPicture: Story = {
 }
 
 // With Notes
+// A component, not an inline render function: hooks may only be called from a
+// component whose name starts with a capital letter (react-hooks/rules-of-hooks).
+const WithNotesPlayer = (args: VideoPlayerProps): JSX.Element => {
+  const [notes, setNotes] = useState<Note[]>([
+    {
+      id: 'note1',
+      moment: 15,
+      title: 'Important Concept',
+      description: 'This explains the key principle behind the topic.',
+    },
+    {
+      id: 'note2',
+      moment: 45,
+      title: 'Remember This',
+      description: "Don't forget to apply this in practice.",
+    },
+    {
+      id: 'note3',
+      moment: 90,
+      title: 'Follow-up',
+      description: 'Check the documentation for more details.',
+    },
+  ])
+
+  const [editingNote, setEditingNote] = useState<Note | null>(null)
+
+  const handleNoteClick = (note: Note) => {
+    console.log('Note clicked:', note)
+    // You could seek to the note time here
+  }
+
+  const handleNoteEdit = (note: Note) => {
+    setEditingNote(note)
+    console.log('Editing note:', note)
+  }
+
+  const handleNoteSave = async (noteId: string, title: string, content: string) => {
+    setNotes(prev => prev.map(note => (note.id === noteId ? { ...note, title, content } : note)))
+    setEditingNote(null)
+    console.log('Note saved:', { noteId, title, content })
+    return Promise.resolve()
+  }
+
+  const handleNoteDelete = async (noteId: string) => {
+    setNotes(prev => prev.filter(note => note.id !== noteId))
+    console.log('Note deleted:', noteId)
+    return Promise.resolve()
+  }
+
+  const handleNoteCancelEdit = () => {
+    setEditingNote(null)
+    console.log('Note edit cancelled')
+  }
+
+  const handleAddNote = () => {
+    const newNote: Note = {
+      id: `note_${Date.now()}`,
+      moment: 30, // Default time for demo
+      title: '',
+      description: '',
+    }
+    setNotes(prev => [...prev, newNote])
+    setEditingNote(newNote)
+    console.log('Adding new note at time 30s')
+  }
+
+  const notesProps = {
+    notes,
+    videoDuration: 120, // 2 minutes for demo
+    onNoteClick: handleNoteClick,
+    courseId: 'demo-course',
+    moduleId: 'demo-module',
+    lessonId: 'demo-lesson',
+    editingNote,
+    onNoteEdit: handleNoteEdit,
+    onNoteSave: handleNoteSave,
+    onNoteDelete: handleNoteDelete,
+    onNoteCancelEdit: handleNoteCancelEdit,
+    onAddNote: handleAddNote,
+  }
+
+  return <PlayerWrapper {...args} {...notesProps} />
+}
+
 export const WithNotes: Story = {
-  render: (args) => {
-    const [notes, setNotes] = useState<Note[]>([
-      {
-        id: 'note1',
-        moment: 15,
-        title: 'Important Concept',
-        description: 'This explains the key principle behind the topic.',
-      },
-      {
-        id: 'note2', 
-        moment: 45,
-        title: 'Remember This',
-        description: 'Don\'t forget to apply this in practice.',
-      },
-      {
-        id: 'note3',
-        moment: 90,
-        title: 'Follow-up',
-        description: 'Check the documentation for more details.',
-      },
-    ])
-    
-    const [editingNote, setEditingNote] = useState<Note | null>(null)
-
-    const handleNoteClick = (note: Note) => {
-      console.log('Note clicked:', note)
-      // You could seek to the note time here
-    }
-
-    const handleNoteEdit = (note: Note) => {
-      setEditingNote(note)
-      console.log('Editing note:', note)
-    }
-
-    const handleNoteSave = async (noteId: string, title: string, content: string) => {
-      setNotes(prev => prev.map(note => 
-        note.id === noteId 
-          ? { ...note, title, content }
-          : note
-      ))
-      setEditingNote(null)
-      console.log('Note saved:', { noteId, title, content })
-      return Promise.resolve()
-    }
-
-    const handleNoteDelete = async (noteId: string) => {
-      setNotes(prev => prev.filter(note => note.id !== noteId))
-      console.log('Note deleted:', noteId)
-      return Promise.resolve()
-    }
-
-    const handleNoteCancelEdit = () => {
-      setEditingNote(null)
-      console.log('Note edit cancelled')
-    }
-
-    const handleAddNote = () => {
-      const newNote: Note = {
-        id: `note_${Date.now()}`,
-        moment: 30, // Default time for demo
-        title: '',
-        description: '',
-      }
-      setNotes(prev => [...prev, newNote])
-      setEditingNote(newNote)
-      console.log('Adding new note at time 30s')
-    }
-
-    const notesProps = {
-      notes,
-      videoDuration: 120, // 2 minutes for demo
-      onNoteClick: handleNoteClick,
-      courseId: 'demo-course',
-      moduleId: 'demo-module', 
-      lessonId: 'demo-lesson',
-      editingNote,
-      onNoteEdit: handleNoteEdit,
-      onNoteSave: handleNoteSave,
-      onNoteDelete: handleNoteDelete,
-      onNoteCancelEdit: handleNoteCancelEdit,
-      onAddNote: handleAddNote,
-    }
-
-    return <PlayerWrapper {...args} {...notesProps} />
-  },
+  render: args => <WithNotesPlayer {...args} />,
   args: {
     ...Default.args,
     url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',

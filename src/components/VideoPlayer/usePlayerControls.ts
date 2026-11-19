@@ -10,6 +10,11 @@ import {
 } from './Player.interface'
 
 import { SEEK_INTERVAL_SECONDS } from './constants'
+import {
+  exitDocumentFullscreen,
+  getFullscreenElement,
+  requestElementFullscreen,
+} from './fullscreenUtils'
 import { SubtitleEntry, parseVTT } from './parseVtt'
 import { FormatSecondsToTimeString } from './timeConversion'
 import useEventListener from './useEventListener'
@@ -82,7 +87,7 @@ function usePlayerControls({
 
   useEffect(() => {
     const handleFullscreenChange = (): void => {
-      setIsFullscreen(!!document.fullscreenElement)
+      setIsFullscreen(!!getFullscreenElement())
     }
 
     const handlePiPEnter = (): void => {
@@ -104,6 +109,7 @@ function usePlayerControls({
     }
 
     document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
     document.addEventListener('enterpictureinpicture', handlePiPEnter)
     document.addEventListener('leavepictureinpicture', handlePiPLeave)
 
@@ -119,6 +125,7 @@ function usePlayerControls({
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
       document.removeEventListener('enterpictureinpicture', handlePiPEnter)
       document.removeEventListener('leavepictureinpicture', handlePiPLeave)
 
@@ -372,11 +379,14 @@ function usePlayerControls({
       return
     }
 
-    if (document.fullscreenElement) {
-      document.exitFullscreen().catch(console.error)
-    } else {
-      playerContainer.requestFullscreen().catch(console.error)
+    if (getFullscreenElement()) {
+      exitDocumentFullscreen()
+      return
     }
+
+    const internalPlayer = videoPlayerRef.current?.getInternalPlayer()
+    const videoElement = internalPlayer instanceof HTMLVideoElement ? internalPlayer : null
+    requestElementFullscreen(playerContainer, videoElement)
   }
 
   const handlePictureInPicture = (): void => {

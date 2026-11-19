@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Container = styled.div``;
+export const Container = styled.div``
 
 export const ActionsContent = styled.div`
   padding: 5px;
-`;
+`
 export const StyledIconButton = styled.div`
   display: inline-flex;
   align-items: center;
@@ -16,11 +16,11 @@ export const StyledIconButton = styled.div`
   &:hover {
     background-color: transparent !important;
   }
-`;
+`
 export const Action = styled.div<{
-  disabled?: boolean;
-  $hoverColor?: string;
-  hoverBackground?: string;
+  disabled?: boolean
+  $hoverColor?: string
+  hoverBackground?: string
 }>`
   display: flex;
   align-items: center;
@@ -30,8 +30,7 @@ export const Action = styled.div<{
   gap: 6px;
   border-radius: 5px;
   &:hover {
-    /* background: ${({ hoverBackground }): string =>
-      hoverBackground || "rgba(0, 0, 0, 0.1)"}; */
+    /* background: ${({ hoverBackground }): string => hoverBackground || 'rgba(0, 0, 0, 0.1)'}; */
     ${({ $hoverColor }): string | undefined =>
       $hoverColor &&
       `svg path {
@@ -46,4 +45,4 @@ export const Action = styled.div<{
     opacity: 0.5;
     pointer-events: none;
   }
-`;
+`

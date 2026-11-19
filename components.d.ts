@@ -1,2 +1,2 @@
 // Root level declaration file to help TypeScript find the correct types
-export * from './dist/components/index';
+export * from './dist/components/index'

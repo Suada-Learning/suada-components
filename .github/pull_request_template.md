@@ -1,4 +1,5 @@
 <!-- Claude fills this from the /suada:review receipt. By hand: a few lines per part, delete what doesn't apply. -->
+
 **Trello:** <!-- card link -->
 
 ## What & why
