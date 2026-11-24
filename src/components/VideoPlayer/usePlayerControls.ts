@@ -249,7 +249,9 @@ function usePlayerControls({
               }
             }
           } else {
-            for (let i = lastSubtitleIndexRef.current; i >= 0; i--) {
+            // The subtitle list can shrink (another language) while the remembered index still points past its end
+            const startIndex = Math.min(lastSubtitleIndexRef.current, subtitles.length - 1)
+            for (let i = startIndex; i >= 0; i--) {
               const sub = subtitles[i]
               if (state.playedSeconds >= sub.start && state.playedSeconds <= sub.end) {
                 currentSubtitleEntry = sub
@@ -296,17 +298,24 @@ function usePlayerControls({
     [seeking, handleTrackProgress, isControlsActive, subtitles, isSubtitlesChecked],
   )
 
+  // Before metadata loads the duration is NaN, and the browser throws on a non-finite currentTime
+  const canSeekTo = (fraction: number): boolean => {
+    const duration = videoPlayerRef.current?.getDuration()
+    return Number.isFinite(fraction) && Number.isFinite(duration)
+  }
+
   const seekHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const v = parseFloat(e.target.value) / 100
+    if (!Number.isFinite(v)) return
     setVideoState(prev => ({ ...prev, played: v }))
-    if (videoPlayerRef.current) {
+    if (videoPlayerRef.current && canSeekTo(v)) {
       videoPlayerRef.current.seekTo(v)
     }
   }
 
   const seekMouseUpHandler = (): void => {
     setVideoState(prev => ({ ...prev, seeking: false }))
-    if (videoPlayerRef.current) {
+    if (videoPlayerRef.current && canSeekTo(videoState.played)) {
       videoPlayerRef.current.seekTo(videoState.played)
     }
   }
