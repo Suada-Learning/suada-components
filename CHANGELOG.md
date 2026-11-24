@@ -1,3 +1,10 @@
+## [1.26.2](https://github.com/Suada-Learning/suada-components/compare/v1.26.1...v1.26.2) (2026-11-24)
+
+
+### Bug Fixes
+
+* **player:** no crash on a shorter subtitle list or a seek before metadata ([2a671a2](https://github.com/Suada-Learning/suada-components/commit/2a671a25807ec8979d677c07a75a2e45c455f4f4))
+
 ## [1.26.1](https://github.com/Suada-Learning/suada-components/compare/v1.26.0...v1.26.1) (2026-11-19)
 
 
